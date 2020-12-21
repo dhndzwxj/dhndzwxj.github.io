@@ -345,7 +345,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：4.8k字</p>
+      <p>字数：4.9k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -361,7 +361,7 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：4.8k字</p>
+      <p>字数：4.9k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -376,7 +376,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">4.8k字</span>
+        <span class="post-count">4.9k字</span>
       </span>
     </span>
  
@@ -557,8 +557,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved in &#x2F;c&#x2F;Users&#x2F;dell&#x2F;.ssh&#x2F;id_rsa.</span><br><span class="line">Your public key has been saved in &#x2F;c&#x2F;Users&#x2F;dell&#x2F;.ssh&#x2F;id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">65:69:······02:4b emailname@email.com</span><br><span class="line">The key&#39;s randomart image is:</span><br><span class="line">+--[ RSA 2048]----+</span><br><span class="line">|                 |</span><br><span class="line">|       .   o .   |</span><br><span class="line">|    . o o &#x3D; o    |</span><br><span class="line">|   . o * &#x3D; o     |</span><br><span class="line">|  E  o + o .     |</span><br><span class="line">| . o.   . .      |</span><br><span class="line">|     ..          |</span><br><span class="line">+-----------------+</span><br></pre></td></tr></table></figure>
 <p>至此，密钥已经成功生成。</p>
 <h4 id="（3）接下来在github上添加SSH-key："><a href="#（3）接下来在github上添加SSH-key：" class="headerlink" title="（3）接下来在github上添加SSH key："></a>（3）接下来在github上添加SSH key：</h4><ul>
-<li>打开本地文件：id_rsa.pub（文件路径可以在上一步SSH生成成功后看到路径，比如我的是c/Users/dell/.ssh/id_rsa.pub），可以将这个文件在编辑器中打开，然后全选复制。</li>
+<li>打开本地文件：id_rsa.pub（文件路径可以在上一步SSH生成成功后看到路径，比如我的是c/Users/dell/.ssh/id_rsa.pub），可以将这个文件在编辑器中打开，然后全选复制。<ul>
+<li>这一步需要注意，打开后直接复制可能会损坏原来的字段格式，推荐使用命令行进行复制。mac上可以使用这个代码：<code>vim ~/.ssh/id_rsa.pub</code>。windows电脑就使用这个代码：<code>clip &lt; C:/Users/Administrator/.ssh/id_rsa.pub</code>。</li>
 <li>登陆github，点击头像位置处 Settings ——&gt; SSH and GPG keys ——&gt; New SSH key，点击新建SSH key。</li>
+</ul>
+</li>
 <li>将 ① 中复制的内容粘贴在key文本框里，title可以不用填（或者自己起一个名字也可以）。</li>
 </ul>
 <h4 id="（4）测试设置是否成功："><a href="#（4）测试设置是否成功：" class="headerlink" title="（4）测试设置是否成功："></a>（4）测试设置是否成功：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
@@ -669,10 +672,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-12T17:39:02+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-21T13:56:59+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月12日</p>
+    <p>更新于：2020年12月21日</p>
   </a>
 </div>
 
