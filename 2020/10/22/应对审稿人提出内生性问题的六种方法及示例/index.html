@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2'>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -34,28 +34,19 @@
 
   <!-- link -->
   
-    
-<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
-
-  
-  
-
-  
-
-  
-
-  
-
-  
 
   <!-- import link -->
   
 
   
-  
     
-<link rel="stylesheet" href="../../../../css/style.css">
+<link rel="stylesheet" href="../../../../css/first.css">
 
+  
+
+  
+  <link rel="stylesheet" href="../../../../css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="../../../../css/style.css"></noscript>
   
 
   <script id="loadcss"></script>
@@ -307,7 +298,15 @@
       <div class='new-meta-box'>
         
           
-            
+            <!-- 
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="fas fa-user">
+    <p>请设置文章作者</p>
+  </a>
+</div> -->
+
+
 <div class='new-meta-item author'>
   <a class='author' href="" rel="nofollow">
     <i class=" fas fa-user" aria-hidden="true"></i>
@@ -342,7 +341,23 @@
           
         
           
-            
+            <!-- 
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：3.8k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：15分钟</p>
+    </a>
+  </div>
+ -->
+
+
+
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
@@ -463,7 +478,7 @@ y=\beta_0+\beta_1x+u</script><p>如果，$cov(x,u)\neq0$可以考虑使用工具
 <li>相关性：$z$与$x$相关</li>
 <li>外生性：$z$与$u$不相关，$z$只能通过$x$影响$y$</li>
 </ul>
-<div class="img-wrap"><div class="img-bg"><img class="img" src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022131714641.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022131714641.png" srcset="data:image/png;base64,666" alt=""/></div><span class="image-caption"></span></div>
+<p><img src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022131714641.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022131714641.png" srcset="data:image/png;base64,666" alt=""></p>
 <p><strong>5.工具变量求解两步走</strong></p>
 <ul>
 <li>1）先用工具变量$z$作自变量，x做因变量对z进行回归，目的在于把$x$分为两个部分，与$z$无关（内生部分，即与误差相关。），与$z$有关（外生部分）；</li>
@@ -485,7 +500,7 @@ y=\beta_0+\beta_1x+u</script><p>如果，$cov(x,u)\neq0$可以考虑使用工具
 <p><strong>6. 对变量的潜在问题</strong></p>
 <p>1)工具变量估计的是局部平均处理效应（LATE），就以上述例子为例，抽签的影响是部分的，只能研究外生部分。因LATE，因果效应难以推广；</p>
 <p>通过抽签将当兵的人分为2个部分</p>
-<div class="img-wrap"><div class="img-bg"><img class="img" src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022132226545.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022132226545.png" srcset="data:image/png;base64,666" alt=""/></div><span class="image-caption"></span></div>
+<p><img src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022132226545.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022132226545.png" srcset="data:image/png;base64,666" alt=""></p>
 <p>2）工具变量很难找且容易被攻击</p>
 <p><strong>7. Stata命令实现工具变量</strong></p>
 <ul>
@@ -542,7 +557,7 @@ work =
 </ul>
 </li>
 </ul>
-<div class="img-wrap"><div class="img-bg"><img class="img" src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022133502127.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022133502127.png" srcset="data:image/png;base64,666" alt=""/></div><span class="image-caption"></span></div>
+<p><img src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022133502127.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022133502127.png" srcset="data:image/png;base64,666" alt=""></p>
 <p>Work decision 和 Income是如何关联的：</p>
 <script type="math/tex; mode=display">
 \mathbb{E}[Income|work=1] = \mathbb{E}[Income|{work}^*>0]=\mathbb{E}[Income|\nu>-\gamma Z]\\
@@ -634,7 +649,7 @@ DD = (\bar{y}_{T,Post}-\bar{y}_{T,Pre})-(\bar{y}_{C,Post}-\bar{y}_{C,Pre})</scri
 </ol>
 <p>$time$和$treatment$都是0-1变量。</p>
 <script type="math/tex; mode=display">
-y = \beta_0+\beta_1Time+\beta_2\cdot Treatment+\beta_3 \cdot Treatment\cdot Time+\epsilon</script><div class="img-wrap"><div class="img-bg"><img class="img" src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022140556457.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022140556457.png" srcset="data:image/png;base64,666" alt=""/></div><span class="image-caption"></span></div>
+y = \beta_0+\beta_1Time+\beta_2\cdot Treatment+\beta_3 \cdot Treatment\cdot Time+\epsilon</script><p><img src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022140556457.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022140556457.png" srcset="data:image/png;base64,666" alt=""></p>
 <h2 id="六、断点回归（RDD）"><a href="#六、断点回归（RDD）" class="headerlink" title="六、断点回归（RDD）"></a><strong>六、断点回归（RDD）</strong></h2><p>断点回归可以用来看政策实施的影响，有以下三个特点：</p>
 <ul>
 <li><p>估计二分变量D对Y的因果效应；</p>
@@ -659,7 +674,7 @@ y = \beta_0+\beta_1Time+\beta_2\cdot Treatment+\beta_3 \cdot Treatment\cdot Time
 <ul>
 <li>简单起见，我们设定分配变量$x$与结果变量$y$的关系为线性，但是实际分析中，两者的关系可以更加复杂。</li>
 </ul>
-<div class="img-wrap"><div class="img-bg"><img class="img" src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022232704673.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022232704673.png" srcset="data:image/png;base64,666" alt=""/></div><span class="image-caption"></span></div>
+<p><img src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022232704673.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022232704673.png" srcset="data:image/png;base64,666" alt=""></p>
 <p><strong>3.精确断点回归</strong></p>
 <p>精确断点回归（sharp regression discontinuity）</p>
 <ul>
@@ -726,11 +741,11 @@ Y = \alpha+\beta_1X+\beta_2X^2+\cdots+\beta_kX^k+\delta D+\delta_1DX+\delta_2DX^
 <li>断点回归法估计的是局部平均处理效应（LATE）。</li>
 </ul>
 <h2 id="七-解决内生性问题的方法组合"><a href="#七-解决内生性问题的方法组合" class="headerlink" title="七. 解决内生性问题的方法组合"></a><strong>七. 解决内生性问题的方法组合</strong></h2><p><strong>例子1：固定效应+赫克曼</strong></p>
-<div class="img-wrap"><div class="img-bg"><img class="img" src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235210199.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235210199.png" srcset="data:image/png;base64,666" alt=""/></div><span class="image-caption"></span></div>
-<div class="img-wrap"><div class="img-bg"><img class="img" src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235226087.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235226087.png" srcset="data:image/png;base64,666" alt=""/></div><span class="image-caption"></span></div>
-<div class="img-wrap"><div class="img-bg"><img class="img" src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235231959.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235231959.png" srcset="data:image/png;base64,666" alt=""/></div><span class="image-caption"></span></div>
+<p><img src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235210199.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235210199.png" srcset="data:image/png;base64,666" alt=""></p>
+<p><img src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235226087.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235226087.png" srcset="data:image/png;base64,666" alt=""></p>
+<p><img src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235231959.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235231959.png" srcset="data:image/png;base64,666" alt=""></p>
 <p><strong>例子2：工具变量+赫克曼</strong></p>
-<div class="img-wrap"><div class="img-bg"><img class="img" src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235242185.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235242185.png" srcset="data:image/png;base64,666" alt=""/></div><span class="image-caption"></span></div>
+<p><img src="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235242185.png" class="lazyload" data-srcset="/../../images/%E5%BA%94%E5%AF%B9%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%8F%90%E5%87%BA%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/image-20201022235242185.png" srcset="data:image/png;base64,666" alt=""></p>
 
   
   
@@ -755,16 +770,6 @@ Y = \alpha+\beta_1X+\beta_2X^2+\cdots+\beta_kX^k+\delta D+\delta_1DX+\delta_2DX^
         </div>
       
       
-        <div class='donate'>
-          <div class='imgs'>
-            
-              <img src='../../../../img/weixin.jpg'>
-            
-              <img src='../../../../img/alipay.jpg'>
-            
-          </div>
-        </div>
-      
     </div>
   
   
@@ -775,7 +780,7 @@ Y = \alpha+\beta_1X+\beta_2X^2+\cdots+\beta_kX^k+\delta D+\delta_1DX+\delta_2DX^
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-12T17:39:24+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-12T17:39:26+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月12日</p>
@@ -787,7 +792,7 @@ Y = \alpha+\beta_1X+\beta_2X^2+\cdots+\beta_kX^k+\delta D+\delta_1DX+\delta_2DX^
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>发刊技巧</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E8%AE%A1%E9%87%8F/" rel="nofollow"><i class="fas fa-tag fa-fw" aria-hidden="true"></i><p>计量</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>发刊技巧</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E8%AE%A1%E9%87%8F/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>计量</p></a></div>
 
 
         
@@ -946,6 +951,7 @@ Y = \alpha+\beta_1X+\beta_2X^2+\cdots+\beta_kX^k+\delta D+\delta_1DX+\delta_2DX^
 
 
 
+
 </div>
 <aside class='l_side'>
   
@@ -1055,7 +1061,7 @@ Y = \alpha+\beta_1X+\beta_2X^2+\cdots+\beta_kX^k+\delta D+\delta_1DX+\delta_2DX^
     
       
         本站使用
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2" target="_blank" class="codename">Volantis</a>
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0" target="_blank" class="codename">Volantis</a>
         作为主题
       
     
@@ -1075,6 +1081,7 @@ Y = \alpha+\beta_1X+\beta_2X^2+\cdots+\beta_kX^k+\delta D+\delta_1DX+\delta_2DX^
   <div>
     <script>
 window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
 /********************脚本懒加载函数********************************/
 function loadScript(src, cb) {
 var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
@@ -1143,6 +1150,14 @@ var loadCSS = function( href, before, media, attributes ){
 	onloadcssdefined( loadCB );
 	return ss;
 };
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  
+  
 </script>
 <!-- required -->
 
@@ -1397,27 +1412,31 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-
-  
-    
-<script src="../../../../js/search.js"></script>
-
-  
-
-
 <!-- optional -->
 
   <script>
 const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
 const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
-(function ($) {
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('../../../../js/search/hexo.js',setSearchService);
+	
+})
+
+function listenSearch(){
   
     customSearch = new HexoSearch({
       imagePath: SearchServiceimagePath
     });
   
-})(jQuery);
-
+}
+function setSearchService() {
+	listenSearch();
+	
+		document.addEventListener("pjax:success", listenSearch);
+	
+}
 </script>
 
 
@@ -1737,6 +1756,7 @@ document.addEventListener("pjax:success", listennSidebarTOC);
 
 <script src="../../../../https:/cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
 
+
 <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
 
 <div class="pjax-animate">
@@ -1753,6 +1773,7 @@ document.addEventListener("pjax:success", listennSidebarTOC);
     </script>
   
 </div>
+
 
 <script>
     var pjax;
@@ -1802,19 +1823,22 @@ document.addEventListener("pjax:success", listennSidebarTOC);
       $(document).unbind('scroll');
       $(document).unbind('click');
       $('body').unbind('click');
+	  
       window.ShowLoading();
+	  
     });
 
     document.addEventListener('pjax:complete', function () {
       // 关于百度统计对 SPA 页面的处理：
       // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
       // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
-      // 
+       
 
       // 关于谷歌统计对 SPA 页面的处理：
       // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
       // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
       
+	 
 
       $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
       $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
@@ -1840,14 +1864,19 @@ document.addEventListener("pjax:success", listennSidebarTOC);
         
         
         
+        
       } catch (e) {
         console.log(e);
       }
+	  
       window.HideLoading();
+	  
     });
 
     document.addEventListener('pjax:error', function (e) {
+	  
       window.HideLoading();
+	  
       window.location.href = e.triggerElement.href;
     });
 </script>

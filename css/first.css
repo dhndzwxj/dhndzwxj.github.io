@@ -32,6 +32,7 @@
   font-style: 'normal';
 }
 :root {
+  --color-site-body: #f4f4f4;
   --color-site-bg: #f4f4f4;
   --color-site-inner: #fff;
   --color-site-footer: #666;
@@ -80,7 +81,7 @@ html >::-webkit-scrollbar-thumb:hover {
   background: #ff5722;
 }
 body {
-  background-color: var(--color-site-bg);
+  background-color: var(--color-site-body);
   text-rendering: optimizelegibility;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   line-height: 1.65;

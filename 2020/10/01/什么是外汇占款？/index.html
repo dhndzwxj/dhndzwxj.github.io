@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2'>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -32,28 +32,19 @@
 
   <!-- link -->
   
-    
-<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
-
-  
-  
-
-  
-
-  
-
-  
-
-  
 
   <!-- import link -->
   
 
   
-  
     
-<link rel="stylesheet" href="../../../../css/style.css">
+<link rel="stylesheet" href="../../../../css/first.css">
 
+  
+
+  
+  <link rel="stylesheet" href="../../../../css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="../../../../css/style.css"></noscript>
   
 
   <script id="loadcss"></script>
@@ -305,7 +296,15 @@
       <div class='new-meta-box'>
         
           
-            
+            <!-- 
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="fas fa-user">
+    <p>请设置文章作者</p>
+  </a>
+</div> -->
+
+
 <div class='new-meta-item author'>
   <a class='author' href="" rel="nofollow">
     <i class=" fas fa-user" aria-hidden="true"></i>
@@ -340,7 +339,23 @@
           
         
           
-            
+            <!-- 
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：380字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+ -->
+
+
+
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
@@ -391,7 +406,7 @@
 </blockquote>
 <p>为了便于理解，结合一下我们中国的国情进行解说，看看中国的外汇占款是怎么形成的！</p>
 <p>改革开放以来，特别是加入WTO以来，我国对外贸易总额出现了爆炸式增长。出口的增加为我国赚取了大量的外汇，但值得注意的是，外汇在国内并不能用于流通。企业为了扩大再生产，还需要进一步购买原材料、维修机器，这部分钱不能用外汇来解决。因此，中国人民银行必须加印出对应数量的人民币来交换企业赚到的外汇。</p>
-<div class="img-wrap"><div class="img-bg"><img class="img" src="/../../images/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%96%E6%B1%87%E5%8D%A0%E6%AC%BE%EF%BC%9F/image-20201001143629324.png" class="lazyload" data-srcset="/../../images/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%96%E6%B1%87%E5%8D%A0%E6%AC%BE%EF%BC%9F/image-20201001143629324.png" srcset="data:image/png;base64,666" alt=""/></div><span class="image-caption"></span></div>
+<p><img src="/../../images/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%96%E6%B1%87%E5%8D%A0%E6%AC%BE%EF%BC%9F/image-20201001143629324.png" class="lazyload" data-srcset="/../../images/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%96%E6%B1%87%E5%8D%A0%E6%AC%BE%EF%BC%9F/image-20201001143629324.png" srcset="data:image/png;base64,666" alt=""></p>
 <center>图1 1978-2017年中国进出口额</center>
 
 
@@ -418,16 +433,6 @@
         </div>
       
       
-        <div class='donate'>
-          <div class='imgs'>
-            
-              <img src='../../../../img/weixin.jpg'>
-            
-              <img src='../../../../img/alipay.jpg'>
-            
-          </div>
-        </div>
-      
     </div>
   
   
@@ -438,7 +443,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-01T14:52:44+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-01T14:52:46+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年10月1日</p>
@@ -602,6 +607,7 @@ Jaime Guajardo, Daniel Leigh, Andrea Pescatori, Expansionary...</p>
 
 
 
+
 </div>
 <aside class='l_side'>
   
@@ -697,7 +703,7 @@ Jaime Guajardo, Daniel Leigh, Andrea Pescatori, Expansionary...</p>
     
       
         本站使用
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2" target="_blank" class="codename">Volantis</a>
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0" target="_blank" class="codename">Volantis</a>
         作为主题
       
     
@@ -717,6 +723,7 @@ Jaime Guajardo, Daniel Leigh, Andrea Pescatori, Expansionary...</p>
   <div>
     <script>
 window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
 /********************脚本懒加载函数********************************/
 function loadScript(src, cb) {
 var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
@@ -785,6 +792,14 @@ var loadCSS = function( href, before, media, attributes ){
 	onloadcssdefined( loadCB );
 	return ss;
 };
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  
+  
 </script>
 <!-- required -->
 
@@ -1039,27 +1054,31 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-
-  
-    
-<script src="../../../../js/search.js"></script>
-
-  
-
-
 <!-- optional -->
 
   <script>
 const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
 const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
-(function ($) {
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('../../../../js/search/hexo.js',setSearchService);
+	
+})
+
+function listenSearch(){
   
     customSearch = new HexoSearch({
       imagePath: SearchServiceimagePath
     });
   
-})(jQuery);
-
+}
+function setSearchService() {
+	listenSearch();
+	
+		document.addEventListener("pjax:success", listenSearch);
+	
+}
 </script>
 
 
@@ -1379,6 +1398,7 @@ document.addEventListener("pjax:success", listennSidebarTOC);
 
 <script src="../../../../https:/cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
 
+
 <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
 
 <div class="pjax-animate">
@@ -1395,6 +1415,7 @@ document.addEventListener("pjax:success", listennSidebarTOC);
     </script>
   
 </div>
+
 
 <script>
     var pjax;
@@ -1444,19 +1465,22 @@ document.addEventListener("pjax:success", listennSidebarTOC);
       $(document).unbind('scroll');
       $(document).unbind('click');
       $('body').unbind('click');
+	  
       window.ShowLoading();
+	  
     });
 
     document.addEventListener('pjax:complete', function () {
       // 关于百度统计对 SPA 页面的处理：
       // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
       // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
-      // 
+       
 
       // 关于谷歌统计对 SPA 页面的处理：
       // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
       // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
       
+	 
 
       $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
       $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
@@ -1482,14 +1506,19 @@ document.addEventListener("pjax:success", listennSidebarTOC);
         
         
         
+        
       } catch (e) {
         console.log(e);
       }
+	  
       window.HideLoading();
+	  
     });
 
     document.addEventListener('pjax:error', function (e) {
+	  
       window.HideLoading();
+	  
       window.location.href = e.triggerElement.href;
     });
 </script>
