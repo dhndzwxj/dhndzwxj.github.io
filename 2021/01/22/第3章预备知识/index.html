@@ -345,7 +345,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：414字</p>
+      <p>字数：443字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -361,7 +361,7 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：414字</p>
+      <p>字数：443字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -376,7 +376,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">414字</span>
+        <span class="post-count">443字</span>
       </span>
     </span>
  
@@ -421,78 +421,146 @@
   <img src='/../../images/%E7%AC%AC3%E7%AB%A0%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/381611324161_.pic_hd.jpg' width=450px>
   <center style='font-family:kai'>图3-12</center>
 </div>
-
-<p>以下结论比较重要：满足$\textbf{a}^T\textbf{x}=b$的直线将自变量$x_1,x_2$平面分成三部分，即</p>
-<script type="math/tex; mode=display">
+<span style='color:red'>以下结论十分十分重要！！！对于理解后面的凸集分离定理很重要！！！</span>：满足$\textbf{a}^T\textbf{x}=b$的直线将自变量$x_1,x_2$平面分成三部分，即
+$$
 \textbf{a}^T \textbf{x}-b=\left\{
 \begin{aligned}
     >0 &\Leftrightarrow \textbf{x}\text{在法方向指向的同侧}\notag\\
     =0 &\Leftrightarrow \textbf{x}\text{在直线}L\text{上}\notag\\
     <0 &\Leftrightarrow \textbf{x}\text{在法方向指向的另一侧}
-\end{aligned}\right.</script><h3 id="3-2-开集和闭集"><a href="#3-2-开集和闭集" class="headerlink" title="3.2 开集和闭集"></a>3.2 开集和闭集</h3><p>这部分重点是弄清楚一些概念。</p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定义3.1</span> 设集合$S\subset E^n$，若存在正数$M&gt;0$，有</p>
-<script type="math/tex; mode=display">
-S\subset \{\textbf{x}\lvert\Arrowvert\textbf{x}\Arrowvert<M\}</script><p>则称集合$S$为<strong>有界</strong>的。特别地，当</p>
-<script type="math/tex; mode=display">
-S=\{x^k\lvert k=1,2,\cdots\}</script><p>时，若</p>
-<script type="math/tex; mode=display">
-\{\textbf{x}^k\lvert k=1,2,\cdots\}\subset\{\textbf{x}\lvert\Arrowvert \textbf{x}\Arrowvert<M\}</script><p>则称点列$\{x^k\}$为<strong>有界点列</strong>。</p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定义3.1a</span> 取$\delta$为正实数，令</p>
-<script type="math/tex; mode=display">
-N_{\delta}(\textbf{x}^0)=\{\textbf{x}\lvert\Arrowvert\textbf{x}-\textbf{x}^0\Arrowvert<\delta\}</script><p>称$N_{\delta}(\textbf{x}^0)$为$\textbf{x}$的$\bf{\delta-}$领域。一维情形相当于开区间，二维情形相当于无边圆。</p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定义3.1b</span> 对于点$\textbf{x}^0=(x_1,x_2,\cdots,x_n)^T$，若存在$\delta&gt;0$，使得$N_\delta(\textbf{x}^0)\subset S$，则称$\textbf{x}$为$S$的内点。集合$S$的内点全体记为$\text{Int}S$。</p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定义3.2</span> 如果集合$S$当每个点都是内点，则称$S$为<strong>开集</strong>。</p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定义3.3a</span> 设$\textbf{x}^\star=(x_1^\star,x_2^\star,\cdots,x_n^\star)^T$。考虑$E^n$中的点列$\{\textbf{x}^k\}$，其中</p>
-<script type="math/tex; mode=display">
-\textbf{x}^k=(x_1^k,x_2^k,\cdots,x_n^k)^T,\quad k=1,2,\cdots</script><p>若</p>
-<script type="math/tex; mode=display">
-\lim_{k\rightarrow\infty}\Arrowvert\textbf{x}^k-\textbf{x}^*\Arrowvert =0</script><p>称$\{\textbf{x}^k\}$<strong>收敛于</strong>$\textbf{x}^\star$，或称点列$\{\textbf{x}^k\}$以$\textbf{x}^\star$为<strong>极限</strong>。由于</p>
-<script type="math/tex; mode=display">
-0 \leqq\lvert x_j^k-x_j^*\vert\leqq \sqrt{\sum_{j=1}^n(x_j^k-x_j^*)^2}=\Arrowvert\textbf{x}^k-\textbf{x}^*\Arrowvert</script><p>故$\lim_{k\rightarrow\infty}\Arrowvert\textbf{x}^k-\textbf{x}^\star\Arrowvert =0$的充分必要条件是</p>
-<script type="math/tex; mode=display">
-\lim_{k\rightarrow\infty} x_j^k=x_j^*,\quad j=1,2,\cdots</script><p>也就是说，$\{\textbf{x}^k\}$<strong>收敛于</strong>$\textbf{x}^\star$，对于$\textbf{x}^k$的每个坐标而言，也是收敛的。反之亦然。</p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定义3.3b</span> 考虑集合$S\subset E^n$若点列$\{\textbf{x}^k\},\textbf{x}^k\in S,k=1,2,\cdots$，并且</p>
-<script type="math/tex; mode=display">
-\lim_{k\rightarrow\infty} \textbf{x}^k=\textbf{x}^*</script><p>则称$\textbf{x}^\star$为的$S$极限点。集合$S$的极限点全体构成的集合，记为$S’$，被称为$S$的<strong>导出集</strong>。</p>
-<p><span style='color:red'>注意，存在这种情况：$\textbf{x}^\star\notin S$同时$\textbf{x}^\star\in S’$。</span></p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定义3.3</span> 令$\text{cl}(S)=S\cup S’$，称为集合$S$的<strong>闭包</strong>。若$\text{cl}(S)=S$，称$S$为闭集。</p>
-<h3 id="3-3-梯度"><a href="#3-3-梯度" class="headerlink" title="3.3 梯度"></a>3.3 梯度</h3><p>对于定义在$n$维欧氏空间$E^n$上的函数，并且存在一阶连续偏导数，设</p>
-<script type="math/tex; mode=display">
-f(\textbf{x})=f(x_1,x_2,\cdots,x_n)</script><p>由$f(\textbf{x})$的一阶偏导数构成的行向量</p>
-<script type="math/tex; mode=display">
-f_x(\textbf{x}) = \left(\frac{\partial f(\textbf{x})}{\partial x_1},\frac{\partial f(\textbf{x})}{\partial x_2},\cdots,\frac{\partial f(\textbf{x})}{\partial x_n}\right)</script><p>称为$f(\textbf{x})$的<strong>梯度</strong>。</p>
-<h4 id="3-3-1-链式法则和方向导数"><a href="#3-3-1-链式法则和方向导数" class="headerlink" title="3.3.1 链式法则和方向导数"></a>3.3.1 链式法则和方向导数</h4><p>考虑函数$f(\textbf{x})=f(x_1,x_2,\cdots,x_n)$，假设函数$f(\textbf{x})$的偏导数</p>
-<script type="math/tex; mode=display">
-\frac{\partial f(\textbf{x})}{\partial x_1},\frac{\partial f(\textbf{x})}{\partial x_2},\cdots,\frac{\partial f(\textbf{x})}{\partial x_n}</script><p>存在且连续，并且单变量$\lambda\in E^1$的函数$\varphi_j(\lambda)$具有一阶连续导数，将</p>
-<script type="math/tex; mode=display">
-x_1=\varphi_1(\lambda),x_2=\varphi_2(\lambda),\cdots,x_n=\varphi_n(\lambda)</script><p>代入到$f(x_1,x_2,\cdots,x_n)$中，得到关于单变量$\lambda$的函数，得到一个复合函数。</p>
-<script type="math/tex; mode=display">
-f\left(\varphi_1(\lambda),\varphi_2(\lambda),\cdots,\varphi_n(\lambda)\right)</script><p>下面是所谓的“链式法则”的表达式：</p>
-<script type="math/tex; mode=display">
+\end{aligned}\right.
+$$
+
+### 3.2 开集和闭集
+
+这部分重点是弄清楚一些概念。
+
+---
+
+<span style='font-family:hei;font-size:18px'>定义3.1</span> 设集合$S\subset E^n$，若存在正数$M>0$，有
+$$
+S\subset \{\textbf{x}\lvert\Arrowvert\textbf{x}\Arrowvert<M\}
+$$
+则称集合$S$为**有界**的。特别地，当
+$$
+S=\{x^k\lvert k=1,2,\cdots\}
+$$
+时，若
+$$
+\{\textbf{x}^k\lvert k=1,2,\cdots\}\subset\{\textbf{x}\lvert\Arrowvert \textbf{x}\Arrowvert<M\}
+$$
+则称点列$\{x^k\}$为**有界点列**。
+
+---
+
+<span style='font-family:hei;font-size:18px'>定义3.1a</span> 取$\delta$为正实数，令
+$$
+N_{\delta}(\textbf{x}^0)=\{\textbf{x}\lvert\Arrowvert\textbf{x}-\textbf{x}^0\Arrowvert<\delta\}
+$$
+称$N_{\delta}(\textbf{x}^0)$为$\textbf{x}$的$\bf{\delta-}$领域。一维情形相当于开区间，二维情形相当于无边圆。
+
+---
+
+<span style='font-family:hei;font-size:18px'>定义3.1b</span> 对于点$\textbf{x}^0=(x_1,x_2,\cdots,x_n)^T$，若存在$\delta>0$，使得$N_\delta(\textbf{x}^0)\subset S$，则称$\textbf{x}$为$S$的内点。集合$S$的内点全体记为$\text{Int}S$。
+
+---
+
+<span style='font-family:hei;font-size:18px'>定义3.2</span> 如果集合$S$当每个点都是内点，则称$S$为**开集**。
+
+---
+
+<span style='font-family:hei;font-size:18px'>定义3.3a</span> 设$\textbf{x}^\star=(x_1^\star,x_2^\star,\cdots,x_n^\star)^T$。考虑$E^n$中的点列$\{\textbf{x}^k\}$，其中
+$$
+\textbf{x}^k=(x_1^k,x_2^k,\cdots,x_n^k)^T,\quad k=1,2,\cdots
+$$
+若
+$$
+\lim_{k\rightarrow\infty}\Arrowvert\textbf{x}^k-\textbf{x}^*\Arrowvert =0
+$$
+称$\{\textbf{x}^k\}$**收敛于**$\textbf{x}^\star$，或称点列$\{\textbf{x}^k\}$以$\textbf{x}^\star$为**极限**。由于
+$$
+0 \leqq\lvert x_j^k-x_j^*\vert\leqq \sqrt{\sum_{j=1}^n(x_j^k-x_j^*)^2}=\Arrowvert\textbf{x}^k-\textbf{x}^*\Arrowvert
+$$
+故$\lim_{k\rightarrow\infty}\Arrowvert\textbf{x}^k-\textbf{x}^\star\Arrowvert =0$的充分必要条件是
+$$
+\lim_{k\rightarrow\infty} x_j^k=x_j^*,\quad j=1,2,\cdots
+$$
+也就是说，$\{\textbf{x}^k\}$**收敛于**$\textbf{x}^\star$，对于$\textbf{x}^k$的每个坐标而言，也是收敛的。反之亦然。
+
+---
+
+<span style='font-family:hei;font-size:18px'>定义3.3b</span> 考虑集合$S\subset E^n$若点列$\{\textbf{x}^k\},\textbf{x}^k\in S,k=1,2,\cdots$，并且
+$$
+\lim_{k\rightarrow\infty} \textbf{x}^k=\textbf{x}^*
+$$
+则称$\textbf{x}^\star$为的$S$极限点。集合$S$的极限点全体构成的集合，记为$S'$，被称为$S$的**导出集**。
+
+<span style='color:red'>注意，存在这种情况：$\textbf{x}^\star\notin S$同时$\textbf{x}^\star\in S'$。</span>
+
+---
+
+<span style='font-family:hei;font-size:18px'>定义3.3</span> 令$\text{cl}(S)=S\cup S'$，称为集合$S$的**闭包**。若$\text{cl}(S)=S$，称$S$为闭集。
+
+### 3.3 梯度
+
+对于定义在$n$维欧氏空间$E^n$上的函数，并且存在一阶连续偏导数，设
+$$
+f(\textbf{x})=f(x_1,x_2,\cdots,x_n)
+$$
+由$f(\textbf{x})$的一阶偏导数构成的行向量
+$$
+f_x(\textbf{x}) = \left(\frac{\partial f(\textbf{x})}{\partial x_1},\frac{\partial f(\textbf{x})}{\partial x_2},\cdots,\frac{\partial f(\textbf{x})}{\partial x_n}\right)
+$$
+称为$f(\textbf{x})$的**梯度**。
+
+#### 3.3.1 链式法则和方向导数
+
+考虑函数$f(\textbf{x})=f(x_1,x_2,\cdots,x_n)$，假设函数$f(\textbf{x})$的偏导数
+$$
+\frac{\partial f(\textbf{x})}{\partial x_1},\frac{\partial f(\textbf{x})}{\partial x_2},\cdots,\frac{\partial f(\textbf{x})}{\partial x_n}
+$$
+存在且连续，并且单变量$\lambda\in E^1$的函数$\varphi_j(\lambda)$具有一阶连续导数，将
+$$
+x_1=\varphi_1(\lambda),x_2=\varphi_2(\lambda),\cdots,x_n=\varphi_n(\lambda)
+$$
+代入到$f(x_1,x_2,\cdots,x_n)$中，得到关于单变量$\lambda$的函数，得到一个复合函数。
+$$
+f\left(\varphi_1(\lambda),\varphi_2(\lambda),\cdots,\varphi_n(\lambda)\right)
+$$
+下面是所谓的“链式法则”的表达式：
+$$
 \begin{aligned}
 \frac{\text{d}f\left(\varphi_1(\lambda),\varphi_2(\lambda),\cdots,\varphi_n(\lambda)\right)}{\text{d}\lambda}
     &= \left.\sum_{j=1}^n\frac{\partial f(\textbf{x})}{\partial x_j}\cdot\varphi'_j(\lambda)\right\lvert_{\textbf{x}=(\varphi_1(\lambda),\varphi_2(\lambda),\cdots,\varphi_n(\lambda))^T}\notag\\
     &= \sum_{j=1}^n\frac{\partial f\left( \varphi_1(\lambda),\varphi_2(\lambda),\cdots,\varphi_n(\lambda) \right)}{\partial x_j}\cdot\varphi'_j(\lambda) \notag\\
     &= f_x(\varphi_1(\lambda),\varphi_2(\lambda),\cdots,\varphi_n(\lambda))\cdot(\varphi'_1(\lambda),\phi'_2(\lambda),\cdots,\phi'_n(\lambda))^T
-\end{aligned}</script><hr>
-<p><span style='font-family:hei;font-size:18px'>例3.2</span> 对于无约束极值问题</p>
-<script type="math/tex; mode=display">
+\end{aligned}
+$$
+
+---
+
+<span style='font-family:hei;font-size:18px'>例3.2</span> 对于无约束极值问题
+$$
 (P)\quad\left\{\begin{aligned}
     &\min f(\textbf{x}) \notag\\
     &x\in E^n \notag
-\end{aligned}\right.</script><p>设$\bar{\textbf{x}}=(\bar{x}_1,\cdots,\bar{x}_n)^T$为$(P)$的最优解，则</p>
-<script type="math/tex; mode=display">
-f_x(\bar{\textbf{x}})=\left( \frac{\partial f(\bar{\textbf{x}})}{\partial x_1},\cdots,\frac{\partial f(\bar{\textbf{x}})}{\partial x_n} \right) =\textbf{0}</script><hr>
-<h4 id="3-3-2-梯度的几何含义"><a href="#3-3-2-梯度的几何含义" class="headerlink" title="3.3.2 梯度的几何含义"></a>3.3.2 梯度的几何含义</h4><p>令$\textbf{x}^0=(x_1^0,x_2^0,\cdots,x_n^0)^T$，$f(\textbf{x})$在点$\textbf{x}^0$处的梯度为</p>
-<script type="math/tex; mode=display">
-f_x(\textbf{x}^0) = \left.\left( \frac{\partial f(\textbf{x})}{\partial x_1},\cdots,\frac{\partial f(\textbf{x})}{\partial x_n} \right) \right\lvert_{\textbf{x}=\textbf{x}^0}</script><p>函数$f(x_1,x_2)$在点$\textbf{x}^0=(x_1^0,x_2^0)^T$处的梯度$f_x(x_1^0,x_2^0)$，是$\textbf{x}^0$所在的等高线在$\textbf{x}^0$点处切线的法方向。（图3-18）</p>
+\end{aligned}\right.
+$$
+设$\bar{\textbf{x}}=(\bar{x}_1,\cdots,\bar{x}_n)^T$为$(P)$的最优解，则
+$$
+f_x(\bar{\textbf{x}})=\left( \frac{\partial f(\bar{\textbf{x}})}{\partial x_1},\cdots,\frac{\partial f(\bar{\textbf{x}})}{\partial x_n} \right) =\textbf{0}
+$$
+
+---
+
+#### 3.3.2 梯度的几何含义
+
+令$\textbf{x}^0=(x_1^0,x_2^0,\cdots,x_n^0)^T$，$f(\textbf{x})$在点$\textbf{x}^0$处的梯度为
+$$
+f_x(\textbf{x}^0) = \left.\left( \frac{\partial f(\textbf{x})}{\partial x_1},\cdots,\frac{\partial f(\textbf{x})}{\partial x_n} \right) \right\lvert_{\textbf{x}=\textbf{x}^0}
+$$
+函数$f(x_1,x_2)$在点$\textbf{x}^0=(x_1^0,x_2^0)^T$处的梯度$f_x(x_1^0,x_2^0)$，是$\textbf{x}^0$所在的等高线在$\textbf{x}^0$点处切线的法方向。（图3-18）
+
 <div align='center'>
   <img src='/../../images/%E7%AC%AC3%E7%AB%A0%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/11111611401881_.pic_hd.jpg' width=450px>
   <center style='font-family:kai'>图3-18</center>
@@ -555,7 +623,7 @@ f_x(x_1^0,x_2^0)\left(
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-24T10:56:45+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-24T12:27:02+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月24日</p>
@@ -744,7 +812,7 @@ f_x(x_1^0,x_2^0)\left(
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-n-%E7%BB%B4%E6%AC%A7%E6%B0%8F%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-text">3.1 $n$维欧氏空间中的运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-E-n-%E4%B8%AD%E7%9A%84%E8%B6%85%E5%B9%B3%E9%9D%A2"><span class="toc-text">3.1.3 $E^n$中的超平面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%BC%80%E9%9B%86%E5%92%8C%E9%97%AD%E9%9B%86"><span class="toc-text">3.2 开集和闭集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%A2%AF%E5%BA%A6"><span class="toc-text">3.3 梯度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-%E9%93%BE%E5%BC%8F%E6%B3%95%E5%88%99%E5%92%8C%E6%96%B9%E5%90%91%E5%AF%BC%E6%95%B0"><span class="toc-text">3.3.1 链式法则和方向导数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-%E6%A2%AF%E5%BA%A6%E7%9A%84%E5%87%A0%E4%BD%95%E5%90%AB%E4%B9%89"><span class="toc-text">3.3.2 梯度的几何含义</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-n-%E7%BB%B4%E6%AC%A7%E6%B0%8F%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-text">3.1 $n$维欧氏空间中的运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-E-n-%E4%B8%AD%E7%9A%84%E8%B6%85%E5%B9%B3%E9%9D%A2"><span class="toc-text">3.1.3 $E^n$中的超平面</span></a></li></ol></li></ol>
     </div>
   </section>
 
