@@ -345,7 +345,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：513字</p>
+      <p>字数：600字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -361,7 +361,7 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：513字</p>
+      <p>字数：600字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -376,7 +376,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">513字</span>
+        <span class="post-count">600字</span>
       </span>
     </span>
  
@@ -452,7 +452,8 @@
 <p><span style='font-family:fangsong'>第二步：本证明中最精妙的地方，要构造出超平面。</span></p>
 <p>构造</p>
 <script type="math/tex; mode=display">
-\textbf{a}=\textbf{x}^0-\textbf{y}^0\neq\textbf{0},\quad\alpha=\frac12\textbf{a}^T(\textbf{x}^0+\textbf{y}^0)</script><p>得到超平面</p>
+\textbf{a}=\textbf{x}^0-\textbf{y}^0\neq\textbf{0},\quad
+\alpha=\frac12\textbf{a}^T(\textbf{x}^0+\textbf{y}^0)</script><p>得到超平面</p>
 <script type="math/tex; mode=display">
 \textbf{a}^T\textbf{x}=\alpha</script><p><span style='font-family:fangsong'>第三步：分别证明两个不等式。回忆第三章关于超平面的性质，在超平面同于法向量$\textbf{a}$方向的一侧（这里$\textbf{a}=\textbf{x}^0-\textbf{y}^0$,指向集合$S$所在的方向！）有$\textbf{a}^T\textbf{x}&gt;\alpha$，另一侧有$\textbf{a}^T\textbf{x}&lt;\alpha$。这里的证明基本上也是按照这个思路</span>。</p>
 <p>先证明第一个不等式。</p>
@@ -462,15 +463,40 @@
 =-\frac12\textbf{a}^T\textbf{a}<0</script><p>再证明第二个不等式。</p>
 <p>任取$\textbf{x}\in S,\lambda\in(0,1)$，由于$S$是凸集，有</p>
 <script type="math/tex; mode=display">
-\lambda\textbf{x}+(1-\lambda)\textbf{x}^0\in S</script></blockquote>
+\lambda\textbf{x}+(1-\lambda)\textbf{x}^0\in S</script><p>又由于$\textbf{x}^0$是$\textbf{y}^0$到闭凸集$S$最近的点，因此有</p>
+<script type="math/tex; mode=display">
+\left\Arrowvert \left[\lambda\textbf{x}+(1-\lambda)\textbf{x}^0\right] -\textbf{y}^0\right\Arrowvert^2 \geqq
+\left\Arrowvert \textbf{x}^0-\textbf{y}^0 \right\Arrowvert^2</script><p>进一步拆开并化简：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \left\Arrowvert \lambda(\textbf{x}-\textbf{x}^0)+(\textbf{x}^0-\textbf{y}^0) \right\Arrowvert^2 &\geqq&
+\left\Arrowvert \textbf{x}^0-\textbf{y}^0 \right\Arrowvert^2 \notag\\
+    \lambda^2\left\Arrowvert \textbf{x}-\textbf{x}^0\right\Arrowvert^2 +2\lambda(\textbf{x}^0-\textbf{y}^0)^T(\textbf{x}-\textbf{x}^0)+\left\Arrowvert \textbf{x}^0-\textbf{y}^0\right\Arrowvert^2 &\geqq&\left\Arrowvert \textbf{x}^0-\textbf{y}^0 \right\Arrowvert^2 \notag\\
+    \lambda\left\Arrowvert \textbf{x}-\textbf{x}^0\right\Arrowvert^2 +2(\textbf{x}^0-\textbf{y}^0)^T(\textbf{x}-\textbf{x}^0) &\geqq& 0
+\end{eqnarray}</script><p>这个式子对任意的$\lambda\in(0,1)$都成立，令$\lambda\rightarrow0$，对任意$\textbf{x}\in S$，有</p>
+<script type="math/tex; mode=display">
+(\textbf{x}^0-\textbf{y}^0)^T(\textbf{x}-\textbf{x}^0) \geqq 0</script><p>即</p>
+<script type="math/tex; mode=display">
+\textbf{a}^T\textbf{x}\geqq \textbf{a}^T\textbf{x}^0</script><p>又由于</p>
+<script type="math/tex; mode=display">
+\textbf{a}^T\textbf{x}^0-\alpha
+=\textbf{a}^T\textbf{x}^0-\frac12\textbf{a}^T(\textbf{x}^0+\textbf{y}^0)
+=\frac12\textbf{a}^T(\textbf{x}^0-\textbf{y}^0)
+=\frac12\textbf{a}^T\textbf{a}>0</script><p>第二个不等式也得到了证明！</p>
+</blockquote>
 <div align='center'>
   <img src='/../../images/%E7%AC%AC4%E7%AB%A0%E5%87%B8%E9%9B%86%E3%80%81%E5%87%B8%E9%9B%86%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86%E4%B8%8E%E6%8B%A9%E4%B8%80%E5%AE%9A%E7%90%86/IMG_1B2272549397-1.jpeg' width=450px>
   <center style='font-family:kai'>图4-7</center>
 </div>
 
-
-
-
+<hr>
+<p><span style='font-family:hei;font-size:18px'>定理4.6</span> <span style='font-family:kai'>(点与凸集的分离定理)</span>设$S\subset E^n$为凸集，且$\textbf{y}^0\notin S$。则存在超平面$\textbf{a}^T\textbf{x}=\alpha,\textbf{a}\neq0$，对任意$\textbf{x}\in S$，有</p>
+<script type="math/tex; mode=display">
+\textbf{a}^T\textbf{x}\geqq\alpha\geqq\textbf{a}^T\textbf{y}^0</script><p><span style='font-family:hei;font-size:18px'>定理4.7</span> <span style='font-family:kai'>(两个凸集之间的分离定理-严格分离)</span>设$S_1$为闭凸集，$S_2$为有界闭凸集，并且$S_1\cap S_2=\varnothing$，则存在一个超平面$\textbf{a}^T\textbf{x}=\alpha,\textbf{a}\neq0$严格分离$S_1$和$S_2$。即对于任意$\textbf{x}\in S_1$和$\textbf{y}\in S_2$，有</p>
+<script type="math/tex; mode=display">
+\textbf{a}^T\textbf{x}>\alpha>\textbf{a}^T\textbf{y}</script><p><span style='font-family:hei;font-size:18px'>定理4.8</span> <span style='font-family:kai'>(两个凸集之间的分离定理)</span>设$S_1$和$S_2$为有凸集，并且$S_1\cap S_2=\varnothing$，则存在一个超平面$\textbf{a}^T\textbf{x}=\alpha,\textbf{a}\neq0$严格分离$S_1$和$S_2$。即对于任意$\textbf{x}\in S_1$和$\textbf{y}\in S_2$，有</p>
+<script type="math/tex; mode=display">
+\textbf{a}^T\textbf{x}\geqq\alpha\geqq\textbf{a}^T\textbf{y}</script>
   
   
     
@@ -504,7 +530,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-24T11:49:37+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-24T12:17:50+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月24日</p>
