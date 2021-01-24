@@ -19,9 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>第4章凸集、凸集分离定理与择一定理 - 渝言</title>
-  
-    <meta name="keywords" content="线性规划,凸集">
+  <title>第5章凸函数与凸规划 - 渝言</title>
   
 
   
@@ -293,7 +291,7 @@
     
     
       <h1 class="title">
-        第4章凸集、凸集分离定理与择一定理
+        第5章凸函数与凸规划
       </h1>
       <div class='new-meta-box'>
         
@@ -345,13 +343,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.4k字</p>
+      <p>字数：1.6k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：6分钟</p>
+      <p>时长：8分钟</p>
     </a>
   </div>
  -->
@@ -361,13 +359,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.4k字</p>
+      <p>字数：1.6k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：6分钟</p>
+      <p>时长：8分钟</p>
     </a>
   </div> -->
 
@@ -376,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.4k字</span>
+        <span class="post-count">1.6k字</span>
       </span>
     </span>
  
@@ -385,7 +383,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">6分</span>
+        <span class="post-count">8分</span>
       </span>
     </span>
     
@@ -401,144 +399,147 @@
 
 
   
-  <h3 id="4-1-凸集和凸锥"><a href="#4-1-凸集和凸锥" class="headerlink" title="4.1 凸集和凸锥"></a>4.1 凸集和凸锥</h3><p><span style='font-family:hei;font-size:18px'>定义4.1</span> 若对任意$\textbf{x}\in S$和$\textbf{y}\in S$，以及任意实数$\lambda\in(0,1)$，都有</p>
+  <h3 id="5-2-凸函数与凹函数"><a href="#5-2-凸函数与凹函数" class="headerlink" title="5.2 凸函数与凹函数"></a>5.2 凸函数与凹函数</h3><p><span style='font-family:hei;font-size:18px'>定义5.1</span> 对于任意$\textbf{x},\textbf{y}$以及$\lambda\in(0,1)$，都有</p>
 <script type="math/tex; mode=display">
-\lambda\textbf{x}+(1-\lambda)\textbf{y}\in S</script><p>则称集合$S$为<strong>凸集</strong>。</p>
+f\left( \lambda\textbf{x} + (1-\lambda)\textbf{y} \right) \leqq
+\lambda f(\textbf{x}) + (1-\lambda)f(\textbf{y})</script><p>称$f(\textbf{x})$为<strong>凸函数</strong>。（在二维坐标系里，凸函数的形状像个对勾✅）。</p>
 <hr>
-<p><span style='font-family:hei;font-size:18px'>定理4.1</span> 设$S\neq\varnothing$，则$S$为凸集的充分必要条件是对任意$k\geqq 2$，若$\textbf{x}^l\in S,l=1,1,\cdots,k$以及$\lambda_l\geqq 0,l=1,2,\cdots,k$，$\sum_{l=1}^k \lambda_l=1$，有</p>
+<p><span style='font-family:hei;font-size:18px'>定义5.2</span>对于任意$\textbf{x},\textbf{y}$以及$\lambda\in(0,1)$，都有</p>
 <script type="math/tex; mode=display">
-\sum_{l=1}^k \lambda_l\textbf{x}^l\in S</script><hr>
-<p><span style='font-family:hei;font-size:18px'>定义4.2</span> 若对任意$S$，以及任意实数$\alpha\geqq0$，都有$\alpha\textbf{x}\in S$，则称集合$S$为<strong>锥</strong>。由定义，知道$\textbf{0}\in S(\alpha=0)$。图4-2和图4-3都是锥，但是图4-3不是凸集。</p>
-<div align='center'>
-  <img src='/../../images/%E7%AC%AC3%E7%AB%A0%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/11131611453983_.pic_hd.jpg' width=250px>
-  <center style='font-family:kai'>图 4-2</center>
-  <img src='/../../images/%E7%AC%AC3%E7%AB%A0%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/11141611453984_.pic_hd-1454436.jpg' width=250px>
-  <center style='font-family:kai'>图 4-3</center>
-</div>
-
+f\left( \lambda\textbf{x} + (1-\lambda)\textbf{y} \right) <
+\lambda f(\textbf{x}) + (1-\lambda)f(\textbf{y})</script><p>称$f(\textbf{x})$为<strong>严格凸函数</strong>。</p>
 <hr>
-<p><span style='font-family:hei;font-size:18px'>定义4.3</span> 若对任意$\textbf{x}\in S$和$\textbf{y}\in S$，以及任意实数$\alpha\geqq0,\beta\geqq0$，都有</p>
+<p>凸函数求和、实数倍以及经过单调非降的凸变换后，依然是凸函数。</p>
+<hr>
+<p><span style='font-family:hei;font-size:18px'>定理5.2</span> 函数$f(\textbf{x}),\textbf{x}\in E^n$为凸函数的充分必要条件为，对于任意$\textbf{x}$和$\textbf{y}$，单变量函数</p>
 <script type="math/tex; mode=display">
-\alpha\textbf{x}+\beta\textbf{y}\in S</script><p>则称集合$S$为<strong>凸锥</strong>。</p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定理4.2</span> 集合$S$为凸锥的充分必要条件是$S$既为凸集，也为锥。</p>
+h(\lambda)=f(\lambda\textbf{x}+(1-\lambda)\textbf{y})
+=f(\textbf{y}-\lambda(\textbf{x}-\textbf{y}))</script><p>在$[0,1]$上为凸函数。</p>
 <blockquote>
 <p>证明：</p>
-<p>必要性显然。只证充分性，已知$S$既为凸集，也为锥。任取$\textbf{x}\in S,\textbf{y}\in S,\alpha\geqq0,\beta\geqq0$，不失一般性，假设$\alpha+\beta\neq0$，则</p>
+<p>必要性：</p>
+<p>$\lambda_1\in[0,1],\lambda_2\in[0,1]$，</p>
 <script type="math/tex; mode=display">
-\alpha\textbf{x}+\beta\textbf{y}=(\alpha+\beta)\left[ \frac{\alpha}{\alpha+\beta}\textbf{x} + \frac{\beta}{\alpha+\beta}\textbf{y} \right]</script><p>不难知道$0\leqq\frac{\alpha}{\alpha+\beta}\leqq1,0\leqq\frac{\beta}{\alpha+\beta}\leqq1$，由于$S$是凸集，故</p>
+\begin{aligned}
+   h(\alpha\lambda_1+(1-\alpha)\lambda_2) &= f(\textbf{y}-(\alpha\lambda_1+(1-\alpha)\lambda_2)(\textbf{x}-\textbf{y}))\notag\\ 
+   &= f(\alpha(\textbf{y}+\lambda_1(\textbf{x}-\textbf{y}))+(1-\alpha)(\textbf{y}+\lambda_2(\textbf{x}-\textbf{y}))\notag\\
+   &\leqq \alpha f(\textbf{y}+\lambda_1(\textbf{x}-\textbf{y}))+(1-\alpha_2)f(\textbf{y}+\lambda_2(\textbf{x}-\textbf{y}))\notag\\
+   &=\alpha h(\lambda_1) + (1-\alpha)h(\lambda_2)
+\end{aligned}</script><p>因此$h(\lambda)$是$[0,1]$上的凸函数。</p>
+<p>充分性：由于$h(\lambda)$是$[0,1]$上的凸函数，</p>
 <script type="math/tex; mode=display">
-\textbf{z}=\frac{\alpha}{\alpha+\beta}\textbf{x} + \frac{\beta}{\alpha+\beta}\textbf{y}\in S</script><p>又由于$S$是锥，故</p>
+f(\alpha\textbf{x}+(1-\alpha)\textbf{y})=h(\alpha)=h(\alpha\cdot1+(1-\alpha)\cdot0)
+\leqq\alpha h(1)+(1-\alpha)h(0)</script><p>由于$h(1)=f(\textbf{x}),h(0)=f(\textbf{y})$，此时不难发现$f(\textbf{x})$为凸函数。</p>
+</blockquote>
+<p><span style='font-family:hei;font-size:18px'>定理5.3</span> 设$f(\textbf{x})$具有一阶连续偏导数，则$f(\textbf{x})$是凸函数的充分必要条件是，对任意$\textbf{x}\in E^n,\textbf{y}\in E^n$，都有</p>
 <script type="math/tex; mode=display">
-\alpha\textbf{x}+\beta\textbf{y} = (\alpha+\beta)\textbf{z}\in S</script></blockquote>
-<p><span style='font-family:hei;font-size:18px'>定理4.3</span> 任意多个（包括无穷多个）凸集的交集仍为凸集。</p>
-<p><span style='font-family:hei;font-size:18px'>定理4.4</span> 若$S$为凸集，则</p>
-<ol>
-<li>$S$的闭包$\text{cl}(S)$也是凸集。</li>
-<li>$S$的内点构成的集合$\text{Int}(S)$也是凸集。</li>
-</ol>
-<h3 id="4-2-凸集分离定理"><a href="#4-2-凸集分离定理" class="headerlink" title="4.2 凸集分离定理"></a>4.2 凸集分离定理</h3><p><span style='font-family:hei;font-size:18px'>定理4.5</span> <span style='font-family:kai'>(点与凸集的分离定理-严格分离)</span>设$S\subset E^n$为闭凸集，且$\textbf{y}^0\notin S$。则存在$\textbf{a}\in E^n,\textbf{a}\neq0$，以及数$\alpha$，对任意$\textbf{x}\in S$，有</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{y}^0<\alpha<\textbf{a}^T\textbf{x}</script><blockquote>
+f(\textbf{x})\geqq f(\textbf{y})+\nabla f(\textbf{y})^T(\textbf{x}-\textbf{y})</script><blockquote>
 <p>证明：</p>
-<p><span style='font-family:fangsong'>第一步：证明集合$S$上存在到$\textbf{y}^0$距离最近的点。</span></p>
-<p>取$\textbf{z}^0\in S$，则集合</p>
+<p>必要性：$f(\textbf{x})$是凸函数</p>
 <script type="math/tex; mode=display">
-\hat{S}=\{\textbf{x}\left\lvert\Arrowvert\textbf{y}^0-\textbf{x}\Arrowvert\leqq\Arrowvert\textbf{y}^0-\textbf{z}^0\Arrowvert\right.\}\cap S</script><p>为非空有界闭集(图4-7中橙色部分)。于是存在$\textbf{x}^0\in S$，有</p>
+f\left( \lambda\textbf{x} + (1-\lambda)\textbf{y} \right) \leqq
+\lambda f(\textbf{x}) + (1-\lambda)f(\textbf{y})</script><p>整理一下</p>
 <script type="math/tex; mode=display">
-\min_{\textbf{x}\in S}\Arrowvert\textbf{x}-\textbf{y}^0\Arrowvert=
-\min_{\textbf{x}\in \hat{S}}\Arrowvert\textbf{x}-\textbf{y}^0\Arrowvert
-=\Arrowvert\textbf{x}^0-\textbf{y}^0\Arrowvert>0</script><p>即$\textbf{x}^0$是$\textbf{y}^0$到闭凸集$S$最近的点。(如果$S$是开集，这个$\textbf{x}^0$就不一定存在于$S$了。)</p>
-<p><span style='font-family:fangsong'>第二步：本证明中最精妙的地方，要构造出超平面。</span></p>
-<p>构造</p>
-<script type="math/tex; mode=display">
-\textbf{a}=\textbf{x}^0-\textbf{y}^0\neq\textbf{0},\quad
-\alpha=\frac12\textbf{a}^T(\textbf{x}^0+\textbf{y}^0)</script><p>得到超平面</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{x}=\alpha</script><p><span style='font-family:fangsong'>第三步：分别证明两个不等式。回忆第三章关于超平面的性质，在超平面同于法向量$\textbf{a}$方向的一侧（这里$\textbf{a}=\textbf{x}^0-\textbf{y}^0$,指向集合$S$所在的方向！）有$\textbf{a}^T\textbf{x}&gt;\alpha$，另一侧有$\textbf{a}^T\textbf{x}&lt;\alpha$。这里的证明基本上也是按照这个思路</span>。</p>
-<p>先证明第一个不等式。</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{y}^0-\alpha=\textbf{a}^T\textbf{y}^0-\frac12\textbf{a}^T(\textbf{x}^0+\textbf{y}^0)
-=-\frac12\textbf{a}^T(\textbf{x}^0-\textbf{y}^0)
-=-\frac12\textbf{a}^T\textbf{a}<0</script><p>再证明第二个不等式。</p>
-<p>任取$\textbf{x}\in S,\lambda\in(0,1)$，由于$S$是凸集，有</p>
-<script type="math/tex; mode=display">
-\lambda\textbf{x}+(1-\lambda)\textbf{x}^0\in S</script><p>又由于$\textbf{x}^0$是$\textbf{y}^0$到闭凸集$S$最近的点，因此有</p>
-<script type="math/tex; mode=display">
-\left\Arrowvert \left[\lambda\textbf{x}+(1-\lambda)\textbf{x}^0\right] -\textbf{y}^0\right\Arrowvert^2 \geqq
-\left\Arrowvert \textbf{x}^0-\textbf{y}^0 \right\Arrowvert^2</script><p>进一步拆开并化简：</p>
+f(\textbf{x})\geqq\frac{f\left( \lambda\textbf{x} + (1-\lambda)\textbf{y} \right)-(1-\lambda)f(\textbf{y})}{\lambda} 
+= f(\textbf{y})+\frac{f(\textbf{y}+\lambda(\textbf{x}-\textbf{y}))-f(\textbf{y})}{\lambda}</script><p>令$\lambda\rightarrow0^+$，即可证明必要性。</p>
+<p>充分性：</p>
+<p>构造$\textbf{z}=\lambda\textbf{x} + (1-\lambda)\textbf{y}$，因此有</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
-    \left\Arrowvert \lambda(\textbf{x}-\textbf{x}^0)+(\textbf{x}^0-\textbf{y}^0) \right\Arrowvert^2 &\geqq&
-\left\Arrowvert \textbf{x}^0-\textbf{y}^0 \right\Arrowvert^2 \notag\\
-    \lambda^2\left\Arrowvert \textbf{x}-\textbf{x}^0\right\Arrowvert^2 +2\lambda(\textbf{x}^0-\textbf{y}^0)^T(\textbf{x}-\textbf{x}^0)+\left\Arrowvert \textbf{x}^0-\textbf{y}^0\right\Arrowvert^2 &\geqq&\left\Arrowvert \textbf{x}^0-\textbf{y}^0 \right\Arrowvert^2 \notag\\
-    \lambda\left\Arrowvert \textbf{x}-\textbf{x}^0\right\Arrowvert^2 +2(\textbf{x}^0-\textbf{y}^0)^T(\textbf{x}-\textbf{x}^0) &\geqq& 0\notag
-\end{eqnarray}</script><p>这个式子对任意的$\lambda\in(0,1)$都成立，令$\lambda\rightarrow0$，对任意$\textbf{x}\in S$，有</p>
+    f(\textbf{x})&\geqq& f(\textbf{z})+\nabla f(\textbf{z})^T(\textbf{x}-\textbf{z})\notag\\
+    f(\textbf{y})&\geqq& f(\textbf{z})+\nabla f(\textbf{z})^T(\textbf{y}-\textbf{z})\notag
+\end{eqnarray}</script><p>取$\lambda\in(0,1)$，有</p>
 <script type="math/tex; mode=display">
-(\textbf{x}^0-\textbf{y}^0)^T(\textbf{x}-\textbf{x}^0) \geqq 0</script><p>即</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{x}\geqq \textbf{a}^T\textbf{x}^0</script><p>又由于</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{x}^0-\alpha
-=\textbf{a}^T\textbf{x}^0-\frac12\textbf{a}^T(\textbf{x}^0+\textbf{y}^0)
-=\frac12\textbf{a}^T(\textbf{x}^0-\textbf{y}^0)
-=\frac12\textbf{a}^T\textbf{a}>0</script><p>第二个不等式也得到了证明！</p>
+\begin{aligned}
+    \lambda f(\textbf{x})+(1-\lambda)f(\textbf{y}) 
+    &\geqq f(\textbf{z}) +\lambda\nabla f(\textbf{z})^T(\textbf{x}-\textbf{z})+(1-\lambda)\nabla f(\textbf{z})^T(\textbf{y}-\textbf{z})\notag\\
+    &=f(\textbf{z}) + \nabla f(\textbf{z})^T\left[ \lambda \textbf{x}+(1-\lambda)\textbf{y} - \textbf{z} \right]\notag\\
+    &=f(\textbf{z})=f(\lambda\textbf{x} + (1-\lambda)\textbf{y})\notag
+\end{aligned}</script><p>充分性得证。</p>
 </blockquote>
-<div align='center'>
-  <img src='/../../images/%E7%AC%AC4%E7%AB%A0%E5%87%B8%E9%9B%86%E3%80%81%E5%87%B8%E9%9B%86%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86%E4%B8%8E%E6%8B%A9%E4%B8%80%E5%AE%9A%E7%90%86/IMG_1B2272549397-1.jpeg' width=450px>
-  <center style='font-family:kai'>图4-7</center>
-</div>
-
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定理4.6</span> <span style='font-family:kai'>(点与凸集的分离定理)</span>设$S\subset E^n$为凸集，且$\textbf{y}^0\notin S$。则存在超平面$\textbf{a}^T\textbf{x}=\alpha,\textbf{a}\neq0$，对任意$\textbf{x}\in S$，有</p>
+<p><span style='font-family:hei;font-size:18px'>定理5.4</span> 设$f(\textbf{x})$具有一阶连续偏导数，则$f(\textbf{x})$是凸函数的充分必要条件是，对任意$\textbf{x}\in E^n,\textbf{y}\in E^n$，都有</p>
 <script type="math/tex; mode=display">
-\textbf{a}^T\textbf{x}\geqq\alpha\geqq\textbf{a}^T\textbf{y}^0</script><p><span style='font-family:hei;font-size:18px'>定理4.7</span> <span style='font-family:kai'>(两个凸集之间的分离定理-严格分离)</span>设$S_1$为闭凸集，$S_2$为有界闭凸集，并且$S_1\cap S_2=\varnothing$，则存在一个超平面$\textbf{a}^T\textbf{x}=\alpha,\textbf{a}\neq0$严格分离$S_1$和$S_2$。即对于任意$\textbf{x}\in S_1$和$\textbf{y}\in S_2$，有</p>
+(\nabla f(\textbf{x})-\nabla f(\textbf{y}))(\textbf{x}-\textbf{y})\geqq0</script><p>(<span style='font-family:fangsong'>直观来看，就是随着自变量增大，导数值也越来越大。</span>)</p>
+<p><span style='font-family:hei;font-size:18px'>定理5.5</span> 设$f(\textbf{x})$具有二阶连续偏微商，则$f(\textbf{x})$是凸函数的充分必要条件是海赛矩阵</p>
 <script type="math/tex; mode=display">
-\textbf{a}^T\textbf{x}>\alpha>\textbf{a}^T\textbf{y}</script><p><span style='font-family:hei;font-size:18px'>定理4.8</span> <span style='font-family:kai'>(两个凸集之间的分离定理)</span>设$S_1$和$S_2$为有凸集，并且$S_1\cap S_2=\varnothing$，则存在一个超平面$\textbf{a}^T\textbf{x}=\alpha,\textbf{a}\neq0$严格分离$S_1$和$S_2$。即对于任意$\textbf{x}\in S_1$和$\textbf{y}\in S_2$，有</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{x}\geqq\alpha\geqq\textbf{a}^T\textbf{y}</script><h3 id="4-3-Farkas定理"><a href="#4-3-Farkas定理" class="headerlink" title="4.3 Farkas定理"></a>4.3 Farkas定理</h3><p>可以参考知乎问题<a href='https://www.zhihu.com/question/279644412' target='_blank'>如何理解farkas引理？</a></p>
-<p><span style='font-family:hei;font-size:18px'>定义4.5</span> 设$\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n\in E^n$，记</p>
-<script type="math/tex; mode=display">
-\{\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n\}^{\angle} = \left\{ \left.\sum_{j=1}^n \textbf{P}_jx_j \right\lvert x_j\geqq0,j=1,2,\cdots,n \right\}</script><p>称$\{\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n\}^{\angle}$为由向量组$\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n$生成的<strong>多面锥</strong>。</p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定理4.9</span> <span style='font-family:kai'>(Farkas定理)</span>设</p>
-<script type="math/tex; mode=display">
-\textbf{A}=(\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n)_{m\times n},\quad \textbf{b}=\textbf{b}_{m\times1}</script><p>则$\textbf{Ax}=\textbf{b},\textbf{x}\geqq\textbf0$有解的充分必要条件是：对于任意满足$\textbf{u}^T\textbf{A}\geqq\textbf{0}$的$\textbf{u}$，都有$\textbf{u}^T\textbf{b}\geqq\textbf{0}$。</p>
-<p>首先对Farkas定理作一下直观的解释。矩阵$\textbf{A}$的列空间$\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n$可以展成一个多面锥$\{\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n\}^{\angle}$。对于向量$\textbf{b}\in E^n$，只可能存在两种情况：</p>
-<ol>
-<li>$\textbf{b}\in\{\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n\}^{\angle}$</li>
-<li>$\textbf{b}\notin\{\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n\}^{\angle}$</li>
-</ol>
-<p>对于第1种情况，肯定能找到一组非负的$\{x_1,x_2\cdots,x_n\}$使得</p>
-<script type="math/tex; mode=display">
-\textbf{b}=x_1\textbf{P}_1+x_2\textbf{P}_2+\cdots+x_n\textbf{P}_n=\textbf{Ax}</script><p>这也就是定理说明的情况，如下面左图。反之对于第2种情况，点（向量）$\textbf{b}$在多面锥（不难证明是凸锥）之外，根据点与凸集的分离定理，肯定能够找到一个过原点的超平面，使得$\textbf{b}$在一边，凸锥在另外一边。如下面右图所示，超平面的方程是$\hat{\textbf{y}}^T\textbf{x}=0$，于是有$\hat{\textbf{y}}^T\textbf{b}\geqq 0$同时$\hat{\textbf{y}}^T\textbf{P}\leqq0$。（难受啊，图中的法向量$\hat{\textbf{y}}$方向画反了！！但是大家都能理解吧！）</p>
-<div align='center'>
-  <img src='/../../images/%E7%AC%AC4%E7%AB%A0%E5%87%B8%E9%9B%86%E3%80%81%E5%87%B8%E9%9B%86%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86%E4%B8%8E%E6%8B%A9%E4%B8%80%E5%AE%9A%E7%90%86/v2-8ec154c9eddfc4ab7f2a28f9444d0c35_r.jpg' width=500px>
-  <p align='left' style='font-family:kai'>左为b在凸锥内的情况，右图为b在凸锥外的情况，总能找到过原点的超平面（二维情况下为直线，法向量为y），把b和凸锥分开。</p>
-</div>
-
-<p>最后给出严格证明：</p>
+\nabla^2f(\textbf{x}) =
+\left[\begin{matrix}
+    \frac{\partial^2f(\textbf{x})}{\partial x_1 \partial x_1} & \frac{\partial^2f(\textbf{x})}{\partial x_1 \partial x_2} &\cdots & \frac{\partial^2f(\textbf{x})}{\partial x_1 \partial x_n}\\
+    \frac{\partial^2f(\textbf{x})}{\partial x_2 \partial x_1} & \frac{\partial^2f(\textbf{x})}{\partial x_2 \partial x_2} & \cdots & \frac{\partial^2f(\textbf{x})}{\partial x_2 \partial x_n}\\
+    \vdots & \vdots & & \vdots\\
+    \frac{\partial^2f(\textbf{x})}{\partial x_n \partial x_1} & \frac{\partial^2f(\textbf{x})}{\partial x_n \partial x_2} & \cdots & \frac{\partial^2f(\textbf{x})}{\partial x_n \partial x_n}
+\end{matrix}\right]</script><p>为半正定。</p>
 <blockquote>
 <p>证明：</p>
-<p>必要性很容易证明，下面用反证法证明充分性。</p>
-<p>对于任意满足$\textbf{u}^T\textbf{A}\geqq\textbf{0}$的$\textbf{u}$，都有$\textbf{u}^T\textbf{b}\geqq\textbf{0}$。但$\textbf{Ax}=\textbf{b},\textbf{x}\geqq\textbf{0}$无解。因此</p>
+<p>必要性：</p>
+<p>$f(\textbf{x})$是凸函数，对任意$\textbf{z}\in E^n,\lambda\in(0,1)$，由泰勒展开式，</p>
 <script type="math/tex; mode=display">
-\textbf{b}\notin\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
-=\left\{ \left.\sum_{j=1}^n \textbf{P}_jx_j\right\lvert x_j\geqq 0,j=1,2,\cdots,n\right\}</script><p>考虑集合</p>
+f(\textbf{x}+\lambda\textbf{z})=f(\textbf{x})+\lambda\nabla f(\textbf{x})\textbf{z}+\frac12\lambda^2\textbf{z}^T\nabla^2f(\textbf{x})\textbf{z}+o(\lambda^2)</script><p>根据定理5.3:</p>
 <script type="math/tex; mode=display">
-S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
-=\left\{ \left.\sum_{j=1}^n \textbf{P}_jx_j\right\lvert x_j\geqq 0,j=1,2,\cdots,n\right\}</script><p>$S$为闭凸集，由点与凸集的严格分离定理，存在$\textbf{a}\neq0$以及$\alpha$，对于任意$\textbf{z}\in S$，有</p>
+f(\textbf{x}+\lambda\textbf{z})\geqq f(\textbf{x})+\lambda\nabla f(\textbf{x})\textbf{z}</script><p>结合得到</p>
 <script type="math/tex; mode=display">
-\textbf{a}^T\textbf{z}>\alpha>\textbf{a}^T\textbf{b}\tag{4.6}</script><p>注意到$\textbf{0}\in S$，由（4.6），有$0&gt;\textbf{a}^T\textbf{b}$。下面要证明，对于任意$\textbf{z}\in S$，有</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{z} \geqq 0</script><p>(<span style='color:red'>这个可以反证法证明，暂时略过</span>)得到了</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{z} \geqq 0>\textbf{a}^T\textbf{b}\tag{4.8}</script><p>又由于$\textbf{P}_j\in S,j=1,2,\cdots,n$，由（4.8），有</p>
-<script type="math/tex; mode=display">
-\text{a}^T\textbf{P}_j\geqq 0,j=1,2,\cdots,n</script><p>即$\text{a}$满足</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{A}\geqq\textbf{0},\textbf{a}^T\textbf{b}<0</script><p>这与已知条件不符。证毕。</p>
+\frac12\lambda^2\textbf{z}^T\nabla^2f(\textbf{x})\textbf{z}+o(\lambda^2) \geqq0
+\Rightarrow \textbf{z}^T\nabla^2f(\textbf{x})\textbf{z}\geqq0</script><p>很明显海赛矩阵半正定。</p>
 </blockquote>
+<p>严格凸函数也有类似的一套定理。</p>
+<h3 id="5-3-凸规划的性质"><a href="#5-3-凸规划的性质" class="headerlink" title="5.3 凸规划的性质"></a>5.3 凸规划的性质</h3><p>考虑线性规划</p>
+<script type="math/tex; mode=display">
+(P)\left\{
+    \begin{aligned}
+        &\min f(\textbf{x}) \notag\\
+        &g_i(\textbf{x}) \geqq0,i=1,2,\cdots,m
+    \end{aligned}
+\right.</script><p>记$(P)$的最优解集为$R^\star$，约束集合$R$为</p>
+<script type="math/tex; mode=display">
+R = \{ \textbf{x}\lvert g_i(\textbf{x})\geqq0,i=1,2,\cdots,m \}</script><p><span style='font-family:hei;font-size:18px'>定义5.4</span> 若目标函数$f(\textbf{x})$为凸函数，约束函数$g_i(\textbf{x})$为凹函数，则称$(P)$为<strong>凸规划</strong>。</p>
+<p><span style='font-family:hei;font-size:18px'>引理5.1</span> 设$f(\textbf{x})$为凸函数，则对于任意实数$\alpha$，<strong>水平集合</strong></p>
+<script type="math/tex; mode=display">
+L_\alpha^f=\{ \textbf{x}\lvert f(\textbf{x})\leqq\alpha \}</script><p>为凸集。</p>
+<blockquote>
+<p>证明：</p>
+<p>对于任意$\textbf{x}\in L_\alpha^f,\textbf{y}\in L_\alpha^f$，有</p>
+<script type="math/tex; mode=display">
+f(\textbf{x})\leqq\alpha,f(\textbf{y})\leqq\alpha</script><p>由于$f(\textbf{x})$是凸函数，对于任意的$\lambda\in(0,1)$</p>
+<script type="math/tex; mode=display">
+f(\lambda\textbf{x}+(1-\lambda)\textbf{y})\leqq\lambda f(\textbf{x})+(1-\lambda)f(\textbf{y})\leqq\alpha</script><p>即$\lambda\textbf{x}+(1-\lambda)\textbf{y}\in L_\alpha^f$，因此$L_\alpha^f$是凸集。</p>
+</blockquote>
+<p><span style='font-family:hei;font-size:18px'>定理5.10</span> 对于凸规划$(P)$，有</p>
+<p>（1）约束集合</p>
+<script type="math/tex; mode=display">
+R=\{ \textbf{x}\lvert g_i(\textbf{x})\geqq 0,i=1,2,\cdots,m \}</script><p>为凸集。</p>
+<p>（2）最优解集合$R^*$为凸集。</p>
+<blockquote>
+<p>证明：</p>
+<p>（1）设</p>
+<script type="math/tex; mode=display">
+R=R_1\cap R_2\cap\cdots\cap R_m</script><p>其中</p>
+<script type="math/tex; mode=display">
+R_i=\{ \textbf{x}\lvert g_i(\textbf{x})\geqq 0\}
+=\{ \textbf{x}\lvert -g_i(\textbf{x})\leqq 0\}
+=L_0^{-g_i}</script><p>$-g_i$是凸函数，根据引理5.1，$R_i$是凸集；又由于任意个凸集的交集也是凸集，即$R$是凸集。</p>
+<p>（2）不妨假设$R^\star\neq\varnothing$，取$\bar{\textbf{x}}\in R^\star$，则$(P)$的最优解集合</p>
+<script type="math/tex; mode=display">
+R^\star=R\cap\{\textbf{x}\lvert f(\textbf{x})=f(\bar{\textbf{x}})\}</script><p>不难看出</p>
+<script type="math/tex; mode=display">
+R^\star=R\cap\{\textbf{x}\lvert f(\textbf{x})\leqq f(\bar{\textbf{x}})\}
+=R\cap L_{f(\bar{\textbf{x}})}^f</script><p>由于$f(\textbf{x})$是凸函数，根据引理5.1，$L_{f(\bar{\textbf{x}})}^f$是凸集。根据（1），$R$也是凸集，因此$R^\star$是凸集。</p>
+</blockquote>
+<p><span style='font-family:hei;font-size:18px'>定理5.11</span> 对于凸规划$(P)$，若$f(\textbf{x})$为严格凸函数，且$R^\star\neq\varnothing$，则$(P)$的最优解唯一。</p>
+<blockquote>
+<p>证明：（反证法）</p>
+<p>设$\bar{\textbf{x}}\in R^\star,\bar{\textbf{y}}\in R^\star,\bar{\textbf{x}}\neq\bar{\textbf{y}}$，有$f(\bar{\textbf{x}})=f(\bar{\textbf{y}})$。取$\lambda\in(0,1)$，由于$R$是凸集，因此</p>
+<script type="math/tex; mode=display">
+\lambda\bar{\textbf{x}}+(1-\lambda)\bar{\textbf{y}}\in R</script><p>又因为$f(\textbf{x})$为严格凸函数，因此</p>
+<script type="math/tex; mode=display">
+f(\lambda\bar{\textbf{x}}+(1-\lambda)\bar{\textbf{y}})
+<\lambda f(\bar{\textbf{x}}) + (1-\lambda)f(\bar{\textbf{y}}) 
+=f(\bar{\textbf{x}})=f(\bar{\textbf{y}})</script><p>与$\bar{\textbf{x}}\in R^\star,\bar{\textbf{y}}\in R^\star,\bar{\textbf{x}}\neq\bar{\textbf{y}}$矛盾。定理得证。</p>
+</blockquote>
+<p><span style='font-family:hei;font-size:18px'>定义5.5</span> 设$\bar{\textbf{x}}\in R$，若存在邻域$N_\delta(\bar{\textbf{x}})$，使得对任意$\textbf{x}\in R\cap N_\delta(\bar{\textbf{x}})$，有</p>
+<script type="math/tex; mode=display">
+f(\textbf{x})\geqq f(\bar{\textbf{x}})</script><p>称$\bar{\textbf{x}}$是的$(P)$<strong>局部最优解</strong>。</p>
+<p><span style='font-family:hei;font-size:18px'>定理5.12</span> 对于凸规划$(P)$，若$\bar{\textbf{x}}$是$(P)$的局部最优解，则$\bar{\textbf{x}}$必定是$(P)$的最优解。</p>
+<p><span style='font-family:fangsong'>注意定义5.5中的$N_\delta(\bar{\textbf{x}})$是一个开集，因此如果$\bar{\textbf{x}}$不是全局最优解，那么只能取在边界上，而开集是不能取在边界上的。</span></p>
 
   
   
@@ -556,7 +557,7 @@ S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
               
             
               
-                <p>本文永久链接是：<a href=https://dhndzwxj.github.io/2021/01/24/%E7%AC%AC4%E7%AB%A0%E5%87%B8%E9%9B%86%E3%80%81%E5%87%B8%E9%9B%86%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86%E4%B8%8E%E6%8B%A9%E4%B8%80%E5%AE%9A%E7%90%86/>https://dhndzwxj.github.io/2021/01/24/%E7%AC%AC4%E7%AB%A0%E5%87%B8%E9%9B%86%E3%80%81%E5%87%B8%E9%9B%86%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86%E4%B8%8E%E6%8B%A9%E4%B8%80%E5%AE%9A%E7%90%86/</a></p>
+                <p>本文永久链接是：<a href=https://dhndzwxj.github.io/2021/01/24/%E7%AC%AC5%E7%AB%A0%E5%87%B8%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%B8%E8%A7%84%E5%88%92/>https://dhndzwxj.github.io/2021/01/24/%E7%AC%AC5%E7%AB%A0%E5%87%B8%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%B8%E8%A7%84%E5%88%92/</a></p>
               
             
           </blockquote>
@@ -573,10 +574,10 @@ S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-24T18:36:08+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-25T02:05:54+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年1月24日</p>
+    <p>更新于：2021年1月25日</p>
   </a>
 </div>
 
@@ -584,9 +585,6 @@ S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>线性规划</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E5%87%B8%E9%9B%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>凸集</p></a></div>
-
 
         
       
@@ -598,7 +596,7 @@ S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dhndzwxj.github.io/2021/01/24/%E7%AC%AC4%E7%AB%A0%E5%87%B8%E9%9B%86%E3%80%81%E5%87%B8%E9%9B%86%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86%E4%B8%8E%E6%8B%A9%E4%B8%80%E5%AE%9A%E7%90%86/&title=第4章凸集、凸集分离定理与择一定理 - 渝言&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dhndzwxj.github.io/2021/01/24/%E7%AC%AC5%E7%AB%A0%E5%87%B8%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%B8%E8%A7%84%E5%88%92/&title=第5章凸函数与凸规划 - 渝言&summary="
           
           >
           
@@ -610,7 +608,7 @@ S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dhndzwxj.github.io/2021/01/24/%E7%AC%AC4%E7%AB%A0%E5%87%B8%E9%9B%86%E3%80%81%E5%87%B8%E9%9B%86%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86%E4%B8%8E%E6%8B%A9%E4%B8%80%E5%AE%9A%E7%90%86/&title=第4章凸集、凸集分离定理与择一定理 - 渝言&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dhndzwxj.github.io/2021/01/24/%E7%AC%AC5%E7%AB%A0%E5%87%B8%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%B8%E8%A7%84%E5%88%92/&title=第5章凸函数与凸规划 - 渝言&summary="
           
           >
           
@@ -622,7 +620,7 @@ S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://dhndzwxj.github.io/2021/01/24/%E7%AC%AC4%E7%AB%A0%E5%87%B8%E9%9B%86%E3%80%81%E5%87%B8%E9%9B%86%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86%E4%B8%8E%E6%8B%A9%E4%B8%80%E5%AE%9A%E7%90%86/&title=第4章凸集、凸集分离定理与择一定理 - 渝言&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://dhndzwxj.github.io/2021/01/24/%E7%AC%AC5%E7%AB%A0%E5%87%B8%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%B8%E8%A7%84%E5%88%92/&title=第5章凸函数与凸规划 - 渝言&summary="
           
           >
           
@@ -652,20 +650,12 @@ S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
   
     <div class="prev-next">
       
-        <a class='prev' href='../%E7%AC%AC5%E7%AB%A0%E5%87%B8%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%B8%E8%A7%84%E5%88%92/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>第5章凸函数与凸规划</p>
-          <p class='content'>5.2 凸函数与凹函数定义5.1 对于任意$\textbf{x},\textbf{y}$以及$\lambda\in(0,1)$，都有
-
-f\left( \lambda\textbf{x} + (...</p>
-        </a>
       
-      
-        <a class='next' href='../../22/%E7%AC%AC3%E7%AB%A0%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/'>
-          <p class='title'>第3章预备知识<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>3.1 $n$维欧氏空间中的运算3.1.3 $E^n$中的超平面令$b$为实数，并且
+        <a class='next' href='../%E7%AC%AC4%E7%AB%A0%E5%87%B8%E9%9B%86%E3%80%81%E5%87%B8%E9%9B%86%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86%E4%B8%8E%E6%8B%A9%E4%B8%80%E5%AE%9A%E7%90%86/'>
+          <p class='title'>第4章凸集、凸集分离定理与择一定理<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>4.1 凸集和凸锥定义4.1 若对任意$\textbf{x}\in S$和$\textbf{y}\in S$，以及任意实数$\lambda\in(0,1)$，都有
 
-\begin{eqnarray}
-    \bf{a} &=& (a_1,a_2,\cdots,a_n)^...</p>
+\lambda\textbf...</p>
         </a>
       
     </div>
@@ -763,7 +753,7 @@ f\left( \lambda\textbf{x} + (...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%87%B8%E9%9B%86%E5%92%8C%E5%87%B8%E9%94%A5"><span class="toc-text">4.1 凸集和凸锥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%87%B8%E9%9B%86%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86"><span class="toc-text">4.2 凸集分离定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-Farkas%E5%AE%9A%E7%90%86"><span class="toc-text">4.3 Farkas定理</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E5%87%B8%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%B9%E5%87%BD%E6%95%B0"><span class="toc-text">5.2 凸函数与凹函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E5%87%B8%E8%A7%84%E5%88%92%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">5.3 凸规划的性质</span></a></li></ol>
     </div>
   </section>
 
@@ -783,7 +773,7 @@ f\left( \lambda\textbf{x} + (...</p>
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="第4章凸集、凸集分离定理与择一定理";
+  pdata.postTitle="第5章凸函数与凸规划";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
