@@ -343,7 +343,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.6k字</p>
+      <p>字数：1.7k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -359,7 +359,7 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.6k字</p>
+      <p>字数：1.7k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -374,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.6k字</span>
+        <span class="post-count">1.7k字</span>
       </span>
     </span>
  
@@ -459,7 +459,7 @@ f(\textbf{x})\geqq\frac{f\left( \lambda\textbf{x} + (1-\lambda)\textbf{y} \right
 </blockquote>
 <p><span style='font-family:hei;font-size:18px'>定理5.4</span> 设$f(\textbf{x})$具有一阶连续偏导数，则$f(\textbf{x})$是凸函数的充分必要条件是，对任意$\textbf{x}\in E^n,\textbf{y}\in E^n$，都有</p>
 <script type="math/tex; mode=display">
-(\nabla f(\textbf{x})-\nabla f(\textbf{y}))(\textbf{x}-\textbf{y})\geqq0</script><p>(<span style='font-family:fangsong'>直观来看，就是随着自变量增大，导数值也越来越大。</span>)</p>
+(\nabla f(\textbf{x})-\nabla f(\textbf{y}))^T(\textbf{x}-\textbf{y})\geqq0</script><p>(<span style='font-family:fangsong'>直观来看，就是随着自变量增大，导数值也越来越大。</span>)</p>
 <p><span style='font-family:hei;font-size:18px'>定理5.5</span> 设$f(\textbf{x})$具有二阶连续偏微商，则$f(\textbf{x})$是凸函数的充分必要条件是海赛矩阵</p>
 <script type="math/tex; mode=display">
 \nabla^2f(\textbf{x}) =
@@ -480,8 +480,14 @@ f(\textbf{x}+\lambda\textbf{z})\geqq f(\textbf{x})+\lambda\nabla f(\textbf{x})\t
 <script type="math/tex; mode=display">
 \frac12\lambda^2\textbf{z}^T\nabla^2f(\textbf{x})\textbf{z}+o(\lambda^2) \geqq0
 \Rightarrow \textbf{z}^T\nabla^2f(\textbf{x})\textbf{z}\geqq0</script><p>很明显海赛矩阵半正定。</p>
+<p>充分性：</p>
+<p>由泰勒展开式，</p>
+<script type="math/tex; mode=display">
+f(\textbf{x}+\lambda\textbf{y})=f(\textbf{x})+\lambda\nabla f(\textbf{x})\textbf{y}+\frac12\lambda^2\textbf{y}^T\nabla^2f(\bar{\textbf{z}})\textbf{y}</script><p>根据中值定理，其中$\bar{\textbf{z}}=\bar{\alpha}\textbf{x}+(1-\bar{\alpha})\textbf{y}$。由海赛矩阵半正定，可以得出</p>
+<script type="math/tex; mode=display">
+f(\textbf{x}+\lambda\textbf{y})\geqq f(\textbf{x})+\lambda\nabla f(\textbf{x})\textbf{y}</script><p>充分性得证。</p>
 </blockquote>
-<p>严格凸函数也有类似的一套定理。</p>
+<p>严格凸函数也有类似的一套定理，略。</p>
 <h3 id="5-3-凸规划的性质"><a href="#5-3-凸规划的性质" class="headerlink" title="5.3 凸规划的性质"></a>5.3 凸规划的性质</h3><p>考虑线性规划</p>
 <script type="math/tex; mode=display">
 (P)\left\{
@@ -574,7 +580,7 @@ f(\textbf{x})\geqq f(\bar{\textbf{x}})</script><p>称$\bar{\textbf{x}}$是的$(P
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-25T02:05:54+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-25T02:13:54+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月25日</p>
