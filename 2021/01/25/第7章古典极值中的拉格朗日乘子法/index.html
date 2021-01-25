@@ -19,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>第7章古典极值中的拉格朗日乘子法 - 渝言</title>
+  <title>第7章极值问题的求解 - 渝言</title>
+  
+    <meta name="keywords" content="拉格朗日乘子法,库恩-塔克条件,包络定理">
   
 
   
@@ -291,7 +293,7 @@
     
     
       <h1 class="title">
-        第7章古典极值中的拉格朗日乘子法
+        第7章极值问题的求解
       </h1>
       <div class='new-meta-box'>
         
@@ -343,13 +345,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：405字</p>
+      <p>字数：1.3k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
+      <p>时长：6分钟</p>
     </a>
   </div>
  -->
@@ -359,13 +361,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：405字</p>
+      <p>字数：1.3k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
+      <p>时长：6分钟</p>
     </a>
   </div> -->
 
@@ -374,7 +376,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">405字</span>
+        <span class="post-count">1.3k字</span>
       </span>
     </span>
  
@@ -383,7 +385,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
+        <span class="post-count">6分</span>
       </span>
     </span>
     
@@ -423,10 +425,10 @@
     &\textbf{x}\in E^n \notag
 \end{aligned}\right.</script><p>这个凸规划的最优值是参数$\alpha$的函数，设为</p>
 <script type="math/tex; mode=display">
-v(\alpha) = f(\textbf{x}^\star(\alpha),\alpha)</script><p>下面要求<span style='color:red'>参数的变化如何影响最优值对应的自变量</span>：也就是求$D_\alpha[\textbf{x}^\star(\alpha)]$。基于$\nabla f(\textbf{x}^\star,\alpha)=0$求全微分。</p>
+v(\alpha) = f(\textbf{x}^\star(\alpha),\alpha)</script><p>下面要求<span style='color:red'>参数的变化如何影响最优值对应的自变量</span>：也就是求$D_\alpha[\textbf{x}^\star(\alpha)]$。基于$\nabla f(\textbf{x}^\star,\alpha)=0$关于$\alpha$求导数。</p>
 <script type="math/tex; mode=display">
 f_{\textbf{x}\textbf{x}}(\textbf{x}^\star,\alpha)D_\alpha[\textbf{x}^\star(\alpha)]+
-f_{\textbf{x}\alpha}(\textbf{x}^\star,\alpha) = 0</script><p>于是得到</p>
+f_{\textbf{x}\alpha}(\textbf{x}^\star,\alpha) = 0</script><p>于是得到(注意下面的式子不符合矩阵运算的法则)</p>
 <script type="math/tex; mode=display">
 D_\alpha[\textbf{x}^\star(\alpha)] = -\frac{f_{\textbf{x}\alpha}(\textbf{x}^\star,\alpha)}{f_{\textbf{x}\textbf{x}}(\textbf{x}^\star,\alpha)}</script><p>下面要看<span style='color:red'>参数的变化如何影响最优值</span>：</p>
 <script type="math/tex; mode=display">
@@ -434,12 +436,91 @@ D_\alpha[\textbf{x}^\star(\alpha)] = -\frac{f_{\textbf{x}\alpha}(\textbf{x}^\sta
 f_{\textbf{x}}(\textbf{x}^\star,\alpha)D_\alpha[\textbf{x}^\star(\alpha)] +
 f_\alpha(\textbf{x}^\star,\alpha)</script><p>注意到$f_{\textbf{x}}(\textbf{x}^\star,\alpha)=\nabla f(\textbf{x}^\star,\alpha)=0$，因此$\frac{\partial v(\alpha)}{\partial\alpha} = f_\alpha(\textbf{x}^\star,\alpha)$。</p>
 <p><span style='font-family:fangsong'>注意：上面的$\alpha$可以是向量（多个参数）。</span></p>
+<p><span style='font-family:fangsong'>$\nabla$和$D$的区别：前者用于向量对一个向量求导，后者对应于向量对一个标量求导。</span></p>
 <h3 id="7-1-拉格朗日乘子法（等式约束）"><a href="#7-1-拉格朗日乘子法（等式约束）" class="headerlink" title="7.1 拉格朗日乘子法（等式约束）"></a>7.1 拉格朗日乘子法（等式约束）</h3><script type="math/tex; mode=display">
 (P)\left\{
 \begin{aligned}
-    &\min f(\textbf{x})\notag\\
-    &h_i(\textbf{x}) = 0,\quad i=1,2,\cdots,m \notag
-\end{aligned}\right.</script>
+    &\min f(\textbf{x}),\quad \textbf{x}\in E^n\notag\\
+    &g_i(\textbf{x}) = 0,\quad i=1,2,\cdots,m \notag
+\end{aligned}\right.</script><p>构造拉格朗日函数</p>
+<script type="math/tex; mode=display">
+\mathscr{L} =f(\textbf{x})-\sum_{i=1}^m\lambda_i g_i(\textbf{x})</script><p>一阶条件</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+    \nabla_\textbf{x} \mathscr{L} &= \nabla_\textbf{x}f(\textbf{x}) - \sum_{i=1}^m\lambda_i \nabla_\textbf{x}g_i(\textbf{x}) =0 \notag\\
+    \frac{\partial{\mathscr{L}}}{\partial\lambda_i} &= -g_i(\textbf{x}) =0 \notag
+\end{aligned}
+\right.</script><hr>
+<p>其对偶问题</p>
+<script type="math/tex; mode=display">
+(P)\left\{
+\begin{aligned}
+    &\max f(\textbf{x}),\quad \textbf{x}\in E^n\notag\\
+    &g_i(\textbf{x}) = 0,\quad i=1,2,\cdots,m \notag
+\end{aligned}\right.</script><p>构造拉格朗日函数</p>
+<script type="math/tex; mode=display">
+\mathscr{L} = -f(\textbf{x})-\sum_{i=1}^m\lambda_i g_i(\textbf{x})</script><p>事实上与下式是等价的</p>
+<script type="math/tex; mode=display">
+\mathscr{L} =f(\textbf{x})+\sum_{i=1}^m\lambda_i g_i(\textbf{x})</script><p>拉格朗日乘子法对于乘子$\lambda=(\lambda_1,\lambda_2,\cdots,\lambda_n)^T$没有非负性的要求，与后面的库恩-塔克定理是不同的。</p>
+<hr>
+<h4 id="拉格朗日乘子法的集合含义"><a href="#拉格朗日乘子法的集合含义" class="headerlink" title="拉格朗日乘子法的集合含义"></a>拉格朗日乘子法的集合含义</h4><p>对于二维情形，由图7-1，$\bar{\textbf{x}}=(x_1,x_2)^T$是凸规划$(P)$的最优解。在最优解处，等高线</p>
+<script type="math/tex; mode=display">
+\{\left.(x_1,x_2)^T\right\lvert f(x_1,x_2) = f(\bar{\textbf{x}})\}</script><p>与约束条件</p>
+<script type="math/tex; mode=display">
+h_1(x_1,x_2)=0</script><p>有相同的切线$l$。由于梯度方向是切线的法方向，二者的梯度在同一条直线上，并且方向相反，因此存在$\bar{\lambda}_1&lt;0$，有</p>
+<script type="math/tex; mode=display">
+\left( \frac{\partial f(\bar{x}_1,\bar{x}_2)}{\partial x_1}, \frac{\partial f(\bar{x}_1,\bar{x}_2)}{\partial x_2}\right)
+=\bar{\lambda}_1
+\left( \frac{\partial h_1(\bar{x}_1,\bar{x}_2)}{\partial x_1}, \frac{\partial h_1(\bar{x}_1,\bar{x}_2)}{\partial x_2}\right)</script><div align='center'>
+  <img src='/../../images/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/11151611577348_.pic_hd.jpg' width =500px>
+  <center style='font-family:kai'>图7-1</center>
+</div>
+
+<h3 id="7-3-最优解的充分条件和必要条件"><a href="#7-3-最优解的充分条件和必要条件" class="headerlink" title="7.3 最优解的充分条件和必要条件"></a>7.3 最优解的充分条件和必要条件</h3><p><span style='font-family:hei;font-size:18px'>定理 7.5</span> <span style='font-family:kai'>(充分条件)</span>设$f(\textbf{x})$和$g_i(\textbf{x}),i=1,2,\cdots,m$具有二阶连续偏导数，$\bar{\textbf{x}},\bar{\lambda}$满足拉格朗日条件（L-条件），即</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+    \nabla_\textbf{x} \mathscr{L} &= \nabla_\textbf{x}f(\bar{\textbf{x}}) - \sum_{i=1}^m\bar{\lambda}_i \nabla_\textbf{x}g_i(\bar{\textbf{x}}) =0 \notag\\
+    \frac{\partial{\mathscr{L}}}{\partial\lambda_i} &= -g_i(\bar{\textbf{x}}) =0 \notag
+\end{aligned}
+\right.</script><p>并且<span style='background:yellow'>$\mathscr{L}$关于$\textbf{x}$的海赛矩阵</span></p>
+<script type="math/tex; mode=display">
+\nabla^2_{\textbf{x}\textbf{x}}\mathscr{L}=\nabla^2_{\textbf{x}\textbf{x}}f(\bar{\textbf{x}})-
+\sum_{i=1}^m\bar{\lambda}_i \nabla_{\textbf{x}\textbf{x}}g_i(\bar{\textbf{x}})</script><p>为<span style='color:red'>半正定矩阵</span>，则$\bar{\textbf{x}}$是$(P)$的<span style='color:red'>最优解</span>；若为<span style='color:blue'>正定矩阵</span>，就是<span style='color:blue'>唯一的最优解</span>。</p>
+<p><span style='font-family:hei;font-size:18px'>定理 7.6</span> <span style='font-family:kai'>(必要条件)</span>设$\bar{\textbf{x}}\in E^n$为$(P)$的最优解，并且</p>
+<script type="math/tex; mode=display">
+\nabla_\textbf{x}g(\bar{\textbf{x}}) = 
+(\nabla_\textbf{x}g_1(\bar{\textbf{x}}),\nabla_\textbf{x}g_2(\bar{\textbf{x}}),\cdots,\nabla_\textbf{x}g_m(\bar{\textbf{x}}))^T</script><p>的秩为$m\le n$，则存在$\bar{\lambda}$，使得$\bar{\textbf{x}},\bar{\lambda}$满足拉格朗日条件。</p>
+<h3 id="7-4-拉格朗日乘子的经济含义——影子价格"><a href="#7-4-拉格朗日乘子的经济含义——影子价格" class="headerlink" title="7.4 拉格朗日乘子的经济含义——影子价格"></a>7.4 拉格朗日乘子的经济含义——影子价格</h3><p>考虑下面的规划(参数出现在约束条件右侧，可以理解为一种“资源约束”)</p>
+<script type="math/tex; mode=display">
+(P)\left\{
+\begin{aligned}
+    &\min f(\textbf{x}),\quad \textbf{x}\in E^n\notag\\
+    &g(\textbf{x},\alpha) = 0\notag
+\end{aligned}\right.</script><p>拉格朗日条件</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+    &\nabla_\textbf{x}f({\textbf{x}^\star}) - \lambda \nabla_\textbf{x}g_i({\textbf{x}^\star},\alpha) =0 \notag\\
+    &g({\textbf{x}^\star},\alpha) = 0 \notag
+\end{aligned}
+\right.</script><p>最优解$\textbf{x}^\star$是参数“资源约束”的函数$\textbf{x}^\star=\textbf{x}^\star(\alpha)$，最优值可以定义为：</p>
+<script type="math/tex; mode=display">
+v(\alpha) = f(\textbf{x}^\star(\alpha),\alpha)</script><p>对L-条件第二个式子关于$\alpha$求梯度。</p>
+<script type="math/tex; mode=display">
+\nabla_\textbf{x} g(\textbf{x}^\star,\alpha) D_\alpha[\textbf{x}^\star(\alpha)]+
+\nabla_\alpha g(\textbf{x}^\star,\alpha)= 0</script><p>因此参数对最优值的影响：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    \frac{\partial v(\alpha)}{\partial\alpha} &= 
+    \nabla_\textbf{x}f(\textbf{x}^\star,\alpha)D_\alpha[\textbf{x}^\star(\alpha)]+
+    \nabla_\alpha  f(\textbf{x}^\star(\alpha),\alpha) \\
+    &=\lambda\nabla_\textbf{x}g({\textbf{x}^\star},\alpha)D_\alpha[\textbf{x}^\star(\alpha)] + \nabla_\alpha f(\textbf{x}^\star(\alpha),\alpha) \\
+    &=-\lambda\nabla_\alpha g(\textbf{x}^\star(\alpha),\alpha)+\nabla_\alpha f(\textbf{x}^\star(\alpha),\alpha)\\
+    &=\nabla_\alpha\mathscr{L}
+\end{aligned}</script><hr>
+
   
   
     
@@ -473,7 +554,7 @@ f_\alpha(\textbf{x}^\star,\alpha)</script><p>注意到$f_{\textbf{x}}(\textbf{x}
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-25T17:19:02+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-25T22:03:19+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月25日</p>
@@ -484,6 +565,9 @@ f_\alpha(\textbf{x}^\star,\alpha)</script><p>注意到$f_{\textbf{x}}(\textbf{x}
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>拉格朗日乘子法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>库恩-塔克条件</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>包络定理</p></a></div>
+
 
         
       
@@ -495,7 +579,7 @@ f_\alpha(\textbf{x}^\star,\alpha)</script><p>注意到$f_{\textbf{x}}(\textbf{x}
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/&title=第7章古典极值中的拉格朗日乘子法 - 渝言&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/&title=第7章极值问题的求解 - 渝言&summary="
           
           >
           
@@ -507,7 +591,7 @@ f_\alpha(\textbf{x}^\star,\alpha)</script><p>注意到$f_{\textbf{x}}(\textbf{x}
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/&title=第7章古典极值中的拉格朗日乘子法 - 渝言&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/&title=第7章极值问题的求解 - 渝言&summary="
           
           >
           
@@ -519,7 +603,7 @@ f_\alpha(\textbf{x}^\star,\alpha)</script><p>注意到$f_{\textbf{x}}(\textbf{x}
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/&title=第7章古典极值中的拉格朗日乘子法 - 渝言&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/&title=第7章极值问题的求解 - 渝言&summary="
           
           >
           
@@ -652,7 +736,7 @@ f(\lambda\textbf{x}+(1-\lambda)\text...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-0-%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%9E%81%E5%80%BC%E9%97%AE%E9%A2%98"><span class="toc-text">7.0 无约束的极值问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%EF%BC%88%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F%EF%BC%89"><span class="toc-text">7.1 拉格朗日乘子法（等式约束）</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-0-%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%9E%81%E5%80%BC%E9%97%AE%E9%A2%98"><span class="toc-text">7.0 无约束的极值问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%EF%BC%88%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F%EF%BC%89"><span class="toc-text">7.1 拉格朗日乘子法（等式约束）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%E7%9A%84%E9%9B%86%E5%90%88%E5%90%AB%E4%B9%89"><span class="toc-text">拉格朗日乘子法的集合含义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E6%9C%80%E4%BC%98%E8%A7%A3%E7%9A%84%E5%85%85%E5%88%86%E6%9D%A1%E4%BB%B6%E5%92%8C%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-text">7.3 最优解的充分条件和必要条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%90%AB%E4%B9%89%E2%80%94%E2%80%94%E5%BD%B1%E5%AD%90%E4%BB%B7%E6%A0%BC"><span class="toc-text">7.4 拉格朗日乘子的经济含义——影子价格</span></a></li></ol>
     </div>
   </section>
 
@@ -672,7 +756,7 @@ f(\lambda\textbf{x}+(1-\lambda)\text...</p>
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="第7章古典极值中的拉格朗日乘子法";
+  pdata.postTitle="第7章极值问题的求解";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
