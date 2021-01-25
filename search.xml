@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>第6章广义凸函数及数学规划</title>
+      <link href="2021/01/25/%E7%AC%AC6%E7%AB%A0%E5%B9%BF%E4%B9%89%E5%87%B8%E5%87%BD%E6%95%B0%E5%8F%8A%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/"/>
+      <url>2021/01/25/%E7%AC%AC6%E7%AB%A0%E5%B9%BF%E4%B9%89%E5%87%B8%E5%87%BD%E6%95%B0%E5%8F%8A%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/</url>
+      
+        <content type="html"><![CDATA[<p><span style='font-family:hei;font-size:18px'>定义6.7</span> 若对任意$\textbf{x}$和$\textbf{y}$，以及任意$\lambda\in(0,1)$都有</p><script type="math/tex; mode=display">f(\lambda\textbf{x}+(1-\lambda)\textbf{y})\leqq\max\{ f(\textbf{x}),f(\textbf{y}) \}</script><p>称$f(\textbf{x})$为<strong>拟凸函数</strong>。</p><p><span style='font-family:hei;font-size:18px'>定义6.7a</span> 若对任意$\textbf{x}$和$\textbf{y}$，以及任意$\lambda\in(0,1)$都有</p><script type="math/tex; mode=display">f(\lambda\textbf{x}+(1-\lambda)\textbf{y})\geqq\min\{ f(\textbf{x}),f(\textbf{y}) \}</script><p>称$f(\textbf{x})$为<strong>拟凹函数</strong>。</p><hr><p><span style='font-family:hei;font-size:18px'>定义6.8</span> 若对任意实数$\alpha\in E^1$，集合</p><script type="math/tex; mode=display">L_\alpha = \{\textbf{x}\lvert f(\textbf{x})\leqq \alpha\}</script><p>为凸集，称$f(\textbf{x})$为<strong>拟凸函数</strong>。</p><p><span style='font-family:hei;font-size:18px'>定义6.8a</span> 若对任意实数$\alpha\in E^1$，集合</p><script type="math/tex; mode=display">L_\alpha = \{\textbf{x}\lvert f(\textbf{x})\geqq \alpha\}</script><p>为凸集，称$f(\textbf{x})$为<strong>拟凹函数</strong>。</p><p><span style='font-family:hei;font-size:18px'>定理5.13</span> <span style='font-family:kai'>（最优解的充分必要条件）</span>考虑凸规划$(P)$，设$f(\textbf{x})$具有一阶连续偏导数，则$\bar{\textbf{x}}\in R^\star$的充分必要条件是：对任意$\textbf{x}\in R$，有</p><script type="math/tex; mode=display">\nabla f(\bar{\textbf{x}})(\textbf{x}-\bar{\textbf{x}})\geqq0</script><blockquote><p>证明：</p><p>必要性：用反证法</p><p>若存在$\bar{\textbf{y}}\in R$，有</p><script type="math/tex; mode=display">\nabla f(\bar{\textbf{x}})(\bar{\textbf{y}}-\bar{\textbf{x}})<0</script><p>令$\lambda\in(0,1)$，则</p><script type="math/tex; mode=display">\bar{\textbf{x}}+\lambda(\bar{\textbf{y}}-\bar{\textbf{x}})=\lambda\bar{\textbf{y}} + (1-\lambda)\bar{\textbf{x}}  \in R</script><p>再由</p><script type="math/tex; mode=display">\left.\frac{\text{d}f(\bar{\textbf{x}}+\lambda(\bar{\textbf{y}}-\bar{\textbf{x}}))}{\text{d}\lambda}\right\lvert_{\lambda=0} =\nabla f(\bar{\textbf{x}}) (\bar{\textbf{y}}-\bar{\textbf{x}}) <0</script><p>因此$h(\lambda)=f(\bar{\textbf{x}}+\lambda(\bar{\textbf{y}}-\bar{\textbf{x}}))$在$\lambda=0$时为严格单调递减的。故存在$\bar{\lambda},0&lt;\bar{\lambda}&lt;1$，有</p><script type="math/tex; mode=display">f(\bar{\textbf{x}}+\bar{\lambda}(\bar{\textbf{y}}-\bar{\textbf{x}}))< f(\bar{\textbf{x}})</script><p>由于$\bar{\textbf{x}}+\bar{\lambda}(\bar{\textbf{y}}-\bar{\textbf{x}})\in R$，有$\bar{\textbf{x}}\notin R^\star$，矛盾。必要性得证</p><p>充分性：</p><p>因为$f(\textbf{x})$是凸函数，因此对任意$\textbf{x}\in E^n$，有</p><script type="math/tex; mode=display">f(\textbf{x})\geqq f(\bar{\textbf{x}}) + \nabla f(\bar{\textbf{x}}) (\textbf{x}-\bar{\textbf{x}})</script><p>当然在$\textbf{x}\in R$时，上式依然成立。</p><p>由已知条件，对任意$\textbf{x}\in R$，有$\nabla f(\bar{\textbf{x}})(\textbf{x}-\bar{\textbf{x}})\geqq0$，因此</p><script type="math/tex; mode=display">f(\textbf{x})\geqq f(\bar{\textbf{x}}) + \nabla f(\bar{\textbf{x}}) (\textbf{x}-\bar{\textbf{x}})\geqq f(\bar{\textbf{x}})</script><p>因此$\bar{\textbf{x}}\in R^\star$，充分性得证。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博资考 </category>
+          
+          <category> 高级数理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 凸函数 </tag>
+            
+            <tag> 数学规划 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第5章凸函数与凸规划</title>
       <link href="2021/01/24/%E7%AC%AC5%E7%AB%A0%E5%87%B8%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%B8%E8%A7%84%E5%88%92/"/>
       <url>2021/01/24/%E7%AC%AC5%E7%AB%A0%E5%87%B8%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%B8%E8%A7%84%E5%88%92/</url>
