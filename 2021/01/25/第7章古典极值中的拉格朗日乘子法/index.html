@@ -19,9 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>第6章广义凸函数及数学规划 - 渝言</title>
-  
-    <meta name="keywords" content="凸函数,数学规划">
+  <title>第7章古典极值中的拉格朗日乘子法 - 渝言</title>
   
 
   
@@ -293,7 +291,7 @@
     
     
       <h1 class="title">
-        第6章广义凸函数及数学规划
+        第7章古典极值中的拉格朗日乘子法
       </h1>
       <div class='new-meta-box'>
         
@@ -345,7 +343,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：268字</p>
+      <p>字数：111字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -361,7 +359,7 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：268字</p>
+      <p>字数：111字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -376,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">268字</span>
+        <span class="post-count">111字</span>
       </span>
     </span>
  
@@ -401,46 +399,23 @@
 
 
   
-  <p><span style='font-family:hei;font-size:18px'>定义6.7</span> 若对任意$\textbf{x}$和$\textbf{y}$，以及任意$\lambda\in(0,1)$都有</p>
-<script type="math/tex; mode=display">
-f(\lambda\textbf{x}+(1-\lambda)\textbf{y})\leqq\max\{ f(\textbf{x}),f(\textbf{y}) \}</script><p>称$f(\textbf{x})$为<strong>拟凸函数</strong>。</p>
-<p><span style='font-family:hei;font-size:18px'>定义6.7a</span> 若对任意$\textbf{x}$和$\textbf{y}$，以及任意$\lambda\in(0,1)$都有</p>
-<script type="math/tex; mode=display">
-f(\lambda\textbf{x}+(1-\lambda)\textbf{y})\geqq\min\{ f(\textbf{x}),f(\textbf{y}) \}</script><p>称$f(\textbf{x})$为<strong>拟凹函数</strong>。</p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定义6.8</span> 若对任意实数$\alpha\in E^1$，集合</p>
-<script type="math/tex; mode=display">
-L_\alpha = \{\textbf{x}\lvert f(\textbf{x})\leqq \alpha\}</script><p>为凸集，称$f(\textbf{x})$为<strong>拟凸函数</strong>。</p>
-<p><span style='font-family:hei;font-size:18px'>定义6.8a</span> 若对任意实数$\alpha\in E^1$，集合</p>
-<script type="math/tex; mode=display">
-L_\alpha = \{\textbf{x}\lvert f(\textbf{x})\geqq \alpha\}</script><p>为凸集，称$f(\textbf{x})$为<strong>拟凹函数</strong>。</p>
-<p><span style='font-family:hei;font-size:18px'>定理5.13</span> <span style='font-family:kai'>（最优解的充分必要条件）</span>考虑凸规划$(P)$，设$f(\textbf{x})$具有一阶连续偏导数，则$\bar{\textbf{x}}\in R^\star$的充分必要条件是：对任意$\textbf{x}\in R$，有</p>
-<script type="math/tex; mode=display">
-\nabla f(\bar{\textbf{x}})(\textbf{x}-\bar{\textbf{x}})\geqq0</script><blockquote>
-<p>证明：</p>
-<p>必要性：用反证法</p>
-<p>若存在$\bar{\textbf{y}}\in R$，有</p>
-<script type="math/tex; mode=display">
-\nabla f(\bar{\textbf{x}})(\bar{\textbf{y}}-\bar{\textbf{x}})<0</script><p>令$\lambda\in(0,1)$，则</p>
-<script type="math/tex; mode=display">
-\bar{\textbf{x}}+\lambda(\bar{\textbf{y}}-\bar{\textbf{x}})
-=\lambda\bar{\textbf{y}} + (1-\lambda)\bar{\textbf{x}}  \in R</script><p>再由</p>
-<script type="math/tex; mode=display">
-\left.\frac{\text{d}f(\bar{\textbf{x}}+\lambda(\bar{\textbf{y}}-\bar{\textbf{x}}))}{\text{d}\lambda}\right\lvert_{\lambda=0} 
-=\nabla f(\bar{\textbf{x}}) (\bar{\textbf{y}}-\bar{\textbf{x}}) 
-<0</script><p>因此$h(\lambda)=f(\bar{\textbf{x}}+\lambda(\bar{\textbf{y}}-\bar{\textbf{x}}))$在$\lambda=0$时为严格单调递减的。故存在$\bar{\lambda},0&lt;\bar{\lambda}&lt;1$，有</p>
-<script type="math/tex; mode=display">
-f(\bar{\textbf{x}}+\bar{\lambda}(\bar{\textbf{y}}-\bar{\textbf{x}}))
-< f(\bar{\textbf{x}})</script><p>由于$\bar{\textbf{x}}+\bar{\lambda}(\bar{\textbf{y}}-\bar{\textbf{x}})\in R$，有$\bar{\textbf{x}}\notin R^\star$，矛盾。必要性得证</p>
-<p>充分性：</p>
-<p>因为$f(\textbf{x})$是凸函数，因此对任意$\textbf{x}\in E^n$，有</p>
-<script type="math/tex; mode=display">
-f(\textbf{x})\geqq f(\bar{\textbf{x}}) + \nabla f(\bar{\textbf{x}}) (\textbf{x}-\bar{\textbf{x}})</script><p>当然在$\textbf{x}\in R$时，上式依然成立。</p>
-<p>由已知条件，对任意$\textbf{x}\in R$，有$\nabla f(\bar{\textbf{x}})(\textbf{x}-\bar{\textbf{x}})\geqq0$，因此</p>
-<script type="math/tex; mode=display">
-f(\textbf{x})\geqq f(\bar{\textbf{x}}) + \nabla f(\bar{\textbf{x}}) (\textbf{x}-\bar{\textbf{x}})\geqq f(\bar{\textbf{x}})</script><p>因此$\bar{\textbf{x}}\in R^\star$，充分性得证。</p>
-</blockquote>
-
+  <h3 id="7-0-无约束的极值问题"><a href="#7-0-无约束的极值问题" class="headerlink" title="7.0 无约束的极值问题"></a>7.0 无约束的极值问题</h3><script type="math/tex; mode=display">
+(P)\left\{
+\begin{aligned}
+    &\min f(\textbf{x})\notag\\
+    &\textbf{x}\in E^n \notag
+\end{aligned}\right.</script><p><span style='font-family:hei;font-size:18px'>定理 7.0a</span> </p>
+<ol>
+<li>若$\bar{\textbf{x}}$是最优解，有$\nabla f(\bar{\textbf{x}})=0$。</li>
+<li>若$f(\textbf{x})$是凸函数且$\nabla f(\bar{\textbf{x}})=0$，那么$\bar{\textbf{x}}$是最优解。</li>
+</ol>
+<p><span style='font-family:hei;font-size:18px'>定理 7.0b</span> <span style='font-family:kai'>（包络定理）</span></p>
+<h3 id="7-1-拉格朗日乘子法"><a href="#7-1-拉格朗日乘子法" class="headerlink" title="7.1 拉格朗日乘子法"></a>7.1 拉格朗日乘子法</h3><script type="math/tex; mode=display">
+(P)\left\{
+\begin{aligned}
+    &\min f(\textbf{x})\notag\\
+    &h_i(\textbf{x}) = 0,\quad i=1,2,\cdots,m \notag
+\end{aligned}\right.</script>
   
   
     
@@ -457,7 +432,7 @@ f(\textbf{x})\geqq f(\bar{\textbf{x}}) + \nabla f(\bar{\textbf{x}}) (\textbf{x}-
               
             
               
-                <p>本文永久链接是：<a href=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC6%E7%AB%A0%E5%B9%BF%E4%B9%89%E5%87%B8%E5%87%BD%E6%95%B0%E5%8F%8A%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/>https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC6%E7%AB%A0%E5%B9%BF%E4%B9%89%E5%87%B8%E5%87%BD%E6%95%B0%E5%8F%8A%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/</a></p>
+                <p>本文永久链接是：<a href=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/>https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/</a></p>
               
             
           </blockquote>
@@ -474,7 +449,7 @@ f(\textbf{x})\geqq f(\bar{\textbf{x}}) + \nabla f(\bar{\textbf{x}}) (\textbf{x}-
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-25T11:56:26+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-25T12:18:00+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月25日</p>
@@ -485,9 +460,6 @@ f(\textbf{x})\geqq f(\bar{\textbf{x}}) + \nabla f(\bar{\textbf{x}}) (\textbf{x}-
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>凸函数</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数学规划</p></a></div>
-
 
         
       
@@ -499,7 +471,7 @@ f(\textbf{x})\geqq f(\bar{\textbf{x}}) + \nabla f(\bar{\textbf{x}}) (\textbf{x}-
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC6%E7%AB%A0%E5%B9%BF%E4%B9%89%E5%87%B8%E5%87%BD%E6%95%B0%E5%8F%8A%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/&title=第6章广义凸函数及数学规划 - 渝言&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/&title=第7章古典极值中的拉格朗日乘子法 - 渝言&summary="
           
           >
           
@@ -511,7 +483,7 @@ f(\textbf{x})\geqq f(\bar{\textbf{x}}) + \nabla f(\bar{\textbf{x}}) (\textbf{x}-
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC6%E7%AB%A0%E5%B9%BF%E4%B9%89%E5%87%B8%E5%87%BD%E6%95%B0%E5%8F%8A%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/&title=第6章广义凸函数及数学规划 - 渝言&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/&title=第7章古典极值中的拉格朗日乘子法 - 渝言&summary="
           
           >
           
@@ -523,7 +495,7 @@ f(\textbf{x})\geqq f(\bar{\textbf{x}}) + \nabla f(\bar{\textbf{x}}) (\textbf{x}-
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC6%E7%AB%A0%E5%B9%BF%E4%B9%89%E5%87%B8%E5%87%BD%E6%95%B0%E5%8F%8A%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/&title=第6章广义凸函数及数学规划 - 渝言&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://dhndzwxj.github.io/2021/01/25/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/&title=第7章古典极值中的拉格朗日乘子法 - 渝言&summary="
           
           >
           
@@ -553,21 +525,12 @@ f(\textbf{x})\geqq f(\bar{\textbf{x}}) + \nabla f(\bar{\textbf{x}}) (\textbf{x}-
   
     <div class="prev-next">
       
-        <a class='prev' href='../%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>第7章古典极值中的拉格朗日乘子法</p>
-          <p class='content'>7.0 无约束的极值问题
-(P)\left\{
-\begin{aligned}
-    &\min f(\textbf{x})\notag\\
-    &\textbf{x}\in E^n \n...</p>
-        </a>
       
-      
-        <a class='next' href='../../24/%E7%AC%AC5%E7%AB%A0%E5%87%B8%E5%87%BD%E6%95%B0%E4%B8%8E%E5%87%B8%E8%A7%84%E5%88%92/'>
-          <p class='title'>第5章凸函数与凸规划<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>5.2 凸函数与凹函数定义5.1 对于任意$\textbf{x},\textbf{y}$以及$\lambda\in(0,1)$，都有
+        <a class='next' href='../%E7%AC%AC6%E7%AB%A0%E5%B9%BF%E4%B9%89%E5%87%B8%E5%87%BD%E6%95%B0%E5%8F%8A%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/'>
+          <p class='title'>第6章广义凸函数及数学规划<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>定义6.7 若对任意$\textbf{x}$和$\textbf{y}$，以及任意$\lambda\in(0,1)$都有
 
-f\left( \lambda\textbf{x} + (...</p>
+f(\lambda\textbf{x}+(1-\lambda)\text...</p>
         </a>
       
     </div>
@@ -655,6 +618,20 @@ f\left( \lambda\textbf{x} + (...</p>
 
 
 
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-0-%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%9E%81%E5%80%BC%E9%97%AE%E9%A2%98"><span class="toc-text">7.0 无约束的极值问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95"><span class="toc-text">7.1 拉格朗日乘子法</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -671,7 +648,7 @@ f\left( \lambda\textbf{x} + (...</p>
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="第6章广义凸函数及数学规划";
+  pdata.postTitle="第7章古典极值中的拉格朗日乘子法";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
