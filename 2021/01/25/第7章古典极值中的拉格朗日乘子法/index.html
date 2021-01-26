@@ -333,7 +333,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/">博资考</a><span class="sep"></span><a class="category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E6%95%B0%E7%90%86/">高级数理</a>
+      <a class="category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/">博资考</a><span class="sep"></span><a class="category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E6%95%B0%E7%90%86-%E5%BE%AE%E8%A7%82/">高级数理-微观</a>
     </a>
   </div>
 
@@ -345,13 +345,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.3k字</p>
+      <p>字数：3.2k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：6分钟</p>
+      <p>时长：16分钟</p>
     </a>
   </div>
  -->
@@ -361,13 +361,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.3k字</p>
+      <p>字数：3.2k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：6分钟</p>
+      <p>时长：16分钟</p>
     </a>
   </div> -->
 
@@ -376,7 +376,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.3k字</span>
+        <span class="post-count">3.2k字</span>
       </span>
     </span>
  
@@ -385,7 +385,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">6分</span>
+        <span class="post-count">16分</span>
       </span>
     </span>
     
@@ -520,6 +520,151 @@ v(\alpha) = f(\textbf{x}^\star(\alpha),\alpha)</script><p>对L-条件第二个�
     &=-\lambda\nabla_\alpha g(\textbf{x}^\star(\alpha),\alpha)+\nabla_\alpha f(\textbf{x}^\star(\alpha),\alpha)\\
     &=\nabla_\alpha\mathscr{L}
 \end{aligned}</script><hr>
+<h3 id="8-1-从几何直观上看库恩-塔克条件"><a href="#8-1-从几何直观上看库恩-塔克条件" class="headerlink" title="8.1 从几何直观上看库恩-塔克条件"></a>8.1 从几何直观上看库恩-塔克条件</h3><script type="math/tex; mode=display">
+(P)\left\{
+\begin{aligned}
+    &\min f(\textbf{x}),\quad \textbf{x}\in E^n\notag\\
+    &g_i(\textbf{x}) \geqq 0,\quad i=1,2,\cdots,m\notag
+\end{aligned}\right.</script><p>其中$f(\textbf{x}),g(\textbf{x})$具有一阶连续的偏导数。记约束集合为</p>
+<script type="math/tex; mode=display">
+R=\{ \textbf{x}\lvert g_i(\textbf{x})\geqq0,i=1,2,\cdots,m \}</script><p>设$\textbf{x}$为$(P)$的最优解，即$\bar{\textbf{x}}\in R^\star$，下面构造一个很有意思的集合：</p>
+<script type="math/tex; mode=display">
+E = \{i\lvert g_i(\bar{\textbf{x}})=0,i=1,2,\cdots,m\}</script><p>这个集合的目的是找出最优解位于哪些约束条件的边界上。这个是库恩-塔克条件的关键！接下来对集合$E$进行分类讨论。</p>
+<p>（1）当$E=\varnothing$，$\bar{\textbf{x}}$是$R$的内点，直接对约束函数关于自变量求梯度就可以了。</p>
+<p>（2）当$E\neq\varnothing$，$\bar{\textbf{x}}$又分为“切点解”（图8-1）和“角点解”（图8-2）两种情况。</p>
+<p>切点解情况，$E=\{1\}$，等高线和某一个约束面相切，二者的梯度方向是相同的。（为什么相同呢？因为构造的库恩-塔克乘子是减去$g(\textbf{x})$！同时要求$g(\textbf{x})\geqq0$，只有这样才能保证梯度方向相同。这也是为啥强调构造线性规划的时候要规定标准型！）因此存在$\bar{u}_1&gt;0$，使得$\nabla_\textbf{x}f(\bar{\textbf{x}})=\bar{u}_1\nabla_\textbf{x}g_1(\bar{\textbf{x}})$。</p>
+<p>角点解情况，$E=\{1,2\}$，这时候约束面和等高线不一定相切。但可以确定的是，等高线在最优解处的切线，一定位于由两个约束面在最优解处的梯度生成的多面锥内。因此存在$\bar{u}_1&gt;0,\bar{u}_2&gt;0$，使得$\nabla_\textbf{x}f(\bar{\textbf{x}}) = \bar{u}_1\nabla_\textbf{x}g_1(\bar{\textbf{x}})+\bar{u}_2\nabla_\textbf{x}g_2(\bar{\textbf{x}})$。</p>
+<div align='center'>
+  <img src='/../../images/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/11161611626643_.pic_hd.jpg' width=450px>
+  <center style='font-family:kai'>图8-1</center>
+  <img src='/../../images/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/11171611626644_.pic_hd.jpg' width=450px>
+  <center style='font-family:kai'>图8-2</center>
+</div>
+
+<p>综上所述，等高线的梯度可以表示为</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+    & \nabla_\textbf{x} f(\bar{\textbf{x}}) = \sum_{i\in E}\bar{u}_ig_i(\bar{\textbf{x}})
+\\
+    & \bar{u}_i>0,i\in E
+\end{aligned}
+\right.</script><h3 id="8-2-库恩-塔克条件"><a href="#8-2-库恩-塔克条件" class="headerlink" title="8.2 库恩-塔克条件"></a>8.2 库恩-塔克条件</h3><h4 id="8-2-1-自变量无约束的KT条件"><a href="#8-2-1-自变量无约束的KT条件" class="headerlink" title="8.2.1 自变量无约束的KT条件"></a>8.2.1 自变量无约束的KT条件</h4><p>构造库恩-塔克乘子：</p>
+<script type="math/tex; mode=display">
+\varphi(\textbf{x},\textbf{u})=f(\textbf{x})-\textbf{u}^Tg(\textbf{x})</script><p>于是根据上一节，构造得出目标函数梯度的库恩-塔克条件：</p>
+<script type="math/tex; mode=display">
+(KT)\left\{
+    \begin{aligned}
+        &\varphi_\textbf{x}(\textbf{x},\textbf{u}) = \nabla_\textbf{x}f(\textbf{x}) -
+        \sum_{i=1}^m u_i\nabla_\textbf{x}g_i(\textbf{x}) =\textbf{0} \\
+        &\varphi_\textbf{u}(\textbf{x},\textbf{u}) = -g(\textbf{x}) \leqq \textbf{0}, \textbf{u}\geqq\textbf{0} \\
+        &\textbf{u}^T \varphi_\textbf{u}(\textbf{x},\textbf{u}) = -\textbf{u}^Tg(\textbf{x})=0
+    \end{aligned}
+\right.</script><p>最为精妙的是第三个方程“互补条件”。即</p>
+<script type="math/tex; mode=display">
+\begin{aligned}    
+        &\text{若}u_i>0,\text{则}g_i(\textbf{x})=0,1\leqq i\leqq m \\
+        &\text{若}g_i(\textbf{x})>0,\text{则}u_i=0,1\leqq i\leqq m \\
+    \end{aligned}</script><p>互补条件保证了在构造目标函数梯度$\nabla_\textbf{x}f(\textbf{x})$的时候，只选取那些最优解$\bar{\textbf{x}}$位于约束边界上的约束条件（$\{g_i(\textbf{x})\lvert g_i(\bar{\textbf{x}})=0\}$），这些约束条件的梯度的某种线性组合可以得到想要的结果。这正是图8-2要表达的。</p>
+<p>还有一个<strong>库恩-塔克本质条件</strong>：</p>
+<script type="math/tex; mode=display">
+(KT)’\left\{
+    \begin{aligned}
+        &\nabla_\textbf{x}f(\textbf{x}) -
+        \sum_{i\in E} u_i\nabla_\textbf{x}g_i(\textbf{x}) =\textbf{0} \\
+        &g(\textbf{x}) \geqq \textbf{0} \\
+        &\textbf{u}\geqq\textbf{0},i\in E 
+    \end{aligned}
+\right.</script><hr>
+<h4 id="8-2-2-带有非负变量约束的KT条件"><a href="#8-2-2-带有非负变量约束的KT条件" class="headerlink" title="8.2.2 带有非负变量约束的KT条件"></a>8.2.2 带有非负变量约束的KT条件</h4><script type="math/tex; mode=display">
+(\hat{P})\left\{
+\begin{aligned}
+    &\min f(\textbf{x}),\quad \textbf{x}\in E^n\notag\\
+    &g_i(\textbf{x}) \geqq 0,\quad i=1,2,\cdots,m\notag\\
+    &\color{red}{x_j\geqq0},\quad j=1,2,\cdots,n
+\end{aligned}\right.</script><p>构造对应的广义KT乘子：</p>
+<script type="math/tex; mode=display">
+\hat{\varphi}(\textbf{x},\textbf{u},\textbf{v}) = f(\textbf{x})-\textbf{u}^Tg(\textbf{x})-\textbf{v}^T\textbf{x}</script><p>对应的广义KT条件为</p>
+<script type="math/tex; mode=display">
+(\hat{KT})\left\{
+    \begin{aligned}
+        &\hat{\varphi}_\textbf{x}(\textbf{x},\textbf{u},\textbf{v}) = 
+        \nabla_\textbf{x}f(\textbf{x}) -
+        \sum_{i=1}^m u_i\nabla_\textbf{x}g_i(\textbf{x}) -\textbf{v}=\textbf{0} \\
+        &\hat{\varphi}_\textbf{u}(\textbf{x},\textbf{u},\textbf{v}) = -g(\textbf{x}) \leqq \textbf{0}, \textbf{u}\geqq\textbf{0} \\
+        &\hat{\varphi}_\textbf{v}(\textbf{x},\textbf{u},\textbf{v}) = -\textbf{x} \leqq \textbf{0}, \textbf{v}\geqq\textbf{0} \\
+        &\textbf{u}^T \hat{\varphi}_\textbf{u}(\textbf{x},\textbf{u},\textbf{v}) = -\textbf{u}^Tg(\textbf{x})=0\\
+        &\textbf{v}^T \hat{\varphi}_\textbf{v}(\textbf{x},\textbf{u},\textbf{v}) = -\textbf{v}^T\textbf{x}=0
+    \end{aligned}
+\right.</script><p>广义KT条件可以经过进一步演算与KT条件建立联系。结合第一个和第三个式子：</p>
+<script type="math/tex; mode=display">
+\nabla_\textbf{x}f(\textbf{x}) - \sum_{i=1}^m u_i\nabla_\textbf{x}g_i(\textbf{x})  = \textbf{v}\geqq\textbf{0}\tag{*}</script><p>再将（*）结合第五个式子</p>
+<script type="math/tex; mode=display">
+\left( \nabla_\textbf{x}f(\textbf{x}) - \sum_{i=1}^m u_i\nabla_\textbf{x}g_i(\textbf{x}) \right)^T\textbf{x}=0</script><p>这样便将$\textbf{v}$消掉了，因此此时也没有必要构造广义的KT条件了，KT乘子依然设为</p>
+<script type="math/tex; mode=display">
+\varphi(\textbf{x},\textbf{u}) = f(\textbf{x})-\textbf{u}^Tg(\textbf{x})</script><p>KT条件写成：</p>
+<script type="math/tex; mode=display">
+(KT)\left\{
+    \begin{aligned}
+        &\varphi_\textbf{x}(\textbf{x},\textbf{u}) = \nabla_\textbf{x}f(\textbf{x}) -
+        \sum_{i=1}^m u_i\nabla_\textbf{x}g_i(\textbf{x}) \color{red}{\geqq\textbf{0}, 
+        \textbf{x}\geqq \textbf{0}}\\
+        &\varphi_\textbf{u}(\textbf{x},\textbf{u}) = -g(\textbf{x}) \leqq \textbf{0}, \textbf{u}\geqq\textbf{0} \\
+        &\color{red}{(\varphi_\textbf{x}(\textbf{x},\textbf{u}))^T\textbf{x} =
+    \left( \nabla_\textbf{x}f(\textbf{x}) - \sum_{i=1}^m u_i\nabla_\textbf{x}g_i(\textbf{x}) \right)^T\textbf{x}=0}\\
+        &\textbf{u}^T \varphi_\textbf{u}(\textbf{x},\textbf{u}) = -\textbf{u}^Tg(\textbf{x})=0
+    \end{aligned}
+\right.</script><h3 id="8-3-库恩-塔克定理"><a href="#8-3-库恩-塔克定理" class="headerlink" title="8.3 库恩-塔克定理"></a>8.3 库恩-塔克定理</h3><p><span style='font-family:hei;font-size:18px'>定理 8.3</span> $((KT)\rightarrow(P))$设约束集合$R$为凸集，目标函数$f(\textbf{x})$为凸函数。若$\bar{\textbf{x}},\bar{\textbf{u}}$满足$(KT)$条件，则$\bar{\textbf{x}}$为$(P)$的最优解。</p>
+<h2 id="值函数"><a href="#值函数" class="headerlink" title="值函数"></a>值函数</h2><p>（1）对于线性规划</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+    &\max f(\textbf{x},\alpha),\quad \textbf{x}\in E^n\notag\\
+    &g_i(\textbf{x}) \geqq 0,\quad i=1,2,\cdots,m\notag
+\end{aligned}\right.</script><p>$R=\{\textbf{x}\lvert g_i(\textbf{x})\geqq0\}$是凸集。证明：若$f(\textbf{x},\alpha)$关于$\alpha$是凸函数，则$v(\alpha)=f(\textbf{x}^\star(\alpha),\alpha)$是凸函数。</p>
+<blockquote>
+<p>证明：</p>
+<p>要证明</p>
+<script type="math/tex; mode=display">
+v(\lambda\alpha_1+(1-\lambda)\alpha_2) \geqq \lambda v(\alpha_1)+(1-\lambda)v(\alpha_2)</script><p>而</p>
+<script type="math/tex; mode=display">
+v(\alpha_1) = f(\textbf{x}^\star({\alpha_1}),\alpha_1),
+v(\alpha_2) = f(\textbf{x}^\star({\alpha_2}),\alpha_2)</script><p>构造$\alpha^\lambda=\lambda\alpha_1+(1-\lambda)\alpha_2$，因此</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+v(\lambda\alpha_1+(1-\lambda)\alpha_2) 
+&= f(\textbf{x}^\star(\alpha^\lambda),\lambda\alpha_1+(1-\lambda)\alpha_2) \\
+&\leqq \lambda f(\textbf{x}^\star(\alpha^\lambda),\alpha_1) + (1-\lambda)f(\textbf{x}^\star(\alpha^\lambda),\alpha_2)\\
+&\color{red}{\leqq \lambda v(\alpha_1) + (1-\lambda)v(\alpha_2)}
+\end{aligned}</script><p><span style='font-family:fangsong'>红色不等式为什么成立？以$f(\textbf{x}^\star(\alpha^\lambda),\alpha_1)$为例，在参数为$\alpha_1$时，最优值(最大值)为$f(\textbf{x}^\star(\alpha_1),\alpha_1)$，即$f(\textbf{x}^\star(\alpha^\lambda),\alpha_1)\leqq f(\textbf{x}^\star(\alpha_1),\alpha_1)$。</span></p>
+</blockquote>
+<p>(2)对于线性规划</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+    &\max f(\textbf{x},\alpha),\quad \textbf{x}\in E^n\notag\\
+    &g_i(\textbf{x},\alpha) \geqq 0,\quad i=1,2,\cdots,m\notag
+\end{aligned}\right.</script><p>设$f(\textbf{x},\alpha)$关于$(\textbf{x},\alpha)$是凹函数，且$g_i(\cdot)$关于$(\textbf{x},\alpha)$拟凹，则$v(\alpha)=f(\textbf{x}^\star(\alpha),\alpha)$是凹函数。</p>
+<blockquote>
+<p>证明：</p>
+<p>要证明</p>
+<script type="math/tex; mode=display">
+v(\lambda\alpha_1+(1-\lambda)\alpha_2) \geqq \lambda v(\alpha_1)+(1-\lambda)v(\alpha_2)</script><p>而</p>
+<script type="math/tex; mode=display">
+v(\alpha_1) = f(\textbf{x}^\star({\alpha_1}),\alpha_1),
+v(\alpha_2) = f(\textbf{x}^\star({\alpha_2}),\alpha_2)</script><p>令$\alpha^\lambda=\lambda\alpha_1+(1-\lambda)\alpha_2,\textbf{x}^\lambda=\lambda\textbf{x}^\star(\alpha_1)+(1-\lambda)\textbf{x}^\star({\alpha_2})$，</p>
+<p>因为$\textbf{x}^\star(\alpha_1),\textbf{x}^\star(\alpha_2)$是可行解，因此有$g_i(\textbf{x}^\star(\alpha_1),\alpha_1)\geqq0,g_i(\textbf{x}^\star(\alpha_2),\alpha_2)\geqq0$。且$g_i(\cdot)$关于$(\textbf{x},\alpha)$拟凹，</p>
+<script type="math/tex; mode=display">
+g_i(\textbf{x}^\lambda,\lambda\alpha_1+(1-\lambda)\alpha_2)\geqq\min\{ g_i(\textbf{x}^1,\alpha_1),g_i(\textbf{x}^2,\alpha_2) \}\geqq0</script><p>因此$(\textbf{x}^\lambda,\lambda\alpha_1+(1-\lambda)\alpha_2)$是可行解。又由于$f(\textbf{x},\alpha)$关于$(\textbf{x},\alpha)$是凹函数，</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    v(\lambda\alpha_1+(1-\lambda)\alpha_2) 
+    &= f(\textbf{x}^\star(\alpha^\lambda),\lambda\alpha_1+(1-\lambda)\alpha_2)\\
+    &\geqq \lambda f(\textbf{x}^\star(\alpha_1),\alpha_1) 
+    +(1-\lambda)f(\textbf{x}^\star(\alpha_2),\alpha_2)\\
+    &=\lambda v(\alpha_1) + (1-\lambda)v(\alpha_2)
+\end{aligned}</script><p>因此$v(\alpha)=f(\textbf{x}^\star(\alpha),\alpha)$是凹函数。</p>
+</blockquote>
 
   
   
@@ -554,7 +699,7 @@ v(\alpha) = f(\textbf{x}^\star(\alpha),\alpha)</script><p>对L-条件第二个�
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-26T02:34:55+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-26T14:39:11+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月26日</p>
@@ -736,7 +881,7 @@ f(\lambda\textbf{x}+(1-\lambda)\text...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-0-%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%9E%81%E5%80%BC%E9%97%AE%E9%A2%98"><span class="toc-text">7.0 无约束的极值问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%EF%BC%88%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F%EF%BC%89"><span class="toc-text">7.1 拉格朗日乘子法（等式约束）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%E7%9A%84%E9%9B%86%E5%90%88%E5%90%AB%E4%B9%89"><span class="toc-text">拉格朗日乘子法的集合含义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E6%9C%80%E4%BC%98%E8%A7%A3%E7%9A%84%E5%85%85%E5%88%86%E6%9D%A1%E4%BB%B6%E5%92%8C%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-text">7.3 最优解的充分条件和必要条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%90%AB%E4%B9%89%E2%80%94%E2%80%94%E5%BD%B1%E5%AD%90%E4%BB%B7%E6%A0%BC"><span class="toc-text">7.4 拉格朗日乘子的经济含义——影子价格</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-0-%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%9E%81%E5%80%BC%E9%97%AE%E9%A2%98"><span class="toc-text">7.0 无约束的极值问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%EF%BC%88%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F%EF%BC%89"><span class="toc-text">7.1 拉格朗日乘子法（等式约束）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%E7%9A%84%E9%9B%86%E5%90%88%E5%90%AB%E4%B9%89"><span class="toc-text">拉格朗日乘子法的集合含义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E6%9C%80%E4%BC%98%E8%A7%A3%E7%9A%84%E5%85%85%E5%88%86%E6%9D%A1%E4%BB%B6%E5%92%8C%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-text">7.3 最优解的充分条件和必要条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%90%AB%E4%B9%89%E2%80%94%E2%80%94%E5%BD%B1%E5%AD%90%E4%BB%B7%E6%A0%BC"><span class="toc-text">7.4 拉格朗日乘子的经济含义——影子价格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E4%BB%8E%E5%87%A0%E4%BD%95%E7%9B%B4%E8%A7%82%E4%B8%8A%E7%9C%8B%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.1 从几何直观上看库恩-塔克条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2 库恩-塔克条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-1-%E8%87%AA%E5%8F%98%E9%87%8F%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84KT%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2.1 自变量无约束的KT条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-2-%E5%B8%A6%E6%9C%89%E9%9D%9E%E8%B4%9F%E5%8F%98%E9%87%8F%E7%BA%A6%E6%9D%9F%E7%9A%84KT%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2.2 带有非负变量约束的KT条件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E5%AE%9A%E7%90%86"><span class="toc-text">8.3 库恩-塔克定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%80%BC%E5%87%BD%E6%95%B0"><span class="toc-text">值函数</span></a>
     </div>
   </section>
 
