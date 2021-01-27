@@ -427,14 +427,12 @@
 <script type="math/tex; mode=display">
 v(\alpha) = f(\textbf{x}^\star(\alpha),\alpha)</script><p>下面要求<span style='color:red'>参数的变化如何影响最优值对应的自变量</span>：也就是求$D_\alpha[\textbf{x}^\star(\alpha)]$。基于$\nabla f(\textbf{x}^\star,\alpha)=0$关于$\alpha$求导数。</p>
 <script type="math/tex; mode=display">
-f_{\textbf{x}\textbf{x}}(\textbf{x}^\star,\alpha)D_\alpha[\textbf{x}^\star(\alpha)]+
-f_{\textbf{x}\alpha}(\textbf{x}^\star,\alpha) = 0</script><p>于是得到(注意下面的式子不符合矩阵运算的法则)</p>
-<script type="math/tex; mode=display">
-D_\alpha[\textbf{x}^\star(\alpha)] = -\frac{f_{\textbf{x}\alpha}(\textbf{x}^\star,\alpha)}{f_{\textbf{x}\textbf{x}}(\textbf{x}^\star,\alpha)}</script><p>下面要看<span style='color:red'>参数的变化如何影响最优值</span>：</p>
+\nabla^2_{_{\textbf{x}\textbf{x}}}f(\textbf{x}^\star,\alpha)D_\alpha[\textbf{x}^\star(\alpha)]+
+\nabla_{_{\textbf{x}\alpha}}^2f(\textbf{x}^\star,\alpha) = 0</script><p>下面要看<span style='color:red'>参数的变化如何影响最优值</span>：</p>
 <script type="math/tex; mode=display">
 \frac{\partial v(\alpha)}{\partial\alpha} = 
-f_{\textbf{x}}(\textbf{x}^\star,\alpha)D_\alpha[\textbf{x}^\star(\alpha)] +
-f_\alpha(\textbf{x}^\star,\alpha)</script><p>注意到$f_{\textbf{x}}(\textbf{x}^\star,\alpha)=\nabla f(\textbf{x}^\star,\alpha)=0$，因此$\frac{\partial v(\alpha)}{\partial\alpha} = f_\alpha(\textbf{x}^\star,\alpha)$。</p>
+\nabla_{\textbf{x}}f(\textbf{x}^\star,\alpha)D_\alpha[\textbf{x}^\star(\alpha)] +
+\nabla_\alpha f(\textbf{x}^\star,\alpha)</script><p>注意到$\nabla_\textbf{x} f(\textbf{x}^\star,\alpha)=0$，因此$\frac{\partial v(\alpha)}{\partial\alpha} = f_\alpha(\textbf{x}^\star,\alpha)$。</p>
 <p><span style='font-family:fangsong'>注意：上面的$\alpha$可以是向量（多个参数）。</span></p>
 <p><span style='font-family:fangsong'>$\nabla$和$D$的区别：前者用于向量对一个向量求导，后者对应于向量对一个标量求导。</span></p>
 <h3 id="7-1-拉格朗日乘子法（等式约束）"><a href="#7-1-拉格朗日乘子法（等式约束）" class="headerlink" title="7.1 拉格朗日乘子法（等式约束）"></a>7.1 拉格朗日乘子法（等式约束）</h3><script type="math/tex; mode=display">
@@ -699,7 +697,7 @@ g_i(\textbf{x}^\lambda,\lambda\alpha_1+(1-\lambda)\alpha_2)\geqq\min\{ g_i(\text
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-26T14:39:11+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-26T14:45:41+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月26日</p>
@@ -777,6 +775,15 @@ g_i(\textbf{x}^\lambda,\lambda\alpha_1+(1-\lambda)\alpha_2)\geqq\min\{ g_i(\text
 
   
     <div class="prev-next">
+      
+        <a class='prev' href='../../27/%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>第2章变分法的基本问题</p>
+          <p class='content'>基本问题
+
+\begin{aligned}
+    \max\text{或}\min\quad  &V[y]=\int_0^TF[t,y(t),y'(t)]\text{d}t\\
+    \te...</p>
+        </a>
       
       
         <a class='next' href='../%E7%AC%AC6%E7%AB%A0%E5%B9%BF%E4%B9%89%E5%87%B8%E5%87%BD%E6%95%B0%E5%8F%8A%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/'>
