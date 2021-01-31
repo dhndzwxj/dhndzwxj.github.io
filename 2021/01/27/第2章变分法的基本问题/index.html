@@ -343,13 +343,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.2k字</p>
+      <p>字数：1.4k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：5分钟</p>
+      <p>时长：6分钟</p>
     </a>
   </div>
  -->
@@ -359,13 +359,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.2k字</p>
+      <p>字数：1.4k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：5分钟</p>
+      <p>时长：6分钟</p>
     </a>
   </div> -->
 
@@ -374,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.2k字</span>
+        <span class="post-count">1.4k字</span>
       </span>
     </span>
  
@@ -383,7 +383,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">5分</span>
+        <span class="post-count">6分</span>
       </span>
     </span>
     
@@ -472,7 +472,50 @@ F_y-\frac{\text{d}}{\text{d}t}F_{y'} = 0,\quad t\in[0,T]\quad\text{(欧拉方程
 + \frac{\partial F_{y'}}{\partial y}\frac{\text{d}y}{\text{d}t}
 + \frac{\partial F_{y'}}{\partial y'}\frac{\text{d}y'}{\text{d}t}</script><p>将其代入（2.18）：</p>
 <script type="math/tex; mode=display">
-F_{y'y'}y''(t) + F_{y'y}y'(t) + F_{ty'} - F_y = 0,\quad t\in[0,T]\quad\text{(欧拉方程)}    \tag{2.19}</script>
+F_{y'y'}y''(t) + F_{y'y}y'(t) + F_{y't} - F_y = 0,\quad t\in[0,T]\quad\text{(欧拉方程)}    \tag{2.19}</script><hr>
+<p><span style='font-family:hei;font-size:18px'>例1</span></p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+    &V[y] = \int_0^2 (12ty+y'^2)\text{d}t \\
+    &y(0)=2,y(2)=8
+\end{aligned}\right.</script><p>求极值路径。</p>
+<blockquote>
+<script type="math/tex; mode=display">
+F(t,y,y') = 12ty+y'^2 \Rightarrow F_y=12t,\quad F_{y'} = 2y'</script><script type="math/tex; mode=display">
+F_{y'y'}=2,F_{y'y}=F_{y't}=0</script><p>根据欧拉方程，</p>
+<script type="math/tex; mode=display">
+2y''(t)-12t=0\Rightarrow y^\star(t)=t^3+C_1t+C_2(\text{通解})</script><p>根据初值条件可以确定特解：</p>
+<p>$y^\star(t) = t^3-t+2$</p>
+</blockquote>
+<p><span style='font-family:hei;font-size:18px'>例2</span></p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+    &V[y] = \int_0^5 (t+y^2+3y')\text{d}t \\
+    &y(0)=0,y(5)=3
+\end{aligned}\right.</script><p>求极值路径。</p>
+<blockquote>
+<p>略去求解步骤，得到通解：</p>
+<script type="math/tex; mode=display">
+y^\star(t) = 0</script><p>不满足初值条件，因此无解。</p>
+</blockquote>
+<p><span style='font-family:hei;font-size:18px'>例3</span></p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+    &V[y] = \int_0^T y'\text{d}t \\
+    &y(0)=\alpha,y(T)=\beta
+\end{aligned}\right.</script><p>求极值路径。</p>
+<blockquote>
+<script type="math/tex; mode=display">
+V[y] = \int_0^T y'\text{d}t = \left.y(t)\right\lvert_{0}^T=y(T)-y(0)=\beta-\alpha</script><p>因此任意满足$y(0)=\alpha,y(T)=\beta$的路径都是极值路径。</p>
+</blockquote>
+<h3 id="补充：二阶常系数非齐次线性微分方程特解"><a href="#补充：二阶常系数非齐次线性微分方程特解" class="headerlink" title="补充：二阶常系数非齐次线性微分方程特解"></a>补充：二阶常系数非齐次线性微分方程特解</h3><script type="math/tex; mode=display">
+y''+py'+qy=f(x)</script><p>若$f(x)=e^{mx}$，则设特解$y^\star=Ae^{mx}$；</p>
+<p>若$f(x)=x^2+1$，则设特解$y^\star=Ax^2+Bx+C$；</p>
+<p>待定系数。</p>
+
   
   
     
@@ -506,7 +549,7 @@ F_{y'y'}y''(t) + F_{y'y}y'(t) + F_{ty'} - F_y = 0,\quad t\in[0,T]\quad\text{(欧
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-27T16:49:59+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-27T19:59:57+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月27日</p>
@@ -697,7 +740,7 @@ F_{y'y'}y''(t) + F_{y'y}y'(t) + F_{ty'} - F_y = 0,\quad t\in[0,T]\quad\text{(欧
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B"><span class="toc-text">2.1 欧拉方程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-text">欧拉方程的构建</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B"><span class="toc-text">2.1 欧拉方程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-text">欧拉方程的构建</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%89%B9%E8%A7%A3"><span class="toc-text">补充：二阶常系数非齐次线性微分方程特解</span></a></li></ol>
     </div>
   </section>
 
