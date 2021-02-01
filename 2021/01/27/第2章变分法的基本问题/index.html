@@ -343,13 +343,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.4k字</p>
+      <p>字数：1.5k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：6分钟</p>
+      <p>时长：7分钟</p>
     </a>
   </div>
  -->
@@ -359,13 +359,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.4k字</p>
+      <p>字数：1.5k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：6分钟</p>
+      <p>时长：7分钟</p>
     </a>
   </div> -->
 
@@ -374,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.4k字</span>
+        <span class="post-count">1.5k字</span>
       </span>
     </span>
  
@@ -383,7 +383,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">6分</span>
+        <span class="post-count">7分</span>
       </span>
     </span>
     
@@ -401,10 +401,10 @@
   
   <p>基本问题</p>
 <script type="math/tex; mode=display">
-\begin{aligned}
-    \max\text{或}\min\quad  &V[y]=\int_0^TF[t,y(t),y'(t)]\text{d}t\\
-    \text{s.t.}                            &y(0)=A,\quad y(T)=Z
-\end{aligned}\tag{2.1}</script><p>这里处理的问题是从路径$y(t)$到路径值$V[y(t)]$（或$V[y]$）之间的映射。$F$是将弧值指定给弧的函数。值得注意的是，$V$是$y$的<strong>泛函</strong>，而非$t$的函数，因为路径值的变化是由选择的路径决定的，而非时间造成的（图1-3）。（2.1）中$0$和$T$分别代表初始和终止<strong>时间</strong>，$A$和$Z$分别代表初始和终止<strong>状态</strong>。</p>
+\begin{eqnarray}
+    \max\text{或}\min\quad  V[y] &=&\int_0^TF[t,y(t),y'(t)]\text{d}t\\
+    \text{s.t.}                            y(0) &=& A,\quad y(T)=Z
+\end{eqnarray}\tag{2.1}</script><p>这里处理的问题是从路径$y(t)$到路径值$V[y(t)]$（或$V[y]$）之间的映射。$F$是将弧值指定给弧的函数。值得注意的是，$V$是$y$的<strong>泛函</strong>，而非$t$的函数，因为路径值的变化是由选择的路径决定的，而非时间造成的（图1-3）。（2.1）中$0$和$T$分别代表初始和终止<strong>时间</strong>，$A$和$Z$分别代表初始和终止<strong>状态</strong>。</p>
 <div align='center'>
   <img src='/../../images/%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/IMG_20210127_144851_edit_247453110235676.jpg' width=350px>
   <center style='font-family:kai'>图1-3</center>
@@ -413,9 +413,13 @@
 <p>变分法的任务是从一组可行的路径中（图1-3中表示为$y_I(t),y_{II}(t),y_{III}(t)$）选择能使得$V[y]$达到极值（极大值或者极小值）的那个<strong>极值路径</strong>$\bar{y}$。</p>
 <h3 id="2-1-欧拉方程"><a href="#2-1-欧拉方程" class="headerlink" title="2.1 欧拉方程"></a>2.1 欧拉方程</h3><p>在一般的积分里我们都是知道被积函数的，但当前的问题里这个被积函数$y(t)$正是我们需要求解的。这里的构造十分巧妙，如图2-1，假设我们已经知道了一条极值路径$y^\star(t)$（事实上我们并不知道，这里只是一个假设，后面的分析可以发现，即便不知道我们也能空手套白狼），根据这条极值路径我们可以通过如下构造得到其他任何一条极值路径：</p>
 <script type="math/tex; mode=display">
-y(t) = y^\star(t)+\varepsilon p(t)\tag{2.3}</script><p>其中$p(t)$被称为<strong>扰动曲线</strong>，这样的曲线是<strong>任意取定</strong>的，只要满足平滑并使得下面条件成立即可：</p>
+\begin{eqnarray}
+y(t) = y^\star(t)+\varepsilon p(t)\tag{2.3}
+\end{eqnarray}</script><p>其中$p(t)$被称为<strong>扰动曲线</strong>，这样的曲线是<strong>任意取定</strong>的，只要满足平滑并使得下面条件成立即可：</p>
 <script type="math/tex; mode=display">
-p(0)=p(T)=0\tag{2.2}</script><p>(2.3)还可以得到$y’(t) = y^\star{‘}(t)+\varepsilon p’(t)$</p>
+\begin{eqnarray}
+    p(0)=p(T)=0    \tag{2.2}
+\end{eqnarray}</script><p>(2.3)还可以得到$y’(t) = y^\star{‘}(t)+\varepsilon p’(t)$</p>
 <div align='center'>
   <img src='/../../images/%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/IMG_20210127_151722_edit_247768183505420.jpg' width=350px>
   <center style='font-family:kai'>图2-1</center>
@@ -424,7 +428,9 @@ p(0)=p(T)=0\tag{2.2}</script><p>(2.3)还可以得到$y’(t) = y^\star{‘}(t)+\
 <p>由于$y^\star(t)$和$p(t)$都是给定的曲线，这意味着每一个$\varepsilon$都能决定一条路径$y$，从而决定了一个路径值$V[y]$。因而我们无需将路径值视为路径的泛函，而将其当作$\varepsilon$的函数$V[\varepsilon]$。</p>
 <h4 id="欧拉方程的构建"><a href="#欧拉方程的构建" class="headerlink" title="欧拉方程的构建"></a>欧拉方程的构建</h4><p>结合（2.1）和（2.3）：</p>
 <script type="math/tex; mode=display">
-V(\varepsilon) = \int_0^T F[t,y^\star(t)+\varepsilon p(t), y^\star{'}(t)+\varepsilon p'(t)]\text{d}t\tag{2.12}</script><p>下面求$\frac{\text{d}V}{\text{d}\varepsilon}$，不过先要介绍莱布尼茨法则：</p>
+\begin{eqnarray}
+    V(\varepsilon) = \int_0^T F[t,y^\star(t)+\varepsilon p(t), y^\star{'}(t)+\varepsilon p'(t)]\text{d}t    \tag{2.12}
+\end{eqnarray}</script><p>下面求$\frac{\text{d}V}{\text{d}\varepsilon}$，不过先要介绍莱布尼茨法则：</p>
 <blockquote>
 <p><span style='font-family:hei;font-size:18px'>莱布尼茨法则：</span></p>
 <script type="math/tex; mode=display">
@@ -434,45 +440,57 @@ V(\varepsilon) = \int_0^T F[t,y^\star(t)+\varepsilon p(t), y^\star{'}(t)+\vareps
 \end{eqnarray}</script><p>求一个定积分关于变量$x$的导数时，只要$x$不是积分变量，也不是积分上下限，求导算子就可以穿过积分符号！</p>
 <p>此外对于积分</p>
 <script type="math/tex; mode=display">
-J(a,b) \equiv \int_a^b F(t,x)\text{d}t\tag{2.7}</script><p>有</p>
+\begin{eqnarray}
+    J(a,b) \equiv \int_a^b F(t,x)\text{d}t    \tag{2.7}
+\end{eqnarray}</script><p>有</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
     \frac{\partial J}{\partial b} &=& \left.F(t,x)\right\lvert_{t=b}=F(b,x) \tag{2.8}\\
     \frac{\partial J}{\partial a} &=& \color{red}{-}\left.F(t,x)\right\lvert_{t=a}=\color{red}{-}F(a,x)\tag{2.9}
 \end{eqnarray}</script><p>还有更复杂的</p>
 <script type="math/tex; mode=display">
-K(x) \equiv \int_a^{b(x)} F(t,x)\text{d}t    \tag{2.10}</script><p>这里要结合（2.6）和（2.8）</p>
+\begin{eqnarray}    
+    K(x) \equiv \int_a^{b(x)} F(t,x)\text{d}t    \tag{2.10}
+\end{eqnarray}</script><p>这里要结合（2.6）和（2.8）</p>
 <script type="math/tex; mode=display">
-\frac{\text{d}K}{\text{d}x}= \int_a^{b(x)}F_x(t,x)\text{d}t+F[b(x),x]b'(x)\tag{2.11}</script></blockquote>
+\begin{eqnarray}
+    \frac{\text{d}K}{\text{d}x}= \int_a^{b(x)}F_x(t,x)\text{d}t+F[b(x),x]b'(x)\tag{2.11}
+\end{eqnarray}</script></blockquote>
 <p>接下来对（2.12）关于$\varepsilon$求导：</p>
 <script type="math/tex; mode=display">
-\begin{aligned}
+\begin{eqnarray}
     \frac{\text{d}V}{\text{d}\varepsilon} 
     &= \int_0^T \frac{\text{d}F}{\text{d}\varepsilon}\text{d}t 
     = \int_0^T \left( \frac{\partial F}{\partial y}\frac{\text{d}y}{\text{d}\varepsilon} 
   + \frac{\partial F}{\partial y'}\frac{\text{d}y'}{\text{d}\varepsilon} \right)\text{d}t\\
   &=\int_0^T \left[F_y p(t) + F_{y'}p'(t)\right]\text{d}t
-\end{aligned}\tag{2.13}</script><p>下面处理第二部分$\int_0^T F_{y’}p’(t)\text{d}t$，使用分部积分法。</p>
+\end{eqnarray}\tag{2.13}</script><p>下面处理第二部分$\int_0^T F_{y’}p’(t)\text{d}t$，使用分部积分法。</p>
 <script type="math/tex; mode=display">
-\begin{aligned}
+\begin{eqnarray}
     \int_0^T F_{y'}p'(t)\text{d}t 
     &= \int_0^TF_{y'}\text{d}[p(t)] 
     = \left.[F_{y'}\color{red}{p(t)}]\right\lvert_{t=0}^{t=T} - \int_0^Tp(t)\text{d}F_{y'} \\
     &= -\int_0^T p(t)\frac{\text{d}F_{y'}}{\text{d}t}\text{d}t 
-\end{aligned}
+\end{eqnarray}
 \tag{2.16}</script><p>将（2.16）代入（2.13），并令$\frac{\text{d}V}{\text{d}\varepsilon}=0$，得到</p>
 <script type="math/tex; mode=display">
 \int_0^Tp(t) \left[ F_y-\frac{\text{d}}{\text{d}t}F_{y'} \right] \text{d}t = 0 \tag{2.17}</script><p>前面我们提到，$p(t)$是任意取定的，因此要想使（2.17）恒成立，必须要有</p>
 <script type="math/tex; mode=display">
-F_y-\frac{\text{d}}{\text{d}t}F_{y'} = 0,\quad t\in[0,T]\quad\text{(欧拉方程)}    \tag{2.18}</script><p>或者对（2.18）两边关于$t$积分：</p>
+\begin{eqnarray}
+    F_y-\frac{\text{d}}{\text{d}t}F_{y'} = 0,\quad t\in[0,T]\quad\text{(欧拉方程)}    \tag{2.18}
+\end{eqnarray}</script><p>或者对（2.18）两边关于$t$积分：</p>
 <script type="math/tex; mode=display">
-\int F_y \text{d}t = F_{y'} \tag{2.18'}</script><p>最后也可以将$\frac{\text{d}F_{y’}}{\text{d}t}$展开：</p>
+\begin{eqnarray}
+    \int F_y \text{d}t = F_{y'} \tag{2.18'}
+\end{eqnarray}</script><p>最后也可以将$\frac{\text{d}F_{y’}}{\text{d}t}$展开：</p>
 <script type="math/tex; mode=display">
 \frac{\text{d}F_{y'}}{\text{d}t} = \frac{\partial F_{y'}}{\partial t}
 + \frac{\partial F_{y'}}{\partial y}\frac{\text{d}y}{\text{d}t}
 + \frac{\partial F_{y'}}{\partial y'}\frac{\text{d}y'}{\text{d}t}</script><p>将其代入（2.18）：</p>
 <script type="math/tex; mode=display">
-F_{y'y'}y''(t) + F_{y'y}y'(t) + F_{y't} - F_y = 0,\quad t\in[0,T]\quad\text{(欧拉方程)}    \tag{2.19}</script><hr>
+\begin{eqnarray}
+    F_{y'y'}y''(t) + F_{y'y}y'(t) + F_{y't} - F_y = 0,\quad t\in[0,T]\quad\text{(欧拉方程)}    \tag{2.19}
+\end{eqnarray}</script><hr>
 <p><span style='font-family:hei;font-size:18px'>例1</span></p>
 <script type="math/tex; mode=display">
 \left\{
@@ -549,10 +567,10 @@ y''+py'+qy=f(x)</script><p>若$f(x)=e^{mx}$，则设特解$y^\star=Ae^{mx}$；</
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-27T19:59:57+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-01T14:44:34+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年1月27日</p>
+    <p>更新于：2021年2月1日</p>
   </a>
 </div>
 
