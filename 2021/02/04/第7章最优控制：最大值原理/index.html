@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：向量自回归（VAR模型） - 渝言</title>
+  <title>第7章最优控制：最大值原理 - 渝言</title>
   
 
   
@@ -243,7 +241,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  search' style="display: none;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="img/bg.png"></div>
           
@@ -282,79 +280,445 @@
       <div class='body-wrapper' id="pjax-container">
         
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        第7章最优控制：最大值原理
+      </h1>
+      <div class='new-meta-box'>
         
           
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="../../../../2021/01/08/VAR%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/">
-        VAR模型的前世今生
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        本文来自公众号“计量经济学”的文章《VAR模型的演变与发展》。原文是2012年发表在《数量经济技术经济研究》上的一篇文章:
+            <!-- 
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="fas fa-user">
+    <p>请设置文章作者</p>
+  </a>
+</div> -->
 
-沈悦,李善燊,马续涛.VAR宏观计量经济模型的演变与最新发展——基于2011年诺贝尔经济学奖得主Smis研究成果的拓展脉络[J].数量经济技术经济研究,2012,29(10):150-160.
-链接: https://pan.baidu.com/s/1NcgN-r6w...
-      
-    
+
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <i class=" fas fa-user" aria-hidden="true"></i>
+    <!-- <i class=" fa-fw" aria-hidden="true"></i> -->
+    <!-- <img no-lazy src=""> -->
+    <!-- <p></p> --> <!--原始代码，引用的是author.name，但是md文件中都没有这么写-->
+    <p>揭晓</p>
+  </a>
+</div>
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年2月4日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/">博资考</a><span class="sep"></span><a class="category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E6%95%B0%E7%90%86-%E5%AE%8F%E8%A7%82/">高级数理-宏观</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
-        <time>2021-01-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="../../">经济学</a><span class="sep"></span><a class="category-link" href="../">模型</a><span class="sep"></span><a class="category-link" href="">向量自回归（VAR模型）</a>
+          
+            <!-- 
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：2.3k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：10分钟</p>
+    </a>
+  </div>
+ -->
+
+
+
+  <!-- <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：2.3k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：10分钟</p>
+    </a>
+  </div> -->
+
+  <div style="margin-top:0px;"> <!--这一行的margin-top，意思是是否与该行文字对其，0是对其-->
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">2.3k字</span>
+      </span>
+    </span>
+ 
+    <span class="post-time">
+      &nbsp;  &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">10分</span>
+      </span>
+    </span>
+    
+</div>
+
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <p>变分法要使用最优化问题中的函数可微性，这种方法只能处理内部解。而<strong>最优控制理论</strong>能够处理诸如边角解（corner solutions）这样的非古典情形。</p>
+<p>在变分法中，我们的目标是找到<strong>状态变量</strong>$y$的最优时间路径。而最优控制理论的核心目标是确定<strong>控制变量</strong>$u$的最优时间路径。当然，一旦找到了最优控制路径$u^\star(t)$，也能找到对应的最优状态路径$y^\star(t)$。</p>
+<p>那么，一个变量如何成为控制变量？控制变量一般有两个性质：</p>
+<ul>
+<li>它受我们的相机选择所支配；（状态变量往往是不受我们控制的）</li>
+<li>我们对这个变量的选择能影响状态变量。</li>
+</ul>
+<h3 id="7-1-最简单的最优控制问题"><a href="#7-1-最简单的最优控制问题" class="headerlink" title="7.1 最简单的最优控制问题"></a>7.1 最简单的最优控制问题</h3><h4 id="7-1-1-最优控制问题的特殊性质"><a href="#7-1-1-最优控制问题的特殊性质" class="headerlink" title="7.1.1 最优控制问题的特殊性质"></a>7.1.1 最优控制问题的特殊性质</h4><p>（1）这里并不要求控制路径$u(t)$是连续的，仅要求<strong>分段连续性</strong>，即允许跳跃型不连续（如图7-1(a)）。而状态路径$y(t)$必须是始终连续的，它允许有限个尖点。状态路径仅需要<strong>分段可微</strong>即可。</p>
+<div align='center'>
+  <img src='/../../images/%E7%AC%AC7%E7%AB%A0%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86/%E6%89%AB%E6%8F%8F%E5%85%A8%E8%83%BD%E7%8E%8B%202021-02-04%2014.04_2.jpg' width=450px>
+  <center style='font-family:kai'>图7-1</center>
+</div>
+
+<p>（2）最优控制理论另一个重要性质是，它能直接处理控制变量$u$上的约束。比如限制条件$u(t)\in \mathscr{U}$对于所有$t\in[0,T]$，其中$\mathscr{U}$表示某个有界控制集。而$\mathscr{U}$有可能是一个闭集，这意味着边角解可被允许。</p>
+<p>（3）与变分法不同，最优控制理论的最简单问题有自由终止状态（垂直终止线），而不是固定的终止点。</p>
+<h4 id="7-1-2-最简单的问题"><a href="#7-1-2-最简单的问题" class="headerlink" title="7.1.2 最简单的问题"></a>7.1.2 最简单的问题</h4><p>最优化问题表示为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max                                 V         &=& \int_0^TF(t,y,u)\text{d}t \notag\\
+    \text{s.t.}\quad \dot{y}     &=& f(t,y,u)    \notag\\
+                                        y(0)         &=& A, y(T)\text{自由（A，T给定）}\notag\\
+                                        u(t)        &\in&\mathscr{U}\text{对于所有}t\in[0,T]\notag
+\end{eqnarray}\tag{7.1}</script><p>在后面的讨论中只处理最大化问题。控制变量$u$对状态变量$y$的作用通过方程$\dot{y}=f(t,y,u)$来表示，这个方程通常被称为<strong>运动方程</strong>，或者<strong>状态方程</strong>。</p>
+<h3 id="7-2-最大值原理"><a href="#7-2-最大值原理" class="headerlink" title="7.2 最大值原理"></a>7.2 最大值原理</h3><p>最大值原理涉及<strong>汉密尔顿函数</strong>和<strong>共态变量</strong>两个概念。汉密尔顿函数的设定：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    H(t,y,u,\lambda) \equiv F(t,y,u) + \lambda(t)f(t,y,u)    \tag{7.3}
+\end{eqnarray}</script><p>其中的$\lambda(t)$就是共态变量。共态变量类似拉格朗日乘子，因此它在本质上是一个价值变量——衡量<strong>相应状态变量的影子价格</strong>。</p>
+<p>最大值原理涉及两个一阶微分方程，一个关于状态变量$y$，另一个关于共态变量$\lambda$。<span style='color:red'>最大值原理还有一个要求，在每个时间点上，汉密尔顿函数关于控制变量$u$必须最大化</span>。此处先不证明，直接给出最大值原理的条件：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max_u                &\quad& H(t,y,u,\lambda)\quad\text{对于所有}t\in[0,T]    \notag\\
+    \dot{y}             &=& \frac{\partial H}{\partial\lambda}(y\text{的运动方程})    \notag\\
+    \dot{\lambda} &=& -\frac{\partial H}{\partial y}(\lambda\text{的运动方程})    \notag\\
+    \lambda(T)         &=& 0(\text{横截条件})    \notag
+\end{eqnarray}\tag{7.5}</script><p>如果不求甚解，这一部分的结果死记硬背就可以了。对于这些条件的所有解释都在下一节中。</p>
+<h3 id="7-3-最大值原理的机理"><a href="#7-3-最大值原理的机理" class="headerlink" title="7.3 最大值原理的机理"></a>7.3 最大值原理的机理</h3><p>为简单起见，假设控制变量$u$不受约束，因此$u^\star$是一个内部解。我们假设汉密尔顿函数关于$u$可微。另外，假设可以用条件$\frac{\partial H}{\partial u}=0$替换条件$\max_u H$。假定初始点固定，但终止点可变。问题为</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max V                                         &=&\int_0^T F(t,y,u)\text{d}t    \notag\\
+    \text{s.t.}\quad\dot{y}     &=&f(t,y,u)    \notag\\
+                                    y(0)            &=&y_0(\text{给定})\notag
+\end{eqnarray}\tag{7.20}</script><p><span style='font-family:hei;color:red'>第1步</span>将运动方程纳入目标泛函。如果变量$y$总是服从运动方程，那么对于区间$[0,T]$中的所有$t$，$[f(t,y,u)-\dot{y}]$必定都取零值。因此使用拉格朗日乘子符号，对于每个$t$值我们都能构造表达式$\lambda(t)[f(t,y,u)-\dot{y}]$。尽管区间$[0,T]$含有无穷多个$t$值，但$\lambda(t)[f(t,y,u)-\dot{y}]$在区间$[0,T]$上关于$t$的加和仍等于零。</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \int_0^T \lambda(t)[f(t,y,u)-\dot{y}]\text{d}t=0    \tag{7.21}
+\end{eqnarray}</script><p>正因为这个原因，我们可以在原来的泛函中加上式子（7.21）而不至于影响最优解。于是我们可以构造新的泛函：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \mathscr{V}&\equiv& V+\int_0^T \lambda(t)[f(t,y,u)-\dot{y}]\text{d}t    \notag\\
+                            &=& \int_0^T F(t,y,u)\text{d}t + \int_0^T \lambda(t)[f(t,y,u)-\dot{y}]\text{d}t    \notag\\
+                            &=& \int_0^T\{ F(t,y,u) + \lambda(t)[f(t,y,u)-\dot{y}] \}    \text{d}t    \notag\\
+                            &=& \int_0^T\{ F(t,y,u) + \lambda(t)f(t,y,u)-\lambda(t)\dot{y} \}    \text{d}t    \notag
+\end{eqnarray}\tag{7.22}</script><p>​    前面定义的哈密尔顿函数为</p>
+<script type="math/tex; mode=display">
+H(t,u,y,\lambda)\equiv F(t,y,u)+\lambda(t)f(t,y,u)</script><p>将其代入(7.22)</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \mathscr{V} &=& \int_0^T [H(t,y,u,\lambda)-\lambda(t)\dot{y}]\text{d}t    \notag\\
+                            &=& \int_0^T H(t,y,u,\lambda)\text{d}t-\int_0^T\lambda(t)\dot{y}\text{d}t    \notag
+\end{eqnarray}\tag{7.22'}</script><p>(7.22’)第二项积分作进一步计算：</p>
+<script type="math/tex; mode=display">
+\int_0^T\lambda(t)\dot{y}\text{d}t 
+= \int_0^T\lambda(t)\text{d}y
+= \left.[\lambda(t)y]\right\lvert_0^T-\int_0^Ty\dot{\lambda}\text{d}t
+=\lambda(T)y_T-\lambda(0)y_0-\int_0^Ty\dot{\lambda}\text{d}t</script><p>代入(7.22’)</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \mathscr{V} &=& \int_0^T H(t,y,u,\lambda)\text{d}t
+-\lambda(T)y_T+\lambda(0)y_0+\int_0^Ty\dot{\lambda}\text{d}t    \notag\\
+    &=&\int_0^T[H(t,y,u,\lambda)+y\dot{\lambda}]\text{d}t-\lambda(T)y_T+\lambda(0)y_0    \notag
+\end{eqnarray}\tag{7.22''}</script><p><span style='font-family:hei;color:red'>第2步</span> 变量$\lambda$作为一个拉格朗日乘子，显著不同于$u$和$y$。因为只要我们严格遵守运动方程$\dot{y}=f(t,y,u)$，$\lambda(t)$的路径的选择对$\mathscr{V}$的值就没有影响，也就是：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \dot{y}=\frac{\partial H}{\partial\lambda}(\text{对于所有}t\in[0,T])    \tag{7.23}
+\end{eqnarray}</script><p>因此我们可以把（7.23）作为$\mathscr{V}$最大化的一个<span style='color:red'>必要条件</span>。</p>
+<p><span style='font-family:hei;color:red'>第3步</span> 现在考虑$u(t)$的路径，以及它对$y(t)$路径的影响。同于在变分法中的处理：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    u(t) = u^\star(t) + \varepsilon p(t)    \tag{7.24}
+\end{eqnarray}</script><p>根据运动方程$\dot{y}=f(t,y,u)$，对于每一个$\varepsilon$，$y^\star(t)$路径都有相对应的扰动。于是$y$路径可以写成：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    y(t) = y^\star(t)+\varepsilon q(t)    \tag{7.25}
+\end{eqnarray}</script><p>关于终止条件还有：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    T=T^\star+\varepsilon\Delta T,&\quad& y_T=y_T^\star+\varepsilon\Delta y_T    \notag\\
+    \frac{\text{d}T}{\text{d}\varepsilon}=\Delta T,&\quad& \frac{\text{d}y_T}{\text{d}\varepsilon}=\Delta y_T    \notag
+\end{eqnarray}\tag{7.26}</script><p>于是(7.22’’)可以改写为</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \mathscr{V}&=&\int_0^{T(\varepsilon)}\{H[t,y^\star+\varepsilon q(t),u^\star+\varepsilon p(t),\lambda]+\dot{\lambda}[y^\star+\varepsilon q(t)]\}\text{d}t-\lambda(T)y_T+\lambda(0)y_0    \notag\\
+    &=&\Omega_1+\Omega_2+\Omega_3    \notag
+\end{eqnarray}\tag{7.27}</script><p><span style='font-family:hei;color:red'>第4步</span> 下面使用条件$\frac{\text{d}\mathscr{V}}{\text{d}\varepsilon}$。（7.27）第一项关于$\varepsilon$求导数：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\text{d}\Omega_1}{\text{d}\varepsilon} &=& \int_0^{T(\varepsilon)} \left\{\left[\frac{\partial H}{\partial y}\cdot\frac{\text{d}y}{\text{d}\varepsilon}+\frac{\partial H}{\partial u}\cdot\frac{\text{d}u}{\text{d}\varepsilon}\right] +\dot{\lambda}\frac{\text{d}y}{\text{d}\varepsilon} \right\}\text{d}t
++[H+\dot{\lambda}y]_{t=T}\frac{\text{d}T}{\text{d}\varepsilon}    \notag\\
+    &=& \int_0^{T(\varepsilon)} \left\{\left[\frac{\partial H}{\partial y}q(t)+\frac{\partial H}{\partial u}p(t)\right] +\dot{\lambda}q(t) \right\}\text{d}t
++[H+\dot{\lambda}y]_{t=T}\Delta T    \notag
+\end{eqnarray}\tag{7.28}</script><p>（7.27）第二项关于$\varepsilon$求导数：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\text{d}\Omega_2}{\text{d}\varepsilon} 
+&=& -\left(\lambda(T)\frac{\text{d}y_T}{\text{d}\varepsilon}+y_T\frac{\text{d}\lambda(T)}{\text{d}\varepsilon}\right) \notag\\
+&=& -\left(\lambda(T)\Delta y_T+y_T\frac{\text{d}\lambda(T)}{\text{d}T}\frac{\text{d}T}{\text{d}\varepsilon}\right)    \notag\\
+&=& -\lambda(T)\Delta y_T-y_T\dot{\lambda}(T)\Delta T    \notag
+\end{eqnarray}\tag{7.29}</script><p>关于第三项，不难发现</p>
+<script type="math/tex; mode=display">
+\frac{\text{d}\Omega_3}{\text{d}\varepsilon} =0</script><p>因此</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\text{d}\mathscr{V}}{\text{d}\varepsilon} 
+    &=& \int_0^{T} \left\{\left[\frac{\partial H}{\partial y}q(t)+\frac{\partial H}{\partial u}p(t)\right] +\dot{\lambda}q(t) \right\}\text{d}t
++[H+\dot{\lambda}y]_{t=T}\Delta T-\lambda(T)\Delta y_T-y_T\dot{\lambda}(T)\Delta T \notag\\
+    &=& \int_0^{T} \left[\left(\frac{\partial H}{\partial y}+\dot{\lambda}\right)q(t)+\frac{\partial H}{\partial u}p(t) \right]\text{d}t + [H]_{t=T}\Delta T-\lambda(T)\Delta y_T    \notag
+\end{eqnarray}\tag{7.30}</script><p>(7.30)包括三部分。第一部分得到两个条件</p>
+<script type="math/tex; mode=display">
+\dot{\lambda}=-\frac{\partial H}{\partial y},\quad \frac{\partial H}{\partial u}=0</script><p>得到的第一个方程是<strong>共态方程</strong>。第二个方程是一阶条件。由于最简单的问题有固定不变的$T$和自由的$y_T$，因此（7.30）中$\Delta T=0$，但$\Delta y_T$是自由的，因此一定要加限制条件</p>
+<script type="math/tex; mode=display">
+\lambda(T)=0</script><p>这就是（7.5）的横截条件的由来。</p>
+<h3 id="7-4-其他终止条件"><a href="#7-4-其他终止条件" class="headerlink" title="7.4 其他终止条件"></a>7.4 其他终止条件</h3><h4 id="7-4-1-固定终止点"><a href="#7-4-1-固定终止点" class="headerlink" title="7.4.1 固定终止点"></a>7.4.1 固定终止点</h4><h4 id="7-4-2-水平终止线（固定端点问题）"><a href="#7-4-2-水平终止线（固定端点问题）" class="headerlink" title="7.4.2 水平终止线（固定端点问题）"></a>7.4.2 水平终止线（固定端点问题）</h4><h4 id="7-4-3-终止曲线"><a href="#7-4-3-终止曲线" class="headerlink" title="7.4.3 终止曲线"></a>7.4.3 终止曲线</h4><h4 id="7-4-4-截断垂直终止线"><a href="#7-4-4-截断垂直终止线" class="headerlink" title="7.4.4 截断垂直终止线"></a>7.4.4 截断垂直终止线</h4><h4 id="7-4-5-截断水平终止线"><a href="#7-4-5-截断水平终止线" class="headerlink" title="7.4.5 截断水平终止线"></a>7.4.5 截断水平终止线</h4><h3 id="现值哈密尔顿函数"><a href="#现值哈密尔顿函数" class="headerlink" title="现值哈密尔顿函数"></a>现值哈密尔顿函数</h3><p>参考蒋中一教材P785</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='../../../../2021/01/08/VAR%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://dhndzwxj.github.io/2021/02/04/%E7%AC%AC7%E7%AB%A0%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86/>https://dhndzwxj.github.io/2021/02/04/%E7%AC%AC7%E7%AB%A0%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-05T01:52:48+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年2月5日</p>
+  </a>
 </div>
 
-          </div>
         
       
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-  </section>
-  
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dhndzwxj.github.io/2021/02/04/%E7%AC%AC7%E7%AB%A0%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86/&title=第7章最优控制：最大值原理 - 渝言&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
     
-  
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dhndzwxj.github.io/2021/02/04/%E7%AC%AC7%E7%AB%A0%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86/&title=第7章最优控制：最大值原理 - 渝言&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://dhndzwxj.github.io/2021/02/04/%E7%AC%AC7%E7%AB%A0%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86/&title=第7章最优控制：最大值原理 - 渝言&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
 
 
-    
+
+        
+      
+    </div>
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='../../01/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA%E7%AC%AC2%E7%AB%A0%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B%E7%9A%84%E8%BD%AC%E5%8F%98/'>
+          <p class='title'>第二章 劳动过程的转变<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+  
+  图1 逻辑框架
+
+
+I 劳动机械化资本主义生产是劳动过程和增值过程的统一，其中增值占主导地位。（本章第一节介绍劳动过程，第三节介绍价值增值过程）对这种统一的研究涉及对资本主义生产关系...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -362,401 +726,28 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='../../../../about/'>
-          <img no-lazy src='/img/avatar.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>渝言</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">渝言</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="../../../../atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="../../../../mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="../../../../https:/github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="../../../../index.html"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    <!-- 
-  
-
-  <section class="widget category shadow desktop mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="../../../%E5%8D%9A%E8%B5%84%E8%80%83/" href="../../../%E5%8D%9A%E8%B5%84%E8%80%83/"
-            id="E58D9AE8B584E88083"
-            ><div class='name'>博资考</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../../%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E6%95%B0%E7%90%86-%E5%AE%8F%E8%A7%82/" href="../../../%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E6%95%B0%E7%90%86-%E5%AE%8F%E8%A7%82/"
-            id="E58D9AE8B584E88083E9AB98E7BAA7E695B0E79086-E5AE8FE8A782"
-            ><div class='name'>高级数理-宏观</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../../%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E6%95%B0%E7%90%86-%E5%BE%AE%E8%A7%82/" href="../../../%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E6%95%B0%E7%90%86-%E5%BE%AE%E8%A7%82/"
-            id="E58D9AE8B584E88083E9AB98E7BAA7E695B0E79086-E5BEAEE8A782"
-            ><div class='name'>高级数理-微观</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="../../../%E6%9D%82%E8%AE%B0/" href="../../../%E6%9D%82%E8%AE%B0/"
-            id="E69D82E8AEB0"
-            ><div class='name'>杂记</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../../%E6%9D%82%E8%AE%B0/%E6%98%8E%E6%98%8E%E7%9A%84%E4%B8%96%E7%95%8C/" href="../../../%E6%9D%82%E8%AE%B0/%E6%98%8E%E6%98%8E%E7%9A%84%E4%B8%96%E7%95%8C/"
-            id="E69D82E8AEB0E6988EE6988EE79A84E4B896E7958C"
-            ><div class='name'>明明的世界</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../../%E6%9D%82%E8%AE%B0/%E7%A4%BA%E4%BE%8B/" href="../../../%E6%9D%82%E8%AE%B0/%E7%A4%BA%E4%BE%8B/"
-            id="E69D82E8AEB0E7A4BAE4BE8B"
-            ><div class='name'>示例</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="../../../%E7%AC%94%E8%AE%B0/" href="../../../%E7%AC%94%E8%AE%B0/"
-            id="E7AC94E8AEB0"
-            ><div class='name'>笔记</div><div class='badge'>(31)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../../%E7%AC%94%E8%AE%B0/%E6%96%B0%E6%83%B3%E6%B3%95/" href="../../../%E7%AC%94%E8%AE%B0/%E6%96%B0%E6%83%B3%E6%B3%95/"
-            id="E7AC94E8AEB0E696B0E683B3E6B395"
-            ><div class='name'>新想法</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../../%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" href="../../../%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"
-            id="E7AC94E8AEB0E8AEBAE69687E7AC94E8AEB0"
-            ><div class='name'>论文笔记</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" href="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"
-            id="E7AC94E8AEB0E8AFBBE4B9A6E7AC94E8AEB0"
-            ><div class='name'>读书笔记</div><div class='badge'>(21)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AE%89%E7%93%A6%E5%B0%94%C2%B7%E8%B0%A2%E5%85%8B%E3%80%8A%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E3%80%8B/" href="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AE%89%E7%93%A6%E5%B0%94%C2%B7%E8%B0%A2%E5%85%8B%E3%80%8A%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E3%80%8B/"
-            id="E7AC94E8AEB0E8AFBBE4B9A6E7AC94E8AEB0E5AE89E793A6E5B094C2B7E8B0A2E5858BE3808AE8B584E69CACE4B8BBE4B989E3808B"
-            ><div class='name'>安瓦尔·谢克《资本主义》</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%B0%BC%E5%B0%94%C2%B7%E5%8F%B2%E5%AF%86%E6%96%AF%E3%80%8A%E8%87%AA%E7%84%B6%E3%80%81%E8%B5%84%E6%9C%AC%E5%92%8C%E7%94%9F%E4%BA%A7%E7%A9%BA%E9%97%B4%E3%80%8B/" href="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%B0%BC%E5%B0%94%C2%B7%E5%8F%B2%E5%AF%86%E6%96%AF%E3%80%8A%E8%87%AA%E7%84%B6%E3%80%81%E8%B5%84%E6%9C%AC%E5%92%8C%E7%94%9F%E4%BA%A7%E7%A9%BA%E9%97%B4%E3%80%8B/"
-            id="E7AC94E8AEB0E8AFBBE4B9A6E7AC94E8AEB0E5B0BCE5B094C2B7E58FB2E5AF86E696AFE3808AE887AAE784B6E38081E8B584E69CACE5928CE7949FE4BAA7E7A9BAE997B4E3808B"
-            ><div class='name'>尼尔·史密斯《自然、资本和生产空间》</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%B1%B3%E6%AD%87%E5%B0%94%C2%B7%E9%98%BF%E6%A0%BC%E5%88%97%E5%A1%94%E3%80%8A%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA%EF%BC%9A%E7%BE%8E%E5%9B%BD%E7%9A%84%E7%BB%8F%E9%AA%8C%E3%80%8B/" href="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%B1%B3%E6%AD%87%E5%B0%94%C2%B7%E9%98%BF%E6%A0%BC%E5%88%97%E5%A1%94%E3%80%8A%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA%EF%BC%9A%E7%BE%8E%E5%9B%BD%E7%9A%84%E7%BB%8F%E9%AA%8C%E3%80%8B/"
-            id="E7AC94E8AEB0E8AFBBE4B9A6E7AC94E8AEB0E7B1B3E6AD87E5B094C2B7E998BFE6A0BCE58897E5A194E3808AE8B584E69CACE4B8BBE4B989E8B083E88A82E79086E8AEBAEFBC9AE7BE8EE59BBDE79A84E7BB8FE9AA8CE3808B"
-            ><div class='name'>米歇尔·阿格列塔《资本主义调节理论：美国的经验》</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%A9%AC%E5%85%8B%C2%B7%E6%8B%89%E6%B2%83%E3%80%8A%E5%90%8E%E5%87%AF%E6%81%A9%E6%96%AF%E4%B8%BB%E4%B9%89%E7%BB%8F%E6%B5%8E%E5%AD%A6%E3%80%8B/" href="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%A9%AC%E5%85%8B%C2%B7%E6%8B%89%E6%B2%83%E3%80%8A%E5%90%8E%E5%87%AF%E6%81%A9%E6%96%AF%E4%B8%BB%E4%B9%89%E7%BB%8F%E6%B5%8E%E5%AD%A6%E3%80%8B/"
-            id="E7AC94E8AEB0E8AFBBE4B9A6E7AC94E8AEB0E9A9ACE5858BC2B7E68B89E6B283E3808AE5908EE587AFE681A9E696AFE4B8BBE4B989E7BB8FE6B58EE5ADA6E3808B"
-            ><div class='name'>马克·拉沃《后凯恩斯主义经济学》</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%A9%AC%E6%81%A9%E5%85%A8%E9%9B%86/" href="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%A9%AC%E6%81%A9%E5%85%A8%E9%9B%86/"
-            id="E7AC94E8AEB0E8AFBBE4B9A6E7AC94E8AEB0E9A9ACE681A9E585A8E99B86"
-            ><div class='name'>马恩全集</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="../../" href="../../"
-            id="home"
-            ><div class='name'>经济学</div><div class='badge'>(35)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../%E5%8F%91%E8%A1%A8%E5%B8%B8%E8%AF%86/" href="../../%E5%8F%91%E8%A1%A8%E5%B8%B8%E8%AF%86/"
-            id="E58F91E8A1A8E5B8B8E8AF86"
-            ><div class='name'>发表常识</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" href="../../%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
-            id="E5908DE8AF8DE8A7A3E9878A"
-            ><div class='name'>名词解释</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/" href="../../%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/"
-            id="E59FBAE7A180E79086E8AEBA"
-            ><div class='name'>基础理论</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../%E6%94%BF%E7%AD%96%E6%96%87%E4%BB%B6/" href="../../%E6%94%BF%E7%AD%96%E6%96%87%E4%BB%B6/"
-            id="E694BFE7AD96E69687E4BBB6"
-            ><div class='name'>政策文件</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../%E6%95%B0%E6%8D%AE/" href="../../%E6%95%B0%E6%8D%AE/"
-            id="E695B0E68DAE"
-            ><div class='name'>数据</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../" href="../"
-            id="home"
-            ><div class='name'>模型</div><div class='badge'>(10)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="" href=""
-            id="home"
-            ><div class='name'>向量自回归（VAR模型）</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF%E6%A8%A1%E5%9E%8B/" href="../%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF%E6%A8%A1%E5%9E%8B/"
-            id="E8B584E69CACE5BEAAE78EAFE6A8A1E59E8B"
-            ><div class='name'>资本循环模型</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../%E7%BB%BC%E8%BF%B0/" href="../../%E7%BB%BC%E8%BF%B0/"
-            id="E7BBBCE8BFB0"
-            ><div class='name'>综述</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../%E7%BF%BB%E8%AF%91/" href="../../%E7%BF%BB%E8%AF%91/"
-            id="E7BFBBE8AF91"
-            ><div class='name'>翻译</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="../../%E8%AE%A1%E9%87%8F/" href="../../%E8%AE%A1%E9%87%8F/"
-            id="E8AEA1E9878F"
-            ><div class='name'>计量</div><div class='badge'>(3)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
- -->
-
-  
-
-  <section class="widget category shadow desktop mobile">
- 
-  <header>
-    
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class="category-block">
-   <h3 class="asidetitle"></h3>
-         <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../%E5%8D%9A%E8%B5%84%E8%80%83/">博资考</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E6%95%B0%E7%90%86-%E5%AE%8F%E8%A7%82/">高级数理-宏观</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E6%95%B0%E7%90%86-%E5%BE%AE%E8%A7%82/">高级数理-微观</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../%E6%9D%82%E8%AE%B0/">杂记</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../%E6%9D%82%E8%AE%B0/%E6%98%8E%E6%98%8E%E7%9A%84%E4%B8%96%E7%95%8C/">明明的世界</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="../../../%E6%9D%82%E8%AE%B0/%E7%A4%BA%E4%BE%8B/">示例</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../%E7%AC%94%E8%AE%B0/">笔记</a><span class="category-list-count">31</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../%E7%AC%94%E8%AE%B0/%E6%96%B0%E6%83%B3%E6%B3%95/">新想法</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../../%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><span class="category-list-count">21</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AE%89%E7%93%A6%E5%B0%94%C2%B7%E8%B0%A2%E5%85%8B%E3%80%8A%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E3%80%8B/">安瓦尔·谢克《资本主义》</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%B0%BC%E5%B0%94%C2%B7%E5%8F%B2%E5%AF%86%E6%96%AF%E3%80%8A%E8%87%AA%E7%84%B6%E3%80%81%E8%B5%84%E6%9C%AC%E5%92%8C%E7%94%9F%E4%BA%A7%E7%A9%BA%E9%97%B4%E3%80%8B/">尼尔·史密斯《自然、资本和生产空间》</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%B1%B3%E6%AD%87%E5%B0%94%C2%B7%E9%98%BF%E6%A0%BC%E5%88%97%E5%A1%94%E3%80%8A%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA%EF%BC%9A%E7%BE%8E%E5%9B%BD%E7%9A%84%E7%BB%8F%E9%AA%8C%E3%80%8B/">米歇尔·阿格列塔《资本主义调节理论：美国的经验》</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%A9%AC%E5%85%8B%C2%B7%E6%8B%89%E6%B2%83%E3%80%8A%E5%90%8E%E5%87%AF%E6%81%A9%E6%96%AF%E4%B8%BB%E4%B9%89%E7%BB%8F%E6%B5%8E%E5%AD%A6%E3%80%8B/">马克·拉沃《后凯恩斯主义经济学》</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%A9%AC%E6%81%A9%E5%85%A8%E9%9B%86/">马恩全集</a><span class="category-list-count">4</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../">经济学</a><span class="category-list-count">35</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../%E5%8F%91%E8%A1%A8%E5%B8%B8%E8%AF%86/">发表常识</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/">名词解释</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/">基础理论</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="../../%E6%94%BF%E7%AD%96%E6%96%87%E4%BB%B6/">政策文件</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../%E6%95%B0%E6%8D%AE/">数据</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../">模型</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="">向量自回归（VAR模型）</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF%E6%A8%A1%E5%9E%8B/">资本循环模型</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../%E7%BB%BC%E8%BF%B0/">综述</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../%E7%BF%BB%E8%AF%91/">翻译</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../%E8%AE%A1%E9%87%8F/">计量</a><span class="category-list-count">3</span></li></ul></li></ul>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%E9%97%AE%E9%A2%98"><span class="toc-text">7.1 最简单的最优控制问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-1-%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%E9%97%AE%E9%A2%98%E7%9A%84%E7%89%B9%E6%AE%8A%E6%80%A7%E8%B4%A8"><span class="toc-text">7.1.1 最优控制问题的特殊性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-2-%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">7.1.2 最简单的问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86"><span class="toc-text">7.2 最大值原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86%E7%9A%84%E6%9C%BA%E7%90%86"><span class="toc-text">7.3 最大值原理的机理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E5%85%B6%E4%BB%96%E7%BB%88%E6%AD%A2%E6%9D%A1%E4%BB%B6"><span class="toc-text">7.4 其他终止条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-1-%E5%9B%BA%E5%AE%9A%E7%BB%88%E6%AD%A2%E7%82%B9"><span class="toc-text">7.4.1 固定终止点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-2-%E6%B0%B4%E5%B9%B3%E7%BB%88%E6%AD%A2%E7%BA%BF%EF%BC%88%E5%9B%BA%E5%AE%9A%E7%AB%AF%E7%82%B9%E9%97%AE%E9%A2%98%EF%BC%89"><span class="toc-text">7.4.2 水平终止线（固定端点问题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-3-%E7%BB%88%E6%AD%A2%E6%9B%B2%E7%BA%BF"><span class="toc-text">7.4.3 终止曲线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-4-%E6%88%AA%E6%96%AD%E5%9E%82%E7%9B%B4%E7%BB%88%E6%AD%A2%E7%BA%BF"><span class="toc-text">7.4.4 截断垂直终止线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-5-%E6%88%AA%E6%96%AD%E6%B0%B4%E5%B9%B3%E7%BB%88%E6%AD%A2%E7%BA%BF"><span class="toc-text">7.4.5 截断水平终止线</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%B0%E5%80%BC%E5%93%88%E5%AF%86%E5%B0%94%E9%A1%BF%E5%87%BD%E6%95%B0"><span class="toc-text">现值哈密尔顿函数</span></a></li></ol>
     </div>
   </section>
 
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="../../../../tags/DSGE/" style="font-size: 14px; color: #999">DSGE</a> <a href="../../../../tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="../../../../tags/SSA/" style="font-size: 14px; color: #999">SSA</a> <a href="../../../../tags/VAR/" style="font-size: 14px; color: #999">VAR</a> <a href="../../../../tags/stata/" style="font-size: 14px; color: #999">stata</a> <a href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" style="font-size: 14px; color: #999">不变价格</a> <a href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" style="font-size: 14px; color: #999">不稳定就业</a> <a href="../../../../tags/%E5%81%A5%E5%BA%B7/" style="font-size: 14px; color: #999">健康</a> <a href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" style="font-size: 14px; color: #999">克鲁格曼</a> <a href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" style="font-size: 14px; color: #999">公共卫生</a> <a href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" style="font-size: 14px; color: #999">共产党宣言</a> <a href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">凸函数</a> <a href="../../../../tags/%E5%87%B8%E9%9B%86/" style="font-size: 14px; color: #999">凸集</a> <a href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">动态随机一般均衡模型</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" style="font-size: 14px; color: #999">劳动价值论</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" style="font-size: 14px; color: #999">劳动过程</a> <a href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">包络定理</a> <a href="../../../../tags/%E5%8C%BB%E7%96%97/" style="font-size: 14px; color: #999">医疗</a> <a href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" style="font-size: 14px; color: #999">南北贸易</a> <a href="../../../../tags/%E5%8D%B1%E6%9C%BA/" style="font-size: 14px; color: #999">危机</a> <a href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" style="font-size: 14px; color: #999">发刊技巧</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8/" style="font-size: 14px; color: #999">古典</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 14px; color: #999">古典经济学</a> <a href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" style="font-size: 17.33px; color: #828282">名词解释</a> <a href="../../../../tags/%E5%90%8E%E5%87%AF/" style="font-size: 20.67px; color: #6c6c6c">后凯</a> <a href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" style="font-size: 14px; color: #999">向量自回归</a> <a href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" style="font-size: 14px; color: #999">国内大循环</a> <a href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" style="font-size: 14px; color: #999">国民经济核算</a> <a href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 17.33px; color: #828282">国际贸易</a> <a href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" style="font-size: 14px; color: #999">基础范畴</a> <a href="../../../../tags/%E5%A2%9E%E9%95%BF/" style="font-size: 14px; color: #999">增长</a> <a href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" style="font-size: 14px; color: #999">外生冲击</a> <a href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">局部投入产出闭模型</a> <a href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" style="font-size: 14px; color: #999">库恩-塔克条件</a> <a href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" style="font-size: 14px; color: #999">建筑业</a> <a href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" style="font-size: 14px; color: #999">开集闭集</a> <a href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" style="font-size: 20.67px; color: #6c6c6c">恩格斯</a> <a href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" style="font-size: 14px; color: #999">投入产出</a> <a href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" style="font-size: 14px; color: #999">拉格朗日乘子法</a> <a href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" style="font-size: 14px; color: #999">数学规划</a> <a href="../../../../tags/%E6%96%AF%E5%AF%86/" style="font-size: 14px; color: #999">斯密</a> <a href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" style="font-size: 14px; color: #999">新古典</a> <a href="../../../../tags/%E6%9D%82%E8%AE%B0/" style="font-size: 17.33px; color: #828282">杂记</a> <a href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" style="font-size: 17.33px; color: #828282">李斯特</a> <a href="../../../../tags/%E6%9D%A8%E6%A0%BC/" style="font-size: 14px; color: #999">杨格</a> <a href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" style="font-size: 14px; color: #999">核心期刊</a> <a href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" style="font-size: 14px; color: #999">法国调节学派</a> <a href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" style="font-size: 14px; color: #999">现代货币理论</a> <a href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" style="font-size: 14px; color: #999">社会干预</a> <a href="../../../../tags/%E7%A7%91%E5%B1%82%E5%88%B6/" style="font-size: 14px; color: #999">科层制</a> <a href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" style="font-size: 17.33px; color: #828282">线性规划</a> <a href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" style="font-size: 14px; color: #999">美国社会积累结构学派</a> <a href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" style="font-size: 14px; color: #999">自由贸易</a> <a href="../../../../tags/%E8%A5%BF%E9%A9%AC/" style="font-size: 14px; color: #999">西马</a> <a href="../../../../tags/%E8%AE%A1%E9%87%8F/" style="font-size: 14px; color: #999">计量</a> <a href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" style="font-size: 17.33px; color: #828282">调节理论</a> <a href="../../../../tags/%E8%B0%A2%E5%85%8B/" style="font-size: 14px; color: #999">谢克</a> <a href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" style="font-size: 14px; color: #999">财政管制</a> <a href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" style="font-size: 20.67px; color: #6c6c6c">资本循环</a> <a href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" style="font-size: 14px; color: #999">金融化</a> <a href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" style="font-size: 14px; color: #999">雇佣劳动</a> <a href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" style="font-size: 24px; color: #555">马克思</a> <a href="../../../../tags/%E9%AB%98%E5%B3%B0/" style="font-size: 14px; color: #999">高峰</a>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-
-<section class="widget shadow desktop">
-  
-  <header>
-    
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>82 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2020/08/21'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>473.8k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="lc-uv"><span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="lc-sv"><span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Fri Feb 05 2021 01:53:21 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-02-05 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-02-05 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
 
   
 
 
 </aside>
+
 
 
         
@@ -766,8 +757,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="第7章最优控制：最大值原理";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
