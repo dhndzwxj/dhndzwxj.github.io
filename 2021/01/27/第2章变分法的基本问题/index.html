@@ -343,13 +343,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.5k字</p>
+      <p>字数：2.8k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：7分钟</p>
+      <p>时长：13分钟</p>
     </a>
   </div>
  -->
@@ -359,13 +359,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.5k字</p>
+      <p>字数：2.8k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：7分钟</p>
+      <p>时长：13分钟</p>
     </a>
   </div> -->
 
@@ -374,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.5k字</span>
+        <span class="post-count">2.8k字</span>
       </span>
     </span>
  
@@ -383,7 +383,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">7分</span>
+        <span class="post-count">13分</span>
       </span>
     </span>
     
@@ -399,11 +399,11 @@
 
 
   
-  <p>基本问题</p>
+  <h2 id="第2章变分法的基本问题"><a href="#第2章变分法的基本问题" class="headerlink" title="第2章变分法的基本问题"></a>第2章变分法的基本问题</h2><p>基本问题</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
-    \max\text{或}\min\quad  V[y] &=&\int_0^TF[t,y(t),y'(t)]\text{d}t\\
-    \text{s.t.}                            y(0) &=& A,\quad y(T)=Z
+    \max\text{或}\min\quad  V[y] &=&\int_0^TF[t,y(t),y'(t)]\text{d}t\notag\\
+    \text{s.t.}                            y(0) &=& A,\quad y(T)=Z\notag
 \end{eqnarray}\tag{2.1}</script><p>这里处理的问题是从路径$y(t)$到路径值$V[y(t)]$（或$V[y]$）之间的映射。$F$是将弧值指定给弧的函数。值得注意的是，$V$是$y$的<strong>泛函</strong>，而非$t$的函数，因为路径值的变化是由选择的路径决定的，而非时间造成的（图1-3）。（2.1）中$0$和$T$分别代表初始和终止<strong>时间</strong>，$A$和$Z$分别代表初始和终止<strong>状态</strong>。</p>
 <div align='center'>
   <img src='/../../images/%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/IMG_20210127_144851_edit_247453110235676.jpg' width=350px>
@@ -462,15 +462,15 @@ y(t) = y^\star(t)+\varepsilon p(t)\tag{2.3}
     \frac{\text{d}V}{\text{d}\varepsilon} 
     &= \int_0^T \frac{\text{d}F}{\text{d}\varepsilon}\text{d}t 
     = \int_0^T \left( \frac{\partial F}{\partial y}\frac{\text{d}y}{\text{d}\varepsilon} 
-  + \frac{\partial F}{\partial y'}\frac{\text{d}y'}{\text{d}\varepsilon} \right)\text{d}t\\
-  &=\int_0^T \left[F_y p(t) + F_{y'}p'(t)\right]\text{d}t
+  + \frac{\partial F}{\partial y'}\frac{\text{d}y'}{\text{d}\varepsilon} \right)\text{d}t\notag\\
+  &=\int_0^T \left[F_y p(t) + F_{y'}p'(t)\right]\text{d}t\notag
 \end{eqnarray}\tag{2.13}</script><p>下面处理第二部分$\int_0^T F_{y’}p’(t)\text{d}t$，使用分部积分法。</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
     \int_0^T F_{y'}p'(t)\text{d}t 
     &= \int_0^TF_{y'}\text{d}[p(t)] 
-    = \left.[F_{y'}\color{red}{p(t)}]\right\lvert_{t=0}^{t=T} - \int_0^Tp(t)\text{d}F_{y'} \\
-    &= -\int_0^T p(t)\frac{\text{d}F_{y'}}{\text{d}t}\text{d}t 
+    = \left.[F_{y'}\color{red}{p(t)}]\right\lvert_{t=0}^{t=T} - \int_0^Tp(t)\text{d}F_{y'} \notag\\
+    &= -\int_0^T p(t)\frac{\text{d}F_{y'}}{\text{d}t}\text{d}t \notag
 \end{eqnarray}
 \tag{2.16}</script><p>将（2.16）代入（2.13），并令$\frac{\text{d}V}{\text{d}\varepsilon}=0$，得到</p>
 <script type="math/tex; mode=display">
@@ -530,10 +530,98 @@ y^\star(t) = 0</script><p>不满足初值条件，因此无解。</p>
 V[y] = \int_0^T y'\text{d}t = \left.y(t)\right\lvert_{0}^T=y(T)-y(0)=\beta-\alpha</script><p>因此任意满足$y(0)=\alpha,y(T)=\beta$的路径都是极值路径。</p>
 </blockquote>
 <h3 id="补充：二阶常系数非齐次线性微分方程特解"><a href="#补充：二阶常系数非齐次线性微分方程特解" class="headerlink" title="补充：二阶常系数非齐次线性微分方程特解"></a>补充：二阶常系数非齐次线性微分方程特解</h3><script type="math/tex; mode=display">
-y''+py'+qy=f(x)</script><p>若$f(x)=e^{mx}$，则设特解$y^\star=Ae^{mx}$；</p>
-<p>若$f(x)=x^2+1$，则设特解$y^\star=Ax^2+Bx+C$；</p>
-<p>待定系数。</p>
+y''+py'+qy=f(x)</script><p>特征方程为</p>
+<script type="math/tex; mode=display">
+r^2+pr+q=0</script><p>设根为$r_1,r_2$，下面讨论根的情况：</p>
+<ul>
+<li>若$r_1\neq r_2$，微分方程的通解为$y=C_1e^{r_1x}+C_2e^{r_2x}$，$C_1,C_2$为任意实数。</li>
+<li>若$r_1=r_2$，微分方程的通解为$y=C_1e^{r_1x}+C_2xe^{r_2x}$，$C_1,C_2$为任意实数。</li>
+</ul>
+<blockquote>
+<p>对第一种情况而言，若特征方程的根为复根，同样也满足上面的形式：</p>
+<p>$r_1=\alpha+i\beta,r_2=\alpha-i\beta$，微分方程的通解可以写成</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    y    &=&    A_1e^{(\alpha+i\beta)x}+A_2e^{(\alpha-i\beta)x}\notag\\
+    &=& e^{\alpha x}(A_1 e^{i\beta x}+A_2e^{-i\beta x})\notag\\
+    &=& e^{\alpha x}[A_1(\cos\beta x+i\sin\beta x)+A_2(\cos\beta x-i\sin\beta x)] \quad\text{（复数和三角函数的关系）}\notag\\
+    &=& e^{\alpha x}[(A_1+A_2)\cos\beta x+(A_1-A_2)i\sin\beta x]\notag
+\end{eqnarray}</script><p>令$C_1=A_1+A_2,C_2=A_1-A_2$为任意实数。这不就得到了很多参考书中列出的第三种情况了么！</p>
+</blockquote>
+<p>为了说明白，有的参考书还给了这个例子，对于一个四阶常系数微分方程，如果它的特征方程的特征根为：</p>
+<script type="math/tex; mode=display">
+r_1=r_2=0,r_3=\alpha+i\beta,r_4=\alpha-i\beta</script><p>它的通解为</p>
+<script type="math/tex; mode=display">
+y=C_1e^{0\times x}+C_2xe^{0\times x}+e^{\alpha x}(C_3\cos\beta x +C_4i\sin\beta x)</script><h2 id="第3章可变端点问题的横截条件"><a href="#第3章可变端点问题的横截条件" class="headerlink" title="第3章可变端点问题的横截条件"></a>第3章可变端点问题的横截条件</h2><p>所谓的横截条件，其实是“终止条件”，其目的是提供<span style='color:red'>额外的初值条件</span>，根据路径的通解求出特解。</p>
+<h3 id="3-1-一般截止条件"><a href="#3-1-一般截止条件" class="headerlink" title="3.1 一般截止条件"></a>3.1 一般截止条件</h3><p>为了方便说明，我们假设仅<strong>终止点</strong>是可变的。</p>
+<h4 id="可变终止点问题"><a href="#可变终止点问题" class="headerlink" title="可变终止点问题"></a>可变终止点问题</h4><p>这一部分，其实就是重新推导了一下第二章的推导过程，只是增加了一个假定而已。</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max\text{或}\min\quad  V[y] &=&\int_0^TF[t,y,y']\text{d}t    \notag\\
+    \text{s.t.}                            y(0) &=& A(A\text{给定})                        \notag\\
+    \quad                                     y(T) &=& y_T(T,y_T\text{自由})            \notag\\
+\end{eqnarray}\tag{3.1}</script><p>这里多了两个自由变量$T,y_T$，同前面作（2.3）类似的处理:</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    T = T^\star+\varepsilon\Delta T\tag{3.2}
+\end{eqnarray}</script><p>于是$T$可以视为$\varepsilon$的函数$T=T(\varepsilon)$。又有$\frac{\text{d}T}{\text{d}\varepsilon}=\Delta T$。同样得到极值路径的扰动路径：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    y(t) &=& y^\star(t)+\varepsilon p(t) \notag\\
+    y'(t) &=& y^\star{'}(t) + \varepsilon p'(t)\notag
+\end{eqnarray}</script><p>与上面不同的是，<span style='color:red'>尽管有$p(0)=0$，但由于$y_T$是自由的，另一个条件$p(T)=0$必须抛弃。</span>于是目标函数要写成下面的形式：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+        V(\varepsilon) = \int_0^{T(\varepsilon)} F[t,y^\star(t)+\varepsilon p(t), y^\star{'}(t)+\varepsilon p'(t)]\text{d}t    \tag{3.5}
+\end{eqnarray}</script><h4 id="推导一阶横截条件"><a href="#推导一阶横截条件" class="headerlink" title="推导一阶横截条件"></a>推导一阶横截条件</h4><p>由于积分上限也是$\varepsilon$的函数，因此这里得到的一阶条件和（2.13）有不同之处：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\text{d}V}{\text{d}\varepsilon} 
+    &=& \int_0^{T(\varepsilon)} \frac{\partial F}{\partial\varepsilon}\text{d}t 
+    + [F]_{t=T}\frac{\text{d}T}{\text{d}\varepsilon}\notag\\
+    &=& \int_0^{T(\varepsilon)} \frac{\partial F}{\partial\varepsilon}\text{d}t 
+    + [F]_{t=T}\Delta T\notag
+\end{eqnarray}\tag{3.6}</script><p>下面计算（3.6）中的积分部分</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \int_0^{T(\varepsilon)} \frac{\partial F}{\partial\varepsilon}\text{d}t  
+    = \int_0^{T(\varepsilon)} [F_yp(t)+F_{y'}p'(t)] \text{d}t  
+    = \int_0^{T(\varepsilon)} F_yp(t) \text{d}t + \int_0^{T(\varepsilon)} F_{y'}p'(t) \text{d}t
+\end{eqnarray}</script><p>这样就分成了两个积分，下面处理第二个积分：</p>
+<script type="math/tex; mode=display">
+\int_0^{T(\varepsilon)} F_{y'}p'(t) \text{d}t = \int_0^{T(\varepsilon)} F_{y'}\text{d}[p(t)]
+=\left.[F_{y'}p(t)]\right\lvert_0^T - \int_0^{T(\varepsilon)}p(t)\frac{\text{d}}{\text{d}t}F_{y'} \text{d}t
+=[F_{y'}]_{t=T}p(T) - \int_0^{T(\varepsilon)}p(t)\frac{\text{d}}{\text{d}t}F_{y'} \text{d}t</script><p>于是（3.6）中的积分部分可以写成</p>
+<script type="math/tex; mode=display">
+\int_0^{T(\varepsilon)} \frac{\partial F}{\partial\varepsilon}\text{d}t 
+=\int_0^{T(\varepsilon)}p(t)\left[F_y-\frac{\text{d}}{\text{d}t}F_{y'}\right]\text{d}t + [F_{y'}]_{t=T}p(T)</script><p>令$\frac{\text{d}V}{\text{d}\varepsilon} =0$，可以得到新的条件：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \int_0^{T(\varepsilon)}p(t)\left[F_y-\frac{\text{d}}{\text{d}t}F_{y'}\right]\text{d}t + [F_{y'}]_{t=T}p(T) + [F]_{t=T}\Delta T = 0 
+    \tag{3.7}
+\end{eqnarray}</script><p>(3.7)共有三项，每一项都有任意选取的元素。第一项有$p(t)$，第二项有$p(T)$，第三项有$\Delta T$。我们从第一项可以得到欧拉方程：</p>
+<script type="math/tex; mode=display">
+F_y = \frac{\text{d}}{\text{d}t}F_{y'}</script><p>其余两项只与终止时间$T$有关，要从这两项中找到横截条件。首先是想办法消去随机扰动项$p(t)$。</p>
+<div align='center'>
+  <img src='/../../images/%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/%E6%89%AB%E6%8F%8F%E5%85%A8%E8%83%BD%E7%8E%8B%202021-02-04%2011.45.jpg' width=350px>
+  <center style='font-family:kai'>图3-1</center>
+</div>
 
+<p>从图3-1中我们可以发现$y_T$从$Z$到$Z’’$经历的变化，既包括随机扰动扰动$p(t)$，也包括因时长变化带来的改变$y’(T)\Delta T$（这其实是一种近似，前提是当$\Delta T$足够小时），因此</p>
+<script type="math/tex; mode=display">
+\Delta y_T = p(T) + y'(T)\Delta T</script><p>于是随机扰动项$p(T)$可以表示为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    p(T) = \Delta y_T -y'(T)\Delta T
+    \tag{3.8}
+\end{eqnarray}</script><p>于是（3.7）中最后两项可以表示为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    [F_{y'}]_{t=T}p(T) + [F]_{t=T}\Delta T 
+    &=& [F_{y'}]_{t=T}[\Delta y_T -y'(T)\Delta T] + [F]_{t=T}\Delta T \notag\\
+    &=& [F-y'F_{y'}]_{t=T}\Delta T + [F_{y'}]_{t=T}\Delta y_T \notag
+\end{eqnarray}\tag{3.9}</script><p>根据这个式，可以讨论各种情况的横截条件！</p>
+<h3 id="3-2-特殊横截条件"><a href="#3-2-特殊横截条件" class="headerlink" title="3.2 特殊横截条件"></a>3.2 特殊横截条件</h3><h4 id="垂直终止线（固定时间水平问题）"><a href="#垂直终止线（固定时间水平问题）" class="headerlink" title="垂直终止线（固定时间水平问题）"></a>垂直终止线（固定时间水平问题）</h4><h4 id="水平终止线（固定端点问题）"><a href="#水平终止线（固定端点问题）" class="headerlink" title="水平终止线（固定端点问题）"></a>水平终止线（固定端点问题）</h4><h4 id="终止曲线"><a href="#终止曲线" class="headerlink" title="终止曲线"></a>终止曲线</h4><h4 id="截断垂直终止线"><a href="#截断垂直终止线" class="headerlink" title="截断垂直终止线"></a>截断垂直终止线</h4><h4 id="截断水平终止线"><a href="#截断水平终止线" class="headerlink" title="截断水平终止线"></a>截断水平终止线</h4>
   
   
     
@@ -567,10 +655,10 @@ y''+py'+qy=f(x)</script><p>若$f(x)=e^{mx}$，则设特解$y^\star=Ae^{mx}$；</
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-01T14:44:34+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-04T13:20:26+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年2月1日</p>
+    <p>更新于：2021年2月4日</p>
   </a>
 </div>
 
@@ -758,7 +846,7 @@ y''+py'+qy=f(x)</script><p>若$f(x)=e^{mx}$，则设特解$y^\star=Ae^{mx}$；</
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B"><span class="toc-text">2.1 欧拉方程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-text">欧拉方程的构建</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%89%B9%E8%A7%A3"><span class="toc-text">补充：二阶常系数非齐次线性微分方程特解</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98"><span class="toc-text">第2章变分法的基本问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B"><span class="toc-text">2.1 欧拉方程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-text">欧拉方程的构建</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%89%B9%E8%A7%A3"><span class="toc-text">补充：二阶常系数非齐次线性微分方程特解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0%E5%8F%AF%E5%8F%98%E7%AB%AF%E7%82%B9%E9%97%AE%E9%A2%98%E7%9A%84%E6%A8%AA%E6%88%AA%E6%9D%A1%E4%BB%B6"><span class="toc-text">第3章可变端点问题的横截条件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E4%B8%80%E8%88%AC%E6%88%AA%E6%AD%A2%E6%9D%A1%E4%BB%B6"><span class="toc-text">3.1 一般截止条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%98%E7%BB%88%E6%AD%A2%E7%82%B9%E9%97%AE%E9%A2%98"><span class="toc-text">可变终止点问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A8%E5%AF%BC%E4%B8%80%E9%98%B6%E6%A8%AA%E6%88%AA%E6%9D%A1%E4%BB%B6"><span class="toc-text">推导一阶横截条件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%89%B9%E6%AE%8A%E6%A8%AA%E6%88%AA%E6%9D%A1%E4%BB%B6"><span class="toc-text">3.2 特殊横截条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9E%82%E7%9B%B4%E7%BB%88%E6%AD%A2%E7%BA%BF%EF%BC%88%E5%9B%BA%E5%AE%9A%E6%97%B6%E9%97%B4%E6%B0%B4%E5%B9%B3%E9%97%AE%E9%A2%98%EF%BC%89"><span class="toc-text">垂直终止线（固定时间水平问题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E7%BB%88%E6%AD%A2%E7%BA%BF%EF%BC%88%E5%9B%BA%E5%AE%9A%E7%AB%AF%E7%82%B9%E9%97%AE%E9%A2%98%EF%BC%89"><span class="toc-text">水平终止线（固定端点问题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%88%E6%AD%A2%E6%9B%B2%E7%BA%BF"><span class="toc-text">终止曲线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%AA%E6%96%AD%E5%9E%82%E7%9B%B4%E7%BB%88%E6%AD%A2%E7%BA%BF"><span class="toc-text">截断垂直终止线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%AA%E6%96%AD%E6%B0%B4%E5%B9%B3%E7%BB%88%E6%AD%A2%E7%BA%BF"><span class="toc-text">截断水平终止线</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
