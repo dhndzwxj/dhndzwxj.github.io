@@ -343,13 +343,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2.8k字</p>
+      <p>字数：4.2k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：13分钟</p>
+      <p>时长：19分钟</p>
     </a>
   </div>
  -->
@@ -359,13 +359,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2.8k字</p>
+      <p>字数：4.2k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：13分钟</p>
+      <p>时长：19分钟</p>
     </a>
   </div> -->
 
@@ -374,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">2.8k字</span>
+        <span class="post-count">4.2k字</span>
       </span>
     </span>
  
@@ -383,7 +383,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">13分</span>
+        <span class="post-count">19分</span>
       </span>
     </span>
     
@@ -621,7 +621,83 @@ F_y = \frac{\text{d}}{\text{d}t}F_{y'}</script><p>其余两项只与终止时间
     &=& [F_{y'}]_{t=T}[\Delta y_T -y'(T)\Delta T] + [F]_{t=T}\Delta T \notag\\
     &=& [F-y'F_{y'}]_{t=T}\Delta T + [F_{y'}]_{t=T}\Delta y_T \notag
 \end{eqnarray}\tag{3.9}</script><p>根据这个式，可以讨论各种情况的横截条件！</p>
-<h3 id="3-2-特殊横截条件"><a href="#3-2-特殊横截条件" class="headerlink" title="3.2 特殊横截条件"></a>3.2 特殊横截条件</h3><h4 id="垂直终止线（固定时间水平问题）"><a href="#垂直终止线（固定时间水平问题）" class="headerlink" title="垂直终止线（固定时间水平问题）"></a>垂直终止线（固定时间水平问题）</h4><h4 id="水平终止线（固定端点问题）"><a href="#水平终止线（固定端点问题）" class="headerlink" title="水平终止线（固定端点问题）"></a>水平终止线（固定端点问题）</h4><h4 id="终止曲线"><a href="#终止曲线" class="headerlink" title="终止曲线"></a>终止曲线</h4><h4 id="截断垂直终止线"><a href="#截断垂直终止线" class="headerlink" title="截断垂直终止线"></a>截断垂直终止线</h4><h4 id="截断水平终止线"><a href="#截断水平终止线" class="headerlink" title="截断水平终止线"></a>截断水平终止线</h4>
+<h3 id="3-2-特殊横截条件"><a href="#3-2-特殊横截条件" class="headerlink" title="3.2 特殊横截条件"></a>3.2 特殊横截条件</h3><div align='center'>
+  <img src='/../../images/%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/%E6%89%AB%E6%8F%8F%E5%85%A8%E8%83%BD%E7%8E%8B%202021-02-04%2014.04.jpg' width=400px>
+  <center style='font-family:kai'>图1-5</center>
+</div>
+
+<h4 id="3-2-1-垂直终止线（固定时间水平问题）"><a href="#3-2-1-垂直终止线（固定时间水平问题）" class="headerlink" title="3.2.1 垂直终止线（固定时间水平问题）"></a>3.2.1 垂直终止线（固定时间水平问题）</h4><p>如上面的图1-5(a)，此时$\Delta T=0$。再由$\Delta y_T$的任意性，此时必有</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    [F_{y'}]_{t=T}=0 \tag{3.10}
+\end{eqnarray}</script><h4 id="3-2-2-水平终止线（固定端点问题）"><a href="#3-2-2-水平终止线（固定端点问题）" class="headerlink" title="3.2.2 水平终止线（固定端点问题）"></a>3.2.2 水平终止线（固定端点问题）</h4><p>如上面的图1-5(b)，此时$\Delta y_T=0$。再由$\Delta T$的任意性，此时必有</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    [F-y'F_{y'}]_{t=T} = 0 \tag{3.11}
+\end{eqnarray}</script><h4 id="3-2-3-上面两个式子的经济学解释"><a href="#3-2-3-上面两个式子的经济学解释" class="headerlink" title="3.2.3 上面两个式子的经济学解释"></a>3.2.3 上面两个式子的经济学解释</h4><p>举一个具体的例子。将$F(t,y,y’)$视为利润函数，其中$y$代表资本存量，$y’$代表净投资，净投资要求我们将资源从当前逐利业务拿走来积累资本，从而提高未来利润。这样，当前利润和未来利润之间就存在着权衡。假设在任何时点$t$，给定资本存量$y$以及既定的投资决策——比如选择投资率$y_0’$——这将产生当前利润$F(t,y,y_0’)$。现在讨论一下投资决策对未来利润的影响。投资通过资本进入函数，通常伴随负号。资本积累率为$y_0’$，如果我们能用价值来度量资本积累率，那么我们可以将它从当前利润$F(t,y,y_0’)$中减去，以便考察投资决策对总利润（当前利润与未来利润）的影响。</p>
+<p>一单位资本带给企业的估算价值（imputed value）或称影子价值（shadow value）可用导数$F_{y’}$衡量。这意味着资本积累率$y_0’$如果用价值来度量，相当于利润值$-y_0’F_{y_0’}$（这里的负值，可以看做投资和当前利润之间的权衡取舍）。因此，投资决策（即选择投资率$y_0’$）对总利润的影响是使得利润变为$F(t,y,y_0’)-y_0’F_{y_0’}$。它的一般表达式为$F-y’F_{y’}$，如式（3.11）所示。</p>
+<p>现在，我们解释横截条件式（3.11）的意思。它的意思是说，在伴随着自由终止时间的问题中，企业应该选择一个$T$使得投资和资本积累决策在时点$t=T$不再产生任何总利润（当前和未来利润之和）。换句话说，所有利润机会都应该被你选择的终止时间充分利用。另外，由于式（3.10）等价于$[-F_{y’}]_{t=T}=0$，因此，它告诉企业不要留下正的终止资本，因为这会导致利润损失。换句话说，在自由终止状态问题中，为了使得区间$[0,T]$上的利润最大，企业应该在时点$T$用光它积累的所有资本。</p>
+<h4 id="3-2-4-终止曲线"><a href="#3-2-4-终止曲线" class="headerlink" title="3.2.4 终止曲线"></a>3.2.4 终止曲线</h4><p>如上面的图1-5(c)中的终止曲线$y_T=\phi(T)$，此时$\Delta y_T$和$\Delta T$均不为零。不过对于$\Delta T$足够小时，有$\Delta y_T=\phi’\Delta T$。于是（3.9）可以写成：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    [F-y'F_{y'}]_{t=T}\Delta T + [F_{y'}]_{t=T}\Delta y_T 
+    &=& [F-y'F_{y'}]_{t=T}\Delta T + [F_{y'}]_{t=T} \phi'\Delta T    \notag\\
+    &=& [F-y'F_{y'}+F_{y'}\phi']_{t=T}\Delta T    \notag\\
+    &=& [F+(\phi'-y')F_{y'}]_{t=T}\Delta T = 0    \notag
+\end{eqnarray}</script><p>由于$\Delta T$的任意性，</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    [F+(\phi'-y')F_{y'}]_{t=T} = 0 \tag{3.12}
+\end{eqnarray}</script><p>这种情况我们要确定两个变量$y_T$和$T$，因此需要两个方程。除了（3.12）外，还有一个方程是$y_T=\phi(T)$。</p>
+<h4 id="3-2-5-截断垂直终止线"><a href="#3-2-5-截断垂直终止线" class="headerlink" title="3.2.5 截断垂直终止线"></a>3.2.5 截断垂直终止线</h4><div align='center'>
+  <img src='/../../images/%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/image-20210204142543835.png' width=300px>
+  <center style='font-family:kai'>图20.3(b)</center>
+  <p align='left'  style='font-family:kai'>
+    图片来自蒋中一《数理经济学的基本方法》（第4版）
+  </p>
+</div>
+
+<p>当垂直终止线是截断的，即当终止线受到终止条件$y_T\geq y_{\text{min}}$限制（$y_{\text{min}}$是$y$的最低可行水平），最优解有两种可能情况。</p>
+<ul>
+<li>$y_T^{\star}&gt;y_{\text{min}}$，那么上述（非截断的）限制条件自动得以满足，它不是紧的约束。因为此时$\Delta y_T\equiv y_T-y_T^\star$的符号可正可负，它是可以任意取定的。</li>
+<li>$y_T^{\star}=y_{\text{min}}$，此时$\Delta y_T$不再是任意取定的，因为它必须满足条件$\Delta y_T\equiv y_T-y_T^\star\ge 0$，</li>
+</ul>
+<p>后一种情况是我们要重点关注的。对于<span style='color:red'>最大化</span>问题，这种情况下的横截性条件可以像库恩－塔克条件中的互补松弛条件那样表述：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    [F_{y'}]_{t=T}\le 0,\quad y_T^\star\ge y_{\text{min}},\quad (y_T^\star- y_{\text{min}})[F_{y'}]_{t=T}=0
+    \tag{3.17}
+\end{eqnarray}</script><p>对于<span style='color:red'>最小化</span>问题，横截条件变为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    [F_{y'}]_{t=T}\ge 0,\quad y_T^\star\ge y_{\text{min}},\quad (y_T^\star- y_{\text{min}})[F_{y'}]_{t=T}=0
+    \tag{3.17'}
+\end{eqnarray}</script><blockquote>
+<p>实际应用：</p>
+<p><span style='background:yellow'>第一步：</span></p>
+<p>首先检验</p>
+<script type="math/tex; mode=display">
+[F_{y'}]_{t=T} = 0</script><p>如果求得的$y_T^\star$满足$y_T^\star\ge y_{\text{min}}$，那么终止限制条件得以满足，问题解决。如果不满足，进行第二步。</p>
+<p><span style='background:yellow'>第二步：</span></p>
+<p>如果$y_T^\star&lt;y_{\text{min}}$，说明最优的$y_T$位于可行值域的下方，$[F_{y’}]_{t=T}$在横截终止线上达不到零值。此时为了满足（3.17）或者（3.17’），取$y_T^\star=y_{\text{min}}$。</p>
+</blockquote>
+<h4 id="3-2-6-截断水平终止线"><a href="#3-2-6-截断水平终止线" class="headerlink" title="3.2.6 截断水平终止线"></a>3.2.6 截断水平终止线</h4><div align='center'>
+  <img src='/../../images/%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/image-20210204142739687.png' width=300px>
+  <center style='font-family:kai'>图20.3(c)</center>
+  <p align='left'  style='font-family:kai'>
+    图片来自蒋中一《数理经济学的基本方法》（第4版）
+  </p>
+</div>
+
+<p>水平终止条件可能会被限制条件$T\le T_\max$截断（$T_\max$表示完成任务的最大可能时间）。类似上面分析阶段垂直终止线，对于<span style='color:red'>最大化</span>问题，横截条件表示为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    [F-y'F_{y'}]_{t=T}\ge0,\quad T^\star\le T_\max,\quad (T^\star - T_\max)[F-y'F_{y'}]_{t=T}=0 \tag{3.18}
+\end{eqnarray}</script><p>对于<span style='color:red'>最小化</span>问题，横截条件表示为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    [F-y'F_{y'}]_{t=T}\le0,\quad T^\star\le T_\max,\quad (T^\star - T_\max)[F-y'F_{y'}]_{t=T}=0 \tag{3.18'}
+\end{eqnarray}</script>
   
   
     
@@ -655,7 +731,7 @@ F_y = \frac{\text{d}}{\text{d}t}F_{y'}</script><p>其余两项只与终止时间
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-04T13:20:26+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-04T19:29:39+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年2月4日</p>
@@ -846,7 +922,7 @@ F_y = \frac{\text{d}}{\text{d}t}F_{y'}</script><p>其余两项只与终止时间
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98"><span class="toc-text">第2章变分法的基本问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B"><span class="toc-text">2.1 欧拉方程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-text">欧拉方程的构建</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%89%B9%E8%A7%A3"><span class="toc-text">补充：二阶常系数非齐次线性微分方程特解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0%E5%8F%AF%E5%8F%98%E7%AB%AF%E7%82%B9%E9%97%AE%E9%A2%98%E7%9A%84%E6%A8%AA%E6%88%AA%E6%9D%A1%E4%BB%B6"><span class="toc-text">第3章可变端点问题的横截条件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E4%B8%80%E8%88%AC%E6%88%AA%E6%AD%A2%E6%9D%A1%E4%BB%B6"><span class="toc-text">3.1 一般截止条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%98%E7%BB%88%E6%AD%A2%E7%82%B9%E9%97%AE%E9%A2%98"><span class="toc-text">可变终止点问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A8%E5%AF%BC%E4%B8%80%E9%98%B6%E6%A8%AA%E6%88%AA%E6%9D%A1%E4%BB%B6"><span class="toc-text">推导一阶横截条件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%89%B9%E6%AE%8A%E6%A8%AA%E6%88%AA%E6%9D%A1%E4%BB%B6"><span class="toc-text">3.2 特殊横截条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9E%82%E7%9B%B4%E7%BB%88%E6%AD%A2%E7%BA%BF%EF%BC%88%E5%9B%BA%E5%AE%9A%E6%97%B6%E9%97%B4%E6%B0%B4%E5%B9%B3%E9%97%AE%E9%A2%98%EF%BC%89"><span class="toc-text">垂直终止线（固定时间水平问题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E7%BB%88%E6%AD%A2%E7%BA%BF%EF%BC%88%E5%9B%BA%E5%AE%9A%E7%AB%AF%E7%82%B9%E9%97%AE%E9%A2%98%EF%BC%89"><span class="toc-text">水平终止线（固定端点问题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%88%E6%AD%A2%E6%9B%B2%E7%BA%BF"><span class="toc-text">终止曲线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%AA%E6%96%AD%E5%9E%82%E7%9B%B4%E7%BB%88%E6%AD%A2%E7%BA%BF"><span class="toc-text">截断垂直终止线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%AA%E6%96%AD%E6%B0%B4%E5%B9%B3%E7%BB%88%E6%AD%A2%E7%BA%BF"><span class="toc-text">截断水平终止线</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98"><span class="toc-text">第2章变分法的基本问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B"><span class="toc-text">2.1 欧拉方程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E6%96%B9%E7%A8%8B%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-text">欧拉方程的构建</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%89%B9%E8%A7%A3"><span class="toc-text">补充：二阶常系数非齐次线性微分方程特解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0%E5%8F%AF%E5%8F%98%E7%AB%AF%E7%82%B9%E9%97%AE%E9%A2%98%E7%9A%84%E6%A8%AA%E6%88%AA%E6%9D%A1%E4%BB%B6"><span class="toc-text">第3章可变端点问题的横截条件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E4%B8%80%E8%88%AC%E6%88%AA%E6%AD%A2%E6%9D%A1%E4%BB%B6"><span class="toc-text">3.1 一般截止条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8F%98%E7%BB%88%E6%AD%A2%E7%82%B9%E9%97%AE%E9%A2%98"><span class="toc-text">可变终止点问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A8%E5%AF%BC%E4%B8%80%E9%98%B6%E6%A8%AA%E6%88%AA%E6%9D%A1%E4%BB%B6"><span class="toc-text">推导一阶横截条件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%89%B9%E6%AE%8A%E6%A8%AA%E6%88%AA%E6%9D%A1%E4%BB%B6"><span class="toc-text">3.2 特殊横截条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E5%9E%82%E7%9B%B4%E7%BB%88%E6%AD%A2%E7%BA%BF%EF%BC%88%E5%9B%BA%E5%AE%9A%E6%97%B6%E9%97%B4%E6%B0%B4%E5%B9%B3%E9%97%AE%E9%A2%98%EF%BC%89"><span class="toc-text">3.2.1 垂直终止线（固定时间水平问题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-%E6%B0%B4%E5%B9%B3%E7%BB%88%E6%AD%A2%E7%BA%BF%EF%BC%88%E5%9B%BA%E5%AE%9A%E7%AB%AF%E7%82%B9%E9%97%AE%E9%A2%98%EF%BC%89"><span class="toc-text">3.2.2 水平终止线（固定端点问题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-%E4%B8%8A%E9%9D%A2%E4%B8%A4%E4%B8%AA%E5%BC%8F%E5%AD%90%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%AD%A6%E8%A7%A3%E9%87%8A"><span class="toc-text">3.2.3 上面两个式子的经济学解释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4-%E7%BB%88%E6%AD%A2%E6%9B%B2%E7%BA%BF"><span class="toc-text">3.2.4 终止曲线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-5-%E6%88%AA%E6%96%AD%E5%9E%82%E7%9B%B4%E7%BB%88%E6%AD%A2%E7%BA%BF"><span class="toc-text">3.2.5 截断垂直终止线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-6-%E6%88%AA%E6%96%AD%E6%B0%B4%E5%B9%B3%E7%BB%88%E6%AD%A2%E7%BA%BF"><span class="toc-text">3.2.6 截断水平终止线</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
