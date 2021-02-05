@@ -660,7 +660,7 @@ F_y = \frac{\text{d}}{\text{d}t}F_{y'}</script><p>其余两项只与终止时间
 <p>当垂直终止线是截断的，即当终止线受到终止条件$y_T\geq y_{\text{min}}$限制（$y_{\text{min}}$是$y$的最低可行水平），最优解有两种可能情况。</p>
 <ul>
 <li>$y_T^{\star}&gt;y_{\text{min}}$，那么上述（非截断的）限制条件自动得以满足，它不是紧的约束。因为此时$\Delta y_T\equiv y_T-y_T^\star$的符号可正可负，它是可以任意取定的。</li>
-<li>$y_T^{\star}=y_{\text{min}}$，此时$\Delta y_T$不再是任意取定的，因为它必须满足条件$\Delta y_T\equiv y_T-y_T^\star\ge 0$，</li>
+<li>$y_T^{\star}=y_{\text{min}}$，此时它必须满足条件$\Delta y_T\equiv y_T-y_T^\star\ge 0$。这里的$\Delta y_T$不再是任意取定的，因为它只能取使$\Delta y_T\ge0$的值。</li>
 </ul>
 <p>后一种情况是我们要重点关注的。对于<span style='color:red'>最大化</span>问题，这种情况下的横截性条件可以像库恩－塔克条件中的互补松弛条件那样表述：</p>
 <script type="math/tex; mode=display">
@@ -689,7 +689,8 @@ F_y = \frac{\text{d}}{\text{d}t}F_{y'}</script><p>其余两项只与终止时间
   </p>
 </div>
 
-<p>水平终止条件可能会被限制条件$T\le T_\max$截断（$T_\max$表示完成任务的最大可能时间）。类似上面分析阶段垂直终止线，对于<span style='color:red'>最大化</span>问题，横截条件表示为：</p>
+<p>水平终止条件可能会被限制条件$T\le T_\max$截断（$T_\max$表示完成任务的最大可能时间）。类似上面分析阶段垂直终止线，只考虑紧约束情况。</p>
+<p>对于<span style='color:red'>最大化</span>问题，横截条件表示为：</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
     [F-y'F_{y'}]_{t=T}\ge0,\quad T^\star\le T_\max,\quad (T^\star - T_\max)[F-y'F_{y'}]_{t=T}=0 \tag{3.18}
@@ -731,10 +732,10 @@ F_y = \frac{\text{d}}{\text{d}t}F_{y'}</script><p>其余两项只与终止时间
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-04T19:34:25+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-05T10:59:32+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年2月4日</p>
+    <p>更新于：2021年2月5日</p>
   </a>
 </div>
 

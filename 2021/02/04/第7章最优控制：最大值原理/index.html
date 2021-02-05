@@ -343,13 +343,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2.3k字</p>
+      <p>字数：3.7k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：10分钟</p>
+      <p>时长：17分钟</p>
     </a>
   </div>
  -->
@@ -359,13 +359,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2.3k字</p>
+      <p>字数：3.7k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：10分钟</p>
+      <p>时长：17分钟</p>
     </a>
   </div> -->
 
@@ -374,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">2.3k字</span>
+        <span class="post-count">3.7k字</span>
       </span>
     </span>
  
@@ -383,7 +383,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">10分</span>
+        <span class="post-count">17分</span>
       </span>
     </span>
     
@@ -435,7 +435,58 @@
     \dot{\lambda} &=& -\frac{\partial H}{\partial y}(\lambda\text{的运动方程})    \notag\\
     \lambda(T)         &=& 0(\text{横截条件})    \notag
 \end{eqnarray}\tag{7.5}</script><p>如果不求甚解，这一部分的结果死记硬背就可以了。对于这些条件的所有解释都在下一节中。</p>
-<h3 id="7-3-最大值原理的机理"><a href="#7-3-最大值原理的机理" class="headerlink" title="7.3 最大值原理的机理"></a>7.3 最大值原理的机理</h3><p>为简单起见，假设控制变量$u$不受约束，因此$u^\star$是一个内部解。我们假设汉密尔顿函数关于$u$可微。另外，假设可以用条件$\frac{\partial H}{\partial u}=0$替换条件$\max_u H$。假定初始点固定，但终止点可变。问题为</p>
+<h3 id="7-2a-自控问题"><a href="#7-2a-自控问题" class="headerlink" title="7.2a 自控问题"></a>7.2a 自控问题</h3><p>所谓“自控问题”，指的是被积函数$F$和运动方程中的$f$都不显含自变量$t$。结果是最优汉密尔顿函数有不随时间变化的常数值。对于汉密尔顿函数：</p>
+<script type="math/tex; mode=display">
+H(t,y,u,\lambda)\equiv F(t,y,u)+\lambda(t)f(t,y,u)</script><p>它的时间导数为</p>
+<script type="math/tex; mode=display">
+\frac{\text{d}H}{\text{d}t} = \frac{\partial H}{\partial t}+\frac{\partial H}{\partial y}\dot{y}+\frac{\partial H}{\partial u}\dot{u}+\frac{\partial H}{\partial\lambda}\dot{\lambda}</script><p>当$H$实现最大化时，我们有$\frac{\partial H}{\partial u}=0$（内部解）或者$\dot{u}=0$（边界解）。于是上式第三项肯定为零。</p>
+<p>根据最大值原理，$\dot{y}=\frac{\partial H}{\partial \lambda},\dot{\lambda}=-\frac{\partial H}{\partial y}$，上式第二项和第四项抵消了。于是有</p>
+<script type="math/tex; mode=display">
+\frac{\text{d}H^\star}{\text{d}t} = \frac{\partial H^\star}{\partial t}    \tag{7.53}</script><p>这是一个<span style='color:red'>一般的结果。对于自控问题和非自控问题都成立</span>。</p>
+<p>在自控问题下，被积函数$F$和运动方程中的$f$都不显含自变量$t$，因此汉密尔顿函数$H$中肯定也不显含自变量$t$。于是上式等于零，也就是说自控问题下</p>
+<script type="math/tex; mode=display">
+H=\text{常数}</script><p>此时问题可以写成(<span style='font-family:fangsong'>参考蒋中一教材《数理经济学的基本方法》（第4版）</span>)</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max V                                         &=&\int_0^T F(y,u)\text{d}t    \notag\\
+    \text{s.t.}\quad\dot{y}     &=&f(y,u)    \notag\\
+                                                    & &\text{边界条件}\notag
+\end{eqnarray}</script><p>此时的哈密尔顿函数为</p>
+<script type="math/tex; mode=display">
+H=F(y,u)+\lambda f(y,u)</script><h3 id="8-2-当前值哈密尔顿函数"><a href="#8-2-当前值哈密尔顿函数" class="headerlink" title="8.2 当前值哈密尔顿函数"></a>8.2 当前值哈密尔顿函数</h3><p>另一类自控问题中，时间$t$作为贴现因子$e^{-rt}$的一部分进入问题中，但是在其他地方不出现，因此目标函数取如下形式：</p>
+<script type="math/tex; mode=display">
+\int_0^T F(t,y,u)\text{d}t = \int_0^T G(y,u)e^{-rt}\text{d}t</script><p>严格来讲这并非自治问题，但通过<span style='color:red'>现值汉密尔顿函数</span>很容易将其转化为自治问题。现值哈密尔顿函数作如下定义：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    H_c \equiv He^{rt} = G(y,u)+\mu f(y,u)    \tag{20.17}
+\end{eqnarray}</script><p>注意到$H_c$中不含自变量$t$，因此它沿着所有变量的最优路径的值不随时间变化而变化，是个常数。其中</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \mu\equiv \lambda e^{rt}    \tag{20.18}
+\end{eqnarray}</script><p>被称为现值哈密尔顿乘子。这里将最大值原理修改成如下形式：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &(1)& H_c(y,u^\star,\mu)\ge H_c(y,u,\mu),\text{对所有}t\in[0,T]    \notag\\
+    &(2)& \dot{y} = \color{red}{\frac{\partial H}{\partial\lambda}=f(y,u)=}\frac{\partial H_c}{\partial\mu}    \notag\\
+    &(3)& \dot{\mu} = -\frac{\partial H_c}{\partial y} + r\mu    \notag\\
+  &(4)& \mu(T)=0\quad\text{对于垂直终止线}    \notag\\
+  &  & [H_c]_{t=T}=0\quad\text{对于水平终止线}
+\end{eqnarray}\tag{20.19}</script><blockquote>
+<p>对于（3）作如下演算可以得到：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \dot{\lambda}&=&-\frac{\partial H}{\partial y} 
+    = -\frac{\partial [H_c e^{-rt}]}{\partial y} 
+    = - e^{-rt}\frac{\partial [H_c]}{\partial y}    \notag\\
+    \dot{\mu} &=& \frac{\text{d}}{\text{d}t}(\lambda e^{rt}) 
+    = e^{rt}\dot{\lambda}+\lambda re^{rt}
+    = - \frac{\partial H_c}{\partial y} +r\mu    \notag
+\end{eqnarray}</script><p>对于（4），由于垂直终止线的横截条件为$\lambda(T)=0$，而</p>
+<script type="math/tex; mode=display">
+\mu(T) = \lambda(T)e^{rT} = 0</script><p>水平终止线的横截条件为$[H]_{t=T}=0$，而</p>
+<script type="math/tex; mode=display">
+[H_c]_{t=T} = [He^{rt}]_{t=T} = [H]_{t=T}e^{rT}= 0</script></blockquote>
+<h3 id="7-3-最大值原理的机理-定理证明"><a href="#7-3-最大值原理的机理-定理证明" class="headerlink" title="7.3 最大值原理的机理(定理证明)"></a>7.3 最大值原理的机理(定理证明)</h3><p>为简单起见，假设控制变量$u$不受约束，因此$u^\star$是一个内部解。我们假设汉密尔顿函数关于$u$可微。另外，假设可以用条件$\frac{\partial H}{\partial u}=0$替换条件$\max_u H$。假定初始点固定，但终止点可变。问题为</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
     \max V                                         &=&\int_0^T F(t,y,u)\text{d}t    \notag\\
@@ -518,10 +569,280 @@ H(t,u,y,\lambda)\equiv F(t,y,u)+\lambda(t)f(t,y,u)</script><p>将其代入(7.22)
     &=& \int_0^{T} \left[\left(\frac{\partial H}{\partial y}+\dot{\lambda}\right)q(t)+\frac{\partial H}{\partial u}p(t) \right]\text{d}t + [H]_{t=T}\Delta T-\lambda(T)\Delta y_T    \notag
 \end{eqnarray}\tag{7.30}</script><p>(7.30)包括三部分。第一部分得到两个条件</p>
 <script type="math/tex; mode=display">
-\dot{\lambda}=-\frac{\partial H}{\partial y},\quad \frac{\partial H}{\partial u}=0</script><p>得到的第一个方程是<strong>共态方程</strong>。第二个方程是一阶条件。由于最简单的问题有固定不变的$T$和自由的$y_T$，因此（7.30）中$\Delta T=0$，但$\Delta y_T$是自由的，因此一定要加限制条件</p>
+\dot{\lambda}=-\frac{\partial H}{\partial y},\quad \frac{\partial H}{\partial u}=0</script><p>得到的第一个方程是<strong>共态方程</strong>。第二个方程是一阶条件。</p>
+<p>对于<span style='color:red'>最简单的问题</span>(这里的条件对应于一种特殊情形了)有固定不变的$T$和自由的$y_T$，因此（7.30）中$\Delta T=0$，但$\Delta y_T$是自由的，因此一定要加限制条件</p>
 <script type="math/tex; mode=display">
 \lambda(T)=0</script><p>这就是（7.5）的横截条件的由来。</p>
-<h3 id="7-4-其他终止条件"><a href="#7-4-其他终止条件" class="headerlink" title="7.4 其他终止条件"></a>7.4 其他终止条件</h3><h4 id="7-4-1-固定终止点"><a href="#7-4-1-固定终止点" class="headerlink" title="7.4.1 固定终止点"></a>7.4.1 固定终止点</h4><h4 id="7-4-2-水平终止线（固定端点问题）"><a href="#7-4-2-水平终止线（固定端点问题）" class="headerlink" title="7.4.2 水平终止线（固定端点问题）"></a>7.4.2 水平终止线（固定端点问题）</h4><h4 id="7-4-3-终止曲线"><a href="#7-4-3-终止曲线" class="headerlink" title="7.4.3 终止曲线"></a>7.4.3 终止曲线</h4><h4 id="7-4-4-截断垂直终止线"><a href="#7-4-4-截断垂直终止线" class="headerlink" title="7.4.4 截断垂直终止线"></a>7.4.4 截断垂直终止线</h4><h4 id="7-4-5-截断水平终止线"><a href="#7-4-5-截断水平终止线" class="headerlink" title="7.4.5 截断水平终止线"></a>7.4.5 截断水平终止线</h4><h3 id="现值哈密尔顿函数"><a href="#现值哈密尔顿函数" class="headerlink" title="现值哈密尔顿函数"></a>现值哈密尔顿函数</h3><p>参考蒋中一教材P785</p>
+<h3 id="7-4-其他终止条件"><a href="#7-4-其他终止条件" class="headerlink" title="7.4 其他终止条件"></a>7.4 其他终止条件</h3><h4 id="7-4-1-固定终止点"><a href="#7-4-1-固定终止点" class="headerlink" title="7.4.1 固定终止点"></a>7.4.1 固定终止点</h4><p>最优控制理论中不包括固定终止点问题（甚至连简单问题都算不上）。如果给定固定终止点，横截条件被下列条件替代即可：</p>
+<script type="math/tex; mode=display">
+y(T)=y_T(T,y_T\text{给定})</script><h4 id="7-4-2-水平终止线（固定端点问题）"><a href="#7-4-2-水平终止线（固定端点问题）" class="headerlink" title="7.4.2 水平终止线（固定端点问题）"></a>7.4.2 水平终止线（固定端点问题）</h4><p>此时$\Delta y_T=0,\Delta T$是任意的。</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    [H]_{t=T} = 0    \tag{7.31}
+\end{eqnarray}</script><h4 id="7-4-3-终止曲线"><a href="#7-4-3-终止曲线" class="headerlink" title="7.4.3 终止曲线"></a>7.4.3 终止曲线</h4><p>如果终止曲线为$y_T=\phi(T)$，$\Delta T$和$\Delta t_T$都是任意的，二者之间存在关系$\Delta y_T=\phi’\Delta T$。合并（7.30）最后两项，</p>
+<script type="math/tex; mode=display">
+[H]_{t=T}\Delta T-\lambda(T)\Delta y_T 
+= [H]_{t=T}\Delta T-\lambda(T)\phi'\Delta T
+= [H-\lambda\phi']_{t=T}\Delta T</script><p>横截条件应该为</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    [H-\lambda\phi']_{t=T} = 0    \tag{7.32}
+\end{eqnarray}</script><h4 id="7-4-4-截断垂直终止线"><a href="#7-4-4-截断垂直终止线" class="headerlink" title="7.4.4 截断垂直终止线"></a>7.4.4 截断垂直终止线</h4><div align='center'>
+  <img src='/../../images/%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/image-20210204142543835.png' width=300px>
+  <center style='font-family:kai'>图20.3(b)</center>
+  <p align='left'  style='font-family:kai'>
+    图片来自蒋中一《数理经济学的基本方法》（第4版）
+  </p>
+</div>
+
+<p>这种情况下终止时间固定，终止状态自由可变，且受制于约束条件$y_T\ge y_\min$。</p>
+<p>最优解有两种可能情况。</p>
+<ul>
+<li><p>$y_T^{\star}&gt;y_{\text{min}}$，那么上述（非截断的）限制条件自动得以满足，它不是紧的约束。因为此时$\Delta y_T\equiv y_T-y_T^\star$的符号可正可负，它是可以任意取定的。这将适用于常规垂直终止线问题的横截条件。</p>
+</li>
+<li><script type="math/tex; mode=display">
+\begin{eqnarray}
+    \lambda(T)=0,y_T^\star>y_\min\tag{7.33}
+\end{eqnarray}</script></li>
+<li><p>$y_T^{\star}=y_{\text{min}}$，此时它必须满足条件$\Delta y_T\equiv y_T-y_T^\star\ge 0$。这里的$\Delta y_T$不再是任意取定的，因为它只能取使$\Delta y_T\ge0$的值。此时设$y_T=y_\min+\varepsilon q(T)$，其中$q(t)&gt;0$。此时还要要求$\varepsilon\ge 0$。此处应用库恩-塔克条件，$\varepsilon\ge 0$使得一阶条件需要满足$\frac{\text{d}\mathscr{V}}{\text{d}\varepsilon}\le0$，于是（7.30）的横截条件改为：$-\lambda(T)\Delta y_T\le0$。又由于$\Delta y_T\ge0$，因此有</p>
+</li>
+<li><script type="math/tex; mode=display">
+\begin{eqnarray}
+    \lambda(T)\ge0,y^\star=y_\min    \tag{7.34}
+\end{eqnarray}</script></li>
+<li><p>第二种情况综合的横截条件为：</p>
+</li>
+<li><script type="math/tex; mode=display">
+\lambda(T)\ge0,y_T\ge y_\min,(y_T-y_\min)\lambda(T)=0</script></li>
+</ul>
+<h4 id="7-4-5-截断水平终止线"><a href="#7-4-5-截断水平终止线" class="headerlink" title="7.4.5 截断水平终止线"></a>7.4.5 截断水平终止线</h4><div align='center'>
+  <img src='/../../images/%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/image-20210204142739687.png' width=300px>
+  <center style='font-family:kai'>图20.3(c)</center>
+  <p align='left'  style='font-family:kai'>
+    图片来自蒋中一《数理经济学的基本方法》（第4版）
+  </p>
+</div>
+
+<p>这种情况下终止状态固定，但终止时间自由可变，只不过终止时间要满足$T^\star\le T_\max$。于是在最优解，要么$T^\star&lt;T_\max$，要么$T^\star=T_\max$。</p>
+<ul>
+<li><p>$T^\star&lt;T_\max$，约束是松的，常规水平终止线的横截条件仍然成立</p>
+</li>
+<li><script type="math/tex; mode=display">
+\begin{eqnarray}
+    [H]_{t=T}=0,T^\star<T_\max    \tag{7.36}
+\end{eqnarray}</script></li>
+<li><p>$T^\star=T_\max$，此时的横截条件为</p>
+</li>
+<li><script type="math/tex; mode=display">
+\begin{eqnarray}
+    [H]_{t=T}\ge 0,T^\star=T_\max
+\end{eqnarray}</script></li>
+<li><script type="math/tex; mode=display">
+\begin{eqnarray}
+    [H]_{t=T}\ge0,T\le T_\max,(T-T_\max)[H]_{t=T}=0    \tag{7.38}
+\end{eqnarray}</script></li>
+<li></li>
+</ul>
+<h4 id="7-4-6-例题"><a href="#7-4-6-例题" class="headerlink" title="7.4.6 例题"></a>7.4.6 例题</h4><p><span style='font-family:hei;color:red'>例题1</span> </p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max_{u(t)} &\quad& \int_0^1 (-u^2) \text{d}t    \notag\\
+    \text{s.t.} \quad \dot{y} &=& y+u    \notag\\
+    y(0) &=& 1    \notag\\
+    y(1) &=& 0    \notag
+\end{eqnarray}</script><blockquote>
+<p>哈密尔顿函数为</p>
+<script type="math/tex; mode=display">
+H = -u^2+\lambda(y+u)</script><p>最大值条件为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &(1)& \frac{\partial H}{\partial u} = -2u+\lambda = 0    \notag\\
+    &(2)& \dot{y} = \frac{\partial H}{\partial \lambda} = y+u    \notag\\
+    &(3)& \dot{\lambda} = -\frac{\partial H}{\partial y} = -\lambda    \notag
+\end{eqnarray}</script><p>根据（3）可以解出：</p>
+<script type="math/tex; mode=display">
+\lambda(t) = C_1 e^{-t}</script><p>将其代入（1）中：</p>
+<script type="math/tex; mode=display">
+u = \frac12\lambda = \frac12C_1 e^{-t}</script><p>代入（2）</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \dot{y} = y + \frac{C_1}2 e^{-t}    \tag{*}
+\end{eqnarray}</script><p>这个常微分方程的解法：因为一阶齐次微分方程$\dot{y}=y$的通解为$y=C_2e^t,C_2\in\mathbb{R}$。对于一阶非齐次线性微分方程，<span style='color:red'>设$y(t)=C_2(t)e^t$</span>，于是</p>
+<script type="math/tex; mode=display">
+\dot{y} = e^t[C_2(t)+C_2'(t)]</script><p>将其代入（*）式子，得到</p>
+<script type="math/tex; mode=display">
+e^t[C_2(t)+C_2'(t)] = C_2(t)e^t + \frac{C_1}2e^{-t}</script><p>化简得到：</p>
+<script type="math/tex; mode=display">
+C_2'(t) = \frac{C_1}2e^{-2t}\Rightarrow C_2(t) = -\frac{C_1}4e^{-2t}+C_3(C_1,C_3\in\mathbb{R})</script><p>于是我们得到一阶非齐次线性微分方程的通解为</p>
+<script type="math/tex; mode=display">
+y(t) = \left( -\frac{C_1}4e^{-2t}+C_3 \right)e^t\quad (C_1,C_3\in\mathbb{R})</script><p>将初值条件$y(0)=1,y(1)=0$代入，即可解出$y(t)$。</p>
+</blockquote>
+<p><span style='font-family:hei;color:red'>例题2（截断垂直终止线问题）</span> </p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max_{u(t)} &\quad& \int_0^1 (-u^2) \text{d}t    \notag\\
+    \text{s.t.} \quad \dot{y} &=& y+u    \notag\\
+    y(0) &=& 1    \notag\\
+    T &=& 1    \notag\\
+    y(1) &\ge& 3    \notag
+\end{eqnarray}</script><blockquote>
+<p>哈密尔顿函数为</p>
+<script type="math/tex; mode=display">
+H = -u^2+\lambda(y+u)</script><p>最大值条件为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &(1)& \frac{\partial H}{\partial u} = -2u+\lambda = 0    \notag\\
+    &(2)& \dot{y} = \frac{\partial H}{\partial \lambda} = y+u    \notag\\
+    &(3)& \dot{\lambda} = -\frac{\partial H}{\partial y} = -\lambda    \notag
+\end{eqnarray}</script><p>根据(1)（3）可以解出：</p>
+<script type="math/tex; mode=display">
+u(t)=\frac12\lambda(t),\quad \lambda(t)=C_1e^{-t}</script><p>用于本题为垂直终止问题，$\lambda(T)=0$，从而解得</p>
+<script type="math/tex; mode=display">
+\lambda^\star(t)=0</script><p>于是有</p>
+<script type="math/tex; mode=display">
+u^\star(t)=0</script><p>根据（2），结合$u^\star(t)=0$</p>
+<script type="math/tex; mode=display">
+y(t) = C_2 e^{t}</script><p>代入初值条件$y(0)=1$，因此最优状态路径为$y^\star(t)=e^t$。</p>
+<p>但遗憾的是，这个结果违背了终止时的限制$y(1)\ge3$。因此为了满足横截条件：</p>
+<script type="math/tex; mode=display">
+\lambda(T)\ge0,\quad y_T\ge y_\min,\quad(y_T-y_\min)\lambda(T)=0</script><p>即</p>
+<script type="math/tex; mode=display">
+\lambda(1)=0\ge0,\quad y(1)=C_2e\ge3,\quad (C_2e-3)\cdot0=0</script><p>必须令$y(1)=3$。</p>
+</blockquote>
+<p><span style='font-family:hei;color:red'>例题3</span> </p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max_{u(t)} &\quad& \int_0^1 (-1) \text{d}t    \notag\\
+    \text{s.t.} \quad \dot{y} &=& y+u    \notag\\
+    y(0) &=& 5    \notag\\
+    y(T) &=& 11,(T\text{自由})    \notag\\
+    u(t) &\in& [-1,1]    \notag
+\end{eqnarray}</script><blockquote>
+<p>汉密尔顿函数：</p>
+<script type="math/tex; mode=display">
+H = -1+\lambda(y+u)</script><p>因为$H$是$u$的线性函数，因此条件$\frac{\partial H}{\partial u}=0$的条件不可用。又由于控制变量的取值范围是一个闭集，因此最优点$u^\star$只能是边界值，即取$1$或者$-1$。具体而言，如果$\lambda&gt;0$，那么$u^\star=1$；如果$\lambda&lt;0$，那么$u^\star=-1$。而如果$\lambda=0$，此时汉密尔顿函数对$u$画出来的图形就是一条水平线$H=-1$。此时</p>
+<script type="math/tex; mode=display">
+u^\star = \text{sgn}\lambda</script><p>最大值条件对应为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &(1)& \dot{\lambda} = -\frac{\partial H}{\partial y} = -\lambda    \notag\\
+    &(2)& \dot{y} = \frac{\partial H}{\partial \lambda} = y+u    \notag
+\end{eqnarray}</script><p>根据（1），$\lambda(t)=C_1e^{-t}$。注意到，$\lambda(t)$的正负完全取决于$C_1$的正负，因此$u^\star$的符号是确定的。(即$C_1&gt;0,u^\star=1;C_1&lt;0,u^\star=-1$)本问题是水平终止问题，因此$C_1$的符号隐藏在横截条件$[H]_{t=T}=0$中：</p>
+<script type="math/tex; mode=display">
+[H]_{t=T} = -1+\lambda(T)[y(T)+u(T)]=-1+C_1e^{-T}(11+u^\star) = 0</script><p>注意到$u$的取值范围，一定有$11+u^\star&gt;0$，因此要保持上述方程成立，一定有$C_1&gt;0$，于是$\lambda(t)&gt;0\Rightarrow u^\star=1$。</p>
+<p>于是根据（2）可以解出来$y$的轨迹方程：</p>
+<script type="math/tex; mode=display">
+y(t)=-1+C_2 e^t\quad (C_2\in\mathbb{R})</script><p>代入初值条件$y(0)=5$，解得$y^\star(t)=6e^t-1$。</p>
+<p>根据横截条件，我们可以解出$C_1=\frac16$，于是$\lambda^\star(t)=\frac16e^{-t}$。还可以解出$T^\star=\ln2$。</p>
+</blockquote>
+<h3 id="8-1-最大值原理的一种经济学解释"><a href="#8-1-最大值原理的一种经济学解释" class="headerlink" title="8.1 最大值原理的一种经济学解释"></a>8.1 最大值原理的一种经济学解释</h3><p>假设企业希望它在时间区间$[0,T]$上的利润最大，状态变量只有资本存量$K$。控制变量$u$表示企业在每个时点作出的某种经济决策（例如广告预算或者存货政策，积累模型中还可表示消费）。</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max_u &\quad& \Pi=\int_0^T\pi(t,K,u)\text{d}t    \notag\\
+    \text{s.t.}&\quad& \dot{K}=f(t,K,u)    \notag\\
+    && K(0)=K_0,K(T)\text{自由}(K_0,T\text{给定})    \notag
+\end{eqnarray}</script><p>汉密尔顿函数为</p>
+<script type="math/tex; mode=display">
+H = \pi(t,K,u) + \lambda(t)f(t,K,u)</script><p>协变量$\lambda(t)$为状态变量的影子价格。汉密尔顿函数可以看作总利润函数，其中$\pi(t,K,u)$可以当作当前利润，$\lambda(t)f(t,K,u)$可以看作未来利润（资本存量变化）。</p>
+<h4 id="9-3-新古典最优增长理论（拉姆齐模型）"><a href="#9-3-新古典最优增长理论（拉姆齐模型）" class="headerlink" title="9.3 新古典最优增长理论（拉姆齐模型）"></a>9.3 新古典最优增长理论（拉姆齐模型）</h4><h4 id="9-3-1-函数分析"><a href="#9-3-1-函数分析" class="headerlink" title="9.3.1 函数分析"></a>9.3.1 函数分析</h4><p>最优增长问题可以写成：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max_c &\quad& \int_0^\infty U(c)e^{-rt} \text{d}t     \notag \\
+    \text{s.t.} &\quad& \dot{k} = f(k)-c-(n+\delta)k    \notag\\
+    && k(0) = k_0    \notag\\
+    && 0\le c(t)\le f[k(t)]    \notag
+\end{eqnarray}\tag{9.27}</script><ol>
+<li>其中$U(c)$是社会效用指数函数，$c$为人均消费，并假定Inada（稻田）条件：</li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    U'(c)>0,U''(c)<0;\lim_{c\rightarrow0}U'(c)=\infty,\lim_{c\rightarrow\infty}U'(c)=0    \tag{9.25}
+\end{eqnarray}</script><ol>
+<li>$e^{-rt}$为贴现因子。在最优化问题中，函数$U(c)$在时间上加总（关于$t$积分），然而由于人口以速率$n$在不断增长，盖斯（Cass）认为应该用人口进行加权，即（此时的贴现率暂时记成$\rho$）</li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \int_0^\infty U(c)L(t)e^{-\rho t}\text{d}t 
+    = \int_0^\infty U(c)L(0)e^{nt}e^{-\rho t}\text{d}t
+    = L(0)\int_0^\infty U(c)e^{-(\rho-n) t}\text{d}t
+    \tag{9.26}
+\end{eqnarray}</script><ol>
+<li><p>为了保证积分收敛，盖斯规定$\rho-n&gt;0$(即贴现率高于人口增速)。而此时这一项相当于一个正的的贴现率$r\equiv \rho-n$，并将期初的人口数标准化为1，即$L(0)=1$。于是得到了（9.27）中的积分。</p>
+</li>
+<li><p>人均产出函数$y=f(k)$也满足Inada（稻田）条件。</p>
+</li>
+</ol>
+<p>本问题的汉密尔顿函数为</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    H = U(c)e^{-rt}+\lambda[f(k)-c-(n+\delta)k]    \tag{9.28}
+\end{eqnarray}</script><p><span style='color:red'>$H$是关于$c$的凹函数(函数形状是上凸的)</span>，因此考虑是否可以使用一阶条件$\frac{\partial H}{\partial c}=0$。这里认为$c^\star$的取值一定处于$0$和使得$\dot{k}=0$的$c_1$之间（图9-2），而$c_1 = f(k)-(n+\delta)k&lt;f(k)$，因此最优值$c^\star$一定满足题目中的限制条件$0\le c(t)\le f[k(t)]$。</p>
+<div align='center'>
+  <img src='/../../images/%E7%AC%AC7%E7%AB%A0%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86/image-20210205233927618.png' width=350px>
+  <center style='font-family:kai'>图9-2</center>
+</div>
+
+<p>于是最大值条件为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &(1)& \frac{\partial H}{\partial c} = U'(c)e^{-rt} - \lambda = 0    \notag\\
+    &(2)& \dot{k} = \frac{\partial H}{\partial \lambda} = f(k)-c-(n+\delta)k    \notag\\
+    &(3)& \dot{\lambda} = -\frac{\partial H}{\partial k} = -\lambda [f'(k)-(n+\delta)]    \notag
+\end{eqnarray}</script><p>这里同样可以使用当前值哈密尔顿函数：</p>
+<script type="math/tex; mode=display">
+H_c = He^{rt} = U(c) + \mu[f(k)-c-(n+\delta)k],\quad \mu=\lambda e^{rt}    \tag{9.32}</script><p>最大值条件为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &(1)& \frac{\partial H_c}{\partial c} = U'(c) - \mu = 0    \notag\\
+    &(2)& \dot{k} = \frac{\partial H_c}{\partial \mu} = f(k)-c-(n+\delta)k    \notag\\
+    &(3)& \dot{\mu} = -\frac{\partial H_c}{\partial k} +r\mu = -\mu [f'(k)-(n+\delta+r)]    \notag
+\end{eqnarray}</script><h4 id="9-3-2-相图分析"><a href="#9-3-2-相图分析" class="headerlink" title="9.3.2 相图分析"></a>9.3.2 相图分析</h4><p>稳态$(k^\star,c^\star)$，此时有$\dot{k}=\dot{c}=0$。</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \dot{k} &=& f(k) - c -(n+\delta)k =0    \notag\\
+    \dot{c} &=& ?
+\end{eqnarray}</script><p>$\dot{c}$的求解要用到最大值条件。根据（1），$\mu=U’(c)$。两边关于$t$求导数：</p>
+<script type="math/tex; mode=display">
+\dot{\mu} = U''(c)\dot{c}
+\Rightarrow \dot{c}=\frac{\dot{\mu}}{U''(c)} 
+= -\frac{1}{U''(c)}\mu [f'(k)-(n+\delta+r)]
+= -\frac{U'(c)}{U''(c)}[f'(k)-(n+\delta+r)]</script><p>由此可见，$\dot{c}=0$只与$k$有关，因此在$k-c$图中垂直于$k$轴的直线。而根据Inada条件，</p>
+<script type="math/tex; mode=display">
+\frac{\partial\dot{k}}{\partial k} = f'(k)-(n+\delta)>0,\frac{\partial^2\dot{k}}{\partial k^2} = f''(k)<0</script><p>因此$\dot{k}$关于$k$是凹函数，于是得到图9-4的相图。</p>
+<div align='center'>
+  <img src='/../../images/%E7%AC%AC7%E7%AB%A0%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86/image-20210206000403195.png' width=400px>
+  <center style='font-family:kai'>图9-4</center>
+</div>
+
+<p>下面讨论这些流线的一般方向，</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\partial \dot{k}}{\partial c} &=& -1<0    \notag\\
+    \frac{\partial \dot{c}}{\partial k} &=&  -\frac{U'(c)}{U''(c)}f''(k)<0
+\end{eqnarray}</script><p>因此当$c$增加时，$\dot{k}$应该遵循$(+,0,-)$这个符号顺序。当$k$增加时，$\dot{c}$应该遵循$(+,0,-)$这个符号顺序。</p>
+<p>下面利用线性化方法判别鞍点。</p>
+<script type="math/tex; mode=display">
+\frac{\text{d}}{\text{d}t}
+\left(\begin{matrix}
+    c-c^\star \\ k-k^\star
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+    0 & -\frac{U'(c)}{U''(c)}f''(k^\star)\\
+    -1 & f'(k^\star)-(n+\delta) 
+\end{matrix}\right)
+\left(\begin{matrix}
+    c-c^\star \\ k-k^\star
+\end{matrix}\right)
+=\textbf{A}
+\left(\begin{matrix}
+    c-c^\star \\ k-k^\star
+\end{matrix}\right)</script><p>系数矩阵的特征根$\lambda_1,\lambda_2$满足：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \lambda_1+\lambda_2 &=& \text{diag }\textbf{A} = f'(k^\star)-(n+\delta)>0    \notag\\
+    \lambda_1\lambda_2 &=& \text{det }\textbf{A} = -\frac{U'(c)}{U''(c)}f''(k^\star)<0
+\end{eqnarray}</script><p>因此特征根一正一负，为鞍点稳定路径。</p>
 
   
   
@@ -556,10 +877,10 @@ H(t,u,y,\lambda)\equiv F(t,y,u)+\lambda(t)f(t,y,u)</script><p>将其代入(7.22)
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-05T01:52:48+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-06T00:28:15+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年2月5日</p>
+    <p>更新于：2021年2月6日</p>
   </a>
 </div>
 
@@ -738,7 +1059,7 @@ I 劳动机械化资本主义生产是劳动过程和增值过程的统一，其
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%E9%97%AE%E9%A2%98"><span class="toc-text">7.1 最简单的最优控制问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-1-%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%E9%97%AE%E9%A2%98%E7%9A%84%E7%89%B9%E6%AE%8A%E6%80%A7%E8%B4%A8"><span class="toc-text">7.1.1 最优控制问题的特殊性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-2-%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">7.1.2 最简单的问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86"><span class="toc-text">7.2 最大值原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86%E7%9A%84%E6%9C%BA%E7%90%86"><span class="toc-text">7.3 最大值原理的机理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E5%85%B6%E4%BB%96%E7%BB%88%E6%AD%A2%E6%9D%A1%E4%BB%B6"><span class="toc-text">7.4 其他终止条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-1-%E5%9B%BA%E5%AE%9A%E7%BB%88%E6%AD%A2%E7%82%B9"><span class="toc-text">7.4.1 固定终止点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-2-%E6%B0%B4%E5%B9%B3%E7%BB%88%E6%AD%A2%E7%BA%BF%EF%BC%88%E5%9B%BA%E5%AE%9A%E7%AB%AF%E7%82%B9%E9%97%AE%E9%A2%98%EF%BC%89"><span class="toc-text">7.4.2 水平终止线（固定端点问题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-3-%E7%BB%88%E6%AD%A2%E6%9B%B2%E7%BA%BF"><span class="toc-text">7.4.3 终止曲线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-4-%E6%88%AA%E6%96%AD%E5%9E%82%E7%9B%B4%E7%BB%88%E6%AD%A2%E7%BA%BF"><span class="toc-text">7.4.4 截断垂直终止线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-5-%E6%88%AA%E6%96%AD%E6%B0%B4%E5%B9%B3%E7%BB%88%E6%AD%A2%E7%BA%BF"><span class="toc-text">7.4.5 截断水平终止线</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%B0%E5%80%BC%E5%93%88%E5%AF%86%E5%B0%94%E9%A1%BF%E5%87%BD%E6%95%B0"><span class="toc-text">现值哈密尔顿函数</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%E9%97%AE%E9%A2%98"><span class="toc-text">7.1 最简单的最优控制问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-1-%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%E9%97%AE%E9%A2%98%E7%9A%84%E7%89%B9%E6%AE%8A%E6%80%A7%E8%B4%A8"><span class="toc-text">7.1.1 最优控制问题的特殊性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-2-%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">7.1.2 最简单的问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86"><span class="toc-text">7.2 最大值原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2a-%E8%87%AA%E6%8E%A7%E9%97%AE%E9%A2%98"><span class="toc-text">7.2a 自控问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-%E5%BD%93%E5%89%8D%E5%80%BC%E5%93%88%E5%AF%86%E5%B0%94%E9%A1%BF%E5%87%BD%E6%95%B0"><span class="toc-text">8.2 当前值哈密尔顿函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86%E7%9A%84%E6%9C%BA%E7%90%86-%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E"><span class="toc-text">7.3 最大值原理的机理(定理证明)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E5%85%B6%E4%BB%96%E7%BB%88%E6%AD%A2%E6%9D%A1%E4%BB%B6"><span class="toc-text">7.4 其他终止条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-1-%E5%9B%BA%E5%AE%9A%E7%BB%88%E6%AD%A2%E7%82%B9"><span class="toc-text">7.4.1 固定终止点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-2-%E6%B0%B4%E5%B9%B3%E7%BB%88%E6%AD%A2%E7%BA%BF%EF%BC%88%E5%9B%BA%E5%AE%9A%E7%AB%AF%E7%82%B9%E9%97%AE%E9%A2%98%EF%BC%89"><span class="toc-text">7.4.2 水平终止线（固定端点问题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-3-%E7%BB%88%E6%AD%A2%E6%9B%B2%E7%BA%BF"><span class="toc-text">7.4.3 终止曲线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-4-%E6%88%AA%E6%96%AD%E5%9E%82%E7%9B%B4%E7%BB%88%E6%AD%A2%E7%BA%BF"><span class="toc-text">7.4.4 截断垂直终止线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-5-%E6%88%AA%E6%96%AD%E6%B0%B4%E5%B9%B3%E7%BB%88%E6%AD%A2%E7%BA%BF"><span class="toc-text">7.4.5 截断水平终止线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-6-%E4%BE%8B%E9%A2%98"><span class="toc-text">7.4.6 例题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86%E7%9A%84%E4%B8%80%E7%A7%8D%E7%BB%8F%E6%B5%8E%E5%AD%A6%E8%A7%A3%E9%87%8A"><span class="toc-text">8.1 最大值原理的一种经济学解释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-3-%E6%96%B0%E5%8F%A4%E5%85%B8%E6%9C%80%E4%BC%98%E5%A2%9E%E9%95%BF%E7%90%86%E8%AE%BA%EF%BC%88%E6%8B%89%E5%A7%86%E9%BD%90%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-text">9.3 新古典最优增长理论（拉姆齐模型）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-3-1-%E5%87%BD%E6%95%B0%E5%88%86%E6%9E%90"><span class="toc-text">9.3.1 函数分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-3-2-%E7%9B%B8%E5%9B%BE%E5%88%86%E6%9E%90"><span class="toc-text">9.3.2 相图分析</span></a></li></ol></li></ol>
     </div>
   </section>
 
