@@ -345,13 +345,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2.7k字</p>
+      <p>字数：1.3k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：13分钟</p>
+      <p>时长：5分钟</p>
     </a>
   </div>
  -->
@@ -361,13 +361,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2.7k字</p>
+      <p>字数：1.3k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：13分钟</p>
+      <p>时长：5分钟</p>
     </a>
   </div> -->
 
@@ -376,7 +376,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">2.7k字</span>
+        <span class="post-count">1.3k字</span>
       </span>
     </span>
  
@@ -385,7 +385,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">13分</span>
+        <span class="post-count">5分</span>
       </span>
     </span>
     
@@ -480,19 +480,19 @@ D_\alpha [f(\textbf{x}^\star,\alpha)]</script><p>注意到$\nabla_\textbf{x} f(\
 <h4 id="7-0-2-交互性条件"><a href="#7-0-2-交互性条件" class="headerlink" title="7.0.2 交互性条件"></a>7.0.2 交互性条件</h4><p>对于极大值函数</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
-    v(\alpha) = f(\textbf{x}^\star(\alpha),\alpha)
+    v(\alpha) = f(\textbf{x}^\star(\alpha),\alpha)    \tag{13.41}
 \end{eqnarray}</script><p>定义一个新的函数，刻画实际值和最大值之间的差异：</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
-    \Omega(\textbf{x},\alpha) = f(\textbf{x},\alpha) - v(\alpha)
+    \Omega(\textbf{x},\alpha) = f(\textbf{x},\alpha) - v(\alpha)    \tag{13.42}
 \end{eqnarray}</script><p>当$\textbf{x}=\textbf{x}^\star(\alpha)$时，这个新函数$\Omega$的极大值是零。当$\textbf{x}\neq\textbf{x}^\star(\alpha)$时，$\Omega=f-v\le0$。而新函数的极大值可以通过一阶条件和二阶条件决定。</p>
 <p>一阶条件：</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
     \nabla_\textbf{x} \Omega(\textbf{x},\alpha) 
-    &=& \nabla_\textbf{x}f(\textbf{x},\alpha) =0    \notag\\
+    &=& \nabla_\textbf{x}f(\textbf{x},\alpha) =0    \tag{13.43}\\
     D_\alpha[\Omega(\textbf{x},\alpha)]
-    &=& D_\alpha[f(\textbf{x},\alpha)] - D_\alpha[v(\alpha)]=0    \notag
+    &=& D_\alpha[f(\textbf{x},\alpha)] - D_\alpha[v(\alpha)]=0    \tag{13.44}
 \end{eqnarray}</script><p>二阶条件（海赛矩阵，这里考虑一个二维情形，$\textbf{x}=(x,y)^T$）:</p>
 <script type="math/tex; mode=display">
 \textbf{H}=\left\lvert
@@ -505,6 +505,162 @@ D_\alpha [f(\textbf{x}^\star,\alpha)]</script><p>注意到$\nabla_\textbf{x} f(\
 \begin{eqnarray}
     f_{xx}<0,f_{xx}f_{yy}-f_{xy}^2>0,\textbf{H}<0    \notag
 \end{eqnarray}</script><p>那么二阶充分条件得到满足。</p>
+<h4 id="7-0-3-约束最优化的包络定理"><a href="#7-0-3-约束最优化的包络定理" class="headerlink" title="7.0.3 约束最优化的包络定理"></a>7.0.3 约束最优化的包络定理</h4><script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max &\quad& U=f(\textbf{x},\alpha)    \notag\\
+    \text{s.t.} && g(\textbf{x},\alpha) = \textbf{0}
+\end{eqnarray}\tag{13.50}</script><p>拉格朗日函数</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    Z(\textbf{x},\alpha,\lambda) = f(\textbf{x},\alpha) - \lambda g(\textbf{x},\alpha)    \tag{13.51}
+\end{eqnarray}</script><p>一阶条件</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \nabla_\textbf{x} Z &=& \nabla_\textbf{x}f(\textbf{x},\alpha)-\lambda \nabla_\textbf{x} g(\textbf{x},\alpha)=0 \notag\\
+    D_\lambda[Z] &=& -g(\textbf{x},\alpha) = 0    \notag
+\end{eqnarray}</script><p>根据一阶条件可以得到极大值函数。</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    U^\star = f[\textbf{x}^\star(\alpha),\alpha]=v(\alpha)    \tag{13.52}
+\end{eqnarray}</script><p>当$\alpha$变化时，极大值函数怎么变呢？先求导：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\text{d}V}{\text{d}\alpha} = \nabla_\textbf{x}f[\textbf{x}^\star(\alpha),\alpha]D_\alpha[\textbf{x}^\star(\alpha)]+D_\alpha f[\textbf{x}^\star(\alpha),\alpha]    \tag{13.53}
+\end{eqnarray}</script><p>但这里并不能得到类似于包络定理的结果！将最优解代入约束条件我们得到：</p>
+<script type="math/tex; mode=display">
+g[\textbf{x}^\star(\alpha),\alpha]\equiv 0</script><p>将其对$\alpha$求导，得到：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+\nabla_\textbf{x}g[\textbf{x}^\star(\alpha),\alpha]D_\alpha[\textbf{x}^\star(\alpha)]+D_\alpha g[\textbf{x}^\star(\alpha),\alpha]=0    \tag{13.54}
+\end{eqnarray}</script><p>将（13.54）乘$\lambda$，再加上（13.53），得到</p>
+<script type="math/tex; mode=display">
+\frac{\text{d}V}{\text{d}\alpha} = (\nabla_\textbf{x}f-\lambda\nabla_\textbf{x}g) D_\alpha[\textbf{x}^\star(\alpha)]+
+(D_\alpha f-\lambda D_\alpha g)= Z_\alpha    \tag{13.55}</script><p>这代表的是约束最优化结构中的包络定理，拉格朗日函数代替了目标函数。</p>
+<h3 id="蒋中一13-6-对偶和包络定理-罗伊恒等式和谢泼德引理"><a href="#蒋中一13-6-对偶和包络定理-罗伊恒等式和谢泼德引理" class="headerlink" title="蒋中一13.6 对偶和包络定理(罗伊恒等式和谢泼德引理)"></a>蒋中一13.6 对偶和包络定理(罗伊恒等式和谢泼德引理)</h3><h4 id="13-6-1-基本问题"><a href="#13-6-1-基本问题" class="headerlink" title="13.6.1 基本问题"></a>13.6.1 基本问题</h4><script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max && U = U(x,y)    \notag\\
+    \text{s.t.} && P_xx+P_yy=I    \notag
+\end{eqnarray}\tag{13.62}</script><p>拉格朗日函数</p>
+<script type="math/tex; mode=display">
+Z = U(x,y) + \lambda(I-P_xx-P_yy)</script><p>一阶条件</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    Z_x &=& U_x-\lambda P_x=0    \notag\\
+    Z_y &=& U_y-\lambda P_y=0    \notag\\
+    Z_\lambda &=& I-P_xx-P_yy=0    \notag
+\end{eqnarray}\tag{13.63}</script><p>于是可以解出<span style='background:yellow'>马歇尔需求函数</span>(上标$m$来表示):</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    x^m &=& x^m(P_x,P_y,I)    \notag\\
+    y^m &=& y^m(P_x,P_y,I)    \notag\\
+    \lambda^m &=& \lambda^m(P_x,P_y,I)    \notag
+\end{eqnarray}</script><p>将马歇尔需求代入效用函数中，得到：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    U^\star = U^\star[x^m(P_x,P_y,I),y^m(P_x,P_y,I)] \equiv V(P_x,P_y,I)    \tag{13.64}
+\end{eqnarray}</script><p>这里得到的$V$是<span style='background:yellow'>间接效用函数</span>。</p>
+<h4 id="13-6-2-对偶问题"><a href="#13-6-2-对偶问题" class="headerlink" title="13.6.2 对偶问题"></a>13.6.2 对偶问题</h4><script type="math/tex; mode=display">
+\begin{eqnarray}
+    \min && E = P_xx+P_yy    \notag\\
+    \text{s.t.} && U(x,y)=U^\star    \notag
+\end{eqnarray}\tag{13.65}</script><p>拉格朗日函数</p>
+<script type="math/tex; mode=display">
+Z^d = P_xx+P_yy+\mu[U^\star-U(x,y)]</script><p>一阶条件</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    Z_x^d &=& P_x-\mu U_x=0    \notag\\
+    Z_y^d &=& P_y-\mu U_y=0    \notag\\
+    Z_\mu^d &=& U^\star-U(x,y)=0    \notag
+\end{eqnarray}\tag{13.66}</script><p>解出来<span style='background:yellow'>希克斯需求函数（补偿需求函数，上标为$h$）</span>。    </p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    x^h &=& x^h(P_x,P_y,U^\star)    \notag\\
+    y^h &=& y^h(P_x,P_y,U^\star)    \notag\\
+    \mu^h &=& \mu^h(P_x,P_y,U^\star)    \notag
+\end{eqnarray}</script><p>代入对偶问题中的目标函数：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    P_xx^h(P_x,P_y,U^\star)+P_yy^h(P_x,P_y,U^\star)\equiv E(P_x,P_y,U^\star)    \tag{13.67}
+\end{eqnarray}</script><p>其中$E$是支出函数，是表示为了获得效用$U^\star$所需要的最低支出的极小值函数。</p>
+<h4 id="13-6-3-对偶"><a href="#13-6-3-对偶" class="headerlink" title="13.6.3 对偶"></a>13.6.3 对偶</h4><script type="math/tex; mode=display">
+\begin{eqnarray}
+    x^m(P_x,P_y,I) &=& x^h(P_x,P_y,U^\star)    \notag\\
+    y^m(P_x,P_y,I) &=& y^h(P_x,P_y,U^\star)    \notag
+\end{eqnarray}\tag{13.69}</script><p>极大化问题和极小化问题得到的允和y 的解相同。但是，这些解是不同的外生变量的函数，因此比较静态分析会产生不同的结果。</p>
+<p>在基本问题和其对偶问题中，同样的无差异曲线和预算约束曲线的切点决定了$x$和$y$的解的这个事实说明，<span style='color:red'>在对偶问题中的最小支出等于基本问题中给定的预算$I$:</span></p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    E(P_x,P_y,U^\star) = I    \tag{13.70}
+\end{eqnarray}</script><h4 id="13-6-4-罗伊恒等式"><a href="#13-6-4-罗伊恒等式" class="headerlink" title="13.6.4 罗伊恒等式"></a>13.6.4 罗伊恒等式</h4><p>罗伊恒等式表明<span style='color:red'>个体消费者的马歇尔需求函数等于极大值函数的两个偏导数的比率的相反数。</span></p>
+<p>将最优值（马歇尔需求函数）$x^m,y^m,\lambda^m$代入拉格朗日函数，得到</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \color{red}{V(P_x,P_y,I) = U(x^m,y^m)+\lambda^m(I-P_xx^m-P_yy^m)}    \tag{13.72}
+\end{eqnarray}</script><p>注意(13.72)中第二项，根据一阶条件它等于零。对$P_x$求偏导，得到</p>
+<script type="math/tex; mode=display">
+\frac{\partial V}{\partial P_x} 
+= (U_x-\lambda^mP_x)\frac{\partial x^m}{\partial P_x}
++(U_y-\lambda^mP_y)\frac{\partial y^m}{\partial P_x}
++(I-P_xx^m-P_yy^m)\frac{\partial \lambda^m}{\partial P_x}
+-\lambda^mx^m</script><p>根据一阶条件，上式可以简化为</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\partial V}{\partial P_x} = -\lambda^mx^m
+\end{eqnarray}</script><p>对$I$求偏导，得到</p>
+<script type="math/tex; mode=display">
+\frac{\partial V}{\partial I}  
+= (U_x-\lambda^mP_x)\frac{\partial x^m}{\partial I}
++(U_y-\lambda^mP_y)\frac{\partial y^m}{\partial I}
++(I-P_xx^m-P_yy^m)\frac{\partial \lambda^m}{\partial I}
++\lambda^m</script><p>根据一阶条件，上式可以简化为</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\partial V}{\partial I} = \lambda^m
+\end{eqnarray}</script><p>将两个偏导数相除，我们得到</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\partial V/\partial P_x}{\partial V/\partial I} = -x^m    \tag{13.73}
+\end{eqnarray}</script><p>这个结果被称为<span style='background:yellow'>罗伊恒等式</span>。</p>
+<blockquote>
+<p><span style='font-family:fangsong'>对于由$V=V(P_x,P_y,I)$定义的隐函数$I=I(P_x)$，应用隐函数求导法则：</span></p>
+<script type="math/tex; mode=display">
+\frac{\text{d}I}{\text{d}P_x} = -\frac{\partial V/\partial P_x}{\partial V/\partial I}</script><p><span style='font-family:fangsong'>不知道这样对不对！！！！</span></p>
+</blockquote>
+<h4 id="13-6-5-谢泼德引理"><a href="#13-6-5-谢泼德引理" class="headerlink" title="13.6.5 谢泼德引理"></a>13.6.5 谢泼德引理</h4><p>在支出极小化的问题中，得到拉格朗日函数：</p>
+<script type="math/tex; mode=display">
+Z^d = P_xx+P_yy+\mu[U^\star-U(x,y)]</script><p>求出希克斯需求函数：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    x^h &=& x^h(P_x,P_y,U^\star)    \notag\\
+    y^h &=& y^h(P_x,P_y,U^\star)    \notag\\
+    \mu^h &=& \mu^h(P_x,P_y,U^\star)    \notag
+\end{eqnarray}</script><p>把这些解代入拉格朗日函数，得到支出函数</p>
+<script type="math/tex; mode=display">
+\color{red}{E(P_x,P_y,U^\star) = P_xx^h+P_yy^h+\mu^h[U^\star-U(x^h,y^h)]}</script><p>把这个函数分别对$P_x$和$P_y$求偏导，在最优点对它们取值，我们发现$\frac{\partial E}{\partial P_x}$和$\frac{\partial E}{\partial P_y}$分别代表消费者的希克斯需求：</p>
+<script type="math/tex; mode=display">
+\frac{\partial E}{\partial P_x} 
+= (P_x-\mu^hU_x)\frac{\partial x^h}{\partial P_x}
++ (P_y-\mu^hU_y)\frac{\partial y^h}{\partial P_x}
++ [U^\star-U(x^h,y^h)]\frac{\partial \mu^h}{\partial P_x}
++x^h</script><p>根据一阶条件，最后得到</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\partial E}{\partial P_x} = x^h    \tag{13.74}
+\end{eqnarray}</script><p>同理可以得到：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\partial E}{\partial P_x} = x^h    \tag{13.74'}
+\end{eqnarray}</script><p>还有对目标效用$U^\star$求导：</p>
+<script type="math/tex; mode=display">
+\frac{\partial E}{\partial U^\star} 
+= (P_x-\mu^hU_x)\frac{\partial x^h}{\partial U^\star}
++ (P_y-\mu^hU_y)\frac{\partial y^h}{\partial U^\star}
++ [U^\star-U(x^h,y^h)]\frac{\partial \mu^h}{\partial U^\star}
++\mu^h</script><p>根据一阶条件，最后得到</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\partial E}{\partial U^\star} = \mu^h    \tag{13.74''}
+\end{eqnarray}</script><p>三个偏导数统称为<span style='background:yellow'>谢泼德引理</span>。</p>
 <h3 id="7-1-拉格朗日乘子法（等式约束）"><a href="#7-1-拉格朗日乘子法（等式约束）" class="headerlink" title="7.1 拉格朗日乘子法（等式约束）"></a>7.1 拉格朗日乘子法（等式约束）</h3><script type="math/tex; mode=display">
 (P)\left\{
 \begin{aligned}
@@ -767,10 +923,10 @@ g_i(\textbf{x}^\lambda,\lambda\alpha_1+(1-\lambda)\alpha_2)\geqq\min\{ g_i(\text
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-07T16:14:17+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-08T01:32:53+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年2月7日</p>
+    <p>更新于：2021年2月8日</p>
   </a>
 </div>
 
@@ -957,7 +1113,7 @@ f(\lambda\textbf{x}+(1-\lambda)\text...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-0-%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%9E%81%E5%80%BC%E9%97%AE%E9%A2%98"><span class="toc-text">7.0 无约束的极值问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-0-1-%E5%88%A9%E6%B6%A6%E5%87%BD%E6%95%B0"><span class="toc-text">7.0.1 利润函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-0-2-%E4%BA%A4%E4%BA%92%E6%80%A7%E6%9D%A1%E4%BB%B6"><span class="toc-text">7.0.2 交互性条件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%EF%BC%88%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F%EF%BC%89"><span class="toc-text">7.1 拉格朗日乘子法（等式约束）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%E7%9A%84%E9%9B%86%E5%90%88%E5%90%AB%E4%B9%89"><span class="toc-text">拉格朗日乘子法的集合含义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E6%9C%80%E4%BC%98%E8%A7%A3%E7%9A%84%E5%85%85%E5%88%86%E6%9D%A1%E4%BB%B6%E5%92%8C%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-text">7.3 最优解的充分条件和必要条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%90%AB%E4%B9%89%E2%80%94%E2%80%94%E5%BD%B1%E5%AD%90%E4%BB%B7%E6%A0%BC"><span class="toc-text">7.4 拉格朗日乘子的经济含义——影子价格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E4%BB%8E%E5%87%A0%E4%BD%95%E7%9B%B4%E8%A7%82%E4%B8%8A%E7%9C%8B%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.1 从几何直观上看库恩-塔克条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2 库恩-塔克条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-1-%E8%87%AA%E5%8F%98%E9%87%8F%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84KT%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2.1 自变量无约束的KT条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-2-%E5%B8%A6%E6%9C%89%E9%9D%9E%E8%B4%9F%E5%8F%98%E9%87%8F%E7%BA%A6%E6%9D%9F%E7%9A%84KT%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2.2 带有非负变量约束的KT条件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E5%AE%9A%E7%90%86"><span class="toc-text">8.3 库恩-塔克定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%80%BC%E5%87%BD%E6%95%B0"><span class="toc-text">值函数</span></a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-0-%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%9E%81%E5%80%BC%E9%97%AE%E9%A2%98"><span class="toc-text">7.0 无约束的极值问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-0-1-%E5%88%A9%E6%B6%A6%E5%87%BD%E6%95%B0"><span class="toc-text">7.0.1 利润函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-0-2-%E4%BA%A4%E4%BA%92%E6%80%A7%E6%9D%A1%E4%BB%B6"><span class="toc-text">7.0.2 交互性条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-0-3-%E7%BA%A6%E6%9D%9F%E6%9C%80%E4%BC%98%E5%8C%96%E7%9A%84%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86"><span class="toc-text">7.0.3 约束最优化的包络定理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%92%8B%E4%B8%AD%E4%B8%8013-6-%E5%AF%B9%E5%81%B6%E5%92%8C%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86-%E7%BD%97%E4%BC%8A%E6%81%92%E7%AD%89%E5%BC%8F%E5%92%8C%E8%B0%A2%E6%B3%BC%E5%BE%B7%E5%BC%95%E7%90%86"><span class="toc-text">蒋中一13.6 对偶和包络定理(罗伊恒等式和谢泼德引理)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#13-6-1-%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98"><span class="toc-text">13.6.1 基本问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-6-2-%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98"><span class="toc-text">13.6.2 对偶问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-6-3-%E5%AF%B9%E5%81%B6"><span class="toc-text">13.6.3 对偶</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-6-4-%E7%BD%97%E4%BC%8A%E6%81%92%E7%AD%89%E5%BC%8F"><span class="toc-text">13.6.4 罗伊恒等式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-6-5-%E8%B0%A2%E6%B3%BC%E5%BE%B7%E5%BC%95%E7%90%86"><span class="toc-text">13.6.5 谢泼德引理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%EF%BC%88%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F%EF%BC%89"><span class="toc-text">7.1 拉格朗日乘子法（等式约束）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%E7%9A%84%E9%9B%86%E5%90%88%E5%90%AB%E4%B9%89"><span class="toc-text">拉格朗日乘子法的集合含义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E6%9C%80%E4%BC%98%E8%A7%A3%E7%9A%84%E5%85%85%E5%88%86%E6%9D%A1%E4%BB%B6%E5%92%8C%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-text">7.3 最优解的充分条件和必要条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%90%AB%E4%B9%89%E2%80%94%E2%80%94%E5%BD%B1%E5%AD%90%E4%BB%B7%E6%A0%BC"><span class="toc-text">7.4 拉格朗日乘子的经济含义——影子价格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E4%BB%8E%E5%87%A0%E4%BD%95%E7%9B%B4%E8%A7%82%E4%B8%8A%E7%9C%8B%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.1 从几何直观上看库恩-塔克条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2 库恩-塔克条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-1-%E8%87%AA%E5%8F%98%E9%87%8F%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84KT%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2.1 自变量无约束的KT条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-2-%E5%B8%A6%E6%9C%89%E9%9D%9E%E8%B4%9F%E5%8F%98%E9%87%8F%E7%BA%A6%E6%9D%9F%E7%9A%84KT%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2.2 带有非负变量约束的KT条件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E5%AE%9A%E7%90%86"><span class="toc-text">8.3 库恩-塔克定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%80%BC%E5%87%BD%E6%95%B0"><span class="toc-text">值函数</span></a>
     </div>
   </section>
 
