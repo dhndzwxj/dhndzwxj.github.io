@@ -345,13 +345,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：3.2k字</p>
+      <p>字数：2.7k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：16分钟</p>
+      <p>时长：13分钟</p>
     </a>
   </div>
  -->
@@ -361,13 +361,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：3.2k字</p>
+      <p>字数：2.7k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：16分钟</p>
+      <p>时长：13分钟</p>
     </a>
   </div> -->
 
@@ -376,7 +376,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">3.2k字</span>
+        <span class="post-count">2.7k字</span>
       </span>
     </span>
  
@@ -385,7 +385,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">16分</span>
+        <span class="post-count">13分</span>
       </span>
     </span>
     
@@ -406,7 +406,8 @@
 <li>等式约束使用拉格朗日乘子法</li>
 <li>不等式约束使用库恩-塔克定理</li>
 </ul>
-<h3 id="7-0-无约束的极值问题"><a href="#7-0-无约束的极值问题" class="headerlink" title="7.0 无约束的极值问题"></a>7.0 无约束的极值问题</h3><script type="math/tex; mode=display">
+<h3 id="7-0-无约束的极值问题"><a href="#7-0-无约束的极值问题" class="headerlink" title="7.0 无约束的极值问题"></a>7.0 无约束的极值问题</h3><p>这一节可以参考<span style='font-family:kai'>蒋中一《数理经济学的基本方法》（第4版）13.5极大值函数和包络定理;13.6对偶和包络定理</span>。</p>
+<script type="math/tex; mode=display">
 (P)\left\{
 \begin{aligned}
     &\min f(\textbf{x})\notag\\
@@ -423,18 +424,87 @@
 \begin{aligned}
     &\min f(\textbf{x},\alpha)\notag\\
     &\textbf{x}\in E^n \notag
-\end{aligned}\right.</script><p>这个凸规划的最优值是参数$\alpha$的函数，设为</p>
+\end{aligned}\right.</script><p>这个凸规划的最优值$\textbf{x}^\star$是参数$\alpha$的函数，设一个<span style='background:yellow'>极大值函数</span>：</p>
 <script type="math/tex; mode=display">
-v(\alpha) = f(\textbf{x}^\star(\alpha),\alpha)</script><p>下面要求<span style='color:red'>参数的变化如何影响最优值对应的自变量</span>：也就是求$D_\alpha[\textbf{x}^\star(\alpha)]$。基于$\nabla f(\textbf{x}^\star,\alpha)=0$关于$\alpha$求导数。</p>
+v(\alpha) = f(\textbf{x}^\star(\alpha),\alpha)</script><p>下面要求<span style='color:red'>参数的变化如何影响最优值对应的自变量</span>：也就是求$D_\alpha[\textbf{x}^\star(\alpha)]$。基于$\nabla_\textbf{x} f(\textbf{x}^\star,\alpha)=0$关于$\alpha$求导数。</p>
 <script type="math/tex; mode=display">
 \nabla^2_{_{\textbf{x}\textbf{x}}}f(\textbf{x}^\star,\alpha)D_\alpha[\textbf{x}^\star(\alpha)]+
 \nabla_{_{\textbf{x}\alpha}}^2f(\textbf{x}^\star,\alpha) = 0</script><p>下面要看<span style='color:red'>参数的变化如何影响最优值</span>：</p>
 <script type="math/tex; mode=display">
 \frac{\partial v(\alpha)}{\partial\alpha} = 
 \nabla_{\textbf{x}}f(\textbf{x}^\star,\alpha)D_\alpha[\textbf{x}^\star(\alpha)] +
-\nabla_\alpha f(\textbf{x}^\star,\alpha)</script><p>注意到$\nabla_\textbf{x} f(\textbf{x}^\star,\alpha)=0$，因此$\frac{\partial v(\alpha)}{\partial\alpha} = f_\alpha(\textbf{x}^\star,\alpha)$。</p>
+D_\alpha [f(\textbf{x}^\star,\alpha)]</script><p>注意到$\nabla_\textbf{x} f(\textbf{x}^\star,\alpha)=0$，因此$\frac{\partial v(\alpha)}{\partial\alpha} = D_\alpha [f(\textbf{x}^\star,\alpha)]$。</p>
 <p><span style='font-family:fangsong'>注意：上面的$\alpha$可以是向量（多个参数）。</span></p>
-<p><span style='font-family:fangsong'>$\nabla$和$D$的区别：前者用于向量对一个向量求导，后者对应于向量对一个标量求导。</span></p>
+<blockquote>
+<p><span style='font-family:fangsong'>$\nabla$和$D$的区别：</span></p>
+<p><span style='font-family:fangsong'>劈形算符，倒三角算符，形为$\nabla$。就是对倒三角后面的量做如下操作：<span style='color:red'>表示对函数在各个正交方向上求导数以后再分别乘上各个方向上的单位向量。</span>&lt;/span&gt;</p>
+<p><span style='font-family:fangsong'>劈形算符在数学中用于指代梯度算符。它也用于指代微分几何中的联络（可以视为更广意义上的梯度算符）。它由哈密尔顿引入。</span></p>
+</blockquote>
+<h4 id="7-0-1-利润函数"><a href="#7-0-1-利润函数" class="headerlink" title="7.0.1 利润函数"></a>7.0.1 利润函数</h4><p>假设一个企业有两种投入要素：资本$K$和劳动$L$。那么利润函数可以表示为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \pi = Pf(K,L)-wL-rK    \tag{13.32}
+\end{eqnarray}</script><p>$P$是产品价格，$w$和$r$分别表示工资和租金，它们都是外生变量。一阶条件写成：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \pi_L &=& Pf_L(K,L)-w=0    \notag\\
+    \pi_K &=& Pf_K(K,L)-r=0    \notag
+\end{eqnarray}\tag{13.33}</script><p>定义了投入需求方程</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    L^\star &=& L^\star(w,r,P)    \notag\\
+    K^\star &=& K^\star(w,r,P)    \notag
+\end{eqnarray}\tag{13.34}</script><p>将其代入利润目标函数中，得到</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \pi^\star(w,r,P) = Pf(K^\star,L^\star)-wL^\star-rK^\star
+\end{eqnarray}</script><p>这里得到的是间接利润函数，最大化利润是外生参数的函数。接下来可以考虑这些外生参数的改变如何影响企业的利润。</p>
+<p>比如工资$w$发生了变化，将间接利润函数对工资求导，得到</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\partial \pi^\star}{\partial w}
+    = (Pf_L-w)\frac{\partial L^\star}{\partial w}
+    +(Pf_K-r)\frac{\partial K^\star}{\partial w}
+    -L^\star    \tag{13.37}
+\end{eqnarray}</script><p>结合（13.33），上式可以简化为</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\partial\pi^\star}{\partial w} = -L^\star(w,r,P)    \tag{13.38}
+\end{eqnarray}</script><p>这个结果说明，在利润最大化点，无论要素投入是否随要素的价格变化而变化，工资率发生变化而导致的利润变化是一样的。</p>
+<p>在这个例子中，（13.38) 表明利润最大化函数对于$w$ 的导数就是要素需求函数$L^\star (w, r, P)$ 的相反数。根据前面的步骤，我们可以得到附加的比较静念结果：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\partial \pi^\star(w,r,P)}{\partial r} &=& -K^\star(w,r,P)    \tag{13.39}\\
+    \frac{\partial \pi^\star}{\partial P} &=& f(K^\star,L^\star)    \tag{13.40}
+\end{eqnarray}</script><p>等式(13. 38), (13. 39) 和(13.40) 合起来称为<span style='background:yellow'>霍特林引理</span>。通过使$K^\star$和$L^\star$ ．随任何参数变化调整，我们可以从利润函数中得到比较静态导数。但是，我们不难发现，假设$K^\star$和$L^\star$保持不变，如果我们把利润函数(13. 35) 对于每个参数求偏导数，也能够得到相同的结果。是不是和包络定理一样？</p>
+<h4 id="7-0-2-交互性条件"><a href="#7-0-2-交互性条件" class="headerlink" title="7.0.2 交互性条件"></a>7.0.2 交互性条件</h4><p>对于极大值函数</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    v(\alpha) = f(\textbf{x}^\star(\alpha),\alpha)
+\end{eqnarray}</script><p>定义一个新的函数，刻画实际值和最大值之间的差异：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \Omega(\textbf{x},\alpha) = f(\textbf{x},\alpha) - v(\alpha)
+\end{eqnarray}</script><p>当$\textbf{x}=\textbf{x}^\star(\alpha)$时，这个新函数$\Omega$的极大值是零。当$\textbf{x}\neq\textbf{x}^\star(\alpha)$时，$\Omega=f-v\le0$。而新函数的极大值可以通过一阶条件和二阶条件决定。</p>
+<p>一阶条件：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \nabla_\textbf{x} \Omega(\textbf{x},\alpha) 
+    &=& \nabla_\textbf{x}f(\textbf{x},\alpha) =0    \notag\\
+    D_\alpha[\Omega(\textbf{x},\alpha)]
+    &=& D_\alpha[f(\textbf{x},\alpha)] - D_\alpha[v(\alpha)]=0    \notag
+\end{eqnarray}</script><p>二阶条件（海赛矩阵，这里考虑一个二维情形，$\textbf{x}=(x,y)^T$）:</p>
+<script type="math/tex; mode=display">
+\textbf{H}=\left\lvert
+\begin{matrix}
+    f_{xx}    &    f_{xy}    &    f_{x\alpha}    \\
+    f_{yx}    &    f_{yy}    &    f_{y\alpha}    \\
+    f_{\alpha x}&    f_{\alpha y}&    f_{\alpha\alpha}-v_{\alpha\alpha}
+\end{matrix}\right\lvert</script><p>如果$\textbf{H}$是负定矩阵，即</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    f_{xx}<0,f_{xx}f_{yy}-f_{xy}^2>0,\textbf{H}<0    \notag
+\end{eqnarray}</script><p>那么二阶充分条件得到满足。</p>
 <h3 id="7-1-拉格朗日乘子法（等式约束）"><a href="#7-1-拉格朗日乘子法（等式约束）" class="headerlink" title="7.1 拉格朗日乘子法（等式约束）"></a>7.1 拉格朗日乘子法（等式约束）</h3><script type="math/tex; mode=display">
 (P)\left\{
 \begin{aligned}
@@ -697,10 +767,10 @@ g_i(\textbf{x}^\lambda,\lambda\alpha_1+(1-\lambda)\alpha_2)\geqq\min\{ g_i(\text
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-01T14:21:33+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-07T16:14:17+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年2月1日</p>
+    <p>更新于：2021年2月7日</p>
   </a>
 </div>
 
@@ -887,7 +957,7 @@ f(\lambda\textbf{x}+(1-\lambda)\text...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-0-%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%9E%81%E5%80%BC%E9%97%AE%E9%A2%98"><span class="toc-text">7.0 无约束的极值问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%EF%BC%88%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F%EF%BC%89"><span class="toc-text">7.1 拉格朗日乘子法（等式约束）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%E7%9A%84%E9%9B%86%E5%90%88%E5%90%AB%E4%B9%89"><span class="toc-text">拉格朗日乘子法的集合含义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E6%9C%80%E4%BC%98%E8%A7%A3%E7%9A%84%E5%85%85%E5%88%86%E6%9D%A1%E4%BB%B6%E5%92%8C%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-text">7.3 最优解的充分条件和必要条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%90%AB%E4%B9%89%E2%80%94%E2%80%94%E5%BD%B1%E5%AD%90%E4%BB%B7%E6%A0%BC"><span class="toc-text">7.4 拉格朗日乘子的经济含义——影子价格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E4%BB%8E%E5%87%A0%E4%BD%95%E7%9B%B4%E8%A7%82%E4%B8%8A%E7%9C%8B%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.1 从几何直观上看库恩-塔克条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2 库恩-塔克条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-1-%E8%87%AA%E5%8F%98%E9%87%8F%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84KT%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2.1 自变量无约束的KT条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-2-%E5%B8%A6%E6%9C%89%E9%9D%9E%E8%B4%9F%E5%8F%98%E9%87%8F%E7%BA%A6%E6%9D%9F%E7%9A%84KT%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2.2 带有非负变量约束的KT条件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E5%AE%9A%E7%90%86"><span class="toc-text">8.3 库恩-塔克定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%80%BC%E5%87%BD%E6%95%B0"><span class="toc-text">值函数</span></a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-0-%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%9E%81%E5%80%BC%E9%97%AE%E9%A2%98"><span class="toc-text">7.0 无约束的极值问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-0-1-%E5%88%A9%E6%B6%A6%E5%87%BD%E6%95%B0"><span class="toc-text">7.0.1 利润函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-0-2-%E4%BA%A4%E4%BA%92%E6%80%A7%E6%9D%A1%E4%BB%B6"><span class="toc-text">7.0.2 交互性条件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%EF%BC%88%E7%AD%89%E5%BC%8F%E7%BA%A6%E6%9D%9F%EF%BC%89"><span class="toc-text">7.1 拉格朗日乘子法（等式约束）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95%E7%9A%84%E9%9B%86%E5%90%88%E5%90%AB%E4%B9%89"><span class="toc-text">拉格朗日乘子法的集合含义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E6%9C%80%E4%BC%98%E8%A7%A3%E7%9A%84%E5%85%85%E5%88%86%E6%9D%A1%E4%BB%B6%E5%92%8C%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-text">7.3 最优解的充分条件和必要条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%90%AB%E4%B9%89%E2%80%94%E2%80%94%E5%BD%B1%E5%AD%90%E4%BB%B7%E6%A0%BC"><span class="toc-text">7.4 拉格朗日乘子的经济含义——影子价格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E4%BB%8E%E5%87%A0%E4%BD%95%E7%9B%B4%E8%A7%82%E4%B8%8A%E7%9C%8B%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.1 从几何直观上看库恩-塔克条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2 库恩-塔克条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-1-%E8%87%AA%E5%8F%98%E9%87%8F%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%9A%84KT%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2.1 自变量无约束的KT条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-2-%E5%B8%A6%E6%9C%89%E9%9D%9E%E8%B4%9F%E5%8F%98%E9%87%8F%E7%BA%A6%E6%9D%9F%E7%9A%84KT%E6%9D%A1%E4%BB%B6"><span class="toc-text">8.2.2 带有非负变量约束的KT条件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E5%AE%9A%E7%90%86"><span class="toc-text">8.3 库恩-塔克定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%80%BC%E5%87%BD%E6%95%B0"><span class="toc-text">值函数</span></a>
     </div>
   </section>
 

@@ -343,7 +343,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：3.7k字</p>
+      <p>字数：3.8k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -359,7 +359,7 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：3.7k字</p>
+      <p>字数：3.8k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -374,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">3.7k字</span>
+        <span class="post-count">3.8k字</span>
       </span>
     </span>
  
@@ -399,7 +399,10 @@
 
 
   
-  <p>变分法要使用最优化问题中的函数可微性，这种方法只能处理内部解。而<strong>最优控制理论</strong>能够处理诸如边角解（corner solutions）这样的非古典情形。</p>
+  <blockquote>
+<p>温馨提示，本文章中能对做题有直接帮助的，有7.2，7.2a，8.2，7.4，8.1。</p>
+</blockquote>
+<p>变分法要使用最优化问题中的函数可微性，这种方法只能处理内部解。而<strong>最优控制理论</strong>能够处理诸如边角解（corner solutions）这样的非古典情形。</p>
 <p>在变分法中，我们的目标是找到<strong>状态变量</strong>$y$的最优时间路径。而最优控制理论的核心目标是确定<strong>控制变量</strong>$u$的最优时间路径。当然，一旦找到了最优控制路径$u^\star(t)$，也能找到对应的最优状态路径$y^\star(t)$。</p>
 <p>那么，一个变量如何成为控制变量？控制变量一般有两个性质：</p>
 <ul>
@@ -434,12 +437,12 @@
     \dot{y}             &=& \frac{\partial H}{\partial\lambda}(y\text{的运动方程})    \notag\\
     \dot{\lambda} &=& -\frac{\partial H}{\partial y}(\lambda\text{的运动方程})    \notag\\
     \lambda(T)         &=& 0(\text{横截条件})    \notag
-\end{eqnarray}\tag{7.5}</script><p>如果不求甚解，这一部分的结果死记硬背就可以了。对于这些条件的所有解释都在下一节中。</p>
+\end{eqnarray}\tag{7.5}</script><p>如果不求甚解，这一部分的结果死记硬背就可以了。对于这些条件的所有解释都在7.3小节中。</p>
 <h3 id="7-2a-自控问题"><a href="#7-2a-自控问题" class="headerlink" title="7.2a 自控问题"></a>7.2a 自控问题</h3><p>所谓“自控问题”，指的是被积函数$F$和运动方程中的$f$都不显含自变量$t$。结果是最优汉密尔顿函数有不随时间变化的常数值。对于汉密尔顿函数：</p>
 <script type="math/tex; mode=display">
 H(t,y,u,\lambda)\equiv F(t,y,u)+\lambda(t)f(t,y,u)</script><p>它的时间导数为</p>
 <script type="math/tex; mode=display">
-\frac{\text{d}H}{\text{d}t} = \frac{\partial H}{\partial t}+\frac{\partial H}{\partial y}\dot{y}+\frac{\partial H}{\partial u}\dot{u}+\frac{\partial H}{\partial\lambda}\dot{\lambda}</script><p>当$H$实现最大化时，我们有$\frac{\partial H}{\partial u}=0$（内部解）或者$\dot{u}=0$（边界解）。于是上式第三项肯定为零。</p>
+\frac{\text{d}H}{\text{d}t} = \frac{\partial H}{\partial t}+\frac{\partial H}{\partial y}\dot{y}+\frac{\partial H}{\partial u}\dot{u}+\frac{\partial H}{\partial\lambda}\dot{\lambda}</script><p>当$H$实现最大化时，我们有$\frac{\partial H}{\partial u}=0$（内部解）或者$\dot{u}=0$（边界解，我的理解是，如果只能在边界值取到最优，那么每个时刻的选择与时间自然就没关系了呀～）。于是上式第三项肯定为零。</p>
 <p>根据最大值原理，$\dot{y}=\frac{\partial H}{\partial \lambda},\dot{\lambda}=-\frac{\partial H}{\partial y}$，上式第二项和第四项抵消了。于是有</p>
 <script type="math/tex; mode=display">
 \frac{\text{d}H^\star}{\text{d}t} = \frac{\partial H^\star}{\partial t}    \tag{7.53}</script><p>这是一个<span style='color:red'>一般的结果。对于自控问题和非自控问题都成立</span>。</p>
@@ -455,7 +458,7 @@ H=\text{常数}</script><p>此时问题可以写成(<span style='font-family:fan
 <script type="math/tex; mode=display">
 H=F(y,u)+\lambda f(y,u)</script><h3 id="8-2-当前值哈密尔顿函数"><a href="#8-2-当前值哈密尔顿函数" class="headerlink" title="8.2 当前值哈密尔顿函数"></a>8.2 当前值哈密尔顿函数</h3><p>另一类自控问题中，时间$t$作为贴现因子$e^{-rt}$的一部分进入问题中，但是在其他地方不出现，因此目标函数取如下形式：</p>
 <script type="math/tex; mode=display">
-\int_0^T F(t,y,u)\text{d}t = \int_0^T G(y,u)e^{-rt}\text{d}t</script><p>严格来讲这并非自治问题，但通过<span style='color:red'>现值汉密尔顿函数</span>很容易将其转化为自治问题。现值哈密尔顿函数作如下定义：</p>
+\int_0^T F(t,y,u)\text{d}t = \int_0^T G(y,u)e^{-rt}\text{d}t</script><p>严格来讲这并非自治问题，但通过<span style='color:red'>当前值汉密尔顿函数</span>很容易将其转化为自治问题。当前值哈密尔顿函数作如下定义：</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
     H_c \equiv He^{rt} = G(y,u)+\mu f(y,u)    \tag{20.17}
@@ -463,14 +466,14 @@ H=F(y,u)+\lambda f(y,u)</script><h3 id="8-2-当前值哈密尔顿函数"><a href
 <script type="math/tex; mode=display">
 \begin{eqnarray}
     \mu\equiv \lambda e^{rt}    \tag{20.18}
-\end{eqnarray}</script><p>被称为现值哈密尔顿乘子。这里将最大值原理修改成如下形式：</p>
+\end{eqnarray}</script><p>被称为当前值哈密尔顿乘子。这里将最大值原理修改成如下形式：</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
     &(1)& H_c(y,u^\star,\mu)\ge H_c(y,u,\mu),\text{对所有}t\in[0,T]    \notag\\
     &(2)& \dot{y} = \color{red}{\frac{\partial H}{\partial\lambda}=f(y,u)=}\frac{\partial H_c}{\partial\mu}    \notag\\
     &(3)& \dot{\mu} = -\frac{\partial H_c}{\partial y} + r\mu    \notag\\
   &(4)& \mu(T)=0\quad\text{对于垂直终止线}    \notag\\
-  &  & [H_c]_{t=T}=0\quad\text{对于水平终止线}
+  &  & [H_c]_{t=T}=0\quad\text{对于水平终止线}    \notag
 \end{eqnarray}\tag{20.19}</script><blockquote>
 <p>对于（3）作如下演算可以得到：</p>
 <script type="math/tex; mode=display">
@@ -542,7 +545,7 @@ H(t,u,y,\lambda)\equiv F(t,y,u)+\lambda(t)f(t,y,u)</script><p>将其代入(7.22)
 \end{eqnarray}\tag{7.26}</script><p>于是(7.22’’)可以改写为</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
-    \mathscr{V}&=&\int_0^{T(\varepsilon)}\{H[t,y^\star+\varepsilon q(t),u^\star+\varepsilon p(t),\lambda]+\dot{\lambda}[y^\star+\varepsilon q(t)]\}\text{d}t-\lambda(T)y_T+\lambda(0)y_0    \notag\\
+    \mathscr{V}&=&\int_0^{T(\varepsilon)}\left\{H[t,y^\star+\varepsilon q(t),u^\star+\varepsilon p(t),\lambda]+\dot{\lambda}[y^\star+\varepsilon q(t)]\right\}\text{d}t-\lambda(T)y_T+\lambda(0)y_0    \notag\\
     &=&\Omega_1+\Omega_2+\Omega_3    \notag
 \end{eqnarray}\tag{7.27}</script><p><span style='font-family:hei;color:red'>第4步</span> 下面使用条件$\frac{\text{d}\mathscr{V}}{\text{d}\varepsilon}$。（7.27）第一项关于$\varepsilon$求导数：</p>
 <script type="math/tex; mode=display">
@@ -675,7 +678,7 @@ e^t[C_2(t)+C_2'(t)] = C_2(t)e^t + \frac{C_1}2e^{-t}</script><p>化简得到：</
 <script type="math/tex; mode=display">
 C_2'(t) = \frac{C_1}2e^{-2t}\Rightarrow C_2(t) = -\frac{C_1}4e^{-2t}+C_3(C_1,C_3\in\mathbb{R})</script><p>于是我们得到一阶非齐次线性微分方程的通解为</p>
 <script type="math/tex; mode=display">
-y(t) = \left( -\frac{C_1}4e^{-2t}+C_3 \right)e^t\quad (C_1,C_3\in\mathbb{R})</script><p>将初值条件$y(0)=1,y(1)=0$代入，即可解出$y(t)$。</p>
+y(t) = \left( -\frac{C_1}4e^{-2t}+C_3 \right)e^t\quad (C_1,C_3\in\mathbb{R})</script><p>将初值条件$y(0)=1,y(1)=0$代入，即可解出$C_1,C_3$，从而得到$y(t),u(t),\lambda(t)$。</p>
 </blockquote>
 <p><span style='font-family:hei;color:red'>例题2（截断垂直终止线问题）</span> </p>
 <script type="math/tex; mode=display">
@@ -696,7 +699,7 @@ H = -u^2+\lambda(y+u)</script><p>最大值条件为：</p>
     &(3)& \dot{\lambda} = -\frac{\partial H}{\partial y} = -\lambda    \notag
 \end{eqnarray}</script><p>根据(1)（3）可以解出：</p>
 <script type="math/tex; mode=display">
-u(t)=\frac12\lambda(t),\quad \lambda(t)=C_1e^{-t}</script><p>用于本题为垂直终止问题，$\lambda(T)=0$，从而解得</p>
+u(t)=\frac12\lambda(t),\quad \lambda(t)=C_1e^{-t}</script><p>用于本题为垂直终止问题，$\lambda(T)=0$，只能有$C_1=0$。从而解得</p>
 <script type="math/tex; mode=display">
 \lambda^\star(t)=0</script><p>于是有</p>
 <script type="math/tex; mode=display">
@@ -877,10 +880,10 @@ H_c = He^{rt} = U(c) + \mu[f(k)-c-(n+\delta)k],\quad \mu=\lambda e^{rt}    \tag{
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-06T00:28:15+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-07T12:20:34+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年2月6日</p>
+    <p>更新于：2021年2月7日</p>
   </a>
 </div>
 
