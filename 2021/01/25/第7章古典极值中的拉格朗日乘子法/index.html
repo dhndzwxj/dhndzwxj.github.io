@@ -457,7 +457,7 @@ D_\alpha [f(\textbf{x}^\star,\alpha)]</script><p>注意到$\nabla_\textbf{x} f(\
 \end{eqnarray}\tag{13.34}</script><p>将其代入利润目标函数中，得到</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
-    \pi^\star(w,r,P) = Pf(K^\star,L^\star)-wL^\star-rK^\star
+    \pi^\star(w,r,P) = Pf(K^\star,L^\star)-wL^\star-rK^\star    \notag
 \end{eqnarray}</script><p>这里得到的是间接利润函数，最大化利润是外生参数的函数。接下来可以考虑这些外生参数的改变如何影响企业的利润。</p>
 <p>比如工资$w$发生了变化，将间接利润函数对工资求导，得到</p>
 <script type="math/tex; mode=display">
@@ -500,7 +500,7 @@ D_\alpha [f(\textbf{x}^\star,\alpha)]</script><p>注意到$\nabla_\textbf{x} f(\
     f_{xx}    &    f_{xy}    &    f_{x\alpha}    \\
     f_{yx}    &    f_{yy}    &    f_{y\alpha}    \\
     f_{\alpha x}&    f_{\alpha y}&    f_{\alpha\alpha}-v_{\alpha\alpha}
-\end{matrix}\right\lvert</script><p>如果$\textbf{H}$是负定矩阵，即</p>
+\end{matrix}\right\lvert</script><p>如果$\textbf{H}$是负定矩阵，即它的各阶主子式满足：</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
     f_{xx}<0,f_{xx}f_{yy}-f_{xy}^2>0,\textbf{H}<0    \notag
@@ -605,7 +605,7 @@ Z^d = P_xx+P_yy+\mu[U^\star-U(x,y)]</script><p>一阶条件</p>
 -\lambda^mx^m</script><p>根据一阶条件，上式可以简化为</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
-    \frac{\partial V}{\partial P_x} = -\lambda^mx^m
+    \frac{\partial V}{\partial P_x} = -\lambda^mx^m    \notag
 \end{eqnarray}</script><p>对$I$求偏导，得到</p>
 <script type="math/tex; mode=display">
 \frac{\partial V}{\partial I}  
@@ -615,7 +615,7 @@ Z^d = P_xx+P_yy+\mu[U^\star-U(x,y)]</script><p>一阶条件</p>
 +\lambda^m</script><p>根据一阶条件，上式可以简化为</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
-    \frac{\partial V}{\partial I} = \lambda^m
+    \frac{\partial V}{\partial I} = \lambda^m    \notag
 \end{eqnarray}</script><p>将两个偏导数相除，我们得到</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
@@ -697,9 +697,10 @@ h_1(x_1,x_2)=0</script><p>有相同的切线$l$。由于梯度方向是切线的
 \left( \frac{\partial f(\bar{x}_1,\bar{x}_2)}{\partial x_1}, \frac{\partial f(\bar{x}_1,\bar{x}_2)}{\partial x_2}\right)
 =\bar{\lambda}_1
 \left( \frac{\partial h_1(\bar{x}_1,\bar{x}_2)}{\partial x_1}, \frac{\partial h_1(\bar{x}_1,\bar{x}_2)}{\partial x_2}\right)</script><div align='center'>
-  <img src='../images/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/11151611577348_.pic_hd.jpg' width =500px>
+  <img src='/../../images/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/11151611577348_.pic_hd.jpg' width =500px>
   <center style='font-family:kai'>图7-1</center>
 </div>
+
 
 
 <h3 id="7-3-最优解的充分条件和必要条件"><a href="#7-3-最优解的充分条件和必要条件" class="headerlink" title="7.3 最优解的充分条件和必要条件"></a>7.3 最优解的充分条件和必要条件</h3><p><span style='font-family:hei;font-size:18px'>定理 7.5</span> <span style='font-family:kai'>(充分条件)</span>设$f(\textbf{x})$和$g_i(\textbf{x}),i=1,2,\cdots,m$具有二阶连续偏导数，$\bar{\textbf{x}},\bar{\lambda}$满足拉格朗日条件（L-条件），即</p>
@@ -924,10 +925,10 @@ g_i(\textbf{x}^\lambda,\lambda\alpha_1+(1-\lambda)\alpha_2)\geqq\min\{ g_i(\text
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-08T12:15:10+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-13T20:53:41+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年2月8日</p>
+    <p>更新于：2021年2月13日</p>
   </a>
 </div>
 
