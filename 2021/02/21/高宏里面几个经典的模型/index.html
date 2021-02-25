@@ -343,13 +343,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：5.9k字</p>
+      <p>字数：8.6k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：29分钟</p>
+      <p>时长：41分钟</p>
     </a>
   </div>
  -->
@@ -359,13 +359,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：5.9k字</p>
+      <p>字数：8.6k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：29分钟</p>
+      <p>时长：41分钟</p>
     </a>
   </div> -->
 
@@ -374,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">5.9k字</span>
+        <span class="post-count">8.6k字</span>
       </span>
     </span>
  
@@ -383,7 +383,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">29分</span>
+        <span class="post-count">41分</span>
       </span>
     </span>
     
@@ -600,6 +600,174 @@ s_t\equiv s(w_t,r_{t+1}) = \arg\max_{s_t} u(w_t-s_t,(1+r_{t+1})s_t)</script></li
 s_t = \frac{(1-\alpha)k_t^\alpha}{\beta^{-\frac1\theta}(1+\alpha k_{t+1}^{\alpha-1}-\delta)^{1-\frac1\theta}+1}</script><p>下一期的人均资本为：</p>
 <script type="math/tex; mode=display">
 k_{t+1} = \frac{s_t}{1+n} = \frac{(1-\alpha)k_t^\alpha}{(1+n)\left[\beta^{-\frac1\theta}(1+\alpha k_{t+1}^{\alpha-1}-\delta)^{1-\frac1\theta}+1\right]}</script></blockquote>
+<h2 id="货币"><a href="#货币" class="headerlink" title="货币"></a>货币</h2><h3 id="OLG中的货币"><a href="#OLG中的货币" class="headerlink" title="OLG中的货币"></a>OLG中的货币</h3><p>在Samuelson的模型中，由于货币的价值储藏功能，可以产生对于货币的内生需求，而不需要事先假定货币的交易功能。应该指出的是，具有货币的OLG模型的这一突出特征的获得是由于假定了货币作为价值储藏形式不受其他资产支配的缘故。一旦我们在经济中引入资本、政府债券等其他资产形式，则为了获得货币经济均衡，就一定需要某种交易技术的出现。</p>
+<h3 id="一些假定："><a href="#一些假定：" class="headerlink" title="一些假定："></a>一些假定：</h3><ul>
+<li><p>时间离散，且只存在年轻和老年期两个时期。</p>
+</li>
+<li><p>$t$时刻出生的人数为$N_t$，人口增长率为$n$，于是$N_t=N_0(1+n)^t\equiv(1+n)^t $。</p>
+</li>
+<li><p>假定每个人在年轻的时候可获得<span style='color:red'>一单位无法储存的消费品</span>，而在年老的时候没有收获。</p>
+</li>
+<li><p>$t$时刻出生的人的效用函数为：$u(c^t_t,c^t_{t+1})$。满足约束条件：$c^t_t\le1,c^t_{t+1}\le 1+n$。</p>
+</li>
+<li><p>一般而言，个人总是希望在生命的每一期中都有正的消费，但在此模型中这却是一个不可达到的结果。因为假定消费品不能储存，因此当本期的年轻人变老时，他将没有任何东西（既没有收获，也没有储藏）来与年轻人进行交换。于是，在这样的实物经济当中，最后的均衡一定是：$c^t_t=1,c^t_{t+1}=0$。</p>
+</li>
+<li><p>上述均衡肯定不是帕累托最优的，这一困难将在引货币后解决。假定在经济的初始时刻老年人获得来自政府的$H$张完全可分的钞票（即货币），并且老年人以及其后的每一代人都相信他们可以用货币以一定的价格交换商品。于是，每个人都可以有两期的正消费，即在<span style='font-family:fangsong'>年轻时出售商品来换取货币，而在年老时再利用货币来购买商品</span>。</p>
+</li>
+<li><p>$t$时刻出生的人所面临的最优化问题为：</p>
+</li>
+<li><script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max_{c^t_t,c^t_{t+1}}    && u(c^t_t,c^t_{t+1})    \notag\\
+    \text{s.t.}    && p_t(1-c^t_t) = M^d_t    \notag\\
+    && p_{t+1} c^t_{t+1} = M^d_t    \notag
+\end{eqnarray}</script></li>
+<li><p>其中$p_t,p_{t+1}$分别表示$t$期和$t+1$的价格水平，$M^d_t$表示个人的货币需求。</p>
+</li>
+</ul>
+<p>一个均衡条件：两期中，单位价格的边际效用相等。</p>
+<script type="math/tex; mode=display">
+\frac{\partial u/\partial c^t_t}{p_t}=\frac{\partial u/\partial c^t_{t+1}}{p_{t+1}}</script><p>上式所决定的$c^t_t$意味着货币需求函数为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{M_t^d}{p_t}=f\left( \frac{p_t}{p_{t+1}} \right)    \tag{14.3}
+\end{eqnarray}</script><p>这里$\left( \frac{p_t}{p_{t+1}} \right)$表示货币的收益率，可记为$(1+g_t)$，其中$g_t$是通货膨胀率。</p>
+<p>我们知道，老年人必定无弹性地供给他们手中的货币，而年轻人则按照货币需求函数来决定货币的持有量。因此，经济的均衡条件是：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    (1+n)^t M_t^d = H\quad\text{人口}\times\text{个人货币需求}=\text{货币发行量}    \tag{14.4}
+\end{eqnarray}</script><p>根据（14.3）和（14.4），得到</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    f(1+g_t) &=& \frac{M_t^d}{p_t} = \frac{H}{(1+n)^tp_t}    \notag\\
+    f(1+g_{t+1}) &=& \frac{M_{t+1}^d}{p_{t+1}} = \frac{H}{(1+n)^{t+1}p_{t+1}}    \notag
+\end{eqnarray}</script><p>于是得到</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{f(1+g_t)}{f(1+g_{t+1})}=\frac{(1+n)p_{t+1}}{p_t} =(1+g)^{-1}(1+n)    \tag{14.5}
+\end{eqnarray}</script><p>在经济的稳态中，人均实际货币持有量是常数，从而$g_t$也必定是常数。于是，由上式可知稳态的通货紧缩率等于人口增长率。</p>
+<h3 id="Tobin模型"><a href="#Tobin模型" class="headerlink" title="Tobin模型"></a>Tobin模型</h3><p>假定<span style='color:red'>生产函数</span>是新古典的：</p>
+<script type="math/tex; mode=display">
+y_t=f(k_{t-1})</script><p>假定代表性消费者<span style='color:red'>可持有的资产</span>有两种形式：物质资本和货币：</p>
+<script type="math/tex; mode=display">
+a_t = k_t+m_t</script><p>其中$m_t\equiv\frac{M_t}{P_tN_t}$，$M_t$表示名义货币存量，$P_t$表示价格水平，$N_t$表示人口。</p>
+<p>$t$时刻的<span style='color:red'>总收入</span>可以表示为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&Y_t+\tau_t N_t+\left( \frac{M_{t-1}}{P_t}-\frac{M_{t-1}}{P_{t-1}} \right)    \notag\\
+  &&\text{总产出}+\text{转移支付}+\text{货币形式的资产因价格波动带来的损失}    \notag
+\end{eqnarray}</script><p>如果定义通货膨胀率为：$\pi_t\equiv\frac{P_t-P_{t-1}}{P_{t-1}}$，那么资产因价格波动造成的损失可以表示为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{M_{t-1}}{P_t}-\frac{M_{t-1}}{P_{t-1}} &=& M_{t-1}\cdot\frac{P_{t-1}-P_t}{P_tP_{t-1}} = - \frac{M_{t-1}}{P_t}\cdot\frac{P_t-P_{t-1}}{P_{t-1}}    \notag\\
+    &=&-\frac{M_{t-1}\pi_t}{P_{t-1}}\cdot\frac{P_{t-1}}{P_t}
+    =-\frac{M_{t-1}\pi_t}{P_{t-1}(1+\pi_t)}
+\end{eqnarray}</script><p>总资产的运动方程可以表示为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \Delta K+\Delta\left(\frac{M_t}{P_t}\right) 
+\equiv s\left( Y_t+\tau_tN_t-\frac{\pi_t}{1+\pi_t}\cdot\frac{M_{t-1}}{P_{t-1}} \right)    \tag{14.15}
+\end{eqnarray}</script><p>将上式写成人均形式：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\Delta K_t}{N_t} &=& \frac{\Delta(k_tN_t)}{N_t}
+=\frac{N_{t-1}\Delta k_t+k_{t-1}\Delta N_t}{N_t}    \notag\\
+&=& \frac{\Delta k_t}{1+n}+ k_{t-1}\frac{\Delta N_t}{N_{t-1}}\cdot\frac{N_{t-1}}{N_t}    \notag\\
+&=& \frac{\Delta k_t}{1+n}+\frac{n_t}{1+n_t}k_{t-1}    \notag\\
+&\approx& \Delta k_t+\frac{n_t}{1+n_t}k_{t-1}    \notag
+\end{eqnarray}</script><script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{1}{N_t}\Delta\left(\frac{M_t}{P_t}\right)  
+    &=& \frac{1}{N_t}\frac{P_{t-1}\Delta M_t-M_{t-1}\Delta P_t}{P_tP_{t-1}}    \notag\\
+    &=& \frac{1}{P_tN_t} \left( \Delta M_t - \frac{M_{t-1}\Delta P_t}{P_{t-1}} \right)    \notag\\
+    &=& \frac{M_{t-1}}{P_tN_t} \left( \frac{\Delta M_t}{M_{t-1}} - \frac{\Delta P_t}{P_{t-1}} \right)    \notag\\
+    &=& \frac{P_{t-1}N_{t-1}}{P_tN_t}\cdot\frac{M_{t-1}}{P_{t-1}N_{t-1}}\left( \frac{\Delta M_t}{M_{t-1}} - \frac{\Delta P_t}{P_{t-1}} \right)    \notag\\    \notag\\
+    &=& \frac{1}{(1+\pi_t)(1+n_t)}\cdot m_{t-1}(\theta_t-\pi_t)
+\end{eqnarray}</script><script type="math/tex; mode=display">
+\frac{M_{t-1}/P_{t-1}}{N_t} 
+= \frac{M_{t-1}}{P_{t-1}N_{t-1}}\cdot\frac{N_{t-1}}{N_t}
+= m_{t-1}\cdot\frac{1}{1+n_t}</script><p>其中$m_t\equiv\frac{\Delta M_t}{M_{t-1}}$为名义货币存量增长率，于是有：</p>
+<script type="math/tex; mode=display">
+\Delta k_t = s\left[ f(k_{t-1})+\tau_t -\frac{\pi_t}{1+\pi_t}\cdot\frac{m_{t-1}}{1+n_t} \right]
+-\left[ \frac{\theta_t-\pi_t}{(1+\pi_t)(1+n_t)} \right]m_{t-1}-\frac{n_t}{1+n_t}k_[t-1]</script><p><span style='color:red'>由于名义货币存量的改变由政府的转移支付所导致</span>，$\tau_tN_t=\frac{\Delta M_t}{P_t}$从而：</p>
+<script type="math/tex; mode=display">
+\tau_t=\frac{\Delta M_t}{P_tN_t} 
+= \frac{\Delta M_t}{M_{t-1}}\cdot\frac{M_{t-1}}{P_{t-1}N_{t-1}}\cdot\frac{P_{t-1}N_{t-1}}{P_tN_t}
+=\theta_tm_{t-1}\frac{1}{(1+\pi_t)(1+n_t)}</script><p>于是资产运动方程可以进一步简化为：</p>
+<script type="math/tex; mode=display">
+\Delta k_t = sf(k_{t-1})-(1-s)\left[ \frac{\theta_t-\pi_t}{(1+\pi_t)(1+n_t)} \right]m_{t-1}-\frac{n_t}{1+n_t}k_{t-1}</script><p>在稳态中，$\Delta k^\star=0$，于是有：</p>
+<script type="math/tex; mode=display">
+sf(k^\star)=(1-s)\frac{\theta-\pi}{(1+\pi)(1+n)}m^\star+\frac{n}{1+n}k^\star</script><p>结论：Tobin模型中货币是中性的，即名义货币存量的增加只影响价格水平，不会影响到经济的实际均衡。</p>
+<h3 id="效用函数中的货币：Sidrauski模型"><a href="#效用函数中的货币：Sidrauski模型" class="headerlink" title="效用函数中的货币：Sidrauski模型"></a>效用函数中的货币：Sidrauski模型</h3><p>假定消费者的效用函数为$u(c_t,m_t)$，$u_c,u_m&gt;0;u_{cc},u_{mm}&lt;0$。自变量分别为人均消费和人均实际货币余额。</p>
+<p>消费者面临的预算约束为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \text{支出：}\quad C+\frac{\text{d}K}{\text{d}t}+\frac1P\frac{\text{d}M}{\text{d}t}
+    =wN+rK+\tau N\quad \text{收入}    \tag{14.27}
+\end{eqnarray}</script><p>记$k\equiv\frac{K}{N};m\equiv\frac{M}{PN}$，分别为人均资本存量和人均实际货币余额，由于</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\text{d}K/\text{d}t}{N}&=&\frac{\text{d}(kN)/\text{d}t}{N}
+    =\frac{k\frac{\text{d}N}{\text{d}t}+N\frac{\text{d}k}{\text{d}t}}{N}
+    =\frac{\text{d}k}{\text{d}t}+nk    \notag\\
+    \frac{1}{N}\left( \frac1P\frac{\text{d}M}{\text{d}t} \right)
+    &=& \frac{1}{PN} \frac{\text{d}(mPN)}{\text{d}t} 
+    =\frac{1}{PN}\frac{m\text{d}(PN)+PN\cdot\text{d}m}{\text{d}t}    \notag\\
+    &=&\frac{m}{PN}\frac{P\text{d}N+N\text{d}P}{\text{d}t}+\frac{\text{d}m}{\text{d}t}    \notag\\
+    &=&\frac{m}{N}\frac{\text{d}N}{\text{d}t}+\frac{m}{P}\frac{\text{d}P}{\text{d}t}+\frac{\text{d}m}{\text{d}t}    \notag\\
+    &=& mn+m\pi+\frac{\text{d}m}{\text{d}t}    \notag
+\end{eqnarray}</script><p>于是（14.27）可以进一步写成：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    c+\frac{\text{d}k}{\text{d}t}+nk+mn+m\pi+\frac{\text{d}m}{\text{d}t}
+    =w+rk+\tau    \tag{14.28}
+\end{eqnarray}</script><p>将总资产记为$a\equiv k+m$，（14.28）可以进一步改写：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\text{d}a}{\text{d}t} =[(r-n)a+w+\tau]-[c+(\pi+r)m]    \tag{14.29}
+\end{eqnarray}</script><p>于是代表性消费者面临的优化问题为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max_{c,m} &&\int_0^\infty u(c,m)e^{-\rho t}\text{d}t    \notag\\
+    \text{s.t.} && \frac{\text{d}a}{\text{d}t} =[(r-n)a+w+\tau]-[c+(\pi+r)m]
+\end{eqnarray}</script><p>构造汉密尔顿函数：</p>
+<script type="math/tex; mode=display">
+H=u(c,m)+\lambda\{ [(r-n)a+w+\tau]-[c+(\pi+r)m] \}</script><p>一阶条件为：</p>
+<script type="math/tex; mode=display">
+\left\{\begin{aligned}
+    &\frac{\partial H}{\partial c} = u_c-\lambda=0\\
+    &\frac{\partial H}{\partial m} =u_m-\lambda(\pi+r)=0\\
+    &\dot{\lambda}=-\frac{\partial H}{\partial a}+\rho\lambda=-\lambda(r-n)+\rho\lambda\\
+    &\lim_{t\rightarrow\infty}a_t\lambda_te^{-\rho t}=0
+\end{aligned}\right.</script><p>最后要<span style='color:red'>求解方程</span>：</p>
+<p>假定生产函数是新古典的，于是资本和劳动的收益率分别等于它们的边际产品：</p>
+<script type="math/tex; mode=display">
+r=f'(k);\quad w=f(k)-kf'(k)</script><p>由于名义货币存量的改变是由政府的转移支付导致的，因此</p>
+<script type="math/tex; mode=display">
+\tau=\frac{\text{d}M/\text{d}t}{PN} 
+= \frac{\text{d}M/\text{d}t}{M}\frac{M}{PN}=\theta m</script><p>稳态下，$\text{d}a^\star=\text{d}k^\star=\text{d}m^\star=0$。</p>
+<p>由$\text{d}m^\star=0$:</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&\text{d}m=\text{d}\left(\frac{M}{PN}\right)=\frac{PN\text{d}M-M\text{d}(PN)}{(PN)^2}=0    \notag\\
+    \Rightarrow && (PN)\text{d}M=M\text{d}(PN)    \notag\\
+    \Rightarrow && \text{d}M=\frac{M}{PN}(P\text{d}N+N\text{d}P)    \notag\\
+    \Rightarrow && \text{d}M=\frac{M}{N}\text{d}N+\frac{M}{P}\text{d}P    \notag\\
+    \Rightarrow && \frac{1}{M}\frac{\text{d}M}{\text{d}t}
+    =\frac{\text{d}N}{N\text{d}t} + \frac{\text{d}P}{P\text{d}t}    \notag\\
+    \Rightarrow && \theta = n+\pi    \notag
+\end{eqnarray}</script><p>稳态消费为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    c^\star &=& (r-n)a^\star +\color{purple}w +\color{blue}{\tau}-(\pi+r)m^\star    \notag\\
+            &=& (r-n)a^\star +\color{purple}{[f(k^\star)-kf'(k^\star)]} +\color{blue}{\theta m^\star}-(\pi+r)m^\star    \notag\\
+            &=&(r-n)a^\star +f(k^\star)-k^\star r+(\color{green}{\theta-\pi}-r)m^\star    \notag\\
+            &=&(r-n)a^\star +f(k^\star)\color{pink}{-k^\star r}+(\color{green}n-r)m^\star    \notag\\
+            &=&(r-n)a^\star +f(k^\star)+\color{pink}{(n-r)k^\star}+(n-r)m^\star\color{pink}{-nk^\star}    \notag\\
+            &=&f(k^\star)-nk^\star    \notag
+\end{eqnarray}</script><p>由一阶条件$u_m=u_c(\pi+r)$。稳态时$\dot{\lambda}=0\Rightarrow r=\rho+n$，于是能得到：</p>
+<script type="math/tex; mode=display">
+u_m(c^\star,m^\star) = (\rho+\theta)u_c(c^\star,m^\star)</script><p>稳态的人均资本存量水平和消费水平是由与标准的Ramsey 模型中相同的条件决定的，他们都与货币增长率无关。因此，在Sidrauski 模型中，货币是超中性的，这是和Tobin 模型不同的一个结论。</p>
 <h2 id="实际经济周期模型（RBC）"><a href="#实际经济周期模型（RBC）" class="headerlink" title="实际经济周期模型（RBC）"></a>实际经济周期模型（RBC）</h2><p>RBC模型是在拉姆齐模型的<span style='color:red'>离散版本</span>基础上进行的扩展。本模型与离散时间版本拉姆齐模型两个最主要的区别是：<span style='font-family:fangsong'>引入了技术冲击和政府购买冲击，效用函数中引入了劳动。</span></p>
 <h3 id="模型设定"><a href="#模型设定" class="headerlink" title="模型设定"></a>模型设定</h3><ul>
 <li>生产函数：$Y_t = K_t^\alpha(A_tL_t)^{1-\alpha}$</li>
@@ -834,10 +1002,10 @@ Q\equiv \alpha\ln\hat{s}+(1-\alpha)\left[\bar{A}+\ln\hat{\mathscr{l}}+\bar{N}\ri
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-22T23:59:33+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-26T01:26:19+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年2月22日</p>
+    <p>更新于：2021年2月26日</p>
   </a>
 </div>
 
@@ -909,6 +1077,11 @@ Q\equiv \alpha\ln\hat{s}+(1-\alpha)\left[\bar{A}+\ln\hat{\mathscr{l}}+\bar{N}\ri
 
   
     <div class="prev-next">
+      
+        <a class='prev' href='../../23/%E7%AC%AC3%E7%AB%A0%E5%B7%A5%E8%96%AA%E9%98%B6%E5%B1%82%E7%94%9F%E6%B4%BB%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%94%B9%E5%8F%98/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>第3章工薪阶层生活条件的改变</p>
+          <p class='content'>一、消费模式的资本主义生产本章的目的是研究社会劳动力的再生产。因此，它不涉及个人消费行为，而是涉及工人阶级存在条件的形成和转变——换句话说，涉及资本积累的基础，工资关系概括的物质内容。因此，我们...</p>
+        </a>
       
       
         <a class='next' href='../../20/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94%E6%AE%8B%E5%B7%AE%E7%9B%B8%E5%85%B3%E7%9A%84%E5%90%84%E7%A7%8D%E6%83%85%E5%BD%A2/'>
@@ -1011,7 +1184,7 @@ Q\equiv \alpha\ln\hat{s}+(1-\alpha)\left[\bar{A}+\ln\hat{\mathscr{l}}+\bar{N}\ri
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E6%B4%9B%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E6%96%B0%E5%8F%A4%E5%85%B8%E5%A2%9E%E9%95%BF%E6%A8%A1%E5%9E%8B"><span class="toc-text">索洛模型——新古典增长模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%94%9F%E4%BA%A7%E5%87%BD%E6%95%B0-Y-F-K-L-y-f-k-%E7%9A%84%E5%81%87%E8%AE%BE%EF%BC%9A"><span class="toc-text">关于生产函数$Y &#x3D; F(K,L);y&#x3D;f(k)$的假设：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%9C%AC%E7%A7%AF%E7%B4%AF%E6%96%B9%E7%A8%8B"><span class="toc-text">资本积累方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E5%8A%A8%E6%80%81"><span class="toc-text">转移动态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%94%B6%E6%95%9B"><span class="toc-text">条件收敛</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%89%E5%A7%86%E9%BD%90%E6%A8%A1%E5%9E%8B%EF%BC%88Ramsey%EF%BC%89%E2%80%94%E2%80%94%E5%B0%86%E5%82%A8%E8%93%84%EF%BC%88%E6%B6%88%E8%B4%B9%EF%BC%89%E5%86%85%E7%94%9F%E5%8C%96%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="toc-text">拉姆齐模型（Ramsey）——将储蓄（消费）内生化的模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E8%A1%A8%E6%80%A7%E5%AE%B6%E5%BA%AD"><span class="toc-text">代表性家庭</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E8%A1%A8%E6%80%A7%E5%8E%82%E5%95%86"><span class="toc-text">代表性厂商</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%9E%E4%BA%89%E6%80%A7%E5%B8%82%E5%9C%BA%E7%9A%84%E5%9D%87%E8%A1%A1%E7%89%B9%E5%BE%81"><span class="toc-text">竞争性市场的均衡特征</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%B4%E5%BE%B7%E8%92%99%EF%BC%88diamond%EF%BC%89%E4%B8%96%E4%BB%A3%E4%BA%A4%E6%9B%BF%E6%A8%A1%E5%9E%8B%EF%BC%88OLG%EF%BC%8Coverlapping-generation%EF%BC%89"><span class="toc-text">戴德蒙（diamond）世代交替模型（OLG，overlapping generation）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%81%87%E8%AE%BE%EF%BC%9A"><span class="toc-text">一些假设：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%AE%BE%E5%AE%9A%E5%8F%8A%E6%B1%82%E8%A7%A3"><span class="toc-text">模型设定及求解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E4%BE%8B%E5%AD%90"><span class="toc-text">经典例子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E7%BB%8F%E6%B5%8E%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B%EF%BC%88RBC%EF%BC%89"><span class="toc-text">实际经济周期模型（RBC）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%AE%BE%E5%AE%9A"><span class="toc-text">模型设定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E8%A1%A8%E6%80%A7%E5%AE%B6%E5%BA%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%8C%96%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-text">代表性家庭的最大化问题的介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B6%E5%BA%AD%E8%A1%8C%E4%B8%BA"><span class="toc-text">家庭行为</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%8A%B3%E5%8A%A8%E4%BE%9B%E7%BB%99%E7%9A%84%E8%B7%A8%E6%9C%9F%E6%9B%BF%E4%BB%A3"><span class="toc-text">1. 劳动供给的跨期替代</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%83%85%E5%BD%A21%EF%BC%9A%E9%9D%99%E6%80%81%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%B8%80%E6%9C%9F%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-text">情形1：静态模型（一期模型）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%83%85%E5%BD%A22%EF%BC%9A%E4%B8%A4%E6%9C%9F%E6%A8%A1%E5%9E%8B"><span class="toc-text">情形2：两期模型</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%83%85%E5%BD%A2%E4%B8%8B%E7%9A%84%E5%AE%B6%E5%BA%AD%E6%9C%80%E4%BC%98%E5%8C%96"><span class="toc-text">2. 不确定情形下的家庭最优化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%B1%82%E5%82%A8%E8%93%84%E7%8E%87"><span class="toc-text">1.求储蓄率</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%B1%82%E5%8A%B3%E5%8A%A8%E4%BE%9B%E7%BB%99"><span class="toc-text">2.求劳动供给</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%B1%82%E4%BA%A7%E5%87%BA%EF%BC%9A%E4%BA%A7%E5%87%BA%EF%BC%88%E7%BC%BA%E5%8F%A3%EF%BC%89%E8%A1%A8%E7%A4%BA%E6%88%90%E6%BB%9E%E5%90%8E%E9%A1%B9%E5%92%8C%E5%A4%96%E7%94%9F%E5%8F%98%E9%87%8F%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text">3.求产出：产出（缺口）表示成滞后项和外生变量的函数</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E6%B4%9B%E6%A8%A1%E5%9E%8B%E2%80%94%E2%80%94%E6%96%B0%E5%8F%A4%E5%85%B8%E5%A2%9E%E9%95%BF%E6%A8%A1%E5%9E%8B"><span class="toc-text">索洛模型——新古典增长模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%94%9F%E4%BA%A7%E5%87%BD%E6%95%B0-Y-F-K-L-y-f-k-%E7%9A%84%E5%81%87%E8%AE%BE%EF%BC%9A"><span class="toc-text">关于生产函数$Y &#x3D; F(K,L);y&#x3D;f(k)$的假设：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%9C%AC%E7%A7%AF%E7%B4%AF%E6%96%B9%E7%A8%8B"><span class="toc-text">资本积累方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E5%8A%A8%E6%80%81"><span class="toc-text">转移动态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%94%B6%E6%95%9B"><span class="toc-text">条件收敛</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%89%E5%A7%86%E9%BD%90%E6%A8%A1%E5%9E%8B%EF%BC%88Ramsey%EF%BC%89%E2%80%94%E2%80%94%E5%B0%86%E5%82%A8%E8%93%84%EF%BC%88%E6%B6%88%E8%B4%B9%EF%BC%89%E5%86%85%E7%94%9F%E5%8C%96%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="toc-text">拉姆齐模型（Ramsey）——将储蓄（消费）内生化的模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E8%A1%A8%E6%80%A7%E5%AE%B6%E5%BA%AD"><span class="toc-text">代表性家庭</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E8%A1%A8%E6%80%A7%E5%8E%82%E5%95%86"><span class="toc-text">代表性厂商</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%9E%E4%BA%89%E6%80%A7%E5%B8%82%E5%9C%BA%E7%9A%84%E5%9D%87%E8%A1%A1%E7%89%B9%E5%BE%81"><span class="toc-text">竞争性市场的均衡特征</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%B4%E5%BE%B7%E8%92%99%EF%BC%88diamond%EF%BC%89%E4%B8%96%E4%BB%A3%E4%BA%A4%E6%9B%BF%E6%A8%A1%E5%9E%8B%EF%BC%88OLG%EF%BC%8Coverlapping-generation%EF%BC%89"><span class="toc-text">戴德蒙（diamond）世代交替模型（OLG，overlapping generation）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%81%87%E8%AE%BE%EF%BC%9A"><span class="toc-text">一些假设：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%AE%BE%E5%AE%9A%E5%8F%8A%E6%B1%82%E8%A7%A3"><span class="toc-text">模型设定及求解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E4%BE%8B%E5%AD%90"><span class="toc-text">经典例子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%A7%E5%B8%81"><span class="toc-text">货币</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OLG%E4%B8%AD%E7%9A%84%E8%B4%A7%E5%B8%81"><span class="toc-text">OLG中的货币</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%81%87%E5%AE%9A%EF%BC%9A"><span class="toc-text">一些假定：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tobin%E6%A8%A1%E5%9E%8B"><span class="toc-text">Tobin模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E7%94%A8%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E8%B4%A7%E5%B8%81%EF%BC%9ASidrauski%E6%A8%A1%E5%9E%8B"><span class="toc-text">效用函数中的货币：Sidrauski模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E7%BB%8F%E6%B5%8E%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B%EF%BC%88RBC%EF%BC%89"><span class="toc-text">实际经济周期模型（RBC）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%AE%BE%E5%AE%9A"><span class="toc-text">模型设定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E8%A1%A8%E6%80%A7%E5%AE%B6%E5%BA%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%8C%96%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-text">代表性家庭的最大化问题的介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B6%E5%BA%AD%E8%A1%8C%E4%B8%BA"><span class="toc-text">家庭行为</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%8A%B3%E5%8A%A8%E4%BE%9B%E7%BB%99%E7%9A%84%E8%B7%A8%E6%9C%9F%E6%9B%BF%E4%BB%A3"><span class="toc-text">1. 劳动供给的跨期替代</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%83%85%E5%BD%A21%EF%BC%9A%E9%9D%99%E6%80%81%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%B8%80%E6%9C%9F%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-text">情形1：静态模型（一期模型）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%83%85%E5%BD%A22%EF%BC%9A%E4%B8%A4%E6%9C%9F%E6%A8%A1%E5%9E%8B"><span class="toc-text">情形2：两期模型</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%83%85%E5%BD%A2%E4%B8%8B%E7%9A%84%E5%AE%B6%E5%BA%AD%E6%9C%80%E4%BC%98%E5%8C%96"><span class="toc-text">2. 不确定情形下的家庭最优化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%B1%82%E5%82%A8%E8%93%84%E7%8E%87"><span class="toc-text">1.求储蓄率</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%B1%82%E5%8A%B3%E5%8A%A8%E4%BE%9B%E7%BB%99"><span class="toc-text">2.求劳动供给</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%B1%82%E4%BA%A7%E5%87%BA%EF%BC%9A%E4%BA%A7%E5%87%BA%EF%BC%88%E7%BC%BA%E5%8F%A3%EF%BC%89%E8%A1%A8%E7%A4%BA%E6%88%90%E6%BB%9E%E5%90%8E%E9%A1%B9%E5%92%8C%E5%A4%96%E7%94%9F%E5%8F%98%E9%87%8F%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text">3.求产出：产出（缺口）表示成滞后项和外生变量的函数</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
   </section>
 
