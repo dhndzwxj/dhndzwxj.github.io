@@ -345,13 +345,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.3k字</p>
+      <p>字数：1.6k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：5分钟</p>
+      <p>时长：6分钟</p>
     </a>
   </div>
  -->
@@ -361,13 +361,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.3k字</p>
+      <p>字数：1.6k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：5分钟</p>
+      <p>时长：6分钟</p>
     </a>
   </div> -->
 
@@ -376,7 +376,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.3k字</span>
+        <span class="post-count">1.6k字</span>
       </span>
     </span>
  
@@ -385,7 +385,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">5分</span>
+        <span class="post-count">6分</span>
       </span>
     </span>
     
@@ -406,6 +406,32 @@
 <li>等式约束使用拉格朗日乘子法</li>
 <li>不等式约束使用库恩-塔克定理</li>
 </ul>
+<p>三个重要结论的总结：三个结论有一个共同点，即便要素价格（参数）发生了改变，在均衡状态下，求导结果和参数不发生改变的时候是一样的。这也是包络定理所要表达的。</p>
+<ul>
+<li><p>霍特林引理是要素或者产品价格变化对利润的影响</p>
+</li>
+<li><script type="math/tex; mode=display">
+\frac{\partial\pi^\star}{\partial w} =-L^\star(w,r,p);
+\quad\frac{\partial\pi^\star}{\partial r} =-K^\star(w,r,p);
+\quad\frac{\partial\pi^\star}{\partial p}=f(K^\star,L^\star)</script></li>
+<li><p>罗伊恒等式是收入对产品价格求导等于马歇尔需求的相反数</p>
+</li>
+<li><script type="math/tex; mode=display">
+\frac{\partial V/\partial P_x}{\partial V/\partial I}=-x^m;
+\quad \frac{\partial V/\partial P_y}{\partial V/\partial I}=-y^m;
+\quad</script></li>
+<li><p>谢泼德引理是支出对产品价格求导等于希克斯需求</p>
+</li>
+<li><script type="math/tex; mode=display">
+\frac{\partial E}{\partial P_x}=x^h;
+\quad \frac{\partial E}{\partial P_y}=y^h;
+\quad</script></li>
+</ul>
+<div align='center'>
+  <img src='/../../images/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/WechatIMG2617.png' width=600px>
+  <center style='font-family:kai'>图?</center>
+</div>
+
 <h3 id="7-0-无约束的极值问题"><a href="#7-0-无约束的极值问题" class="headerlink" title="7.0 无约束的极值问题"></a>7.0 无约束的极值问题</h3><p>这一节可以参考<span style='font-family:kai'>蒋中一《数理经济学的基本方法》（第4版）13.5极大值函数和包络定理;13.6对偶和包络定理</span>。</p>
 <script type="math/tex; mode=display">
 (P)\left\{
@@ -474,7 +500,7 @@ D_\alpha [f(\textbf{x}^\star,\alpha)]</script><p>注意到$\nabla_\textbf{x} f(\
 <p>在这个例子中，（13.38) 表明利润最大化函数对于$w$ 的导数就是要素需求函数$L^\star (w, r, P)$ 的相反数。根据前面的步骤，我们可以得到附加的比较静念结果：</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
-    \frac{\partial \pi^\star(w,r,P)}{\partial r} &=& -K^\star(w,r,P)    \tag{13.39}\\
+    \frac{\partial \pi^\star}{\partial r} &=& -K^\star(w,r,P)    \tag{13.39}\\
     \frac{\partial \pi^\star}{\partial P} &=& f(K^\star,L^\star)    \tag{13.40}
 \end{eqnarray}</script><p>等式(13. 38), (13. 39) 和(13.40) 合起来称为<span style='background:yellow'>霍特林引理</span>。通过使$K^\star$和$L^\star$ ．随任何参数变化调整，我们可以从利润函数中得到比较静态导数。但是，我们不难发现，假设$K^\star$和$L^\star$保持不变，如果我们把利润函数(13. 35) 对于每个参数求偏导数，也能够得到相同的结果。是不是和包络定理一样？</p>
 <h4 id="7-0-2-交互性条件"><a href="#7-0-2-交互性条件" class="headerlink" title="7.0.2 交互性条件"></a>7.0.2 交互性条件</h4><p>对于极大值函数</p>
@@ -586,7 +612,7 @@ Z^d = P_xx+P_yy+\mu[U^\star-U(x,y)]</script><p>一阶条件</p>
 \begin{eqnarray}
     x^m(P_x,P_y,I) &=& x^h(P_x,P_y,U^\star)    \notag\\
     y^m(P_x,P_y,I) &=& y^h(P_x,P_y,U^\star)    \notag
-\end{eqnarray}\tag{13.69}</script><p>极大化问题和极小化问题得到的允和y 的解相同。但是，这些解是不同的外生变量的函数，因此比较静态分析会产生不同的结果。</p>
+\end{eqnarray}\tag{13.69}</script><p>利润极大化问题和支出极小化问题得到的解相同。但是，这些解是不同的外生变量的函数，因此比较静态分析会产生不同的结果。</p>
 <p>在基本问题和其对偶问题中，同样的无差异曲线和预算约束曲线的切点决定了$x$和$y$的解的这个事实说明，<span style='color:red'>在对偶问题中的最小支出等于基本问题中给定的预算$I$:</span></p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
@@ -661,11 +687,6 @@ Z^d = P_xx+P_yy+\mu[U^\star-U(x,y)]</script><p>求出希克斯需求函数：</p
 \begin{eqnarray}
     \frac{\partial E}{\partial U^\star} = \mu^h    \tag{13.74''}
 \end{eqnarray}</script><p>三个偏导数统称为<span style='background:yellow'>谢泼德引理</span>。</p>
-<div align='center'>
-  <img src='/../../images/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/WechatIMG2617.png' width=600px>
-  <center style='font-family:kai'>图?</center>
-</div>
-
 <h3 id="7-1-拉格朗日乘子法（等式约束）"><a href="#7-1-拉格朗日乘子法（等式约束）" class="headerlink" title="7.1 拉格朗日乘子法（等式约束）"></a>7.1 拉格朗日乘子法（等式约束）</h3><script type="math/tex; mode=display">
 (P)\left\{
 \begin{aligned}
@@ -930,10 +951,10 @@ g_i(\textbf{x}^\lambda,\lambda\alpha_1+(1-\lambda)\alpha_2)\geqq\min\{ g_i(\text
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-24T22:13:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-26T11:06:49+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年2月24日</p>
+    <p>更新于：2021年2月26日</p>
   </a>
 </div>
 
