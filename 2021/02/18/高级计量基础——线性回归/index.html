@@ -638,7 +638,7 @@ CY = CX\beta+C\varepsilon\Rightarrow Y^\star+X^\star\beta+\varepsilon^\star</scr
 =\sigma^2 I_n</script><p>变成了球性方差！！！系数估计量为：</p>
 <script type="math/tex; mode=display">
 \hat{\beta}^\star = (X^{\star'}X^\star)^{-1}X^{\star'}Y^\star 
-= (X'C'CX)^{-1}X'C'CY = (X'\hat{V}X)^{-1}X'\hat{V}Y
+= (X'C'CX)^{-1}X'C'CY = (X'\hat{V}^{-1}X)^{-1}X'\hat{V}^{-1}Y
 \equiv \hat{\beta}_{\text{GLS}}</script><p>该估计量有以下几条性质：</p>
 <ul>
 <li>无偏</li>
@@ -688,10 +688,10 @@ Z_n\equiv \sqrt{n}(\bar{X}_n-\mu)\rightarrow_d N(0,\Sigma)</script><h3 id="Delta
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-22T16:11:31+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-27T16:15:28+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年2月22日</p>
+    <p>更新于：2021年2月27日</p>
   </a>
 </div>
 
@@ -766,7 +766,10 @@ Z_n\equiv \sqrt{n}(\bar{X}_n-\mu)\rightarrow_d N(0,\Sigma)</script><h3 id="Delta
       
         <a class='prev' href='../../20/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94%E6%AE%8B%E5%B7%AE%E7%9B%B8%E5%85%B3%E7%9A%84%E5%90%84%E7%A7%8D%E6%83%85%E5%BD%A2/'>
           <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>高级计量进阶——残差相关的各种情形</p>
-          <p class='content'>时间序列概念合集白噪声</p>
+          <p class='content'>时间序列概念合集鞅（Martingales）一个向量值时间序列过程如果满足：
+
+\mathbb{E}(Y_t\lvert Y_{t-1},Y_{t-2},\cdots)
+=\mathbb{E}(...</p>
         </a>
       
       

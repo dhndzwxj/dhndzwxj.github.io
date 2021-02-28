@@ -500,7 +500,7 @@ f(x)-f(x_0) = f'(x_0)(x-x_0)+o(x-x_0)</script><p>可以将被积函数化为：<
 \begin{eqnarray}
     F_L(K,L)&=&\frac{\partial F(K,L)}{\partial L} = \frac{\partial [Lf(k)]}{\partial L} 
 =f(k)+L\frac{\partial f(k)}{\partial k}\cdot\frac{\partial k}{\partial L}  \notag\\
-    &=&f(k)+Lf'(k)\left(-\frac{K}{L^2}\right) = f(k)-kf'(k)
+    &=&f(k)+Lf'(k)\left(-\frac{K}{L^2}\right) = f(k)-kf'(k) \notag
 \end{eqnarray}</script><p>因此有效率的工资为：</p>
 <script type="math/tex; mode=display">
 w = f(k)-kf'(k)</script><p>如果工资水平$w$和利率水平$r$是外生给定的，那么可以利用上式求得稳态下的人均资本量$k^\star=k(r,w)$。</p>
@@ -1014,7 +1014,7 @@ Q\equiv \alpha\ln\hat{s}+(1-\alpha)\left[\bar{A}+\ln\hat{\mathscr{l}}+\bar{N}\ri
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-26T07:49:05+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-26T11:18:06+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年2月26日</p>
@@ -1098,7 +1098,10 @@ Q\equiv \alpha\ln\hat{s}+(1-\alpha)\left[\bar{A}+\ln\hat{\mathscr{l}}+\bar{N}\ri
       
         <a class='next' href='../../20/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94%E6%AE%8B%E5%B7%AE%E7%9B%B8%E5%85%B3%E7%9A%84%E5%90%84%E7%A7%8D%E6%83%85%E5%BD%A2/'>
           <p class='title'>高级计量进阶——残差相关的各种情形<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>时间序列概念合集白噪声</p>
+          <p class='content'>时间序列概念合集鞅（Martingales）一个向量值时间序列过程如果满足：
+
+\mathbb{E}(Y_t\lvert Y_{t-1},Y_{t-2},\cdots)
+=\mathbb{E}(...</p>
         </a>
       
     </div>

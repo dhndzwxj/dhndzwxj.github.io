@@ -783,7 +783,11 @@ $F_K,F_L&gt;0;F_{KK},F_{LL}&lt;0$；
   <div class='md'>
     
       
-        时间序列概念合集白噪声
+        时间序列概念合集鞅（Martingales）一个向量值时间序列过程如果满足：
+
+\mathbb{E}(Y_t\lvert Y_{t-1},Y_{t-2},\cdots)
+=\mathbb{E}(Y_t\lvert I_{t-1})=Y_{t-1}\quad\text{a.s.}它被称为鞅。
+对于标量时间序列$\{Y_{tj}\}$，它是向量值时间序列$\{Y_t\}$的一个元素。当它满足条件...
       
     
   </div>
@@ -1460,7 +1464,7 @@ $F_K,F_L&gt;0;F_{KK},F_{LL}&lt;0$；
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>667.9k 字</div>
+          <div>673.1k 字</div>
         </div>
       
 
@@ -1486,8 +1490,8 @@ $F_K,F_L&gt;0;F_{KK},F_{LL}&lt;0$；
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Fri Feb 26 2021 11:07:55 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-02-26 日</div>
+            <div id="last-update" style="display: none;">Sun Feb 28 2021 14:29:13 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2021-02-28 日</div>
           
         </div>
         
@@ -1537,7 +1541,7 @@ $F_K,F_L&gt;0;F_{KK},F_{LL}&lt;0$；
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-02-26 日';
+            document.getElementById('last-update-show').innerHTML = '2021-02-28 日';
           }
         </script>
         
