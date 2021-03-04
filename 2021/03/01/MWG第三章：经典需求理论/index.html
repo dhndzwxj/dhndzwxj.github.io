@@ -1,0 +1,1909 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>MWG第三章：经典需求理论 - 渝言</title>
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="../../../../css/first.css">
+
+  
+
+  
+  <link rel="stylesheet" href="../../../../css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="../../../../css/style.css"></noscript>
+  
+
+  <script id="loadcss"></script>
+
+</head>
+
+<body>
+  
+
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='../../../../index.html'>
+          
+            <img no-lazy class='logo' src='/img/avatar.jpg'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
+                  
+                  
+                  
+                    id="indexhtml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="标题或者全文搜索" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
+                  
+                  
+                  
+                    id="indexhtml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div id="l_body">
+    <div id="l_cover">
+  
+    
+        <div id="full" class='cover-wrapper post search' style="display: none;">
+          
+            <div class='cover-bg lazyload placeholder' data-bg="img/bg.png"></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+      <img no-lazy class='logo' src='../../../../img/logo.png'/>
+    
+    
+    
+  </div>
+  <div class='bottom'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="标题或者全文搜索" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        MWG第三章：经典需求理论
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            <!-- 
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="fas fa-user">
+    <p>请设置文章作者</p>
+  </a>
+</div> -->
+
+
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <i class=" fas fa-user" aria-hidden="true"></i>
+    <!-- <i class=" fa-fw" aria-hidden="true"></i> -->
+    <!-- <img no-lazy src=""> -->
+    <!-- <p></p> --> <!--原始代码，引用的是author.name，但是md文件中都没有这么写-->
+    <p>揭晓</p>
+  </a>
+</div>
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年3月1日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/">博资考</a><span class="sep"></span><a class="category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/MWG%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E7%90%86%E8%AE%BA/">MWG微观经济理论</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <!-- 
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：7.1k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：31分钟</p>
+    </a>
+  </div>
+ -->
+
+
+
+  <!-- <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：7.1k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：31分钟</p>
+    </a>
+  </div> -->
+
+  <div style="margin-top:0px;"> <!--这一行的margin-top，意思是是否与该行文字对其，0是对其-->
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">7.1k字</span>
+      </span>
+    </span>
+ 
+    <span class="post-time">
+      &nbsp;  &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">31分</span>
+      </span>
+    </span>
+    
+</div>
+
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  <blockquote>
+<p>感谢知乎用户<a href='https://zhuanlan.zhihu.com/p/335529007' target='_blank'>economics-lover</a>。</p>
+</blockquote>
+<p>根据我所学课程的授课顺序，先整理第三章的笔记，这一章主要是在讲需求函数如何得出的，以及在什么样的情况下效用函数是连续的。这一章是全部内容中最难啃的一块骨头！</p>
+<div align='center'>
+  <img src='/../../images/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/%E6%B6%88%E8%B4%B9%E8%80%85%E9%80%89%E6%8B%A9.jpeg' width=600px>
+  <center style='font-family:kai'>本章大纲</center>
+</div>
+
+<h2 id="第三章-经典需求理论"><a href="#第三章-经典需求理论" class="headerlink" title="第三章 经典需求理论"></a>第三章 经典需求理论</h2><p>首先，我们在理性的基础上，引入偏好的另外两个重要性质：</p>
+<h3 id="1、合意性：（satiation）"><a href="#1、合意性：（satiation）" class="headerlink" title="1、合意性：（satiation）"></a>1、合意性：（satiation）</h3><p>也就是说商品越多越好，这个概念比较模糊，下面是用数学的方式来刻画合意性：</p>
+<ul>
+<li>单调性：定义在$X\subseteq\mathbb{R}^n$上的偏好关系$\succsim$是单调的，如果$\forall x,y\in X,x\gg y\Rightarrow x\succ y$ ，也就是说<span style='color:red'>如果$x$的每个分量都比$y$大，那么$x$比$y$更好</span>；<ul>
+<li>偏好是强单调的如果：$\forall x,y\in X,x\succsim y,x\neq y\Rightarrow x\succ y$就是说只要有一个分量更好，其他分量不差，那么 $x$比$y$更好；</li>
+<li>对于单调性我的理解是，为如何比较两个商品提供了依据，因为之前我们的偏好关系定义的比较抽象，此处因为这个备选集定义在了$\mathbb{R}^n$上，对其理解就容易很多。</li>
+</ul>
+</li>
+<li>局部非饱和性：对于任何$x\in X$和任何$\varepsilon&gt;0$,都存在$y\in X$，使得$|y-x|&lt;\varepsilon$且$y\succ x$<ul>
+<li>对于局部非饱和性我的理解是：它保证了无差异集不是厚的，这个厚的意思是就是不是无差异曲线了，而类似于一个无差异带.</li>
+</ul>
+</li>
+<li>注意，单调性是比局部非饱和性更强的概念，这个我可以理解，也就是说说单调性一定有局部非饱和！</li>
+</ul>
+<h3 id="2、偏好的凸性："><a href="#2、偏好的凸性：" class="headerlink" title="2、偏好的凸性："></a>2、偏好的凸性：</h3><p>$X$上的偏好关系是凸的，若对于任何$x\in X$，上轮廓集$\{y\in X\lvert y\succsim x\}$是凸集，也就是说如果$y\succsim x,z\succsim x$ ，那么$\forall\alpha\in[0,1],\alpha y+(1-\alpha)z\succsim x$</p>
+<p><span style='font-family:fangsong'>对于凸性我的理解是：凸性+单调性意味着边际替代率递减（注意只有凸性不行，参考评论区指出的许多同心圆，越往中间越好），也意味着个体偏好多样性。MRS递减进一步可以得到效用函数拟凹。</span></p>
+<p>分析偏好往往是比较麻烦的，如果可以使用效用函数来表示偏好，就会使得分析方便许多(可以方便地进行求导），<span style='color:red'>但不是所有的理性偏好都可以用效用函数来表示，比如一个理性的字典式偏好就没办法用效用函数表示，偏好的连续性保证了其可以用连续的效用函数表示。</span>首先，给出偏好连续性的定义：</p>
+<h3 id="3、偏好的连续性"><a href="#3、偏好的连续性" class="headerlink" title="3、偏好的连续性"></a>3、偏好的连续性</h3><p>$X\subseteq \mathbb{R}^n$上的偏好关系$\succsim$是连续的，如果：对于任何两个偏好序列$\{(x_n,y_n\}_{n=1}^\infty$，如果 $x_n\succ y_n$对于任何$n$都成立，并且</p>
+<script type="math/tex; mode=display">
+\lim_{n\rightarrow\infty} x_n=x,\lim_{n\rightarrow\infty} y_n=y</script><p>那么$x\succ y$</p>
+<blockquote>
+<p>偏好的连续性核心就是：偏好关系在极限运算下也成立</p>
+</blockquote>
+<p><span style='font-family:hei;font-size:20px'><strong>命题3.C.1:</strong></span>若$X$上的偏好关系$\succsim$是连续的，则存在能代表$\succsim$的<span style='color:red'>连续的</span>效用函数</p>
+<p>因此，一般情况下，我们都假设偏好关系$\succsim$是理性的、单调的和局部非饱和的，用连续的效用函数$u(x)$来表示偏好关系，有了效用函数之后，许多问题的研究都会简单许多。</p>
+<h3 id="4、-效用函数凹和拟凹"><a href="#4、-效用函数凹和拟凹" class="headerlink" title="4、 效用函数凹和拟凹"></a>4、 效用函数凹和拟凹</h3><p>凹：$u(\alpha+(1-\alpha)y)\ge \alpha u(x)+(1-\alpha)u(y)$</p>
+<p>拟凹：$u(\alpha+(1-\alpha)y)\ge \min\{ u(x),u(y) \} $</p>
+<ul>
+<li>拟凹一个等价条件为：$\{x:u(x）&gt;t\}$是凸集。</li>
+</ul>
+<p>给定偏好关系和消费束，有三个相关的集合：</p>
+<ul>
+<li>$x$的无差异集：$\{y\in X\lvert y\sim x\}$</li>
+<li>$x$的上等值集：$\{y\in X\lvert y\succsim x\}$</li>
+<li>$x$的下等值集：$\{y\in X\lvert x\succsim y\}$</li>
+</ul>
+<h3 id="位似偏好-homothetic"><a href="#位似偏好-homothetic" class="headerlink" title="位似偏好(homothetic)"></a>位似偏好(homothetic)</h3><p>$\succsim$是位似偏好当$x\sim y\Rightarrow \alpha x\sim\alpha y,\forall\alpha&gt;0$。</p>
+<ul>
+<li>如果偏好是位似得，那么可以选择这样的效用函数：$u(\alpha x)=\alpha u(x)$</li>
+</ul>
+<div align='center'>
+  <img src='/../../images/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/image-20210302105700354.png' width=300px>
+  <center style='font-family:kai'>图3.B.5 位似偏好的无差异曲线</center>
+</div>
+
+
+<h3 id="拟线性（quasilinear）"><a href="#拟线性（quasilinear）" class="headerlink" title="拟线性（quasilinear）"></a>拟线性（quasilinear）</h3><p>$(-\infty,+\infty)\times\mathbb{R}_+^{L-1}$上的偏好关系关于商品1（货币）是拟线性的，当</p>
+<ul>
+<li>所有的无差异集彼此之间可以通过沿着商品1的坐标轴平行位移而得到：<ul>
+<li>$x\sim y\Rightarrow x+\alpha e_1\sim y+\alpha e_1,\forall\alpha,e=(1,0,\cdots,0)$</li>
+</ul>
+</li>
+<li>商品1是合意的：$x+\alpha e_1\succ x,\forall x,\alpha&gt;0$</li>
+</ul>
+<p>这种情况下商品1被称为<span style='color:red'>计价物商品</span>。</p>
+<div align='center'>
+  <img src='/../../images/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/image-20210303155642324.png' width=400px>
+  <center style='font-family:kai'>图3.B.6 拟线性偏好的无差异曲线</center>
+</div>
+
+<p><span style='font-family:hei;font-size:20px'>习题3.C.5</span>证明如果$\succsim$关于商品1是拟线性的，当且仅当它能用$u(\textbf{x})=x_1+\phi(x_2,\cdots,x_L)$形式的效用函数$u(\textbf{x})$表示。</p>
+<blockquote>
+<p>证明：</p>
+<p>$\succsim$如果能用$u(x)$这个形式的函数来表示，很容易证明它是拟线性的。</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \textbf{x}&\sim& \textbf{y}\Rightarrow u(\textbf{x})=u(\textbf{y})
+\Rightarrow u(\textbf{x})+\alpha=u(\textbf{y})+\alpha    \notag\\
+&\Rightarrow& (\alpha+x_1)+\phi(x_2\cdots,x_L)=(\alpha+y_1)+\phi(y_2\cdots,y_L)    \notag\\
+&\Rightarrow& u(\textbf{x}+\alpha \textbf{e}_1)=u(\textbf{y}+\alpha \textbf{e}_1)    \notag\\
+&\Rightarrow& \textbf{x}+\alpha \textbf{e}_1\sim\textbf{y}+\alpha \textbf{e}_1    \notag
+\end{eqnarray}</script><p>反方向太复杂了，我不想写了。</p>
+</blockquote>
+<p><span style='font-family:hei;font-size:20px'>习题3.E.7</span>证明如果$\succsim$关于商品1是拟线性的，那么商品$2,3,\cdots,L$的希克斯需求函数不取决于$u$。</p>
+<blockquote>
+<p>证明：</p>
+<p>$\succsim$关于商品1是拟线性的，那么根据习题3.E.5，它可以用形式为$u(\textbf{x})=x_1+\bar u(x_2,\cdots,x_L)$的效用函数来表示。令$\textbf{e}_1=(1,0,\cdots,0)’\in\mathbb{R}^L$，</p>
+<p>我们将证明对于每个$\textbf{p}\gg \textbf{0}(p_1=1)$，$u\mathbb{R},\alpha\in\mathbb{R}$和$\textbf{x}\in(-\infty,+\infty)\times\mathbb{R}_+^{L-1}$，如果$\textbf{x}=h(\textbf{p},u)$，那么$\textbf{x}+\alpha\textbf{e}_1=h(\textbf{p},u+\alpha)$。</p>
+<p>首先注意到，</p>
+</blockquote>
+<h3 id="希克斯复合商品"><a href="#希克斯复合商品" class="headerlink" title="希克斯复合商品"></a>希克斯复合商品</h3><p>假设有两组合意商品$\textbf{x}$和$\textbf{y}$，对应的价格分别为$\textbf{p}$和$\textbf{q}$。消费者的效用函数为$u(\textbf{x},\textbf{y})$，他的财富为$w&gt;0$。假设商品组$\textbf{y}$的价格总是同时同比例变化的，因此我们可以写为$\textbf{q}=\alpha\textbf{q}_0$。对于任意实数$z\ge0$，定义函数：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \tilde u(\textbf{x},z)&=&\max_{\textbf{y}} u(\textbf{x},\textbf{y})    \notag\\
+    \text{s.t. }&& \textbf{q}_0\cdot \textbf{y}\le z    \notag
+\end{eqnarray}</script><p>（a）假设经济中的商品为商品组$\textbf{x}$和某种复合商品$z$，消费者的效用函数为$\tilde u(\textbf{x},z)$，$\alpha$是复合商品$z$的价格，证明</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max_{\textbf{x},z} &&\tilde u(\textbf{x},z)    \notag\\
+    \text{s.t. }&& \textbf{p}\cdot \textbf{x} + \alpha z\le w    \notag
+\end{eqnarray}</script><p>的解给出了消费者的$\textbf{x}$和$z=\textbf{q}_0\cdot\textbf{y}$的实际水平。(will give the consumer’s actual levels of $\textbf{x}$ and $z=\textbf{q}_0\cdot \textbf{y}$)</p>
+<blockquote>
+<p>要证明以下两条断言：</p>
+<p>1、如果$(\textbf{x}^\star,z^\star)$是</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max_{\textbf{x},z} &&\tilde u(\textbf{x},z)    \notag\\
+    \text{s.t. }&& \textbf{p}\cdot \textbf{x} + \alpha z\le w    \notag
+\end{eqnarray}\tag{I}</script><p>的解，那么存在着$\textbf{y}^\star$使得$\textbf{q}\cdot\textbf{y}^\star\le z^\star$，而且$(\textbf{x}^\star,\textbf{y}^\star)$是</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max_{\textbf{x},\textbf{y}} && u(\textbf{x},\textbf{y})    \notag\\
+    \text{s.t. }&& \textbf{p}\cdot \textbf{x} + (\alpha\textbf{q}_0)\cdot\textbf{y}\le w    \notag
+\end{eqnarray}\tag{II}</script><p>的解。</p>
+<p>2、如果$(\textbf{x}^\star,\textbf{y}^\star)$是问题(II)的解，那么$(\textbf{x}^\star,\textbf{q}_0\cdot\textbf{y}^\star)$是问题(I)的解。</p>
+<p><span style='font-family:hei;font-size:20px'>先证明1</span></p>
+<p>假设$(\textbf{x}^\star,z^\star)$是问题（I）的解，于是根据$\tilde u(\cdot)$的定义，存在着$\textbf{y}^\star$使得$\textbf{q}_0\cdot\textbf{y}^\star\le z^\star$，而且$u(\textbf{x}^\star,\textbf{y}^\star)=\tilde u(\textbf{x}^\star,z^\star)$。令$(\textbf{x},\textbf{y})$满足$\textbf{p}\cdot\textbf{x}+(\alpha\textbf{q}_0)\cdot\textbf{y}\le w$。于是：</p>
+<script type="math/tex; mode=display">
+u(\textbf{x},\textbf{y})\le \tilde u(\textbf{x},\textbf{q}_0\cdot \textbf{y})\le \tilde u(\textbf{x}^\star,z^\star)=u(\textbf{x}^\star,\textbf{y}^\star)</script><p>其中，第一个不等式根据$\tilde u(\cdot)$的定义推知，第二不等式根据(I)的约束条件$\textbf{p}\cdot\textbf{x}+\alpha(\textbf{q}_0\textbf{y})=\textbf{p}\cdot\textbf{x}+(\alpha\textbf{q}_0)\textbf{y}\le w$和$(\textbf{x}^\star,z^\star)$的定义推知。这样的一个断言得到证明。</p>
+<p><span style='font-family:hei;font-size:20px'>再证明2</span></p>
+<p>假设$(\textbf{x}^\star,\textbf{y}^\star)$是问题（II）的解，对于每一个$\textbf{y}$，如果$\textbf{q}_0\cdot\textbf{y}\le \textbf{q}_0\cdot\textbf{y}^\star$，那么：</p>
+<script type="math/tex; mode=display">
+\textbf{p}\cdot\textbf{x}^\star+(\alpha\textbf{q}_0)\cdot\textbf{y}
+=\textbf{p}\cdot\textbf{x}^\star+\alpha(\textbf{q}_0\cdot\textbf{y})
+\le \textbf{p}\cdot\textbf{x}^\star+\alpha(\textbf{q}_0\cdot\textbf{y}^\star)\le w</script><p>所以，$u(\textbf{x}^\star,\textbf{y})\le u(\textbf{x}^\star,\textbf{y}^\star)$。因此，$u(\textbf{x}^\star,\textbf{y}^\star)=\tilde u(\textbf{x}^\star,\textbf{q}_0\cdot\textbf{y}^\star)$。</p>
+<p>现在令$(\textbf{x},z)$满足$\textbf{p}\cdot \textbf{x}+\alpha z\le w$。于是存在着$\textbf{y}$使得$\textbf{q}_0\cdot\textbf{y}\le z$和$u(\textbf{x},\textbf{y})=\tilde u(\textbf{x},z)$。所以，$\textbf{p}\cdot\textbf{x}+(\alpha\textbf{q}_0)\cdot\textbf{y}=\textbf{p}\cdot\textbf{x}+\alpha(\textbf{q}_0\cdot\textbf{y})\le\textbf{p}\cdot\textbf{x}+\alpha z\le w$。因此：</p>
+<script type="math/tex; mode=display">
+\tilde u(\textbf{x},z)=u(\textbf{x},\textbf{y})\le u(\textbf{x}^\star,\textbf{y}^\star)=\tilde u(\textbf{x}^\star,\textbf{q}_0\cdot\textbf{y}^\star)</script><p>第二个断言得证。</p>
+</blockquote>
+<h3 id="消费者决策模型"><a href="#消费者决策模型" class="headerlink" title="消费者决策模型"></a>消费者决策模型</h3><p>消费集是商品空间$\mathbb{R}^L$上的一个子集，记作$X\subseteq \mathbb{R}^L$，其元素为个人在所处环境下物理约束给定情况下尽可能的<span style='color:red'>消费束</span>。最基本的：</p>
+<script type="math/tex; mode=display">
+X=\mathbb{R}_+^L = \{ \textbf{x}\in\mathbb{R}^L \lvert x_l\ge 0,l=1.\cdots,L\}</script><p>瓦尔拉斯或竞争性<span style='color:red'>预算集</span>：</p>
+<script type="math/tex; mode=display">
+B_{\textbf{p},w}=\{\left. \textbf{x}\in\mathbb{R}_+^L\right\lvert \textbf{p}\cdot \textbf{x}\le w \}</script><p>注意的是，消费者的效用偏好不会受到外生因素$\textbf{p},w$等的影响。</p>
+<p>消费者关心两个问题：</p>
+<ol>
+<li>约束下的效用最大化问题——调整商品组合在预算约束下实现效用最大化</li>
+<li>和支出最小化问题——调整商品组合在效用约束下（达到一定效用之后）实现支出最小化</li>
+</ol>
+<p>这两个问题在某种程度上是等价的，首先来看效用最大化问题：</p>
+<h4 id="效用最大化问题UMP"><a href="#效用最大化问题UMP" class="headerlink" title="效用最大化问题UMP"></a>效用最大化问题UMP</h4><p>给定预算约束的时候，如何实现效用最大化：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \max_{\textbf{x}\ge 0}&& u(\textbf{x})    \notag\\
+    \text{s.t.}&& \textbf{p}\cdot \textbf{x}\le w    \notag
+\end{eqnarray}</script><p>有以下命题成立：</p>
+<p><span style='font-family:hei;font-size:20px'>命题3.D.1: </span>若$p\gg \textbf{0}$且$u(\cdot)$是连续的，则效用最大化问题有解</p>
+<p>给定上述最优化问题之后，实际上就转化成一个数学规划问题了，用拉格朗日乘子法、KKT定理等方法求解即可.</p>
+<p>利用KKT条件可知，如果$\textbf{x}^\star(\textbf{p},w)$是一个内部最优解（这意味着$x\gg \textbf{0}$），并且满足约束规格（此处一定满足约束规格，因为价格向量不为0）那么有：</p>
+<script type="math/tex; mode=display">
+\nabla_\textbf{x}u(\textbf{x}^\star)=\lambda^\star \textbf{p}</script><p>如果$\nabla_\textbf{x}u(\textbf{x}^\star)\gg \textbf{0}$，那么$\lambda^\star$不为0，此时有</p>
+<script type="math/tex; mode=display">
+\frac{\partial u(\textbf{x}^\star)_i/\partial x_i}{\partial u(\textbf{x}^\star)_j/\partial x_j} = \frac{p_i}{p_j}</script><p>也就是说在最优点处边际效用之比等于价格之比。</p>
+<p>让价格作为分母之后，可得：</p>
+<script type="math/tex; mode=display">
+\frac{\partial u(x^\star)/\partial x_i}{p_i} = \frac{\partial u(x^\star)/\partial x_j}{p_j}</script><p>也可以得到最优点处，每一块钱买任何产品带来的边际效用相同。注意，此结论在边角解处并不成立，所以也不要盲目使用KKT条件，先看看是否满足KKT条件的假设.</p>
+<p>通过以上分析可知，给定一组$(\textbf{p},w)$我们可以得到最优解时的$\textbf{x}^\star(\textbf{p},w)$，将其称为<span style='color:red'>瓦尔拉斯需求（马歇尔需求）</span>。它具有<span style='font-family:fangsong'>零次齐次性、满足瓦尔拉斯定律并且满足凸性假设</span>。</p>
+<ul>
+<li>零次齐次：$\textbf{x}^\star(\alpha\textbf{p},\alpha w)=\textbf{x}^\star(\textbf{p},w)$</li>
+<li>瓦尔拉斯定律：$\forall \textbf{x}^\star\in X^\star(\textbf{p},w),\textbf{p}\cdot \textbf{x}^\star=w$</li>
+<li>凸性：$\succsim$是凸偏好，那么$X^\star$是凸集。如果$X^\star$严格凸，那么最优解是唯一的。</li>
+</ul>
+<p>求解出最优的$\textbf{x}^\star(\textbf{p},w)$之后，$u(\textbf{x}^\star(\textbf{p},w))$就是效应最大化时的效用，可以直接用$v(\textbf{p},w)=u(\textbf{x}^\star(\textbf{p},w))$来表示消费者的效用，这被称之为间接效用函数。它是零次齐次性函数。</p>
+<p><span style='font-family:hei;font-size:18px'>财富的边际增加导致的效用变化为：</span></p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\partial u(\textbf{x}(\textbf{p},w))}{\partial w}
+    &=& \nabla_\textbf{x}    u(\textbf{x}(\textbf{p},w)) D_w\textbf{x}(\textbf{p},w)    \notag\\
+    &=& \lambda\textbf{p}\cdot D_w\textbf{x}(\textbf{p},w)    \notag
+\end{eqnarray}\tag{*}</script><p>根据瓦尔拉斯定律：</p>
+<script type="math/tex; mode=display">
+\textbf{p}\cdot \textbf{x}^\star(\textbf{p},w)=w</script><p>两边关于$w$求导：</p>
+<script type="math/tex; mode=display">
+\textbf{p}\cdot D_w\textbf{x}^\star(\textbf{p},w)=1</script><p>代入$(\star)$，得到：</p>
+<script type="math/tex; mode=display">
+\frac{\partial u(\textbf{x}(\textbf{p},w))}{\partial w}=\lambda</script><p>由此可知，KT乘子$\lambda$的含义是最优点上消费者财富的边际效用价值。</p>
+<h4 id="支出最小化问题"><a href="#支出最小化问题" class="headerlink" title="支出最小化问题"></a>支出最小化问题</h4><p>消费者面临的另一个问题是支出最小化问题：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \min_{\textbf{x}\ge 0}&& \textbf{p}\cdot \textbf{x}    \notag\\
+    \text{s.t.}&& u(\textbf{x})\ge u_0    \notag
+\end{eqnarray}</script><p>也就是达到一定效用之后，如何求解最小支出的问题，容易知道这个也是一个可以使用KKT条件求解的问题。这里得到的最优的$x^\star(\textbf{p},u_0)$被称为<span style='color:red'>希克斯需求</span>，通常写为$h(\textbf{p},u_0)$，最优解处对应的支出函数为$e(\textbf{p},u_0)$。</p>
+<p>以下命题总结了效用最大化和支出最小化之间的关系：</p>
+<p><span style='font-family:hei;font-size:20px'>命题3.E.1：</span>假设定义在消费集$X=\mathbb{R}_+^n$上的局部非饱和偏好关系$\succsim$可用连续效用函数$u(\cdot)$表示；而且价格向量$\textbf{p}\gg \textbf{0}$那么，我们有：</p>
+<ul>
+<li>如果财富$w&gt;0$时$\textbf{x}^\star$是UMP中最优的，则对于既定的目标效用水平$u(\textbf{x}^\star)$,$\textbf{x}^\star$在EMP问题中也是最优的，并且这个EMP的最小支出水平恰好为$w$.</li>
+<li>如果目标效用水平$u&gt;u_0$时，$\textbf{x}^\star$是UMP中最优的，则当$w=\textbf{p}\cdot\textbf{x}^\star$时 ，$\textbf{x}^\star$ 在UMP问题中也是最优的，并且这个UMP的最大效用水平恰好为$u_0$.</li>
+</ul>
+<p>即</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&h(\textbf{p},u) = x(\textbf{p},e(\textbf{p},u))    \notag\\
+    &&x(\textbf{p},w) = h(\textbf{p},v(\textbf{p},w))    \notag
+\end{eqnarray}</script><p>这样，我们就建立起了希克斯需求对应和瓦尔拉斯需求对应的联系。</p>
+<p><span style='font-family:hei;font-size:18px'>补偿需求法则</span></p>
+<p>希克斯需求函数满足对所有的$\textbf{p}’,\textbf{p}’’$，有：</p>
+<script type="math/tex; mode=display">
+(\textbf{p}''-\textbf{p}')\cdot[h(\textbf{p}'',u)-h(\textbf{p}',u)]\le 0</script><h3 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h3><div align='center'>
+  <img src='/../../images/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/image-20210302160809407.png' width=400px>
+  <center style='font-family:kai'>对偶问题关系图</center>
+</div>
+
+<p><span style='font-family:hei;font-size:20px'>希克斯需求和支出函数：</span></p>
+<script type="math/tex; mode=display">
+e(\textbf{p},u)=\textbf{p}h(\textbf{p},u)\Rightarrow h(\textbf{p},u)=\nabla_{\textbf{p}}e(\textbf{p},u)</script><p><span style='font-family:hei;font-size:20px'>希克斯需求和瓦尔拉斯需求：</span></p>
+<p>希克斯需求不是直接可以观测的，而瓦尔拉斯需求是可以直接观测到的，二者之间的关系通过<span style='color:red'>Slutsky方程</span>表达出来：</p>
+<p>假设$u(\cdot)$是一个连续效用函数，代表一个定义咋消费集$X$上的<strong>局部非饱和的严格凸</strong>偏好关系。对于所有$(\textbf{p},w)$和$u=v(\textbf{p},w)$，有</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \frac{\partial h_l}{\partial p_k}&=&\frac{\partial x_l(\textbf{p},w)}{\partial p_k}+\frac{\partial x_l(\textbf{p},w)}{\partial w}x_k(\textbf{p},w)    \notag\\
+    D_{\textbf{p}}h(\textbf{p},u)&=&D_{\textbf{p}}\textbf{x}(\textbf{p},w)+D_w\textbf{x}(\textbf{p},w)\textbf{x}(\textbf{p},w)    \notag
+\end{eqnarray}</script><div align='center'>
+  <img src='/../../images/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/image-20210302183501089.png' width=300px>
+  <center style='font-family:kai'>马歇尔需求函数和希克斯需求函数</center>
+</div>
+
+<blockquote>
+<p>如上图所示，根据对偶的性质，在达到均衡的时候两条曲线是相交的：</p>
+<script type="math/tex; mode=display">
+\textbf{h}(\textbf{p}^\star,u)=\textbf{x}(\textbf{p}^\star,w)=\textbf{x}(\textbf{p}^\star,e(\textbf{p}^\star,u))</script><p>因此：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    D_{\textbf{p}}\textbf{h}(\textbf{p}^\star,u)
+&=&D_{\textbf{p}}\textbf{x}(\textbf{p}^\star,w)+D_w\textbf{x}(\textbf{p}^\star,w)\cdot D_{\textbf{p}}e(\textbf{p}^\star,w)    \notag\\
+&=& D_{\textbf{p}}\textbf{x}(\textbf{p}^\star,w)+D_w\textbf{x}(\textbf{p}^\star,w)\cdot\textbf{x}(\textbf{p}^\star,w)    \notag
+\end{eqnarray}</script></blockquote>
+<p>如图所示，瓦尔拉斯需求曲线比希克斯需求曲线更加平缓，考察斯拉茨基方程，当$p_l$上升到大于$\bar p_l$的时候，如果我们想维持效用水平不变，必须要增加消费者的财富。因此，如果商品$l$是正常商品，在不进行补偿的情形下，消费者对它的需求会下降更多。</p>
+<p><span style='font-family:hei;font-size:20px'>斯拉茨基替代矩阵</span></p>
+<script type="math/tex; mode=display">
+S(\textbf{p},w)=D_\textbf{p}h(\textbf{p},u)</script><p>它的性质是半负定、对称，满足$S(\textbf{p},w)\textbf{p}=0$</p>
+<p><span style='font-family:hei;font-size:20px'>命题3.G.2</span>假设$u(\cdot)$是一个连续效用函数，代表一个定义在消费集$X$上的局部非饱和的和严格凸的偏好关系；$h(\textbf{p},u)$连续可微，则有</p>
+<ol>
+<li>$D_\textbf{p}h(\textbf{p},u)=D_\textbf{p}^2e(\textbf{p},u)$</li>
+<li>$D_\textbf{p}h(\textbf{p},u)$是半正定矩阵</li>
+<li>$D_\textbf{p}h(\textbf{p},u)$是对称矩阵</li>
+<li>$D_\textbf{p}h(\textbf{p},u)\textbf{p}=0$</li>
+</ol>
+<p><span style='font-family:hei;font-size:20px'>罗伊恒等式</span></p>
+<p>假设$u(\cdot)$是一个连续效用函数，代表一个定义在消费集$X$上的局部非饱和的和严格凸的偏好关系。假设间接效用函数$v(\textbf{p},w)$是可微的，则</p>
+<script type="math/tex; mode=display">
+\textbf{x}(\textbf{p},w)=-\frac{1}{\nabla_w v(\textbf{p},w)}\nabla_\textbf{p}v(\textbf{p},w)</script><blockquote>
+<p>因为$v(\textbf{p},e(\textbf{p},\bar u))=\bar u,\forall \textbf{p}$，因此设$\bar u =v(\bar{\textbf{p}},\bar w)$。</p>
+<p>关于$\textbf{p}$求导，得到：</p>
+<script type="math/tex; mode=display">
+\nabla_{\textbf{p}}v(\bar{\textbf{p}},\bar e(\bar{\textbf{p}},\bar u))+\nabla_wv(\bar{\textbf{p}},\bar e(\bar{\textbf{p}},\bar u))\nabla_{\textbf{p}}e(\bar{\textbf{p}},\bar u))=0</script><p>根据希克斯需求的定义：</p>
+<script type="math/tex; mode=display">
+\nabla_{\textbf{p}}e(\bar{\textbf{p}},\bar u)) 
+= h(\bar{\textbf{p}},\bar u)
+= \textbf{x}(\bar{\textbf{p}},\bar w)</script><p>代入上面，得到罗伊恒等式。</p>
+</blockquote>
+<h3 id="3-I-经济变化的福利评价"><a href="#3-I-经济变化的福利评价" class="headerlink" title="3.I 经济变化的福利评价"></a>3.I 经济变化的福利评价</h3><p>这一节关注的主要是<span style='color:red'>价格变动的福利效应</span>。</p>
+<p>考虑理性、连续、局部非饱和的偏好关系。假设支出函数和间接效用函数是可微的。注意以下几点：</p>
+<ul>
+<li>$v(\textbf{p},w)&gt;v(\textbf{p}’,w’)$意味着消费者更加偏好$(\textbf{p},w)$。</li>
+<li>$e(\textbf{p},u)&lt;e(\textbf{p}’,u)$说明消费者在价格为$\textbf{p}’$时，比在价格为$\textbf{p}$时情况更坏。</li>
+<li>我们要讨论以下两个问题：<ul>
+<li>为了补偿因外生变量发生改变带来的损失，要支付消费者多少？</li>
+<li>这一改变带来的变化等价于多少的财富？</li>
+</ul>
+</li>
+</ul>
+<p>两种价格分别为$\textbf{p}^0$和$\textbf{p}^1$。有两种度量福利变化的指标：等价变化$EV$和补偿变化$CV$。令</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&u^0=v(\textbf{p}^0,w),u^1=v(\textbf{p}^1,w)    \notag\\
+    &&e(\textbf{p}^0,u^0)=e(\textbf{p}^1,u^1)=w    \notag
+\end{eqnarray}</script><p>第一行的是间接效用函数，第二行的是用<strong>货币度量的间接效用函数</strong>。后面的计算使用的主要是货币度量的间接效用函数。注意到，<span style='color:red'>上面两个式子中财富$w$是不变的。</span>用式子变量两种变化：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    EV(\textbf{p}^0,\textbf{p}^1,w) &=& e(\textbf{p}^0,u^1) - e(\textbf{p}^0,u^0)
+    =e(\textbf{p}^0,u^1)-w    \notag\\
+    &=& e(\textbf{p}^0,u^1)-e(\textbf{p}^1,u^1)
+    =\int_{p_1^1}^{p_1^0} h_1(p_1,\bar{\textbf{p}}_{-1},u^1)\text{d}p_1    \notag
+\end{eqnarray}</script><p>积分那里为了简单起见，只有商品1的价格发生了变化，因此有$p_1^0\neq p_1^1,\textbf{p}_{-1}^0=\textbf{p}_{-1}^1=\bar{\textbf{p}}_{-1}$。<span style='font-family:kai'>等价性变化可以想象成一笔财富，消费者在接受这笔财富还是接受价格变化之间无差异。也就是说，等价性变化的是消费者的财富的变化。</span>我们也可以用间接效用函数来表示等价变化：$v(\textbf{p}^0,w+EV)=u^1$。</p>
+<blockquote>
+<p>如果$u_1=v(\textbf{p}^0,w+EV)$，那么</p>
+<script type="math/tex; mode=display">
+e(\textbf{p}^0,u^1)=e(\textbf{p}^0,v(\textbf{p}^0,w+EV))=w+EV</script><p>正是EV的定义式。</p>
+</blockquote>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    CV(\textbf{p}^0,\textbf{p}^1,w) &=& e(\textbf{p}^1,u^1) - e(\textbf{p}^1,u^0)
+    =w-e(\textbf{p}^1,u^1)    \notag\\
+    &=& e(\textbf{p}^0,u^0)-e(\textbf{p}^1,u^0)
+    =\int_{p_1^1}^{p_1^0} h_1(p_1,\bar{\textbf{p}}_{-1},u^0)\text{d}p_1    \notag
+\end{eqnarray}</script><p>积分那里为了简单起见，只有商品1的价格发生了变化，因此有$p_1^0\neq p_1^1,\textbf{p}_{-1}^0=\textbf{p}_{-1}^1=\bar{\textbf{p}}_{-1}$。<span style='font-family:kai'>补偿性变化衡量的是当商品价格变化时为了让消费者回到原来的效用水平$u^0$，我们必须补偿给他的净财富。[因此，如果我们必须补偿消费者正的净收入（此时因为价格改变消费者的状况变差了），那么补偿性变化是负的]可以将这笔财富看作为了让消费者接受价格变化，他恰好愿意接受的补偿财富。</span>用间接效用函数表示补偿性变化为：$v(\textbf{p}^1,w-CV)=u^0$。</p>
+<p><span style='color:red'>注意到，两种变化都是假定价格不变的情况下，效用改变带来的财富变化。只不过等价变化采用的是变化前的价格，而补偿变化采用的是变化后的价格。</span>等价变化是说价格改变给消费者带来的财富变化，等价于在旧的价格水平下多少增加了多少效用；而补偿变化是说价格改变后我们要补偿多少财富才能保持效用水平和原来一样。</p>
+<p>消费者在$\textbf{p}^1$时状况更好，当且仅当$EV,CV$都为正数。一般来讲二者并不相等。</p>
+<div align='center'>
+  <img src='/../../images/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/image-20210303110346679.png' width=500px>
+  <center style='font-family:kai'>等价性变化和补偿性变化（图中阴影部分）</center>
+  <p align='left' style='font-family:kai'>
+    如上图所示，商品1的价格下降了。如果商品1是正常品，那么外生参数价格下降的结果必然是希克斯需求曲线的右移。
+  </p>
+</div>
+
+<p>当商品1是正常品的情形，$EV&gt;CV$。当商品1时劣等品时，$EV&lt;CV$。</p>
+<p><span style='font-family:hei;font-size:20px'>特殊情形</span>如果偏好对商品1是<span style='color:red'>拟线性的</span>，那么财富效应对商品1不存在，此时有$EV=CV$。这是因为：</p>
+<script type="math/tex; mode=display">
+h_1(p_1,\bar{\textbf{p}}_{-1},u^0) 
+= x_1(p_1,\bar{\textbf{p}}_{-1},w)
+= h_1(p_1,\bar{\textbf{p}}_{-1},u^1)</script><blockquote>
+<p>证明：</p>
+<p>已有证明，对于拟线性的商品，可以将支出函数写为如下形式：</p>
+<script type="math/tex; mode=display">
+e(\textbf{p},u)=\tilde{e}(p_2,\cdots,p_L)+u\quad(p_1=1)</script><p>因此，</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    EV(\textbf{p}^0,\textbf{p}^1,w)&=& e(\textbf{p}^0,u^1)-e(\textbf{p}^0,u^0)    \notag\\
+  &=& \left(\tilde{e}(p_2^0,\cdots,p_L^0)+u^1 \right) 
+  - \left( \tilde{e}(p_2^0,\cdots,p_L^0)+u^0 \right)    \notag\\
+  &=& u^1-u^0    \notag\\
+    CV(\textbf{p}^0,\textbf{p}^1,w)&=& e(\textbf{p}^1,u^1)-e(\textbf{p}^1,u^0)\notag\\
+    &=&    \left(\tilde{e}(p_2^1,\cdots,p_L^1)+u^1 \right) 
+  - \left( \tilde{e}(p_2^1,\cdots,p_L^0)+u^1 \right)    \notag\\
+  &=& u^1-u^0    \notag
+\end{eqnarray}</script><p>所以$CV=EV$对于任意$(\textbf{p}^0,\textbf{p}^1,w)$都成立。</p>
+</blockquote>
+<p><span style='font-family:hei;font-size:24px'>商品税导致的净损失</span></p>
+<p>考虑因政府对某种商品征税从而使得价格向量从$\textbf{p}^0$上升到$\textbf{p}^1$的情形。为了更具体些，假设对商品1征税，消费者每购买一单位商品1需要缴纳$t$的税收。这种税使得商品1的实际价格变为$p_1^1=p_1^0+t$，所有其他商品的价格维持在原来的水平上。政府筹集的税收总收入为$T=tx_1(\textbf{p}^1,w)$。</p>
+<p>政府也可以不收商品税，而是直接对消费者的财富征收定额税，这种税收不会改变商品价格。如果两种情况下的税收总额相同，消费者在哪种税制下的状况更差一些？</p>
+<p>如果商品税的等价性变化EV小于他在定额税下的损失（$-T$），那么征收商品税会使消费者的状况变得更差。用支出函数表达就是：</p>
+<script type="math/tex; mode=display">
+w-T>e(\textbf{p}^0,u^1)</script><p>消费者在缴纳定额税后所剩的财富，大于在价格为$\textbf{p}^0$时为达到效用水平$u^1$所必须的财富水平，那么与征收定额税相比，征税商品税会使消费者的状况变得更差。其差额为</p>
+<script type="math/tex; mode=display">
+(-T)-EV(\textbf{p}^0,\textbf{p}^1,w)=w-T-e(p^0,u^1)</script><p>被称为<span style='color:red'>商品税造成的无谓损失</span>。</p>
+<h2 id="第二章-消费者选择"><a href="#第二章-消费者选择" class="headerlink" title="第二章 消费者选择"></a>第二章 消费者选择</h2><p>首先，给定收入（禀赋）$w$（注意：$w$是一个标量）和商品价格$\textbf{p}$（注意：$\textbf{p}$是一个$L$维向量，表示$L$种商品的价格），消费者会有一个商品选择$\textbf{x}(\textbf{p},w)$，当然可能会同时有多个商品选择，这里先限制为1个，并且假设$\textbf{x}(\textbf{p},w)$是连续的，$\textbf{x}(\textbf{p},w)$被称为马歇尔需求函数。这个函数在上文已经提到。</p>
+<p>有了需求函数后，就可以做比较静态分析了，比如分析财富$w$变动对需求的影响，只需保持价格$\textbf{p}$不变，对$w$求偏导即可：</p>
+<script type="math/tex; mode=display">
+D_w\textbf{x}(\textbf{p},w) = \left( \frac{\partial x_1(\textbf{p},w)}{\partial w},\cdots, \frac{\partial x_L(\textbf{p},w)}{\partial w} \right)'</script><p>同理，可以分析价格变化对需求的影响，也只需要求偏导即可，也就是雅克比矩阵。</p>
+<h3 id="零次齐次性与欧拉公式"><a href="#零次齐次性与欧拉公式" class="headerlink" title="零次齐次性与欧拉公式"></a>零次齐次性与欧拉公式</h3><p>假定马歇尔需求函数满足零次齐次性，即</p>
+<script type="math/tex; mode=display">
+\textbf{x}(\alpha \textbf{p},\alpha w)=\textbf{x}(\textbf{p},w)</script><p>对$\alpha$进行求导：</p>
+<script type="math/tex; mode=display">
+\textbf{p}'\nabla_{\alpha\textbf{p} }\textbf{x}(\alpha\textbf{p},\alpha w)
++D_{\alpha w}\textbf{x}(\alpha\textbf{p},\alpha w)\cdot w=0</script><p>令$\alpha=0$，得到：</p>
+<script type="math/tex; mode=display">
+\textbf{p}'\nabla_{\textbf{p} }\textbf{x}(\textbf{p}, w)
++D_{w}\textbf{x}(\textbf{p},w)\cdot w=0</script><p>写成分量求和的形式：</p>
+<script type="math/tex; mode=display">
+\sum_{k=1}^L \frac{\partial x_l(\textbf{p},w)}{\partial p_k}p_k
++\frac{\partial x_l(\textbf{p},w)}{\partial w}w=0</script><p>这里利用的是欧拉公式。不妨变成弹性的形式：</p>
+<script type="math/tex; mode=display">
+\sum_{k=1}^L \frac{\partial x_l(\textbf{p},w)}{\partial p_k}\cdot\frac{p_k}{x_l(\textbf{p},w)}
++\frac{\partial x_l(\textbf{p},w)}{\partial w}\cdot\frac{w}{x_l(\textbf{p},w)}=0;\quad l=1,\cdots,L</script><p>即：</p>
+<script type="math/tex; mode=display">
+\sum_{k=1}^L \varepsilon_{lk} +\varepsilon_{lw}=0;\quad l=1,\cdots,L</script><p>对于固定的价格$\textbf{p}^0$，关于财富的函数$\textbf{x}(\textbf{p}^0,w)$称为消费者的恩格尔函数。其图像称为财富扩展路径。（恩格尔曲线）$\frac{\partial x_l(\textbf{p},w)}{\partial w}$上面的被称为财富效应（收入效应）。</p>
+<hr>
+<p>第二个性质是马歇尔定律，$\textbf{p}\cdot\textbf{x}(\textbf{p},w)=w$，两边对价格$\textbf{p}$求导，</p>
+<script type="math/tex; mode=display">
+\textbf{x}(\textbf{p},w)+\textbf{p}'\nabla_\textbf{p}\textbf{x}(\textbf{p},w)=0</script><p>这被称为<span style='color:red'>古诺加和</span>。上式表明：<strong>价格的变化不会引起总支出的变化，也就是说价格</strong>$p_k$<strong>的变化，对总支出</strong>$\textbf{p}\cdot\textbf{x}(\textbf{p},w)$<strong>的影响为0，也就是说可能多买这个，少买那个，但是总支出一定不会变！</strong></p>
+<p>两边对$w$求导，可得：</p>
+<script type="math/tex; mode=display">
+\textbf{p}'D_w\textbf{x}(\textbf{p},w)=1</script><p>这被称为<span style='color:red'>恩格尔加和</span>。<strong>上式表明，财富变化一个单位引起的总支出的变化量一定等于总财富的变化量</strong>。</p>
+<h3 id="价格效应"><a href="#价格效应" class="headerlink" title="价格效应"></a>价格效应</h3><p>导数$\frac{\partial x_l(\textbf{p},w)}{\partial p_k}$称为商品$k$的价格$p_k$对商品$l$需求的价格效应。</p>
+<p>1、自身价格效应</p>
+<ul>
+<li>如果$\frac{\partial x_l(\textbf{p},w)}{\partial p_l}\le 0$，称为满足需求法则</li>
+<li>如果$\frac{\partial x_l(\textbf{p},w)}{\partial p_l}&gt;0$，称商品是吉芬品。</li>
+</ul>
+<p>2、交叉价格效应</p>
+<ul>
+<li>$\frac{\partial x_l(\textbf{p},w)}{\partial p_k}&gt;0,k\neq l$，互为替代品</li>
+<li>$\frac{\partial x_l(\textbf{p},w)}{\partial p_k}&lt;0,k\neq l$，互为互补品</li>
+</ul>
+<p>价格效应矩阵（对比一下上面的斯拉茨基矩阵）：$D_\textbf{p}\textbf{x}(\textbf{p},w)$</p>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://dhndzwxj.github.io/2021/03/01/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/>https://dhndzwxj.github.io/2021/03/01/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-04T13:28:48+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年3月4日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dhndzwxj.github.io/2021/03/01/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/&title=MWG第三章：经典需求理论 - 渝言&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dhndzwxj.github.io/2021/03/01/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/&title=MWG第三章：经典需求理论 - 渝言&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://dhndzwxj.github.io/2021/03/01/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/&title=MWG第三章：经典需求理论 - 渝言&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='../../03/MWG%E7%AC%AC%E4%BA%94%E7%AB%A0%E7%94%9F%E4%BA%A7%E8%80%85%E7%90%86%E8%AE%BA/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>MWG第五章生产者理论</p>
+          <p class='content'>
+感谢知乎用户economics-lover。
+
+本章最重要讨论利润最大化（PMP）和支出最小化（CMP）两大问题。对于单一产出的情况，总结起来有以下三套求解线性规划的问题：
+
+\begin{e...</p>
+        </a>
+      
+      
+        <a class='next' href='../MWG%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9A%E5%81%8F%E5%A5%BD/'>
+          <p class='title'>MWG第一章：偏好<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+  
+  图1 本章大纲
+
+
+
+感谢知乎用户economics-lover。
+
+首先，我们有一些备选物品集合（或者说商品集合）$X$，本质上是想建立关于消费者选择行为的模型，也就是说刻画消费者...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA"><span class="toc-text">第三章 经典需求理论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%90%88%E6%84%8F%E6%80%A7%EF%BC%9A%EF%BC%88satiation%EF%BC%89"><span class="toc-text">1、合意性：（satiation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%81%8F%E5%A5%BD%E7%9A%84%E5%87%B8%E6%80%A7%EF%BC%9A"><span class="toc-text">2、偏好的凸性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%81%8F%E5%A5%BD%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%80%A7"><span class="toc-text">3、偏好的连续性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81-%E6%95%88%E7%94%A8%E5%87%BD%E6%95%B0%E5%87%B9%E5%92%8C%E6%8B%9F%E5%87%B9"><span class="toc-text">4、 效用函数凹和拟凹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E4%BC%BC%E5%81%8F%E5%A5%BD-homothetic"><span class="toc-text">位似偏好(homothetic)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%9F%E7%BA%BF%E6%80%A7%EF%BC%88quasilinear%EF%BC%89"><span class="toc-text">拟线性（quasilinear）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%8C%E5%85%8B%E6%96%AF%E5%A4%8D%E5%90%88%E5%95%86%E5%93%81"><span class="toc-text">希克斯复合商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E8%B4%B9%E8%80%85%E5%86%B3%E7%AD%96%E6%A8%A1%E5%9E%8B"><span class="toc-text">消费者决策模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%88%E7%94%A8%E6%9C%80%E5%A4%A7%E5%8C%96%E9%97%AE%E9%A2%98UMP"><span class="toc-text">效用最大化问题UMP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%AF%E5%87%BA%E6%9C%80%E5%B0%8F%E5%8C%96%E9%97%AE%E9%A2%98"><span class="toc-text">支出最小化问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98"><span class="toc-text">对偶问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-I-%E7%BB%8F%E6%B5%8E%E5%8F%98%E5%8C%96%E7%9A%84%E7%A6%8F%E5%88%A9%E8%AF%84%E4%BB%B7"><span class="toc-text">3.I 经济变化的福利评价</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B6%88%E8%B4%B9%E8%80%85%E9%80%89%E6%8B%A9"><span class="toc-text">第二章 消费者选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%B6%E6%AC%A1%E9%BD%90%E6%AC%A1%E6%80%A7%E4%B8%8E%E6%AC%A7%E6%8B%89%E5%85%AC%E5%BC%8F"><span class="toc-text">零次齐次性与欧拉公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%B7%E6%A0%BC%E6%95%88%E5%BA%94"><span class="toc-text">价格效应</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="MWG第三章：经典需求理论";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+</script>
+
+        
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="../../../../atom.xml"
+                class="social  flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/020-rss.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/020-rss.svg" srcset="data:image/png;base64,666"/>
+                
+              </a>
+            
+          
+            
+          
+            
+              <a href="../../../../https:/github.com/dhndzwxj"
+                class="social  flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/029-github.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/029-github.svg" srcset="data:image/png;base64,666"/>
+                
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次&lt;/span&gt; <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人&lt;/span&gt;</p>
+</div>
+        
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2020-2020 by Juncker</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    <script>
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  
+  
+</script>
+<!-- required -->
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+
+
+
+
+  
+  
+<script src="../../../../js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "4GxrlYYHiDtgVVBt1brJjjiW-gzGzoHsz",
+      appKey: "457XUbyBHsGjI5e61V5pAdO4",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+  
+<script src="../../../../js/app.js"></script>
+
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('../../../../js/search/hexo.js',setSearchService);
+	
+})
+
+function listenSearch(){
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+}
+function setSearchService() {
+	listenSearch();
+	
+		document.addEventListener("pjax:success", listenSearch);
+	
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: '4GxrlYYHiDtgVVBt1brJjjiW-gzGzoHsz',
+    app_key: '457XUbyBHsGjI5e61V5pAdO4',
+    custom_api_server: 'https://4gxrlyyh.lc-cn-n1-shared.com',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://dhndzwxj.github.io' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://dhndzwxj.github.io' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://dhndzwxj.github.io' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+
+
+
+    
+      
+
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  
+      window.ShowLoading();
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+       
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+	 
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+        
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+      window.HideLoading();
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.HideLoading();
+	  
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>

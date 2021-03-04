@@ -343,13 +343,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：6.6k字</p>
+      <p>字数：6.9k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：33分钟</p>
+      <p>时长：34分钟</p>
     </a>
   </div>
  -->
@@ -359,13 +359,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：6.6k字</p>
+      <p>字数：6.9k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：33分钟</p>
+      <p>时长：34分钟</p>
     </a>
   </div> -->
 
@@ -374,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">6.6k字</span>
+        <span class="post-count">6.9k字</span>
       </span>
     </span>
  
@@ -383,7 +383,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">33分</span>
+        <span class="post-count">34分</span>
       </span>
     </span>
     
@@ -399,7 +399,10 @@
 
 
   
-  <h2 id="时间序列"><a href="#时间序列" class="headerlink" title="时间序列"></a>时间序列</h2><h3 id="概念合集"><a href="#概念合集" class="headerlink" title="概念合集"></a>概念合集</h3><h4 id="鞅（Martingales）"><a href="#鞅（Martingales）" class="headerlink" title="鞅（Martingales）"></a>鞅（Martingales）</h4><p>一个<span style='color:red'>向量</span>值时间序列过程如果满足：</p>
+  <p><span style='font-family:kai'>知识点：线性回归中的估计，只要残差是外生的，参数估计结果就是无偏的；如果残差是内生的，参数估计结果一定是有偏的，这种情况下我们追求的是得到一致的估计结果。本页的内容解决的均为残差内生的情况。</span></p>
+<h2 id="分块回归"><a href="#分块回归" class="headerlink" title="分块回归"></a>分块回归</h2><p>参考章永辉课件第179页。</p>
+<h2 id="时间序列"><a href="#时间序列" class="headerlink" title="时间序列"></a>时间序列</h2><h3 id="概念合集"><a href="#概念合集" class="headerlink" title="概念合集"></a>概念合集</h3><h4 id="自相关系数"><a href="#自相关系数" class="headerlink" title="自相关系数"></a>自相关系数</h4><p>章永辉课件第292页。</p>
+<h4 id="鞅（Martingales）"><a href="#鞅（Martingales）" class="headerlink" title="鞅（Martingales）"></a>鞅（Martingales）</h4><p>一个<span style='color:red'>向量</span>值时间序列过程如果满足：</p>
 <script type="math/tex; mode=display">
 \mathbb{E}(Y_t\lvert Y_{t-1},Y_{t-2},\cdots)
 =\mathbb{E}(Y_t\lvert I_{t-1})=Y_{t-1}\quad\text{a.s.}</script><p>它被称为鞅。</p>
@@ -522,7 +525,7 @@ Y_i=\textbf{x}_i'\beta+\varepsilon_i</script><p>假定$\mathbb{E}(\textbf{x}_i\v
 =
 \left(\begin{matrix}
     I_{k_1}    &    \Gamma_{12}\\
-    0_{k_2\times k_1}    &    \Gamma_{22}
+    0_{l_2\times k_1}    &    \Gamma_{22}
 \end{matrix}\right)    \notag\\
     \textbf{E}&=&(0_{n\times k_1},\textbf{E}_2)    \notag
 \end{eqnarray}</script><p>于是有：</p>
@@ -572,7 +575,7 @@ Y_i=\textbf{x}_i'\beta+\varepsilon_i</script><p>假定$\mathbb{E}(\textbf{x}_i\v
     \frac{\textbf{X}'\textbf{Z}}{n}\left(\frac{\textbf{Z}'\textbf{Z}}{n}\right)^{-1} \frac{\textbf{Z}'\textbf{Y}}{n}    \notag\\
     &=& (\textbf{Z}'\textbf{X})^{-1}
     \color{green}{(\textbf{Z}'\textbf{Z})}\color{purple}{(\textbf{X}'\textbf{Z})^{-1}(\textbf{X}'\textbf{Z})}
-    \color{green}{(\textbf{Z}'\textbf{Z})^{-1}}\textbf{Z}'\textbf{Y}    \notag\\
+    \color{green}{(\textbf{Z}'\textbf{Z})^{-1}} \color{black}{\textbf{Z}'\textbf{Y}}    \notag\\
     &=&(\textbf{Z}'\textbf{X})^{-1}\textbf{Z}'\textbf{Y}\equiv\hat\beta_{IV}    \notag\\
 \end{eqnarray}</script></li>
 </ul>
@@ -580,8 +583,17 @@ Y_i=\textbf{x}_i'\beta+\varepsilon_i</script><p>假定$\mathbb{E}(\textbf{x}_i\v
 <script type="math/tex; mode=display">
 \sqrt{n}\left( \hat\beta_{2SLS}-\beta \right)\rightarrow_d N(0,\Omega)</script><p>其中</p>
 <script type="math/tex; mode=display">
-\Omega=\left(Q_{xz}Q_{zz}^{-1}Q_{zx}\right)^{-1}Q_{xz}Q_{zz}^{-1}V
-Q_{zz}^{-1}Q_{xz}'\left(Q_{xz}Q_{zz}^{-1}Q_{zx}\right)^{-1}</script><p>情形1:条件同方差情形：$V=\sigma^2I\Rightarrow \Omega=\left[Q_{xz}Q_{zz}^{-1}Q_{zx}\right]^{-1}\sigma^2$</p>
+\begin{eqnarray}
+    \Omega&=& \text{Var}(\hat\beta_{2SLS})
+    =\text{Var}\left\{ \left[ \textbf{X}'\textbf{Z}(\textbf{Z}'\textbf{Z})^{-1}\textbf{Z}'\textbf{X} \right]^{-1} \textbf{X}'\textbf{Z}(\textbf{Z}'\textbf{Z})^{-1}\textbf{Z}'\varepsilon\right\}    \notag\\
+    &=&    \left[ \textbf{X}'\textbf{Z}(\textbf{Z}'\textbf{Z})^{-1}\textbf{Z}'\textbf{X} \right]^{-1} \textbf{X}'\textbf{Z}(\textbf{Z}'\textbf{Z})^{-1}\textbf{Z}'\text{Var}(\textbf{Z}'\varepsilon)\textbf{Z}(\textbf{Z}'\textbf{Z})^{-1}\textbf{Z}'\textbf{X}\left[ \textbf{X}'\textbf{Z}(\textbf{Z}'\textbf{Z})^{-1}\textbf{Z}'\textbf{X} \right]^{-1}    \notag\\
+    &=&\left[ \frac{\textbf{X}'\textbf{Z}}n\frac{(\textbf{Z}'\textbf{Z})^{-1}}n\frac{\textbf{Z}'\textbf{X}}n \right]^{-1} \frac{\textbf{X}'\textbf{Z}}n\frac{(\textbf{Z}'\textbf{Z})^{-1}}nV
+    \frac{(\textbf{Z}'\textbf{Z})^{-1}}n\frac{\textbf{Z}'\textbf{X}}n
+    \left[ \frac{\textbf{X}'\textbf{Z}}n\frac{(\textbf{Z}'\textbf{Z})^{-1}}n\frac{\textbf{Z}'\textbf{X}}n \right]^{-1}    \notag\\
+    &=&\left(Q_{xz}Q_{zz}^{-1}Q_{zx}\right)^{-1}Q_{xz}Q_{zz}^{-1}VQ_{zz}^{-1}Q_{zx}\left(Q_{xz}Q_{zz}^{-1}Q_{zx}\right)^{-1}    \notag\\
+\end{eqnarray}</script><p>其中</p>
+<script type="math/tex; mode=display">
+V=\text{Var}(\textbf{Z}'\varepsilon)=\textbf{Z}'\text{Var}(\varepsilon)\textbf{Z}</script><p>情形1:条件同方差情形：$\text{Var}(\varepsilon)=\sigma^2I\Rightarrow V=\sigma^2\textbf{Z}’\textbf{Z}\Rightarrow \Omega=\left[Q_{xz}Q_{zz}^{-1}Q_{zx}\right]^{-1}\sigma^2$，于是统计量的估计值为：</p>
 <script type="math/tex; mode=display">
 \hat\Omega=\left[\hat Q_{xz}\hat Q_{zz}^{-1}\hat Q_{zx}\right]^{-1}s^2</script><p>情形2:条件异方差：我们这样估计$V$:</p>
 <script type="math/tex; mode=display">
@@ -961,10 +973,10 @@ x_i-\mu\\    x_i^2-\mu^2-\sigma^2\\x_i^3-\mu^3-3\mu\sigma^2
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-01T11:21:07+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-02T18:40:11+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月1日</p>
+    <p>更新于：2021年3月2日</p>
   </a>
 </div>
 
@@ -1147,7 +1159,7 @@ $F_K,F_L&gt;0;F_{KK},F_{LL}&lt;0$；
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="toc-text">时间序列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E5%90%88%E9%9B%86"><span class="toc-text">概念合集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9E%85%EF%BC%88Martingales%EF%BC%89"><span class="toc-text">鞅（Martingales）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9E%85%E5%B7%AE%E5%BA%8F%E5%88%97"><span class="toc-text">鞅差序列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0"><span class="toc-text">随机游走</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E5%B9%B3%E7%A8%B3%E9%9E%85%E5%B7%AE%E5%BA%8F%E5%88%97%E7%9A%84%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="toc-text">遍历平稳鞅差序列的中心极限定理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%81%87%E5%AE%9A"><span class="toc-text">基本假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%90%86"><span class="toc-text">定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="toc-text">假设检验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98"><span class="toc-text">7 内生性问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E5%86%85%E7%94%9F%E6%80%A7"><span class="toc-text">7.1 内生性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E5%B7%A5%E5%85%B7%E5%8F%98%E9%87%8F%E5%9B%9E%E5%BD%92"><span class="toc-text">7.2 工具变量回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-1-%E7%BB%93%E6%9E%84%E6%96%B9%E7%A8%8B"><span class="toc-text">7.2.1 结构方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-2-%E7%AE%80%E7%BA%A6%E5%BD%A2%E5%BC%8F"><span class="toc-text">7.2.2 简约形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-3-%E8%AF%86%E5%88%AB"><span class="toc-text">7.2.3 识别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-4-%E5%81%87%E5%AE%9A"><span class="toc-text">7.2.4 假定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-5-%E4%B8%A4%E9%98%B6%E6%AE%B5%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E4%BC%B0%E8%AE%A1%EF%BC%882SLS%EF%BC%89"><span class="toc-text">7.2.5 两阶段最小二乘估计（2SLS）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-6-%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E4%BC%B0%E8%AE%A1"><span class="toc-text">7.2.6 协方差矩阵估计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-7-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="toc-text">7.2.7 假设检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-8-Hausman%EF%BC%88%E8%B1%AA%E6%96%AF%E6%9B%BC%EF%BC%89%E6%A3%80%E9%AA%8C%EF%BC%9A%E6%A3%80%E9%AA%8C%E8%87%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%86%85%E7%94%9F%E6%80%A7"><span class="toc-text">7.2.8 Hausman（豪斯曼）检验：检验自变量的内生性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%B9%BF%E4%B9%89%E7%9F%A9%E4%BC%B0%E8%AE%A1%EF%BC%88GMM%EF%BC%89"><span class="toc-text">8 广义矩估计（GMM）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E7%9F%A9%E4%BC%B0%E8%AE%A1%EF%BC%88MM%EF%BC%89%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-text">8.1 矩估计（MM）的例子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83"><span class="toc-text">泊松分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83"><span class="toc-text">正态分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%EF%BC%88MLE%EF%BC%8Cmaximize-likelihood-estimate%EF%BC%89"><span class="toc-text">极大似然估计（MLE，maximize likelihood estimate）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-%E5%B9%BF%E4%B9%89%E7%9F%A9%E4%BC%B0%E8%AE%A1%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">8.2 广义矩估计的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-1-%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90%EF%BC%9A%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E7%9A%84GMM%E4%BC%B0%E8%AE%A1"><span class="toc-text">8.2.1 一个例子：线性回归模型的GMM估计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-2-GMM%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7"><span class="toc-text">8.2.2 GMM估计量的一致性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-3-%E6%B8%90%E8%BF%9B%E6%AD%A3%E6%80%81%E6%80%A7"><span class="toc-text">8.2.3 渐进正态性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-4-%E6%9C%80%E4%BC%98%E6%9D%83%E9%87%8D%E7%9F%A9%E9%98%B5"><span class="toc-text">8.2.4 最优权重矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-5-%E6%9C%89%E6%95%88%E7%8E%87%E7%9A%84GMM%E4%BC%B0%E8%AE%A1%E9%87%8F"><span class="toc-text">8.2.5 有效率的GMM估计量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-6-%E6%B8%90%E8%BF%9B%E6%96%B9%E5%B7%AE%E4%BC%B0%E8%AE%A1%E9%87%8F"><span class="toc-text">8.2.6 渐进方差估计量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-7-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="toc-text">8.2.7 假设检验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B"><span class="toc-text">8.3 一个实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A%E5%85%B3%E4%BA%8EGMM%E7%9A%84"><span class="toc-text">更多关于GMM的</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%9D%97%E5%9B%9E%E5%BD%92"><span class="toc-text">分块回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="toc-text">时间序列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E5%90%88%E9%9B%86"><span class="toc-text">概念合集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0"><span class="toc-text">自相关系数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9E%85%EF%BC%88Martingales%EF%BC%89"><span class="toc-text">鞅（Martingales）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9E%85%E5%B7%AE%E5%BA%8F%E5%88%97"><span class="toc-text">鞅差序列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0"><span class="toc-text">随机游走</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E5%B9%B3%E7%A8%B3%E9%9E%85%E5%B7%AE%E5%BA%8F%E5%88%97%E7%9A%84%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="toc-text">遍历平稳鞅差序列的中心极限定理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%81%87%E5%AE%9A"><span class="toc-text">基本假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%90%86"><span class="toc-text">定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="toc-text">假设检验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%86%85%E7%94%9F%E6%80%A7%E9%97%AE%E9%A2%98"><span class="toc-text">7 内生性问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E5%86%85%E7%94%9F%E6%80%A7"><span class="toc-text">7.1 内生性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E5%B7%A5%E5%85%B7%E5%8F%98%E9%87%8F%E5%9B%9E%E5%BD%92"><span class="toc-text">7.2 工具变量回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-1-%E7%BB%93%E6%9E%84%E6%96%B9%E7%A8%8B"><span class="toc-text">7.2.1 结构方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-2-%E7%AE%80%E7%BA%A6%E5%BD%A2%E5%BC%8F"><span class="toc-text">7.2.2 简约形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-3-%E8%AF%86%E5%88%AB"><span class="toc-text">7.2.3 识别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-4-%E5%81%87%E5%AE%9A"><span class="toc-text">7.2.4 假定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-5-%E4%B8%A4%E9%98%B6%E6%AE%B5%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E4%BC%B0%E8%AE%A1%EF%BC%882SLS%EF%BC%89"><span class="toc-text">7.2.5 两阶段最小二乘估计（2SLS）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-6-%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E4%BC%B0%E8%AE%A1"><span class="toc-text">7.2.6 协方差矩阵估计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-7-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="toc-text">7.2.7 假设检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-8-Hausman%EF%BC%88%E8%B1%AA%E6%96%AF%E6%9B%BC%EF%BC%89%E6%A3%80%E9%AA%8C%EF%BC%9A%E6%A3%80%E9%AA%8C%E8%87%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%86%85%E7%94%9F%E6%80%A7"><span class="toc-text">7.2.8 Hausman（豪斯曼）检验：检验自变量的内生性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%B9%BF%E4%B9%89%E7%9F%A9%E4%BC%B0%E8%AE%A1%EF%BC%88GMM%EF%BC%89"><span class="toc-text">8 广义矩估计（GMM）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E7%9F%A9%E4%BC%B0%E8%AE%A1%EF%BC%88MM%EF%BC%89%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-text">8.1 矩估计（MM）的例子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83"><span class="toc-text">泊松分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83"><span class="toc-text">正态分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%EF%BC%88MLE%EF%BC%8Cmaximize-likelihood-estimate%EF%BC%89"><span class="toc-text">极大似然估计（MLE，maximize likelihood estimate）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-%E5%B9%BF%E4%B9%89%E7%9F%A9%E4%BC%B0%E8%AE%A1%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">8.2 广义矩估计的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-1-%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90%EF%BC%9A%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E7%9A%84GMM%E4%BC%B0%E8%AE%A1"><span class="toc-text">8.2.1 一个例子：线性回归模型的GMM估计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-2-GMM%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7"><span class="toc-text">8.2.2 GMM估计量的一致性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-3-%E6%B8%90%E8%BF%9B%E6%AD%A3%E6%80%81%E6%80%A7"><span class="toc-text">8.2.3 渐进正态性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-4-%E6%9C%80%E4%BC%98%E6%9D%83%E9%87%8D%E7%9F%A9%E9%98%B5"><span class="toc-text">8.2.4 最优权重矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-5-%E6%9C%89%E6%95%88%E7%8E%87%E7%9A%84GMM%E4%BC%B0%E8%AE%A1%E9%87%8F"><span class="toc-text">8.2.5 有效率的GMM估计量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-6-%E6%B8%90%E8%BF%9B%E6%96%B9%E5%B7%AE%E4%BC%B0%E8%AE%A1%E9%87%8F"><span class="toc-text">8.2.6 渐进方差估计量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-7-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="toc-text">8.2.7 假设检验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B"><span class="toc-text">8.3 一个实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A%E5%85%B3%E4%BA%8EGMM%E7%9A%84"><span class="toc-text">更多关于GMM的</span></a></li></ol>
     </div>
   </section>
 
