@@ -343,13 +343,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：7.1k字</p>
+      <p>字数：7.9k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：31分钟</p>
+      <p>时长：35分钟</p>
     </a>
   </div>
  -->
@@ -359,13 +359,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：7.1k字</p>
+      <p>字数：7.9k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：31分钟</p>
+      <p>时长：35分钟</p>
     </a>
   </div> -->
 
@@ -374,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">7.1k字</span>
+        <span class="post-count">7.9k字</span>
       </span>
     </span>
  
@@ -383,7 +383,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">31分</span>
+        <span class="post-count">35分</span>
       </span>
     </span>
     
@@ -481,19 +481,30 @@
 &\Rightarrow& \textbf{x}+\alpha \textbf{e}_1\sim\textbf{y}+\alpha \textbf{e}_1    \notag
 \end{eqnarray}</script><p>反方向太复杂了，我不想写了。</p>
 </blockquote>
-<p><span style='font-family:hei;font-size:20px'>习题3.E.7</span>证明如果$\succsim$关于商品1是拟线性的，那么商品$2,3,\cdots,L$的希克斯需求函数不取决于$u$。</p>
+<p><span style='font-family:hei;font-size:20px'>习题3.E.7</span>证明如果$\succsim$关于商品1是拟线性的，那么商品$2,3,\cdots,L$的希克斯需求函数不取决于$u$。这种情况下，支出函数具有什么样的形式？</p>
 <blockquote>
 <p>证明：</p>
 <p>$\succsim$关于商品1是拟线性的，那么根据习题3.E.5，它可以用形式为$u(\textbf{x})=x_1+\bar u(x_2,\cdots,x_L)$的效用函数来表示。令$\textbf{e}_1=(1,0,\cdots,0)’\in\mathbb{R}^L$，</p>
-<p>我们将证明对于每个$\textbf{p}\gg \textbf{0}(p_1=1)$，$u\mathbb{R},\alpha\in\mathbb{R}$和$\textbf{x}\in(-\infty,+\infty)\times\mathbb{R}_+^{L-1}$，如果$\textbf{x}=h(\textbf{p},u)$，那么$\textbf{x}+\alpha\textbf{e}_1=h(\textbf{p},u+\alpha)$。</p>
-<p>首先注意到，</p>
-</blockquote>
-<h3 id="希克斯复合商品"><a href="#希克斯复合商品" class="headerlink" title="希克斯复合商品"></a>希克斯复合商品</h3><p>假设有两组合意商品$\textbf{x}$和$\textbf{y}$，对应的价格分别为$\textbf{p}$和$\textbf{q}$。消费者的效用函数为$u(\textbf{x},\textbf{y})$，他的财富为$w&gt;0$。假设商品组$\textbf{y}$的价格总是同时同比例变化的，因此我们可以写为$\textbf{q}=\alpha\textbf{q}_0$。对于任意实数$z\ge0$，定义函数：</p>
+<p>我们将证明对于每个$\textbf{p}\gg \textbf{0}(p_1=1)$，$u\in\mathbb{R},\alpha\in\mathbb{R}$和$\textbf{x}\in(-\infty,+\infty)\times\mathbb{R}_+^{L-1}$，如果$\textbf{x}=h(\textbf{p},u)$，那么$\textbf{x}+\alpha\textbf{e}_1=h(\textbf{p},u+\alpha)$。</p>
+<p>首先注意到，因为$\textbf{x}=h(\textbf{p},u)$，根据成本最小化问题的求解过程，$u(\textbf{x})\ge u\Rightarrow u(\textbf{x})+\alpha\ge u+\alpha$。注意到：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    u(\textbf{x})+\alpha &=& x_1+\bar u(x_2,\cdots,x_L)+\alpha    \notag\\
+    &=& (x_1+\alpha)+\bar u(x_2,\cdots,x_L)    \notag\\
+    &=&u(\textbf{x}+\alpha\textbf{e}_1)    \notag
+\end{eqnarray}</script><p><span style='color:red'>很明显，这个性质(效用的增加等于计价物商品数量的增加)是拟线性偏好独有的。</span>因此有$u(\textbf{x}+\alpha\textbf{e}_1)\ge u+\alpha$，也就是说，$\textbf{x}+\alpha\textbf{e}_1$满足$(\textbf{p},u+\alpha)$的支出最小化问题的约束。<span style='color:blue'>任取</span>$\textbf{y}\in\mathbb{R}^L_+$和$u(\textbf{y})\ge u+\alpha$，于是$u(\textbf{y})-\alpha\ge u\Rightarrow u(\textbf{y}-\alpha\textbf{e}_1)\ge u$    (理由如前面红字)。而由于$\textbf{x}=h(\textbf{p},u)$，即$\textbf{x}$是$(\textbf{p},u)$的支出最小化问题的最优解，所以$\textbf{p}\cdot(\textbf{y}-\alpha\textbf{e}_1)\ge\textbf{p}\cdot\textbf{x}$。因此，$\textbf{p}\cdot\textbf{y}\ge \textbf{p}(\textbf{x}+\alpha \textbf{e}_1)$。由$\textbf{y}$的任意性，因此，$\textbf{x}+\alpha\textbf{e}_1=h(\textbf{p},u+\alpha)$。</p>
+<p><span style='font-family:fangsong'>证明$\textbf{x}+\alpha\textbf{e}_1=h(\textbf{p},u+\alpha)$这类题的套路：</span></p>
+<p><span style='font-family:fangsong'>首先证明$\textbf{x}+\alpha\textbf{e}_1$满足CPM问题的约束条件。然后再任取另一个满足条件的向量，证明$\textbf{x}+\alpha\textbf{e}_1$比其更优即可。</span></p>
+<p>上面的结果表明，效用只会随着商品1消费量的增加而增加。因此对于每个$l\in\{2,\cdots,L\}$，$u\in\mathbb{R},u’\in\mathbb{R}$，都有$h_l(\textbf{p},u)=h_l(\textbf{p},u’)$。即商品$2,3,\cdots,L$的希克斯需求函数不取决于$u$。因此我们定义$\tilde h(\textbf{p})=h(\textbf{p},0)$，那么$h(\textbf{p},u)=\tilde{h}(\textbf{p})+u\textbf{e}_1$。</p>
+<p>由于$h(\textbf{p},u+\alpha)=h(\textbf{p},u)+\alpha\textbf{e}_1$，我们有$e(\textbf{p},u+\alpha)=e(\textbf{p},u)+\alpha$。同理有支出函数改为如下形式：</p>
+<script type="math/tex; mode=display">
+e(\textbf{p},u)=\tilde{e}(\textbf{p})+u</script></blockquote>
+<h3 id="习题3-G-5-希克斯复合商品"><a href="#习题3-G-5-希克斯复合商品" class="headerlink" title="习题3.G.5 希克斯复合商品"></a>习题3.G.5 希克斯复合商品</h3><p>假设有两组合意商品$\textbf{x}$和$\textbf{y}$，对应的价格分别为$\textbf{p}$和$\textbf{q}$。消费者的效用函数为$u(\textbf{x},\textbf{y})$，他的财富为$w&gt;0$。假设商品组$\textbf{y}$的价格总是同时同比例变化的，因此我们可以写为$\textbf{q}=\alpha\textbf{q}_0$。对于任意实数$z\ge0$，定义函数：</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
     \tilde u(\textbf{x},z)&=&\max_{\textbf{y}} u(\textbf{x},\textbf{y})    \notag\\
     \text{s.t. }&& \textbf{q}_0\cdot \textbf{y}\le z    \notag
-\end{eqnarray}</script><p>（a）假设经济中的商品为商品组$\textbf{x}$和某种复合商品$z$，消费者的效用函数为$\tilde u(\textbf{x},z)$，$\alpha$是复合商品$z$的价格，证明</p>
+\end{eqnarray}</script><p>（a）假设经济中的商品为商品组$\textbf{x}$和某种复合商品$z$（可以将$z$看作其他商品支出之和），消费者的效用函数为$\tilde u(\textbf{x},z)$，$\alpha$是复合商品$z$的价格，证明</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
     \max_{\textbf{x},z} &&\tilde u(\textbf{x},z)    \notag\\
@@ -527,6 +538,20 @@ u(\textbf{x},\textbf{y})\le \tilde u(\textbf{x},\textbf{q}_0\cdot \textbf{y})\le
 <script type="math/tex; mode=display">
 \tilde u(\textbf{x},z)=u(\textbf{x},\textbf{y})\le u(\textbf{x}^\star,\textbf{y}^\star)=\tilde u(\textbf{x}^\star,\textbf{q}_0\cdot\textbf{y}^\star)</script><p>第二个断言得证。</p>
 </blockquote>
+<h3 id="字典序偏好"><a href="#字典序偏好" class="headerlink" title="字典序偏好"></a>字典序偏好</h3><p>一个例子，设$\textbf{x}=(x_1,x_2)’,\textbf{y}=(y_1,y_2)’$，字典序偏好是说：</p>
+<ul>
+<li>如果$x_1&gt;y_1$，则$\textbf{x}\succsim \textbf{y}$。</li>
+<li>如果$x_1=y_1,x_2&gt;y_2$，则$\textbf{x}\succsim\textbf{y}$。</li>
+<li>如果$x_1=y_1,x_2=y_2$，则$\textbf{x}\sim\textbf{y}$。</li>
+</ul>
+<p>这一偏好是理性的： 满足完备性、传递性的、强单调的和严格凸的，但是不连续，因此没有效用函数。</p>
+<p><span style='font-family:hei;font-size:20px'>证明不存在能表示字典序偏好关系的效用函数</span></p>
+<p>假设存在某个效用函数$u(\cdot)$。对于每个$x_1$，我们可以选择一个有理数$r(x_1)$使得$u(x_1,2)&gt;r(x_1)&gt;u(x_1,1)$（数学分析里，有一个<strong>有理数的致密性</strong>保证这个不等式存在）。</p>
+<p>注意，消费者的偏好是字典序的，$x_1&gt;x_1’$意味着$r(x_1)&gt;u(x_1,1)&gt;u(x’_1,2)&gt;r(x_1’)$。因此$r(\cdot)$给出了从实数集到有理数集一对一的函数（数学上的“双射”）。利用一些实变函数的知识，这是不可能的。</p>
+<p><span style='font-family:hei;font-size:20px'>证明字典序的偏好是不连续的</span></p>
+<p>考虑消费束序列$\textbf{x}^n=(\frac1n,0)’$和$\textbf{y}^n=(0,1)’$。对于每个$n$，都有$x\succ y$。但</p>
+<script type="math/tex; mode=display">
+\lim_{n\rightarrow+\infty}\textbf{y}^n=(0,1)'\succ(0,0)'=\lim_{n\rightarrow+\infty}\textbf{x}^n</script><p>由于连续的偏好一定存在效用函数，字典序偏好不连续也说明了确实不存在效用函数来表示字典序偏好。</p>
 <h3 id="消费者决策模型"><a href="#消费者决策模型" class="headerlink" title="消费者决策模型"></a>消费者决策模型</h3><p>消费集是商品空间$\mathbb{R}^L$上的一个子集，记作$X\subseteq \mathbb{R}^L$，其元素为个人在所处环境下物理约束给定情况下尽可能的<span style='color:red'>消费束</span>。最基本的：</p>
 <script type="math/tex; mode=display">
 X=\mathbb{R}_+^L = \{ \textbf{x}\in\mathbb{R}^L \lvert x_l\ge 0,l=1.\cdots,L\}</script><p>瓦尔拉斯或竞争性<span style='color:red'>预算集</span>：</p>
@@ -798,10 +823,10 @@ D_w\textbf{x}(\textbf{p},w) = \left( \frac{\partial x_1(\textbf{p},w)}{\partial 
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-04T13:28:48+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-05T19:09:02+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月4日</p>
+    <p>更新于：2021年3月5日</p>
   </a>
 </div>
 
@@ -993,7 +1018,7 @@ D_w\textbf{x}(\textbf{p},w) = \left( \frac{\partial x_1(\textbf{p},w)}{\partial 
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA"><span class="toc-text">第三章 经典需求理论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%90%88%E6%84%8F%E6%80%A7%EF%BC%9A%EF%BC%88satiation%EF%BC%89"><span class="toc-text">1、合意性：（satiation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%81%8F%E5%A5%BD%E7%9A%84%E5%87%B8%E6%80%A7%EF%BC%9A"><span class="toc-text">2、偏好的凸性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%81%8F%E5%A5%BD%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%80%A7"><span class="toc-text">3、偏好的连续性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81-%E6%95%88%E7%94%A8%E5%87%BD%E6%95%B0%E5%87%B9%E5%92%8C%E6%8B%9F%E5%87%B9"><span class="toc-text">4、 效用函数凹和拟凹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E4%BC%BC%E5%81%8F%E5%A5%BD-homothetic"><span class="toc-text">位似偏好(homothetic)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%9F%E7%BA%BF%E6%80%A7%EF%BC%88quasilinear%EF%BC%89"><span class="toc-text">拟线性（quasilinear）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%8C%E5%85%8B%E6%96%AF%E5%A4%8D%E5%90%88%E5%95%86%E5%93%81"><span class="toc-text">希克斯复合商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E8%B4%B9%E8%80%85%E5%86%B3%E7%AD%96%E6%A8%A1%E5%9E%8B"><span class="toc-text">消费者决策模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%88%E7%94%A8%E6%9C%80%E5%A4%A7%E5%8C%96%E9%97%AE%E9%A2%98UMP"><span class="toc-text">效用最大化问题UMP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%AF%E5%87%BA%E6%9C%80%E5%B0%8F%E5%8C%96%E9%97%AE%E9%A2%98"><span class="toc-text">支出最小化问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98"><span class="toc-text">对偶问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-I-%E7%BB%8F%E6%B5%8E%E5%8F%98%E5%8C%96%E7%9A%84%E7%A6%8F%E5%88%A9%E8%AF%84%E4%BB%B7"><span class="toc-text">3.I 经济变化的福利评价</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B6%88%E8%B4%B9%E8%80%85%E9%80%89%E6%8B%A9"><span class="toc-text">第二章 消费者选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%B6%E6%AC%A1%E9%BD%90%E6%AC%A1%E6%80%A7%E4%B8%8E%E6%AC%A7%E6%8B%89%E5%85%AC%E5%BC%8F"><span class="toc-text">零次齐次性与欧拉公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%B7%E6%A0%BC%E6%95%88%E5%BA%94"><span class="toc-text">价格效应</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA"><span class="toc-text">第三章 经典需求理论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%90%88%E6%84%8F%E6%80%A7%EF%BC%9A%EF%BC%88satiation%EF%BC%89"><span class="toc-text">1、合意性：（satiation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%81%8F%E5%A5%BD%E7%9A%84%E5%87%B8%E6%80%A7%EF%BC%9A"><span class="toc-text">2、偏好的凸性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%81%8F%E5%A5%BD%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%80%A7"><span class="toc-text">3、偏好的连续性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81-%E6%95%88%E7%94%A8%E5%87%BD%E6%95%B0%E5%87%B9%E5%92%8C%E6%8B%9F%E5%87%B9"><span class="toc-text">4、 效用函数凹和拟凹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E4%BC%BC%E5%81%8F%E5%A5%BD-homothetic"><span class="toc-text">位似偏好(homothetic)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%9F%E7%BA%BF%E6%80%A7%EF%BC%88quasilinear%EF%BC%89"><span class="toc-text">拟线性（quasilinear）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%983-G-5-%E5%B8%8C%E5%85%8B%E6%96%AF%E5%A4%8D%E5%90%88%E5%95%86%E5%93%81"><span class="toc-text">习题3.G.5 希克斯复合商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E5%BA%8F%E5%81%8F%E5%A5%BD"><span class="toc-text">字典序偏好</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E8%B4%B9%E8%80%85%E5%86%B3%E7%AD%96%E6%A8%A1%E5%9E%8B"><span class="toc-text">消费者决策模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%88%E7%94%A8%E6%9C%80%E5%A4%A7%E5%8C%96%E9%97%AE%E9%A2%98UMP"><span class="toc-text">效用最大化问题UMP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%AF%E5%87%BA%E6%9C%80%E5%B0%8F%E5%8C%96%E9%97%AE%E9%A2%98"><span class="toc-text">支出最小化问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98"><span class="toc-text">对偶问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-I-%E7%BB%8F%E6%B5%8E%E5%8F%98%E5%8C%96%E7%9A%84%E7%A6%8F%E5%88%A9%E8%AF%84%E4%BB%B7"><span class="toc-text">3.I 经济变化的福利评价</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%B6%88%E8%B4%B9%E8%80%85%E9%80%89%E6%8B%A9"><span class="toc-text">第二章 消费者选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%B6%E6%AC%A1%E9%BD%90%E6%AC%A1%E6%80%A7%E4%B8%8E%E6%AC%A7%E6%8B%89%E5%85%AC%E5%BC%8F"><span class="toc-text">零次齐次性与欧拉公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%B7%E6%A0%BC%E6%95%88%E5%BA%94"><span class="toc-text">价格效应</span></a></li></ol></li></ol>
     </div>
   </section>
 
