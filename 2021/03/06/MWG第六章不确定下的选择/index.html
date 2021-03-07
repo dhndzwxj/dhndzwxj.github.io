@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>MWG第六章不确定下的选择 - 渝言</title>
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="../../../../css/first.css">
+
+  
+
+  
+  <link rel="stylesheet" href="../../../../css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="../../../../css/style.css"></noscript>
+  
+
+  <script id="loadcss"></script>
+
+</head>
+
+<body>
+  
+
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='../../../../index.html'>
+          
+            <img no-lazy class='logo' src='/img/avatar.jpg'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
+                  
+                  
+                  
+                    id="indexhtml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="标题或者全文搜索" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
+                  
+                  
+                  
+                    id="indexhtml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div id="l_body">
+    <div id="l_cover">
+  
+    
+        <div id="full" class='cover-wrapper post search' style="display: none;">
+          
+            <div class='cover-bg lazyload placeholder' data-bg="img/bg.png"></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+      <img no-lazy class='logo' src='../../../../img/logo.png'/>
+    
+    
+    
+  </div>
+  <div class='bottom'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="标题或者全文搜索" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        MWG第六章不确定下的选择
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            <!-- 
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="fas fa-user">
+    <p>请设置文章作者</p>
+  </a>
+</div> -->
+
+
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <i class=" fas fa-user" aria-hidden="true"></i>
+    <!-- <i class=" fa-fw" aria-hidden="true"></i> -->
+    <!-- <img no-lazy src=""> -->
+    <!-- <p></p> --> <!--原始代码，引用的是author.name，但是md文件中都没有这么写-->
+    <p>揭晓</p>
+  </a>
+</div>
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年3月6日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/">博资考</a><span class="sep"></span><a class="category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/MWG%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E7%90%86%E8%AE%BA/">MWG微观经济理论</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <!-- 
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.9k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：7分钟</p>
+    </a>
+  </div>
+ -->
+
+
+
+  <!-- <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.9k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：7分钟</p>
+    </a>
+  </div> -->
+
+  <div style="margin-top:0px;"> <!--这一行的margin-top，意思是是否与该行文字对其，0是对其-->
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.9k字</span>
+      </span>
+    </span>
+ 
+    <span class="post-time">
+      &nbsp;  &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">7分</span>
+      </span>
+    </span>
+    
+</div>
+
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  <blockquote>
+<p>感谢知乎用户<a href='https://zhuanlan.zhihu.com/p/335529007' target='_blank'>economics-lover</a>。</p>
+</blockquote>
+<p>这篇文章的主要内容：</p>
+<ol>
+<li>效用函数与偏好；</li>
+<li>冯诺依曼-摩根斯坦效用函数理论——个人认为该理论的核心就是如何处理不确定情况下的偏好，他们证明了如下事实：一个理性偏好满足连续性、单调性、可简化性和<strong>独立性</strong>时，可由线性函数（线性指的是关于概率$p_k$的线性）表示。</li>
+</ol>
+<p>效用函数是从备选集到实数集的一个映射：$f:X\rightarrow\mathbb{R}$效用背后反映的是偏好。如果：$\forall x,y\in X$，都有</p>
+<script type="math/tex; mode=display">
+f(x)\ge f(y)\iff x\succsim y</script><p>那么我们说效用函数$f$反映了定义在$X$上的偏好$\succsim$。</p>
+<p>关于选择的一个重要难题是：</p>
+<p><strong>结果是不确定的！</strong></p>
+<p>如果结果确定，那么比较容易做出选择，只需要在备选集里面选择一个最好的即可，但在不确定情况下，事情会比较复杂。</p>
+<p>例如：1、两个备选方案$x$和$y$分别会以0.4,0.6的概率发生；2、两个备选方案$x$和$y$分别会以0.5,0.5的概率发生。</p>
+<p>此时个体应该如何决策呢？如果方案更复杂一些，又该怎么样呢？必须给出一套切实可行的理论对此进行分析。</p>
+<h3 id="6-B-期望效用理论"><a href="#6-B-期望效用理论" class="headerlink" title="6.B 期望效用理论"></a>6.B 期望效用理论</h3><p>一步一步来建立整个框架，每一步都应该符合已经学过的东西或者说经济学直觉。</p>
+<h4 id="风险备选物的描述"><a href="#风险备选物的描述" class="headerlink" title="风险备选物的描述"></a>风险备选物的描述</h4><p>首先为了叙述方便，我们把之前的被选集表述为<strong>结果集</strong>$O=\{A_1,\cdots,A_k\}$</p>
+<p><span style='font-family:hei;font-size:20px'>定义6.B.1</span> 定义$O$上的一个彩票（lottery）为：$L=[p_1(A_1),\cdots,p_k(A_k)]$(<span style='font-family:kai'>彩票从数学上说就是一个概率向量</span>)，博弈的结果可能是随机的，$A_k$出现的概率为$p_k$，定义彩票的集合为：</p>
+<script type="math/tex; mode=display">
+\mathscr{L} = \{L\lvert L=[p_1(A_1),\cdots,p_k(A_k)],\sum p_k(A_k)=1 \}</script><p>当然，有了简单彩票，就能定义复杂彩票：$\hat L=[q_1(L_1),\cdots,q_J(L_J)]$，可以定义复杂彩票集合：</p>
+<script type="math/tex; mode=display">
+\hat{\mathscr{L}} = \{ \hat L\lvert \hat L=[q_1(L_1),\cdots,q_J(L_J)],\sum q_j(L_j)=1 \}</script><p>其中，$L_j=[p_1^j(A_1),\cdots,p_k^j(A_k)]$是第$j$张简单彩票。同理，我们也可以定义复杂彩票空间上的效用函数，不过后面的<strong>可简化性公理</strong>表明，任何一个复杂彩票都可以转化为一个简单彩票，因此研究简单彩票即可。</p>
+<h4 id="在彩票上的偏好"><a href="#在彩票上的偏好" class="headerlink" title="在彩票上的偏好"></a>在彩票上的偏好</h4><p><span style='font-family:hei;font-size:20px'><strong>可简化性：</strong></span>任何一个复杂彩票都可以简化成一个简单彩票，即：</p>
+<script type="math/tex; mode=display">
+\hat L=[q_1(L_1),\cdots,q_J(L_J)]\sim L=[r_1(A_1),\cdots,r_k(A_K)]</script><p>其中，$r_k=\sum_{j=1}^J q_jp_k^j$，这也是非常合理的，任何一个复杂彩票本质上都是一个简单彩票。</p>
+<p>决策者在彩票空间上的决策要满足两个重要假设，最重要也是最有争议性的是<span style='color:red'>独立性公理</span>，第二个是<span style='color:red'>连续性公理</span>。先介绍连续性公理：</p>
+<p><span style='font-family:hei;font-size:20px'>定义6.B.3(连续性公理)</span>简单彩票空间$\zeta$上的偏好关系$\succsim$是连续的，如果对于任何$L,L’,L’’\in\mathscr{L}$集合</p>
+<script type="math/tex; mode=display">
+\{ \alpha\in[0,1] \lvert \alpha L+(1-\alpha)L'\succsim L'' \}\subseteq [0,1]</script><p>与</p>
+<script type="math/tex; mode=display">
+\{\alpha\in[0,1]\lvert L''\succsim\alpha L+(1-\alpha)L'  \}\subseteq[0,1]</script><p>都是闭集。<span style='color:red'>连续性公理意味着存在代表$\succsim$的效用函数$U:\mathscr{L}\rightarrow\mathbb{R}$使得$L\succsim L’\iff U(L)\ge U(L’)$。</span></p>
+<p>上面的定义似乎有一点脱离直觉，接下来给出另一种连续性的定义：</p>
+<blockquote>
+<p>对于任何$A\succsim B\succsim C$，都可以找到$\theta\in[0,1]$,使得$B\sim\theta A+(1-\theta)C$，即$B$和$\theta A+(1-\theta)C$一样好。</p>
+</blockquote>
+<p>接下来介绍独立性公理：</p>
+<p><span style='font-family:hei;font-size:20px'>定义6.B.4（独立性公理）</span>简单彩票空间$\zeta$上的偏好关系$\succsim$满足独立性公理，如果对于所有$L,L’,L’’\in\mathscr{L}$，$\alpha\in[0,1]$，我们有：</p>
+<script type="math/tex; mode=display">
+L\succsim L'\iff \alpha L+(1-\alpha)L''\succsim \alpha L'+(1-\alpha)L''</script><p><span style='font-family:fangsong'>这意味着，如果$L\succsim L’$，那么加入第三个彩票$L’’$，不管这个彩票是什么，都不会影响个体的偏好。(有点类似于前面的拟线性偏好)</span></p>
+<p>独立性的另一种定义：</p>
+<blockquote>
+<p>如果某个简单彩票和某个简单结果等价，即：$L_j\sim A_j$，那么：</p>
+<script type="math/tex; mode=display">
+\hat L=[q_1(L_1),\cdots,q_j(L_j),\cdots,q_J(L_J)]\sim[q_1(L_1),\cdots,q_j(A_j),\cdots,q_J(L_J)]</script></blockquote>
+<p><span style='font-family:hei;font-size:20px'>效用函数</span></p>
+<p>接下来，引入效用函数：如果$u(L)\ge u(L’)\iff L\succsim L’$，那么我们说$u:\mathscr{L}\rightarrow\mathbb{R}$反映了定义在$\mathscr{L}$上的偏好$\succsim$。</p>
+<p><span style='font-family:hei;font-size:20px'>定义6.B.5</span>(<span style='color:red'>期望效用函数</span>)效用函数$U:\zeta\rightarrow\mathbb{R}$具有期望效用形式，如果可以对$N$个结果$(A_1,\cdots,A_N)$指定一组数值$(u_1,\cdots,u_N)$( <span style='font-family:kai'>这里注意哈，这组数是对于任何彩票都成立的！</span>)，使得对于每个简单彩票$(p_1,\cdots,p_N)\in\zeta$，都有</p>
+<script type="math/tex; mode=display">
+U(L)=p_1u_1+\cdots+p_Nu_N</script><p>或者写成：$U(L)=p_1(A_1)u(A_1)+\cdots+p_N(A_N)u(A_N)$。我们称效用函数$U$具有<span style='color:red'>期望效用形式</span>，该函数被称为v.N-M期望效用函数（<span style='color:red'>冯·诺依曼-摩根斯坦期望效用函数</span>）。上述形式可知，$U(L)$是关于概率$(p_1,\cdots,p_K)$的线性函数。</p>
+<p><span style='font-family:hei;font-size:20px'>命题6.B.1</span>效用函数$U(\cdot)$具有期望效用形式当且仅当它是线性的，即当且仅当它满足：</p>
+<script type="math/tex; mode=display">
+U\left( \sum_{k=1}^K\alpha_kL_k \right)=\sum_{k=1}^K\alpha_kU(L_k)</script><p>对于任何$K$个彩票$L_k\in\mathscr{L},k=1,\cdots,K$以及概率$(\alpha_1,\cdots,\alpha_K)\geqq\textbf{0}$，$\sum_k\alpha_k=1$成立。（<span style='font-family:kai'>这是说，v.N-M期望效用函数是线性的！</span>）</p>
+<blockquote>
+<p><span style='font-family:fangsong'>根据该命题，期望效用函数是线性的，所以无差异曲线是一簇平行的直线！！！</span></p>
+</blockquote>
+<p><span style='font-family:hei;font-size:20px'>命题6.B.2</span>假设$U:\mathscr{L}\rightarrow\mathbb{R}$是$\mathscr{L}$代表上的偏好关系$\succsim$的v.N-M期望效用函数。那么$\tilde U:\mathscr{L}\rightarrow\mathbb{R}$是$\succsim$的另一个v.N-M期望效用函数的充分必要条件是：存在实数$\beta&gt;0,\gamma$，使得$\tilde U(L)=\beta U(L)+\gamma$对于每一个$L$都成立。</p>
+<h4 id="期望效用定理"><a href="#期望效用定理" class="headerlink" title="期望效用定理"></a>期望效用定理</h4><p><span style='font-family:hei;font-size:20px'>命题6.B.3（期望效用定理）</span>假设彩票空间$\mathscr{L}$上的理性偏好关系$\succsim$满足连续性和独立性公理，那么可以用具有期望效用形式的效用函数表示，也就是说我们可以给每一个结果$A_k$赋予一个值$u_k$，使得对于任何两个简单彩票$L=(p_1,\cdots,p_K)$和$L’=(p_1’,\cdots,p_K’)$，都有：</p>
+<script type="math/tex; mode=display">
+L\succsim L'\iff U(L)=\sum_{k=1}^K p_ku_k\ge\sum_{k=1}^Kp_k'u_k=U(L')</script><h4 id="期望效用理论的讨论"><a href="#期望效用理论的讨论" class="headerlink" title="期望效用理论的讨论"></a>期望效用理论的讨论</h4><p>期望效用(Expected Utility)理论假设概率是线性的。针对其线性假设的最著名反例是阿莱悖论。</p>
+<ul>
+<li>一个游戏（game），三个一样的门，门后分别为500万，100万，0.</li>
+<li>Round1<ul>
+<li>Game1 100%找到100万的门</li>
+<li>Game2 10%找到500万，89%找到100万，1%找到0</li>
+</ul>
+</li>
+<li>Round2<ul>
+<li>Game3 11%找到100万，89%找到0</li>
+<li>Game4 10%找到500万，90%找到0</li>
+</ul>
+</li>
+</ul>
+<p>实验中的结果：</p>
+<ul>
+<li>Round1: $U(100)&gt;10\%U(500)+89\%U(100)+1\%U(0)$</li>
+<li>Round2: $11\%U(100)+89\%U(0)&lt;10\%U(500)+90\%U(0)$</li>
+</ul>
+<p>在Round2两边加上$89\%U(100)-89\%U(0)$，得到：（两边可以加的原因是满足独立性公理）</p>
+<script type="math/tex; mode=display">
+U(100)<10\%U(500)+89\%U(100)+1\%U(0)</script><p>这与Round1矛盾！（用实验来证明期望效用理论的错误）</p>
+<p>阿莱悖论的另一种表述是：按照<a target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/期望效用理论">期望效用理论</a>，<a target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/风险厌恶者">风险厌恶者</a>应该选择Game1和Game3；而风险喜好者应该选择Game2和Game4。然而实验中的大多数人选择Game1和Game4。</p>
+<p><span style='font-family:kai'>阿莱悖论的解释：出现阿莱悖论的原因是<a target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/确定效应">确定效应</a>（<a target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/Certain_effect">Certain effect</a>），即人在决策时，对结果确定的现象过度重视。</span></p>
+<div align='center'>
+  <img src='/../../images/MWG%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B8%8D%E7%A1%AE%E5%AE%9A%E4%B8%8B%E7%9A%84%E9%80%89%E6%8B%A9/image-20210307105930476.png' width=600px>
+  <img src='/../../images/MWG%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B8%8D%E7%A1%AE%E5%AE%9A%E4%B8%8B%E7%9A%84%E9%80%89%E6%8B%A9/image-20210307105948620.png' width=600px>
+  <center style='font-family:kai'>图6.B.7 阿莱悖论的直观解释</center>
+</div>
+
+<h3 id="6-C-货币性彩票与风险厌恶"><a href="#6-C-货币性彩票与风险厌恶" class="headerlink" title="6.C 货币性彩票与风险厌恶"></a>6.C 货币性彩票与风险厌恶</h3><h4 id="风险备选项：结果为一定量货币（连续变量）"><a href="#风险备选项：结果为一定量货币（连续变量）" class="headerlink" title="风险备选项：结果为一定量货币（连续变量）"></a>风险备选项：结果为一定量货币（连续变量）</h4><p>假设我们研究的是货币型彩票，也就是说某个值出现的概率是多少，这样可以方便的<span style='color:blue'>使用累积分布函数$F:\mathbb{R}\rightarrow[0,1]$来刻画彩票</span>，不管是离散型彩票还是连续型彩票都可以方便地进行刻画。即如果某个彩票的分布函数具有相对应的密度函数$f(\cdot)$，那么对于所有的$x$，我们有$F(x)=\int_{-\infty}^x f(t)\text{d}t$。</p>
+<p>我们将使用分布函数来描述基于货币结果之上的彩票。将彩票空间$\mathscr{L}$视为在非负货币量上的所有分布函数组成的集合。对于非负货币量可以赋予效用值$u(x)$，使得任何$F(\cdot)$可用具有下列形式的效用函数$U(\cdot)$评估：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    U(F)=\int u(x)\text{d}F(x)    \tag{6.C.1}
+\end{eqnarray}</script><p>注意，（确定性）货币$x$的效用值$u(x)$，被称为<span style='color:red'>伯努利效用函数</span>。假设它是递增的和连续的。</p>
+<h4 id="风险规避（厌恶）及其衡量"><a href="#风险规避（厌恶）及其衡量" class="headerlink" title="风险规避（厌恶）及其衡量"></a>风险规避（厌恶）及其衡量</h4><p><span style='font-family:hei;font-size:20px'>定义6.C.1</span>如果对于任意彩票$F(\cdot)$，确定性地给出$\int x\text{d}F(x)$至少和彩票本身一样好，则决策者就是一个<span style='color:red'>风险规避者（风险厌恶者,risk aversion）</span>。如果决策者觉得两张彩票是无差异的，则被称为是<span style='color:red'>风险中性</span>的。如果只有当这两张彩票相同时，无差异关系才成立，则被称为是严格风险规避的。</p>
+<p>风险规避用效用函数来表示就是：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    u\left( \int x\text{d}F(x) \right)\ge\int u(x)\text{d}F(x)    \quad\forall F(\cdot)\tag{6.C.2}
+\end{eqnarray}</script><p>该式子被称为詹森不等式（Jensen’s Inequality），这是凹函数的特征。也就是在文献里面经常见到的，我们假设效用函数是二阶连续可微的，并且$u’(x)&gt;0,u’’(x)<0$。因此，在期望效用理论的情形中，<span style='color:red'>风险厌恶等价于伯努利效用函数$u(\cdot)$是凹的&lt;/span&gt;。</p>
+<p>为了更好的理解风险厌恶，定义两个重要概念：</p>
+<ol>
+<li><p><span style='color:red'>确定性等价</span>$c(F,u)$，这是一个<span style='color:red'>确定的货币量</span>，其效用和彩票$F(x)$一样，即：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    u(c(F,u))=\int u(x)\text{d}F(x)    \tag{6.C.3}
+\end{eqnarray}</script><p>如果个体是风险厌恶的，那么一定有：$c(F,u)=\int x\text{d}F(x)$，也就是说个体会为了确定性，牺牲一部分期望收益。</p>
+</li>
+<li><p><span style='color:red'>概率溢价</span>$\pi(x,\varepsilon,u)$，这是一个<span style='color:red'>概率</span>，是指超过公平概率0.5的部分，使得个体对下列两种结果的概率是无差异的，一种是确定性结果$x$，另一种是介于结果$x+\varepsilon$和$x-\varepsilon$之间的赌博。数学定义如下：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    u(x)=(0.5+\pi(x,\varepsilon,u))u(x+\varepsilon)+(0.5-\pi(x,\varepsilon,u))u(x-\varepsilon)    \tag{6.C.4}
+\end{eqnarray}</script></li>
+</ol>
+<p>图6.C.3描述了这两个概念。（a）中是$[1,3]$上均匀分布的赌博$c(F,u)$。注意到，$c(F,u)&lt;2$。</p>
+<div align='center'>
+  <img src='/../../images/MWG%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B8%8D%E7%A1%AE%E5%AE%9A%E4%B8%8B%E7%9A%84%E9%80%89%E6%8B%A9/image-20210307125513934.png' width=700px>
+  <center style='font-family:kai'>图6.C.3</center>
+</div>
+
+<p><span style='font-family:hei;font-size:20px'>命题6.C.1</span>如果某个决策者是期望效用最大化着，在货币量上的效用函数为 $u(x)$，那么下列性质等价：</p>
+<ol>
+<li>决策者是风险厌恶的。</li>
+<li>$u(x)$是凹函数。</li>
+<li>$u\left( \int x\text{d}F(x) \right)\ge\int u(x)\text{d}F(x)    \quad\forall F(\cdot)$。</li>
+<li>$c(f,u)\le \int x\text{d}F(x)$。</li>
+<li>$\pi(x,\varepsilon,u)\ge0,\forall x,\varepsilon&gt;0$。</li>
+</ol>
+<p><span style='font-family:hei;font-size:20px'>例6.C.1 保险</span></p>
+<p>一个严格风险规避的决策者，其初始财富为$w$，他面临损失$D$美元的风险，损失的概率为$\pi$。决策者可以购买保险。1单位保险的成本是$q$美元，当损失发生时，提供1美元的补偿。因此，若决策者购买$\alpha$单位保险，那么若损失未发生，其个入财富为$w-\alpha q$；若损失发生，其个人财富为$w-\alpha q-D+\alpha$。决策者如何选择最优水平的$\alpha$。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>概率</th>
+<th>不买保险</th>
+<th>买保险</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发生损失</td>
+<td>$\pi$</td>
+<td>$w-D$</td>
+<td>$w-\alpha q-D+\alpha$</td>
+</tr>
+<tr>
+<td>不发生损失</td>
+<td>$1-\pi$</td>
+<td>$w$</td>
+<td>$w-\alpha q$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>上面的可以转化为如下最优化问题：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&\max_{\alpha\ge0} \phi(\alpha)=(1-\pi)u(w-\alpha q)+\pi u(w-\alpha q-D+\alpha)    \notag\\
+    &&\text{FOC: }-q(1-\pi)u'(w-\alpha^\star q)+\pi(1-q)u'(w-\alpha^\star q-D+\alpha^\star)\le 0    \notag
+\end{eqnarray}</script><p>我们这里定义，<span style='color:red'>保险价格$q$在精算意义上是公平的，当$q=\pi$。</span>此时根据一阶条件有</p>
+<script type="math/tex; mode=display">
+-u'(w-\alpha^\star q)+u'(w-\alpha^\star q-D+\alpha^\star)\le0</script><p>再根据$u(\cdot)$的性质（$u’(\cdot)&gt;0,u’’(\cdot)&lt;0$），知道：</p>
+<script type="math/tex; mode=display">
+w-\alpha^\star q = w-\alpha^\star q-D+\alpha^\star\Rightarrow \alpha^\star=D</script><p>买保险后的预期财富为：</p>
+<script type="math/tex; mode=display">
+\pi(w-\alpha q-D+\alpha)+(1-\pi)(w-\alpha q)=w-\pi D +\alpha(\pi-q)</script><p>因为保险价格是精算公平的，因而不管损失是否发生，最终财富是$w-\pi D$。</p>
+<p><span style='font-family:hei;font-size:20px'>例6.C.2 对风险资产的需求</span></p>
+<p>资产是一种对未来金融收益的可分的索取权。有两种资产：</p>
+<ul>
+<li>一种是安全资产，投资1美元可收益1美元；</li>
+<li>一种是风险资产，投资1美元可收益$z$美元的随机收益。随机收益$z$的分布函数$F(z)$，假设该分布满足$\int z\text{d}F(z)&gt;1$也就是说，其期望收益大于安全资产。</li>
+</ul>
+<p>个人可用于投资的初始财富为$w$，可以在两种资产之间进行分配。假设其中的$\alpha$用于购买风险资产，最优化问题可以写成：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&\max_{\alpha,\beta\ge0}\int u(\alpha z+\beta)\text{d}F(z)    \notag\\
+    &&\text{s.t. } \alpha+\beta=w    \notag
+\end{eqnarray}</script><p>该问题可以写成等价形式：</p>
+<script type="math/tex; mode=display">
+\max_{0\le\alpha\le w}\int u[w+\alpha(z-1)]\text{d}F(z)</script><p>KT条件为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&\phi(\alpha^\star) \equiv \int u'[w+\alpha(z-1)](z-1)\text{d}z    
+    &&\left\{\begin{aligned}
+        &\le 0, \text{if }\alpha^\star<w\\
+        &\ge 0, \text{if }\alpha^\star>0
+    \end{aligned}\right.    \notag
+\end{eqnarray}</script><p>下面要说明$\alpha^\star=0$不满足一阶条件。注意到$\int z\text{d}z&gt;1$，于是</p>
+<script type="math/tex; mode=display">
+\phi(0)=\int u'(w)(z-1)\text{d}z=u'(w)\left(\int z\text{d}z-\int\text{d}z \right)=u'(w)\left(\int z\text{d}z-1\right)>0</script><p>这说明，如果风险在精算上是有利的，那么风险厌恶者总是会至少接受少量风险。</p>
+<h4 id="风险规避（风险厌恶）的度量"><a href="#风险规避（风险厌恶）的度量" class="headerlink" title="风险规避（风险厌恶）的度量"></a>风险规避（风险厌恶）的度量</h4><p><span style='font-family:hei;font-size:20px'>定义6.C.3</span>给定一个（二次可微的）货币的伯努利效用函数，$x$处的<span style='color:red'>阿罗一普拉特<strong>绝对</strong>风险规避系数</span>定义为:</p>
+<script type="math/tex; mode=display">
+r_A(x)=-\frac{u''(x)}{u'(x)}</script><p>比较静态分析：具有不同效用函数的个人间的风险态度的比较；和个人在不同财富水平上的风险态度的比较。</p>
+<p>如何解读上述指标呢？上述指标是在说，概率溢价如何随着微小风险的增加而增加的速率。此处有一个结论：使得阿罗-普拉特绝对风险厌恶衡量指标在所有点上都等于常数$\alpha$ 的效用函数的一般形式是：$u(x)=-\alpha e^{-\alpha x}+\beta$。其中$\alpha&gt;0$，即CARA（Constant Absolute Risk Aversion）。(<span style='font-family:kai'>这里需要求解常微分方程，其方法可以参考高级数理宏观部分第2章变分法中的<a href='https://dhndzwxj-3ghxc51j1010c2ed-1302940033.tcloudbaseapp.com/2021/01/27/%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/' target='_blank'>补充部分</a>。</span>)</p>
+<h4 id="个体之间的比较"><a href="#个体之间的比较" class="headerlink" title="个体之间的比较"></a>个体之间的比较</h4><p>给定两个伯努利效用函数$u_1$和$u_2$，$u_2$比$u_1$更规避风险，当:</p>
+<ol>
+<li><p>对于每一个$x$，都有$r_A(x,u_2)\ge r_A(x,u_1)$。</p>
+<script type="math/tex; mode=display">
+\color{blue}{r_A(x,u_2)\ge r_A(x,u_1) \iff \left| \frac{u_2''}{u_2'} \right|\le \left| \frac{u_1''}{u_1'} \right|}</script></li>
+<li><p>存在一个递增凹函数$\psi$，使得$u_2(x)=\psi(u_1(x))$；也就是说，$u_2$是$u_1$的一个凹变换。</p>
+</li>
+<li><p>较小的确定性等价：任意$F(\cdot)$，$c(F,u_2)\le c(F,u_1)$。</p>
+</li>
+<li><p>更大的概率溢价：任给$x$和$\varepsilon$，$\pi(x,\varepsilon,u_2)\ge \pi(x,\varepsilon,u_1)$。</p>
+</li>
+<li><p>只要$u_2$觉得彩票$F(\cdot)$和确定性结果$\bar x$至少一样好，那么$u_1$也觉得$F(\cdot)$至少和$\bar x$一样好。</p>
+<script type="math/tex; mode=display">
+\int u_2(x)\text{d}F(x)\ge u_2(\bar x)\Rightarrow\int u_1(x)\text{d}F(x)\ge u_1(\bar x)</script></li>
+</ol>
+<p><span style='font-family:hei;font-size:20px'>命题6.C.2</span>上述5个定义的更风险规避关系是等价的。</p>
+<p><span style='font-family:hei;font-size:20px'>例6.C.2续(安全资产和风险资产的资产组合问题)</span></p>
+<p>假设有两个人，他们的伯努利效用函数分别为$u_1$和$u_2$。$\alpha^\star,\alpha_2^\star$分别表示他们在风险资产上的最优投资。 我们将证明，如果$u_2$比$u_1$更规避风险，则$\alpha_2^\star&lt;\alpha_1^\star$。</p>
+<blockquote>
+<p>根据例6.C.2，我们知道$u_1(\cdot)$的资产分配问题为：</p>
+<script type="math/tex; mode=display">
+\max_{0\le \alpha\le w} \int u_1[w+\alpha (z-1)]\text{d}z</script><p>假设这个问题存在内部解（这时候不需要使用KT条件），于是它的一阶条件为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \int (z-1)u_1'[w+\alpha^\star_1(z-1)]\text{d}F(z)=0    \tag{6.C.5}
+\end{eqnarray}</script><p>类似地，对于效用函数$u_2(\cdot)$，也有：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \phi_2(\alpha_2^\star) = \int (z-1)u_2'[w+\alpha_2^\star(z-1)]\text{d}F(z)=0    \tag{6.C.6}
+\end{eqnarray}</script><p>不难知道，$u_2(\cdot)$为凹函数意味着$\phi_2(\cdot)$是递减的。因此，如果我们证明了$\phi_2(\alpha_1^\star)&lt;0$，必定可以推知$\alpha_2^\star&lt;\alpha_1^\star$，这正是想要的结果。</p>
+<p>由于存在递增的凹函数$\psi$，使得$u_2(x)=\psi[u_1(x)]$，于是：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \phi_2(\alpha_1^\star) &=& \int (z-1)u_2'[w+\alpha_1^\star(z-1)]\text{d}F(z) \notag\\
+    &=& \int (z-1)\psi'[u_1(w+\alpha_1^\star(z-1))]u_1'(w+\alpha_1^\star(z-1))\text{d}F(z) \notag
+\end{eqnarray}\tag{6.C.7}</script><p>对比(6.C.5)和(6.C.7)，我们发现后者的被积函数比前者多了一个$\psi’(\cdot)$。$\psi’(\cdot)$是$z$的正的递减函数，因此在积分(6.C.7)中，相对于$(z-1)u_1’[w+\alpha^\star_1(z-1)]$的负值($z<1$)，正值$(z>1)$的分分量被缩小。由于在积分(6.C.5)中，被积部中正数部分和负数部分总和为零，因此积分(6.C.7)必定为负数。</p>
+</blockquote>
+<h4 id="不同财富水平之间的比较"><a href="#不同财富水平之间的比较" class="headerlink" title="不同财富水平之间的比较"></a>不同财富水平之间的比较</h4><p><span style='font-family:hei;font-size:20px'>定义6.C.4</span>如果$r_A(x,u)$是$x$的递减函数，则称货币伯努利效用函数$u$是<span style='color:red'>绝对厌恶风险递减的</span>。</p>
+<p><span style='font-family:hei;font-size:20px'>命题6.C.3</span>下述性质是等价的：</p>
+<ol>
+<li>伯努利效用函数$u$显示出<span style='color:red'>递减的绝对风险规避</span>；</li>
+<li>只要$x_2<x_1$，$u_2(z)=u(x_2+z)$就是$u_1(z)=u(x_1+z)$的凹变换。(<span style='color:red;font-family:kai'>钱越少，就更加风险规避。&lt;/span&gt;)</li>
+<li>对于任意一个风险$F(z)$，将风险$z$加到财富水平$x$上的彩票的确定性等价，就是满足$u(c_x)=\int u(x+z)\text{d}F(z)$的$c_x$，使得$x-c_x$在$x$上是递减的。也就是$x$越高，个人愿意为消除风险而付出的代价越小。</li>
+<li>概率溢价$\pi(x,\varepsilon,u)$在$x$上是递减的。</li>
+<li>任给一个$F$，如果$\int u(x_2+z)\text{d}z\ge u(x_2),x_2&lt;x_1$，则$\int u(x_1+z)\text{d}z\ge u(x_1)$。</li>
+</ol>
+<p><span style='font-family:hei;font-size:20px'>习题6.C.8</span>假设伯努利效用函数$u$显示出递减的绝对风险规避。则对例6.C.2中的资产组合模型，随着初始财富$w$的增加，最优资产组合意味着将更多的财富投入到风险资产上（风险资产是一种正常品）。</p>
+<blockquote>
+<p>令$w_1$和$w_2$为满足$w_1&gt;w_2$的两个财富水平，定义$u_1(z)=u(w_1+z)$,$u_2(z)=u(w+z_2)$，于是根据命题6.C.3可知，$u_2(\cdot)$是$u_1(\cdot)$的一个凹变换。在教材例6.C.2（续）中，我们已证明了$u_1(\cdot)$对风险资产的需求大于$u_2(\cdot)$对风险资产的需求。这表明，相对于财富水平$w_2$来说，在财富水平为$w_1$的情形下，$u(\cdot)$对风险资产的需求较大。</p>
+</blockquote>
+<h4 id="风险资产决策的比较静态分析"><a href="#风险资产决策的比较静态分析" class="headerlink" title="风险资产决策的比较静态分析"></a>风险资产决策的比较静态分析</h4><p>风险资产投资的期望效用最大化：</p>
+<script type="math/tex; mode=display">
+\phi(\alpha)=\int u(w+\alpha\tilde R)\text{d}F(\tilde R)=\mathbb{E}\left[u(w+\alpha\tilde R)\right]</script><p>其一阶条件和二阶条件为：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&\phi'(\alpha) = \mathbb{E}\left[ u'(w+\alpha\tilde R)\tilde R \right]    \notag\\
+    &&\phi''(\alpha) = \mathbb{E}\left[ u''(w+\alpha\tilde R)\tilde R^2 \right]<0    \notag
+\end{eqnarray}</script><p>由</p>
+<script type="math/tex; mode=display">
+\phi'(0)=\mathbb{E}[u'(w)\tilde R]=u'(w)\mathbb{E}(\tilde R)</script><p>由于$u’(w)&gt;0$，因此$\phi’(\alpha)$的符号决定于$\mathbb{E}(\tilde R)$的符号。那么当$\mathbb{E}(\tilde R)\le 0$时，$\phi’(0)\le 0$。由于$\phi’’(\alpha)&lt;0$，$\phi’(\alpha)<0,\text{if }\alpha>0$。此时有$\alpha^\star=0$。这是说当且仅当$\mathbb{E}(\tilde R)\le 0$时，$\alpha^\star=0$。</p>
+<p>如果$\mathbb{E}(\tilde R)&gt; 0$，$\alpha^\star$为内部解，则一阶条件：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}\left[ u'(w+\alpha^\star\tilde R)\tilde R \right]=0</script><p>财富的期望边际效用为零。</p>
+<p>财富变化如何影响风险资产需求？一阶条件再对$w$求导，注意到，我们已经知道用于风险投资的份额$\alpha$是财富$w$的函数$\alpha=\alpha(w)$，因此有：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}\left[ u''(w+\alpha\tilde R)\tilde R(1+\alpha'(w)\tilde R) \right]=0</script><p>解得：</p>
+<script type="math/tex; mode=display">
+\alpha'(w)=-\frac{\mathbb{E}[u''(w+\alpha\tilde R)\tilde R]}{\mathbb{E}(u''(w+\alpha\tilde R)\tilde R^2)}</script><p>分母一定为负，分子的符号由绝对风险规避系数决定。<br>当绝对风险规避系数$r(w)$为递增、递减、或常数时，分子分别为正、负或零。</p>
+<p><span style='font-family:hei;font-size:20px'>比较静态分析结论</span></p>
+<ul>
+<li>当风险规避随着财富增加而递减时，风险资产需求随着财富增加而递增（正常品）</li>
+<li>当风险规避不随财富变化而变化时，风险资产的需求也不随财富变化而变化</li>
+<li>当风险规避随着财富增加而增加时，风险资产需求随着增加而递减（劣等品）</li>
+</ul>
+<p><span style='font-family:hei;font-size:20px'>定义6.C.5</span>给定一个伯努利效用函数$u$，在$x$处的<span style='color:red'>相对风险规避系数</span>为</p>
+<script type="math/tex; mode=display">
+r_R = -\frac{x u''(x)}{u'(x)}=xr_A(x)</script><p><span style='font-family:hei;font-size:20px'>命题6.C.4</span>对于一个定义在货币数量上的伯努利效用函数$u$而言，下述条件是等价的：</p>
+<ol>
+<li>$r_R(x,u)$在$x$上递减；</li>
+<li>只要$x_2&lt;x_1$，$u_2(t)=u(tx_2)$就是$u_1(t)=u(tx_1)$的一个凹变换。</li>
+<li>任给$t&gt;0$上的一个风险$F(t)$，确定性等价$u(\bar c_x)=\int u(tx)\text{d}F(t)$使得$\frac{x}{c_x}$在$x$上是递减的。</li>
+</ol>
+<h3 id="6-D-基于收益和风险的支付分布比较"><a href="#6-D-基于收益和风险的支付分布比较" class="headerlink" title="6.D 基于收益和风险的支付分布比较"></a>6.D 基于收益和风险的支付分布比较</h3><p>注意：一阶随机占优和二阶随机占优讲的是<span style='color:red'>分布函数之间的比较</span>。放在本章的情景下，实际上<span style='color:red'>比较的是不同彩票的优劣</span>。</p>
+<p>一个最简单的方式就是比较不同的彩票带来的期望效用大小，但由于不同的人的效用函数不一样，给定两个不同的彩票$F(x)$和$G(x)$，可能张三觉得$F(x)$更好，而李四感觉$G(x)$更好，如何给出一些一般性的规律呢？下面引出一阶随机占优和二阶随机占优。</p>
+<h4 id="一阶随机占优"><a href="#一阶随机占优" class="headerlink" title="一阶随机占优"></a>一阶随机占优</h4><p>分布$F(\cdot)$毫无疑义地给出比分布$G(\cdot)$更高的收益</p>
+<ul>
+<li>每个期望效用最大化者均认为$F(\cdot)$优于$G(\cdot)$</li>
+<li>对于每个货币数量$x$，在$F(\cdot)$下至少获得$x$的概率比在$G(\cdot)$下大。</li>
+</ul>
+<p><span style='font-family:hei;font-size:20px'>定义6.D.1</span>如果对于每个<span style='color:blue'>非递减的</span>函数$u$均有</p>
+<script type="math/tex; mode=display">
+\int u(x)\text{d}F(x)\ge \int u(x) \text{d}G(x)</script><p>则称分布$F(\cdot)$一阶随机占优于$G(\cdot)$。</p>
+<p><span style='font-family:hei;font-size:20px'>命题6.D.1</span>当且仅当$F(x)\le G(x)$对所有$x$均成立时，货币支付分布$F(\cdot)$一阶随机占优于分布$G(\cdot)$。</p>
+<blockquote>
+<p>注意：</p>
+<script type="math/tex; mode=display">
+F(x)=\text{Prob}\{ X\le x \}</script><p>$F(x)\le G(x), \forall x$说明说明$F$以非常小的概率取较小值。</p>
+</blockquote>
+<p>注意</p>
+<ul>
+<li>一阶随机占优不意味着优分布的每个可能收益均大于劣分布的每个可能收益。</li>
+<li>一阶随机占优意味着$F$下的期望支付大于$G$下的期望支付，但反之不对。</li>
+</ul>
+<h4 id="二阶随机占优"><a href="#二阶随机占优" class="headerlink" title="二阶随机占优"></a>二阶随机占优</h4><p>具有<strong>相同期望值</strong>的分布$F(\cdot)$和$G(\cdot)$，如果每个<span style='color:blue'>风险规避者</span>均认为$F(\cdot)$优于$G(\cdot)$，我们说$G(\cdot)$比$F(\cdot)$风险更大。</p>
+<p><span style='font-family:hei;font-size:20px'>定义6.D.2</span>对于任意两个<strong>具有相同期望值</strong>的分布$F(\cdot)$和$G(\cdot)$，如果对于每个<span style='color:blue'>非递减的</span><span style='color:red'>凹</span>函数$u$，我们均有</p>
+<script type="math/tex; mode=display">
+\int u(x)\text{d}F(x)\ge \int u(x) \text{d}G(x)</script><p>则称分布$F(\cdot)$二阶随机占优于$G(\cdot)$。</p>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://dhndzwxj.github.io/2021/03/06/MWG%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B8%8D%E7%A1%AE%E5%AE%9A%E4%B8%8B%E7%9A%84%E9%80%89%E6%8B%A9/>https://dhndzwxj.github.io/2021/03/06/MWG%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B8%8D%E7%A1%AE%E5%AE%9A%E4%B8%8B%E7%9A%84%E9%80%89%E6%8B%A9/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-07T16:21:02+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年3月7日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dhndzwxj.github.io/2021/03/06/MWG%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B8%8D%E7%A1%AE%E5%AE%9A%E4%B8%8B%E7%9A%84%E9%80%89%E6%8B%A9/&title=MWG第六章不确定下的选择 - 渝言&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dhndzwxj.github.io/2021/03/06/MWG%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B8%8D%E7%A1%AE%E5%AE%9A%E4%B8%8B%E7%9A%84%E9%80%89%E6%8B%A9/&title=MWG第六章不确定下的选择 - 渝言&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://dhndzwxj.github.io/2021/03/06/MWG%E7%AC%AC%E5%85%AD%E7%AB%A0%E4%B8%8D%E7%A1%AE%E5%AE%9A%E4%B8%8B%E7%9A%84%E9%80%89%E6%8B%A9/&title=MWG第六章不确定下的选择 - 渝言&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='../../05/%E6%8B%9F%E7%BA%BF%E6%80%A7%E5%87%BD%E6%95%B0%E4%B8%93%E6%A0%8F/'>
+          <p class='title'>拟线性函数专栏<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>拟线性函数是高级微观经济学中极为有意思的一个函数，在MWG教材中多次出现且发挥着重要的作用。但限于教材的编排，其特性散落于教材多处，这给集中学习带来较大困难。目前在已知的网站上也没看到比较好的对...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-B-%E6%9C%9F%E6%9C%9B%E6%95%88%E7%94%A8%E7%90%86%E8%AE%BA"><span class="toc-text">6.B 期望效用理论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A3%8E%E9%99%A9%E5%A4%87%E9%80%89%E7%89%A9%E7%9A%84%E6%8F%8F%E8%BF%B0"><span class="toc-text">风险备选物的描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E5%BD%A9%E7%A5%A8%E4%B8%8A%E7%9A%84%E5%81%8F%E5%A5%BD"><span class="toc-text">在彩票上的偏好</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B%E6%95%88%E7%94%A8%E5%AE%9A%E7%90%86"><span class="toc-text">期望效用定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B%E6%95%88%E7%94%A8%E7%90%86%E8%AE%BA%E7%9A%84%E8%AE%A8%E8%AE%BA"><span class="toc-text">期望效用理论的讨论</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-C-%E8%B4%A7%E5%B8%81%E6%80%A7%E5%BD%A9%E7%A5%A8%E4%B8%8E%E9%A3%8E%E9%99%A9%E5%8E%8C%E6%81%B6"><span class="toc-text">6.C 货币性彩票与风险厌恶</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A3%8E%E9%99%A9%E5%A4%87%E9%80%89%E9%A1%B9%EF%BC%9A%E7%BB%93%E6%9E%9C%E4%B8%BA%E4%B8%80%E5%AE%9A%E9%87%8F%E8%B4%A7%E5%B8%81%EF%BC%88%E8%BF%9E%E7%BB%AD%E5%8F%98%E9%87%8F%EF%BC%89"><span class="toc-text">风险备选项：结果为一定量货币（连续变量）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A3%8E%E9%99%A9%E8%A7%84%E9%81%BF%EF%BC%88%E5%8E%8C%E6%81%B6%EF%BC%89%E5%8F%8A%E5%85%B6%E8%A1%A1%E9%87%8F"><span class="toc-text">风险规避（厌恶）及其衡量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A3%8E%E9%99%A9%E8%A7%84%E9%81%BF%EF%BC%88%E9%A3%8E%E9%99%A9%E5%8E%8C%E6%81%B6%EF%BC%89%E7%9A%84%E5%BA%A6%E9%87%8F"><span class="toc-text">风险规避（风险厌恶）的度量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AA%E4%BD%93%E4%B9%8B%E9%97%B4%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-text">个体之间的比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E8%B4%A2%E5%AF%8C%E6%B0%B4%E5%B9%B3%E4%B9%8B%E9%97%B4%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-text">不同财富水平之间的比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A3%8E%E9%99%A9%E8%B5%84%E4%BA%A7%E5%86%B3%E7%AD%96%E7%9A%84%E6%AF%94%E8%BE%83%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90"><span class="toc-text">风险资产决策的比较静态分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-D-%E5%9F%BA%E4%BA%8E%E6%94%B6%E7%9B%8A%E5%92%8C%E9%A3%8E%E9%99%A9%E7%9A%84%E6%94%AF%E4%BB%98%E5%88%86%E5%B8%83%E6%AF%94%E8%BE%83"><span class="toc-text">6.D 基于收益和风险的支付分布比较</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E9%98%B6%E9%9A%8F%E6%9C%BA%E5%8D%A0%E4%BC%98"><span class="toc-text">一阶随机占优</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E9%98%B6%E9%9A%8F%E6%9C%BA%E5%8D%A0%E4%BC%98"><span class="toc-text">二阶随机占优</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="MWG第六章不确定下的选择";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+</script>
+
+        
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="../../../../atom.xml"
+                class="social  flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/020-rss.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/020-rss.svg" srcset="data:image/png;base64,666"/>
+                
+              </a>
+            
+          
+            
+          
+            
+              <a href="../../../../https:/github.com/dhndzwxj"
+                class="social  flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/029-github.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/029-github.svg" srcset="data:image/png;base64,666"/>
+                
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次&lt;/span&gt; <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人&lt;/span&gt;</p>
+</div>
+        
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2020-2020 by Juncker</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    <script>
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  
+  
+</script>
+<!-- required -->
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+
+
+
+
+  
+  
+<script src="../../../../js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "4GxrlYYHiDtgVVBt1brJjjiW-gzGzoHsz",
+      appKey: "457XUbyBHsGjI5e61V5pAdO4",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+  
+<script src="../../../../js/app.js"></script>
+
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('../../../../js/search/hexo.js',setSearchService);
+	
+})
+
+function listenSearch(){
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+}
+function setSearchService() {
+	listenSearch();
+	
+		document.addEventListener("pjax:success", listenSearch);
+	
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: '4GxrlYYHiDtgVVBt1brJjjiW-gzGzoHsz',
+    app_key: '457XUbyBHsGjI5e61V5pAdO4',
+    custom_api_server: 'https://4gxrlyyh.lc-cn-n1-shared.com',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://dhndzwxj.github.io' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://dhndzwxj.github.io' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://dhndzwxj.github.io' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+
+
+
+    
+      
+
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  
+      window.ShowLoading();
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+       
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+	 
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+        
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+      window.HideLoading();
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.HideLoading();
+	  
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
