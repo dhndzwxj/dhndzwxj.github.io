@@ -343,13 +343,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：3.5k字</p>
+      <p>字数：4.7k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：17分钟</p>
+      <p>时长：24分钟</p>
     </a>
   </div>
  -->
@@ -359,13 +359,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：3.5k字</p>
+      <p>字数：4.7k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：17分钟</p>
+      <p>时长：24分钟</p>
     </a>
   </div> -->
 
@@ -374,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">3.5k字</span>
+        <span class="post-count">4.7k字</span>
       </span>
     </span>
  
@@ -383,7 +383,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">17分</span>
+        <span class="post-count">24分</span>
       </span>
     </span>
     
@@ -711,6 +711,97 @@ CY = CX\beta+C\varepsilon\Rightarrow Y^\star+X^\star\beta+\varepsilon^\star</scr
 Z_n\equiv \sqrt{n}(\bar{X}_n-\mu)\rightarrow_d N(0,\Sigma)</script><h3 id="Delta-Method"><a href="#Delta-Method" class="headerlink" title="Delta Method"></a>Delta Method</h3><p>假设$\sqrt{n}(\hat{\theta}_n-\theta)\rightarrow_d N(0,\Sigma)$，以及函数$\phi:\mathbb{R}^k\rightarrow\mathbb{R}^l,l\le k$在$\theta$的小邻域内连续可微。那么有</p>
 <script type="math/tex; mode=display">
 \sqrt{n}\left(\phi\left(\hat{\theta}_n\right)-\phi(\theta)\right)\rightarrow N(0,\Phi\Sigma\Phi')</script><p>其中$\Phi$是函数关于自变量向量求梯度：$\nabla_\theta\Phi(\theta)$。</p>
+<h2 id="补充知识点"><a href="#补充知识点" class="headerlink" title="补充知识点"></a>补充知识点</h2><h3 id="分块回归（Partition-Regressions）"><a href="#分块回归（Partition-Regressions）" class="headerlink" title="分块回归（Partition Regressions）"></a>分块回归（Partition Regressions）</h3><p>分块回归在多处有应用，包括在多重共线性的研究中。考虑模型：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \textbf{Y} &=& \textbf{X}\beta+\varepsilon=
+  (\textbf{X}_1,\textbf{X}_2)
+  \left(\begin{matrix}
+      \beta_1 \\ \beta_2
+  \end{matrix}\right)+\varepsilon    \notag\\
+  &=& \textbf{X}_1\beta_1 + \textbf{X}_2\beta_2+\varepsilon    \notag
+\end{eqnarray}</script><p>其中$\dim(\textbf{X}_1)=n\times k_1$，$\dim(\textbf{X}_2)=n\times k_2$,$k_2+k_2=k$。</p>
+<p>OLS的一阶条件为：</p>
+<script type="math/tex; mode=display">
+\textbf{X}'\textbf{X}\hat\beta=\textbf{X}\textbf{Y}</script><p>写成分块形式就是：</p>
+<script type="math/tex; mode=display">
+\left[\begin{matrix}
+    \textbf{X}_1'\textbf{X}_1 & \textbf{X}_1'\textbf{X}_2\\
+    \textbf{X}_2'\textbf{X}_1 & \textbf{X}_2'\textbf{X}_2
+\end{matrix}
+\right]
+\left(\begin{matrix}
+    \hat\beta_1\\\hat\beta_2
+\end{matrix}
+\right)
+=
+\left(\begin{matrix}
+    \textbf{X}_1'\textbf{Y} \\ \textbf{X}_2'\textbf{Y}
+\end{matrix}\right)</script><p>分块形式的一阶条件写成：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \textbf{X}_1'\textbf{X}_1\hat\beta_1+\textbf{X}_1'\textbf{X}_2\hat\beta_2=\textbf{X}_1'\textbf{Y}    \tag{1}\\
+    \textbf{X}_2'\textbf{X}_1\hat\beta_1+\textbf{X}_2'\textbf{X}_2\hat\beta_2=\textbf{X}_2'\textbf{Y}    \tag{2}
+\end{eqnarray}</script><p>将式子(1)两边同时乘以$\textbf{X}_2’\textbf{X}_1(\textbf{X}_1’\textbf{X}_1)^{-1}$</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&\textbf{X}_2'\textbf{X}_1\hat\beta_1 
++\textbf{X}_2'\textbf{X}_1(\textbf{X}_1'\textbf{X}_1)^{-1}\textbf{X}_1'\textbf{X}_2\hat\beta_2=\textbf{X}_2'\textbf{X}_1(\textbf{X}_1'\textbf{X}_1)^{-1}\textbf{X}_1'\textbf{Y}    \notag\\
+&&\Rightarrow     \textbf{X}_2'\textbf{X}_1\hat\beta_1+\textbf{X}_2'\textbf{P}_1\textbf{X}_2\hat\beta_2=\textbf{X}_2'\textbf{P}_1\textbf{Y}    \tag{3}
+\end{eqnarray}</script><p>其中$\textbf{P}_1=\textbf{X}_1(\textbf{X}_1’\textbf{X}_1)^{-1}\textbf{X}_1’$。</p>
+<p>由（2）减去（3）可以得到：</p>
+<script type="math/tex; mode=display">
+\textbf{X}_2'\textbf{M}_1\textbf{X}_2\hat\beta_2=\textbf{X}_2'\textbf{M}_1\textbf{Y}
+\Longrightarrow 
+\hat\beta_2=(\textbf{X}_2'\textbf{M}_1\textbf{X}_2)^{-1}\textbf{X}_2'\textbf{M}_1\textbf{Y}</script><p>其中$\textbf{M}_1=\textbf{I}_n-\textbf{P}_1=\textbf{I}_n-\textbf{X}_1(\textbf{X}_1’\textbf{X}_1)^{-1}\textbf{X}_1’$。类似地，还可以得到：</p>
+<script type="math/tex; mode=display">
+\hat\beta_1=(\textbf{X}_1'\textbf{M}_2\textbf{X}_1)^{-1}\textbf{X}_1'\textbf{M}_2\textbf{Y}</script><p>其中$\textbf{M}_2=\textbf{I}_n-\textbf{P}_2=\textbf{I}_n-\textbf{X}_2(\textbf{X}_2’\textbf{X}_2)^{-1}\textbf{X}_2’$。</p>
+<p>注意到$\textbf{M}_1$和$\textbf{M}_2$都是投影正交阵，于是这里我们能得到$\hat\beta_1$和$\hat\beta_1$的另一种表达：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+&&\hat\beta_1
+=\left(\textbf{X}_1^{\star'}\textbf{X}_1^\star\right)^{-1}\textbf{X}_1^{\star'}\textbf{Y}_{(2)}^\star
+=\left(\textbf{X}_1^{\star'}\textbf{X}_1^\star\right)^{-1}\textbf{X}_1^{\star'}\textbf{Y}    \notag\\
+&&\hat\beta_2
+=\left(\textbf{X}_1^{\star'}\textbf{X}_1^\star\right)^{-1}\textbf{X}_1^{\star'}\textbf{Y}_{(2)}^\star
+=\left(\textbf{X}_1^{\star'}\textbf{X}_1^\star\right)^{-1}\textbf{X}_1^{\star'}\textbf{Y}    \notag
+\end{eqnarray}</script><p>其中$\textbf{X}_1^\star=\textbf{M}_2\textbf{X}_1$,$\textbf{X}_2^\star=\textbf{M}_1\textbf{X}_2$,$\textbf{Y}_{(2)}^\star=\textbf{M}_2\textbf{Y}$,$\textbf{Y}_{(1)}^\star=\textbf{M}_1\textbf{Y}$。</p>
+<p>得到$\hat\beta_1$的分块回归步骤：</p>
+<ol>
+<li>将$\textbf{Y}$回归到$\textbf{X}_2$上，得到其残差为$\textbf{Y}_{(2)}^\star=\textbf{M}_2\textbf{Y}$；</li>
+<li>将$\textbf{X}_1$回归到$\textbf{X}_2$上，得到其残差为$\textbf{X}_1^\star=\textbf{M}_2\textbf{X}_1$：</li>
+<li>将$\textbf{Y}_{(2)}^\star$或者$\textbf{Y}$回归到$\textbf{X}_1^\star$上，得到$\hat\beta_1$。</li>
+</ol>
+<p>令$\hat\beta=\left( \hat\beta_1’,\hat\beta_2’ \right)’$，$\hat{\varepsilon}=\textbf{Y}-\textbf{X}\hat\beta$，那么</p>
+<script type="math/tex; mode=display">
+\textbf{Y}=\textbf{X}_1\hat\beta_1+\textbf{X}_2\hat\beta_2+\hat{\varepsilon}</script><blockquote>
+<p>这一部分有两个结论：$\textbf{P}\textbf{P}_l=\textbf{P},l=1,2$;$\textbf{M}\textbf{M}_l=\textbf{M}$。</p>
+<p>因为对任意$\textbf{Y}$，$\textbf{P}\textbf{Y}$的集合含义是$\textbf{Y}$在由$\textbf{X}$张成的空间上的投影。而$\textbf{P}_l$由$\textbf{X}$的分量张成，因此它本身就在由$\textbf{X}$张成的空间上，因此它的投影就是它本身$\textbf{P}\textbf{P}_l=\textbf{P}_l,l=1,2$。</p>
+<p>由于$\textbf{P},\textbf{P}_1$均为对称的幂等矩阵，因此</p>
+<script type="math/tex; mode=display">
+\textbf{P}_l=\textbf{P}_l'=(\textbf{P}\textbf{P}_l)'=\textbf{P}_l'\textbf{P}'=\textbf{P}_l\textbf{P}</script><p>于是：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \textbf{M}\textbf{M}_l
+    &=&(\textbf{I}-\textbf{P})(\textbf{I}-\textbf{P}_l)
+    =\textbf{I}-\textbf{P}-\textbf{P}_l+\textbf{P}\textbf{P}_l    \notag\\
+    &=&\textbf{I}-\textbf{P}-\textbf{P}_l+\textbf{P}_l
+    =\textbf{I}-\textbf{P}=\textbf{M}    \notag\\
+    \textbf{M}_l\textbf{M}
+    &=&(\textbf{I}-\textbf{P}_l)(\textbf{I}-\textbf{P})
+    =\textbf{I}-\textbf{P}-\textbf{P}_l+\textbf{P}_l\textbf{P}=\textbf{M}    \notag\\
+\end{eqnarray}</script></blockquote>
+<p>注意到，$\textbf{M}_2\hat{\varepsilon}=\textbf{M}_2\textbf{M}\varepsilon=\textbf{M}\varepsilon$，以及$\textbf{M}_2\textbf{X}_2=0$，我们有</p>
+<script type="math/tex; mode=display">
+\textbf{M}_2\textbf{Y}=\textbf{M}_2\textbf{X}_1\hat\beta_1+\textbf{M}_2\textbf{X}_2\hat\beta_2+\textbf{M}_2\hat\varepsilon=\textbf{M}_2\textbf{X}_1\hat\beta_1+\hat\varepsilon</script><p>或者可以写成：</p>
+<script type="math/tex; mode=display">
+\textbf{Y}_{(2)}^\star = \textbf{X}_1^\star\hat\beta_1+\hat\varepsilon</script><p>这个方程在计量经济学文献中被称为残差回归（residual regression）。注意到</p>
+<script type="math/tex; mode=display">
+\textbf{X}_1^{\star'}\hat{\varepsilon}
+=(\textbf{M}_2\textbf{X}_1)'\textbf{M}\varepsilon
+=\textbf{X}_1'\textbf{M}_2\textbf{M}\varepsilon
+=(\textbf{M}\textbf{X}_1)'\varepsilon=0</script><p><span style='font-family:hei;font-size:20px'>Frisch-Waugh-Lovell定理(FWL定理)</span></p>
+<p>$\beta_1$的OLS估计量和OLS估计残差$\hat\varepsilon$可以按照上面的步骤1-步骤3，将$\textbf{Y}_{(2)}^\star$回归到$\textbf{X}_1^\star$上，等价得到。</p>
 
   
   
@@ -745,10 +836,10 @@ Z_n\equiv \sqrt{n}(\bar{X}_n-\mu)\rightarrow_d N(0,\Sigma)</script><h3 id="Delta
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-01T16:41:23+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-08T15:51:30+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月1日</p>
+    <p>更新于：2021年3月8日</p>
   </a>
 </div>
 
@@ -932,7 +1023,7 @@ Z_n\equiv \sqrt{n}(\bar{X}_n-\mu)\rightarrow_d N(0,\Sigma)</script><h3 id="Delta
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%B0%E4%B8%8D%E8%B5%B7%E6%9D%A5%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一些记不起来的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%8F%E5%BA%A6"><span class="toc-text">偏度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B3%B0%E5%BA%A6"><span class="toc-text">峰度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E4%BD%8D%E6%95%B0"><span class="toc-text">条件分位数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LRM"><span class="toc-text">LRM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E6%AD%A3%E6%80%81"><span class="toc-text">多元正态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%8A%95%E5%BD%B1%E6%9D%A5%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">用投影来理解线性回归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E7%8E%87%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">有效率的定义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%AE%B9%E6%98%93%E5%BF%BD%E8%A7%86%E7%9A%84%E5%81%87%E5%AE%9A"><span class="toc-text">一些容易忽视的假定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%81%87%E5%AE%9A"><span class="toc-text">OLS的基本假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%81%87%E5%AE%9A%E6%98%AF%E5%9C%A8%E5%A4%A7%E6%A0%B7%E6%9C%AC%E8%BF%99%E5%9D%97%E6%8F%90%E5%87%BA%E6%9D%A5%E7%9A%84%EF%BC%81"><span class="toc-text">正态假定是在大样本这块提出来的！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%81%87%E5%AE%9A%E4%B9%9F%E6%98%AF%E8%BF%9B%E8%A1%8C%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E7%9A%84%E5%85%B3%E9%94%AE%E5%81%87%E5%AE%9A%EF%BC%81"><span class="toc-text">正态假定也是进行假设检验的关键假定！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#t%E6%A3%80%E9%AA%8C"><span class="toc-text">t检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#F%E6%A3%80%E9%AA%8C"><span class="toc-text">F检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Wald%E6%A3%80%E9%AA%8C%E3%80%81LM%E3%80%81LR%E6%A3%80%E9%AA%8C"><span class="toc-text">Wald检验、LM、LR检验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%96%B9%E5%B7%AE%E6%A3%80%E9%AA%8C%EF%BC%9AWhite%E6%A3%80%E9%AA%8CBP%E6%A3%80%E9%AA%8C"><span class="toc-text">同方差检验：White检验BP检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%B8%90%E8%BF%9B%EF%BC%8C%E5%81%87%E5%AE%9A"><span class="toc-text">OLS估计量的渐进，假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E5%A4%96%E7%94%9F%E6%80%A7%E5%81%87%E5%AE%9A"><span class="toc-text">弱外生性假定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%B0%E4%B8%8D%E8%B5%B7%E6%9D%A5%E7%9A%84%E5%AE%9A%E7%90%86"><span class="toc-text">一些记不起来的定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B%E5%AE%9A%E7%90%86"><span class="toc-text">条件期望定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%B7%AE%E5%88%86%E8%A7%A3%E5%85%AC%E5%BC%8F"><span class="toc-text">方差分解公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GLS%EF%BC%88Generalized-Least-Squares%EF%BC%8C%E5%B9%BF%E4%B9%89%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%EF%BC%89%E6%98%AF%E8%A7%A3%E5%86%B3%E5%BC%82%E6%96%B9%E5%B7%AE%E9%97%AE%E9%A2%98%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%81"><span class="toc-text">GLS（Generalized Least Squares，广义最小二乘法）是解决异方差问题使用的方法！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-text">弱大数定律</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86-CLT-Central-Limit-Theorem"><span class="toc-text">中心极限定理(CLT,Central Limit Theorem)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delta-Method"><span class="toc-text">Delta Method</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%B0%E4%B8%8D%E8%B5%B7%E6%9D%A5%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一些记不起来的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%8F%E5%BA%A6"><span class="toc-text">偏度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B3%B0%E5%BA%A6"><span class="toc-text">峰度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E4%BD%8D%E6%95%B0"><span class="toc-text">条件分位数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LRM"><span class="toc-text">LRM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E6%AD%A3%E6%80%81"><span class="toc-text">多元正态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%8A%95%E5%BD%B1%E6%9D%A5%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">用投影来理解线性回归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E7%8E%87%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">有效率的定义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%AE%B9%E6%98%93%E5%BF%BD%E8%A7%86%E7%9A%84%E5%81%87%E5%AE%9A"><span class="toc-text">一些容易忽视的假定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%81%87%E5%AE%9A"><span class="toc-text">OLS的基本假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%81%87%E5%AE%9A%E6%98%AF%E5%9C%A8%E5%A4%A7%E6%A0%B7%E6%9C%AC%E8%BF%99%E5%9D%97%E6%8F%90%E5%87%BA%E6%9D%A5%E7%9A%84%EF%BC%81"><span class="toc-text">正态假定是在大样本这块提出来的！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%81%87%E5%AE%9A%E4%B9%9F%E6%98%AF%E8%BF%9B%E8%A1%8C%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E7%9A%84%E5%85%B3%E9%94%AE%E5%81%87%E5%AE%9A%EF%BC%81"><span class="toc-text">正态假定也是进行假设检验的关键假定！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#t%E6%A3%80%E9%AA%8C"><span class="toc-text">t检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#F%E6%A3%80%E9%AA%8C"><span class="toc-text">F检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Wald%E6%A3%80%E9%AA%8C%E3%80%81LM%E3%80%81LR%E6%A3%80%E9%AA%8C"><span class="toc-text">Wald检验、LM、LR检验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%96%B9%E5%B7%AE%E6%A3%80%E9%AA%8C%EF%BC%9AWhite%E6%A3%80%E9%AA%8CBP%E6%A3%80%E9%AA%8C"><span class="toc-text">同方差检验：White检验BP检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%B8%90%E8%BF%9B%EF%BC%8C%E5%81%87%E5%AE%9A"><span class="toc-text">OLS估计量的渐进，假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E5%A4%96%E7%94%9F%E6%80%A7%E5%81%87%E5%AE%9A"><span class="toc-text">弱外生性假定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%B0%E4%B8%8D%E8%B5%B7%E6%9D%A5%E7%9A%84%E5%AE%9A%E7%90%86"><span class="toc-text">一些记不起来的定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B%E5%AE%9A%E7%90%86"><span class="toc-text">条件期望定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%B7%AE%E5%88%86%E8%A7%A3%E5%85%AC%E5%BC%8F"><span class="toc-text">方差分解公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GLS%EF%BC%88Generalized-Least-Squares%EF%BC%8C%E5%B9%BF%E4%B9%89%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%EF%BC%89%E6%98%AF%E8%A7%A3%E5%86%B3%E5%BC%82%E6%96%B9%E5%B7%AE%E9%97%AE%E9%A2%98%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%81"><span class="toc-text">GLS（Generalized Least Squares，广义最小二乘法）是解决异方差问题使用的方法！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-text">弱大数定律</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86-CLT-Central-Limit-Theorem"><span class="toc-text">中心极限定理(CLT,Central Limit Theorem)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delta-Method"><span class="toc-text">Delta Method</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">补充知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%9D%97%E5%9B%9E%E5%BD%92%EF%BC%88Partition-Regressions%EF%BC%89"><span class="toc-text">分块回归（Partition Regressions）</span></a></li></ol></li></ol>
     </div>
   </section>
 
