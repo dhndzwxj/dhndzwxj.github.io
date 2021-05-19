@@ -343,13 +343,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：3.2k字</p>
+      <p>字数：3.4k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：14分钟</p>
+      <p>时长：15分钟</p>
     </a>
   </div>
  -->
@@ -359,13 +359,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：3.2k字</p>
+      <p>字数：3.4k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：14分钟</p>
+      <p>时长：15分钟</p>
     </a>
   </div> -->
 
@@ -374,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">3.2k字</span>
+        <span class="post-count">3.4k字</span>
       </span>
     </span>
  
@@ -383,7 +383,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">14分</span>
+        <span class="post-count">15分</span>
       </span>
     </span>
     
@@ -410,17 +410,22 @@
     \left\{\begin{aligned}
   &p\nabla_{\textbf{z}}f(\textbf{z}^\star)\le \textbf{w}    \notag\\
     & [p\nabla_{\textbf{z}}f(\textbf{z}^\star)-\textbf{w}]\cdot\textbf{z}^\star=0    \text{(广义KT条件)}\notag
-    \end{aligned}\right.\\
+    \end{aligned}\right.    \notag\\
     (CMP)&&\min_{\textbf{z}\gg0} \textbf{w}\cdot \textbf{z}    \notag\\
     \text{s.t. } && f(\textbf{z})\ge q    \notag\\
     \text{FOC:}&& 
     \left\{\begin{aligned}
     &\phi_{\textbf{z}} = \textbf{w}-\textbf{u}\cdot\nabla_{\textbf{z}}f(\textbf{z}^\star)\geqq\textbf{0},\textbf{z}^\star\geqq \textbf{0}    \notag\\
     &\textbf{z}^\star\cdot\phi_{\textbf{z}}= \textbf{z}^\star\cdot[\textbf{w}-\textbf{u}\cdot\nabla_{\textbf{z}}f(\textbf{z}^\star)]    =0    \notag
-    \end{aligned}\right.\\
+    \end{aligned}\right.    \notag\\
     (PMP')&&\max_{q\ge0} pq-c(\textbf{w},q)    \notag\\
     \text{FOC:}&&p-\frac{\partial c(\textbf{w},q^\star)}{\partial q}\le0    \notag
 \end{eqnarray}</script><p>本章讨论生产者理论，消费和生产差不多是经济学里面最重要的两个基础内容了，学完了这个就可以逐步进入一般均衡理论了！这一章看似命题和结论很多，但是用到的数学应该只有KKT和对偶定理。</p>
+<p><span style='font-family:kai'>霍特林引理是利润函数对要素价格求导，得到要素需求；谢泼德引理是成本函数对价格求导，也有支出函数对产品求导得到希克斯需求函数。</span></p>
+<ol>
+<li><span style='color:red'>霍特林引理</span>，如果$\textbf{y}(\bar{\textbf{p}})$是单点集，那么$\pi(\cdot)$在$\bar{\textbf{p}}$处可微且$\nabla_\textbf{p}\pi(\bar{\textbf{p}})=\textbf{y}(\bar{\textbf{p}})$。</li>
+<li><span style='color:red'>谢泼德引理</span>：如果$\textbf{z}(\bar{\textbf{w}},q)$是单点集，那么$c(\cdot)$关于$\bar{\textbf{w}}$可微，并且$\textbf{z}(\bar{\textbf{w}},q)=\nabla_{\textbf{w}}c(\bar{\textbf{w}},q)$。</li>
+</ol>
 <h3 id="生产集"><a href="#生产集" class="headerlink" title="生产集"></a>生产集</h3><p>考虑有$L$种商品的经济系统，$\textbf{y}\in\mathbb{R}^L$表示一个生产向量。也被称为投入产出向量。注意：$\textbf{y}=(y_1,\cdots,y_L)’$，如果<span style='color:red'>分量为正，则表示产出，如果为负，则表示投入</span>。</p>
 <p>所有可行的生产向量组成了生产集$Y\subset\mathbb{R}^L,\textbf{y}\in Y$表示生产可行，反之表示不可行。可以用转换函数$F(\cdot)$来方便地刻画生产集，$F(\cdot)$具有如下性质：</p>
 <ul>
@@ -430,16 +435,16 @@
 </ul>
 <p>如果$F(\cdot)$是可微的，并且生产向量$\textbf{y}^\star$满足$F(\textbf{y}^\star)=0$，那么对于任何$l$和$k$，有：</p>
 <script type="math/tex; mode=display">
-MRT_{lk}(\textbf{y}^\star) = \frac{\partial F(\textbf{y}^\star)/\partial y_l}{\partial F(\textbf{y}^\star)/\partial y_k}</script><p><span style='font-family:kai'>称为在$\textbf{y}^\star$点上物品$l$对物品$k$的<span style='color:red'>边际转换率</span>。衡量企业减少每单位的物品$l$的产出能增加物品$k$的产出的量。&lt;/span&gt;</p>
+MRT_{lk}(\textbf{y}^\star) = \frac{\partial F(\textbf{y}^\star)/\partial y_l}{\partial F(\textbf{y}^\star)/\partial y_k}</script><p><span style='font-family:kai'>称为在$\textbf{y}^\star$点上物品$l$对物品$k$的<u>边际转换率</u>。衡量企业减少每单位的物品$l$的产出能增加物品$k$的产出的量。</span></p>
 <p>对于单一产出的生产技术，上述符号体系可以转化为：</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
     &&q = f(z_1,z_2,\cdots,z_{L-1})    \notag\\
-    && Y=\{ (-z_1,-z_2,\cdots,-z_{L-1},q)\lvert q-f(-z_1,-z_2,\cdots,-z_{L-1})\le 0,(z_1,\cdots,z_{L-1})\ge0) \}    \notag
+    && Y=\{ (-z_1,-z_2,\cdots,-z_{L-1},q)\lvert q-f(z_1,z_2,\cdots,z_{L-1})\le 0,(z_1,\cdots,z_{L-1})\ge0) \}    \notag
 \end{eqnarray}</script><p>如果只有一种商品，那么称$MRT$为边际技术替代率(marginal rate of technical substitution)。</p>
 <p><span style='font-family:hei;font-size:20px'>习题5.B.3</span>证明对于单一产品的生产技术来说，$Y$是凸的当且仅当生产函数$f(\textbf{z})$是凹的。</p>
 <blockquote>
-<p>首先假设$Y$是凸的，令$\textbf{z},\textbf{z}’\in\mathbb{R}_+^{L-1}$以及$\alpha\in[0,1]$，于是$(-\textbf{z},f(\textbf{z}))\in Y,（\textbf{z}’,f(\textbf{z}’))\in Y$，根据生产集的凸性，有</p>
+<p>首先假设$Y$是凸的，令$\textbf{z},\textbf{z}’\in\mathbb{R}_+^{L-1}$以及$\alpha\in[0,1]$，于是$(-\textbf{z},f(\textbf{z}))\in Y,(-\textbf{z}’,f(\textbf{z}’))\in Y$，根据生产集的凸性，有</p>
 <script type="math/tex; mode=display">
 \left(-[\alpha\textbf{z}+(1-\alpha)\textbf{z}'],\alpha f(\textbf{z})+(1-\alpha)f(\textbf{z}')\right)\in Y</script><p>根据生产集的定义，有</p>
 <script type="math/tex; mode=display">
@@ -452,7 +457,7 @@ q\le f(\textbf{z}),q'\le f(\textbf{z}')</script><p>因此</p>
 <script type="math/tex; mode=display">
 f(\textbf{z})+(1-\alpha)f(\textbf{z}')\le f(\alpha\textbf{z}+(1-\alpha)\textbf{z}')</script><p>因此</p>
 <script type="math/tex; mode=display">
-\alpha q+(1-\alpha)q'\le f(\alpha\textbf{z}+(1-\alpha)\textbf{z}')</script><p>因此$(\alpha q+(1-\alpha)q’, \alpha\textbf{z}+(1-\alpha)\textbf{z}’)\in Y$。</p>
+\alpha q+(1-\alpha)q'\le f(\alpha\textbf{z}+(1-\alpha)\textbf{z}')</script><p>因此$(\alpha q+(1-\alpha)q’, -[\alpha\textbf{z}+(1-\alpha)\textbf{z}’])\in Y$。</p>
 <p>因此$Y$是凸集。</p>
 </blockquote>
 <h3 id="生产集的性质"><a href="#生产集的性质" class="headerlink" title="生产集的性质"></a>生产集的性质</h3><p>为了便于分析，经常假设生产集满足一些合意的性质，然后根据模型需要选取特定性质。<span style='color:red'>以下条件并不需要全部成立，往往只需要满足其中一些即可。</span></p>
@@ -502,7 +507,7 @@ f(\textbf{z})+(1-\alpha)f(\textbf{z}')\le f(\alpha\textbf{z}+(1-\alpha)\textbf{z
 \begin{eqnarray}
     \max_{\textbf{y}}&& \textbf{p}\cdot \textbf{y}    \notag\\
     \text{s.t. } && F(\textbf{y})\le 0    \notag
-\end{eqnarray}</script><p>从而使用KKT条件求解即可~ 当然KKT条件往往是必要条件，因此会存在不少陷阱，比如这个问题可能并不存在最大值（这些都是需要注意的细节）。比如如果$Y$不是紧集，那么最大值没办法保证。书上有一个简单的例子可以看一下。下面的习题也可以提供一些借鉴：</p>
+\end{eqnarray}</script><p>从而使用KKT条件求解即可~ 当然KKT条件往往是必要条件，因此会存在不少陷阱，比如这个问题可能并不存在最大值（这些都是需要注意的细节）。比如，如果$Y$不是紧集，那么最大值没办法保证。书上有一个简单的例子可以看一下。下面的习题也可以提供一些借鉴：</p>
 <p><span style='font-family:hei;font-size:20px'>习题5.C.1:</span>证明：一般来说，如果生产集是规模报酬非减的，那么要么$\pi(\textbf{p})\le0$，要么$\pi(\textbf{p})=+\infty$。</p>
 <blockquote>
 <p>证明：</p>
@@ -526,7 +531,7 @@ f(\textbf{z})+(1-\alpha)f(\textbf{z}')\le f(\alpha\textbf{z}+(1-\alpha)\textbf{z
 \begin{eqnarray}
     && p\nabla_{\textbf{z}}f(\textbf{z}^\star)\le \textbf{w}    \notag\\
     && [p\nabla_{\textbf{z}}f(\textbf{z}^\star)-\textbf{w}]\cdot\textbf{z}^\star=0    \text{(广义KT条件)}\notag
-\end{eqnarray}</script><p>广义KT条件的内容参见<a href='https://dhndzwxj-3ghxc51j1010c2ed-1302940033.tcloudbaseapp.com/2021/03/01/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/' target='_blank'>高级数理微观部分第7章8.2.2</a>。</p>
+\end{eqnarray}</script><p>广义KT条件的内容参见<a href='https://dhndzwxj-3ghxc51j1010c2ed-1302940033.tcloudbaseapp.com/2021/01/25/%E7%AC%AC7%E7%AB%A0%E5%8F%A4%E5%85%B8%E6%9E%81%E5%80%BC%E4%B8%AD%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/' target='_blank'>高级数理微观部分第7章8.2.2</a>。</p>
 <p>容易得到两个事实，内点最优解处：</p>
 <ol>
 <li>投入物的边际产品等于其实际价格$\frac{\partial f(\textbf{z}^\star)}{\partial z_l}=\frac{w_l}{p}$</li>
@@ -547,7 +552,7 @@ f(\textbf{z})+(1-\alpha)f(\textbf{z}')\le f(\alpha\textbf{z}+(1-\alpha)\textbf{z
 </li>
 <li><p>如果$Y$是凸的，那么对于任何$p$，$\textbf{y}(\textbf{p})$都是一个凸集。如果$Y$是严格凸的，那么$\textbf{y}(\textbf{p})$是单值的。</p>
 </li>
-<li><p>霍特林引理，如果$\textbf{y}(\bar{\textbf{p}})$是单点集，那么$\pi(\cdot)$在$\bar{\textbf{p}}$处可微且$\nabla_\textbf{p}\pi(\bar{\textbf{p}})=\textbf{y}(\bar{\textbf{p}})$。</p>
+<li><p><span style='color:red'>霍特林引理</span>，如果$\textbf{y}(\bar{\textbf{p}})$是单点集，那么$\pi(\cdot)$在$\bar{\textbf{p}}$处可微且$\nabla_\textbf{p}\pi(\bar{\textbf{p}})=\textbf{y}(\bar{\textbf{p}})$。</p>
 </li>
 <li><p>如果$\textbf{y}(\textbf{p})$在$\bar{\textbf{p}}$处可微，那么$D_\textbf{p}\textbf{y}(\bar{\textbf{p}})=D^2_\textbf{p}\pi(\bar{\textbf{p}})$是一个对称的、半正定的矩阵，且$D_\textbf{p}\textbf{y}(\bar{\textbf{p}})\bar{\textbf{p}}=0$。半正定体现了<span style='font-family:fangsong'>供给法则</span>，即某种产品价格上升，厂商愿意提供的更多，此处不存在禀赋效应，只有替代效应。</p>
 </li>
@@ -641,10 +646,10 @@ p-\frac{\partial c(\textbf{w},q^\star)}{\partial q}\le0</script><p><span style='
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-04T14:30:20+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-14T11:06:48+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月4日</p>
+    <p>更新于：2021年3月14日</p>
   </a>
 </div>
 

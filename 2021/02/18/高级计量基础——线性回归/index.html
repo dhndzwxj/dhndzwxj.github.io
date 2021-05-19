@@ -343,13 +343,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：5.2k字</p>
+      <p>字数：5.3k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：26分钟</p>
+      <p>时长：27分钟</p>
     </a>
   </div>
  -->
@@ -359,13 +359,13 @@
   <!-- <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：5.2k字</p>
+      <p>字数：5.3k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：26分钟</p>
+      <p>时长：27分钟</p>
     </a>
   </div> -->
 
@@ -374,7 +374,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">5.2k字</span>
+        <span class="post-count">5.3k字</span>
       </span>
     </span>
  
@@ -383,7 +383,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">26分</span>
+        <span class="post-count">27分</span>
       </span>
     </span>
     
@@ -526,6 +526,8 @@ M=M^2=M'M</script><p>因此它一定是半正定的！</p>
 <h3 id="依分布收敛"><a href="#依分布收敛" class="headerlink" title="依分布收敛"></a>依分布收敛</h3><p>设$\{ X_n \}_{n=1}^{+\infty}$是一个随机变量序列，其分布函数为：$F_n(x)=\mathbb{P}(X_n\le x)$。如果对于所有$x$都有$F(x)=\mathbb{P}(X\le x)$是连续的，且</p>
 <script type="math/tex; mode=display">
 F_n(x)\rightarrow F(x)</script><p>那么称$X_n$依分布收敛于$X$，记为$X_n\rightarrow_d X$。我们还称$X$及其分布$F(x)$为$X$的<strong>渐进分布</strong>、<strong>大样本分布</strong>或者<strong>极限分布</strong>。</p>
+<h3 id="检验的功效（power-of-a-test）"><a href="#检验的功效（power-of-a-test）" class="headerlink" title="检验的功效（power of a test）"></a>检验的功效（power of a test）</h3><script type="math/tex; mode=display">
+1-\mathbb{P}(\text{Type II error}) = 1-\mathbb{P}(\text{not reject } \mathbb{H}_0 \lvert \mathbb{H}_1 \text{ is true})</script><p>不犯第二类错误的概率。</p>
 <h2 id="一些容易忽视的假定"><a href="#一些容易忽视的假定" class="headerlink" title="一些容易忽视的假定"></a>一些容易忽视的假定</h2><h3 id="OLS的基本假定"><a href="#OLS的基本假定" class="headerlink" title="OLS的基本假定"></a>OLS的基本假定</h3><p>编个小口诀就是：<span style='font-family:kai'>“线性外生非退化，还要加上球方差”</span>。</p>
 <ol>
 <li>线性：$Y_i=X_i\beta+\varepsilon_i$，$Y_i=(y_1,\cdots,y_n)^T$，$X_i=(l,X_1,\cdots,X_k)$，$n$为样本量，$k$为自变量的数量。</li>
@@ -656,7 +658,7 @@ W_n\equiv qF_n=(R\hat{\beta}-r)'\left[s^2R(X'X)^{-1}R'\right]^{-1}(R\hat{\beta}-
 \begin{eqnarray}
     W_n &=& n\left( \frac{RSS_r-RSS_{ur}}{RSS_{ur}} \right)    \notag\\
     LM_n &=& n\left( \frac{RSS_r-RSS_{ur}}{RSS_{r}} \right)    \notag\\
-    LR_n &=& n\ln\left(\frac{RSS_r}{RSS_{ur}}\right)
+    LR_n &=& n\ln\left(\frac{RSS_r}{RSS_{ur}}\right)    \notag
 \end{eqnarray}</script><p>一般只关注Wald检验。</p>
 <h3 id="同方差检验：White检验BP检验"><a href="#同方差检验：White检验BP检验" class="headerlink" title="同方差检验：White检验BP检验"></a>同方差检验：White检验BP检验</h3><p>原假定为：</p>
 <script type="math/tex; mode=display">
@@ -668,7 +670,7 @@ H_0:\mathbb{E}(\varepsilon_i^2\lvert X_i) = \mathbb{E}(\varepsilon_i^2) = \sigma
 <li>条件同方差：$\mathbb{E}(\varepsilon_i^2\lvert X_i)\equiv\sigma^2\quad\text{a.s.}$</li>
 </ul>
 <h3 id="弱外生性假定"><a href="#弱外生性假定" class="headerlink" title="弱外生性假定"></a>弱外生性假定</h3><p>弱外生性：$\mathbb{E}(X_i\varepsilon_i)=0$，其中$\mathbb{E}(\varepsilon_i^2)\equiv\sigma^2&lt;\infty$。</p>
-<h2 id="一些记不起来的定理"><a href="#一些记不起来的定理" class="headerlink" title="一些记不起来的定理"></a>一些记不起来的定理</h2><h3 id="迭代期望定理（LIE，Law-of-Iterated）"><a href="#迭代期望定理（LIE，Law-of-Iterated）" class="headerlink" title="迭代期望定理（LIE，Law of Iterated）"></a>迭代期望定理（LIE，Law of Iterated）</h3><script type="math/tex; mode=display">
+<h2 id="一些记不起来的定理"><a href="#一些记不起来的定理" class="headerlink" title="一些记不起来的定理"></a>一些记不起来的定理</h2><h3 id="期望迭代定理（LIE，Law-of-Iterated）"><a href="#期望迭代定理（LIE，Law-of-Iterated）" class="headerlink" title="期望迭代定理（LIE，Law of Iterated）"></a>期望迭代定理（LIE，Law of Iterated）</h3><script type="math/tex; mode=display">
 \begin{eqnarray}
     &&\mathbb{E}[\mathbb{E}(Y\lvert X)] = \mathbb{E}(Y)    \notag\\
     &&\mathbb{E}\{\mathbb{E}[g(X,Y)\lvert X]\} = \mathbb{E}[g(X,Y)]    \notag\\
@@ -719,7 +721,10 @@ CY = CX\beta+C\varepsilon\Rightarrow Y^\star+X^\star\beta+\varepsilon^\star</scr
 <li>$\mathbb{E}(s^{2\star}\lvert X)=\sigma^2$</li>
 <li>$\text{cov}(\hat{\beta}_{\text{GLS}},\hat{\varepsilon}^\star\lvert X)=0$</li>
 </ul>
-<h3 id="弱大数定律"><a href="#弱大数定律" class="headerlink" title="弱大数定律"></a>弱大数定律</h3><p>假定$X_1,\cdots,X_n$独立同分布（IID，Independent Indentical Distribution），且有$\mathbb{E}|X_i|&lt;\infty$，那么当$n\rightarrow\infty$，有</p>
+<blockquote>
+<p><span style='font-family:kai'>大样本部分有五大法宝，分别是弱大数定律（WLLN）、中心极限定理（CLT）、Delta方法、斯拉茨基定理（Slutsky’s Theorem）、连续映射定理(CMT. continuous mapping theorem)。</span></p>
+</blockquote>
+<h3 id="弱大数定律-WLLN-weak-law-of-large-numbers"><a href="#弱大数定律-WLLN-weak-law-of-large-numbers" class="headerlink" title="弱大数定律(WLLN,weak law of large numbers)"></a>弱大数定律(WLLN,weak law of large numbers)</h3><p>假定$X_1,\cdots,X_n$独立同分布（IID，Independent Indentical Distribution），且有$\mathbb{E}|X_i|&lt;\infty$，那么当$n\rightarrow\infty$，有</p>
 <script type="math/tex; mode=display">
 \bar{X}_n=\frac1{n}\sum_{i=1}^n X_i \rightarrow_p \mathbb{E}X_1=\mu</script><h3 id="强大数定律"><a href="#强大数定律" class="headerlink" title="强大数定律"></a>强大数定律</h3><p>假定$X_1,\cdots,X_n$独立同分布（IID，Independent Indentical Distribution），且有$\mathbb{E}|X_1|&lt;\infty$，那么当$n\rightarrow\infty$，有</p>
 <script type="math/tex; mode=display">
@@ -727,7 +732,7 @@ CY = CX\beta+C\varepsilon\Rightarrow Y^\star+X^\star\beta+\varepsilon^\star</scr
 <script type="math/tex; mode=display">
 Z_n\equiv \sqrt{n}(\bar{X}_n-\mu)\rightarrow_d N(0,\Sigma)</script><h3 id="Delta-Method"><a href="#Delta-Method" class="headerlink" title="Delta Method"></a>Delta Method</h3><p>假设$\sqrt{n}(\hat{\theta}_n-\theta)\rightarrow_d N(0,\Sigma)$，以及函数$\phi:\mathbb{R}^k\rightarrow\mathbb{R}^l,l\le k$在$\theta$的小邻域内连续可微。那么有</p>
 <script type="math/tex; mode=display">
-\sqrt{n}\left(\phi\left(\hat{\theta}_n\right)-\phi(\theta)\right)\rightarrow N(0,\Phi\Sigma\Phi')</script><p>其中$\Phi$是函数关于自变量向量求梯度：$\nabla_\theta\Phi(\theta)$。</p>
+\sqrt{n}\left(\phi\left(\hat{\theta}_n\right)-\phi(\theta)\right)\rightarrow N(0,\Phi\Sigma\Phi')</script><p>其中$\Phi$是函数关于自变量向量求梯度：$\nabla_\theta\phi(\theta)$。</p>
 <h3 id="斯拉茨基定理"><a href="#斯拉茨基定理" class="headerlink" title="斯拉茨基定理"></a>斯拉茨基定理</h3><p>假定$X_n\rightarrow_p X$和$Y_n\rightarrow_pY$，那么有</p>
 <ol>
 <li>$c_nX_n\rightarrow_p cX$，其中$c=\lim_{n\rightarrow+\infty} c_n$。</li>
@@ -735,7 +740,9 @@ Z_n\equiv \sqrt{n}(\bar{X}_n-\mu)\rightarrow_d N(0,\Sigma)</script><h3 id="Delta
 <li>$X_nY_n\rightarrow_p XY$。</li>
 <li>$\frac{X_n}{Y_n}\rightarrow_p\frac{X}{Y}$当$Y\neq0$时。</li>
 </ol>
-<h2 id="补充知识点"><a href="#补充知识点" class="headerlink" title="补充知识点"></a>补充知识点</h2><h3 id="分块回归（Partition-Regressions）"><a href="#分块回归（Partition-Regressions）" class="headerlink" title="分块回归（Partition Regressions）"></a>分块回归（Partition Regressions）</h3><p>分块回归在多处有应用，包括在多重共线性的研究中。考虑模型：</p>
+<h3 id="连续映射定理（CMT，Continuous-mapping-theorem）"><a href="#连续映射定理（CMT，Continuous-mapping-theorem）" class="headerlink" title="连续映射定理（CMT，Continuous mapping theorem）"></a>连续映射定理（CMT，Continuous mapping theorem）</h3><p>假设$\{ X_n \}$是一个$k$维随机向量序列，满足$X_n\rightarrow_d X(n\rightarrow+\infty)$。如果是$g:\mathbb{R}^k\rightarrow\mathbb{R}^l$连续的，那么</p>
+<script type="math/tex; mode=display">
+g(X_n)\rightarrow_d g(X),(n\rightarrow+\infty)</script><h2 id="补充知识点"><a href="#补充知识点" class="headerlink" title="补充知识点"></a>补充知识点</h2><h3 id="分块回归（Partition-Regressions）"><a href="#分块回归（Partition-Regressions）" class="headerlink" title="分块回归（Partition Regressions）"></a>分块回归（Partition Regressions）</h3><p>分块回归在多处有应用，包括在多重共线性的研究中。考虑模型：</p>
 <script type="math/tex; mode=display">
 \begin{eqnarray}
     \textbf{Y} &=& \textbf{X}\beta+\varepsilon=
@@ -799,7 +806,7 @@ Z_n\equiv \sqrt{n}(\bar{X}_n-\mu)\rightarrow_d N(0,\Sigma)</script><h3 id="Delta
 <p>令$\hat\beta=\left( \hat\beta_1’,\hat\beta_2’ \right)’$，$\hat{\varepsilon}=\textbf{Y}-\textbf{X}\hat\beta$，那么</p>
 <script type="math/tex; mode=display">
 \textbf{Y}=\textbf{X}_1\hat\beta_1+\textbf{X}_2\hat\beta_2+\hat{\varepsilon}</script><blockquote>
-<p>这一部分有两个结论：$\textbf{P}\textbf{P}_l=\textbf{P},l=1,2$;$\textbf{M}\textbf{M}_l=\textbf{M}$。</p>
+<p>这一部分有两个结论：$\textbf{P}\textbf{P}_l=\textbf{P}_l,l=1,2$;$\textbf{M}\textbf{M}_l=\textbf{M}$。</p>
 <p>因为对任意$\textbf{Y}$，$\textbf{P}\textbf{Y}$的集合含义是$\textbf{Y}$在由$\textbf{X}$张成的空间上的投影。而$\textbf{P}_l$由$\textbf{X}$的分量张成，因此它本身就在由$\textbf{X}$张成的空间上，因此它的投影就是它本身$\textbf{P}\textbf{P}_l=\textbf{P}_l,l=1,2$。</p>
 <p>由于$\textbf{P},\textbf{P}_1$均为对称的幂等矩阵，因此</p>
 <script type="math/tex; mode=display">
@@ -860,10 +867,10 @@ Z_n\equiv \sqrt{n}(\bar{X}_n-\mu)\rightarrow_d N(0,\Sigma)</script><h3 id="Delta
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-11T14:42:41+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-14T13:16:12+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月11日</p>
+    <p>更新于：2021年3月14日</p>
   </a>
 </div>
 
@@ -1047,7 +1054,7 @@ Z_n\equiv \sqrt{n}(\bar{X}_n-\mu)\rightarrow_d N(0,\Sigma)</script><h3 id="Delta
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%B0%E4%B8%8D%E8%B5%B7%E6%9D%A5%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一些记不起来的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%8F%E5%BA%A6"><span class="toc-text">偏度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B3%B0%E5%BA%A6"><span class="toc-text">峰度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E4%BD%8D%E6%95%B0"><span class="toc-text">条件分位数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LRM"><span class="toc-text">LRM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E6%AD%A3%E6%80%81"><span class="toc-text">多元正态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%8A%95%E5%BD%B1%E6%9D%A5%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">用投影来理解线性回归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E7%8E%87%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">有效率的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E6%A6%82%E7%8E%87%E6%94%B6%E6%95%9B"><span class="toc-text">依概率收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%B9%8E%E5%A4%84%E5%A4%84%E6%94%B6%E6%95%9B%EF%BC%88a-s-%EF%BC%89"><span class="toc-text">几乎处处收敛（a.s.）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D-r-%E9%98%B6%E5%9D%87%E5%80%BC%E6%94%B6%E6%95%9B"><span class="toc-text">依$r$阶均值收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D-r-%E9%98%B6%E7%9F%A9%E6%94%B6%E6%95%9B"><span class="toc-text">依$r$阶矩收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E5%88%86%E5%B8%83%E6%94%B6%E6%95%9B"><span class="toc-text">依分布收敛</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%AE%B9%E6%98%93%E5%BF%BD%E8%A7%86%E7%9A%84%E5%81%87%E5%AE%9A"><span class="toc-text">一些容易忽视的假定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%81%87%E5%AE%9A"><span class="toc-text">OLS的基本假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%81%87%E5%AE%9A%E6%98%AF%E5%9C%A8%E5%A4%A7%E6%A0%B7%E6%9C%AC%E8%BF%99%E5%9D%97%E6%8F%90%E5%87%BA%E6%9D%A5%E7%9A%84%EF%BC%81"><span class="toc-text">正态假定是在大样本这块提出来的！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%81%87%E5%AE%9A%E4%B9%9F%E6%98%AF%E8%BF%9B%E8%A1%8C%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E7%9A%84%E5%85%B3%E9%94%AE%E5%81%87%E5%AE%9A%EF%BC%81"><span class="toc-text">正态假定也是进行假设检验的关键假定！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#t%E6%A3%80%E9%AA%8C"><span class="toc-text">t检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#F%E6%A3%80%E9%AA%8C"><span class="toc-text">F检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Wald%E6%A3%80%E9%AA%8C%E3%80%81LM%E3%80%81LR%E6%A3%80%E9%AA%8C"><span class="toc-text">Wald检验、LM、LR检验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%96%B9%E5%B7%AE%E6%A3%80%E9%AA%8C%EF%BC%9AWhite%E6%A3%80%E9%AA%8CBP%E6%A3%80%E9%AA%8C"><span class="toc-text">同方差检验：White检验BP检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%B8%90%E8%BF%9B%EF%BC%8C%E5%81%87%E5%AE%9A"><span class="toc-text">OLS估计量的渐进，假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E5%A4%96%E7%94%9F%E6%80%A7%E5%81%87%E5%AE%9A"><span class="toc-text">弱外生性假定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%B0%E4%B8%8D%E8%B5%B7%E6%9D%A5%E7%9A%84%E5%AE%9A%E7%90%86"><span class="toc-text">一些记不起来的定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E6%9C%9F%E6%9C%9B%E5%AE%9A%E7%90%86%EF%BC%88LIE%EF%BC%8CLaw-of-Iterated%EF%BC%89"><span class="toc-text">迭代期望定理（LIE，Law of Iterated）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%B7%AE%E5%88%86%E8%A7%A3%E5%85%AC%E5%BC%8F"><span class="toc-text">方差分解公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GLS%EF%BC%88Generalized-Least-Squares%EF%BC%8C%E5%B9%BF%E4%B9%89%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%EF%BC%89%E6%98%AF%E8%A7%A3%E5%86%B3%E5%BC%82%E6%96%B9%E5%B7%AE%E9%97%AE%E9%A2%98%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%81"><span class="toc-text">GLS（Generalized Least Squares，广义最小二乘法）是解决异方差问题使用的方法！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-text">弱大数定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-text">强大数定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86-CLT-Central-Limit-Theorem"><span class="toc-text">中心极限定理(CLT,Central Limit Theorem)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delta-Method"><span class="toc-text">Delta Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%AF%E6%8B%89%E8%8C%A8%E5%9F%BA%E5%AE%9A%E7%90%86"><span class="toc-text">斯拉茨基定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">补充知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%9D%97%E5%9B%9E%E5%BD%92%EF%BC%88Partition-Regressions%EF%BC%89"><span class="toc-text">分块回归（Partition Regressions）</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%B0%E4%B8%8D%E8%B5%B7%E6%9D%A5%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一些记不起来的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%8F%E5%BA%A6"><span class="toc-text">偏度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B3%B0%E5%BA%A6"><span class="toc-text">峰度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E4%BD%8D%E6%95%B0"><span class="toc-text">条件分位数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LRM"><span class="toc-text">LRM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E6%AD%A3%E6%80%81"><span class="toc-text">多元正态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%8A%95%E5%BD%B1%E6%9D%A5%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">用投影来理解线性回归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E7%8E%87%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">有效率的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E6%A6%82%E7%8E%87%E6%94%B6%E6%95%9B"><span class="toc-text">依概率收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%B9%8E%E5%A4%84%E5%A4%84%E6%94%B6%E6%95%9B%EF%BC%88a-s-%EF%BC%89"><span class="toc-text">几乎处处收敛（a.s.）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D-r-%E9%98%B6%E5%9D%87%E5%80%BC%E6%94%B6%E6%95%9B"><span class="toc-text">依$r$阶均值收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D-r-%E9%98%B6%E7%9F%A9%E6%94%B6%E6%95%9B"><span class="toc-text">依$r$阶矩收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E5%88%86%E5%B8%83%E6%94%B6%E6%95%9B"><span class="toc-text">依分布收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E9%AA%8C%E7%9A%84%E5%8A%9F%E6%95%88%EF%BC%88power-of-a-test%EF%BC%89"><span class="toc-text">检验的功效（power of a test）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%AE%B9%E6%98%93%E5%BF%BD%E8%A7%86%E7%9A%84%E5%81%87%E5%AE%9A"><span class="toc-text">一些容易忽视的假定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%81%87%E5%AE%9A"><span class="toc-text">OLS的基本假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%81%87%E5%AE%9A%E6%98%AF%E5%9C%A8%E5%A4%A7%E6%A0%B7%E6%9C%AC%E8%BF%99%E5%9D%97%E6%8F%90%E5%87%BA%E6%9D%A5%E7%9A%84%EF%BC%81"><span class="toc-text">正态假定是在大样本这块提出来的！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%81%87%E5%AE%9A%E4%B9%9F%E6%98%AF%E8%BF%9B%E8%A1%8C%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E7%9A%84%E5%85%B3%E9%94%AE%E5%81%87%E5%AE%9A%EF%BC%81"><span class="toc-text">正态假定也是进行假设检验的关键假定！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#t%E6%A3%80%E9%AA%8C"><span class="toc-text">t检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#F%E6%A3%80%E9%AA%8C"><span class="toc-text">F检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Wald%E6%A3%80%E9%AA%8C%E3%80%81LM%E3%80%81LR%E6%A3%80%E9%AA%8C"><span class="toc-text">Wald检验、LM、LR检验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%96%B9%E5%B7%AE%E6%A3%80%E9%AA%8C%EF%BC%9AWhite%E6%A3%80%E9%AA%8CBP%E6%A3%80%E9%AA%8C"><span class="toc-text">同方差检验：White检验BP检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%B8%90%E8%BF%9B%EF%BC%8C%E5%81%87%E5%AE%9A"><span class="toc-text">OLS估计量的渐进，假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E5%A4%96%E7%94%9F%E6%80%A7%E5%81%87%E5%AE%9A"><span class="toc-text">弱外生性假定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%B0%E4%B8%8D%E8%B5%B7%E6%9D%A5%E7%9A%84%E5%AE%9A%E7%90%86"><span class="toc-text">一些记不起来的定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B%E8%BF%AD%E4%BB%A3%E5%AE%9A%E7%90%86%EF%BC%88LIE%EF%BC%8CLaw-of-Iterated%EF%BC%89"><span class="toc-text">期望迭代定理（LIE，Law of Iterated）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%B7%AE%E5%88%86%E8%A7%A3%E5%85%AC%E5%BC%8F"><span class="toc-text">方差分解公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GLS%EF%BC%88Generalized-Least-Squares%EF%BC%8C%E5%B9%BF%E4%B9%89%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%EF%BC%89%E6%98%AF%E8%A7%A3%E5%86%B3%E5%BC%82%E6%96%B9%E5%B7%AE%E9%97%AE%E9%A2%98%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%81"><span class="toc-text">GLS（Generalized Least Squares，广义最小二乘法）是解决异方差问题使用的方法！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B-WLLN-weak-law-of-large-numbers"><span class="toc-text">弱大数定律(WLLN,weak law of large numbers)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-text">强大数定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86-CLT-Central-Limit-Theorem"><span class="toc-text">中心极限定理(CLT,Central Limit Theorem)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delta-Method"><span class="toc-text">Delta Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%AF%E6%8B%89%E8%8C%A8%E5%9F%BA%E5%AE%9A%E7%90%86"><span class="toc-text">斯拉茨基定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E6%98%A0%E5%B0%84%E5%AE%9A%E7%90%86%EF%BC%88CMT%EF%BC%8CContinuous-mapping-theorem%EF%BC%89"><span class="toc-text">连续映射定理（CMT，Continuous mapping theorem）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">补充知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%9D%97%E5%9B%9E%E5%BD%92%EF%BC%88Partition-Regressions%EF%BC%89"><span class="toc-text">分块回归（Partition Regressions）</span></a></li></ol></li></ol>
     </div>
   </section>
 
