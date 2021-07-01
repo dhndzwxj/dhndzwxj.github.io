@@ -1,405 +1,150 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0'>
+<html>
+<head>
   <meta charset="utf-8">
-  <!-- SEO相关 -->
+  
+  
+  <title>高级计量基础——线性回归 | 渝言</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <meta name="description" content="随手写一写学习心得，读书笔记">
+  
+  
+    <meta name="keywords" content="马克思；政治经济学">
+  
+  
+    <link rel="alternate" href="../../../../atom.xml" title="渝言" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="../../../../favicon.png">
+  
   
     
-  
-  <!-- 渲染优化 -->
-  <meta http-equiv='x-dns-prefetch-control' content='on' />
-  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <meta name="renderer" content="webkit">
-  <meta name="force-rendering" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="HandheldFriendly" content="True" >
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <!-- 页面元数据 -->
-  
-  <title>高级计量基础——线性回归 - 渝言</title>
-  
+<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
   
-
-  <!-- feed -->
   
-
-  <!-- import meta -->
-  
-
-  <!-- link -->
-  
-
-  <!-- import link -->
-  
+<link rel="stylesheet" href="../../../../css/style.css">
 
   
     
-<link rel="stylesheet" href="../../../../css/first.css">
+<link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.min.css">
 
   
+  
+    
+<link rel="stylesheet" href="../../../../localshare/css/share.css">
 
   
-  <link rel="stylesheet" href="../../../../css/style.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="../../../../css/style.css"></noscript>
   
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
-  <script id="loadcss"></script>
-
-</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"></head>
 
 <body>
-  
-
-<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
-  <div class='container'>
-  <div id='wrapper'>
-    <div class='nav-sub'>
-      <p class="title"></p>
-      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-      </ul>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../../../index.html" id="logo">渝言</a>
+      </h1>
+      
     </div>
-		<div class="nav-main">
-      
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
         
-        <a class="title flat-box" target="_self" href='../../../../index.html'>
-          
-            <img no-lazy class='logo' src='/img/avatar.jpg'/>
-          
-          
-          
-        </a>
-      
-
-			<div class='menu navigation'>
-				<ul class='nav-list-h m-pc'>
-          
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
-                  
-                  
-                  
-                    id="indexhtml"
-                  >
-                  <i class='fas fa-rss fa-fw'></i>博客
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
-                  
-                  
-                  
-                    id="archives"
-                  >
-                  <i class='fas fa-archive fa-fw'></i>归档
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
-                  
-                  
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
-                  
-                  
-                  
-                    id="about"
-                  >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
-                </a>
-                
-              </li>
-            
-          
-          
-				</ul>
-			</div>
-
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <i class="icon fas fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="标题或者全文搜索" />
-        </form>
+          <a class="main-nav-link" href="../../../../."><i class="fa fa-home"></i> 首页</a>
+        
+          <a class="main-nav-link" href="../../../../archives/"><i class="fa fa-archive"></i> 归档</a>
+        
+          <a class="main-nav-link" href="../../../../about/"><i class="fa fa-user"></i> 关于</a>
+        
+          <a class="main-nav-link" href="../../../../atom.xml"><i class="fa fa-rss"></i> 订阅</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
       </div>
-
-			<ul class='switcher nav-list-h m-phone'>
-				
-					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
-				
-				<li>
-          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
-          <ul class="menu-phone list-v navigation white-box">
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
-                  
-                  
-                  
-                    id="indexhtml"
-                  >
-                  <i class='fas fa-rss fa-fw'></i>博客
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
-                  
-                  
-                  
-                    id="archives"
-                  >
-                  <i class='fas fa-archive fa-fw'></i>归档
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
-                  
-                  
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
-                  
-                  
-                  
-                    id="about"
-                  >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
-                </a>
-                
-              </li>
-            
-          
-            
-          </ul>
-        </li>
-			</ul>
-		</div>
-	</div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
   </div>
 </header>
 
-  <div id="l_body">
-    <div id="l_cover">
+      <div class="outer">
+        <section id="main"><article id="post-高级计量基础——线性回归" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      高级计量基础——线性回归
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-02-18T14:41:43.000Z" itemprop="datePublished">2021年02月18日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/">博资考</a> > <a class="article-category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F/">高级计量</a>
+  </div>
+
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="#comments" class="article-comment-link">
   
     
-        <div id="full" class='cover-wrapper post search' style="display: none;">
-          
-            <div class='cover-bg lazyload placeholder' data-bg="img/bg.png"></div>
-          
-          <div class='cover-body'>
-  <div class='top'>
-    
-      <img no-lazy class='logo' src='../../../../img/logo.png'/>
     
     
     
-  </div>
-  <div class='bottom'>
     
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="标题或者全文搜索" />
-          <i class="icon fas fa-search fa-fw"></i>
-        </form>
-      </div>
+      <i id="changyan_count_unit" data-xid=""></i>
     
-    <div class='menu navigation'>
-      <div class='list-h'>
-        
-      </div>
+  
+  <i class="fa fa-commt"></i>
+  留言
+</a>
+
+
     </div>
-  </div>
-</div>
-
-          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
-        </div>
-    
-  
-  </div>
-
-    <div id='safearea'>
-      <div class='body-wrapper' id="pjax-container">
-        
-
-<div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
-  
-
-
-  
-  <div class="article-meta" id="top">
-    
-    
-    
-      <h1 class="title">
-        高级计量基础——线性回归
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            <!-- 
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="fas fa-user">
-    <p>请设置文章作者</p>
-  </a>
-</div> -->
-
-
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <i class=" fas fa-user" aria-hidden="true"></i>
-    <!-- <i class=" fa-fw" aria-hidden="true"></i> -->
-    <!-- <img no-lazy src=""> -->
-    <!-- <p></p> --> <!--原始代码，引用的是author.name，但是md文件中都没有这么写-->
-    <p>揭晓</p>
-  </a>
-</div>
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年2月18日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/">博资考</a><span class="sep"></span><a class="category-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F/">高级计量</a>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <!-- 
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：5.3k字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：27分钟</p>
-    </a>
-  </div>
- -->
-
-
-
-  <!-- <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：5.3k字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：27分钟</p>
-    </a>
-  </div> -->
-
-  <div style="margin-top:0px;"> <!--这一行的margin-top，意思是是否与该行文字对其，0是对其-->
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">5.3k字</span>
-      </span>
-    </span>
- 
-    <span class="post-time">
-      &nbsp;  &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">27分</span>
-      </span>
-    </span>
-    
-</div>
-
-
-
-          
-        
-      </div>
-    
-  </div>
-
-
-  
-  <h2 id="一些记不起来的概念"><a href="#一些记不起来的概念" class="headerlink" title="一些记不起来的概念"></a>一些记不起来的概念</h2><h3 id="偏度"><a href="#偏度" class="headerlink" title="偏度"></a>偏度</h3><script type="math/tex; mode=display">
+    <!-- <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="一些记不起来的概念"><a href="#一些记不起来的概念" class="headerlink" title="一些记不起来的概念"></a>一些记不起来的概念</h2><h3 id="偏度"><a href="#偏度" class="headerlink" title="偏度"></a>偏度</h3><script type="math/tex; mode=display">
 \begin{eqnarray}
     s(Y\lvert x) &=& \frac{\mathbb{E}\left\{ \left.[Y-\mathbb{E}(Y\lvert x)]^3 \right\lvert x \right\}}{[\text{Var}(Y\lvert x)]^\frac32}    \tag{条件偏度}\\
     \text{skewness} &=& \frac{\mathbb{E}[(Y-\mu)^3]}{\sigma^3}    \tag{无条件偏度}
@@ -834,578 +579,700 @@ g(X_n)\rightarrow_d g(X),(n\rightarrow+\infty)</script><h2 id="补充知识点">
 =(\textbf{M}\textbf{X}_1)'\varepsilon=0</script><p><span style='font-family:hei;font-size:20px'>Frisch-Waugh-Lovell定理(FWL定理)</span></p>
 <p>$\beta_1$的OLS估计量和OLS估计残差$\hat\varepsilon$可以按照上面的步骤1-步骤3，将$\textbf{Y}_{(2)}^\star$回归到$\textbf{X}_1^\star$上，等价得到。</p>
 
-  
-  
-    
-    <div class='footer'>
-      
-      
-      
-        <div class='copyright'>
-          <blockquote>
-            
-              
-                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> 文章目录</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%B0%E4%B8%8D%E8%B5%B7%E6%9D%A5%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一些记不起来的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%8F%E5%BA%A6"><span class="toc-text">偏度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B3%B0%E5%BA%A6"><span class="toc-text">峰度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E4%BD%8D%E6%95%B0"><span class="toc-text">条件分位数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LRM"><span class="toc-text">LRM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E6%AD%A3%E6%80%81"><span class="toc-text">多元正态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%8A%95%E5%BD%B1%E6%9D%A5%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">用投影来理解线性回归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E7%8E%87%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">有效率的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E6%A6%82%E7%8E%87%E6%94%B6%E6%95%9B"><span class="toc-text">依概率收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%B9%8E%E5%A4%84%E5%A4%84%E6%94%B6%E6%95%9B%EF%BC%88a-s-%EF%BC%89"><span class="toc-text">几乎处处收敛（a.s.）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D-r-%E9%98%B6%E5%9D%87%E5%80%BC%E6%94%B6%E6%95%9B"><span class="toc-text">依$r$阶均值收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D-r-%E9%98%B6%E7%9F%A9%E6%94%B6%E6%95%9B"><span class="toc-text">依$r$阶矩收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E5%88%86%E5%B8%83%E6%94%B6%E6%95%9B"><span class="toc-text">依分布收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E9%AA%8C%E7%9A%84%E5%8A%9F%E6%95%88%EF%BC%88power-of-a-test%EF%BC%89"><span class="toc-text">检验的功效（power of a test）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%AE%B9%E6%98%93%E5%BF%BD%E8%A7%86%E7%9A%84%E5%81%87%E5%AE%9A"><span class="toc-text">一些容易忽视的假定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%81%87%E5%AE%9A"><span class="toc-text">OLS的基本假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%81%87%E5%AE%9A%E6%98%AF%E5%9C%A8%E5%A4%A7%E6%A0%B7%E6%9C%AC%E8%BF%99%E5%9D%97%E6%8F%90%E5%87%BA%E6%9D%A5%E7%9A%84%EF%BC%81"><span class="toc-text">正态假定是在大样本这块提出来的！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%81%87%E5%AE%9A%E4%B9%9F%E6%98%AF%E8%BF%9B%E8%A1%8C%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E7%9A%84%E5%85%B3%E9%94%AE%E5%81%87%E5%AE%9A%EF%BC%81"><span class="toc-text">正态假定也是进行假设检验的关键假定！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#t%E6%A3%80%E9%AA%8C"><span class="toc-text">t检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#F%E6%A3%80%E9%AA%8C"><span class="toc-text">F检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Wald%E6%A3%80%E9%AA%8C%E3%80%81LM%E3%80%81LR%E6%A3%80%E9%AA%8C"><span class="toc-text">Wald检验、LM、LR检验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%96%B9%E5%B7%AE%E6%A3%80%E9%AA%8C%EF%BC%9AWhite%E6%A3%80%E9%AA%8CBP%E6%A3%80%E9%AA%8C"><span class="toc-text">同方差检验：White检验BP检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%B8%90%E8%BF%9B%EF%BC%8C%E5%81%87%E5%AE%9A"><span class="toc-text">OLS估计量的渐进，假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E5%A4%96%E7%94%9F%E6%80%A7%E5%81%87%E5%AE%9A"><span class="toc-text">弱外生性假定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%B0%E4%B8%8D%E8%B5%B7%E6%9D%A5%E7%9A%84%E5%AE%9A%E7%90%86"><span class="toc-text">一些记不起来的定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B%E8%BF%AD%E4%BB%A3%E5%AE%9A%E7%90%86%EF%BC%88LIE%EF%BC%8CLaw-of-Iterated%EF%BC%89"><span class="toc-text">期望迭代定理（LIE，Law of Iterated）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%B7%AE%E5%88%86%E8%A7%A3%E5%85%AC%E5%BC%8F"><span class="toc-text">方差分解公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GLS%EF%BC%88Generalized-Least-Squares%EF%BC%8C%E5%B9%BF%E4%B9%89%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%EF%BC%89%E6%98%AF%E8%A7%A3%E5%86%B3%E5%BC%82%E6%96%B9%E5%B7%AE%E9%97%AE%E9%A2%98%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%81"><span class="toc-text">GLS（Generalized Least Squares，广义最小二乘法）是解决异方差问题使用的方法！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B-WLLN-weak-law-of-large-numbers"><span class="toc-text">弱大数定律(WLLN,weak law of large numbers)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-text">强大数定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86-CLT-Central-Limit-Theorem"><span class="toc-text">中心极限定理(CLT,Central Limit Theorem)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delta-Method"><span class="toc-text">Delta Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%AF%E6%8B%89%E8%8C%A8%E5%9F%BA%E5%AE%9A%E7%90%86"><span class="toc-text">斯拉茨基定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E6%98%A0%E5%B0%84%E5%AE%9A%E7%90%86%EF%BC%88CMT%EF%BC%8CContinuous-mapping-theorem%EF%BC%89"><span class="toc-text">连续映射定理（CMT，Continuous mapping theorem）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">补充知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%9D%97%E5%9B%9E%E5%BD%92%EF%BC%88Partition-Regressions%EF%BC%89"><span class="toc-text">分块回归（Partition Regressions）</span></a></li></ol></li></ol>
+    </div>
+  </div>
 
-              
-            
-              
-                <p>本文永久链接是：<a href=https://dhndzwxj.github.io/2021/02/18/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F%E5%9F%BA%E7%A1%80%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/>https://dhndzwxj.github.io/2021/02/18/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F%E5%9F%BA%E7%A1%80%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</a></p>
-              
-            
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>原文链接: <a href="../../../../https:/dhndzwxj.github.io/2021/02/18/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F%E5%9F%BA%E7%A1%80%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">../../../../https:/dhndzwxj.github.io/2021/02/18/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F%E5%9F%BA%E7%A1%80%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</a></p>
+              <p>版权声明: 转载请注明出处.</p>
           </blockquote>
+        
+      
+    </div> -->
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+          
+      
+      
+          <h2 id="一些记不起来的概念"><a href="#一些记不起来的概念" class="headerlink" title="一些记不起来的概念"></a>一些记不起来的概念</h2><h3 id="偏度"><a href="#偏度" class="headerlink" title="偏度"></a>偏度</h3><script type="math/tex; mode=display">
+\begin{eqnarray}
+    s(Y\lvert x) &=& \frac{\mathbb{E}\left\{ \left.[Y-\mathbb{E}(Y\lvert x)]^3 \right\lvert x \right\}}{[\text{Var}(Y\lvert x)]^\frac32}    \tag{条件偏度}\\
+    \text{skewness} &=& \frac{\mathbb{E}[(Y-\mu)^3]}{\sigma^3}    \tag{无条件偏度}
+\end{eqnarray}</script><h3 id="峰度"><a href="#峰度" class="headerlink" title="峰度"></a>峰度</h3><script type="math/tex; mode=display">
+\begin{eqnarray}
+    \kappa(Y\lvert x) &=& \frac{\mathbb{E}\left\{ \left.[Y-\mathbb{E}(Y\lvert x)]^4 \right\lvert x \right\}}{[\text{Var}(Y\lvert x)]^2}    \tag{条件峰度}\\
+\text{kurtosis} &=& \frac{\mathbb{E}[(Y-\mu)^3]}{\sigma^3}    \tag{无条件峰度}
+\end{eqnarray}</script><h3 id="条件分位数"><a href="#条件分位数" class="headerlink" title="条件分位数"></a>条件分位数</h3><script type="math/tex; mode=display">
+\begin{eqnarray}
+    Q_\tau(x) &=& \inf\{ y:F(y\lvert x)\ge\tau \}    \notag\\
+                        &=& F^{-1}(\tau\lvert x)    \tag{当逆函数存在}
+\end{eqnarray}</script><p>称为$\tau$分位数，常用的有<span style='color:red'>条件中位数</span>$Q_{\frac12}(x)$。很明显有：</p>
+<script type="math/tex; mode=display">
+P(Y\le Q_\tau(x)\lvert X=x) = \tau</script><h3 id="LRM"><a href="#LRM" class="headerlink" title="LRM"></a>LRM</h3><p>线性回归模型（linear regression model）的简称。</p>
+<h3 id="多元正态"><a href="#多元正态" class="headerlink" title="多元正态"></a>多元正态</h3><script type="math/tex; mode=display">
+X\sim N(\mu,\Sigma)</script><p>它的概率分布函数(probability distribution function, pdf)为：</p>
+<script type="math/tex; mode=display">
+f(x) = (2\pi)^{-\frac n2}\lvert \det(\Sigma) \lvert^{-\frac12}
+\exp\left\{ -\frac{(x-\mu)'\Sigma^{-1}(x-\mu)}2 \right\}</script><blockquote>
+<p>性质：如果</p>
+<script type="math/tex; mode=display">
+X = 
+\left(\begin{matrix}
+    X_1\\X_2
+\end{matrix}\right)
+\sim
+N\left[
+\left(\begin{matrix}
+    \mu_1\\\mu_2
+\end{matrix}\right),
+\left(\begin{matrix}
+    \Sigma_{11}    &    \Sigma_{12}\\
+    \Sigma_{21}    & \Sigma_{22}
+\end{matrix}\right)
+\right]</script><p>那么有：</p>
+<ol>
+<li>$AX+b\sim N(A\mu+b,A\Sigma A’)$</li>
+<li>$(X-\mu)’\Sigma^{-1}(X-\mu)\sim\chi^2(n)$</li>
+<li>$X_1\perp X_2\text{当且仅当}\Sigma_{12}=\Sigma_{21}=0$</li>
+<li>$X_1\lvert X_2\sim N(\mu_1+\Sigma_{12}\Sigma_{22}^{-1}(X_2-\mu_2),\Sigma_{11}-\Sigma_{12}\Sigma_{22}^{-1}\Sigma_{12}’)$</li>
+</ol>
+</blockquote>
+<h3 id="用投影来理解线性回归"><a href="#用投影来理解线性回归" class="headerlink" title="用投影来理解线性回归"></a>用投影来理解线性回归</h3><script type="math/tex; mode=display">
+Y = \hat{Y}+\hat{\varepsilon}</script><div align='center'>
+  <img src='/../../images/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F%E5%A4%8D%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%8F%E7%BB%93/093ABD20-5502-4A38-B60A-71829353F6B2.png' width=200px>
+  <center style='font-family:kai'>图1 OLS的投影示意图</center>
+</div>
+
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&\hat{Y} = X\hat{\beta} = X(X'X)^{-1}X'Y\equiv PY    \notag\\
+    &&\hat{\varepsilon} = Y-\hat{Y} = (I_n-P)Y\equiv MY    \notag
+\end{eqnarray}</script><p>这里定义了一个投影矩阵$P$和投影正交阵$M$：</p>
+<script type="math/tex; mode=display">
+\color{red}{P\equiv X(X'X)^{-1}X',\quad M\equiv I_n-X(X'X)^{-1}X'}</script><ul>
+<li><p>$P$和$M$都是<strong>对称矩阵</strong>以及幂等矩阵：</p>
+</li>
+<li><script type="math/tex; mode=display">
+\begin{eqnarray}
+    P^2 &=& X(X'X)^{-1}X'X(X'X)^{-1}X'=X(X'X)^{-1}X'=P \notag\\
+    M^2 &=& (I_n-P)(I_n-P)=I_n-2P+P^2=I_n-P=M    \notag
+\end{eqnarray}</script></li>
+<li><p>$PX=X,MX=0,PM=0$</p>
+</li>
+<li><p>$\text{tr}(P)=\text{tr}(X(X’X)^{-1}X’)=\text{tr}(X’X(X’X)^{-1})=\text{tr}(I_k)=k$，$\text{tr}(M)=\text{tr}(I_n-P)=n-k$</p>
+</li>
+<li><p>$\hat{\varepsilon}=MY=M(X\beta+\varepsilon)=M\varepsilon$</p>
+</li>
+<li><p>$\hat{\varepsilon}’\hat{\varepsilon}=\varepsilon’ M \varepsilon=Y’MY$</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+\text{证明：}\begin{eqnarray}
+    \hat{\varepsilon}'\hat{\varepsilon}&=&\varepsilon'M' M\varepsilon=\varepsilon' M \varepsilon=(Y-X\beta)'M(Y-X\beta)    \notag\\
+    &=&(Y'-\beta'X')MY=Y'MY
+\end{eqnarray}</script><p>根据第5条性质，可以得到以下关于拟合优度$R^2$的结果：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    R^2 &=& 1-\frac{RSS}{TSS} = \frac{ESS}{TSS} = \frac{\hat{Y}'M_0\hat{Y}}{Y'M_0Y}    \notag\\
+    \bar{R}^2 &=& 1-\frac{RSS/(n-k)}{TSS/(n-1)} = 1-\frac{n-1}{n-k}(1-R^2)    \notag
+\end{eqnarray}</script><p>其中$M_0 = I_n-\frac{ll’}{n} = I_n-l(l’l)^{-1}l’$，$l$是全为$1$的向量，得到的$M_0$是对角线为$1-\frac1n$，其余元素全为$-\frac1n$的矩阵。<span style ='color:red'>不难发现这个矩阵用来给样本去平均值非常方便，例如将随机变量$X$去平均的操作为$M_0X$</span>。</p>
+<p>检查<strong>去平均矩阵</strong>$M_0$的性质：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    M_0^2 &=&(I_n-l(l'l)^{-1}l')(I_n-l(l'l)^{-1}l') \notag\\
+    &=& I_n-2l(l'l)^{-1}l'+l(l'l)^{-1}l'l(l'l)^{-1}l'    \notag\\
+    &=& I_n-l(l'l)^{-1}l' = M        \notag
+\end{eqnarray}</script><p>它是幂等矩阵和对称矩阵。</p>
+<blockquote>
+<p>定义</p>
+<p>总偏差平方和：</p>
+<script type="math/tex; mode=display">
+TSS = \sum_{i=1}^n(Y_i-\bar{Y})^2=(M_0Y)'(M_0Y)=Y'M_0Y</script><p>回归平方和：</p>
+<script type="math/tex; mode=display">
+ESS = \sum_{i=1}^n(\hat{Y}_i-\bar{\hat{Y}})^2=(M_0\hat{Y})'(M_0\hat{Y}) = \hat{Y}'M_0\hat{Y}</script><p>残差平方和：</p>
+<script type="math/tex; mode=display">
+RSS = \sum_{i=1}^n(Y_i-\hat{Y})^2=\sum_{i=1}^n\hat{\varepsilon}_i^2</script><p>三者满足：$TSS=ESS+RSS$</p>
+</blockquote>
+<p>上面的去平均矩阵还有如下应用：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&Y'M_0Y = (M_0Y)'(M_0Y)=\sum_{i=1}^n(Y_i-\bar{Y})^2    \notag\\
+    &&X'M_0Y = (M_0X)'(M_0Y)=\sum_{i=1}^n(X_i-\bar{X})(Y_i-\bar{Y})    \notag
+\end{eqnarray}</script><blockquote>
+<p>有一个意外的小收获：<span style='color:red;font-family:kai'>幂等且对称的矩阵一定是半正定矩阵！！</span></p>
+<p>因为<span style='font-family:fangsong'>半正定矩阵$A$的一个判定条件为存在矩阵$C$，满足$A=C’C$。</span>而对于幂等且对称的矩阵而言：</p>
+<script type="math/tex; mode=display">
+M=M^2=M'M</script><p>因此它一定是半正定的！</p>
+<p>后来才知道，这个发现是“柯赫伦定理”～</p>
+</blockquote>
+<h3 id="有效率的定义"><a href="#有效率的定义" class="headerlink" title="有效率的定义"></a>有效率的定义</h3><p>对于两个无偏估计量$\hat{\beta},\tilde{\beta}$，当且仅当$\text{Var}(\tilde{\beta})-\text{Var}(\hat{\beta})$是半正定矩阵(p.s.d)时，$\hat{\beta}$比$\tilde{\beta}$更有效率。</p>
+<h3 id="依概率收敛"><a href="#依概率收敛" class="headerlink" title="依概率收敛"></a>依概率收敛</h3><p>设$\{ X_n \}_{n=1}^{+\infty}$是一个随机变量序列，$X$是一个随机变量。如果对于任意的正实数$\varepsilon&gt;0$，都有</p>
+<script type="math/tex; mode=display">
+\lim_{n\rightarrow+\infty} \mathbb{P}(|X-X_n|\ge\varepsilon)=0</script><p>那么称序列$\{ X_n \}_{n=1}^{+\infty}$依概率收敛到$X$。</p>
+<h3 id="几乎处处收敛（a-s-）"><a href="#几乎处处收敛（a-s-）" class="headerlink" title="几乎处处收敛（a.s.）"></a>几乎处处收敛（a.s.）</h3><p>设$\{ X_n \}_{n=1}^{+\infty}$是一个随机变量序列，$X$是一个随机变量。如果：</p>
+<script type="math/tex; mode=display">
+\mathbb{P}\left(\lim_{ n\rightarrow+\infty } X_n=X \right)=1</script><p>称$\{ X_n \}_{n=1}^{+\infty}$几乎处处收敛于随机变量$X$，记为$X_n \xrightarrow{\text{a.s.}} X$。</p>
+<h3 id="依-r-阶均值收敛"><a href="#依-r-阶均值收敛" class="headerlink" title="依$r$阶均值收敛"></a>依$r$阶均值收敛</h3><p>设$\{ X_n \}_{n=1}^{+\infty}$是一个随机变量序列，其中$\mathbb{E}| X_n |^r&lt;\infty$对某一个$r&gt;0$成立。如果存在一个随机变量$X$满足：</p>
+<script type="math/tex; mode=display">
+\lim_{n\rightarrow+\infty} \mathbb{E}(\| X_n-X \|^r)=0</script><p>那么称$\{ X_n \}_{n=1}^{+\infty}$依$r$阶均值收敛于$X$，记为：$X_n\xrightarrow{\text{r.m.}}X$或者$X_n\xrightarrow{L^r} X$。</p>
+<h3 id="依-r-阶矩收敛"><a href="#依-r-阶矩收敛" class="headerlink" title="依$r$阶矩收敛"></a>依$r$阶矩收敛</h3><p>设$\{ X_n \}_{n=1}^{+\infty}$是一个随机变量序列，其中$\mathbb{E}| X_n |^r&lt;\infty$对某一个$r&gt;0$成立。如果：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}\| X_n \|^r \rightarrow \mathbb{E}\| X \|^r</script><p>那么称$\{ X_n \}_{n=1}^{+\infty}$依$r$阶矩收敛于$X$。</p>
+<h3 id="依分布收敛"><a href="#依分布收敛" class="headerlink" title="依分布收敛"></a>依分布收敛</h3><p>设$\{ X_n \}_{n=1}^{+\infty}$是一个随机变量序列，其分布函数为：$F_n(x)=\mathbb{P}(X_n\le x)$。如果对于所有$x$都有$F(x)=\mathbb{P}(X\le x)$是连续的，且</p>
+<script type="math/tex; mode=display">
+F_n(x)\rightarrow F(x)</script><p>那么称$X_n$依分布收敛于$X$，记为$X_n\rightarrow_d X$。我们还称$X$及其分布$F(x)$为$X$的<strong>渐进分布</strong>、<strong>大样本分布</strong>或者<strong>极限分布</strong>。</p>
+<h3 id="检验的功效（power-of-a-test）"><a href="#检验的功效（power-of-a-test）" class="headerlink" title="检验的功效（power of a test）"></a>检验的功效（power of a test）</h3><script type="math/tex; mode=display">
+1-\mathbb{P}(\text{Type II error}) = 1-\mathbb{P}(\text{not reject } \mathbb{H}_0 \lvert \mathbb{H}_1 \text{ is true})</script><p>不犯第二类错误的概率。</p>
+<h2 id="一些容易忽视的假定"><a href="#一些容易忽视的假定" class="headerlink" title="一些容易忽视的假定"></a>一些容易忽视的假定</h2><h3 id="OLS的基本假定"><a href="#OLS的基本假定" class="headerlink" title="OLS的基本假定"></a>OLS的基本假定</h3><p>编个小口诀就是：<span style='font-family:kai'>“线性外生非退化，还要加上球方差”</span>。</p>
+<ol>
+<li>线性：$Y_i=X_i\beta+\varepsilon_i$，$Y_i=(y_1,\cdots,y_n)^T$，$X_i=(l,X_1,\cdots,X_k)$，$n$为样本量，$k$为自变量的数量。</li>
+<li>严格外生性：$\mathbb{E}(\varepsilon_i\lvert X) = \mathbb{E}(\varepsilon_i\lvert X_1,\cdots X_n)=0,\text{for }i，2，\cdots,n$。$\varepsilon$与每一个样本的自变量都是独立的，这个条件一定不能写成$\mathbb{E}(\varepsilon_i\lvert X_i)=0$</li>
+<li>非退化性：$X’X$的秩为$k$的概率为1.</li>
+<li>球性方差：$\mathbb{E}(\varepsilon_i^2\lvert X)=\sigma^2,\mathbb{E}(\varepsilon_i\varepsilon_j\lvert X)=0$</li>
+</ol>
+<h3 id="正态假定是在大样本这块提出来的！"><a href="#正态假定是在大样本这块提出来的！" class="headerlink" title="正态假定是在大样本这块提出来的！"></a>正态假定是在大样本这块提出来的！</h3><p>对残差提出了正态假定：$\varepsilon\lvert X\sim N(0,\sigma^2 I_n)$，那么它的概率分布函数（p.d.f）写成：</p>
+<script type="math/tex; mode=display">
+f(\varepsilon\lvert X) = (2\pi\sigma^2)^{-\frac n2}\exp\left(  -\frac{\varepsilon'\varepsilon}2\right)</script><p>这一假定下，$\varepsilon$与$X$不相关，也就是说$\varepsilon\perp X$。</p>
+<p>得到以下引理：</p>
+<ul>
+<li>若$\varepsilon\sim N(0,\Sigma)$，$\Sigma$是非退化的，那么$\varepsilon’\Sigma^{-1}\varepsilon\sim\chi^2(n)$。</li>
+<li>如果$\varepsilon\sim N(0,\sigma^2I_n)$，$A$是一个$n\times n$投影矩阵，那么$\varepsilon’A\varepsilon\sim\chi^2(\text{rank}(A))=\chi^2(\text{tr}(A))$</li>
+<li>如果$\varepsilon\sim N(0,\sigma^2I_n)$，$A$是一个$n\times n$投影矩阵，若$A’B=0$，那么$\varepsilon’ A\varepsilon\perp B’\varepsilon$</li>
+<li>如果$\varepsilon\sim N(0,\sigma^2I_n)$，$A$和$B$都是对称矩阵。只有当$A’B=0$时，才有$\varepsilon’ A\varepsilon\perp B’\varepsilon$</li>
+<li>若$\varepsilon\sim N(0,\sigma^2I_n)$，$A$是<strong>对称且为幂等</strong>的，那么$\frac1{\sigma^2}\varepsilon’ A\varepsilon=\color{red}{\left(\frac{\varepsilon’}{\sigma}\right)A\left(\frac{\varepsilon}{\sigma}\right)}\sim\chi^2(\text{rank}(A))$。</li>
+</ul>
+<blockquote>
+<p> 可以简单证明一下前两个引理：</p>
+<p>第一个，设$Y=\Sigma^{-\frac12}\varepsilon\sim N(0,I_n)$</p>
+<p>于是</p>
+<script type="math/tex; mode=display">
+\varepsilon'\Sigma^{-1}\varepsilon=Y'Y\sim \chi^2(n)</script><p>第二个，由于$A$不一定可逆，因此不能直接像上面那样构造了。</p>
+<p>由于$A$是投影矩阵，因此它是对称且幂等的半正定矩阵。稍微用一点线性代数的知识，可以知道存在正交矩阵$P$，满足$PP’=I_n$，使得$A$能以下面的形式对角化：</p>
+<script type="math/tex; mode=display">
+A=P'
+\left(\begin{matrix}
+    \Lambda&0\\
+    0&0
+\end{matrix}\right)
+P</script><p>其中$\Lambda$是一个对角矩阵，其对角元素为$A$的非零特征值，它的阶数等于矩阵$A$的秩。</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \varepsilon'A\varepsilon&=&\varepsilon'P'\Lambda P\varepsilon=
+\varepsilon'P'
+\left(\begin{matrix}
+    \Lambda_a&0\\
+    0&0
+\end{matrix}\right)
+P\varepsilon    \notag\\
+    &=&\left[\left(\begin{matrix}
+    \Lambda_a^{\frac12}&0\\
+    0&0
+\end{matrix}\right)
+    P\varepsilon
+    \right]'
+    \left[\left(\begin{matrix}
+    \Lambda_a^{\frac12}&0\\
+    0&0
+\end{matrix}\right)
+    P\varepsilon
+    \right]    \notag\\
+    &=& \left(\Lambda^{\frac12}P\varepsilon\right)'\left(\Lambda^{\frac12}P\varepsilon\right)    \notag
+\end{eqnarray}</script><p>其中$a=\text{rank}(A)$，$\Lambda_a$为$A$的特征值构成的对角矩阵。又有</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \text{Var}(\Lambda^{\frac12}P\varepsilon) 
+    &=&\Lambda^{\frac12}P\text{Var}(\varepsilon)P'\Lambda^{\frac12}    \notag\\
+    &=& \Lambda^{\frac12}P\sigma^2I_n P'\Lambda^{\frac12}    \notag\\
+    &=& \sigma^2 \Lambda^{\frac12}P P'\Lambda^{\frac12}    \notag\\
+    &=& \sigma^2\Lambda
+  \notag
+\end{eqnarray}</script><p>？</p>
+</blockquote>
+<p>还有一点，<span style='color:red'>作了外生性这个假定后，原来的“严格外生”和“球性方差”两个假定也就没必要了！！</span>因此在大样本情形下只有三个假定：</p>
+<ul>
+<li>线性</li>
+<li>非退化</li>
+<li>正态</li>
+</ul>
+<p>这时候有以下定理：</p>
+<ul>
+<li>$\hat{\beta}-\beta\lvert X\sim N(0,\sigma^2(X’X)^{-1})$</li>
+<li>$\left.\frac{(n-k)s^2}{\sigma^2}\right\lvert X\sim\chi^2(n-k)$</li>
+<li>$\hat{\beta}\perp s^2\lvert X$</li>
+</ul>
+<blockquote>
+<p>证明：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \hat{\beta}-\beta&=&(X'X)^{-1}X\varepsilon\equiv C\varepsilon    \notag\\
+    \text{Var}(\hat{\beta}-\beta\lvert X)&=&C\text{Var}(\varepsilon\lvert X)C'=C\sigma^2I_nC'    \notag\\
+    &=&\sigma^2 (X'X)^{-1}XX'(X'X)^{-1}=\sigma^2(X'X)^{-1}    \notag
+\end{eqnarray}</script><script type="math/tex; mode=display">
+\left.\frac{(n-k)s^2}{\sigma^2}\right\lvert X 
+= \left.\frac{\varepsilon'M\varepsilon}{\sigma^2}\right\lvert X
+\sim\chi^2(\text{rank}(M))=\chi^2(n-k)</script><p>前面的引理发挥了很大作用！！</p>
+</blockquote>
+<h3 id="正态假定也是进行假设检验的关键假定！"><a href="#正态假定也是进行假设检验的关键假定！" class="headerlink" title="正态假定也是进行假设检验的关键假定！"></a>正态假定也是进行假设检验的关键假定！</h3><h4 id="t检验"><a href="#t检验" class="headerlink" title="t检验"></a>t检验</h4><p>对于一个约束的情况：</p>
+<script type="math/tex; mode=display">
+H_0:c'\beta=r \leftrightarrow  H_1:c'\beta\neq r</script><p>如果原假设$H_0$成立的话，在正态假定下有$\hat{\beta}\lvert X\sim N(\beta,\sigma^2(X’X)^{-1})$</p>
+<script type="math/tex; mode=display">
+\left.c'\hat{\beta}\right\lvert X\sim N(c'\beta,\sigma^2c'(X'X)^{-1}c) = N(r,\sigma^2c'(X'X)^{-1}c)</script><p>于是</p>
+<script type="math/tex; mode=display">
+Z\equiv \frac{c'\hat{\beta}-r}{\sqrt{\sigma^2c'(X'X)^{-1}c}}\sim N(0,1)</script><p>但由于总体的方差是未知的，因此上面的统计量不能直接用来检验，需要将样本方差替代总体方差，构造如下检验统计量：</p>
+<script type="math/tex; mode=display">
+T_n = \frac{c'\hat{\beta}-r}{\sqrt{s^2c'(X'X)^{-1}c}}</script><p>关键是弄清楚服$T_n$从什么分布！结论来了！它服从自由度为$n-k$的$t$分布！($n$是样本总量，$k$是解释变量的数量)</p>
+<blockquote>
+<p>证明：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    T_n &=& \frac{c'\hat{\beta}-r}{\sqrt{s^2c'(X'X)^{-1}c}} 
+= \frac{c'(\hat{\beta}-\beta)}{\sqrt{s^2c'(X'X)^{-1}c}}    \notag\\
+    &=& \frac{c'(\hat{\beta}-\beta)/\sqrt{\sigma^2c'(X'X)^{-1}c}}{\sqrt{\frac{(n-k)s^2/\sigma^2}{n-k}}}    \notag\\
+    &=& \frac{c'(\hat{\beta}-\beta)/\sqrt{\sigma^2c'(X'X)^{-1}c}}{\sqrt{S_n/(n-k)}}    \notag
+\end{eqnarray}</script><p>注意到</p>
+<script type="math/tex; mode=display">
+\frac{c'(\hat{\beta}-\beta)}{\sqrt{\sigma^2c'(X'X)^{-1}c}}\sim N(0,1),\quad S_n\sim \chi^2(n-k)</script><p>因此$T_n\sim t(n-k)$</p>
+</blockquote>
+<h4 id="F检验"><a href="#F检验" class="headerlink" title="F检验"></a>F检验</h4><p>对于$q$个约束的情况：</p>
+<script type="math/tex; mode=display">
+H_0:R\beta=r \leftrightarrow  H_1:R\beta\neq r</script><p>$R$是$q\times k$矩阵，$q&lt;k$。假定$\text{rank}(R)=q$，否则有些约束是多余的。构造检验统计量：</p>
+<script type="math/tex; mode=display">
+F_n\equiv \frac{1}{q}(R\hat{\beta}-r)'[s^2R(X'X)^{-1}R']^{-1}(R\hat{\beta}-r)\sim F(q,n-k)</script><blockquote>
+<script type="math/tex; mode=display">
+\hat{\beta}\lvert X\sim N(\beta,\sigma^2(X'X)^{-1})</script><p>当原假设成立的时候，</p>
+<script type="math/tex; mode=display">
+R\hat{\beta}-r\lvert X\sim N(0,\sigma^2 R(X'X)^{-1}R')</script><p>因此</p>
+<script type="math/tex; mode=display">
+A_n\equiv(R\hat{\beta}-r)'[\sigma^2R(X'X)^{-1}R']^{-1}(R\hat{\beta}-r) \sim\chi^2(\text{rank}(R(X'X)^{-1}R')=\chi^2(q)</script><p>又因为</p>
+<script type="math/tex; mode=display">
+S_n = \frac{(n-k)s^2}{\sigma^2}\sim\chi^2(n-k)</script><p>因此</p>
+<script type="math/tex; mode=display">
+F_n = \frac{A_n/q}{S_n/(n-k)}\sim F(q,n-k)</script></blockquote>
+<h4 id="Wald检验、LM、LR检验"><a href="#Wald检验、LM、LR检验" class="headerlink" title="Wald检验、LM、LR检验"></a>Wald检验、LM、LR检验</h4><script type="math/tex; mode=display">
+W_n\equiv qF_n=(R\hat{\beta}-r)'\left[s^2R(X'X)^{-1}R'\right]^{-1}(R\hat{\beta}-r)\rightarrow_d \chi^2(q)</script><script type="math/tex; mode=display">
+\begin{eqnarray}
+    W_n &=& n\left( \frac{RSS_r-RSS_{ur}}{RSS_{ur}} \right)    \notag\\
+    LM_n &=& n\left( \frac{RSS_r-RSS_{ur}}{RSS_{r}} \right)    \notag\\
+    LR_n &=& n\ln\left(\frac{RSS_r}{RSS_{ur}}\right)    \notag
+\end{eqnarray}</script><p>一般只关注Wald检验。</p>
+<h3 id="同方差检验：White检验BP检验"><a href="#同方差检验：White检验BP检验" class="headerlink" title="同方差检验：White检验BP检验"></a>同方差检验：White检验BP检验</h3><p>原假定为：</p>
+<script type="math/tex; mode=display">
+H_0:\mathbb{E}(\varepsilon_i^2\lvert X_i) = \mathbb{E}(\varepsilon_i^2) = \sigma^2,\text{for all }i \leftrightarrow H_1:\text{not }H_0</script><h3 id="OLS估计量的渐进，假定"><a href="#OLS估计量的渐进，假定" class="headerlink" title="OLS估计量的渐进，假定"></a>OLS估计量的渐进，假定</h3><ul>
+<li>线性假定</li>
+<li>Correct specification(??):$\mathbb{E}(\varepsilon_i\lvert X_i)=0\quad\text{a.s.}$（几乎处处成立）。$\mathbb{E}(\varepsilon_i^2)\equiv\sigma^2&lt;\infty$</li>
+<li>非退化：$Q\equiv \mathbb{E}(X_iX_i’)$非退化</li>
+<li>$V\equiv\mathbb{E}(\varepsilon_i^2 X_iX_i’)$是有限的，并且是正定的。</li>
+<li>条件同方差：$\mathbb{E}(\varepsilon_i^2\lvert X_i)\equiv\sigma^2\quad\text{a.s.}$</li>
+</ul>
+<h3 id="弱外生性假定"><a href="#弱外生性假定" class="headerlink" title="弱外生性假定"></a>弱外生性假定</h3><p>弱外生性：$\mathbb{E}(X_i\varepsilon_i)=0$，其中$\mathbb{E}(\varepsilon_i^2)\equiv\sigma^2&lt;\infty$。</p>
+<h2 id="一些记不起来的定理"><a href="#一些记不起来的定理" class="headerlink" title="一些记不起来的定理"></a>一些记不起来的定理</h2><h3 id="期望迭代定理（LIE，Law-of-Iterated）"><a href="#期望迭代定理（LIE，Law-of-Iterated）" class="headerlink" title="期望迭代定理（LIE，Law of Iterated）"></a>期望迭代定理（LIE，Law of Iterated）</h3><script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&\mathbb{E}[\mathbb{E}(Y\lvert X)] = \mathbb{E}(Y)    \notag\\
+    &&\mathbb{E}\{\mathbb{E}[g(X,Y)\lvert X]\} = \mathbb{E}[g(X,Y)]    \notag\\
+    &&\mathbb{E}[\mathbb{E}(Y\lvert X,Z)\lvert X] = E(Y\lvert X)    \notag
+\end{eqnarray}</script><p>还有如果$\mathbb{E}\lvert Y\lvert&lt;\infty$，，就有（<span style='font-family:fangsong'>如果$X$的信息是已知的，那么就不必要期望</span>）：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[g(X)Y\lvert X] = g(X)\mathbb{E}(Y\lvert X)</script><p>如果$\mathbb{E}\lvert g(X)\lvert&lt;\infty$，两边取期望，还能得到：</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[g(X)Y] = \mathbb{E}[g(X)\mathbb{E}(Y\lvert X)]</script><h3 id="方差分解公式"><a href="#方差分解公式" class="headerlink" title="方差分解公式"></a>方差分解公式</h3><script type="math/tex; mode=display">
+\text{Var}(Y) = \text{Var}[\mathbb{E}(Y\lvert X)] + \mathbb{E}[\text{Var}(Y\lvert X)]</script><p>根据方差分解公式我们还能得到下面的推论：</p>
+<script type="math/tex; mode=display">
+\text{Var}(Y)\ge \text{Var}[Y-\mathbb{E}(Y\lvert X_1)]\ge\text{Var}[Y-\mathbb{E}(Y\lvert X_1,X_2)]</script><p>这说明加的$X$越多，越能改进模型？</p>
+<h3 id="GLS（Generalized-Least-Squares，广义最小二乘法）是解决异方差问题使用的方法！"><a href="#GLS（Generalized-Least-Squares，广义最小二乘法）是解决异方差问题使用的方法！" class="headerlink" title="GLS（Generalized Least Squares，广义最小二乘法）是解决异方差问题使用的方法！"></a>GLS（Generalized Least Squares，广义最小二乘法）是解决异方差问题使用的方法！</h3><p>广义的正态性假设：$\varepsilon\lvert X\sim N(0,\sigma^2V)$</p>
+<p>这意味着：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&\mathbb{E}(\varepsilon_i\lvert X) = 0    \notag\\
+    &&\mathbb{E}(\varepsilon_i^2\lvert X) = \sigma^2V_{ii}(X)    \notag\\
+    &&\mathbb{E}(\varepsilon_i\varepsilon_j\lvert X) = \sigma^2V_{ij}(X)    \notag\\
+\end{eqnarray}</script><p>这种情况下有：</p>
+<ul>
+<li>无偏性</li>
+<li>$\text{Var}(\hat{\beta}\lvert X) = \sigma^2 (X’X)^{-1}X’VX(X’X)^{-1}$</li>
+<li>$\hat{\beta}-\beta\lvert X\sim N\left(0,\sigma^2(X’X)^{-1}X’VX(X’X)^{-1}\right)$</li>
+<li>$\text{cov}(\hat{\beta},\hat{\varepsilon}\lvert X)=0$</li>
+</ul>
+<blockquote>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \text{Var}(\hat{\beta}\lvert X) &=& \text{Var}((X'X)^{-1}X'\varepsilon\lvert X) = (X'X)^{-1}X'\text{Var}(\varepsilon\lvert X)X(X'X)^{-1}    \notag\\
+    &=& (X'X)^{-1}X' \sigma^2V X(X'X)^{-1}    \notag
+\end{eqnarray}</script></blockquote>
+<p>对于可逆的实对称矩阵$V$，稍微用一点线性代数的只是就可以知道，存在非退化的矩阵$C$，满足$V^{-1}=C’C$。对于异方差问题的线性回归模型$Y=X\beta+\varepsilon$,可以改写为：</p>
+<script type="math/tex; mode=display">
+CY = CX\beta+C\varepsilon\Rightarrow Y^\star+X^\star\beta+\varepsilon^\star</script><p>我们发现：</p>
+<script type="math/tex; mode=display">
+\text{Var}(\varepsilon^\star\lvert X) = \text{Var}(C\varepsilon\lvert X) 
+= C\text{Var}(\varepsilon\lvert X)C' = C\sigma^2VC' = \sigma^2C(C'C)^{-1}C
+=\sigma^2 I_n</script><p>变成了球性方差！！！系数估计量为：</p>
+<script type="math/tex; mode=display">
+\hat{\beta}^\star = (X^{\star'}X^\star)^{-1}X^{\star'}Y^\star 
+= (X'C'CX)^{-1}X'C'CY = (X'\hat{V}^{-1}X)^{-1}X'\hat{V}^{-1}Y
+\equiv \hat{\beta}_{\text{GLS}}</script><p>该估计量有以下几条性质：</p>
+<ul>
+<li>无偏</li>
+<li>$\text{Var}(\hat{\beta}_{\text{GLS}}\lvert X) = \sigma^2 (X’V^{-1}X)^{-1}$</li>
+<li>$\left.\hat{\beta}_{\text{GLS}}-\beta\right\lvert X\sim N(0,\sigma^2(X’V^{-1}X)^{-1})$</li>
+<li>$\mathbb{E}(s^{2\star}\lvert X)=\sigma^2$</li>
+<li>$\text{cov}(\hat{\beta}_{\text{GLS}},\hat{\varepsilon}^\star\lvert X)=0$</li>
+</ul>
+<blockquote>
+<p><span style='font-family:kai'>大样本部分有五大法宝，分别是弱大数定律（WLLN）、中心极限定理（CLT）、Delta方法、斯拉茨基定理（Slutsky’s Theorem）、连续映射定理(CMT. continuous mapping theorem)。</span></p>
+</blockquote>
+<h3 id="弱大数定律-WLLN-weak-law-of-large-numbers"><a href="#弱大数定律-WLLN-weak-law-of-large-numbers" class="headerlink" title="弱大数定律(WLLN,weak law of large numbers)"></a>弱大数定律(WLLN,weak law of large numbers)</h3><p>假定$X_1,\cdots,X_n$独立同分布（IID，Independent Indentical Distribution），且有$\mathbb{E}|X_i|&lt;\infty$，那么当$n\rightarrow\infty$，有</p>
+<script type="math/tex; mode=display">
+\bar{X}_n=\frac1{n}\sum_{i=1}^n X_i \rightarrow_p \mathbb{E}X_1=\mu</script><h3 id="强大数定律"><a href="#强大数定律" class="headerlink" title="强大数定律"></a>强大数定律</h3><p>假定$X_1,\cdots,X_n$独立同分布（IID，Independent Indentical Distribution），且有$\mathbb{E}|X_1|&lt;\infty$，那么当$n\rightarrow\infty$，有</p>
+<script type="math/tex; mode=display">
+\bar X_n = \frac1n\sum_{i=1}^n X_i\xrightarrow{\text{a.s.}} \mathbb{E}X_1</script><h3 id="中心极限定理-CLT-Central-Limit-Theorem"><a href="#中心极限定理-CLT-Central-Limit-Theorem" class="headerlink" title="中心极限定理(CLT,Central Limit Theorem)"></a>中心极限定理(CLT,Central Limit Theorem)</h3><p>$\{X_n\}$iid，且均值向量$\mu$和协方差矩阵$\Sigma$均为有限值。那么有</p>
+<script type="math/tex; mode=display">
+Z_n\equiv \sqrt{n}(\bar{X}_n-\mu)\rightarrow_d N(0,\Sigma)</script><h3 id="Delta-Method"><a href="#Delta-Method" class="headerlink" title="Delta Method"></a>Delta Method</h3><p>假设$\sqrt{n}(\hat{\theta}_n-\theta)\rightarrow_d N(0,\Sigma)$，以及函数$\phi:\mathbb{R}^k\rightarrow\mathbb{R}^l,l\le k$在$\theta$的小邻域内连续可微。那么有</p>
+<script type="math/tex; mode=display">
+\sqrt{n}\left(\phi\left(\hat{\theta}_n\right)-\phi(\theta)\right)\rightarrow N(0,\Phi\Sigma\Phi')</script><p>其中$\Phi$是函数关于自变量向量求梯度：$\nabla_\theta\phi(\theta)$。</p>
+<h3 id="斯拉茨基定理"><a href="#斯拉茨基定理" class="headerlink" title="斯拉茨基定理"></a>斯拉茨基定理</h3><p>假定$X_n\rightarrow_p X$和$Y_n\rightarrow_pY$，那么有</p>
+<ol>
+<li>$c_nX_n\rightarrow_p cX$，其中$c=\lim_{n\rightarrow+\infty} c_n$。</li>
+<li>$X_n+Y_n\rightarrow_p X+Y$。</li>
+<li>$X_nY_n\rightarrow_p XY$。</li>
+<li>$\frac{X_n}{Y_n}\rightarrow_p\frac{X}{Y}$当$Y\neq0$时。</li>
+</ol>
+<h3 id="连续映射定理（CMT，Continuous-mapping-theorem）"><a href="#连续映射定理（CMT，Continuous-mapping-theorem）" class="headerlink" title="连续映射定理（CMT，Continuous mapping theorem）"></a>连续映射定理（CMT，Continuous mapping theorem）</h3><p>假设$\{ X_n \}$是一个$k$维随机向量序列，满足$X_n\rightarrow_d X(n\rightarrow+\infty)$。如果是$g:\mathbb{R}^k\rightarrow\mathbb{R}^l$连续的，那么</p>
+<script type="math/tex; mode=display">
+g(X_n)\rightarrow_d g(X),(n\rightarrow+\infty)</script><h2 id="补充知识点"><a href="#补充知识点" class="headerlink" title="补充知识点"></a>补充知识点</h2><h3 id="分块回归（Partition-Regressions）"><a href="#分块回归（Partition-Regressions）" class="headerlink" title="分块回归（Partition Regressions）"></a>分块回归（Partition Regressions）</h3><p>分块回归在多处有应用，包括在多重共线性的研究中。考虑模型：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \textbf{Y} &=& \textbf{X}\beta+\varepsilon=
+  (\textbf{X}_1,\textbf{X}_2)
+  \left(\begin{matrix}
+      \beta_1 \\ \beta_2
+  \end{matrix}\right)+\varepsilon    \notag\\
+  &=& \textbf{X}_1\beta_1 + \textbf{X}_2\beta_2+\varepsilon    \notag
+\end{eqnarray}</script><p>其中$\dim(\textbf{X}_1)=n\times k_1$，$\dim(\textbf{X}_2)=n\times k_2$,$k_2+k_2=k$。</p>
+<p>OLS的一阶条件为：</p>
+<script type="math/tex; mode=display">
+\textbf{X}'\textbf{X}\hat\beta=\textbf{X}\textbf{Y}</script><p>写成分块形式就是：</p>
+<script type="math/tex; mode=display">
+\left[\begin{matrix}
+    \textbf{X}_1'\textbf{X}_1 & \textbf{X}_1'\textbf{X}_2\\
+    \textbf{X}_2'\textbf{X}_1 & \textbf{X}_2'\textbf{X}_2
+\end{matrix}
+\right]
+\left(\begin{matrix}
+    \hat\beta_1\\\hat\beta_2
+\end{matrix}
+\right)
+=
+\left(\begin{matrix}
+    \textbf{X}_1'\textbf{Y} \\ \textbf{X}_2'\textbf{Y}
+\end{matrix}\right)</script><p>分块形式的一阶条件写成：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \textbf{X}_1'\textbf{X}_1\hat\beta_1+\textbf{X}_1'\textbf{X}_2\hat\beta_2=\textbf{X}_1'\textbf{Y}    \tag{1}\\
+    \textbf{X}_2'\textbf{X}_1\hat\beta_1+\textbf{X}_2'\textbf{X}_2\hat\beta_2=\textbf{X}_2'\textbf{Y}    \tag{2}
+\end{eqnarray}</script><p>将式子(1)两边同时乘以$\textbf{X}_2’\textbf{X}_1(\textbf{X}_1’\textbf{X}_1)^{-1}$</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    &&\textbf{X}_2'\textbf{X}_1\hat\beta_1 
++\textbf{X}_2'\textbf{X}_1(\textbf{X}_1'\textbf{X}_1)^{-1}\textbf{X}_1'\textbf{X}_2\hat\beta_2=\textbf{X}_2'\textbf{X}_1(\textbf{X}_1'\textbf{X}_1)^{-1}\textbf{X}_1'\textbf{Y}    \notag\\
+&&\Rightarrow     \textbf{X}_2'\textbf{X}_1\hat\beta_1+\textbf{X}_2'\textbf{P}_1\textbf{X}_2\hat\beta_2=\textbf{X}_2'\textbf{P}_1\textbf{Y}    \tag{3}
+\end{eqnarray}</script><p>其中$\textbf{P}_1=\textbf{X}_1(\textbf{X}_1’\textbf{X}_1)^{-1}\textbf{X}_1’$。</p>
+<p>由（2）减去（3）可以得到：</p>
+<script type="math/tex; mode=display">
+\textbf{X}_2'\textbf{M}_1\textbf{X}_2\hat\beta_2=\textbf{X}_2'\textbf{M}_1\textbf{Y}
+\Longrightarrow 
+\hat\beta_2=(\textbf{X}_2'\textbf{M}_1\textbf{X}_2)^{-1}\textbf{X}_2'\textbf{M}_1\textbf{Y}</script><p>其中$\textbf{M}_1=\textbf{I}_n-\textbf{P}_1=\textbf{I}_n-\textbf{X}_1(\textbf{X}_1’\textbf{X}_1)^{-1}\textbf{X}_1’$。类似地，还可以得到：</p>
+<script type="math/tex; mode=display">
+\hat\beta_1=(\textbf{X}_1'\textbf{M}_2\textbf{X}_1)^{-1}\textbf{X}_1'\textbf{M}_2\textbf{Y}</script><p>其中$\textbf{M}_2=\textbf{I}_n-\textbf{P}_2=\textbf{I}_n-\textbf{X}_2(\textbf{X}_2’\textbf{X}_2)^{-1}\textbf{X}_2’$。</p>
+<p>注意到$\textbf{M}_1$和$\textbf{M}_2$都是投影正交阵，于是这里我们能得到$\hat\beta_1$和$\hat\beta_1$的另一种表达：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+&&\hat\beta_1
+=\left(\textbf{X}_1^{\star'}\textbf{X}_1^\star\right)^{-1}\textbf{X}_1^{\star'}\textbf{Y}_{(2)}^\star
+=\left(\textbf{X}_1^{\star'}\textbf{X}_1^\star\right)^{-1}\textbf{X}_1^{\star'}\textbf{Y}    \notag\\
+&&\hat\beta_2
+=\left(\textbf{X}_1^{\star'}\textbf{X}_1^\star\right)^{-1}\textbf{X}_1^{\star'}\textbf{Y}_{(2)}^\star
+=\left(\textbf{X}_1^{\star'}\textbf{X}_1^\star\right)^{-1}\textbf{X}_1^{\star'}\textbf{Y}    \notag
+\end{eqnarray}</script><p>其中$\textbf{X}_1^\star=\textbf{M}_2\textbf{X}_1$,$\textbf{X}_2^\star=\textbf{M}_1\textbf{X}_2$,$\textbf{Y}_{(2)}^\star=\textbf{M}_2\textbf{Y}$,$\textbf{Y}_{(1)}^\star=\textbf{M}_1\textbf{Y}$。</p>
+<p>得到$\hat\beta_1$的分块回归步骤：</p>
+<ol>
+<li>将$\textbf{Y}$回归到$\textbf{X}_2$上，得到其残差为$\textbf{Y}_{(2)}^\star=\textbf{M}_2\textbf{Y}$；</li>
+<li>将$\textbf{X}_1$回归到$\textbf{X}_2$上，得到其残差为$\textbf{X}_1^\star=\textbf{M}_2\textbf{X}_1$：</li>
+<li>将$\textbf{Y}_{(2)}^\star$或者$\textbf{Y}$回归到$\textbf{X}_1^\star$上，得到$\hat\beta_1$。</li>
+</ol>
+<p>令$\hat\beta=\left( \hat\beta_1’,\hat\beta_2’ \right)’$，$\hat{\varepsilon}=\textbf{Y}-\textbf{X}\hat\beta$，那么</p>
+<script type="math/tex; mode=display">
+\textbf{Y}=\textbf{X}_1\hat\beta_1+\textbf{X}_2\hat\beta_2+\hat{\varepsilon}</script><blockquote>
+<p>这一部分有两个结论：$\textbf{P}\textbf{P}_l=\textbf{P}_l,l=1,2$;$\textbf{M}\textbf{M}_l=\textbf{M}$。</p>
+<p>因为对任意$\textbf{Y}$，$\textbf{P}\textbf{Y}$的集合含义是$\textbf{Y}$在由$\textbf{X}$张成的空间上的投影。而$\textbf{P}_l$由$\textbf{X}$的分量张成，因此它本身就在由$\textbf{X}$张成的空间上，因此它的投影就是它本身$\textbf{P}\textbf{P}_l=\textbf{P}_l,l=1,2$。</p>
+<p>由于$\textbf{P},\textbf{P}_1$均为对称的幂等矩阵，因此</p>
+<script type="math/tex; mode=display">
+\textbf{P}_l=\textbf{P}_l'=(\textbf{P}\textbf{P}_l)'=\textbf{P}_l'\textbf{P}'=\textbf{P}_l\textbf{P}</script><p>于是：</p>
+<script type="math/tex; mode=display">
+\begin{eqnarray}
+    \textbf{M}\textbf{M}_l
+    &=&(\textbf{I}-\textbf{P})(\textbf{I}-\textbf{P}_l)
+    =\textbf{I}-\textbf{P}-\textbf{P}_l+\textbf{P}\textbf{P}_l    \notag\\
+    &=&\textbf{I}-\textbf{P}-\textbf{P}_l+\textbf{P}_l
+    =\textbf{I}-\textbf{P}=\textbf{M}    \notag\\
+    \textbf{M}_l\textbf{M}
+    &=&(\textbf{I}-\textbf{P}_l)(\textbf{I}-\textbf{P})
+    =\textbf{I}-\textbf{P}-\textbf{P}_l+\textbf{P}_l\textbf{P}=\textbf{M}    \notag\\
+\end{eqnarray}</script></blockquote>
+<p>注意到，$\textbf{M}_2\hat{\varepsilon}=\textbf{M}_2\textbf{M}\varepsilon=\textbf{M}\varepsilon$，以及$\textbf{M}_2\textbf{X}_2=0$，我们有</p>
+<script type="math/tex; mode=display">
+\textbf{M}_2\textbf{Y}=\textbf{M}_2\textbf{X}_1\hat\beta_1+\textbf{M}_2\textbf{X}_2\hat\beta_2+\textbf{M}_2\hat\varepsilon=\textbf{M}_2\textbf{X}_1\hat\beta_1+\hat\varepsilon</script><p>或者可以写成：</p>
+<script type="math/tex; mode=display">
+\textbf{Y}_{(2)}^\star = \textbf{X}_1^\star\hat\beta_1+\hat\varepsilon</script><p>这个方程在计量经济学文献中被称为残差回归（residual regression）。注意到</p>
+<script type="math/tex; mode=display">
+\textbf{X}_1^{\star'}\hat{\varepsilon}
+=(\textbf{M}_2\textbf{X}_1)'\textbf{M}\varepsilon
+=\textbf{X}_1'\textbf{M}_2\textbf{M}\varepsilon
+=(\textbf{M}\textbf{X}_1)'\varepsilon=0</script><p><span style='font-family:hei;font-size:20px'>Frisch-Waugh-Lovell定理(FWL定理)</span></p>
+<p>$\beta_1$的OLS估计量和OLS估计残差$\hat\varepsilon$可以按照上面的步骤1-步骤3，将$\textbf{Y}_{(2)}^\star$回归到$\textbf{X}_1^\star$上，等价得到。</p>
+
+          </div>
+      
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          <!-- 
+    <div class="article-reward">
+        <a id="reward-btn" href="javascript:;">打赏</a>
+        <div id="reward-content">
+            <h6 class="reward-tit">“感谢你的支持，我会继续努力！”</h6>
+            <div>
+                <div class="reward-code">
+                    <img class="type-code" src="../../../../css/images/wechat.jpg">
+                    <img class="er-code" src="/css/images/wechat-pay.jpg">
+                </div>
+                <div class="reward-code">
+                    <img class="type-code" src="../../../../css/images/alipay.jpg">
+                    <img class="er-code" src="/css/images/alipay-pay.jpg">
+                </div>
+            </div>
+            <p class="reward-desc">扫码打赏，感谢支持</p>
+        </div>
+    </div>
+
+ -->
+          
+          <!-- 
+    <div class="social-share">
+      <span>分享到:</span>
+    </div>
+
+
+ -->
         </div>
       
       
-    </div>
-  
-  
-    
-
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-14T13:16:12+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月14日</p>
-  </a>
-</div>
-
+<nav id="article-nav">
+  
+    <a href="../../20/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94%E6%AE%8B%E5%B7%AE%E7%9B%B8%E5%85%B3%E7%9A%84%E5%90%84%E7%A7%8D%E6%83%85%E5%BD%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
         
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dhndzwxj.github.io/2021/02/18/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F%E5%9F%BA%E7%A1%80%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/&title=高级计量基础——线性回归 - 渝言&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dhndzwxj.github.io/2021/02/18/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F%E5%9F%BA%E7%A1%80%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/&title=高级计量基础——线性回归 - 渝言&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://dhndzwxj.github.io/2021/02/18/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F%E5%9F%BA%E7%A1%80%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/&title=高级计量基础——线性回归 - 渝言&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </div>
-
-
-  
-  
-
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='../../20/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94%E6%AE%8B%E5%B7%AE%E7%9B%B8%E5%85%B3%E7%9A%84%E5%90%84%E7%A7%8D%E6%83%85%E5%BD%A2/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>高级计量进阶——残差相关的各种情形</p>
-          <p class='content'>知识点：线性回归中的估计，只要残差是外生的，参数估计结果就是无偏的；如果残差是内生的，参数估计结果一定是有偏的，这种情况下我们追求的是得到一致的估计结果。本页的内容解决的均为残差内生的情况。
-分...</p>
-        </a>
-      
-      
-        <a class='next' href='../../17/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9F%BA%E5%B0%94%E7%89%B9%EF%BC%9F/'>
-          <p class='title'>什么是基尔特？<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>
-来自百度百科。
-
-基尔特社会主义亦称“行会社会主义”(基尔特，英语“Guild”音译，即“行会”之意)。20世纪初英国工人运动中出现的一种思潮。
-是费边社会主义（FabianSocialism...</p>
-        </a>
-      
-    </div>
-  
-</article>
-
-
-  
-
-  <article class="post white-box reveal shadow" id="comments">
-    <p ct><i class='fas fa-comments'></i> 评论</p>
-    
-    <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-  </article>
-
-
-
-
-
-  <script>
-  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    // 文章章节标题不能为 “MathJax” ，否则会报错。
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-
-
-
-
-</div>
-<aside class='l_side'>
-  
-  
-    
-    
-
-
-
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%B0%E4%B8%8D%E8%B5%B7%E6%9D%A5%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">一些记不起来的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%8F%E5%BA%A6"><span class="toc-text">偏度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B3%B0%E5%BA%A6"><span class="toc-text">峰度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E4%BD%8D%E6%95%B0"><span class="toc-text">条件分位数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LRM"><span class="toc-text">LRM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E6%AD%A3%E6%80%81"><span class="toc-text">多元正态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%8A%95%E5%BD%B1%E6%9D%A5%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">用投影来理解线性回归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E7%8E%87%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">有效率的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E6%A6%82%E7%8E%87%E6%94%B6%E6%95%9B"><span class="toc-text">依概率收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%B9%8E%E5%A4%84%E5%A4%84%E6%94%B6%E6%95%9B%EF%BC%88a-s-%EF%BC%89"><span class="toc-text">几乎处处收敛（a.s.）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D-r-%E9%98%B6%E5%9D%87%E5%80%BC%E6%94%B6%E6%95%9B"><span class="toc-text">依$r$阶均值收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D-r-%E9%98%B6%E7%9F%A9%E6%94%B6%E6%95%9B"><span class="toc-text">依$r$阶矩收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E5%88%86%E5%B8%83%E6%94%B6%E6%95%9B"><span class="toc-text">依分布收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E9%AA%8C%E7%9A%84%E5%8A%9F%E6%95%88%EF%BC%88power-of-a-test%EF%BC%89"><span class="toc-text">检验的功效（power of a test）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%AE%B9%E6%98%93%E5%BF%BD%E8%A7%86%E7%9A%84%E5%81%87%E5%AE%9A"><span class="toc-text">一些容易忽视的假定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%81%87%E5%AE%9A"><span class="toc-text">OLS的基本假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%81%87%E5%AE%9A%E6%98%AF%E5%9C%A8%E5%A4%A7%E6%A0%B7%E6%9C%AC%E8%BF%99%E5%9D%97%E6%8F%90%E5%87%BA%E6%9D%A5%E7%9A%84%EF%BC%81"><span class="toc-text">正态假定是在大样本这块提出来的！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%81%87%E5%AE%9A%E4%B9%9F%E6%98%AF%E8%BF%9B%E8%A1%8C%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E7%9A%84%E5%85%B3%E9%94%AE%E5%81%87%E5%AE%9A%EF%BC%81"><span class="toc-text">正态假定也是进行假设检验的关键假定！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#t%E6%A3%80%E9%AA%8C"><span class="toc-text">t检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#F%E6%A3%80%E9%AA%8C"><span class="toc-text">F检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Wald%E6%A3%80%E9%AA%8C%E3%80%81LM%E3%80%81LR%E6%A3%80%E9%AA%8C"><span class="toc-text">Wald检验、LM、LR检验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%96%B9%E5%B7%AE%E6%A3%80%E9%AA%8C%EF%BC%9AWhite%E6%A3%80%E9%AA%8CBP%E6%A3%80%E9%AA%8C"><span class="toc-text">同方差检验：White检验BP检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%B8%90%E8%BF%9B%EF%BC%8C%E5%81%87%E5%AE%9A"><span class="toc-text">OLS估计量的渐进，假定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E5%A4%96%E7%94%9F%E6%80%A7%E5%81%87%E5%AE%9A"><span class="toc-text">弱外生性假定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%B0%E4%B8%8D%E8%B5%B7%E6%9D%A5%E7%9A%84%E5%AE%9A%E7%90%86"><span class="toc-text">一些记不起来的定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B%E8%BF%AD%E4%BB%A3%E5%AE%9A%E7%90%86%EF%BC%88LIE%EF%BC%8CLaw-of-Iterated%EF%BC%89"><span class="toc-text">期望迭代定理（LIE，Law of Iterated）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%B7%AE%E5%88%86%E8%A7%A3%E5%85%AC%E5%BC%8F"><span class="toc-text">方差分解公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GLS%EF%BC%88Generalized-Least-Squares%EF%BC%8C%E5%B9%BF%E4%B9%89%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%EF%BC%89%E6%98%AF%E8%A7%A3%E5%86%B3%E5%BC%82%E6%96%B9%E5%B7%AE%E9%97%AE%E9%A2%98%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%81"><span class="toc-text">GLS（Generalized Least Squares，广义最小二乘法）是解决异方差问题使用的方法！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B-WLLN-weak-law-of-large-numbers"><span class="toc-text">弱大数定律(WLLN,weak law of large numbers)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-text">强大数定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86-CLT-Central-Limit-Theorem"><span class="toc-text">中心极限定理(CLT,Central Limit Theorem)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delta-Method"><span class="toc-text">Delta Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%AF%E6%8B%89%E8%8C%A8%E5%9F%BA%E5%AE%9A%E7%90%86"><span class="toc-text">斯拉茨基定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E6%98%A0%E5%B0%84%E5%AE%9A%E7%90%86%EF%BC%88CMT%EF%BC%8CContinuous-mapping-theorem%EF%BC%89"><span class="toc-text">连续映射定理（CMT，Continuous mapping theorem）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">补充知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%9D%97%E5%9B%9E%E5%BD%92%EF%BC%88Partition-Regressions%EF%BC%89"><span class="toc-text">分块回归（Partition Regressions）</span></a></li></ol></li></ol>
-    </div>
-  </section>
-
-
-  
-
-
-</aside>
-
-
-
-        
-        
-          <!--此文件用来存放一些不方便取值的变量-->
-<!--思路大概是将值藏到重加载的区域内-->
-
-<script>
-  window.pdata={}
-  pdata.ispage=true;
-  pdata.postTitle="高级计量基础——线性回归";
-  pdata.commentPath="";
-  pdata.commentPlaceholder="";
-
-  var l_header=document.getElementById("l_header");
-  
-  l_header.classList.add("show");
-  
-</script>
-
+          高级计量进阶——残差相关的各种情形
         
       </div>
-      
+    </a>
   
-  <footer class="footer clearfix">
-    <br><br>
-    
-      
-        <div class="aplayer-container">
-          
+  
+    <a href="../../17/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9F%BA%E5%B0%94%E7%89%B9%EF%BC%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">什么是基尔特？</div>
+    </a>
+  
+</nav>
 
-
-        </div>
       
-    
-      
-        <br>
-        <div class="social-wrapper">
-          
-            
-              <a href="../../../../atom.xml"
-                class="social  flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-                
-                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/020-rss.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/020-rss.svg" srcset="data:image/png;base64,666"/>
-                
-              </a>
-            
-          
-            
-          
-            
-              <a href="../../../../https:/github.com/dhndzwxj"
-                class="social  flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-                
-                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/029-github.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/029-github.svg" srcset="data:image/png;base64,666"/>
-                
-              </a>
-            
-          
-        </div>
-      
-    
-      
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div>
-      
-    
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次&lt;/span&gt; <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人&lt;/span&gt;</p>
-</div>
+
+
+
+
+
+
+  <div id="SOHUCS" sid="2021/02/18/高级计量基础——线性回归/"></div>
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
         
-      
+          <aside id="sidebar">
+  
     
-      
-        本站使用
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0" target="_blank" class="codename">Volantis</a>
-        作为主题
-      
-    
-      
-        <div class='copyright'>
-        <p><a href="/">Copyright © 2020-2020 by Juncker</a></p>
-
-        </div>
-      
-    
-  </footer>
-
-
-      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> 最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="../../../06/16/%E5%8A%A9%E6%95%99%EF%BC%9A%E4%B8%80%E9%94%AE%E7%99%BB%E8%AE%B0%E6%8F%90%E4%BA%A4%E5%92%8C%E6%88%90%E7%BB%A9/">助教：一键登记提交和成绩</a>
+          </li>
+        
+          <li>
+            <a href="../../../06/02/%E4%B8%AD%E5%9B%BD%E5%AF%B9%E5%A4%96%E5%BC%80%E6%94%BE%E5%8F%B2/">中国对外开放史</a>
+          </li>
+        
+          <li>
+            <a href="../../../06/02/%E5%9F%8E%E5%B8%82%E5%8C%96%E7%AC%94%E8%AE%B0/">城市化笔记</a>
+          </li>
+        
+          <li>
+            <a href="../../../05/19/%E4%BB%80%E4%B9%88%E6%98%AF%E6%96%B0%E7%86%8A%E5%BD%BC%E7%89%B9%EF%BC%9F/">什么是新熊彼特？</a>
+          </li>
+        
+          <li>
+            <a href="../../../05/18/SSA%E7%BB%8F%E5%85%B8%E8%AE%BA%E6%96%87/">SSA经典论文</a>
+          </li>
+        
+          <li>
+            <a href="../../../05/13/%E5%8D%97%E5%8C%97%E5%88%86%E5%8C%96%E7%BB%BC%E8%BF%B0%E5%A2%9E%E8%A1%A5/">南北分化综述增补</a>
+          </li>
+        
+          <li>
+            <a href="../../../05/09/%E5%A4%A7%E5%8D%AB%C2%B7%E5%93%88%E7%BB%B4%E8%B5%84%E6%9C%AC%E7%9A%84%E9%99%90%E5%BA%A6/">大卫·哈维资本的限度</a>
+          </li>
+        
+          <li>
+            <a href="../../../04/24/%E8%B4%A2%E6%94%BF%E5%AD%A6%E7%AC%94%E8%AE%B0/">财政学笔记</a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-  <div>
-    <script>
-window.volantis={};
-window.volantis.loadcss=document.getElementById("loadcss");
-/********************脚本懒加载函数********************************/
-function loadScript(src, cb) {
-var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
-var script = document.createElement('script');
-script.setAttribute('type','text/javascript');
-if (cb) script.onload = cb;
-script.setAttribute('src', src);
-HEAD.appendChild(script);
-}
-//https://github.com/filamentgroup/loadCSS
-var loadCSS = function( href, before, media, attributes ){
-	var doc = window.document;
-	var ss = doc.createElement( "link" );
-	var ref;
-	if( before ){
-		ref = before;
-	}
-	else {
-		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
-		ref = refs[ refs.length - 1];
-	}
-	var sheets = doc.styleSheets;
-	if( attributes ){
-		for( var attributeName in attributes ){
-			if( attributes.hasOwnProperty( attributeName ) ){
-				ss.setAttribute( attributeName, attributes[attributeName] );
-			}
-		}
-	}
-	ss.rel = "stylesheet";
-	ss.href = href;
-	ss.media = "only x";
-	function ready( cb ){
-		if( doc.body ){
-			return cb();
-		}
-		setTimeout(function(){
-			ready( cb );
-		});
-	}
-	ready( function(){
-		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
-	});
-	var onloadcssdefined = function( cb ){
-		var resolvedHref = ss.href;
-		var i = sheets.length;
-		while( i-- ){
-			if( sheets[ i ].href === resolvedHref ){
-				return cb();
-			}
-		}
-		setTimeout(function() {
-			onloadcssdefined( cb );
-		});
-	};
-	function loadCB(){
-		if( ss.addEventListener ){
-			ss.removeEventListener( "load", loadCB );
-		}
-		ss.media = media || "all";
-	}
-	if( ss.addEventListener ){
-		ss.addEventListener( "load", loadCB);
-	}
-	ss.onloadcssdefined = onloadcssdefined;
-	onloadcssdefined( loadCB );
-	return ss;
-};
-</script>
-<script>
-  
-  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
-  
-  
-  
-  
-</script>
-<!-- required -->
-
-<script src="../../../../https:/cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
-
-<script>
-  function pjax_fancybox() {
-    $(".md .gallery").find("img").each(function () { //渲染 fancybox
-      var element = document.createElement("a"); // a 标签
-      $(element).attr("class", "fancybox");
-      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
-      $(element).attr("href", $(this).attr("src"));
-      if ($(this).attr("data-original")) {
-        $(element).attr("href", $(this).attr("data-original"));
-      }
-      $(element).attr("data-fancybox", "images");
-      var caption = "";   // 描述信息
-      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
-        $(element).attr('data-caption', $(this).attr('alt'));
-        caption = $(this).attr('alt');
-      }
-      var div = document.createElement("div");
-      $(div).addClass("fancybox");
-      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
-      var span = document.createElement("span");
-      $(span).addClass("image-caption");
-      $(span).text(caption); // 加描述
-      $(this).after(span);  // 再套一层描述
-      $(this).wrap(element);  // 最后套 a 标签
-    })
-    $(".md .gallery").find("img").fancybox({
-      selector: '[data-fancybox="images"]',
-      hash: false,
-      loop: false,
-      closeClick: true,
-      helpers: {
-        overlay: {closeClick: true}
-      },
-      buttons: [
-        "zoom",
-        "close"
-      ]
-    });
-  };
-  function SCload_fancybox() {
-    if ($(".md .gallery").find("img").length == 0) return;
-    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
-    setTimeout(function() {
-      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
-    }, 1);
-  };
-  $(function () {
-    SCload_fancybox();
-  });
-</script>
-
-
-<!-- internal -->
-
-
-
-
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
-<script>
-  // https://www.npmjs.com/package/vanilla-lazyload
-  // Set the options globally
-  // to make LazyLoad self-initialize
-  window.lazyLoadOptions = {
-    elements_selector: ".lazyload",
-    threshold: 0
-  };
-  // Listen to the initialization event
-  // and get the instance of LazyLoad
-  window.addEventListener(
-    "LazyLoad::Initialized",
-    function (event) {
-      window.lazyLoadInstance = event.detail.instance;
-    },
-    false
-  );
-  document.addEventListener('DOMContentLoaded', function () {
-    lazyLoadInstance.update();
-  });
-  document.addEventListener('pjax:complete', function () {
-    lazyLoadInstance.update();
-  });
-</script>
-
-
 
 
   
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> 分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/">博资考</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/MWG%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E7%90%86%E8%AE%BA/">MWG微观经济理论</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E6%95%B0%E7%90%86-%E5%AE%8F%E8%A7%82/">高级数理-宏观</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E6%95%B0%E7%90%86-%E5%BE%AE%E8%A7%82/">高级数理-微观</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F/">高级计量</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9D%82%E6%8A%80/">杂技</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9D%82%E6%8A%80/Hexo/">Hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9D%82%E6%8A%80/LaTeX/">LaTeX</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9D%82%E6%8A%80/python/">python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9D%82%E8%AE%B0/">杂记</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9D%82%E8%AE%B0/%E6%98%8E%E6%98%8E%E7%9A%84%E4%B8%96%E7%95%8C/">明明的世界</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/">笔记</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E6%96%B0%E6%83%B3%E6%B3%95/">新想法</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%A4%A7%E5%8D%AB%C2%B7%E5%93%88%E7%BB%B4/">大卫·哈维</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AE%89%E7%93%A6%E5%B0%94%C2%B7%E8%B0%A2%E5%85%8B%E3%80%8A%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E3%80%8B/">安瓦尔·谢克《资本主义》</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%B0%BC%E5%B0%94%C2%B7%E5%8F%B2%E5%AF%86%E6%96%AF%E3%80%8A%E8%87%AA%E7%84%B6%E3%80%81%E8%B5%84%E6%9C%AC%E5%92%8C%E7%94%9F%E4%BA%A7%E7%A9%BA%E9%97%B4%E3%80%8B/">尼尔·史密斯《自然、资本和生产空间》</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%B1%B3%E6%AD%87%E5%B0%94%C2%B7%E9%98%BF%E6%A0%BC%E5%88%97%E5%A1%94%E3%80%8A%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA%EF%BC%9A%E7%BE%8E%E5%9B%BD%E7%9A%84%E7%BB%8F%E9%AA%8C%E3%80%8B/">米歇尔·阿格列塔《资本主义调节理论：美国的经验》</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%BB%8F%E6%B5%8E%E5%9C%B0%E7%90%86%E5%AD%A6/">经济地理学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%A9%AC%E5%85%8B%C2%B7%E6%8B%89%E6%B2%83%E3%80%8A%E5%90%8E%E5%87%AF%E6%81%A9%E6%96%AF%E4%B8%BB%E4%B9%89%E7%BB%8F%E6%B5%8E%E5%AD%A6%E3%80%8B/">马克·拉沃《后凯恩斯主义经济学》</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%A9%AC%E6%81%A9%E5%85%A8%E9%9B%86/">马恩全集</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%BB%98%E9%A1%BF%E3%80%8A%E7%A4%BE%E4%BC%9A%E7%90%86%E8%AE%BA%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%BB%93%E6%9E%84%E3%80%8B/">默顿《社会理论与社会结构》</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/">经济学</a><span class="category-list-count">49</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E4%B8%8D%E5%B9%B3%E8%A1%A1%E5%8F%91%E5%B1%95/">不平衡发展</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E5%8F%91%E8%A1%A8%E5%B8%B8%E8%AF%86/">发表常识</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/">名词解释</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/">基础理论</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%8A%A5%E5%91%8A/">报告</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%94%BF%E7%AD%96%E6%96%87%E4%BB%B6/">政策文件</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%95%B0%E6%8D%AE/">数据</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%A8%A1%E5%9E%8B/">模型</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%A8%A1%E5%9E%8B/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92%EF%BC%88VAR%E6%A8%A1%E5%9E%8B%EF%BC%89/">向量自回归（VAR模型）</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%A8%A1%E5%9E%8B/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF%E6%A8%A1%E5%9E%8B/">资本循环模型</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E7%BB%8F%E6%B5%8E%E5%8F%B2/">经济史</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E7%BB%BC%E8%BF%B0/">综述</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E7%BE%8E%E5%9B%BD%E7%A7%AF%E7%B4%AF%E7%9A%84%E7%A4%BE%E4%BC%9A%E7%BB%93%E6%9E%84%E7%90%86%E8%AE%BA/">美国积累的社会结构理论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E7%BF%BB%E8%AF%91/">翻译</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E8%AE%A1%E9%87%8F/">计量</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E8%B4%A2%E6%94%BF%E4%B8%8E%E5%9F%8E%E5%B8%82%E5%8C%96/">财政与城市化</a><span class="category-list-count">2</span></li></ul></li></ul>
+    </div>
+  </div>
+
+
   
-    <script>
-      window.FPConfig = {
-        delay: 0,
-        ignoreKeywords: [],
-        maxRPS: 5,
-        hoverDelay: 25
-      };
-    </script>
-    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签云</h3>
+    <div class="widget tagcloud">
+      <a href="../../../../tags/2035/" style="font-size: 10px;">2035</a> <a href="../../../../tags/DSGE/" style="font-size: 10px;">DSGE</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/SSA/" style="font-size: 10px;">SSA</a> <a href="../../../../tags/VAR/" style="font-size: 10px;">VAR</a> <a href="../../../../tags/stata/" style="font-size: 10px;">stata</a> <a href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" style="font-size: 10px;">不变价格</a> <a href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" style="font-size: 10px;">不稳定就业</a> <a href="../../../../tags/%E5%81%A5%E5%BA%B7/" style="font-size: 10px;">健康</a> <a href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" style="font-size: 10px;">克鲁格曼</a> <a href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" style="font-size: 10px;">公共卫生</a> <a href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" style="font-size: 10px;">共产党宣言</a> <a href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" style="font-size: 10px;">凸函数</a> <a href="../../../../tags/%E5%87%B8%E9%9B%86/" style="font-size: 10px;">凸集</a> <a href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">动态随机一般均衡模型</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" style="font-size: 10px;">劳动价值论</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" style="font-size: 10px;">劳动过程</a> <a href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" style="font-size: 10px;">包络定理</a> <a href="../../../../tags/%E5%8C%BB%E7%96%97/" style="font-size: 10px;">医疗</a> <a href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" style="font-size: 10px;">十四五</a> <a href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" style="font-size: 10px;">南北贸易</a> <a href="../../../../tags/%E5%8D%B1%E6%9C%BA/" style="font-size: 10px;">危机</a> <a href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">发刊技巧</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">古典</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 10px;">古典经济学</a> <a href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" style="font-size: 15px;">名词解释</a> <a href="../../../../tags/%E5%90%8E%E5%87%AF/" style="font-size: 17.5px;">后凯</a> <a href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" style="font-size: 10px;">向量自回归</a> <a href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">国内大循环</a> <a href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" style="font-size: 10px;">国民经济核算</a> <a href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 12.5px;">国际贸易</a> <a href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" style="font-size: 10px;">基础范畴</a> <a href="../../../../tags/%E5%A2%9E%E9%95%BF/" style="font-size: 10px;">增长</a> <a href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" style="font-size: 10px;">外生冲击</a> <a href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">局部投入产出闭模型</a> <a href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">库恩-塔克条件</a> <a href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" style="font-size: 10px;">建筑业</a> <a href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" style="font-size: 10px;">开集闭集</a> <a href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" style="font-size: 17.5px;">恩格斯</a> <a href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" style="font-size: 10px;">投入产出</a> <a href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" style="font-size: 10px;">拉格朗日乘子法</a> <a href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" style="font-size: 10px;">数学规划</a> <a href="../../../../tags/%E6%96%AF%E5%AF%86/" style="font-size: 10px;">斯密</a> <a href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">新古典</a> <a href="../../../../tags/%E6%9D%82%E8%AE%B0/" style="font-size: 12.5px;">杂记</a> <a href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" style="font-size: 12.5px;">李斯特</a> <a href="../../../../tags/%E6%9D%A8%E6%A0%BC/" style="font-size: 10px;">杨格</a> <a href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" style="font-size: 10px;">核心期刊</a> <a href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">法国调节学派</a> <a href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" style="font-size: 10px;">现代货币理论</a> <a href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" style="font-size: 10px;">社会干预</a> <a href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" style="font-size: 12.5px;">线性规划</a> <a href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">美国社会积累结构学派</a> <a href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" style="font-size: 10px;">自由贸易</a> <a href="../../../../tags/%E8%A5%BF%E9%A9%AC/" style="font-size: 10px;">西马</a> <a href="../../../../tags/%E8%AE%A1%E9%87%8F/" style="font-size: 10px;">计量</a> <a href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" style="font-size: 12.5px;">调节理论</a> <a href="../../../../tags/%E8%B0%A2%E5%85%8B/" style="font-size: 10px;">谢克</a> <a href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" style="font-size: 10px;">财政管制</a> <a href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" style="font-size: 17.5px;">资本循环</a> <a href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" style="font-size: 10px;">远景目标</a> <a href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" style="font-size: 10px;">金融化</a> <a href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" style="font-size: 10px;">雇佣劳动</a> <a href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" style="font-size: 20px;">马克思</a> <a href="../../../../tags/%E9%AB%98%E5%B3%B0/" style="font-size: 10px;">高峰</a>
+    </div>
+  </div>
+
   
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/">2021年06月</a><span class="archive-list-count">59</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/">2020年12月</a><span class="archive-list-count">65</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/2035/" rel="tag">2035</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/DSGE/" rel="tag">DSGE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/SSA/" rel="tag">SSA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/VAR/" rel="tag">VAR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/stata/" rel="tag">stata</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" rel="tag">不变价格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" rel="tag">不稳定就业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" rel="tag">克鲁格曼</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" rel="tag">公共卫生</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" rel="tag">共产党宣言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" rel="tag">凸函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E9%9B%86/" rel="tag">凸集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" rel="tag">动态随机一般均衡模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" rel="tag">劳动价值论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" rel="tag">劳动过程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" rel="tag">包络定理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%BB%E7%96%97/" rel="tag">医疗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" rel="tag">十四五</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" rel="tag">南北贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%B1%E6%9C%BA/" rel="tag">危机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" rel="tag">发刊技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8/" rel="tag">古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">古典经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" rel="tag">名词解释</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8E%E5%87%AF/" rel="tag">后凯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" rel="tag">向量自回归</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" rel="tag">国内大循环</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" rel="tag">国民经济核算</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" rel="tag">国际贸易</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" rel="tag">基础范畴</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A2%9E%E9%95%BF/" rel="tag">增长</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" rel="tag">外生冲击</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" rel="tag">局部投入产出闭模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" rel="tag">库恩-塔克条件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" rel="tag">建筑业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" rel="tag">开集闭集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" rel="tag">恩格斯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" rel="tag">投入产出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" rel="tag">拉格朗日乘子法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" rel="tag">数学规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%AF%E5%AF%86/" rel="tag">斯密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" rel="tag">新古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" rel="tag">李斯特</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%A8%E6%A0%BC/" rel="tag">杨格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" rel="tag">核心期刊</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" rel="tag">法国调节学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" rel="tag">现代货币理论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" rel="tag">社会干预</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" rel="tag">线性规划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" rel="tag">美国社会积累结构学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" rel="tag">自由贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%A5%BF%E9%A9%AC/" rel="tag">西马</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%A1%E9%87%8F/" rel="tag">计量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" rel="tag">调节理论</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%A2%E5%85%8B/" rel="tag">谢克</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" rel="tag">财政管制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" rel="tag">资本循环</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" rel="tag">远景目标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" rel="tag">金融化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" rel="tag">雇佣劳动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" rel="tag">马克思</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%AB%98%E5%B3%B0/" rel="tag">高峰</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> 友情链接</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a href="../../../../http:/www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a href="../../../../http:/www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a href="../../../../http:/www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">网站地图</a>
+        <span> | </span><a href="/atom.xml">订阅本站</a>
+        <span> | </span><a href="/about/">联系博主</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 揭晓.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="../../../../js/jquery-3.4.1.min.js"></script>
+
+
+<script src="../../../../js/search.json.js"></script>
+
+
+  
+<script src="../../../../fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-    var clipboard = new ClipboardJS('.btn-copy', {
-        target: function (trigger) {
-            return trigger.nextElementSibling
-        }
-    });
-    function wait(callback, seconds) {
-        var timelag = null;
-        timelag = window.setTimeout(callback, seconds)
-    }
-    function pjax_initCopyCode() {
-		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
-        var copyHtml = '';
-        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
-        copyHtml += '</button>';
-        $(".highlight .code pre").before(copyHtml);
-        $(".article pre code").before(copyHtml);
-        clipboard.off('success').on('success', function (e) {
-            let $btn = $(e.trigger);
-            $btn.addClass('copied');
-            let $icon = $($btn.find('i'));
-            $icon.removeClass('fa-copy');
-            $icon.addClass('fa-check-circle');
-            let $span = $($btn.find('span'));
-            $span[0].innerText = 'COPIED';
-            wait(function () {
-                $icon.removeClass('fa-check-circle');
-                $icon.addClass('fa-copy');
-                $span[0].innerText = 'COPY'
-            }, 2000)
-        });
-        clipboard.off('error').on('error', function (e) {
-            e.clearSelection();
-            let $btn = $(e.trigger);
-            $btn.addClass('copy-failed');
-            let $icon = $($btn.find('i'));
-            $icon.removeClass('fa-copy');
-            $icon.addClass('fa-times-circle');
-            let $span = $($btn.find('span'));
-            $span[0].innerText = 'COPY FAILED';
-            wait(function () {
-                $icon.removeClass('fa-times-circle');
-                $icon.addClass('fa-copy');
-                $span[0].innerText = 'COPY'
-            }, 2000)
-        })
-    }
-    $(function () {
-        pjax_initCopyCode()
-    });
-</script>
-
-
+<script src="../../../../js/script.js"></script>
 
 
 
@@ -1413,558 +1280,114 @@ var loadCSS = function( href, before, media, attributes ){
 
 
   
-  
-<script src="../../../../js/valine.js"></script>
-
-
-<script>
-  var GUEST_INFO = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link'.split(',').filter(function (item) {
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
-    return REQUIRED_FIELDS.indexOf(item) > -1
-  });
-
-  function emoji(path, idx, ext) {
-    return path + "/" + path + "-" + idx + "." + ext;
-  }
-
-  var emojiMaps = {};
-  for (var i = 1; i <= 54; i++) {
-    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-  }
-  for (var i = 1; i <= 101; i++) {
-    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-  }
-  for (var i = 1; i <= 116; i++) {
-    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-  }
-  for (var i = 1; i <= 125; i++) {
-    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
-  }
-  for (var i = 1; i <= 4; i++) {
-    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
-  }
-
-  function pjax_valine() {
-    if(!document.querySelectorAll("#valine_container")[0])return;
-
-    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
-
-    let path = pdata.commentPath;
-    if (path.length == 0) {
-      let defaultPath = '';
-      path = defaultPath || decodeURI(window.location.pathname);
-    }
-
-    var valine = new Valine();
-    valine.init({
-      el: '#valine_container',
-      meta: meta,
-      placeholder: pagePlaceholder,
-      path: path,
-      appId: "4GxrlYYHiDtgVVBt1brJjjiW-gzGzoHsz",
-      appKey: "457XUbyBHsGjI5e61V5pAdO4",
-      pageSize: '10',
-      avatar: 'robohash',
-      lang: 'zh-cn',
-      visitor: 'true',
-      highlight: 'true',
-      mathJax: 'false',
-      enableQQ: 'true',
-      recordIP: 'false',
-      requiredFields: requiredFields,
-      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
-      emojiMaps: emojiMaps
-    })
-  }
-
-  $(function () {
-    pjax_valine();
-  });
-</script>
-
-
+<script src="../../../../https:/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
   
-<script src="../../../../js/app.js"></script>
+<script src="../../../../localshare/js/social-share.js"></script>
+
+  
+<script src="../../../../localshare/js/qrcode.js"></script>
 
 
 
-<!-- optional -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script>
-const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
-const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
-
-$('.input.u-search-input').one('focus',function(){
-	
-		loadScript('../../../../js/search/hexo.js',setSearchService);
-	
-})
-
-function listenSearch(){
-  
-    customSearch = new HexoSearch({
-      imagePath: SearchServiceimagePath
-    });
-  
-}
-function setSearchService() {
-	listenSearch();
-	
-		document.addEventListener("pjax:success", listenSearch);
-	
-}
-</script>
-
-
-
-
-
-
-
-
-
-
-
-  <script defer>
-
-  const LCCounter = {
-    app_id: '4GxrlYYHiDtgVVBt1brJjjiW-gzGzoHsz',
-    app_key: '457XUbyBHsGjI5e61V5pAdO4',
-    custom_api_server: 'https://4gxrlyyh.lc-cn-n1-shared.com',
-
-    // 查询存储的记录
-    getRecord(Counter, url, title) {
-      return new Promise(function (resolve, reject) {
-        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
-          .then(resp => resp.json())
-          .then(({results, code, error}) => {
-            if (code === 401) {
-              throw error;
-            }
-            if (results && results.length > 0) {
-              var record = results[0];
-              resolve(record);
-            } else {
-              Counter('post', '/classes/Counter', {url, title: title, times: 0})
-                .then(resp => resp.json())
-                .then((record, error) => {
-                  if (error) {
-                    throw error;
-                  }
-                  resolve(record);
-                }).catch(error => {
-                console.error('Failed to create', error);
-                reject(error);
-              });
-            }
-          }).catch((error) => {
-          console.error('LeanCloud Counter Error:', error);
-          reject(error);
-        });
-      })
-    },
-
-    // 发起自增请求
-    increment(Counter, incrArr) {
-      return new Promise(function (resolve, reject) {
-        Counter('post', '/batch', {
-          "requests": incrArr
-        }).then((res) => {
-          res = res.json();
-          if (res.error) {
-            throw res.error;
-          }
-          resolve(res);
-        }).catch((error) => {
-          console.error('Failed to save visitor count', error);
-          reject(error);
-        });
-      });
-    },
-
-    // 构建自增请求体
-    buildIncrement(objectId) {
-      return {
-        "method": "PUT",
-        "path": `/1.1/classes/Counter/${ objectId }`,
-        "body": {
-          "times": {
-            '__op': 'Increment',
-            'amount': 1
-          }
+    window._config = { showScore: true };
+    (function(){
+      var appid = 'cyvx8z8wy';
+      var conf = '3f2abb66cc7c85b16c8a2cdca37f4b95';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var nodes =document.getElementsByTagName("head")[0]||document.head||document.documentElement;
+      if (/(Android|iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) && width < 750) {
+          window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+      }
+      else {
+        var loadJs=function(d,a){
+          var b=document.createElement("script");b.setAttribute("type","text/javascript");
+          b.setAttribute("charset","UTF-8");
+          b.setAttribute("src",d);
+          if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}
+          nodes.appendChild(b)
+        };
+        loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});
+      }
+      var loadCss = function(cssString){
+        var style=document.createElement("style");
+        style.setAttribute("type", "text/css");
+        if(style.styleSheet){// IE
+            style.styleSheet.cssText = cssString;
+        } else {// w3c
+            var cssText = document.createTextNode(cssString);
+            style.appendChild(cssText);
         }
+        nodes.appendChild(style);
       }
-    },
-
-    // 校验是否为有效的 UV
-    validUV() {
-      var key = 'LeanCloudUVTimestamp';
-      var flag = localStorage.getItem(key);
-      if (flag) {
-        // 距离标记小于 24 小时则不计为 UV
-        if (new Date().getTime() - parseInt(flag) <= 86400000) {
-          return false;
-        }
-      }
-      localStorage.setItem(key, new Date().getTime().toString());
-      return true;
-    },
-
-    addCount(Counter) {
-      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
-      enableIncr = true;
-      var getterArr = [];
-      var incrArr = [];
-      // 请求 PV 并自增
-      var pvCtn = document.querySelector('#lc-sv');
-      if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://dhndzwxj.github.io' + '/#lc-sv', 'Visits').then((record) => {
-          incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-sv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + 1;
-              if (pvCtn) {
-                pvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(pvGetter);
-      }
-
-      // 请求 UV 并自增
-      var uvCtn = document.querySelector('#lc-uv');
-      if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://dhndzwxj.github.io' + '/#lc-uv', 'Visitors').then((record) => {
-          var vuv = this.validUV();
-          vuv && incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-uv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + (vuv ? 1 : 0);
-              if (uvCtn) {
-                uvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(uvGetter);
-      }
-
-      // 请求文章的浏览数，如果是当前页面就自增
-      var allPV = document.querySelectorAll('#lc-pv');
-      if (allPV.length > 0 || enableIncr) {
-        for (i = 0; i < allPV.length; i++) {
-          let pv = allPV[i];
-          let title = pv.getAttribute('data-title');
-          var url = 'https://dhndzwxj.github.io' + pv.getAttribute('data-path');
-          if (url) {
-            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
-              // 是当前页面就自增
-              let curPath = window.location.pathname;
-              if (curPath.includes('index.html')) {
-                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
-              }
-              if (pv.getAttribute('data-path') == curPath) {
-                incrArr.push(this.buildIncrement(record.objectId));
-              }
-              if (pv) {
-                var ele = pv.querySelector('#lc-pv #number');
-                if (ele) {
-                  if (pv.getAttribute('data-path') == curPath) {
-                    ele.innerText = (record.times || 0) + 1;
-                  } else {
-                    ele.innerText = record.times || 0;
-                  }
-                  pv.style.display = 'inline';
-                }
-              }
-            });
-            getterArr.push(viewGetter);
-          }
-        }
-      }
-
-      // 如果启动计数自增，批量发起自增请求
-      if (enableIncr) {
-        Promise.all(getterArr).then(() => {
-          incrArr.length > 0 && this.increment(Counter, incrArr);
-        })
-      }
-
-    },
-
-
-    fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${ api_server }/1.1${ url }`, {
-          method,
-          headers: {
-            'X-LC-Id': this.app_id,
-            'X-LC-Key': this.app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      this.addCount(Counter);
-    },
-
-    refreshCounter() {
-      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
-      if (api_server) {
-        this.fetchData(api_server);
-      } else {
-        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
-          .then(resp => resp.json())
-          .then(({api_server}) => {
-            this.fetchData('https://' + api_server);
-          });
-      }
+    })();
+    function removeElement(_element){
+         var _parentElement = _element.parentNode;
+         if(_parentElement){
+                _parentElement.removeChild(_element);
+         }
     }
-
-  };
-
-  LCCounter.refreshCounter();
-
-  document.addEventListener('pjax:complete', function () {
-    LCCounter.refreshCounter();
-  });
-</script>
-
-
-
-
-
-
-
-
-<script>
-function listennSidebarTOC() {
-  const navItems = document.querySelectorAll(".toc li");
-  if (!navItems.length) return;
-  const sections = [...navItems].map((element) => {
-    const link = element.querySelector(".toc-link");
-    const target = document.getElementById(
-      decodeURI(link.getAttribute("href")).replace("#", "")
-    );
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      window.scrollTo({
-		top: target.offsetTop + 100,
-		
-		behavior: "smooth"
-		
-	  });
-    });
-    return target;
-  });
-
-  function activateNavByIndex(target) {
-    if (target.classList.contains("active-current")) return;
-
-    document.querySelectorAll(".toc .active").forEach((element) => {
-      element.classList.remove("active", "active-current");
-    });
-    target.classList.add("active", "active-current");
-    let parent = target.parentNode;
-    while (!parent.matches(".toc")) {
-      if (parent.matches("li")) parent.classList.add("active");
-      parent = parent.parentNode;
-    }
-  }
-
-  function findIndex(entries) {
-    let index = 0;
-    let entry = entries[index];
-    if (entry.boundingClientRect.top > 0) {
-      index = sections.indexOf(entry.target);
-      return index === 0 ? 0 : index - 1;
-    }
-    for (; index < entries.length; index++) {
-      if (entries[index].boundingClientRect.top <= 0) {
-        entry = entries[index];
-      } else {
-        return sections.indexOf(entry.target);
-      }
-    }
-    return sections.indexOf(entry.target);
-  }
-
-  function createIntersectionObserver(marginTop) {
-    marginTop = Math.floor(marginTop + 10000);
-    let intersectionObserver = new IntersectionObserver(
-      (entries, observe) => {
-        let scrollHeight = document.documentElement.scrollHeight + 100;
-        if (scrollHeight > marginTop) {
-          observe.disconnect();
-          createIntersectionObserver(scrollHeight);
-          return;
+    var removeAD = document.createElement("div");
+    removeAD.id = 'removeAD';
+    var adInterval1 = setInterval(function() {
+      if(document.querySelector("#feedAv")){
+        document.querySelector("[node-type=cmt-list]").appendChild(removeAD);
+        document.querySelector("#removeAD").appendChild(document.querySelector("#feedAv"));
+        //- removeElement(document.querySelectorAll("#feedAv")[0]);
+        var feedAv = document.querySelector("#feedAv").children;
+        for( item of feedAv){
+          item.style.display = 'none'
         }
-        let index = findIndex(entries);
-        activateNavByIndex(navItems[index]);
-      },
-      {
-        rootMargin: marginTop + "px 0px -100% 0px",
-        threshold: 0,
+        document.querySelector("#removeAD").style.display="none"
+        clearInterval(adInterval1);
       }
-    );
-    sections.forEach((element) => {
-      element && intersectionObserver.observe(element);
-    });
-  }
-  createIntersectionObserver(document.documentElement.scrollHeight);
-}
-
-document.addEventListener("DOMContentLoaded", listennSidebarTOC);
-document.addEventListener("pjax:success", listennSidebarTOC);
-</script>
-
-<!-- more -->
-
-
-
-
-    
-      
-
-
-<script src="../../../../https:/cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
-
-
-<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
-
-<div class="pjax-animate">
+    },1000);
+    var adInterval2 = setInterval(function() {
+      if(document.querySelector("#pop_ad")){
+        removeElement(document.querySelector("#pop_ad"));
+        clearInterval(adInterval2);
+      }
+    }, 1000);
+  </script>
   
-    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
-    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
-    <script>
-      window.ShowLoading = function() {
-        NProgress.start();
-      };
-      window.HideLoading = function() {
-        NProgress.done();
-      }
-    </script>
-  
-</div>
+<script src="../../../../https:/assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
 
 
-<script>
-    var pjax;
-    document.addEventListener('DOMContentLoaded', function () {
-      pjax = new Pjax({
-        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
-        selectors: [
-          "title",
-          "#l_cover",
-          "#pjax-container",
-          "#pjax-header-nav-list"
-        ],
-        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
-        timeout: 5000
-      });
-    });
 
-    document.addEventListener('pjax:send', function (e) {
-      //window.stop(); // 相当于点击了浏览器的停止按钮
 
-      try {
-        var currentUrl = window.location.pathname;
-        var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
-        if (banUrl[0] != "") {
-          banUrl.forEach(item => {
-            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
-              window.location.href = targetUrl;
-            }
-          });
-        }
-      } catch (error) {}
 
-      window.subData = null; // 移除标题（用于一二级导航栏切换处）
-      if (typeof $.fancybox != "undefined") {
-        $.fancybox.close();    // 关闭弹窗
-      }
-      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
-      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
-      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
-
-      // 解绑事件 避免重复监听
-      volantis.$topBtn.unbind('click');
-      $('.menu a').unbind('click');
-      $(window).unbind('resize');
-      $(window).unbind('scroll');
-      $(document).unbind('scroll');
-      $(document).unbind('click');
-      $('body').unbind('click');
-	  
-      window.ShowLoading();
-	  
-    });
-
-    document.addEventListener('pjax:complete', function () {
-      // 关于百度统计对 SPA 页面的处理：
-      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
-      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
-       
-
-      // 关于谷歌统计对 SPA 页面的处理：
-      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
-      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
-      
-	 
-
-      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
-      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
-      $('script[data-pjax], .pjax-reload script').each(function () {
-        $(this).parent().append($(this).remove());
-      });
-      try{
-          if (typeof $.fancybox == "undefined") {
-            SCload_fancybox();
-          } else {
-            pjax_fancybox();
-          }
-        
-        
-        
-        
-        
-          pjax_initCopyCode();
-        
-        
-          pjax_valine();
-        
-        
-        
-        
-        
-      } catch (e) {
-        console.log(e);
-      }
-	  
-      window.HideLoading();
-	  
-    });
-
-    document.addEventListener('pjax:error', function (e) {
-	  
-      window.HideLoading();
-	  
-      window.location.href = e.triggerElement.href;
-    });
-</script>
-
-    
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

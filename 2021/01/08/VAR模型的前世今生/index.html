@@ -1,407 +1,150 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0'>
+<html>
+<head>
   <meta charset="utf-8">
-  <!-- SEO相关 -->
+  
+  
+  <title>VAR模型的前世今生 | 渝言</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <meta name="description" content="随手写一写学习心得，读书笔记">
+  
+  
+    <meta name="keywords" content="马克思；政治经济学">
+  
+  
+    <link rel="alternate" href="../../../../atom.xml" title="渝言" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="../../../../favicon.png">
+  
   
     
-  
-  <!-- 渲染优化 -->
-  <meta http-equiv='x-dns-prefetch-control' content='on' />
-  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <meta name="renderer" content="webkit">
-  <meta name="force-rendering" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="HandheldFriendly" content="True" >
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <!-- 页面元数据 -->
-  
-  <title>VAR模型的前世今生 - 渝言</title>
-  
-    <meta name="keywords" content="向量自回归,VAR,DSGE">
-  
+<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
   
-
-  <!-- feed -->
   
-
-  <!-- import meta -->
-  
-
-  <!-- link -->
-  
-
-  <!-- import link -->
-  
+<link rel="stylesheet" href="../../../../css/style.css">
 
   
     
-<link rel="stylesheet" href="../../../../css/first.css">
+<link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.min.css">
 
   
+  
+    
+<link rel="stylesheet" href="../../../../localshare/css/share.css">
 
   
-  <link rel="stylesheet" href="../../../../css/style.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="../../../../css/style.css"></noscript>
   
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
-  <script id="loadcss"></script>
-
-</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"></head>
 
 <body>
-  
-
-<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
-  <div class='container'>
-  <div id='wrapper'>
-    <div class='nav-sub'>
-      <p class="title"></p>
-      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-      </ul>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../../../index.html" id="logo">渝言</a>
+      </h1>
+      
     </div>
-		<div class="nav-main">
-      
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
         
-        <a class="title flat-box" target="_self" href='../../../../index.html'>
-          
-            <img no-lazy class='logo' src='/img/avatar.jpg'/>
-          
-          
-          
-        </a>
-      
-
-			<div class='menu navigation'>
-				<ul class='nav-list-h m-pc'>
-          
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
-                  
-                  
-                  
-                    id="indexhtml"
-                  >
-                  <i class='fas fa-rss fa-fw'></i>博客
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
-                  
-                  
-                  
-                    id="archives"
-                  >
-                  <i class='fas fa-archive fa-fw'></i>归档
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
-                  
-                  
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
-                  
-                  
-                  
-                    id="about"
-                  >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
-                </a>
-                
-              </li>
-            
-          
-          
-				</ul>
-			</div>
-
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <i class="icon fas fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="标题或者全文搜索" />
-        </form>
+          <a class="main-nav-link" href="../../../../."><i class="fa fa-home"></i> 首页</a>
+        
+          <a class="main-nav-link" href="../../../../archives/"><i class="fa fa-archive"></i> 归档</a>
+        
+          <a class="main-nav-link" href="../../../../about/"><i class="fa fa-user"></i> 关于</a>
+        
+          <a class="main-nav-link" href="../../../../atom.xml"><i class="fa fa-rss"></i> 订阅</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
       </div>
-
-			<ul class='switcher nav-list-h m-phone'>
-				
-					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
-				
-				<li>
-          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
-          <ul class="menu-phone list-v navigation white-box">
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
-                  
-                  
-                  
-                    id="indexhtml"
-                  >
-                  <i class='fas fa-rss fa-fw'></i>博客
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
-                  
-                  
-                  
-                    id="archives"
-                  >
-                  <i class='fas fa-archive fa-fw'></i>归档
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
-                  
-                  
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
-                  
-                  
-                  
-                    id="about"
-                  >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
-                </a>
-                
-              </li>
-            
-          
-            
-          </ul>
-        </li>
-			</ul>
-		</div>
-	</div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
   </div>
 </header>
 
-  <div id="l_body">
-    <div id="l_cover">
+      <div class="outer">
+        <section id="main"><article id="post-VAR模型的前世今生" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      VAR模型的前世今生
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2021-01-08T06:33:22.000Z" itemprop="datePublished">2021年01月08日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/">经济学</a> > <a class="article-category-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%A8%A1%E5%9E%8B/">模型</a> > <a class="article-category-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%A8%A1%E5%9E%8B/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92%EF%BC%88VAR%E6%A8%A1%E5%9E%8B%EF%BC%89/">向量自回归（VAR模型）</a>
+  </div>
+
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="#comments" class="article-comment-link">
   
     
-        <div id="full" class='cover-wrapper post search' style="display: none;">
-          
-            <div class='cover-bg lazyload placeholder' data-bg="img/bg.png"></div>
-          
-          <div class='cover-body'>
-  <div class='top'>
-    
-      <img no-lazy class='logo' src='../../../../img/logo.png'/>
     
     
     
-  </div>
-  <div class='bottom'>
     
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="标题或者全文搜索" />
-          <i class="icon fas fa-search fa-fw"></i>
-        </form>
-      </div>
+      <i id="changyan_count_unit" data-xid=""></i>
     
-    <div class='menu navigation'>
-      <div class='list-h'>
-        
-      </div>
+  
+  <i class="fa fa-commt"></i>
+  留言
+</a>
+
+
     </div>
-  </div>
-</div>
-
-          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
-        </div>
-    
-  
-  </div>
-
-    <div id='safearea'>
-      <div class='body-wrapper' id="pjax-container">
-        
-
-<div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
-  
-
-
-  
-  <div class="article-meta" id="top">
-    
-    
-    
-      <h1 class="title">
-        VAR模型的前世今生
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            <!-- 
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="fas fa-user">
-    <p>请设置文章作者</p>
-  </a>
-</div> -->
-
-
-<div class='new-meta-item author'>
-  <a class='author' href="" rel="nofollow">
-    <i class=" fas fa-user" aria-hidden="true"></i>
-    <!-- <i class=" fa-fw" aria-hidden="true"></i> -->
-    <!-- <img no-lazy src=""> -->
-    <!-- <p></p> --> <!--原始代码，引用的是author.name，但是md文件中都没有这么写-->
-    <p>揭晓</p>
-  </a>
-</div>
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年1月8日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/">经济学</a><span class="sep"></span><a class="category-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%A8%A1%E5%9E%8B/">模型</a><span class="sep"></span><a class="category-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%A8%A1%E5%9E%8B/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92%EF%BC%88VAR%E6%A8%A1%E5%9E%8B%EF%BC%89/">向量自回归（VAR模型）</a>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <!-- 
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：7.7k字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：28分钟</p>
-    </a>
-  </div>
- -->
-
-
-
-  <!-- <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：7.7k字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：28分钟</p>
-    </a>
-  </div> -->
-
-  <div style="margin-top:0px;"> <!--这一行的margin-top，意思是是否与该行文字对其，0是对其-->
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">7.7k字</span>
-      </span>
-    </span>
- 
-    <span class="post-time">
-      &nbsp;  &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">28分</span>
-      </span>
-    </span>
-    
-</div>
-
-
-
-          
-        
-      </div>
-    
-  </div>
-
-
-  
-  <p>本文来自公众号“计量经济学”的文章<a href='https://mp.weixin.qq.com/s/8mvkzFSXJWTZoGIXkD-MtA' target='_blank'>《VAR模型的演变与发展》</a>。原文是2012年发表在《数量经济技术经济研究》上的一篇文章:</p>
+    <!-- <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>本文来自公众号“计量经济学”的文章<a href='https://mp.weixin.qq.com/s/8mvkzFSXJWTZoGIXkD-MtA' target='_blank'>《VAR模型的演变与发展》</a>。原文是2012年发表在《数量经济技术经济研究》上的一篇文章:</p>
 <blockquote>
 <p><a href='https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFD2012&filename=SLJY201210012&v=3okYWMSAUuHAiz5R54sVGWnZvZ1vSw90yn8ygpxRG6kl9hK3uadwvdP5KNNTuFQ6' target='_blank'>沈悦,李善燊,马续涛.</a>VAR宏观计量经济模型的演变与最新发展——基于2011年诺贝尔经济学奖得主Smis研究成果的拓展脉络[J].数量经济技术经济研究,2012,29(10):150-160.</p>
 <p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1NcgN-r6wpKGvYsMHLsyWJg">https://pan.baidu.com/s/1NcgN-r6wpKGvYsMHLsyWJg</a>  </p>
@@ -520,582 +263,386 @@
 <li>三是注意模型使用过程中的规范性。从目前发表的采用VAR类计量模型的文章来看，这些问题主要表现为：不加区分地运用水平VAR或者差分VAR；结构性冲击矩阵设置的理论依据不严谨；样本数据容量不足，难以保证参数估计的稳定性等。</li>
 </ul>
 
-  
-  
-    
-    <div class='footer'>
-      
-      
-      
-        <div class='copyright'>
-          <blockquote>
-            
-              
-                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> 文章目录</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E6%8F%90%E8%A6%81"><span class="toc-text">内容提要</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81VAR%E5%AE%8F%E8%A7%82%E8%AE%A1%E9%87%8F%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E7%94%A8"><span class="toc-text">一、VAR宏观计量模型的基本结构与运用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81VAR%E5%AE%8F%E8%A7%82%E8%AE%A1%E9%87%8F%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%BC%94%E5%8F%98"><span class="toc-text">二、VAR宏观计量模型的演变</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SVAR%EF%BC%9A%E4%BB%8E%E7%AE%80%E7%BA%A6%E5%BC%8F%E6%AD%A5%E5%85%A5%E5%88%B0%E7%BB%93%E6%9E%84%E5%BC%8F"><span class="toc-text">1.SVAR：从简约式步入到结构式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-BVAR%EF%BC%9AVAR%E6%A8%A1%E5%9E%8B%E7%BB%9F%E8%AE%A1%E6%8E%A8%E6%96%AD%E6%96%B9%E6%B3%95%E4%B8%8A%E7%9A%84%E9%9D%A9%E5%91%BD"><span class="toc-text">2.BVAR：VAR模型统计推断方法上的革命</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-PVAR%EF%BC%9A%E5%90%91%E7%A9%BA%E9%97%B4%E8%AE%A1%E9%87%8F%E7%9A%84%E6%8B%93%E5%B1%95"><span class="toc-text">3.PVAR：向空间计量的拓展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%8A%A8%E6%80%81VAR%EF%BC%9A%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90%E8%8C%83%E5%BC%8F%E7%9A%84%E5%8F%98%E9%9D%A9"><span class="toc-text">4.非线性动态VAR：线性分析范式的变革</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81VAR%E5%AE%8F%E8%A7%82%E8%AE%A1%E9%87%8F%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%9C%80%E6%96%B0%E6%8B%93%E5%B1%95"><span class="toc-text">三、VAR宏观计量模型的最新拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%A9%E7%94%A8%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%B0%E8%AE%A1%E6%B3%95%EF%BC%8C%E4%B8%8E%E5%85%B7%E6%9C%89%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%BC%8F%E7%9B%B8%E8%9E%8D%E5%90%88%E2%80%94%E4%BB%A5DSGE-VAR%E6%A8%A1%E5%9E%8B%E4%B8%BA%E4%BB%A3%E8%A1%A8"><span class="toc-text">1.利用贝叶斯估计法，与具有微观经济理论基础的研究方式相融合—以DSGE-VAR模型为代表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%90%91%E9%9D%9E%E7%BA%BF%E6%80%A7%E3%80%81%E6%97%B6%E5%8F%98%E5%8F%82%E6%95%B0%E7%9A%84%E8%B6%8B%E5%8A%BF%E5%8F%91%E5%B1%95%E2%80%94%E4%BB%A5TVP-VAR%E6%A8%A1%E5%9E%8B%E4%B8%BA%E4%BB%A3%E8%A1%A8"><span class="toc-text">2.向非线性、时变参数的趋势发展—以TVP-VAR模型为代表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%91%E5%A4%A7%E8%A7%84%E6%A8%A1%E3%80%81%E5%A4%9A%E5%8F%98%E9%87%8F%E7%9A%84%E8%B6%8B%E5%8A%BF%E5%8F%91%E5%B1%95%E2%80%94%E2%80%94%E4%BB%A5FAVAR%E6%A8%A1%E5%9E%8B%E4%B8%BA%E4%BB%A3%E8%A1%A8"><span class="toc-text">3. 向大规模、多变量的趋势发展——以FAVAR模型为代表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81VAR%E6%A8%A1%E5%9E%8B%E5%9C%A8%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%BA%94%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">四、VAR模型在使用过程中应注意的问题</span></a>
+    </div>
+  </div>
 
-              
-            
-              
-                <p>本文永久链接是：<a href=https://dhndzwxj.github.io/2021/01/08/VAR%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/>https://dhndzwxj.github.io/2021/01/08/VAR%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</a></p>
-              
-            
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>原文链接: <a href="../../../../https:/dhndzwxj.github.io/2021/01/08/VAR%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/">../../../../https:/dhndzwxj.github.io/2021/01/08/VAR%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</a></p>
+              <p>版权声明: 转载请注明出处.</p>
           </blockquote>
+        
+      
+    </div> -->
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+          
+      
+      
+          <p>本文来自公众号“计量经济学”的文章<a href='https://mp.weixin.qq.com/s/8mvkzFSXJWTZoGIXkD-MtA' target='_blank'>《VAR模型的演变与发展》</a>。原文是2012年发表在《数量经济技术经济研究》上的一篇文章:</p>
+<blockquote>
+<p><a href='https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFD2012&filename=SLJY201210012&v=3okYWMSAUuHAiz5R54sVGWnZvZ1vSw90yn8ygpxRG6kl9hK3uadwvdP5KNNTuFQ6' target='_blank'>沈悦,李善燊,马续涛.</a>VAR宏观计量经济模型的演变与最新发展——基于2011年诺贝尔经济学奖得主Smis研究成果的拓展脉络[J].数量经济技术经济研究,2012,29(10):150-160.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1NcgN-r6wpKGvYsMHLsyWJg">https://pan.baidu.com/s/1NcgN-r6wpKGvYsMHLsyWJg</a>  </p>
+<p>密码: 99mr</p>
+</blockquote>
+<h3 id="内容提要"><a href="#内容提要" class="headerlink" title="内容提要"></a>内容提要</h3><p>本文对VAR宏观计量经济模型的拓展和应用进行综述和总结。VAR模型在批判中逐步向结构式、非线性、空间计量以及利用贝叶斯统计推断技术的方向演变。进入21世纪之后，基于动态随机一般均衡的DSGE-VAR模型、时变参数的TVP-VAR模型以及处理大规模变量的FAVAR模型等成为宏观计量经济分析的前沿。本文最后指出该类模型在运用中应注意的问题。</p>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>计量经济模型既为经济理论与思想提供了科学的验证方法，同时也自成体系，发挥着“让数据本身说话”的功效。传统的经济计量方法（如多元线性回归模型、联立方程模型等结构性方法）是以简单的经济理论为基础来描述变量间的关系，人为地决定某些变量的内生或外生性，这使得模型的估计和推断变得不可靠。为了克服这些不足，<a href='https://www.jstor.org/stable/pdf/1912017.pdf' target='_blank'>Sims（1980）</a><sup><a href="#fn_1" id="reffn_1">1</a></sup>提出非限制性向量自回归模型（Unrestricted Vector Auto-regression）或称之为简约式VAR模型，该模型及以后的拓展形式在整个计量经济学体系中占据着重要地位，至今在宏观经济计量方面有着广泛的应用。作为2011年诺贝尔经济学奖获得者之一，Sims的获奖理由就是开创性地利用VAR模型对宏观经济中的因果关系进行了实证研究，并对实证宏观计量经济的发展作出了重要贡献。本文的任务就是基于Sims研究成果的拓展脉络，对VAR宏观经济计量模型的演进与发展做以梳理和综述，比较各类VAR模型扩展形式的特点，对该模型在<span style='color:red'>2000年后</span>的最新发展和应用情况做介绍，并指出该类模型在运用中应注意的问题。</p>
+<blockquote>
+<p><sup><a href="#fn_1" id="reffn_1">1</a></sup>:Sims, C. A. (1980), Macroeconomics and Reality, Econometrica 48, 1–48.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1uzAwJg_CkyFuWda1ylPPoA">https://pan.baidu.com/s/1uzAwJg_CkyFuWda1ylPPoA</a> </p>
+<p>密码: 0400</p>
+</blockquote>
+<h2 id="一、VAR宏观计量模型的基本结构与运用"><a href="#一、VAR宏观计量模型的基本结构与运用" class="headerlink" title="一、VAR宏观计量模型的基本结构与运用"></a>一、VAR宏观计量模型的基本结构与运用</h2><p>VAR模型以多方程联立的形式出现，系统内每个方程右边的变量是相同的，包括所有<span style='color:red'>内生变量</span>的滞后值，然后通过模型中所有内生当期变量对它们的若干滞后值进行回归，进而估计出全部内生变量的动态关系。</p>
+<p>与早期的结构性模型比较，VAR模型的优点在于：</p>
+<ul>
+<li>第一，不以严格的经济理论为依据，而是让数据关系说明一切；</li>
+<li>第二，解释变量中不包括任何当期变量，只要样本足够大，就不存在因参数过多产生模型不可识别的问题；</li>
+<li>第三，无需事先区分变量的外生性和内生性。</li>
+</ul>
+<p>VAR模型主要用来处理<span style='color:red'>平稳性数据</span>，传统的理论要求对于非平稳的时间序列经过差分再建立VAR模型，这样通常会损失掉许多信息，同时也会使得分析结果难以得到解释，但只要各变量之间存在<span style='color:red'>协整关系</span>也可以直接建立VAR模型。Engle和Granger（1987）<sup><a href="#fn_2" id="reffn_2">2</a></sup>将协整与误差修正模型结合起来，建立了向量误差修正模型（VEC），可以较好地克服VAR模型的不足。在这里确定VAR模型滞后期十分关键。目前的Eviews6.0软件有<span style='color:red'>5种方法可以确定模型的滞后期，分别是LR、FPE、AIC、SC、HQ，如果出现检验结果不一致时，一般选取次数最多的最优滞后阶数</span>。</p>
+<blockquote>
+<p><a href='https://zhuanlan.zhihu.com/p/64874795' target='_blank'>恩格尔（Engle）与格兰杰（Granger）——2003诺贝尔经济学奖</a></p>
+<p><sup><a href="#fn_2" id="reffn_2">2</a></sup>:Engle, R.F. and Granger, C.W.J. (1987) Co-Integration and Error Correction: Representation, Estimation, and Testing. Econometrica: Journal of the Econometric Society, 55, 251-276.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1j3dCGNqDl66dKM4MsOkHtQ">https://pan.baidu.com/s/1j3dCGNqDl66dKM4MsOkHtQ</a>  </p>
+<p>密码: 5v41</p>
+</blockquote>
+<p>VAR模型还可以用来检验变量之间是否存在<span style='color:red'>因果关系</span>，Granger因果检验正是基于VAR模型来定义的。传统的Granger因果关系检验分为基于水平VAR模型的因果关系检验和基于差分VAR模型的因果关系检验。基于水平VAR模型进行多变量系统的因果关系检验因未考虑变量的非稳定性和变量系统的协整性而存在一定的问题；基于<u>差分VAR模型来进行因果关系检验容易使信息丧失且首先要求检验变量的平稳性和协整关系</u>，使其在实证检验中的应用受到限制。当研究者并不关注变量的协整性而只关注其因果关系，或者协整性不存在但需要研究其因果关系时，就需要一种新的检验方法。Toda和Yamamoto（1995）<sup><a href="#fn_3" id="reffn_3">3</a></sup>提出的“基于扩展VAR模型（Lag-Augmented VAR，LA-VAR）的因果关系检验”可以不考虑单位根的个数和变量的协整性，这在后来的因果关系检验中得到应用。</p>
+<blockquote>
+<p><sup><a href="#fn_3" id="reffn_3">3</a></sup>:Toda, H.Y. and Yamamoto, T. (1995) Statistical Inference in Vector Autoregressions with Possibly Integrated Processes. Journal of Econometrics, 66, 225-250.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1amNXC8pOw4sJyuswsmxmMg">https://pan.baidu.com/s/1amNXC8pOw4sJyuswsmxmMg</a>  </p>
+<p>密码: cmbd</p>
+</blockquote>
+<p>对VAR模型单个参数估计值的经济解释是很困难的，因此，要想对一个VAR模型做出分析，通常是观察系统的<span style='color:red'>脉冲响应函数</span>和<span style='color:red'>方差分解</span>。脉冲响应函数描述的是VAR模型中的一个内生变量的冲击给其他内生变量所带来的影响。为了区分新息冲击对具体变量的影响大小，通常采用<span style='color:red'>乔利斯基分解方法</span>，<u>但此法对进入模型的变量的次序很敏感，一旦改变变量的次序，得到的脉冲响应函数也不同</u>。Pesaran和Shin（1998）<sup><a href="#fn_4" id="reffn_4">4</a></sup>所提出的广义脉冲响应函数解决了这个问题，可以不考虑变量排序问题而得出唯一的脉冲响应函数曲线。方差分解是通过分析每一个结构冲击对内生变量变化的贡献度，来评价不同结构冲击的重要性，从而反映其他变量对某一变量变动的贡献度。</p>
+<blockquote>
+<p><sup><a href="#fn_4" id="reffn_4">4</a></sup>:<a href='https://www.cambridge.org/core/books/econometrics-and-economic-theory-in-the-20th-century/an-autoregressive-distributedlag-modelling-approach-to-cointegration-analysis/0A3624D5C624BED6E2A963190403653A' target='_blank'>Pesaran, M.H. and Shin, Y. (1998) </a>An Autoregressive Distributed-Lag Modelling Approach to Cointegration Analysis. Econometrics and Economic Theory in the 20th Century: The Ragnar Frisch Centennial Symposium, 31, 371-413. </p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/18eONfDDU3XraX96VduDaQA">https://pan.baidu.com/s/18eONfDDU3XraX96VduDaQA</a>  </p>
+<p>密码: u643</p>
+</blockquote>
+<h2 id="二、VAR宏观计量模型的演变"><a href="#二、VAR宏观计量模型的演变" class="headerlink" title="二、VAR宏观计量模型的演变"></a>二、VAR宏观计量模型的演变</h2><p>VAR模型具有良好的计量特性使得该模型一经提出就得到广泛运用，然而该模型也存在<span style='color:red'>不足</span>，主要表现为：第一，如果滞后期越长，变量越多，那么需要估计的参数就越多，对数据样本长度的要求就越大；第二，模型并不严格遵循经济理论，对变量未施加结构性约束，也不考虑变量之间的同期相关性，这会影响模型估计效果；第三，模型难以刻画理性预期因素，无法避免“卢卡斯批判”；第四，该模型是常参数模型，但很多证据表明，在经济系统发生大的结构性变化时，VAR参数并不稳定；第五，VAR模型所处理的经济变量个数有限；难以全面反映经济体的真实情况。此后VAR模型的演变与发展基本上都是围绕以上不足进行的。</p>
+<h3 id="1-SVAR：从简约式步入到结构式"><a href="#1-SVAR：从简约式步入到结构式" class="headerlink" title="1.SVAR：从简约式步入到结构式"></a>1.SVAR：从简约式步入到结构式</h3><p>由于简约式的VAR模型事前不考虑结构性的经济冲击，难以与实际经济情况相吻合，使得人们不断对这种方法提出质疑。为了解决这一问题，计量经济学家提出了很多方法。Blanchard和Quah（1990）<sup><a href="#fn_5" id="reffn_5">5</a></sup>对VAR模型进行修正，提出结构向量自回归模型（Structural VAR，SVAR）。SVAR模型尝试加入若干结构性约束得到唯一的结构关系，解决模型对信息的识别问题，从而使脉冲响应具有一定的经济意义。SVAR模型由此在经济研究中得到了广泛的应用，并逐渐取代传统VAR模型，成为主要的分析方法，Smith（1993）<sup><a href="#fn_6" id="reffn_6">6</a></sup>等学者运用该方法取得良好的研究效果。McCarthy等（1993）<sup><a href="#fn_7" id="reffn_7">7</a></sup>则提出另一种结构式VAR模型，即递归型VAR（Recursive Vector Autoregressive，RVAR），在RVAR模型中引入同期变量作为解释变量，这种改进对变量的顺序安排有严格要求，排序在前的变量同期影响排序在后的变量但是排序在后的变量同期不影响排序在前的变量。虽然SVAR比VAR有很大的进步，但是从目前的运用来看，不足之处在于识别结构性冲击时施加的外生约束过于随意，难以规范。</p>
+<blockquote>
+<p><sup><a href="#fn_5" id="reffn_5">5</a></sup>:<a href='https://www.nber.org/system/files/working_papers/w2737/w2737.pdf' target='_blank'>Blanchard, O. J., &amp; Quah, D. (1989).</a> The Dynamics Effects of Aggregate Demand and Supply Disturbances. American Economic Review, 79, 655-673.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/15eBtT8UT0S4eyFLIHSxQeA">https://pan.baidu.com/s/15eBtT8UT0S4eyFLIHSxQeA</a>  </p>
+<p>密码: 052s</p>
+<p><sup><a href="#fn_6" id="reffn_6">6</a></sup>:</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1kfXoC3yLmRbgIwphHUyDpQ">https://pan.baidu.com/s/1kfXoC3yLmRbgIwphHUyDpQ</a>  </p>
+<p>密码: kkrr</p>
+<p><sup><a href="#fn_7" id="reffn_7">7</a></sup>:Mccarthy J. and Najand M., 1993, State Space Modeling of Price and Volume Dependence: Evidenve from Currency Futures[J], Journal of Futures Markets, 13(4), 335~344.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1HKA9dmKAQyuSovrzE98qyg">https://pan.baidu.com/s/1HKA9dmKAQyuSovrzE98qyg</a>  </p>
+<p>密码: 8id0</p>
+</blockquote>
+<h3 id="2-BVAR：VAR模型统计推断方法上的革命"><a href="#2-BVAR：VAR模型统计推断方法上的革命" class="headerlink" title="2.BVAR：VAR模型统计推断方法上的革命"></a>2.BVAR：VAR模型统计推断方法上的革命</h3><p>贝叶斯方法是基于贝叶斯定理而发展起来用于系统地阐述和解决统计问题的方法。早在1764年，英国新教牧师兼数学家托马斯·贝叶斯就以贝叶斯定理解答了逆概率问题，同时期法国著名学者拉普拉斯也独立地发现了贝叶斯定理，并将其应用到更广泛的领域。随后在受到正统数理流派的批判与冲击中，贝叶斯统计推断方法几度消沉，然而却在20世纪50年代奇迹复活并迅速成长为现今的贝叶斯学派。贝叶斯统计推断方法为解决VAR模型参数过多时的估计问题提供一种新的分析框架。<u>遵循贝叶斯定律，贝叶斯估计假设VAR待估系数服从一定的先验分布，这种先验分布与似然函数结合，得到参数的后验分布，从而增加预测的准确性。</u>先验分布的引入缩小了系数的取值范围，有助于避免无约束VAR的自由度损失问题。贝叶斯先验分布可以采取很多种不同的形式，最著名的是Litterman等（1986）<sup><a href="#fn_8" id="reffn_8">8</a></sup>使用的Minnesota共轭先验分布①。</p>
+<p>20世纪80年代以来，BVAR模型已经成为西方国家政策领域常用的预测工具。Dua和Ray（1995）<sup><a href="#fn_9" id="reffn_9">9</a></sup>利用BVAR模型对美国康涅狄格州就业率等经济变量进行预测，发现预测精度要高于VAR和ARIMA两类模型的预测结果。Kenny等（1998）<sup><a href="#fn_10" id="reffn_10">10</a></sup>利用BVAR研究了爱尔兰通货膨胀问题，与爱尔兰中央银行基于非贝叶斯方法的预测结果相比较，发现前者的预测效果更好。Dejonga等（2000）<sup><a href="#fn_11" id="reffn_11">11</a></sup>利用BVAR模型研究经济周期问题，发现具有良好的预测效果。Edge等（2006）综合比较了美联储研究人员的主观判断预测、随机游走预测、DSGE模型预测和BVAR预测，结果发现BVAR预测结果最具有稳健型。</p>
+<blockquote>
+<p><sup><a href="#fn_8" id="reffn_8">8</a></sup>:Litterman, &amp; Robert, B. . (1986). Forecasting with bayesian vector autoregressions-five years of experience. <em>Journal of Business &amp; Economic Statistics</em> <em>4</em>(1), 25-38.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1B6TajboGq4YgQ-DvWp3JcQ">https://pan.baidu.com/s/1B6TajboGq4YgQ-DvWp3JcQ</a>  </p>
+<p>密码: 670j</p>
+<p><sup><a href="#fn_9" id="reffn_9">9</a></sup>:Dua P , Ray S C . A BVAR model for the connecticut economy[J]. Journal of Forecasting, 2010, 14(3):167-180.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/15JTZUHq8hRVVYjrS2vQW_w">https://pan.baidu.com/s/15JTZUHq8hRVVYjrS2vQW_w</a>  </p>
+<p>密码: jwgb</p>
+<p><sup><a href="#fn_10" id="reffn_10">10</a></sup>:Kenny G., Meyler A. and Quinn T., 1998, Bayesian VAR Models for Forecasting Irish Inflation[R], Central Bank and Financial Services Authority of Ireland Technical Working Paper.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Zs--xgWXZ3-VMo6XJ2gguQ">https://pan.baidu.com/s/1Zs--xgWXZ3-VMo6XJ2gguQ</a>  </p>
+<p>密码: 30la</p>
+<p><sup><a href="#fn_11" id="reffn_11">11</a></sup>:<a href='http://directory.umm.ac.id/Data%20Elmu/jurnal/J-a/Journal%20of%20Econometrics/Vol98.Issue2.Oct2000/2128.pdf' target='_blank'>Dejong, D. N. , Ingram, B. F. , &amp; Whiteman, C. H. . (2000).</a> A bayesian approach to dynamic macroeconomics. <em>Journal of Econometrics,</em> <em>98</em>(2), 203-223.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1sJH96_2vBN7IGpPyFdPOwQ">https://pan.baidu.com/s/1sJH96_2vBN7IGpPyFdPOwQ</a>  </p>
+<p>密码: 147v</p>
+</blockquote>
+<h3 id="3-PVAR：向空间计量的拓展"><a href="#3-PVAR：向空间计量的拓展" class="headerlink" title="3.PVAR：向空间计量的拓展"></a>3.PVAR：向空间计量的拓展</h3><p>为了克服VAR模型对数据量的限制和空间个体的异质性影响，计量经济学家们对VAR模型进行了改进，提出了基于面板数据的向量自回归（Panel Data VectorAutoregression，PVAR）模型。PVAR不仅继承了传统VAR的优良特性，更重要的是由于面板分析的引进使得PVAR具有两方面的优点：</p>
+<ul>
+<li>一是对数据的长度要求降低，只要$T\ge 3$（$T$为时间序列的长度，$m$为滞后项的阶数）便可以对方程的参数进行估计，当$T\ge 2m+2$时，即可在稳态下估计滞后项的参数；</li>
+<li>二是该模型能够控制由于空间变动造成的不可观测的个体异质性，个体效应允许不可观察的个体差异，时间效应则可以捕捉到个体在横截面上可能受到的共同冲击。这使得VAR模型摆脱了对单纯个体时间序列数据的依赖并向空间计量进一步拓展，为宏观经济研究提供了一个相当灵活的分析框架。</li>
+</ul>
+<p>早期的面板数据向量自回归模型是Chamberlain（1983）<sup><a href="#fn_12" id="reffn_12">12</a></sup>基于简单混合数据的研究，之后Holtz-Eakin等（1988）<sup><a href="#fn_13" id="reffn_13">13</a></sup>利用两阶段最小二乘法研究了一类时变系数的PVAR模型。而对PVAR模型的深入拓展则是从Pesaran和Smith（1995）<sup><a href="#fn_14" id="reffn_14">14</a></sup>的开创性研究开始，他们的研究表明，可以通过对PVAR模型中每个变量的个体平均时间序列数据建立时间序列向量自回归模型的方法估计模型参数，并且证实这种估计是一致的。在进行模型估计时，Arellano和Bover（1995）<sup><a href="#fn_15" id="reffn_15">15</a></sup>提出采用“组内均值差分法”去除时间效应，采用“前向均值差分法”去除个体效应。后来Mccuskey和Kao（1998）<sup><a href="#fn_16" id="reffn_16">16</a></sup>、Westerlund（2005）<sup><a href="#fn_17" id="reffn_17">17</a></sup>等学者对该模型不断拓展，使PVAR逐渐成为一个兼具时序分析与面板数据分析优势的成熟模型。</p>
+<blockquote>
+<p><sup><a href="#fn_12" id="reffn_12">12</a></sup>:Chamberlain G., 1983, A Characterization of the Distributions That Imply Mean—Variance Utility Functions[J], Journal of Economic Theory, 29(1), 185~201.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1w_83ViOORll20R01pvdaVw">https://pan.baidu.com/s/1w_83ViOORll20R01pvdaVw</a>  </p>
+<p>密码: 9wgb</p>
+<p><sup><a href="#fn_13" id="reffn_13">13</a></sup>:Holtz-eakin D. Newey W. and Rosen H., 1988, Estimating Vector Autoregressions with Panel Data[J], Econometrica, 56(6), 1371~1395.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Zv-hNX8H6EtVaQu5y9ZK2w">https://pan.baidu.com/s/1Zv-hNX8H6EtVaQu5y9ZK2w</a> </p>
+<p>密码: 8ncd</p>
+<p><sup><a href="#fn_14" id="reffn_14">14</a></sup>:Pesaran M. H. and Smith R., 1995, Estimating Long-run Relationships from Dynamic Heterogeneous Panels[J], Journal of Econometrics, 68(1), 79~113.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1O6wo-oqV4rI78rkECDm6hA">https://pan.baidu.com/s/1O6wo-oqV4rI78rkECDm6hA</a>  </p>
+<p>密码: o8a7</p>
+<p>第十四篇文献很重要！</p>
+<p><sup><a href="#fn_15" id="reffn_15">15</a></sup>:Arellano M. and Bover O., 1995, Another Look at the Instrumental Variable Estimation of Error-components Models[J], Journal of Econometrics, 68(1), 29~51.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/19UbkYvHGPvRG2TgieWX2qA">https://pan.baidu.com/s/19UbkYvHGPvRG2TgieWX2qA</a>  </p>
+<p>密码: umqf</p>
+<p><sup><a href="#fn_16" id="reffn_16">16</a></sup>:Mccuskey S. and Kao C., 1998, A Residual-biased Test of the Null of Cointegration in Panel Data[J], Econometric Reviews, 17(1), 1~30.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1oyUcOvSLDS9ljaT32sONvw">https://pan.baidu.com/s/1oyUcOvSLDS9ljaT32sONvw</a>  </p>
+<p>密码: mj8r</p>
+<p><sup><a href="#fn_17" id="reffn_17">17</a></sup>:Westerlund J., 2005, New Simple Tests for Panel Cointegration[J], Econometric Reviews, 3, 297~316.</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1BEoD41vwY1qmhT9t8Esa8g">https://pan.baidu.com/s/1BEoD41vwY1qmhT9t8Esa8g</a>  </p>
+<p>密码: 8jtl</p>
+</blockquote>
+<h3 id="4-非线性动态VAR：线性分析范式的变革"><a href="#4-非线性动态VAR：线性分析范式的变革" class="headerlink" title="4.非线性动态VAR：线性分析范式的变革"></a>4.非线性动态VAR：线性分析范式的变革</h3><p>传统的线性VAR模型基于一个理想的假设，那就是现实的经济结构不会改变，因此模型的参数在整个时期内是一致的，不会因外部环境的变化而改变。20世纪70年代以来，随着非线性科学理论的迅速发展和经济发展的波动性，人们逐渐意识到线性分析范式存在严重问题，这种范式可能正是导致现代经济分析和预测在经济波动情况下普遍失效的根本原因。非线性方法作为能够描述宏观经济时间序列中非线性和结构性变化特征的一种有效工具，随后被频繁应用于政策效应和经济波动的测度当中。非线性动态模型常见于三种类型：马尔可夫机制转换向量自回归模型（Markov Switching Vector Auto Regression，MSVAR）、门限向量自回归模型（Threshold Vector Auto Regression Model，TVAR）和平滑转换向量自回归模型（Smooth Transition Vector Auto Regressionmodel，STVAR）。</p>
+<p>MSVAR由Hamilton（1990）较早提出，Krolzig（1997）已经开发了基于Ox软件的MSVAR极大似然估计技术。该模型假定转换是由外生的不可观测的马尔可夫链决定，但是不能给出机制转换的非线性表达形式，一般只能推断不同机制转换的概率，由于其转换机制是离散的，因而限制了它的应用；TVAR是将Tong等（1978）提出的非线性时间序列门限模型（Threshold Model）与VAR模型相结合而形成，用于刻画不同区制或状态下变量之间的作用机制和区制间非线性的动态特征。该模型允许机制变化是内生的，但是引起机制转化的门限却是不可直接观测的，转换机制同样是离散的；STVAR是Weise（1993）在研究转换机制时为获得转换函数而提出的模型，该模型可以通过恰当的方式获得转换变量和转换函数，从而使机制的转换平滑化或渐进化，方便了人们对转换过程的认识。根据转换函数的特征，可设置两种平滑转换自回归模型：逻辑斯特STVAR（LSTVAR）模型和指数STVAR（ESTVAR）模型。</p>
+<h2 id="三、VAR宏观计量模型的最新拓展"><a href="#三、VAR宏观计量模型的最新拓展" class="headerlink" title="三、VAR宏观计量模型的最新拓展"></a>三、VAR宏观计量模型的最新拓展</h2><p>任何学科都不是孤立地发展演进的，进入21世纪，在研究范式的转变、方法创新以及计算科学技术不断发展的基础上，VAR模型的使用领域和拓展形式有了新的突破，主要表现为以下三个方面。</p>
+<h3 id="1-利用贝叶斯估计法，与具有微观经济理论基础的研究方式相融合—以DSGE-VAR模型为代表"><a href="#1-利用贝叶斯估计法，与具有微观经济理论基础的研究方式相融合—以DSGE-VAR模型为代表" class="headerlink" title="1.利用贝叶斯估计法，与具有微观经济理论基础的研究方式相融合—以DSGE-VAR模型为代表"></a><strong>1.</strong>利用贝叶斯估计法，与具有微观经济理论基础的研究方式相融合—以DSGE-VAR模型为代表</h3><p>作为一种纯粹的计量经济模型，VAR建模由于缺少经济理论的支持一直饱受诟议，理性预期因素在该模型中的缺失也无法完全克服“卢卡斯批判”的质疑。20世纪80年代初，一种基于宏观经济理论的真实商业周期模型（Real BusinessCycle,RBC）在与VAR竞争中逐渐发展起来。关于DSGE模型的构建最早可以追溯到Kydland和Prescott（1982）里程碑式的研究，二位学者提出的RBC模型是DSGE模型的最早雏形。该模型的特点是秉承瓦尔拉斯一阿罗—德布鲁—般均衡理论范式和新古典宏观经济学理念，在市场连续出清、价格完全弹性以及信息完全的假设下，利用最优化方法，得到不确定环境下经济主体最优行为方程。但是随后的研究发现，标准RBC模型由于缺乏内部动态调整过程而不能维持数据的一致性。鉴于此，新凯恩斯主义者把RBC模型拓展到动态随机一般均衡（Dynamic Stochastic General Equilibrium, DSGE）模型。在一个通用的DSGE模型中包含的代表性行为人包含居民、厂商、金融机构、政府及对外部门等，各项政策冲击，包括政府支出的需求冲击和货币供给冲击等都能在该模型的框架中得到清晰的刻画。Christiano、Eichenbaum和Evans（2005，简称CEE模型）对该模型的应用做了深入的研究，通过考察产出、消费、通胀、投资、利润等变量对于货币政策脉冲的响应，发现与基于VAR的估计结果十分一致。目前，具有坚实经济理论基础的DSGE模型近乎发展为西方宏观经济研究的标准范式。</p>
+<p>DSGE模型的设置在具体形式上不拘一格，但在整体框架上却要保持高度的一致性。为便于下文分析，下面给出一个DSGE模型简单数学表述，该表述具有一定的代表性。</p>
+<ul>
+<li>家庭部门。其中，参数$\sigma$表示家庭风险规避系数，参数$v$表示货币持有与利率之间替代弹性的倒数，参数$\eta$表示劳动供给与实际工资之间替代弹性的倒数，参数$\varepsilon$代表不同商品之间的替代弹性。</li>
+<li>企业部门。假设存在一个连续的企业集合$f\in(0,1)$，每个企业利用相同的生产技术生产不同的产品。</li>
+<li>政府宏观调控模型，以货币调控为例，一般采用泰勒规则或拓展的泰勒规则。</li>
+</ul>
+<p>DSGE模型的结构化设计看似完美，然而在实际操作中难以直接使用，未经参数化的DSGE模型要达到预测效果需要通过复杂的参数校准和估计过程。通常的方法是对反映模型稳态特征的有关参数进行校准，对反映模型动态特征的有关参数进行估计，常用的估计方法有GMM（广义矩估计）、SMM（模拟矩估计）、ML（极大似然估计）和Bayes估计法等。现在，大多数的校准和估计比较了模拟数据的性质和真实数据的典型事实，把VAR（或者SVAR、BVAR等）作为基准评价DSGE模型分析的效果。例如CEE模型通过调整DSGE模型参数设定，在货币政策的冲击下发现能够很好地拟合BVAR的冲击响应。但是这种方法近年来受到Negro等（2007）的严厉批判，他们认为同样是信息有限的两类模型难以达到完全匹配对照的效果。另外一种是Smets和Wouters（2003）的建模思想，他们通过将DSGE模型的先验信息应用到VAR模型的估计中，得到BVAR的估计结果，然后比较DSGE和BVAR两个模型的边缘概率分布来评估模型。Ireland（2004）把这样的模型称为混合的DSGE-VAR模型，Negro等（2007）将该方法进行了概括和完善。未来如果能够提供一整套DS-GE-VAR模型标准化的分析工具，将有着非常广阔的应用前景。</p>
+<h3 id="2-向非线性、时变参数的趋势发展—以TVP-VAR模型为代表"><a href="#2-向非线性、时变参数的趋势发展—以TVP-VAR模型为代表" class="headerlink" title="2.向非线性、时变参数的趋势发展—以TVP-VAR模型为代表"></a><strong>2.</strong>向非线性、时变参数的趋势发展—以TVP-VAR模型为代表</h3><p>传统的VAR模型假定VAR系数以及扰动项的方差都是不变的，这种假定显然难以吻合现实的情况。实际上随着时间的推移，经济体制、经济结构、政策偏好和技术等方面的因素不断发生变化，模型参数也会随之改变，传统的VAR模型显然不能刻画这种动态特征。以往能够描述非线性特征的状态空间模型由于是单向方程，无法展现多变量之间的相互作用，因而在使用上受到限制。早期的非线性动态VAR（MSVAR、TVAR、STVAR）也主要把研究重点放在非线性的过渡——转换机制上，缺少对全局的把握。对此，向非线性、变参数趋势发展的VAR模型应运而生，其代表性模型是时变参数的向量自回归模型（TimeVaryingParameter Vector Autoregression,TVP-VAR）。</p>
+<p>在Cogley和Sargent（2005）的TVP-VAR模型中，为了估计方便他们的模型对新息冲击的方差设置为恒定的，Boivin和Giannoni（2006）研究时也采用了类似设置。Primiceri（2005）则同时考虑了VAR系数和误差项方差的时变性，将模型扩展为带有随机波动的时变参数形式（TVP-SV-BVAR模型），该方法用于分析美国的货币政策传导机制的动态变动，取得了十分满意的结果。但是一些学者在利用该模型时发现，建模时做出的许多设定很容易导致过度参数化，为了克服这一问题，Koop等（2007）在Gerlach等（2000）以及Giordani和Kohn（2006）的研究基础上提出了混合创新的方法（MI-TVP-SV-VAR模型），该模型允许VAR系数与误差方差相关的参数以及误差协方差矩阵参数按照不同的方式演进，这样更好地体现了“让数据本身说话”的思想。利用这种方法，Baumeister和Peersman（2008）研究了欧盟区的流动性对资产价格与通货膨胀的动态冲击效果，发现对现实的解释力极强。</p>
+<h3 id="3-向大规模、多变量的趋势发展——以FAVAR模型为代表"><a href="#3-向大规模、多变量的趋势发展——以FAVAR模型为代表" class="headerlink" title="3. 向大规模、多变量的趋势发展——以FAVAR模型为代表"></a><strong>3.</strong> 向大规模、多变量的趋势发展——以FAVAR模型为代表</h3><p>VAR模型的创始人Sims（1992）很早就指出，VAR模型所处理的经济变量过少是该模型的主要缺陷之一。Bernanke等（2005）也认为，政策制定者需要考虑的经济因素数很多，目前运用的VAR模型最多可以处理12个变量，有限的经济变量不能反映政策对经济系统的真实作用效果。为了克服该模型存在的缺陷，Bernanke（2005）在前人研究的基础上，对VAR模型进行了改进，提出了因素扩展的向量自回归模型（Factor AugmentedVector Auto Regressive Model，FAVAR）。</p>
+<p>FAVAR模型特点在于运用多变量、大规模数据研究政策变量对系统的冲击问题，有效解决了现有模型（VAR、SVAR、VECM以及DSGE等）无法克服的变量过少、信息有限的问题，从而全面捕捉现实中的经济信息，更加真实地反映变量之间相互影响的动态关系。Shibamoto（2007）、Vargas-Silva（2008）、Kabundi和Gupta（2009）、Gupta等（2010）先后利用FAVAR模型对日本、美国及南非等国家货币政策对房地产价格变化的作用进行实证研究，发现FAVAR模型的实证分析效果优越于小规模的VAR、BVAR等模型。但FAVAR模型的不足之处是在处理非平稳数据时可能会因数据的差分平稳化而丢失一些信息，从而造成模型预测的不准确，为克服这一问题，Banbura等（2008）和Gupta等（2010）利用大规模的贝叶斯向量自回归（Large-scale BayesianVector Autoregression，LBVAR）模型，在FAVAR基础上结合了贝叶斯统计推断方法的优点和处理非平稳数据的特性，为VAR模型的发展进一步拓展了空间。另外，Pesaran等（2004）在全球链接模型基础上发展起来的全球向量自回归模型（Globle VAR，GVAR），通过对各国子系统和国家间连接矩阵的合理设置也使大规模变量得以简化，在全球经济系统研究方面取得成功运用。</p>
+<p>总的来看，未来VAR模型的发展，会向更具有严密经济理论基础、能够处理非线性、多变量以及空间计量的趋势演进，贝叶斯统计推断技术在进行模型参数估计时仍具有无可替代的优势。</p>
+<h2 id="四、VAR模型在使用过程中应注意的问题"><a href="#四、VAR模型在使用过程中应注意的问题" class="headerlink" title="四、VAR模型在使用过程中应注意的问题"></a>四、VAR模型在使用过程中应注意的问题</h2><p>近年来，以计量模型作为宏观经济分析方法的学术论文越来越多，特别是VAR系列的计量模型占据的比重较大。毫无疑问，以VAR为母体演变和拓展的模型将成为宏观计量经济分析的重要工具。</p>
+<p>然而，对研究方法不加思索地引进难免会出现“囫囵吞枣”的现象。李子奈等（2010）曾经对我国计量经济模型的滥用大声疾呼，并多次阐明与澄清计量经济模型的方法论基础。联系当前我国计量经济模型的使用现状，结合VAR模型自身的特点，我们认为VAR模型在实际运用中应注意如下问题：</p>
+<ul>
+<li>一是在总体回归模型的设定上要遵循经济主体间的动力学关系。计量经济学模型的设定，既要避免按部就班的理论导向，也要避免纯粹的数据关系导向（李子奈等，2010）。完全的理论导向，在过于苛刻的假设前提下有时会使研究结果偏离现实；纯粹的数据关系导向，有时又会导致毫无意义的伪回归。特别是VAR系列模型，由于强调了变量的内生性，因此更需要根据经济主体间的动力学关系确定总体回归模型，实现先验理论导向与数据关系导向的综合。</li>
+<li>二是既要注重总量分析，更要强调结构分析。总量与结构问题是模型分解性程度的问题，应该根据实际问题的需要而有所偏重。我国作为一个经济体制转轨中的大国，经济结构差异较大，存在普遍的地域差异、城乡差异、所有制差异以及分配制度差异等多重二元结构问题，时下盛行的VAR类模型多数进行的是总量分析，受我国非平衡的经济结构的影响，其有效性和实用性存在不足。从问题导向上来说，解决我国结构平衡问题至关重要，因此未来采用非线性、时变参数以及向空间计量方面拓展的VAR模型应该受到重视。</li>
+<li>三是注意模型使用过程中的规范性。从目前发表的采用VAR类计量模型的文章来看，这些问题主要表现为：不加区分地运用水平VAR或者差分VAR；结构性冲击矩阵设置的理论依据不严谨；样本数据容量不足，难以保证参数估计的稳定性等。</li>
+</ul>
+
+          </div>
+      
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          <!-- 
+    <div class="article-reward">
+        <a id="reward-btn" href="javascript:;">打赏</a>
+        <div id="reward-content">
+            <h6 class="reward-tit">“感谢你的支持，我会继续努力！”</h6>
+            <div>
+                <div class="reward-code">
+                    <img class="type-code" src="../../../../css/images/wechat.jpg">
+                    <img class="er-code" src="/css/images/wechat-pay.jpg">
+                </div>
+                <div class="reward-code">
+                    <img class="type-code" src="../../../../css/images/alipay.jpg">
+                    <img class="er-code" src="/css/images/alipay-pay.jpg">
+                </div>
+            </div>
+            <p class="reward-desc">扫码打赏，感谢支持</p>
+        </div>
+    </div>
+
+ -->
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/DSGE/" rel="tag">DSGE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/VAR/" rel="tag">VAR</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" rel="tag">向量自回归</a></li></ul>
+
+          <!-- 
+    <div class="social-share">
+      <span>分享到:</span>
+    </div>
+
+
+ -->
         </div>
       
       
-    </div>
-  
-  
-    
-
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-09T01:20:39+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年1月9日</p>
-  </a>
-</div>
-
+<nav id="article-nav">
+  
+    <a href="../../16/%E4%B8%AD%E4%BB%8B%E6%95%88%E5%BA%94%E6%A3%80%E9%AA%8C%E7%A8%8B%E5%BA%8F%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
         
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>向量自回归</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/VAR/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>VAR</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/DSGE/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>DSGE</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dhndzwxj.github.io/2021/01/08/VAR%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/&title=VAR模型的前世今生 - 渝言&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://dhndzwxj.github.io/2021/01/08/VAR%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/&title=VAR模型的前世今生 - 渝言&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://dhndzwxj.github.io/2021/01/08/VAR%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/&title=VAR模型的前世今生 - 渝言&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </div>
-
-
-  
-  
-
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='../../16/%E4%B8%AD%E4%BB%8B%E6%95%88%E5%BA%94%E6%A3%80%E9%AA%8C%E7%A8%8B%E5%BA%8F%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>中介效应检验程序及其应用</p>
-          <p class='content'>
-温忠麟.张雷,侯杰泰,刘红云.中介效应检验程序及其应用[J].心理学报,2004(05):614-620.
-
-中介变量和相关概念在本文中,假设我们感兴趣的是因变量$(Y)$和自变量$(X)$的...</p>
-        </a>
-      
-      
-        <a class='next' href='../../05/stata%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/'>
-          <p class='title'>stata常用命令<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>
-导入数据
-一般做实证分析使用的是excel中的数据，其后缀名为.xls，需要将其修改为.csv
-12insheet using name.csv, clearuse name.dta,clea...</p>
-        </a>
-      
-    </div>
-  
-</article>
-
-
-  
-
-  <article class="post white-box reveal shadow" id="comments">
-    <p ct><i class='fas fa-comments'></i> 评论</p>
-    
-    <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-  </article>
-
-
-
-
-
-  <script>
-  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    // 文章章节标题不能为 “MathJax” ，否则会报错。
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-
-
-
-
-</div>
-<aside class='l_side'>
-  
-  
-    
-    
-
-
-
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E6%8F%90%E8%A6%81"><span class="toc-text">内容提要</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81VAR%E5%AE%8F%E8%A7%82%E8%AE%A1%E9%87%8F%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E7%94%A8"><span class="toc-text">一、VAR宏观计量模型的基本结构与运用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81VAR%E5%AE%8F%E8%A7%82%E8%AE%A1%E9%87%8F%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%BC%94%E5%8F%98"><span class="toc-text">二、VAR宏观计量模型的演变</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SVAR%EF%BC%9A%E4%BB%8E%E7%AE%80%E7%BA%A6%E5%BC%8F%E6%AD%A5%E5%85%A5%E5%88%B0%E7%BB%93%E6%9E%84%E5%BC%8F"><span class="toc-text">1.SVAR：从简约式步入到结构式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-BVAR%EF%BC%9AVAR%E6%A8%A1%E5%9E%8B%E7%BB%9F%E8%AE%A1%E6%8E%A8%E6%96%AD%E6%96%B9%E6%B3%95%E4%B8%8A%E7%9A%84%E9%9D%A9%E5%91%BD"><span class="toc-text">2.BVAR：VAR模型统计推断方法上的革命</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-PVAR%EF%BC%9A%E5%90%91%E7%A9%BA%E9%97%B4%E8%AE%A1%E9%87%8F%E7%9A%84%E6%8B%93%E5%B1%95"><span class="toc-text">3.PVAR：向空间计量的拓展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%8A%A8%E6%80%81VAR%EF%BC%9A%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90%E8%8C%83%E5%BC%8F%E7%9A%84%E5%8F%98%E9%9D%A9"><span class="toc-text">4.非线性动态VAR：线性分析范式的变革</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81VAR%E5%AE%8F%E8%A7%82%E8%AE%A1%E9%87%8F%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%9C%80%E6%96%B0%E6%8B%93%E5%B1%95"><span class="toc-text">三、VAR宏观计量模型的最新拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%A9%E7%94%A8%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%B0%E8%AE%A1%E6%B3%95%EF%BC%8C%E4%B8%8E%E5%85%B7%E6%9C%89%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%BC%8F%E7%9B%B8%E8%9E%8D%E5%90%88%E2%80%94%E4%BB%A5DSGE-VAR%E6%A8%A1%E5%9E%8B%E4%B8%BA%E4%BB%A3%E8%A1%A8"><span class="toc-text">1.利用贝叶斯估计法，与具有微观经济理论基础的研究方式相融合—以DSGE-VAR模型为代表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%90%91%E9%9D%9E%E7%BA%BF%E6%80%A7%E3%80%81%E6%97%B6%E5%8F%98%E5%8F%82%E6%95%B0%E7%9A%84%E8%B6%8B%E5%8A%BF%E5%8F%91%E5%B1%95%E2%80%94%E4%BB%A5TVP-VAR%E6%A8%A1%E5%9E%8B%E4%B8%BA%E4%BB%A3%E8%A1%A8"><span class="toc-text">2.向非线性、时变参数的趋势发展—以TVP-VAR模型为代表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%91%E5%A4%A7%E8%A7%84%E6%A8%A1%E3%80%81%E5%A4%9A%E5%8F%98%E9%87%8F%E7%9A%84%E8%B6%8B%E5%8A%BF%E5%8F%91%E5%B1%95%E2%80%94%E2%80%94%E4%BB%A5FAVAR%E6%A8%A1%E5%9E%8B%E4%B8%BA%E4%BB%A3%E8%A1%A8"><span class="toc-text">3. 向大规模、多变量的趋势发展——以FAVAR模型为代表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81VAR%E6%A8%A1%E5%9E%8B%E5%9C%A8%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%BA%94%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">四、VAR模型在使用过程中应注意的问题</span></a>
-    </div>
-  </section>
-
-
-  
-
-
-</aside>
-
-
-
-        
-        
-          <!--此文件用来存放一些不方便取值的变量-->
-<!--思路大概是将值藏到重加载的区域内-->
-
-<script>
-  window.pdata={}
-  pdata.ispage=true;
-  pdata.postTitle="VAR模型的前世今生";
-  pdata.commentPath="";
-  pdata.commentPlaceholder="";
-
-  var l_header=document.getElementById("l_header");
-  
-  l_header.classList.add("show");
-  
-</script>
-
+          中介效应检验程序及其应用
         
       </div>
-      
+    </a>
   
-  <footer class="footer clearfix">
-    <br><br>
-    
-      
-        <div class="aplayer-container">
-          
+  
+    <a href="../../05/stata%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">stata常用命令</div>
+    </a>
+  
+</nav>
 
-
-        </div>
       
-    
-      
-        <br>
-        <div class="social-wrapper">
-          
-            
-              <a href="../../../../atom.xml"
-                class="social  flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-                
-                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/020-rss.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/020-rss.svg" srcset="data:image/png;base64,666"/>
-                
-              </a>
-            
-          
-            
-          
-            
-              <a href="../../../../https:/github.com/dhndzwxj"
-                class="social  flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-                
-                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/029-github.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/029-github.svg" srcset="data:image/png;base64,666"/>
-                
-              </a>
-            
-          
-        </div>
-      
-    
-      
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div>
-      
-    
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次&lt;/span&gt; <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人&lt;/span&gt;</p>
-</div>
+
+
+
+
+
+
+  <div id="SOHUCS" sid="2021/01/08/VAR模型的前世今生/"></div>
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
         
-      
+          <aside id="sidebar">
+  
     
-      
-        本站使用
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0" target="_blank" class="codename">Volantis</a>
-        作为主题
-      
-    
-      
-        <div class='copyright'>
-        <p><a href="/">Copyright © 2020-2020 by Juncker</a></p>
-
-        </div>
-      
-    
-  </footer>
-
-
-      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> 最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="../../../06/16/%E5%8A%A9%E6%95%99%EF%BC%9A%E4%B8%80%E9%94%AE%E7%99%BB%E8%AE%B0%E6%8F%90%E4%BA%A4%E5%92%8C%E6%88%90%E7%BB%A9/">助教：一键登记提交和成绩</a>
+          </li>
+        
+          <li>
+            <a href="../../../06/02/%E4%B8%AD%E5%9B%BD%E5%AF%B9%E5%A4%96%E5%BC%80%E6%94%BE%E5%8F%B2/">中国对外开放史</a>
+          </li>
+        
+          <li>
+            <a href="../../../06/02/%E5%9F%8E%E5%B8%82%E5%8C%96%E7%AC%94%E8%AE%B0/">城市化笔记</a>
+          </li>
+        
+          <li>
+            <a href="../../../05/19/%E4%BB%80%E4%B9%88%E6%98%AF%E6%96%B0%E7%86%8A%E5%BD%BC%E7%89%B9%EF%BC%9F/">什么是新熊彼特？</a>
+          </li>
+        
+          <li>
+            <a href="../../../05/18/SSA%E7%BB%8F%E5%85%B8%E8%AE%BA%E6%96%87/">SSA经典论文</a>
+          </li>
+        
+          <li>
+            <a href="../../../05/13/%E5%8D%97%E5%8C%97%E5%88%86%E5%8C%96%E7%BB%BC%E8%BF%B0%E5%A2%9E%E8%A1%A5/">南北分化综述增补</a>
+          </li>
+        
+          <li>
+            <a href="../../../05/09/%E5%A4%A7%E5%8D%AB%C2%B7%E5%93%88%E7%BB%B4%E8%B5%84%E6%9C%AC%E7%9A%84%E9%99%90%E5%BA%A6/">大卫·哈维资本的限度</a>
+          </li>
+        
+          <li>
+            <a href="../../../04/24/%E8%B4%A2%E6%94%BF%E5%AD%A6%E7%AC%94%E8%AE%B0/">财政学笔记</a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-  <div>
-    <script>
-window.volantis={};
-window.volantis.loadcss=document.getElementById("loadcss");
-/********************脚本懒加载函数********************************/
-function loadScript(src, cb) {
-var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
-var script = document.createElement('script');
-script.setAttribute('type','text/javascript');
-if (cb) script.onload = cb;
-script.setAttribute('src', src);
-HEAD.appendChild(script);
-}
-//https://github.com/filamentgroup/loadCSS
-var loadCSS = function( href, before, media, attributes ){
-	var doc = window.document;
-	var ss = doc.createElement( "link" );
-	var ref;
-	if( before ){
-		ref = before;
-	}
-	else {
-		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
-		ref = refs[ refs.length - 1];
-	}
-	var sheets = doc.styleSheets;
-	if( attributes ){
-		for( var attributeName in attributes ){
-			if( attributes.hasOwnProperty( attributeName ) ){
-				ss.setAttribute( attributeName, attributes[attributeName] );
-			}
-		}
-	}
-	ss.rel = "stylesheet";
-	ss.href = href;
-	ss.media = "only x";
-	function ready( cb ){
-		if( doc.body ){
-			return cb();
-		}
-		setTimeout(function(){
-			ready( cb );
-		});
-	}
-	ready( function(){
-		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
-	});
-	var onloadcssdefined = function( cb ){
-		var resolvedHref = ss.href;
-		var i = sheets.length;
-		while( i-- ){
-			if( sheets[ i ].href === resolvedHref ){
-				return cb();
-			}
-		}
-		setTimeout(function() {
-			onloadcssdefined( cb );
-		});
-	};
-	function loadCB(){
-		if( ss.addEventListener ){
-			ss.removeEventListener( "load", loadCB );
-		}
-		ss.media = media || "all";
-	}
-	if( ss.addEventListener ){
-		ss.addEventListener( "load", loadCB);
-	}
-	ss.onloadcssdefined = onloadcssdefined;
-	onloadcssdefined( loadCB );
-	return ss;
-};
-</script>
-<script>
-  
-  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
-  
-  
-  
-  
-</script>
-<!-- required -->
-
-<script src="../../../../https:/cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
-
-<script>
-  function pjax_fancybox() {
-    $(".md .gallery").find("img").each(function () { //渲染 fancybox
-      var element = document.createElement("a"); // a 标签
-      $(element).attr("class", "fancybox");
-      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
-      $(element).attr("href", $(this).attr("src"));
-      if ($(this).attr("data-original")) {
-        $(element).attr("href", $(this).attr("data-original"));
-      }
-      $(element).attr("data-fancybox", "images");
-      var caption = "";   // 描述信息
-      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
-        $(element).attr('data-caption', $(this).attr('alt'));
-        caption = $(this).attr('alt');
-      }
-      var div = document.createElement("div");
-      $(div).addClass("fancybox");
-      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
-      var span = document.createElement("span");
-      $(span).addClass("image-caption");
-      $(span).text(caption); // 加描述
-      $(this).after(span);  // 再套一层描述
-      $(this).wrap(element);  // 最后套 a 标签
-    })
-    $(".md .gallery").find("img").fancybox({
-      selector: '[data-fancybox="images"]',
-      hash: false,
-      loop: false,
-      closeClick: true,
-      helpers: {
-        overlay: {closeClick: true}
-      },
-      buttons: [
-        "zoom",
-        "close"
-      ]
-    });
-  };
-  function SCload_fancybox() {
-    if ($(".md .gallery").find("img").length == 0) return;
-    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
-    setTimeout(function() {
-      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
-    }, 1);
-  };
-  $(function () {
-    SCload_fancybox();
-  });
-</script>
-
-
-<!-- internal -->
-
-
-
-
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
-<script>
-  // https://www.npmjs.com/package/vanilla-lazyload
-  // Set the options globally
-  // to make LazyLoad self-initialize
-  window.lazyLoadOptions = {
-    elements_selector: ".lazyload",
-    threshold: 0
-  };
-  // Listen to the initialization event
-  // and get the instance of LazyLoad
-  window.addEventListener(
-    "LazyLoad::Initialized",
-    function (event) {
-      window.lazyLoadInstance = event.detail.instance;
-    },
-    false
-  );
-  document.addEventListener('DOMContentLoaded', function () {
-    lazyLoadInstance.update();
-  });
-  document.addEventListener('pjax:complete', function () {
-    lazyLoadInstance.update();
-  });
-</script>
-
-
 
 
   
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> 分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/">博资考</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/MWG%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E7%90%86%E8%AE%BA/">MWG微观经济理论</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E6%95%B0%E7%90%86-%E5%AE%8F%E8%A7%82/">高级数理-宏观</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E6%95%B0%E7%90%86-%E5%BE%AE%E8%A7%82/">高级数理-微观</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E5%8D%9A%E8%B5%84%E8%80%83/%E9%AB%98%E7%BA%A7%E8%AE%A1%E9%87%8F/">高级计量</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9D%82%E6%8A%80/">杂技</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9D%82%E6%8A%80/Hexo/">Hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9D%82%E6%8A%80/LaTeX/">LaTeX</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9D%82%E6%8A%80/python/">python</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9D%82%E8%AE%B0/">杂记</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9D%82%E8%AE%B0/%E6%98%8E%E6%98%8E%E7%9A%84%E4%B8%96%E7%95%8C/">明明的世界</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/">笔记</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E6%96%B0%E6%83%B3%E6%B3%95/">新想法</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">论文笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%A4%A7%E5%8D%AB%C2%B7%E5%93%88%E7%BB%B4/">大卫·哈维</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AE%89%E7%93%A6%E5%B0%94%C2%B7%E8%B0%A2%E5%85%8B%E3%80%8A%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E3%80%8B/">安瓦尔·谢克《资本主义》</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%B0%BC%E5%B0%94%C2%B7%E5%8F%B2%E5%AF%86%E6%96%AF%E3%80%8A%E8%87%AA%E7%84%B6%E3%80%81%E8%B5%84%E6%9C%AC%E5%92%8C%E7%94%9F%E4%BA%A7%E7%A9%BA%E9%97%B4%E3%80%8B/">尼尔·史密斯《自然、资本和生产空间》</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%B1%B3%E6%AD%87%E5%B0%94%C2%B7%E9%98%BF%E6%A0%BC%E5%88%97%E5%A1%94%E3%80%8A%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA%EF%BC%9A%E7%BE%8E%E5%9B%BD%E7%9A%84%E7%BB%8F%E9%AA%8C%E3%80%8B/">米歇尔·阿格列塔《资本主义调节理论：美国的经验》</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%BB%8F%E6%B5%8E%E5%9C%B0%E7%90%86%E5%AD%A6/">经济地理学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%A9%AC%E5%85%8B%C2%B7%E6%8B%89%E6%B2%83%E3%80%8A%E5%90%8E%E5%87%AF%E6%81%A9%E6%96%AF%E4%B8%BB%E4%B9%89%E7%BB%8F%E6%B5%8E%E5%AD%A6%E3%80%8B/">马克·拉沃《后凯恩斯主义经济学》</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%A9%AC%E6%81%A9%E5%85%A8%E9%9B%86/">马恩全集</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E9%BB%98%E9%A1%BF%E3%80%8A%E7%A4%BE%E4%BC%9A%E7%90%86%E8%AE%BA%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%BB%93%E6%9E%84%E3%80%8B/">默顿《社会理论与社会结构》</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/">经济学</a><span class="category-list-count">49</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E4%B8%8D%E5%B9%B3%E8%A1%A1%E5%8F%91%E5%B1%95/">不平衡发展</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E5%8F%91%E8%A1%A8%E5%B8%B8%E8%AF%86/">发表常识</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/">名词解释</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/">基础理论</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%8A%A5%E5%91%8A/">报告</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%94%BF%E7%AD%96%E6%96%87%E4%BB%B6/">政策文件</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%95%B0%E6%8D%AE/">数据</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%A8%A1%E5%9E%8B/">模型</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%A8%A1%E5%9E%8B/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92%EF%BC%88VAR%E6%A8%A1%E5%9E%8B%EF%BC%89/">向量自回归（VAR模型）</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E6%A8%A1%E5%9E%8B/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF%E6%A8%A1%E5%9E%8B/">资本循环模型</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E7%BB%8F%E6%B5%8E%E5%8F%B2/">经济史</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E7%BB%BC%E8%BF%B0/">综述</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E7%BE%8E%E5%9B%BD%E7%A7%AF%E7%B4%AF%E7%9A%84%E7%A4%BE%E4%BC%9A%E7%BB%93%E6%9E%84%E7%90%86%E8%AE%BA/">美国积累的社会结构理论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E7%BF%BB%E8%AF%91/">翻译</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E8%AE%A1%E9%87%8F/">计量</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E8%B4%A2%E6%94%BF%E4%B8%8E%E5%9F%8E%E5%B8%82%E5%8C%96/">财政与城市化</a><span class="category-list-count">2</span></li></ul></li></ul>
+    </div>
+  </div>
+
+
   
-    <script>
-      window.FPConfig = {
-        delay: 0,
-        ignoreKeywords: [],
-        maxRPS: 5,
-        hoverDelay: 25
-      };
-    </script>
-    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签云</h3>
+    <div class="widget tagcloud">
+      <a href="../../../../tags/2035/" style="font-size: 10px;">2035</a> <a href="../../../../tags/DSGE/" style="font-size: 10px;">DSGE</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/SSA/" style="font-size: 10px;">SSA</a> <a href="../../../../tags/VAR/" style="font-size: 10px;">VAR</a> <a href="../../../../tags/stata/" style="font-size: 10px;">stata</a> <a href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" style="font-size: 10px;">不变价格</a> <a href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" style="font-size: 10px;">不稳定就业</a> <a href="../../../../tags/%E5%81%A5%E5%BA%B7/" style="font-size: 10px;">健康</a> <a href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" style="font-size: 10px;">克鲁格曼</a> <a href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" style="font-size: 10px;">公共卫生</a> <a href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" style="font-size: 10px;">共产党宣言</a> <a href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" style="font-size: 10px;">凸函数</a> <a href="../../../../tags/%E5%87%B8%E9%9B%86/" style="font-size: 10px;">凸集</a> <a href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">动态随机一般均衡模型</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" style="font-size: 10px;">劳动价值论</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" style="font-size: 10px;">劳动过程</a> <a href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" style="font-size: 10px;">包络定理</a> <a href="../../../../tags/%E5%8C%BB%E7%96%97/" style="font-size: 10px;">医疗</a> <a href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" style="font-size: 10px;">十四五</a> <a href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" style="font-size: 10px;">南北贸易</a> <a href="../../../../tags/%E5%8D%B1%E6%9C%BA/" style="font-size: 10px;">危机</a> <a href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">发刊技巧</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">古典</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 10px;">古典经济学</a> <a href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" style="font-size: 15px;">名词解释</a> <a href="../../../../tags/%E5%90%8E%E5%87%AF/" style="font-size: 17.5px;">后凯</a> <a href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" style="font-size: 10px;">向量自回归</a> <a href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">国内大循环</a> <a href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" style="font-size: 10px;">国民经济核算</a> <a href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 12.5px;">国际贸易</a> <a href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" style="font-size: 10px;">基础范畴</a> <a href="../../../../tags/%E5%A2%9E%E9%95%BF/" style="font-size: 10px;">增长</a> <a href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" style="font-size: 10px;">外生冲击</a> <a href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">局部投入产出闭模型</a> <a href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">库恩-塔克条件</a> <a href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" style="font-size: 10px;">建筑业</a> <a href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" style="font-size: 10px;">开集闭集</a> <a href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" style="font-size: 17.5px;">恩格斯</a> <a href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" style="font-size: 10px;">投入产出</a> <a href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" style="font-size: 10px;">拉格朗日乘子法</a> <a href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" style="font-size: 10px;">数学规划</a> <a href="../../../../tags/%E6%96%AF%E5%AF%86/" style="font-size: 10px;">斯密</a> <a href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">新古典</a> <a href="../../../../tags/%E6%9D%82%E8%AE%B0/" style="font-size: 12.5px;">杂记</a> <a href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" style="font-size: 12.5px;">李斯特</a> <a href="../../../../tags/%E6%9D%A8%E6%A0%BC/" style="font-size: 10px;">杨格</a> <a href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" style="font-size: 10px;">核心期刊</a> <a href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">法国调节学派</a> <a href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" style="font-size: 10px;">现代货币理论</a> <a href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" style="font-size: 10px;">社会干预</a> <a href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" style="font-size: 12.5px;">线性规划</a> <a href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">美国社会积累结构学派</a> <a href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" style="font-size: 10px;">自由贸易</a> <a href="../../../../tags/%E8%A5%BF%E9%A9%AC/" style="font-size: 10px;">西马</a> <a href="../../../../tags/%E8%AE%A1%E9%87%8F/" style="font-size: 10px;">计量</a> <a href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" style="font-size: 12.5px;">调节理论</a> <a href="../../../../tags/%E8%B0%A2%E5%85%8B/" style="font-size: 10px;">谢克</a> <a href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" style="font-size: 10px;">财政管制</a> <a href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" style="font-size: 17.5px;">资本循环</a> <a href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" style="font-size: 10px;">远景目标</a> <a href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" style="font-size: 10px;">金融化</a> <a href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" style="font-size: 10px;">雇佣劳动</a> <a href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" style="font-size: 20px;">马克思</a> <a href="../../../../tags/%E9%AB%98%E5%B3%B0/" style="font-size: 10px;">高峰</a>
+    </div>
+  </div>
+
   
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/">2021年06月</a><span class="archive-list-count">59</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/">2020年12月</a><span class="archive-list-count">65</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/2035/" rel="tag">2035</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/DSGE/" rel="tag">DSGE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/SSA/" rel="tag">SSA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/VAR/" rel="tag">VAR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/stata/" rel="tag">stata</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" rel="tag">不变价格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" rel="tag">不稳定就业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" rel="tag">克鲁格曼</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" rel="tag">公共卫生</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" rel="tag">共产党宣言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" rel="tag">凸函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E9%9B%86/" rel="tag">凸集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" rel="tag">动态随机一般均衡模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" rel="tag">劳动价值论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" rel="tag">劳动过程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" rel="tag">包络定理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%BB%E7%96%97/" rel="tag">医疗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" rel="tag">十四五</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" rel="tag">南北贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%B1%E6%9C%BA/" rel="tag">危机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" rel="tag">发刊技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8/" rel="tag">古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">古典经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" rel="tag">名词解释</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8E%E5%87%AF/" rel="tag">后凯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" rel="tag">向量自回归</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" rel="tag">国内大循环</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" rel="tag">国民经济核算</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" rel="tag">国际贸易</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" rel="tag">基础范畴</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A2%9E%E9%95%BF/" rel="tag">增长</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" rel="tag">外生冲击</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" rel="tag">局部投入产出闭模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" rel="tag">库恩-塔克条件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" rel="tag">建筑业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" rel="tag">开集闭集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" rel="tag">恩格斯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" rel="tag">投入产出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" rel="tag">拉格朗日乘子法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" rel="tag">数学规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%AF%E5%AF%86/" rel="tag">斯密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" rel="tag">新古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" rel="tag">李斯特</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%A8%E6%A0%BC/" rel="tag">杨格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" rel="tag">核心期刊</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" rel="tag">法国调节学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" rel="tag">现代货币理论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" rel="tag">社会干预</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" rel="tag">线性规划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" rel="tag">美国社会积累结构学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" rel="tag">自由贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%A5%BF%E9%A9%AC/" rel="tag">西马</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%A1%E9%87%8F/" rel="tag">计量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" rel="tag">调节理论</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%A2%E5%85%8B/" rel="tag">谢克</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" rel="tag">财政管制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" rel="tag">资本循环</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" rel="tag">远景目标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" rel="tag">金融化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" rel="tag">雇佣劳动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" rel="tag">马克思</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%AB%98%E5%B3%B0/" rel="tag">高峰</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> 友情链接</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a href="../../../../http:/www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a href="../../../../http:/www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a href="../../../../http:/www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">网站地图</a>
+        <span> | </span><a href="/atom.xml">订阅本站</a>
+        <span> | </span><a href="/about/">联系博主</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2021 揭晓.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="../../../../js/jquery-3.4.1.min.js"></script>
+
+
+<script src="../../../../js/search.json.js"></script>
+
+
+  
+<script src="../../../../fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-    var clipboard = new ClipboardJS('.btn-copy', {
-        target: function (trigger) {
-            return trigger.nextElementSibling
-        }
-    });
-    function wait(callback, seconds) {
-        var timelag = null;
-        timelag = window.setTimeout(callback, seconds)
-    }
-    function pjax_initCopyCode() {
-		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
-        var copyHtml = '';
-        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
-        copyHtml += '</button>';
-        $(".highlight .code pre").before(copyHtml);
-        $(".article pre code").before(copyHtml);
-        clipboard.off('success').on('success', function (e) {
-            let $btn = $(e.trigger);
-            $btn.addClass('copied');
-            let $icon = $($btn.find('i'));
-            $icon.removeClass('fa-copy');
-            $icon.addClass('fa-check-circle');
-            let $span = $($btn.find('span'));
-            $span[0].innerText = 'COPIED';
-            wait(function () {
-                $icon.removeClass('fa-check-circle');
-                $icon.addClass('fa-copy');
-                $span[0].innerText = 'COPY'
-            }, 2000)
-        });
-        clipboard.off('error').on('error', function (e) {
-            e.clearSelection();
-            let $btn = $(e.trigger);
-            $btn.addClass('copy-failed');
-            let $icon = $($btn.find('i'));
-            $icon.removeClass('fa-copy');
-            $icon.addClass('fa-times-circle');
-            let $span = $($btn.find('span'));
-            $span[0].innerText = 'COPY FAILED';
-            wait(function () {
-                $icon.removeClass('fa-times-circle');
-                $icon.addClass('fa-copy');
-                $span[0].innerText = 'COPY'
-            }, 2000)
-        })
-    }
-    $(function () {
-        pjax_initCopyCode()
-    });
-</script>
-
-
+<script src="../../../../js/script.js"></script>
 
 
 
@@ -1103,558 +650,114 @@ var loadCSS = function( href, before, media, attributes ){
 
 
   
-  
-<script src="../../../../js/valine.js"></script>
-
-
-<script>
-  var GUEST_INFO = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link'.split(',').filter(function (item) {
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
-    return REQUIRED_FIELDS.indexOf(item) > -1
-  });
-
-  function emoji(path, idx, ext) {
-    return path + "/" + path + "-" + idx + "." + ext;
-  }
-
-  var emojiMaps = {};
-  for (var i = 1; i <= 54; i++) {
-    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-  }
-  for (var i = 1; i <= 101; i++) {
-    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-  }
-  for (var i = 1; i <= 116; i++) {
-    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-  }
-  for (var i = 1; i <= 125; i++) {
-    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
-  }
-  for (var i = 1; i <= 4; i++) {
-    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
-  }
-
-  function pjax_valine() {
-    if(!document.querySelectorAll("#valine_container")[0])return;
-
-    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
-
-    let path = pdata.commentPath;
-    if (path.length == 0) {
-      let defaultPath = '';
-      path = defaultPath || decodeURI(window.location.pathname);
-    }
-
-    var valine = new Valine();
-    valine.init({
-      el: '#valine_container',
-      meta: meta,
-      placeholder: pagePlaceholder,
-      path: path,
-      appId: "4GxrlYYHiDtgVVBt1brJjjiW-gzGzoHsz",
-      appKey: "457XUbyBHsGjI5e61V5pAdO4",
-      pageSize: '10',
-      avatar: 'robohash',
-      lang: 'zh-cn',
-      visitor: 'true',
-      highlight: 'true',
-      mathJax: 'false',
-      enableQQ: 'true',
-      recordIP: 'false',
-      requiredFields: requiredFields,
-      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
-      emojiMaps: emojiMaps
-    })
-  }
-
-  $(function () {
-    pjax_valine();
-  });
-</script>
-
-
+<script src="../../../../https:/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
   
-<script src="../../../../js/app.js"></script>
+<script src="../../../../localshare/js/social-share.js"></script>
+
+  
+<script src="../../../../localshare/js/qrcode.js"></script>
 
 
 
-<!-- optional -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script>
-const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
-const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
-
-$('.input.u-search-input').one('focus',function(){
-	
-		loadScript('../../../../js/search/hexo.js',setSearchService);
-	
-})
-
-function listenSearch(){
-  
-    customSearch = new HexoSearch({
-      imagePath: SearchServiceimagePath
-    });
-  
-}
-function setSearchService() {
-	listenSearch();
-	
-		document.addEventListener("pjax:success", listenSearch);
-	
-}
-</script>
-
-
-
-
-
-
-
-
-
-
-
-  <script defer>
-
-  const LCCounter = {
-    app_id: '4GxrlYYHiDtgVVBt1brJjjiW-gzGzoHsz',
-    app_key: '457XUbyBHsGjI5e61V5pAdO4',
-    custom_api_server: 'https://4gxrlyyh.lc-cn-n1-shared.com',
-
-    // 查询存储的记录
-    getRecord(Counter, url, title) {
-      return new Promise(function (resolve, reject) {
-        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
-          .then(resp => resp.json())
-          .then(({results, code, error}) => {
-            if (code === 401) {
-              throw error;
-            }
-            if (results && results.length > 0) {
-              var record = results[0];
-              resolve(record);
-            } else {
-              Counter('post', '/classes/Counter', {url, title: title, times: 0})
-                .then(resp => resp.json())
-                .then((record, error) => {
-                  if (error) {
-                    throw error;
-                  }
-                  resolve(record);
-                }).catch(error => {
-                console.error('Failed to create', error);
-                reject(error);
-              });
-            }
-          }).catch((error) => {
-          console.error('LeanCloud Counter Error:', error);
-          reject(error);
-        });
-      })
-    },
-
-    // 发起自增请求
-    increment(Counter, incrArr) {
-      return new Promise(function (resolve, reject) {
-        Counter('post', '/batch', {
-          "requests": incrArr
-        }).then((res) => {
-          res = res.json();
-          if (res.error) {
-            throw res.error;
-          }
-          resolve(res);
-        }).catch((error) => {
-          console.error('Failed to save visitor count', error);
-          reject(error);
-        });
-      });
-    },
-
-    // 构建自增请求体
-    buildIncrement(objectId) {
-      return {
-        "method": "PUT",
-        "path": `/1.1/classes/Counter/${ objectId }`,
-        "body": {
-          "times": {
-            '__op': 'Increment',
-            'amount': 1
-          }
+    window._config = { showScore: true };
+    (function(){
+      var appid = 'cyvx8z8wy';
+      var conf = '3f2abb66cc7c85b16c8a2cdca37f4b95';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var nodes =document.getElementsByTagName("head")[0]||document.head||document.documentElement;
+      if (/(Android|iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) && width < 750) {
+          window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+      }
+      else {
+        var loadJs=function(d,a){
+          var b=document.createElement("script");b.setAttribute("type","text/javascript");
+          b.setAttribute("charset","UTF-8");
+          b.setAttribute("src",d);
+          if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}
+          nodes.appendChild(b)
+        };
+        loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});
+      }
+      var loadCss = function(cssString){
+        var style=document.createElement("style");
+        style.setAttribute("type", "text/css");
+        if(style.styleSheet){// IE
+            style.styleSheet.cssText = cssString;
+        } else {// w3c
+            var cssText = document.createTextNode(cssString);
+            style.appendChild(cssText);
         }
+        nodes.appendChild(style);
       }
-    },
-
-    // 校验是否为有效的 UV
-    validUV() {
-      var key = 'LeanCloudUVTimestamp';
-      var flag = localStorage.getItem(key);
-      if (flag) {
-        // 距离标记小于 24 小时则不计为 UV
-        if (new Date().getTime() - parseInt(flag) <= 86400000) {
-          return false;
-        }
-      }
-      localStorage.setItem(key, new Date().getTime().toString());
-      return true;
-    },
-
-    addCount(Counter) {
-      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
-      enableIncr = true;
-      var getterArr = [];
-      var incrArr = [];
-      // 请求 PV 并自增
-      var pvCtn = document.querySelector('#lc-sv');
-      if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://dhndzwxj.github.io' + '/#lc-sv', 'Visits').then((record) => {
-          incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-sv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + 1;
-              if (pvCtn) {
-                pvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(pvGetter);
-      }
-
-      // 请求 UV 并自增
-      var uvCtn = document.querySelector('#lc-uv');
-      if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://dhndzwxj.github.io' + '/#lc-uv', 'Visitors').then((record) => {
-          var vuv = this.validUV();
-          vuv && incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-uv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + (vuv ? 1 : 0);
-              if (uvCtn) {
-                uvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(uvGetter);
-      }
-
-      // 请求文章的浏览数，如果是当前页面就自增
-      var allPV = document.querySelectorAll('#lc-pv');
-      if (allPV.length > 0 || enableIncr) {
-        for (i = 0; i < allPV.length; i++) {
-          let pv = allPV[i];
-          let title = pv.getAttribute('data-title');
-          var url = 'https://dhndzwxj.github.io' + pv.getAttribute('data-path');
-          if (url) {
-            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
-              // 是当前页面就自增
-              let curPath = window.location.pathname;
-              if (curPath.includes('index.html')) {
-                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
-              }
-              if (pv.getAttribute('data-path') == curPath) {
-                incrArr.push(this.buildIncrement(record.objectId));
-              }
-              if (pv) {
-                var ele = pv.querySelector('#lc-pv #number');
-                if (ele) {
-                  if (pv.getAttribute('data-path') == curPath) {
-                    ele.innerText = (record.times || 0) + 1;
-                  } else {
-                    ele.innerText = record.times || 0;
-                  }
-                  pv.style.display = 'inline';
-                }
-              }
-            });
-            getterArr.push(viewGetter);
-          }
-        }
-      }
-
-      // 如果启动计数自增，批量发起自增请求
-      if (enableIncr) {
-        Promise.all(getterArr).then(() => {
-          incrArr.length > 0 && this.increment(Counter, incrArr);
-        })
-      }
-
-    },
-
-
-    fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${ api_server }/1.1${ url }`, {
-          method,
-          headers: {
-            'X-LC-Id': this.app_id,
-            'X-LC-Key': this.app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      this.addCount(Counter);
-    },
-
-    refreshCounter() {
-      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
-      if (api_server) {
-        this.fetchData(api_server);
-      } else {
-        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
-          .then(resp => resp.json())
-          .then(({api_server}) => {
-            this.fetchData('https://' + api_server);
-          });
-      }
+    })();
+    function removeElement(_element){
+         var _parentElement = _element.parentNode;
+         if(_parentElement){
+                _parentElement.removeChild(_element);
+         }
     }
-
-  };
-
-  LCCounter.refreshCounter();
-
-  document.addEventListener('pjax:complete', function () {
-    LCCounter.refreshCounter();
-  });
-</script>
-
-
-
-
-
-
-
-
-<script>
-function listennSidebarTOC() {
-  const navItems = document.querySelectorAll(".toc li");
-  if (!navItems.length) return;
-  const sections = [...navItems].map((element) => {
-    const link = element.querySelector(".toc-link");
-    const target = document.getElementById(
-      decodeURI(link.getAttribute("href")).replace("#", "")
-    );
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      window.scrollTo({
-		top: target.offsetTop + 100,
-		
-		behavior: "smooth"
-		
-	  });
-    });
-    return target;
-  });
-
-  function activateNavByIndex(target) {
-    if (target.classList.contains("active-current")) return;
-
-    document.querySelectorAll(".toc .active").forEach((element) => {
-      element.classList.remove("active", "active-current");
-    });
-    target.classList.add("active", "active-current");
-    let parent = target.parentNode;
-    while (!parent.matches(".toc")) {
-      if (parent.matches("li")) parent.classList.add("active");
-      parent = parent.parentNode;
-    }
-  }
-
-  function findIndex(entries) {
-    let index = 0;
-    let entry = entries[index];
-    if (entry.boundingClientRect.top > 0) {
-      index = sections.indexOf(entry.target);
-      return index === 0 ? 0 : index - 1;
-    }
-    for (; index < entries.length; index++) {
-      if (entries[index].boundingClientRect.top <= 0) {
-        entry = entries[index];
-      } else {
-        return sections.indexOf(entry.target);
-      }
-    }
-    return sections.indexOf(entry.target);
-  }
-
-  function createIntersectionObserver(marginTop) {
-    marginTop = Math.floor(marginTop + 10000);
-    let intersectionObserver = new IntersectionObserver(
-      (entries, observe) => {
-        let scrollHeight = document.documentElement.scrollHeight + 100;
-        if (scrollHeight > marginTop) {
-          observe.disconnect();
-          createIntersectionObserver(scrollHeight);
-          return;
+    var removeAD = document.createElement("div");
+    removeAD.id = 'removeAD';
+    var adInterval1 = setInterval(function() {
+      if(document.querySelector("#feedAv")){
+        document.querySelector("[node-type=cmt-list]").appendChild(removeAD);
+        document.querySelector("#removeAD").appendChild(document.querySelector("#feedAv"));
+        //- removeElement(document.querySelectorAll("#feedAv")[0]);
+        var feedAv = document.querySelector("#feedAv").children;
+        for( item of feedAv){
+          item.style.display = 'none'
         }
-        let index = findIndex(entries);
-        activateNavByIndex(navItems[index]);
-      },
-      {
-        rootMargin: marginTop + "px 0px -100% 0px",
-        threshold: 0,
+        document.querySelector("#removeAD").style.display="none"
+        clearInterval(adInterval1);
       }
-    );
-    sections.forEach((element) => {
-      element && intersectionObserver.observe(element);
-    });
-  }
-  createIntersectionObserver(document.documentElement.scrollHeight);
-}
-
-document.addEventListener("DOMContentLoaded", listennSidebarTOC);
-document.addEventListener("pjax:success", listennSidebarTOC);
-</script>
-
-<!-- more -->
-
-
-
-
-    
-      
-
-
-<script src="../../../../https:/cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
-
-
-<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
-
-<div class="pjax-animate">
+    },1000);
+    var adInterval2 = setInterval(function() {
+      if(document.querySelector("#pop_ad")){
+        removeElement(document.querySelector("#pop_ad"));
+        clearInterval(adInterval2);
+      }
+    }, 1000);
+  </script>
   
-    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
-    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
-    <script>
-      window.ShowLoading = function() {
-        NProgress.start();
-      };
-      window.HideLoading = function() {
-        NProgress.done();
-      }
-    </script>
-  
-</div>
+<script src="../../../../https:/assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
 
 
-<script>
-    var pjax;
-    document.addEventListener('DOMContentLoaded', function () {
-      pjax = new Pjax({
-        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
-        selectors: [
-          "title",
-          "#l_cover",
-          "#pjax-container",
-          "#pjax-header-nav-list"
-        ],
-        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
-        timeout: 5000
-      });
-    });
 
-    document.addEventListener('pjax:send', function (e) {
-      //window.stop(); // 相当于点击了浏览器的停止按钮
 
-      try {
-        var currentUrl = window.location.pathname;
-        var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
-        if (banUrl[0] != "") {
-          banUrl.forEach(item => {
-            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
-              window.location.href = targetUrl;
-            }
-          });
-        }
-      } catch (error) {}
 
-      window.subData = null; // 移除标题（用于一二级导航栏切换处）
-      if (typeof $.fancybox != "undefined") {
-        $.fancybox.close();    // 关闭弹窗
-      }
-      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
-      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
-      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
-
-      // 解绑事件 避免重复监听
-      volantis.$topBtn.unbind('click');
-      $('.menu a').unbind('click');
-      $(window).unbind('resize');
-      $(window).unbind('scroll');
-      $(document).unbind('scroll');
-      $(document).unbind('click');
-      $('body').unbind('click');
-	  
-      window.ShowLoading();
-	  
-    });
-
-    document.addEventListener('pjax:complete', function () {
-      // 关于百度统计对 SPA 页面的处理：
-      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
-      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
-       
-
-      // 关于谷歌统计对 SPA 页面的处理：
-      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
-      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
-      
-	 
-
-      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
-      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
-      $('script[data-pjax], .pjax-reload script').each(function () {
-        $(this).parent().append($(this).remove());
-      });
-      try{
-          if (typeof $.fancybox == "undefined") {
-            SCload_fancybox();
-          } else {
-            pjax_fancybox();
-          }
-        
-        
-        
-        
-        
-          pjax_initCopyCode();
-        
-        
-          pjax_valine();
-        
-        
-        
-        
-        
-      } catch (e) {
-        console.log(e);
-      }
-	  
-      window.HideLoading();
-	  
-    });
-
-    document.addEventListener('pjax:error', function (e) {
-	  
-      window.HideLoading();
-	  
-      window.location.href = e.triggerElement.href;
-    });
-</script>
-
-    
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
