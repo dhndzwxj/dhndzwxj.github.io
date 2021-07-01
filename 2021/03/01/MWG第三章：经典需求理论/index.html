@@ -142,7 +142,8 @@
 
 
     </div>
-    <!-- <div class="e-content article-entry" itemprop="articleBody">
+
+    <div class="e-content article-entry" itemprop="articleBody">
       
         <blockquote>
 <p>感谢知乎用户<a href='https://zhuanlan.zhihu.com/p/335529007' target='_blank'>economics-lover</a>。</p>
@@ -555,410 +556,12 @@ D_w\textbf{x}(\textbf{p},w) = \left( \frac{\partial x_1(\textbf{p},w)}{\partial 
           </blockquote>
         
       
-    </div> -->
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-          
-      
-      
-          <blockquote>
-<p>感谢知乎用户<a href='https://zhuanlan.zhihu.com/p/335529007' target='_blank'>economics-lover</a>。</p>
-</blockquote>
-<p>根据我所学课程的授课顺序，先整理第三章的笔记，这一章主要是在讲需求函数如何得出的，以及在什么样的情况下效用函数是连续的。这一章是全部内容中最难啃的一块骨头！</p>
-<div align='center'>
-  <img src='/../../images/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/%E6%B6%88%E8%B4%B9%E8%80%85%E9%80%89%E6%8B%A9.jpeg' width=600px>
-  <center style='font-family:kai'>本章大纲</center>
-</div>
-
-<h2 id="第三章-经典需求理论"><a href="#第三章-经典需求理论" class="headerlink" title="第三章 经典需求理论"></a>第三章 经典需求理论</h2><p>首先，我们在理性的基础上，引入偏好的另外两个重要性质：</p>
-<h3 id="1、合意性：（satiation）"><a href="#1、合意性：（satiation）" class="headerlink" title="1、合意性：（satiation）"></a>1、合意性：（satiation）</h3><p>也就是说商品越多越好，这个概念比较模糊，下面是用数学的方式来刻画合意性：</p>
-<ul>
-<li>单调性：定义在$X\subseteq\mathbb{R}^n$上的偏好关系$\succsim$是单调的，如果$\forall x,y\in X,x\gg y\Rightarrow x\succ y$ ，也就是说<span style='color:red'>如果$x$的每个分量都比$y$大，那么$x$比$y$更好</span>；<ul>
-<li>偏好是强单调的如果：$\forall x,y\in X,x\succsim y,x\neq y\Rightarrow x\succ y$就是说只要有一个分量更好，其他分量不差，那么 $x$比$y$更好；</li>
-<li>对于单调性我的理解是，为如何比较两个商品提供了依据，因为之前我们的偏好关系定义的比较抽象，此处因为这个备选集定义在了$\mathbb{R}^n$上，对其理解就容易很多。</li>
-</ul>
-</li>
-<li>局部非饱和性：对于任何$x\in X$和任何$\varepsilon&gt;0$,都存在$y\in X$，使得$|y-x|&lt;\varepsilon$且$y\succ x$<ul>
-<li>对于局部非饱和性我的理解是：它保证了无差异集不是厚的，这个厚的意思是就是不是无差异曲线了，而类似于一个无差异带.</li>
-</ul>
-</li>
-<li>注意，单调性是比局部非饱和性更强的概念，这个我可以理解，也就是说说单调性一定有局部非饱和！</li>
-</ul>
-<h3 id="2、偏好的凸性："><a href="#2、偏好的凸性：" class="headerlink" title="2、偏好的凸性："></a>2、偏好的凸性：</h3><p>$X$上的偏好关系是凸的，若对于任何$x\in X$，上轮廓集$\{y\in X\lvert y\succsim x\}$是凸集，也就是说如果$y\succsim x,z\succsim x$ ，那么$\forall\alpha\in[0,1],\alpha y+(1-\alpha)z\succsim x$</p>
-<p><span style='font-family:fangsong'>对于凸性我的理解是：凸性+单调性意味着边际替代率递减（注意只有凸性不行，参考评论区指出的许多同心圆，越往中间越好），也意味着个体偏好多样性。MRS递减进一步可以得到效用函数拟凹。</span></p>
-<p>分析偏好往往是比较麻烦的，如果可以使用效用函数来表示偏好，就会使得分析方便许多(可以方便地进行求导），<span style='color:red'>但不是所有的理性偏好都可以用效用函数来表示，比如一个理性的字典式偏好就没办法用效用函数表示，偏好的连续性保证了其可以用连续的效用函数表示。</span>首先，给出偏好连续性的定义：</p>
-<h3 id="3、偏好的连续性"><a href="#3、偏好的连续性" class="headerlink" title="3、偏好的连续性"></a>3、偏好的连续性</h3><p>$X\subseteq \mathbb{R}^n$上的偏好关系$\succsim$是连续的，如果：对于任何两个偏好序列$\{ x_n,y_n\}_{n=1}^\infty$，如果 $x_n\succ y_n$对于任何$n$都成立，并且</p>
-<script type="math/tex; mode=display">
-\lim_{n\rightarrow\infty} x_n=x,\lim_{n\rightarrow\infty} y_n=y</script><p>那么$x\succ y$</p>
-<blockquote>
-<p>偏好的连续性核心就是：偏好关系在极限运算下也成立</p>
-</blockquote>
-<p><span style='font-family:hei;font-size:20px'><strong>命题3.C.1:</strong></span>若$X$上的偏好关系$\succsim$是连续的，则存在能代表$\succsim$的<span style='color:red'>连续的</span>效用函数</p>
-<p>因此，一般情况下，我们都假设偏好关系$\succsim$是理性的、单调的和局部非饱和的，用连续的效用函数$u(x)$来表示偏好关系，有了效用函数之后，许多问题的研究都会简单许多。</p>
-<h3 id="4、-效用函数凹和拟凹"><a href="#4、-效用函数凹和拟凹" class="headerlink" title="4、 效用函数凹和拟凹"></a>4、 效用函数凹和拟凹</h3><p>凹：$u(\alpha+(1-\alpha)y)\ge \alpha u(x)+(1-\alpha)u(y)$</p>
-<p>拟凹：$u(\alpha+(1-\alpha)y)\ge \min\{ u(x),u(y) \} $</p>
-<ul>
-<li>拟凹一个等价条件为：$\{x:u(x)&gt;t\}$是凸集。</li>
-</ul>
-<p>给定偏好关系和消费束，有三个相关的集合：</p>
-<ul>
-<li>$x$的无差异集：$\{y\in X\lvert y\sim x\}$</li>
-<li>$x$的上等值集：$\{y\in X\lvert y\succsim x\}$</li>
-<li>$x$的下等值集：$\{y\in X\lvert x\succsim y\}$</li>
-</ul>
-<h3 id="位似偏好-homothetic"><a href="#位似偏好-homothetic" class="headerlink" title="位似偏好(homothetic)"></a>位似偏好(homothetic)</h3><p>$\succsim$是位似偏好当$x\sim y\Rightarrow \alpha x\sim\alpha y,\forall\alpha&gt;0$。</p>
-<ul>
-<li>如果偏好是位似得，那么可以选择这样的效用函数：$u(\alpha x)=\alpha u(x)$</li>
-</ul>
-<div align='center'>
-  <img src='/../../images/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/image-20210302105700354.png' width=300px>
-  <center style='font-family:kai'>图3.B.5 位似偏好的无差异曲线</center>
-</div>
-
-
-<h3 id="拟线性（quasilinear）"><a href="#拟线性（quasilinear）" class="headerlink" title="拟线性（quasilinear）"></a>拟线性（quasilinear）</h3><p>$(-\infty,+\infty)\times\mathbb{R}_+^{L-1}$上的偏好关系关于商品1（货币）是拟线性的，当</p>
-<ul>
-<li>所有的无差异集彼此之间可以通过沿着商品1的坐标轴平行位移而得到：<ul>
-<li>$x\sim y\Rightarrow x+\alpha e_1\sim y+\alpha e_1,\forall\alpha,e=(1,0,\cdots,0)$</li>
-</ul>
-</li>
-<li>商品1是合意的：$x+\alpha e_1\succ x,\forall x,\alpha&gt;0$</li>
-</ul>
-<p>这种情况下商品1被称为<span style='color:red'>计价物商品</span>。</p>
-<div align='center'>
-  <img src='/../../images/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/image-20210303155642324.png' width=400px>
-  <center style='font-family:kai'>图3.B.6 拟线性偏好的无差异曲线</center>
-</div>
-
-<p><span style='font-family:hei;font-size:20px'>习题3.C.5</span>证明如果$\succsim$关于商品1是拟线性的，当且仅当它能用$u(\textbf{x})=x_1+\phi(x_2,\cdots,x_L)$形式的效用函数$u(\textbf{x})$表示。</p>
-<blockquote>
-<p>证明：</p>
-<p>$\succsim$如果能用$u(x)$这个形式的函数来表示，很容易证明它是拟线性的。</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \textbf{x}&\sim& \textbf{y}\Rightarrow u(\textbf{x})=u(\textbf{y})
-\Rightarrow u(\textbf{x})+\alpha=u(\textbf{y})+\alpha    \notag\\
-&\Rightarrow& (\alpha+x_1)+\phi(x_2\cdots,x_L)=(\alpha+y_1)+\phi(y_2\cdots,y_L)    \notag\\
-&\Rightarrow& u(\textbf{x}+\alpha \textbf{e}_1)=u(\textbf{y}+\alpha \textbf{e}_1)    \notag\\
-&\Rightarrow& \textbf{x}+\alpha \textbf{e}_1\sim\textbf{y}+\alpha \textbf{e}_1    \notag
-\end{eqnarray}</script><p>反方向太复杂了，我不想写了。</p>
-</blockquote>
-<p><span style='font-family:hei;font-size:20px'>习题3.E.7</span>证明如果$\succsim$关于商品1是拟线性的，那么商品$2,3,\cdots,L$的希克斯需求函数不取决于$u$。这种情况下，支出函数具有什么样的形式？</p>
-<blockquote>
-<p>证明：</p>
-<p>$\succsim$关于商品1是拟线性的，那么根据习题3.E.5，它可以用形式为$u(\textbf{x})=x_1+\bar u(x_2,\cdots,x_L)$的效用函数来表示。令$\textbf{e}_1=(1,0,\cdots,0)’\in\mathbb{R}^L$，</p>
-<p>我们将证明对于每个$\textbf{p}\gg \textbf{0}(p_1=1)$，$u\in\mathbb{R},\alpha\in\mathbb{R}$和$\textbf{x}\in(-\infty,+\infty)\times\mathbb{R}_+^{L-1}$，如果$\textbf{x}=h(\textbf{p},u)$，那么$\textbf{x}+\alpha\textbf{e}_1=h(\textbf{p},u+\alpha)$。</p>
-<p>首先注意到，因为$\textbf{x}=h(\textbf{p},u)$，根据成本最小化问题的求解过程，$u(\textbf{x})\ge u\Rightarrow u(\textbf{x})+\alpha\ge u+\alpha$。注意到：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    u(\textbf{x})+\alpha &=& x_1+\bar u(x_2,\cdots,x_L)+\alpha    \notag\\
-    &=& (x_1+\alpha)+\bar u(x_2,\cdots,x_L)    \notag\\
-    &=&u(\textbf{x}+\alpha\textbf{e}_1)    \notag
-\end{eqnarray}</script><p><span style='color:red'>很明显，这个性质(效用的增加等于计价物商品数量的增加)是拟线性偏好独有的。</span>因此有$u(\textbf{x}+\alpha\textbf{e}_1)\ge u+\alpha$，也就是说，$\textbf{x}+\alpha\textbf{e}_1$满足$(\textbf{p},u+\alpha)$的支出最小化问题的约束。<span style='color:blue'>任取</span>$\textbf{y}\in\mathbb{R}^L_+$和$u(\textbf{y})\ge u+\alpha$，于是$u(\textbf{y})-\alpha\ge u\Rightarrow u(\textbf{y}-\alpha\textbf{e}_1)\ge u$    (理由如前面红字)。而由于$\textbf{x}=h(\textbf{p},u)$，即$\textbf{x}$是$(\textbf{p},u)$的支出最小化问题的最优解，所以$\textbf{p}\cdot(\textbf{y}-\alpha\textbf{e}_1)\ge\textbf{p}\cdot\textbf{x}$。因此，$\textbf{p}\cdot\textbf{y}\ge \textbf{p}(\textbf{x}+\alpha \textbf{e}_1)$。由$\textbf{y}$的任意性，因此，$\textbf{x}+\alpha\textbf{e}_1=h(\textbf{p},u+\alpha)$。</p>
-<p><span style='font-family:fangsong'>证明$\textbf{x}+\alpha\textbf{e}_1=h(\textbf{p},u+\alpha)$这类题的套路：</span></p>
-<p><span style='font-family:fangsong'>首先证明$\textbf{x}+\alpha\textbf{e}_1$满足CMP问题的约束条件。然后再任取另一个满足条件的向量，证明$\textbf{x}+\alpha\textbf{e}_1$比其更优即可。</span></p>
-<p>上面的结果表明，效用只会随着商品1消费量的增加而增加。因此对于每个$l\in\{2,\cdots,L\}$，$u\in\mathbb{R},u’\in\mathbb{R}$，都有$h_l(\textbf{p},u)=h_l(\textbf{p},u’)$。即商品$2,3,\cdots,L$的希克斯需求函数不取决于$u$。因此我们定义$\tilde h(\textbf{p})=h(\textbf{p},0)$，那么$h(\textbf{p},u)=\tilde{h}(\textbf{p})+u\textbf{e}_1$。</p>
-<p>由于$h(\textbf{p},u+\alpha)=h(\textbf{p},u)+\alpha\textbf{e}_1$，我们有$e(\textbf{p},u+\alpha)=e(\textbf{p},u)+\alpha$。同理有支出函数改为如下形式：</p>
-<script type="math/tex; mode=display">
-e(\textbf{p},u)=\tilde{e}(\textbf{p})+u</script></blockquote>
-<h3 id="习题3-G-5-希克斯复合商品"><a href="#习题3-G-5-希克斯复合商品" class="headerlink" title="习题3.G.5 希克斯复合商品"></a>习题3.G.5 希克斯复合商品</h3><p>假设有两组合意商品$\textbf{x}$和$\textbf{y}$，对应的价格分别为$\textbf{p}$和$\textbf{q}$。消费者的效用函数为$u(\textbf{x},\textbf{y})$，他的财富为$w&gt;0$。假设商品组$\textbf{y}$的价格总是同时同比例变化的，因此我们可以写为$\textbf{q}=\alpha\textbf{q}_0$。对于任意实数$z\ge0$，定义函数：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \tilde u(\textbf{x},z)&=&\max_{\textbf{y}} u(\textbf{x},\textbf{y})    \notag\\
-    \text{s.t. }&& \textbf{q}_0\cdot \textbf{y}\le z    \notag
-\end{eqnarray}</script><p>（a）假设经济中的商品为商品组$\textbf{x}$和某种复合商品$z$（可以将$z$看作其他商品支出之和），消费者的效用函数为$\tilde u(\textbf{x},z)$，$\alpha$是复合商品$z$的价格，证明</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max_{\textbf{x},z} &&\tilde u(\textbf{x},z)    \notag\\
-    \text{s.t. }&& \textbf{p}\cdot \textbf{x} + \alpha z\le w    \notag
-\end{eqnarray}</script><p>的解给出了消费者的$\textbf{x}$和$z=\textbf{q}_0\cdot\textbf{y}$的实际水平。(will give the consumer’s actual levels of $\textbf{x}$ and $z=\textbf{q}_0\cdot \textbf{y}$)</p>
-<blockquote>
-<p>要证明以下两条断言：</p>
-<p>1、如果$(\textbf{x}^\star,z^\star)$是</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max_{\textbf{x},z} &&\tilde u(\textbf{x},z)    \notag\\
-    \text{s.t. }&& \textbf{p}\cdot \textbf{x} + \alpha z\le w    \notag
-\end{eqnarray}\tag{I}</script><p>的解，那么存在着$\textbf{y}^\star$使得$\textbf{q}\cdot\textbf{y}^\star\le z^\star$，而且$(\textbf{x}^\star,\textbf{y}^\star)$是</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max_{\textbf{x},\textbf{y}} && u(\textbf{x},\textbf{y})    \notag\\
-    \text{s.t. }&& \textbf{p}\cdot \textbf{x} + (\alpha\textbf{q}_0)\cdot\textbf{y}\le w    \notag
-\end{eqnarray}\tag{II}</script><p>的解。</p>
-<p>2、如果$(\textbf{x}^\star,\textbf{y}^\star)$是问题(II)的解，那么$(\textbf{x}^\star,\textbf{q}_0\cdot\textbf{y}^\star)$是问题(I)的解。</p>
-<p><span style='font-family:hei;font-size:20px'>先证明1</span></p>
-<p>假设$(\textbf{x}^\star,z^\star)$是问题（I）的解，于是根据$\tilde u(\cdot)$的定义，存在着$\textbf{y}^\star$使得$\textbf{q}_0\cdot\textbf{y}^\star\le z^\star$，而且$u(\textbf{x}^\star,\textbf{y}^\star)=\tilde u(\textbf{x}^\star,z^\star)$。令$(\textbf{x},\textbf{y})$满足$\textbf{p}\cdot\textbf{x}+(\alpha\textbf{q}_0)\cdot\textbf{y}\le w$。于是：</p>
-<script type="math/tex; mode=display">
-u(\textbf{x},\textbf{y})\le \tilde u(\textbf{x},\textbf{q}_0\cdot \textbf{y})\le \tilde u(\textbf{x}^\star,z^\star)=u(\textbf{x}^\star,\textbf{y}^\star)</script><p>其中，第一个不等式根据$\tilde u(\cdot)$的定义推知，第二不等式根据(I)的约束条件$\textbf{p}\cdot\textbf{x}+\alpha(\textbf{q}_0\textbf{y})=\textbf{p}\cdot\textbf{x}+(\alpha\textbf{q}_0)\textbf{y}\le w$和$(\textbf{x}^\star,z^\star)$的定义推知。这样的一个断言得到证明。</p>
-<p><span style='font-family:hei;font-size:20px'>再证明2</span></p>
-<p>假设$(\textbf{x}^\star,\textbf{y}^\star)$是问题（II）的解，对于每一个$\textbf{y}$，如果$\textbf{q}_0\cdot\textbf{y}\le \textbf{q}_0\cdot\textbf{y}^\star$，那么：</p>
-<script type="math/tex; mode=display">
-\textbf{p}\cdot\textbf{x}^\star+(\alpha\textbf{q}_0)\cdot\textbf{y}
-=\textbf{p}\cdot\textbf{x}^\star+\alpha(\textbf{q}_0\cdot\textbf{y})
-\le \textbf{p}\cdot\textbf{x}^\star+\alpha(\textbf{q}_0\cdot\textbf{y}^\star)\le w</script><p>所以，$u(\textbf{x}^\star,\textbf{y})\le u(\textbf{x}^\star,\textbf{y}^\star)$。因此，$u(\textbf{x}^\star,\textbf{y}^\star)=\tilde u(\textbf{x}^\star,\textbf{q}_0\cdot\textbf{y}^\star)$。</p>
-<p>现在令$(\textbf{x},z)$满足$\textbf{p}\cdot \textbf{x}+\alpha z\le w$。于是存在着$\textbf{y}$使得$\textbf{q}_0\cdot\textbf{y}\le z$和$u(\textbf{x},\textbf{y})=\tilde u(\textbf{x},z)$。所以，$\textbf{p}\cdot\textbf{x}+(\alpha\textbf{q}_0)\cdot\textbf{y}=\textbf{p}\cdot\textbf{x}+\alpha(\textbf{q}_0\cdot\textbf{y})\le\textbf{p}\cdot\textbf{x}+\alpha z\le w$。因此：</p>
-<script type="math/tex; mode=display">
-\tilde u(\textbf{x},z)=u(\textbf{x},\textbf{y})\le u(\textbf{x}^\star,\textbf{y}^\star)=\tilde u(\textbf{x}^\star,\textbf{q}_0\cdot\textbf{y}^\star)</script><p>第二个断言得证。</p>
-</blockquote>
-<h3 id="字典序偏好"><a href="#字典序偏好" class="headerlink" title="字典序偏好"></a>字典序偏好</h3><p>一个例子，设$\textbf{x}=(x_1,x_2)’,\textbf{y}=(y_1,y_2)’$，字典序偏好是说：</p>
-<ul>
-<li>如果$x_1&gt;y_1$，则$\textbf{x}\succsim \textbf{y}$。</li>
-<li>如果$x_1=y_1,x_2&gt;y_2$，则$\textbf{x}\succsim\textbf{y}$。</li>
-<li>如果$x_1=y_1,x_2=y_2$，则$\textbf{x}\sim\textbf{y}$。</li>
-</ul>
-<p>这一偏好是理性的： 满足完备性、传递性的、强单调的和严格凸的，但是不连续，因此没有效用函数。</p>
-<p><span style='font-family:hei;font-size:20px'>证明不存在能表示字典序偏好关系的效用函数</span></p>
-<p>假设存在某个效用函数$u(\cdot)$。对于每个$x_1$，我们可以选择一个有理数$r(x_1)$使得$u(x_1,2)&gt;r(x_1)&gt;u(x_1,1)$（数学分析里，有一个<strong>有理数的致密性</strong>保证这个不等式存在）。</p>
-<p>注意，消费者的偏好是字典序的，$x_1&gt;x_1’$意味着$r(x_1)&gt;u(x_1,1)&gt;u(x’_1,2)&gt;r(x_1’)$。因此$r(\cdot)$给出了从实数集到有理数集一对一的函数（数学上的“双射”）。利用一些实变函数的知识，这是不可能的。</p>
-<p><span style='font-family:hei;font-size:20px'>证明字典序的偏好是不连续的</span></p>
-<p>考虑消费束序列$\textbf{x}^n=(\frac1n,0)’$和$\textbf{y}^n=(0,1)’$。对于每个$n$，都有$x\succ y$。但</p>
-<script type="math/tex; mode=display">
-\lim_{n\rightarrow+\infty}\textbf{y}^n=(0,1)'\succ(0,0)'=\lim_{n\rightarrow+\infty}\textbf{x}^n</script><p>由于连续的偏好一定存在效用函数，字典序偏好不连续也说明了确实不存在效用函数来表示字典序偏好。</p>
-<h3 id="消费者决策模型"><a href="#消费者决策模型" class="headerlink" title="消费者决策模型"></a>消费者决策模型</h3><p>消费集是商品空间$\mathbb{R}^L$上的一个子集，记作$X\subseteq \mathbb{R}^L$，其元素为个人在所处环境下物理约束给定情况下尽可能的<span style='color:red'>消费束</span>。最基本的：</p>
-<script type="math/tex; mode=display">
-X=\mathbb{R}_+^L = \{ \textbf{x}\in\mathbb{R}^L \lvert x_l\ge 0,l=1.\cdots,L\}</script><p>瓦尔拉斯或竞争性<span style='color:red'>预算集</span>：</p>
-<script type="math/tex; mode=display">
-B_{\textbf{p},w}=\{\left. \textbf{x}\in\mathbb{R}_+^L\right\lvert \textbf{p}\cdot \textbf{x}\le w \}</script><p>注意的是，消费者的效用偏好不会受到外生因素$\textbf{p},w$等的影响。</p>
-<p>消费者关心两个问题：</p>
-<ol>
-<li>约束下的效用最大化问题——调整商品组合在预算约束下实现效用最大化</li>
-<li>和支出最小化问题——调整商品组合在效用约束下（达到一定效用之后）实现支出最小化</li>
-</ol>
-<p>这两个问题在某种程度上是等价的，首先来看效用最大化问题：</p>
-<h4 id="效用最大化问题UMP"><a href="#效用最大化问题UMP" class="headerlink" title="效用最大化问题UMP"></a>效用最大化问题UMP</h4><p>给定预算约束的时候，如何实现效用最大化：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max_{\textbf{x}\ge 0}&& u(\textbf{x})    \notag\\
-    \text{s.t.}&& \textbf{p}\cdot \textbf{x}\le w    \notag
-\end{eqnarray}</script><p>有以下命题成立：</p>
-<p><span style='font-family:hei;font-size:20px'>命题3.D.1: </span>若$p\gg \textbf{0}$且$u(\cdot)$是连续的，则效用最大化问题有解</p>
-<p>给定上述最优化问题之后，实际上就转化成一个数学规划问题了，用拉格朗日乘子法、KKT定理等方法求解即可.</p>
-<p>利用KKT条件可知，如果$\textbf{x}^\star(\textbf{p},w)$是一个内部最优解（这意味着$x\gg \textbf{0}$），并且满足约束规格（此处一定满足约束规格，因为价格向量不为0）那么有：</p>
-<script type="math/tex; mode=display">
-\nabla_\textbf{x}u(\textbf{x}^\star)=\lambda^\star \textbf{p}</script><p>如果$\nabla_\textbf{x}u(\textbf{x}^\star)\gg \textbf{0}$，那么$\lambda^\star$不为0，此时有</p>
-<script type="math/tex; mode=display">
-\frac{\partial u(\textbf{x}^\star)_i/\partial x_i}{\partial u(\textbf{x}^\star)_j/\partial x_j} = \frac{p_i}{p_j}</script><p>也就是说在最优点处边际效用之比等于价格之比。</p>
-<p>让价格作为分母之后，可得：</p>
-<script type="math/tex; mode=display">
-\frac{\partial u(x^\star)/\partial x_i}{p_i} = \frac{\partial u(x^\star)/\partial x_j}{p_j}</script><p>也可以得到最优点处，每一块钱买任何产品带来的边际效用相同。注意，此结论在边角解处并不成立，所以也不要盲目使用KKT条件，先看看是否满足KKT条件的假设.</p>
-<p>通过以上分析可知，给定一组$(\textbf{p},w)$我们可以得到最优解时的$\textbf{x}^\star(\textbf{p},w)$，将其称为<span style='color:red'>瓦尔拉斯需求（马歇尔需求）</span>。它具有<span style='font-family:fangsong'>零次齐次性、满足瓦尔拉斯定律并且满足凸性假设</span>。</p>
-<ul>
-<li>零次齐次：$\textbf{x}^\star(\alpha\textbf{p},\alpha w)=\textbf{x}^\star(\textbf{p},w)$</li>
-<li>瓦尔拉斯定律：$\forall \textbf{x}^\star\in X^\star(\textbf{p},w),\textbf{p}\cdot \textbf{x}^\star=w$</li>
-<li>凸性：$\succsim$是凸偏好，那么$X^\star$是凸集。如果$X^\star$严格凸，那么最优解是唯一的。</li>
-</ul>
-<p>求解出最优的$\textbf{x}^\star(\textbf{p},w)$之后，$u(\textbf{x}^\star(\textbf{p},w))$就是效应最大化时的效用，可以直接用$v(\textbf{p},w)=u(\textbf{x}^\star(\textbf{p},w))$来表示消费者的效用，这被称之为间接效用函数。它是零次齐次性函数。</p>
-<p><span style='font-family:hei;font-size:18px'>财富的边际增加导致的效用变化为：</span></p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \frac{\partial u(\textbf{x}(\textbf{p},w))}{\partial w}
-    &=& \nabla_\textbf{x}    u(\textbf{x}(\textbf{p},w)) D_w\textbf{x}(\textbf{p},w)    \notag\\
-    &=& \lambda\textbf{p}\cdot D_w\textbf{x}(\textbf{p},w)    \notag
-\end{eqnarray}\tag{*}</script><p>根据瓦尔拉斯定律：</p>
-<script type="math/tex; mode=display">
-\textbf{p}\cdot \textbf{x}^\star(\textbf{p},w)=w</script><p>两边关于$w$求导：</p>
-<script type="math/tex; mode=display">
-\textbf{p}\cdot D_w\textbf{x}^\star(\textbf{p},w)=1</script><p>代入$(\star)$，得到：</p>
-<script type="math/tex; mode=display">
-\frac{\partial u(\textbf{x}(\textbf{p},w))}{\partial w}=\lambda</script><p>由此可知，KT乘子$\lambda$的含义是最优点上消费者财富的边际效用价值。</p>
-<h4 id="支出最小化问题"><a href="#支出最小化问题" class="headerlink" title="支出最小化问题"></a>支出最小化问题</h4><p>消费者面临的另一个问题是支出最小化问题：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \min_{\textbf{x}\ge 0}&& \textbf{p}\cdot \textbf{x}    \notag\\
-    \text{s.t.}&& u(\textbf{x})\ge u_0    \notag
-\end{eqnarray}</script><p>也就是达到一定效用之后，如何求解最小支出的问题，容易知道这个也是一个可以使用KKT条件求解的问题。这里得到的最优的$x^\star(\textbf{p},u_0)$被称为<span style='color:red'>希克斯需求</span>，通常写为$h(\textbf{p},u_0)$，最优解处对应的支出函数为$e(\textbf{p},u_0)$。</p>
-<p>以下命题总结了效用最大化和支出最小化之间的关系：</p>
-<p><span style='font-family:hei;font-size:20px'>命题3.E.1：</span>假设定义在消费集$X=\mathbb{R}_+^n$上的局部非饱和偏好关系$\succsim$可用连续效用函数$u(\cdot)$表示；而且价格向量$\textbf{p}\gg \textbf{0}$那么，我们有：</p>
-<ul>
-<li>如果财富$w&gt;0$时$\textbf{x}^\star$是UMP中最优的，则对于既定的目标效用水平$u(\textbf{x}^\star)$,$\textbf{x}^\star$在EMP问题中也是最优的，并且这个EMP的最小支出水平恰好为$w$.</li>
-<li>如果目标效用水平$u&gt;u_0$时，$\textbf{x}^\star$是UMP中最优的，则当$w=\textbf{p}\cdot\textbf{x}^\star$时 ，$\textbf{x}^\star$ 在UMP问题中也是最优的，并且这个UMP的最大效用水平恰好为$u_0$.</li>
-</ul>
-<p>即</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &&h(\textbf{p},u) = x(\textbf{p},e(\textbf{p},u))    \notag\\
-    &&x(\textbf{p},w) = h(\textbf{p},v(\textbf{p},w))    \notag
-\end{eqnarray}</script><p>这样，我们就建立起了希克斯需求对应和瓦尔拉斯需求对应的联系。</p>
-<p><span style='font-family:hei;font-size:18px'>补偿需求法则</span></p>
-<p>希克斯需求函数满足对所有的$\textbf{p}’,\textbf{p}’’$，有：</p>
-<script type="math/tex; mode=display">
-(\textbf{p}''-\textbf{p}')\cdot[h(\textbf{p}'',u)-h(\textbf{p}',u)]\le 0</script><h3 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h3><div align='center'>
-  <img src='/../../images/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/image-20210302160809407.png' width=400px>
-  <center style='font-family:kai'>对偶问题关系图</center>
-</div>
-
-<p><span style='font-family:hei;font-size:20px'>希克斯需求和支出函数：</span></p>
-<script type="math/tex; mode=display">
-e(\textbf{p},u)=\textbf{p}h(\textbf{p},u)\Rightarrow h(\textbf{p},u)=\nabla_{\textbf{p}}e(\textbf{p},u)</script><p><span style='font-family:hei;font-size:20px'>希克斯需求和瓦尔拉斯需求：</span></p>
-<p>希克斯需求不是直接可以观测的，而瓦尔拉斯需求是可以直接观测到的，二者之间的关系通过<span style='color:red'>Slutsky方程</span>表达出来：</p>
-<p>假设$u(\cdot)$是一个连续效用函数，代表一个定义咋消费集$X$上的<strong>局部非饱和的严格凸</strong>偏好关系。对于所有$(\textbf{p},w)$和$u=v(\textbf{p},w)$，有</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \frac{\partial h_l}{\partial p_k}&=&\frac{\partial x_l(\textbf{p},w)}{\partial p_k}+\frac{\partial x_l(\textbf{p},w)}{\partial w}x_k(\textbf{p},w)    \notag\\
-    D_{\textbf{p}}h(\textbf{p},u)&=&D_{\textbf{p}}\textbf{x}(\textbf{p},w)+D_w\textbf{x}(\textbf{p},w)\textbf{x}(\textbf{p},w)    \notag
-\end{eqnarray}</script><div align='center'>
-  <img src='/../../images/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/image-20210302183501089.png' width=300px>
-  <center style='font-family:kai'>马歇尔需求函数和希克斯需求函数</center>
-</div>
-
-<blockquote>
-<p>如上图所示，根据对偶的性质，在达到均衡的时候两条曲线是相交的：</p>
-<script type="math/tex; mode=display">
-\textbf{h}(\textbf{p}^\star,u)=\textbf{x}(\textbf{p}^\star,w)=\textbf{x}(\textbf{p}^\star,e(\textbf{p}^\star,u))</script><p>因此：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    D_{\textbf{p}}\textbf{h}(\textbf{p}^\star,u)
-&=&D_{\textbf{p}}\textbf{x}(\textbf{p}^\star,w)+D_w\textbf{x}(\textbf{p}^\star,w)\cdot D_{\textbf{p}}e(\textbf{p}^\star,w)    \notag\\
-&=& D_{\textbf{p}}\textbf{x}(\textbf{p}^\star,w)+D_w\textbf{x}(\textbf{p}^\star,w)\cdot\textbf{x}(\textbf{p}^\star,w)    \notag
-\end{eqnarray}</script></blockquote>
-<p>如图所示，瓦尔拉斯需求曲线比希克斯需求曲线更加平缓，考察斯拉茨基方程，当$p_l$上升到大于$\bar p_l$的时候，如果我们想维持效用水平不变，必须要增加消费者的财富。因此，如果商品$l$是正常商品，在不进行补偿的情形下，消费者对它的需求会下降更多。</p>
-<p><span style='font-family:hei;font-size:20px'>斯拉茨基替代矩阵</span></p>
-<script type="math/tex; mode=display">
-S(\textbf{p},w)=D_\textbf{p}h(\textbf{p},u)</script><p>它的性质是半负定、对称，满足$S(\textbf{p},w)\textbf{p}=0$</p>
-<p><span style='font-family:hei;font-size:20px'>命题3.G.2</span>假设$u(\cdot)$是一个连续效用函数，代表一个定义在消费集$X$上的局部非饱和的和严格凸的偏好关系；$h(\textbf{p},u)$连续可微，则有</p>
-<ol>
-<li>$D_\textbf{p}h(\textbf{p},u)=D_\textbf{p}^2e(\textbf{p},u)$</li>
-<li>$D_\textbf{p}h(\textbf{p},u)$是半负定矩阵</li>
-<li>$D_\textbf{p}h(\textbf{p},u)$是对称矩阵</li>
-<li>$D_\textbf{p}h(\textbf{p},u)\textbf{p}=0$</li>
-</ol>
-<p><span style='font-family:hei;font-size:20px'>罗伊恒等式</span></p>
-<p>假设$u(\cdot)$是一个连续效用函数，代表一个定义在消费集$X$上的局部非饱和的和严格凸的偏好关系。假设间接效用函数$v(\textbf{p},w)$是可微的，则</p>
-<script type="math/tex; mode=display">
-\textbf{x}(\textbf{p},w)=-\frac{1}{\nabla_w v(\textbf{p},w)}\nabla_\textbf{p}v(\textbf{p},w)</script><blockquote>
-<p>因为$v(\textbf{p},e(\textbf{p},\bar u))=\bar u,\forall \textbf{p}$，因此设$\bar u =v(\bar{\textbf{p}},\bar w)$。</p>
-<p>关于$\textbf{p}$求导，得到：</p>
-<script type="math/tex; mode=display">
-\nabla_{\textbf{p}}v(\bar{\textbf{p}},\bar e(\bar{\textbf{p}},\bar u))+\nabla_wv(\bar{\textbf{p}},\bar e(\bar{\textbf{p}},\bar u))\nabla_{\textbf{p}}e(\bar{\textbf{p}},\bar u))=0</script><p>根据希克斯需求的定义：</p>
-<script type="math/tex; mode=display">
-\nabla_{\textbf{p}}e(\bar{\textbf{p}},\bar u)) 
-= h(\bar{\textbf{p}},\bar u)
-= \textbf{x}(\bar{\textbf{p}},\bar w)</script><p>代入上面，得到罗伊恒等式。</p>
-</blockquote>
-<h3 id="3-I-经济变化的福利评价"><a href="#3-I-经济变化的福利评价" class="headerlink" title="3.I 经济变化的福利评价"></a>3.I 经济变化的福利评价</h3><p>这一节关注的主要是<span style='color:red'>价格变动的福利效应</span>。</p>
-<p>考虑理性、连续、局部非饱和的偏好关系。假设支出函数和间接效用函数是可微的。注意以下几点：</p>
-<ul>
-<li>$v(\textbf{p},w)&gt;v(\textbf{p}’,w’)$意味着消费者更加偏好$(\textbf{p},w)$。</li>
-<li>$e(\textbf{p},u)&lt;e(\textbf{p}’,u)$说明消费者在价格为$\textbf{p}’$时，比在价格为$\textbf{p}$时情况更坏。</li>
-<li>我们要讨论以下两个问题：<ul>
-<li>为了补偿因外生变量发生改变带来的损失，要支付消费者多少？</li>
-<li>这一改变带来的变化等价于多少的财富？</li>
-</ul>
-</li>
-</ul>
-<p>两种价格分别为$\textbf{p}^0$和$\textbf{p}^1$。有两种度量福利变化的指标：等价变化$EV$和补偿变化$CV$。令</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &&u^0=v(\textbf{p}^0,w),u^1=v(\textbf{p}^1,w)    \notag\\
-    &&e(\textbf{p}^0,u^0)=e(\textbf{p}^1,u^1)=w    \notag
-\end{eqnarray}</script><p>第一行的是间接效用函数，第二行的是用<strong>货币度量的间接效用函数</strong>。后面的计算使用的主要是货币度量的间接效用函数。注意到，<span style='color:red'>上面两个式子中财富$w$是不变的。</span>用式子变量两种变化：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    EV(\textbf{p}^0,\textbf{p}^1,w) &=& e(\textbf{p}^0,u^1) - e(\textbf{p}^0,u^0)
-    =e(\textbf{p}^0,u^1)-w    \notag\\
-    &=& e(\textbf{p}^0,u^1)-e(\textbf{p}^1,u^1)
-    =\int_{p_1^1}^{p_1^0} h_1(p_1,\bar{\textbf{p}}_{-1},u^1)\text{d}p_1    \notag
-\end{eqnarray}</script><p>积分那里为了简单起见，只有商品1的价格发生了变化，因此有$p_1^0\neq p_1^1,\textbf{p}_{-1}^0=\textbf{p}_{-1}^1=\bar{\textbf{p}}_{-1}$。<span style='font-family:kai'>等价性变化可以想象成一笔财富，消费者在接受这笔财富还是接受价格变化之间无差异。也就是说，等价性变化的是消费者的财富的变化。</span>我们也可以用间接效用函数来表示等价变化：$v(\textbf{p}^0,w+EV)=u^1$。</p>
-<blockquote>
-<p>如果$u_1=v(\textbf{p}^0,w+EV)$，那么</p>
-<script type="math/tex; mode=display">
-e(\textbf{p}^0,u^1)=e(\textbf{p}^0,v(\textbf{p}^0,w+EV))=w+EV</script><p>正是EV的定义式。</p>
-</blockquote>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    CV(\textbf{p}^0,\textbf{p}^1,w) &=& e(\textbf{p}^1,u^1) - e(\textbf{p}^1,u^0)
-    =w-e(\textbf{p}^1,u^1)    \notag\\
-    &=& e(\textbf{p}^0,u^0)-e(\textbf{p}^1,u^0)
-    =\int_{p_1^1}^{p_1^0} h_1(p_1,\bar{\textbf{p}}_{-1},u^0)\text{d}p_1    \notag
-\end{eqnarray}</script><p>积分那里为了简单起见，只有商品1的价格发生了变化，因此有$p_1^0\neq p_1^1,\textbf{p}_{-1}^0=\textbf{p}_{-1}^1=\bar{\textbf{p}}_{-1}$。<span style='font-family:kai'>补偿性变化衡量的是当商品价格变化时为了让消费者回到原来的效用水平$u^0$，我们必须补偿给他的净财富。[因此，如果我们必须补偿消费者正的净收入（此时因为价格改变消费者的状况变差了），那么补偿性变化是负的]可以将这笔财富看作为了让消费者接受价格变化，他恰好愿意接受的补偿财富。</span>用间接效用函数表示补偿性变化为：$v(\textbf{p}^1,w-CV)=u^0$。</p>
-<p><span style='color:red'>注意到，两种变化都是假定价格不变的情况下，效用改变带来的财富变化。只不过等价变化采用的是变化前的价格，而补偿变化采用的是变化后的价格。</span>等价变化是说价格改变给消费者带来的财富变化，等价于在旧的价格水平下多少增加了多少效用；而补偿变化是说价格改变后我们要补偿多少财富才能保持效用水平和原来一样。</p>
-<p>消费者在$\textbf{p}^1$时状况更好，当且仅当$EV,CV$都为正数。一般来讲二者并不相等。</p>
-<div align='center'>
-  <img src='/../../images/MWG%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%8F%E5%85%B8%E9%9C%80%E6%B1%82%E7%90%86%E8%AE%BA/image-20210303110346679.png' width=500px>
-  <center style='font-family:kai'>等价性变化和补偿性变化（图中阴影部分）</center>
-  <p align='left' style='font-family:kai'>
-    如上图所示，商品1的价格下降了。如果商品1是正常品，那么外生参数价格下降的结果必然是希克斯需求曲线的右移。
-  </p>
-</div>
-
-<p>当商品1是正常品的情形，$EV&gt;CV$。当商品1时劣等品时，$EV&lt;CV$。</p>
-<p><span style='font-family:hei;font-size:20px'>特殊情形</span>如果偏好对商品1是<span style='color:red'>拟线性的</span>，那么财富效应对商品1不存在，此时有$EV=CV$。这是因为：</p>
-<script type="math/tex; mode=display">
-h_1(p_1,\bar{\textbf{p}}_{-1},u^0) 
-= x_1(p_1,\bar{\textbf{p}}_{-1},w)
-= h_1(p_1,\bar{\textbf{p}}_{-1},u^1)</script><blockquote>
-<p>证明：</p>
-<p>已有证明，对于拟线性的商品，可以将支出函数写为如下形式：</p>
-<script type="math/tex; mode=display">
-e(\textbf{p},u)=\tilde{e}(p_2,\cdots,p_L)+u\quad(p_1=1)</script><p>因此，</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    EV(\textbf{p}^0,\textbf{p}^1,w)&=& e(\textbf{p}^0,u^1)-e(\textbf{p}^0,u^0)    \notag\\
-  &=& \left(\tilde{e}(p_2^0,\cdots,p_L^0)+u^1 \right) 
-  - \left( \tilde{e}(p_2^0,\cdots,p_L^0)+u^0 \right)    \notag\\
-  &=& u^1-u^0    \notag\\
-    CV(\textbf{p}^0,\textbf{p}^1,w)&=& e(\textbf{p}^1,u^1)-e(\textbf{p}^1,u^0)\notag\\
-    &=&    \left(\tilde{e}(p_2^1,\cdots,p_L^1)+u^1 \right) 
-  - \left( \tilde{e}(p_2^1,\cdots,p_L^0)+u^0 \right)    \notag\\
-  &=& u^1-u^0    \notag
-\end{eqnarray}</script><p>所以$CV=EV$对于任意$(\textbf{p}^0,\textbf{p}^1,w)$都成立。</p>
-</blockquote>
-<p><span style='font-family:hei;font-size:24px'>商品税导致的净损失</span></p>
-<p>考虑因政府对某种商品征税从而使得价格向量从$\textbf{p}^0$上升到$\textbf{p}^1$的情形。为了更具体些，假设对商品1征税，消费者每购买一单位商品1需要缴纳$t$的税收。这种税使得商品1的实际价格变为$p_1^1=p_1^0+t$，所有其他商品的价格维持在原来的水平上。政府筹集的税收总收入为$T=tx_1(\textbf{p}^1,w)$。</p>
-<p>政府也可以不收商品税，而是直接对消费者的财富征收定额税，这种税收不会改变商品价格。如果两种情况下的税收总额相同，消费者在哪种税制下的状况更差一些？</p>
-<p>如果商品税的等价性变化EV小于他在定额税下的损失（$-T$），那么征收商品税会使消费者的状况变得更差。用支出函数表达就是：</p>
-<script type="math/tex; mode=display">
-w-T>e(\textbf{p}^0,u^1)</script><p>消费者在缴纳定额税后所剩的财富，大于在价格为$\textbf{p}^0$时为达到效用水平$u^1$所必须的财富水平，那么与征收定额税相比，征税商品税会使消费者的状况变得更差。其差额为</p>
-<script type="math/tex; mode=display">
-(-T)-EV(\textbf{p}^0,\textbf{p}^1,w)=w-T-e(p^0,u^1)</script><p>被称为<span style='color:red'>商品税造成的无谓损失</span>。</p>
-<h2 id="第二章-消费者选择"><a href="#第二章-消费者选择" class="headerlink" title="第二章 消费者选择"></a>第二章 消费者选择</h2><p>首先，给定收入（禀赋）$w$（注意：$w$是一个标量）和商品价格$\textbf{p}$（注意：$\textbf{p}$是一个$L$维向量，表示$L$种商品的价格），消费者会有一个商品选择$\textbf{x}(\textbf{p},w)$，当然可能会同时有多个商品选择，这里先限制为1个，并且假设$\textbf{x}(\textbf{p},w)$是连续的，$\textbf{x}(\textbf{p},w)$被称为马歇尔需求函数。这个函数在上文已经提到。</p>
-<p>有了需求函数后，就可以做比较静态分析了，比如分析财富$w$变动对需求的影响，只需保持价格$\textbf{p}$不变，对$w$求偏导即可：</p>
-<script type="math/tex; mode=display">
-D_w\textbf{x}(\textbf{p},w) = \left( \frac{\partial x_1(\textbf{p},w)}{\partial w},\cdots, \frac{\partial x_L(\textbf{p},w)}{\partial w} \right)'</script><p>同理，可以分析价格变化对需求的影响，也只需要求偏导即可，也就是雅克比矩阵。</p>
-<h3 id="零次齐次性与欧拉公式"><a href="#零次齐次性与欧拉公式" class="headerlink" title="零次齐次性与欧拉公式"></a>零次齐次性与欧拉公式</h3><p>假定马歇尔需求函数满足零次齐次性，即</p>
-<script type="math/tex; mode=display">
-\textbf{x}(\alpha \textbf{p},\alpha w)=\textbf{x}(\textbf{p},w)</script><p>对$\alpha$进行求导：</p>
-<script type="math/tex; mode=display">
-\textbf{p}'\nabla_{\alpha\textbf{p} }\textbf{x}(\alpha\textbf{p},\alpha w)
-+D_{\alpha w}\textbf{x}(\alpha\textbf{p},\alpha w)\cdot w=0</script><p>令$\alpha=1$，得到：</p>
-<script type="math/tex; mode=display">
-\textbf{p}'\nabla_{\textbf{p} }\textbf{x}(\textbf{p}, w)
-+D_{w}\textbf{x}(\textbf{p},w)\cdot w=0</script><p>写成分量求和的形式：</p>
-<script type="math/tex; mode=display">
-\sum_{k=1}^L \frac{\partial x_l(\textbf{p},w)}{\partial p_k}p_k
-+\frac{\partial x_l(\textbf{p},w)}{\partial w}w=0</script><p>这里利用的是欧拉公式。不妨变成弹性的形式：</p>
-<script type="math/tex; mode=display">
-\sum_{k=1}^L \frac{\partial x_l(\textbf{p},w)}{\partial p_k}\cdot\frac{p_k}{x_l(\textbf{p},w)}
-+\frac{\partial x_l(\textbf{p},w)}{\partial w}\cdot\frac{w}{x_l(\textbf{p},w)}=0;\quad l=1,\cdots,L</script><p>即：</p>
-<script type="math/tex; mode=display">
-\sum_{k=1}^L \varepsilon_{lk} +\varepsilon_{lw}=0;\quad l=1,\cdots,L</script><p>对于固定的价格$\textbf{p}^0$，关于财富的函数$\textbf{x}(\textbf{p}^0,w)$称为消费者的恩格尔函数。其图像称为财富扩展路径。（恩格尔曲线）$\frac{\partial x_l(\textbf{p},w)}{\partial w}$上面的被称为财富效应（收入效应）。</p>
-<hr>
-<p>第二个性质是马歇尔定律，$\textbf{p}\cdot\textbf{x}(\textbf{p},w)=w$，两边对价格$\textbf{p}$求导，</p>
-<script type="math/tex; mode=display">
-\textbf{x}(\textbf{p},w)+\textbf{p}'\nabla_\textbf{p}\textbf{x}(\textbf{p},w)=0</script><p>这被称为<span style='color:red'>古诺加和</span>。上式表明：<strong>价格的变化不会引起总支出的变化，也就是说价格</strong>$p_k$<strong>的变化，对总支出</strong>$\textbf{p}\cdot\textbf{x}(\textbf{p},w)$<strong>的影响为0，也就是说可能多买这个，少买那个，但是总支出一定不会变！</strong></p>
-<p>两边对$w$求导，可得：</p>
-<script type="math/tex; mode=display">
-\textbf{p}'D_w\textbf{x}(\textbf{p},w)=1</script><p>这被称为<span style='color:red'>恩格尔加和</span>。<strong>上式表明，财富变化一个单位引起的总支出的变化量一定等于总财富的变化量</strong>。</p>
-<h3 id="价格效应"><a href="#价格效应" class="headerlink" title="价格效应"></a>价格效应</h3><p>导数$\frac{\partial x_l(\textbf{p},w)}{\partial p_k}$称为商品$k$的价格$p_k$对商品$l$需求的价格效应。</p>
-<p>1、自身价格效应</p>
-<ul>
-<li>如果$\frac{\partial x_l(\textbf{p},w)}{\partial p_l}\le 0$，称为满足需求法则</li>
-<li>如果$\frac{\partial x_l(\textbf{p},w)}{\partial p_l}&gt;0$，称商品是吉芬品。</li>
-</ul>
-<p>2、交叉价格效应</p>
-<ul>
-<li>$\frac{\partial x_l(\textbf{p},w)}{\partial p_k}&gt;0,k\neq l$，互为替代品</li>
-<li>$\frac{\partial x_l(\textbf{p},w)}{\partial p_k}&lt;0,k\neq l$，互为互补品</li>
-</ul>
-<p>价格效应矩阵（对比一下上面的斯拉茨基矩阵）：$D_\textbf{p}\textbf{x}(\textbf{p},w)$</p>
-
-          </div>
-      
+    </div>
+    
     <footer class="article-footer">
       
         <div class="article-tag-wrap">
-          <!-- 
+          
     <div class="article-reward">
         <a id="reward-btn" href="javascript:;">打赏</a>
         <div id="reward-content">
@@ -977,15 +580,15 @@ D_w\textbf{x}(\textbf{p},w) = \left( \frac{\partial x_1(\textbf{p},w)}{\partial 
         </div>
     </div>
 
- -->
+
           
-          <!-- 
+          
     <div class="social-share">
       <span>分享到:</span>
     </div>
 
 
- -->
+
         </div>
       
       
@@ -1024,8 +627,7 @@ D_w\textbf{x}(\textbf{p},w) = \left( \frac{\partial x_1(\textbf{p},w)}{\partial 
       
     </footer>
   </div>
-</article>
-</section>
+</article></section>
         
           <aside id="sidebar">
   
@@ -1090,50 +692,6 @@ D_w\textbf{x}(\textbf{p},w) = \left( \frac{\partial x_1(\textbf{p},w)}{\partial 
       <a href="../../../../tags/2035/" style="font-size: 10px;">2035</a> <a href="../../../../tags/DSGE/" style="font-size: 10px;">DSGE</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/SSA/" style="font-size: 10px;">SSA</a> <a href="../../../../tags/VAR/" style="font-size: 10px;">VAR</a> <a href="../../../../tags/stata/" style="font-size: 10px;">stata</a> <a href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" style="font-size: 10px;">不变价格</a> <a href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" style="font-size: 10px;">不稳定就业</a> <a href="../../../../tags/%E5%81%A5%E5%BA%B7/" style="font-size: 10px;">健康</a> <a href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" style="font-size: 10px;">克鲁格曼</a> <a href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" style="font-size: 10px;">公共卫生</a> <a href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" style="font-size: 10px;">共产党宣言</a> <a href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" style="font-size: 10px;">凸函数</a> <a href="../../../../tags/%E5%87%B8%E9%9B%86/" style="font-size: 10px;">凸集</a> <a href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">动态随机一般均衡模型</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" style="font-size: 10px;">劳动价值论</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" style="font-size: 10px;">劳动过程</a> <a href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" style="font-size: 10px;">包络定理</a> <a href="../../../../tags/%E5%8C%BB%E7%96%97/" style="font-size: 10px;">医疗</a> <a href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" style="font-size: 10px;">十四五</a> <a href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" style="font-size: 10px;">南北贸易</a> <a href="../../../../tags/%E5%8D%B1%E6%9C%BA/" style="font-size: 10px;">危机</a> <a href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">发刊技巧</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">古典</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 10px;">古典经济学</a> <a href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" style="font-size: 15px;">名词解释</a> <a href="../../../../tags/%E5%90%8E%E5%87%AF/" style="font-size: 17.5px;">后凯</a> <a href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" style="font-size: 10px;">向量自回归</a> <a href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">国内大循环</a> <a href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" style="font-size: 10px;">国民经济核算</a> <a href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 12.5px;">国际贸易</a> <a href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" style="font-size: 10px;">基础范畴</a> <a href="../../../../tags/%E5%A2%9E%E9%95%BF/" style="font-size: 10px;">增长</a> <a href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" style="font-size: 10px;">外生冲击</a> <a href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">局部投入产出闭模型</a> <a href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">库恩-塔克条件</a> <a href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" style="font-size: 10px;">建筑业</a> <a href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" style="font-size: 10px;">开集闭集</a> <a href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" style="font-size: 17.5px;">恩格斯</a> <a href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" style="font-size: 10px;">投入产出</a> <a href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" style="font-size: 10px;">拉格朗日乘子法</a> <a href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" style="font-size: 10px;">数学规划</a> <a href="../../../../tags/%E6%96%AF%E5%AF%86/" style="font-size: 10px;">斯密</a> <a href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">新古典</a> <a href="../../../../tags/%E6%9D%82%E8%AE%B0/" style="font-size: 12.5px;">杂记</a> <a href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" style="font-size: 12.5px;">李斯特</a> <a href="../../../../tags/%E6%9D%A8%E6%A0%BC/" style="font-size: 10px;">杨格</a> <a href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" style="font-size: 10px;">核心期刊</a> <a href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">法国调节学派</a> <a href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" style="font-size: 10px;">现代货币理论</a> <a href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" style="font-size: 10px;">社会干预</a> <a href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" style="font-size: 12.5px;">线性规划</a> <a href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">美国社会积累结构学派</a> <a href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" style="font-size: 10px;">自由贸易</a> <a href="../../../../tags/%E8%A5%BF%E9%A9%AC/" style="font-size: 10px;">西马</a> <a href="../../../../tags/%E8%AE%A1%E9%87%8F/" style="font-size: 10px;">计量</a> <a href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" style="font-size: 12.5px;">调节理论</a> <a href="../../../../tags/%E8%B0%A2%E5%85%8B/" style="font-size: 10px;">谢克</a> <a href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" style="font-size: 10px;">财政管制</a> <a href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" style="font-size: 17.5px;">资本循环</a> <a href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" style="font-size: 10px;">远景目标</a> <a href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" style="font-size: 10px;">金融化</a> <a href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" style="font-size: 10px;">雇佣劳动</a> <a href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" style="font-size: 20px;">马克思</a> <a href="../../../../tags/%E9%AB%98%E5%B3%B0/" style="font-size: 10px;">高峰</a>
     </div>
   </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/">2021年06月</a><span class="archive-list-count">59</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/">2020年12月</a><span class="archive-list-count">65</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/2035/" rel="tag">2035</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/DSGE/" rel="tag">DSGE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/SSA/" rel="tag">SSA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/VAR/" rel="tag">VAR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/stata/" rel="tag">stata</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" rel="tag">不变价格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" rel="tag">不稳定就业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" rel="tag">克鲁格曼</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" rel="tag">公共卫生</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" rel="tag">共产党宣言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" rel="tag">凸函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E9%9B%86/" rel="tag">凸集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" rel="tag">动态随机一般均衡模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" rel="tag">劳动价值论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" rel="tag">劳动过程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" rel="tag">包络定理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%BB%E7%96%97/" rel="tag">医疗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" rel="tag">十四五</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" rel="tag">南北贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%B1%E6%9C%BA/" rel="tag">危机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" rel="tag">发刊技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8/" rel="tag">古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">古典经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" rel="tag">名词解释</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8E%E5%87%AF/" rel="tag">后凯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" rel="tag">向量自回归</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" rel="tag">国内大循环</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" rel="tag">国民经济核算</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" rel="tag">国际贸易</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" rel="tag">基础范畴</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A2%9E%E9%95%BF/" rel="tag">增长</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" rel="tag">外生冲击</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" rel="tag">局部投入产出闭模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" rel="tag">库恩-塔克条件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" rel="tag">建筑业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" rel="tag">开集闭集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" rel="tag">恩格斯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" rel="tag">投入产出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" rel="tag">拉格朗日乘子法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" rel="tag">数学规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%AF%E5%AF%86/" rel="tag">斯密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" rel="tag">新古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" rel="tag">李斯特</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%A8%E6%A0%BC/" rel="tag">杨格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" rel="tag">核心期刊</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" rel="tag">法国调节学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" rel="tag">现代货币理论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" rel="tag">社会干预</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" rel="tag">线性规划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" rel="tag">美国社会积累结构学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" rel="tag">自由贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%A5%BF%E9%A9%AC/" rel="tag">西马</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%A1%E9%87%8F/" rel="tag">计量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" rel="tag">调节理论</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%A2%E5%85%8B/" rel="tag">谢克</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" rel="tag">财政管制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" rel="tag">资本循环</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" rel="tag">远景目标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" rel="tag">金融化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" rel="tag">雇佣劳动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" rel="tag">马克思</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%AB%98%E5%B3%B0/" rel="tag">高峰</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-link"></i> 友情链接</h3>
-    <div class="widget">
-      <ul>
-      
-        <li>
-          <a href="../../../../http:/www.example1.com/">site-name1</a>
-        </li>
-      
-        <li>
-          <a href="../../../../http:/www.example2.com/">site-name2</a>
-        </li>
-      
-        <li>
-          <a href="../../../../http:/www.example3.com/">site-name3</a>
-        </li>
-      
-      </ul>
-    </div>
-  </div>
-
 
   
 </aside>
@@ -1286,20 +844,5 @@ D_w\textbf{x}(\textbf{p},w) = \left( \frac{\partial x_1(\textbf{p},w)}{\partial 
 
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

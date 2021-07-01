@@ -142,7 +142,8 @@
 
 
     </div>
-    <!-- <div class="e-content article-entry" itemprop="articleBody">
+
+    <div class="e-content article-entry" itemprop="articleBody">
       
         <h3 id="4-1-凸集和凸锥"><a href="#4-1-凸集和凸锥" class="headerlink" title="4.1 凸集和凸锥"></a>4.1 凸集和凸锥</h3><p><span style='font-family:hei;font-size:18px'>定义4.1</span> 若对任意$\textbf{x}\in S$和$\textbf{y}\in S$，以及任意实数$\lambda\in(0,1)$，都有</p>
 <script type="math/tex; mode=display">
@@ -303,158 +304,12 @@ S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
           </blockquote>
         
       
-    </div> -->
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-          
-      
-      
-          <h3 id="4-1-凸集和凸锥"><a href="#4-1-凸集和凸锥" class="headerlink" title="4.1 凸集和凸锥"></a>4.1 凸集和凸锥</h3><p><span style='font-family:hei;font-size:18px'>定义4.1</span> 若对任意$\textbf{x}\in S$和$\textbf{y}\in S$，以及任意实数$\lambda\in(0,1)$，都有</p>
-<script type="math/tex; mode=display">
-\lambda\textbf{x}+(1-\lambda)\textbf{y}\in S</script><p>则称集合$S$为<strong>凸集</strong>。</p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定理4.1</span> 设$S\neq\varnothing$，则$S$为凸集的充分必要条件是对任意$k\geqq 2$，若$\textbf{x}^l\in S,l=1,1,\cdots,k$以及$\lambda_l\geqq 0,l=1,2,\cdots,k$，$\sum_{l=1}^k \lambda_l=1$，有</p>
-<script type="math/tex; mode=display">
-\sum_{l=1}^k \lambda_l\textbf{x}^l\in S</script><hr>
-<p><span style='font-family:hei;font-size:18px'>定义4.2</span> 若对任意$S$，以及任意实数$\alpha\geqq0$，都有$\alpha\textbf{x}\in S$，则称集合$S$为<strong>锥</strong>。由定义，知道$\textbf{0}\in S(\alpha=0)$。图4-2和图4-3都是锥，但是图4-3不是凸集。</p>
-<div align='center'>
-  <img src='/../../images/%E7%AC%AC3%E7%AB%A0%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/11131611453983_.pic_hd.jpg' width=250px>
-  <center style='font-family:kai'>图 4-2</center>
-  <img src='/../../images/%E7%AC%AC3%E7%AB%A0%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/11141611453984_.pic_hd-1454436.jpg' width=250px>
-  <center style='font-family:kai'>图 4-3</center>
-</div>
-
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定义4.3</span> 若对任意$\textbf{x}\in S$和$\textbf{y}\in S$，以及任意实数$\alpha\geqq0,\beta\geqq0$，都有</p>
-<script type="math/tex; mode=display">
-\alpha\textbf{x}+\beta\textbf{y}\in S</script><p>则称集合$S$为<strong>凸锥</strong>。</p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定理4.2</span> 集合$S$为凸锥的充分必要条件是$S$既为凸集，也为锥。</p>
-<blockquote>
-<p>证明：</p>
-<p>必要性显然。只证充分性，已知$S$既为凸集，也为锥。任取$\textbf{x}\in S,\textbf{y}\in S,\alpha\geqq0,\beta\geqq0$，不失一般性，假设$\alpha+\beta\neq0$，则</p>
-<script type="math/tex; mode=display">
-\alpha\textbf{x}+\beta\textbf{y}=(\alpha+\beta)\left[ \frac{\alpha}{\alpha+\beta}\textbf{x} + \frac{\beta}{\alpha+\beta}\textbf{y} \right]</script><p>不难知道$0\leqq\frac{\alpha}{\alpha+\beta}\leqq1,0\leqq\frac{\beta}{\alpha+\beta}\leqq1$，由于$S$是凸集，故</p>
-<script type="math/tex; mode=display">
-\textbf{z}=\frac{\alpha}{\alpha+\beta}\textbf{x} + \frac{\beta}{\alpha+\beta}\textbf{y}\in S</script><p>又由于$S$是锥，故</p>
-<script type="math/tex; mode=display">
-\alpha\textbf{x}+\beta\textbf{y} = (\alpha+\beta)\textbf{z}\in S</script></blockquote>
-<p><span style='font-family:hei;font-size:18px'>定理4.3</span> 任意多个（包括无穷多个）凸集的交集仍为凸集。</p>
-<p><span style='font-family:hei;font-size:18px'>定理4.4</span> 若$S$为凸集，则</p>
-<ol>
-<li>$S$的闭包$\text{cl}(S)$也是凸集。</li>
-<li>$S$的内点构成的集合$\text{Int}(S)$也是凸集。</li>
-</ol>
-<h3 id="4-2-凸集分离定理"><a href="#4-2-凸集分离定理" class="headerlink" title="4.2 凸集分离定理"></a>4.2 凸集分离定理</h3><p><span style='font-family:hei;font-size:18px'>定理4.5</span> <span style='font-family:kai'>(点与凸集的分离定理-严格分离)</span>设$S\subset E^n$为闭凸集，且$\textbf{y}^0\notin S$。则存在$\textbf{a}\in E^n,\textbf{a}\neq0$，以及数$\alpha$，对任意$\textbf{x}\in S$，有</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{y}^0<\alpha<\textbf{a}^T\textbf{x}</script><blockquote>
-<p>证明：</p>
-<p><span style='font-family:fangsong'>第一步：证明集合$S$上存在到$\textbf{y}^0$距离最近的点。</span></p>
-<p>取$\textbf{z}^0\in S$，则集合</p>
-<script type="math/tex; mode=display">
-\hat{S}=\{\textbf{x}\left\lvert\Arrowvert\textbf{y}^0-\textbf{x}\Arrowvert\leqq\Arrowvert\textbf{y}^0-\textbf{z}^0\Arrowvert\right.\}\cap S</script><p>为非空有界闭集(图4-7中橙色部分)。于是存在$\textbf{x}^0\in S$，有</p>
-<script type="math/tex; mode=display">
-\min_{\textbf{x}\in S}\Arrowvert\textbf{x}-\textbf{y}^0\Arrowvert=
-\min_{\textbf{x}\in \hat{S}}\Arrowvert\textbf{x}-\textbf{y}^0\Arrowvert
-=\Arrowvert\textbf{x}^0-\textbf{y}^0\Arrowvert>0</script><p>即$\textbf{x}^0$是$\textbf{y}^0$到闭凸集$S$最近的点。(如果$S$是开集，这个$\textbf{x}^0$就不一定存在于$S$了。)</p>
-<p><span style='font-family:fangsong'>第二步：本证明中最精妙的地方，要构造出超平面。</span></p>
-<p>构造</p>
-<script type="math/tex; mode=display">
-\textbf{a}=\textbf{x}^0-\textbf{y}^0\neq\textbf{0},\quad
-\alpha=\frac12\textbf{a}^T(\textbf{x}^0+\textbf{y}^0)</script><p>得到超平面</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{x}=\alpha</script><p><span style='font-family:fangsong'>第三步：分别证明两个不等式。回忆第三章关于超平面的性质，在超平面同于法向量$\textbf{a}$方向的一侧（这里$\textbf{a}=\textbf{x}^0-\textbf{y}^0$,指向集合$S$所在的方向！）有$\textbf{a}^T\textbf{x}&gt;\alpha$，另一侧有$\textbf{a}^T\textbf{x}&lt;\alpha$。这里的证明基本上也是按照这个思路</span>。</p>
-<p>先证明第一个不等式。</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{y}^0-\alpha=\textbf{a}^T\textbf{y}^0-\frac12\textbf{a}^T(\textbf{x}^0+\textbf{y}^0)
-=-\frac12\textbf{a}^T(\textbf{x}^0-\textbf{y}^0)
-=-\frac12\textbf{a}^T\textbf{a}<0</script><p>再证明第二个不等式。</p>
-<p>任取$\textbf{x}\in S,\lambda\in(0,1)$，由于$S$是凸集，有</p>
-<script type="math/tex; mode=display">
-\lambda\textbf{x}+(1-\lambda)\textbf{x}^0\in S</script><p>又由于$\textbf{x}^0$是$\textbf{y}^0$到闭凸集$S$最近的点，因此有</p>
-<script type="math/tex; mode=display">
-\left\Arrowvert \left[\lambda\textbf{x}+(1-\lambda)\textbf{x}^0\right] -\textbf{y}^0\right\Arrowvert^2 \geqq
-\left\Arrowvert \textbf{x}^0-\textbf{y}^0 \right\Arrowvert^2</script><p>进一步拆开并化简：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \left\Arrowvert \lambda(\textbf{x}-\textbf{x}^0)+(\textbf{x}^0-\textbf{y}^0) \right\Arrowvert^2 &\geqq&
-\left\Arrowvert \textbf{x}^0-\textbf{y}^0 \right\Arrowvert^2 \notag\\
-    \lambda^2\left\Arrowvert \textbf{x}-\textbf{x}^0\right\Arrowvert^2 +2\lambda(\textbf{x}^0-\textbf{y}^0)^T(\textbf{x}-\textbf{x}^0)+\left\Arrowvert \textbf{x}^0-\textbf{y}^0\right\Arrowvert^2 &\geqq&\left\Arrowvert \textbf{x}^0-\textbf{y}^0 \right\Arrowvert^2 \notag\\
-    \lambda\left\Arrowvert \textbf{x}-\textbf{x}^0\right\Arrowvert^2 +2(\textbf{x}^0-\textbf{y}^0)^T(\textbf{x}-\textbf{x}^0) &\geqq& 0\notag
-\end{eqnarray}</script><p>这个式子对任意的$\lambda\in(0,1)$都成立，令$\lambda\rightarrow0$，对任意$\textbf{x}\in S$，有</p>
-<script type="math/tex; mode=display">
-(\textbf{x}^0-\textbf{y}^0)^T(\textbf{x}-\textbf{x}^0) \geqq 0</script><p>即</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{x}\geqq \textbf{a}^T\textbf{x}^0</script><p>又由于</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{x}^0-\alpha
-=\textbf{a}^T\textbf{x}^0-\frac12\textbf{a}^T(\textbf{x}^0+\textbf{y}^0)
-=\frac12\textbf{a}^T(\textbf{x}^0-\textbf{y}^0)
-=\frac12\textbf{a}^T\textbf{a}>0</script><p>第二个不等式也得到了证明！</p>
-</blockquote>
-<div align='center'>
-  <img src='/../../images/%E7%AC%AC4%E7%AB%A0%E5%87%B8%E9%9B%86%E3%80%81%E5%87%B8%E9%9B%86%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86%E4%B8%8E%E6%8B%A9%E4%B8%80%E5%AE%9A%E7%90%86/IMG_1B2272549397-1.jpeg' width=450px>
-  <center style='font-family:kai'>图4-7</center>
-</div>
-
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定理4.6</span> <span style='font-family:kai'>(点与凸集的分离定理)</span>设$S\subset E^n$为凸集，且$\textbf{y}^0\notin S$。则存在超平面$\textbf{a}^T\textbf{x}=\alpha,\textbf{a}\neq0$，对任意$\textbf{x}\in S$，有</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{x}\geqq\alpha\geqq\textbf{a}^T\textbf{y}^0</script><p><span style='font-family:hei;font-size:18px'>定理4.7</span> <span style='font-family:kai'>(两个凸集之间的分离定理-严格分离)</span>设$S_1$为闭凸集，$S_2$为有界闭凸集，并且$S_1\cap S_2=\varnothing$，则存在一个超平面$\textbf{a}^T\textbf{x}=\alpha,\textbf{a}\neq0$严格分离$S_1$和$S_2$。即对于任意$\textbf{x}\in S_1$和$\textbf{y}\in S_2$，有</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{x}>\alpha>\textbf{a}^T\textbf{y}</script><p><span style='font-family:hei;font-size:18px'>定理4.8</span> <span style='font-family:kai'>(两个凸集之间的分离定理)</span>设$S_1$和$S_2$为有凸集，并且$S_1\cap S_2=\varnothing$，则存在一个超平面$\textbf{a}^T\textbf{x}=\alpha,\textbf{a}\neq0$严格分离$S_1$和$S_2$。即对于任意$\textbf{x}\in S_1$和$\textbf{y}\in S_2$，有</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{x}\geqq\alpha\geqq\textbf{a}^T\textbf{y}</script><h3 id="4-3-Farkas定理"><a href="#4-3-Farkas定理" class="headerlink" title="4.3 Farkas定理"></a>4.3 Farkas定理</h3><p>可以参考知乎问题<a href='https://www.zhihu.com/question/279644412' target='_blank'>如何理解farkas引理？</a></p>
-<p><span style='font-family:hei;font-size:18px'>定义4.5</span> 设$\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n\in E^n$，记</p>
-<script type="math/tex; mode=display">
-\{\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n\}^{\angle} = \left\{ \left.\sum_{j=1}^n \textbf{P}_jx_j \right\lvert x_j\geqq0,j=1,2,\cdots,n \right\}</script><p>称$\{\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n\}^{\angle}$为由向量组$\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n$生成的<strong>多面锥</strong>。</p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定理4.9</span> <span style='font-family:kai'>(Farkas定理)</span>设</p>
-<script type="math/tex; mode=display">
-\textbf{A}=(\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n)_{m\times n},\quad \textbf{b}=\textbf{b}_{m\times1}</script><p>则$\textbf{Ax}=\textbf{b},\textbf{x}\geqq\textbf0$有解的充分必要条件是：对于任意满足$\textbf{u}^T\textbf{A}\geqq\textbf{0}$的$\textbf{u}$，都有$\textbf{u}^T\textbf{b}\geqq\textbf{0}$。</p>
-<p>首先对Farkas定理作一下直观的解释。矩阵$\textbf{A}$的列空间$\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n$可以展成一个多面锥$\{\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n\}^{\angle}$。对于向量$\textbf{b}\in E^n$，只可能存在两种情况：</p>
-<ol>
-<li>$\textbf{b}\in\{\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n\}^{\angle}$</li>
-<li>$\textbf{b}\notin\{\textbf{P}_1,\textbf{P}_2,\cdots,\textbf{P}_n\}^{\angle}$</li>
-</ol>
-<p>对于第1种情况，肯定能找到一组非负的$\{x_1,x_2\cdots,x_n\}$使得</p>
-<script type="math/tex; mode=display">
-\textbf{b}=x_1\textbf{P}_1+x_2\textbf{P}_2+\cdots+x_n\textbf{P}_n=\textbf{Ax}</script><p>这也就是定理说明的情况，如下面左图。反之对于第2种情况，点（向量）$\textbf{b}$在多面锥（不难证明是凸锥）之外，根据点与凸集的分离定理，肯定能够找到一个过原点的超平面，使得$\textbf{b}$在一边，凸锥在另外一边。如下面右图所示，超平面的方程是$\hat{\textbf{y}}^T\textbf{x}=0$，于是有$\hat{\textbf{y}}^T\textbf{b}\geqq 0$同时$\hat{\textbf{y}}^T\textbf{P}\leqq0$。（难受啊，图中的法向量$\hat{\textbf{y}}$方向画反了！！但是大家都能理解吧！）</p>
-<div align='center'>
-  <img src='/../../images/%E7%AC%AC4%E7%AB%A0%E5%87%B8%E9%9B%86%E3%80%81%E5%87%B8%E9%9B%86%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86%E4%B8%8E%E6%8B%A9%E4%B8%80%E5%AE%9A%E7%90%86/v2-8ec154c9eddfc4ab7f2a28f9444d0c35_r.jpg' width=500px>
-  <p align='left' style='font-family:kai'>左为b在凸锥内的情况，右图为b在凸锥外的情况，总能找到过原点的超平面（二维情况下为直线，法向量为y），把b和凸锥分开。</p>
-</div>
-
-<p>最后给出严格证明：</p>
-<blockquote>
-<p>证明：</p>
-<p>必要性很容易证明，下面用反证法证明充分性。</p>
-<p>对于任意满足$\textbf{u}^T\textbf{A}\geqq\textbf{0}$的$\textbf{u}$，都有$\textbf{u}^T\textbf{b}\geqq\textbf{0}$。但$\textbf{Ax}=\textbf{b},\textbf{x}\geqq\textbf{0}$无解。因此</p>
-<script type="math/tex; mode=display">
-\textbf{b}\notin\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
-=\left\{ \left.\sum_{j=1}^n \textbf{P}_jx_j\right\lvert x_j\geqq 0,j=1,2,\cdots,n\right\}</script><p>考虑集合</p>
-<script type="math/tex; mode=display">
-S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
-=\left\{ \left.\sum_{j=1}^n \textbf{P}_jx_j\right\lvert x_j\geqq 0,j=1,2,\cdots,n\right\}</script><p>$S$为闭凸集，由点与凸集的严格分离定理，存在$\textbf{a}\neq0$以及$\alpha$，对于任意$\textbf{z}\in S$，有</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{z}>\alpha>\textbf{a}^T\textbf{b}\tag{4.6}</script><p>注意到$\textbf{0}\in S$，由（4.6），有$0&gt;\textbf{a}^T\textbf{b}$。下面要证明，对于任意$\textbf{z}\in S$，有</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{z} \geqq 0</script><p>(<span style='color:red'>这个可以反证法证明，暂时略过</span>)得到了</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{z} \geqq 0>\textbf{a}^T\textbf{b}\tag{4.8}</script><p>又由于$\textbf{P}_j\in S,j=1,2,\cdots,n$，由（4.8），有</p>
-<script type="math/tex; mode=display">
-\text{a}^T\textbf{P}_j\geqq 0,j=1,2,\cdots,n</script><p>即$\text{a}$满足</p>
-<script type="math/tex; mode=display">
-\textbf{a}^T\textbf{A}\geqq\textbf{0},\textbf{a}^T\textbf{b}<0</script><p>这与已知条件不符。证毕。</p>
-</blockquote>
-
-          </div>
-      
+    </div>
+    
     <footer class="article-footer">
       
         <div class="article-tag-wrap">
-          <!-- 
+          
     <div class="article-reward">
         <a id="reward-btn" href="javascript:;">打赏</a>
         <div id="reward-content">
@@ -473,17 +328,17 @@ S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
         </div>
     </div>
 
- -->
+
           
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/%E5%87%B8%E9%9B%86/" rel="tag">凸集</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" rel="tag">线性规划</a></li></ul>
 
-          <!-- 
+          
     <div class="social-share">
       <span>分享到:</span>
     </div>
 
 
- -->
+
         </div>
       
       
@@ -522,8 +377,7 @@ S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
       
     </footer>
   </div>
-</article>
-</section>
+</article></section>
         
           <aside id="sidebar">
   
@@ -588,50 +442,6 @@ S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
       <a href="../../../../tags/2035/" style="font-size: 10px;">2035</a> <a href="../../../../tags/DSGE/" style="font-size: 10px;">DSGE</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/SSA/" style="font-size: 10px;">SSA</a> <a href="../../../../tags/VAR/" style="font-size: 10px;">VAR</a> <a href="../../../../tags/stata/" style="font-size: 10px;">stata</a> <a href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" style="font-size: 10px;">不变价格</a> <a href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" style="font-size: 10px;">不稳定就业</a> <a href="../../../../tags/%E5%81%A5%E5%BA%B7/" style="font-size: 10px;">健康</a> <a href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" style="font-size: 10px;">克鲁格曼</a> <a href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" style="font-size: 10px;">公共卫生</a> <a href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" style="font-size: 10px;">共产党宣言</a> <a href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" style="font-size: 10px;">凸函数</a> <a href="../../../../tags/%E5%87%B8%E9%9B%86/" style="font-size: 10px;">凸集</a> <a href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">动态随机一般均衡模型</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" style="font-size: 10px;">劳动价值论</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" style="font-size: 10px;">劳动过程</a> <a href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" style="font-size: 10px;">包络定理</a> <a href="../../../../tags/%E5%8C%BB%E7%96%97/" style="font-size: 10px;">医疗</a> <a href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" style="font-size: 10px;">十四五</a> <a href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" style="font-size: 10px;">南北贸易</a> <a href="../../../../tags/%E5%8D%B1%E6%9C%BA/" style="font-size: 10px;">危机</a> <a href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">发刊技巧</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">古典</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 10px;">古典经济学</a> <a href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" style="font-size: 15px;">名词解释</a> <a href="../../../../tags/%E5%90%8E%E5%87%AF/" style="font-size: 17.5px;">后凯</a> <a href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" style="font-size: 10px;">向量自回归</a> <a href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">国内大循环</a> <a href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" style="font-size: 10px;">国民经济核算</a> <a href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 12.5px;">国际贸易</a> <a href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" style="font-size: 10px;">基础范畴</a> <a href="../../../../tags/%E5%A2%9E%E9%95%BF/" style="font-size: 10px;">增长</a> <a href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" style="font-size: 10px;">外生冲击</a> <a href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">局部投入产出闭模型</a> <a href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">库恩-塔克条件</a> <a href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" style="font-size: 10px;">建筑业</a> <a href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" style="font-size: 10px;">开集闭集</a> <a href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" style="font-size: 17.5px;">恩格斯</a> <a href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" style="font-size: 10px;">投入产出</a> <a href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" style="font-size: 10px;">拉格朗日乘子法</a> <a href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" style="font-size: 10px;">数学规划</a> <a href="../../../../tags/%E6%96%AF%E5%AF%86/" style="font-size: 10px;">斯密</a> <a href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">新古典</a> <a href="../../../../tags/%E6%9D%82%E8%AE%B0/" style="font-size: 12.5px;">杂记</a> <a href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" style="font-size: 12.5px;">李斯特</a> <a href="../../../../tags/%E6%9D%A8%E6%A0%BC/" style="font-size: 10px;">杨格</a> <a href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" style="font-size: 10px;">核心期刊</a> <a href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">法国调节学派</a> <a href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" style="font-size: 10px;">现代货币理论</a> <a href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" style="font-size: 10px;">社会干预</a> <a href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" style="font-size: 12.5px;">线性规划</a> <a href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">美国社会积累结构学派</a> <a href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" style="font-size: 10px;">自由贸易</a> <a href="../../../../tags/%E8%A5%BF%E9%A9%AC/" style="font-size: 10px;">西马</a> <a href="../../../../tags/%E8%AE%A1%E9%87%8F/" style="font-size: 10px;">计量</a> <a href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" style="font-size: 12.5px;">调节理论</a> <a href="../../../../tags/%E8%B0%A2%E5%85%8B/" style="font-size: 10px;">谢克</a> <a href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" style="font-size: 10px;">财政管制</a> <a href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" style="font-size: 17.5px;">资本循环</a> <a href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" style="font-size: 10px;">远景目标</a> <a href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" style="font-size: 10px;">金融化</a> <a href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" style="font-size: 10px;">雇佣劳动</a> <a href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" style="font-size: 20px;">马克思</a> <a href="../../../../tags/%E9%AB%98%E5%B3%B0/" style="font-size: 10px;">高峰</a>
     </div>
   </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/">2021年06月</a><span class="archive-list-count">59</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/">2020年12月</a><span class="archive-list-count">65</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/2035/" rel="tag">2035</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/DSGE/" rel="tag">DSGE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/SSA/" rel="tag">SSA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/VAR/" rel="tag">VAR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/stata/" rel="tag">stata</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" rel="tag">不变价格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" rel="tag">不稳定就业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" rel="tag">克鲁格曼</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" rel="tag">公共卫生</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" rel="tag">共产党宣言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" rel="tag">凸函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E9%9B%86/" rel="tag">凸集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" rel="tag">动态随机一般均衡模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" rel="tag">劳动价值论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" rel="tag">劳动过程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" rel="tag">包络定理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%BB%E7%96%97/" rel="tag">医疗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" rel="tag">十四五</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" rel="tag">南北贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%B1%E6%9C%BA/" rel="tag">危机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" rel="tag">发刊技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8/" rel="tag">古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">古典经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" rel="tag">名词解释</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8E%E5%87%AF/" rel="tag">后凯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" rel="tag">向量自回归</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" rel="tag">国内大循环</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" rel="tag">国民经济核算</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" rel="tag">国际贸易</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" rel="tag">基础范畴</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A2%9E%E9%95%BF/" rel="tag">增长</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" rel="tag">外生冲击</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" rel="tag">局部投入产出闭模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" rel="tag">库恩-塔克条件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" rel="tag">建筑业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" rel="tag">开集闭集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" rel="tag">恩格斯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" rel="tag">投入产出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" rel="tag">拉格朗日乘子法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" rel="tag">数学规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%AF%E5%AF%86/" rel="tag">斯密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" rel="tag">新古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" rel="tag">李斯特</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%A8%E6%A0%BC/" rel="tag">杨格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" rel="tag">核心期刊</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" rel="tag">法国调节学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" rel="tag">现代货币理论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" rel="tag">社会干预</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" rel="tag">线性规划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" rel="tag">美国社会积累结构学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" rel="tag">自由贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%A5%BF%E9%A9%AC/" rel="tag">西马</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%A1%E9%87%8F/" rel="tag">计量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" rel="tag">调节理论</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%A2%E5%85%8B/" rel="tag">谢克</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" rel="tag">财政管制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" rel="tag">资本循环</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" rel="tag">远景目标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" rel="tag">金融化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" rel="tag">雇佣劳动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" rel="tag">马克思</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%AB%98%E5%B3%B0/" rel="tag">高峰</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-link"></i> 友情链接</h3>
-    <div class="widget">
-      <ul>
-      
-        <li>
-          <a href="../../../../http:/www.example1.com/">site-name1</a>
-        </li>
-      
-        <li>
-          <a href="../../../../http:/www.example2.com/">site-name2</a>
-        </li>
-      
-        <li>
-          <a href="../../../../http:/www.example3.com/">site-name3</a>
-        </li>
-      
-      </ul>
-    </div>
-  </div>
-
 
   
 </aside>
@@ -784,20 +594,5 @@ S=\{\textbf{Ax}\lvert\textbf{x}\geqq\textbf{0}\}
 
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

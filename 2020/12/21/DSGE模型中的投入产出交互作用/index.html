@@ -142,7 +142,8 @@
 
 
     </div>
-    <!-- <div class="e-content article-entry" itemprop="articleBody">
+
+    <div class="e-content article-entry" itemprop="articleBody">
       
         <blockquote>
 <p>Bisová, S., Javorská, E., Vltavská, K., Zouhar, J. (2013). Input-output Interactions in a DSGE Framework. Conference Paper. Available at: <a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/268208686_Input-output_interactions_in_a_DSGE_framework">https://www.researchgate.net/publication/268208686_Input-output_interactions_in_a_DSGE_framework</a></p>
@@ -265,120 +266,12 @@ Y_{j}=H_{j}^{\alpha_{H}}\left(R Y_{j}\right)^{\alpha_{K}}\left(S Y_{j}\right)^{\
           </blockquote>
         
       
-    </div> -->
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-          
-      
-      
-          <blockquote>
-<p>Bisová, S., Javorská, E., Vltavská, K., Zouhar, J. (2013). Input-output Interactions in a DSGE Framework. Conference Paper. Available at: <a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/268208686_Input-output_interactions_in_a_DSGE_framework">https://www.researchgate.net/publication/268208686_Input-output_interactions_in_a_DSGE_framework</a></p>
-<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1T3Cbe7qatUO0j6CB1jLEWg">https://pan.baidu.com/s/1T3Cbe7qatUO0j6CB1jLEWg</a>  密码: il51</p>
-</blockquote>
-<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>尽管很多人宣传DSGE（动态随机一般均衡模型）具有微观基础，通常还是使用国家一级的综合数据进行经济分析。然而，欧盟成员国的国家统计局创建的国民核算中包含有关个别行业的详细信息，如投入产出表。在这篇论文中，我们提出了一个典型RBC模型的多部门扩展的初步研究，该模型允许使用多个部门的投入产出结构的数据。我们建立了一个简单的基准模型，该模型允许任意数量的部门具有任意的投入产出结构。在实际中使用中，该模型遇到的困难在于需要找到变量的近似稳态值。一般情况下，求解稳态问题是困难的；然而，我们确实提供了一个特殊的对称情况的解析解，它有时也可以为非对称问题提供一个足够接近的近似值。</p>
-<h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h2><p>在今天的宏观经济分析中，通常使用向量自回归（VAR）、向量误差修正模型（VEC）或DSGE模型，其中DSGE模型是这三种方法中最新的一种，并且越来越受到研究人员和监管机构的欢迎。例如，捷克国家银行开发了一个DSGE模型“g3”<sup><a href="#fn_1" id="reffn_1">1</a></sup>，用于解释当前的经济现象和进行经济预测。使DSGE模型如此有利的一个关键特征是，它们建立在微观经济基础上，因此应该抵制卢卡斯的批评。然而，在我们看来，DSGE模型微观基础的想法与通常用于模型校准的数据的总体性质不符；国家层面的数据几乎总是被使用，即使所有欧盟成员国的国民账户中都有行业层面的数据，并在投入产出表中列示<sup><a href="#fn_2" id="reffn_2">2</a></sup>。</p>
-<p>必须指出的是，一些现有模型实际上确实将企业部门划分为少数几个“行业”，通常区分制造商和零售商。或如捷克共和国财政部开发和使用的休伯特模型（见<sup><a href="#fn_3" id="reffn_3">3</a></sup>，<sup><a href="#fn_4" id="reffn_4">4</a></sup>）那样，在制造商、零售商和进口商之间进行划分。然而，在这种情况下，（i）模型包含极少数行业，（ii）各个行业之间的区别并不遵循国民账户的结构，以及（iii）投入产出结构仅限于零售商和制造商之间的单边关系。本文的目的是建立一个简单的基线模型，允许任意数量的扇区和任意的输入输出结构。</p>
-<p>据我们所知，目前仅有的开发类似模型的研究是Bouakez等人的工作<sup><a href="#fn_5" id="reffn_5">5</a></sup>，<sup><a href="#fn_6" id="reffn_6">6</a></sup>。尽管我们无疑受到了这些作品的启发，但我们的模型与Boukaez等人的模型在几个方面有所不同。首先，他们的模型是为了利用美国国民账户的结构而建立的——这与捷克共和国和欧盟作为一个整体的结构都不同；最重要的是，美国国民账户收集各个部门之间资本流动的数据（资本流量表），它允许将资本形成过程简单地纳入DSGE模型。当我们打算将来将我们的模型应用于捷克数据时，我们不得不采用一种不同的、间接的方法，将投入产出过程和资本存量创造结合起来，这证明了均衡推导的复杂性。其次，虽然Bouakez等人的模型采用了新凯恩斯主义的观点，但我们的模型基本上符合真实商业周期（RBC）文献。</p>
-<h2 id="2-模型"><a href="#2-模型" class="headerlink" title="2. 模型"></a>2. 模型</h2><p>模型经济由一个无限期居住的家庭和$J$个公司组成，每个企业代表一个部门。家庭是所有企业的唯一劳动力供给者，企业的生产既可以被家庭消费，也可以作为其他部门的物质投入，或者以资本投资的形式使用。在我们的处理中，我们使用了社会规划者模型，它应该给出与竞争均衡公式相同的均衡条件，但是符号更加简洁，见<sup><a href="#fn_7" id="reffn_7">7</a></sup>。社会规划师的目标是将家庭的（贴现）效用最大化，即最大化</p>
-<script type="math/tex; mode=display">
-\mathbb{E} \sum_{t=0}^{\infty} \beta^{t} U\left(C_{t}, H_{t}\right)=\mathbb{E} \sum_{t=0}^{\infty} \beta^{t}\left[\log C_{t}-\phi \log H_{t}\right]</script><p>式中，$U$是（瞬时）效用函数，$C_t$和$H_t$是时间段$t$中的消费和劳动时间，$\phi$是一个非负参数（劳动无用性）。消费组合被定义为特定行业消费的加权迪克斯特-斯蒂格利茨(Dixit-Stiglitz)总量：</p>
-<script type="math/tex; mode=display">
-C_{t} \equiv\left[\sum_{j} \gamma_{j} C_{j t}^{\theta}\right]^{1 / \theta}</script><p>式中，$C_{jt}$是$t$期间$j$部门商品的消费量，$\gamma_j$是$j$部门商品在消费组合中的相对权重（$\gamma_j$为非负且总和为1），$\theta$是大于1的参数，因此$\frac{\theta}{\theta-1}$是部门生产之间的替代弹性。</p>
-<p>劳动时间束可以简单的做如下定义：</p>
-<script type="math/tex; mode=display">
-H_{t} \equiv\left[\sum_{j} H_{j t}^{v}\right]^{1 / v}</script><p>其中$H_{jt}$是在部门$j$于时期$t$内工作的小时数。参数$v$小于1，表示在各个部门中工作小时数的替代。请注意在这种设定下，家庭更喜欢劳动时间的多样性。</p>
-<p>部门$j$的生产函数具有Cobb-Douglas函数的形式，规模报酬不变：</p>
-<script type="math/tex; mode=display">
-Y_{j t}=\left(e^{Z_{t}} H_{j t}\right)^{\alpha_{j H}} K_{j, t-1}^{\alpha_{j K}} M_{j t}^{\alpha_{j M}}</script><p>其中，$Z_t$是一种外生的总劳动生产率冲击，$K_{j,t−1}$是$t$期初$j$部门的资本存量（即$t−1$期末确定的资本存量），$M_{jt}$是来自其他部门流向$j$部门的所有物质流，式子中的那些$\alpha$表示部门各自的产出弹性，这些弹性总和等于1。物质流定义为</p>
-<script type="math/tex; mode=display">
-M_{j t} \equiv\left[\sum_{i} \mu_{i j} M_{i j t}^{\theta}\right]^{1 / \theta}</script><p>式中，$M_{ijt}$是向部门$j$提供（作为输入）的部门$i$的量，$\mu_{ij}$是部门$i$的投入在投入到部门$j$的所有物质投入中的权重。假设劳动生产率冲击遵循标准AR（1）过程，</p>
-<script type="math/tex; mode=display">
-Z_{t}=\rho Z_{t-1}+\varepsilon_{t}, \quad \varepsilon_{t} \sim \mathcal{N}\left(0, \sigma^{2}\right), \text { i.i.d. }\tag{1}</script><p>预算约束为：</p>
-<script type="math/tex; mode=display">
-Y_{jt} = C_{jt}+I_{jt}+\sum_kM_{jkt}</script><p>其中$I_{jt}$为部门$j$在$t$时期的的资本投资。</p>
-<script type="math/tex; mode=display">
-I\equiv K_{jt} - (1-\delta)K_{j,t-1}</script><p>$\delta$是折旧率。</p>
-<p><strong>关于替代模型和校准的评论</strong>。</p>
-<ul>
-<li>捷克统计局提供的原始数据（尤其是投入产出表）分为81个行业。从技术上讲，这样的划分部门数量太多，以致于模型无法求解。因此，似乎有必要将这些行业合并，以便将行业数量减少到可接受的水平。按照CZ-NACE分类，81个行业可合并为19个行业。</li>
-<li>在校准方面，$\mu_{ij}$参数应直接取自投入产出表，$j$参数将从消费者价格指数中进行校准。此外，我们需要Cobb-Douglas生产函数的参数；我们打算使用基于指数法的估计。参数可以估计为当前价格中的总增加值与员工薪酬的比率。这些数据发表在国民账户中。</li>
-</ul>
-<h2 id="3-模型求解"><a href="#3-模型求解" class="headerlink" title="3. 模型求解"></a>3. 模型求解</h2><h3 id="3-1-均衡条件"><a href="#3-1-均衡条件" class="headerlink" title="3.1 均衡条件"></a>3.1 均衡条件</h3><p>首先我们构造拉格朗日函数：<sup><a href="#fn_8" id="reffn_8">8</a></sup></p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\mathscr{L} &=\mathbb{E} \sum_{t=0}^{\infty} \beta^{t}\left[\log C_{t}-\phi \log H_{t}-\sum_{j} \lambda_{j t}\left(-Y_{j t}+C_{j t}+I_{j t}+\sum_{k} M_{j k t}\right)\right] \\
-&=\mathbb{E} \sum_{t=0}^{\infty} \beta^{t}\left[\log C_{t}-\phi \log H_{t}+\sum_{j} \lambda_{j t}\left(-Y_{j t}+C_{j t}+K_{j t}-(1-\delta) K_{j, t-1}\right)-\sum_{i} \sum_{j} \lambda_{i t} M_{i j t}\right]
-\end{aligned}</script><p>一阶条件是通过设置拉格朗日的偏导数（w.r.t.决策变量和拉格朗日乘数）为零得到的。在消除拉格朗日乘数和一些明显的代数操作后，我们可以列出如下平衡条件：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-\alpha_{j H} \gamma_{j} Y_{j t} C_{j t}^{\theta-2} C_{t}^{-\theta} &=&\phi\left(H_{j t} / H_{t}\right)^{v} \tag{for all j}\\
-\gamma_{i} C_{i t}^{\theta-2} M_{i j t}^{1-\theta} &=&\gamma_{j} \alpha_{j M} \mu_{i j} Y_{j t} C_{j t}^{\theta-2} M_{j t}^{-\theta} \tag{for all i,j}\\
-C_{j t}^{\theta-2} C_{t}^{-\theta} &=&\beta \mathbb{E}_{t}\left[C_{j, t+1}^{\theta-2} C_{t+1}^{-\theta}\left(\alpha_{j K}\left(Y_{j, t+1} / K_{j t}\right)+1-\delta\right)\right] \tag{for all j}\\
-Y_{j t} &=&\left(e^{Z_{t}} H_{j t}\right)^{\alpha_{j H}} K_{j, t-1}^{\alpha_{j K}} M_{j t}^{\alpha_{j M}} \tag{for all j}\\
-Y_{j t} &=&C_{j t}+I_{j t}+\sum_{k} M_{j k t} \tag{for all j}\\
-Z_{t} &=&\rho Z_{t-1}+\varepsilon_{t} \\
-\varepsilon_{t} & \sim& \mathcal{N}\left(0, \sigma^{2}\right), \text { i.i.d. }
-\end{eqnarray}</script><p>总之，这给出了（$J^2+4J+1$）方程。请注意，如果要使用<code>Dynare</code>这样的软件包，代码中不支持包含循环和和和的符号表达式。即使对于低到3的$J$，在手上写下这些方程也是一项非常乏味的任务，而且输入错误很可能会潜入代码中。基于这些原因，我们建立了一个<code>Matlab</code>脚本，可以为任意数量的扇区创建适当的<code>Dynare</code>代码；我们很乐意向任何有兴趣的人提供<code>Matlab</code>脚本。</p>
-<h3 id="3-2-稳定状态条件"><a href="#3-2-稳定状态条件" class="headerlink" title="3.2 稳定状态条件"></a>3.2 稳定状态条件</h3><p>在平衡动力学分析中，首先要找到稳态。通过去掉时间下标（$t$）和误差项($\varepsilon$)，很容易从平衡条件得到稳态条件。稍加代数处理后，<sup><a href="#fn_9" id="reffn_9">9</a></sup>我们得到了一个非线性方程组</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-\alpha_{j H} \gamma_{j} Y_{j} C_{j}^{\theta-2} C^{-\theta} &=&\phi\left(H_{j} / H_{t}\right)^{v} \tag{2}\\
-\gamma_{i} C_{i}^{\theta-2} M_{i j}^{1-\theta} &=&\gamma_{j} \alpha_{j M} \mu_{i j} Y_{j} C_{j}^{\theta-2} M_{j}^{-\theta} \tag{3}\\
-1 &=&\beta\left(\alpha_{j K}\left(Y_{j} / K_{j}\right)+1-\delta\right) \tag{4}\\
-Y_{j} &=&H_{j}^{\alpha_{j H}} K_{j}^{\alpha_{j} K} M_{j}^{\alpha_{j M}} \tag{5}\\
-Y_{j} &=&C_{j}+I_{j}+\sum_{k} M_{j k} \tag{6}
-\end{eqnarray}</script><h3 id="3-3-稳定状态——对称情形"><a href="#3-3-稳定状态——对称情形" class="headerlink" title="3.3 稳定状态——对称情形"></a>3.3 稳定状态——对称情形</h3><p>现在考虑一个特殊的对称情况，对于所有$j$，$\alpha_{jK}=\alpha_K,\alpha_{jK}=\alpha_H,\alpha_{jM}=\alpha_M,\gamma_j=\gamma$，以及对于$i\neq j$有$\mu_{ij}=\mu$。在这种情况下，解析稳态解具有以下命题中给出的形式。</p>
-<p><strong>命题1</strong>:令</p>
-<script type="math/tex; mode=display">
-R = \frac{\alpha_K}{\frac1\beta-1+\delta},\quad S=\mu^{\frac1\theta}\alpha_M(J-1)^{\frac{1-\theta}{\theta}},\quad T=R^{-\frac{\alpha_K}{\alpha_H}}S^{-\frac{\alpha_M}{\alpha_H}}</script><p>那么在对称问题的稳态下，对所有的$j$，有</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-Y_{j}     &=& \frac{\phi}{\alpha_{H}} C_{j}^{2} \tag{7}\\
-M_{i j} &=& \frac{\alpha_{M}}{J-1} Y_{j} \\
-K_{j}     &=& R Y_{j} \tag{8}\\
-C_{j}     &=& \frac{\alpha_{H}}{\phi\left(1-\delta R-\alpha_{M}\right)} \tag{9}\\
-H_{j}     &=& S Y_{j} \tag{10}
-\end{eqnarray}</script><blockquote>
-<p>证明：</p>
-<p>首先导出以下恒等式很有用：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-H^{v} &=&\sum_{j} H_{j}^{v}=J H_{j}^{v}, &\text { and so } \left(H_{j} / H\right)^{v} &=&\frac1J \tag{11}\\
-C^{\theta} &=&\sum_{j} \gamma C_{j}^{\theta}=\gamma J C_{j}^{\theta}, &\text { and so } \left(C_{j} / C\right)^{\theta}&=&\frac1{\gamma J} \tag{12}\\
-M_{j}^{\theta} &=&\sum_{i \neq j} \mu M_{i j}^{\theta}=\mu(J-1) M_{i j}^{\theta}, \quad &\text { and so } \left(M_{i j} / M_{j}\right)^{\theta}&=&\frac1{\mu(J-1)} \tag{13}
-\end{eqnarray}</script><p>最后一个等式适用于所有的$i\neq j$。现在，将（11）和（12）代入（2）中可以立即得到$\alpha_HY_j=\phi C_j^2$，即（7）的简单重新排列。在（3）中，由于对称性，参数$\gamma_i,\gamma_j$和$C_i,C_j$可以被消掉，代入（13）得到$M_{ij}=\frac{\alpha_M}{J-1}Y_j$。请注意，根据第二个下标将这个公式相加可以得到：</p>
-<script type="math/tex; mode=display">
-\sum_{k} M_{j k}=\sum_{k \neq j} \frac{\alpha_{M}}{J-1} Y_{k}=\alpha_{M} Y_{j}\tag{14}</script><p>将（7）、（8）、（14）代入（6）即可得式（9）。根据（5）和之前的结果，我们得到</p>
-<script type="math/tex; mode=display">
-Y_{j}=H_{j}^{\alpha_{H}}\left(R Y_{j}\right)^{\alpha_{K}}\left(S Y_{j}\right)^{\alpha_{M}}</script><p>得到（10），从而完成了证明。</p>
-</blockquote>
-<p>不难看出，命题1中的方程在决策变量中遵循递推格式——$C_j$仅用模型参数表示，$Y_j$用$C_j$表示，其余用$Y_j$表示。</p>
-<h2 id="4-结论"><a href="#4-结论" class="headerlink" title="4. 结论"></a>4. 结论</h2><p>正如我们在引言中所指出的，本文的主要目的是证明DSGE模型可以用于分析经济结构，并扩展DSGE模型使其能解释现有模型没有捕捉到的一些现实生活现象。我们在这个方向上迈出了第一步，设计了一个简单的基于RBC的DSGE模型，该模型可以容纳任意数量的部门，这些部门之间的相互作用由国民账户按照公认的欧盟会计准则编制的投入产出表来描述。在第三章中，我们推导了可以输入到广泛使用的<code>Dynare</code>软件包中的平衡条件。</p>
-<p>然而，即使在这种简单的设置中，在模型可以用于实际数据之前，仍有一些实际障碍需要解决。具体来说，需要有效的稳态数值解。到目前为止，我们只得到了一些初步的结果，即在<strong>命题1</strong>中描述的对称问题的特殊情况下的稳态特性。将来，我们的目标是测试这些结果在多大程度上可以用来为解决一般情况下问题的数值算法找到初始猜测。</p>
-<p>未来研究的其他目标包括根据捷克数据校准模型，并将基线模型扩展到更精细的设置；这些扩展可能如下：</p>
-<ul>
-<li>更多行业特定参数（如折旧率、技术冲击等）</li>
-<li>引入政府和外国部门</li>
-<li>明确对待劳动力市场及其不完善之处</li>
-<li>纳入可能的价格、劳动力和资本调整成本</li>
-</ul>
-<p><sup><a href="#fn_1" id="reffn_1">1</a></sup>:Ambrisko, R. , Babecky, J. , Rysanek, J. , &amp; Valenta, V. . (2012). Assessing the impact of fiscal measures on the czech economy. <em>Working Papers,</em> <em>44</em>(3), 350-357.</p>
-<p>(链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Yg01vJUaO189ufFIQuuSrw">https://pan.baidu.com/s/1Yg01vJUaO189ufFIQuuSrw</a>  密码: o44g)</p>
-<p><sup><a href="#fn_2" id="reffn_2">2</a></sup>:EUROSTAT: <em>European System of Accounts (ESA 1995)</em>. Eurostat, Luxemburg, 1996.<br><sup><a href="#fn_3" id="reffn_3">3</a></sup>:Štork, Z., Závacká, J., Vávra, M.: Hubert: DSGE Model of the Czech Economy. Working Paper2/2009, Ministry of Finance of the Czech Republic.<br><sup><a href="#fn_4" id="reffn_4">4</a></sup>:Zbynek, S. . (2011). <em>A DSGE model of the Czech economy: a Ministry of Finance approach</em>. EcoMod.<br><sup><a href="#fn_5" id="reffn_5">5</a></sup>:Bouakez, H. , Emanuela, C. , &amp; Ruge-Murcia, F. . (2005). The transmission of monetary policy in a multi-sector economy. <em>Cahiers de recherche</em>.</p>
-<p>(链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1RyO7qxbkRko5yycNUZGjFQ">https://pan.baidu.com/s/1RyO7qxbkRko5yycNUZGjFQ</a>  密码: 5473)</p>
-<p><sup><a href="#fn_6" id="reffn_6">6</a></sup>:Bouakez, H. , Cardia, E. , &amp; Ruge-Murcia, F. J. . (2009). Sectoral price rigidity and aggregate dynamics. <em>European Economic Review**,</em> <em>65</em>(1-2009), 1-22.</p>
-<p>(链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1w6Gafw9Su73fIkI7--e3yA">https://pan.baidu.com/s/1w6Gafw9Su73fIkI7--e3yA</a>  密码: w8j2)</p>
-<p><sup><a href="#fn_7" id="reffn_7">7</a></sup>:Uhlig, H.: <em>A Toolkit for Analyzing Nonlinear Dynamic Stochastic Model Easily.</em> CentER, 1995</p>
-<p>(链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1O8r7-fJ7MFswgabSQdBVRQ">https://pan.baidu.com/s/1O8r7-fJ7MFswgabSQdBVRQ</a>  密码: ipog)</p>
-<p><sup><a href="#fn_9" id="reffn_9">9</a></sup>:具体地说，我们取消了第三个方程两边的相等项，并注意到在平衡状态下，$Z=\rho Z$，因此$Z=0$。</p>
-
-          </div>
-      
+    </div>
+    
     <footer class="article-footer">
       
         <div class="article-tag-wrap">
-          <!-- 
+          
     <div class="article-reward">
         <a id="reward-btn" href="javascript:;">打赏</a>
         <div id="reward-content">
@@ -397,17 +290,17 @@ Y_{j}=H_{j}^{\alpha_{H}}\left(R Y_{j}\right)^{\alpha_{K}}\left(S Y_{j}\right)^{\
         </div>
     </div>
 
- -->
+
           
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" rel="tag">动态随机一般均衡模型</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" rel="tag">投入产出</a></li></ul>
 
-          <!-- 
+          
     <div class="social-share">
       <span>分享到:</span>
     </div>
 
 
- -->
+
         </div>
       
       
@@ -446,8 +339,7 @@ Y_{j}=H_{j}^{\alpha_{H}}\left(R Y_{j}\right)^{\alpha_{K}}\left(S Y_{j}\right)^{\
       
     </footer>
   </div>
-</article>
-</section>
+</article></section>
         
           <aside id="sidebar">
   
@@ -512,50 +404,6 @@ Y_{j}=H_{j}^{\alpha_{H}}\left(R Y_{j}\right)^{\alpha_{K}}\left(S Y_{j}\right)^{\
       <a href="../../../../tags/2035/" style="font-size: 10px;">2035</a> <a href="../../../../tags/DSGE/" style="font-size: 10px;">DSGE</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/SSA/" style="font-size: 10px;">SSA</a> <a href="../../../../tags/VAR/" style="font-size: 10px;">VAR</a> <a href="../../../../tags/stata/" style="font-size: 10px;">stata</a> <a href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" style="font-size: 10px;">不变价格</a> <a href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" style="font-size: 10px;">不稳定就业</a> <a href="../../../../tags/%E5%81%A5%E5%BA%B7/" style="font-size: 10px;">健康</a> <a href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" style="font-size: 10px;">克鲁格曼</a> <a href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" style="font-size: 10px;">公共卫生</a> <a href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" style="font-size: 10px;">共产党宣言</a> <a href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" style="font-size: 10px;">凸函数</a> <a href="../../../../tags/%E5%87%B8%E9%9B%86/" style="font-size: 10px;">凸集</a> <a href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">动态随机一般均衡模型</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" style="font-size: 10px;">劳动价值论</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" style="font-size: 10px;">劳动过程</a> <a href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" style="font-size: 10px;">包络定理</a> <a href="../../../../tags/%E5%8C%BB%E7%96%97/" style="font-size: 10px;">医疗</a> <a href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" style="font-size: 10px;">十四五</a> <a href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" style="font-size: 10px;">南北贸易</a> <a href="../../../../tags/%E5%8D%B1%E6%9C%BA/" style="font-size: 10px;">危机</a> <a href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">发刊技巧</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">古典</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 10px;">古典经济学</a> <a href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" style="font-size: 15px;">名词解释</a> <a href="../../../../tags/%E5%90%8E%E5%87%AF/" style="font-size: 17.5px;">后凯</a> <a href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" style="font-size: 10px;">向量自回归</a> <a href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">国内大循环</a> <a href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" style="font-size: 10px;">国民经济核算</a> <a href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 12.5px;">国际贸易</a> <a href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" style="font-size: 10px;">基础范畴</a> <a href="../../../../tags/%E5%A2%9E%E9%95%BF/" style="font-size: 10px;">增长</a> <a href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" style="font-size: 10px;">外生冲击</a> <a href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">局部投入产出闭模型</a> <a href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">库恩-塔克条件</a> <a href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" style="font-size: 10px;">建筑业</a> <a href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" style="font-size: 10px;">开集闭集</a> <a href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" style="font-size: 17.5px;">恩格斯</a> <a href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" style="font-size: 10px;">投入产出</a> <a href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" style="font-size: 10px;">拉格朗日乘子法</a> <a href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" style="font-size: 10px;">数学规划</a> <a href="../../../../tags/%E6%96%AF%E5%AF%86/" style="font-size: 10px;">斯密</a> <a href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">新古典</a> <a href="../../../../tags/%E6%9D%82%E8%AE%B0/" style="font-size: 12.5px;">杂记</a> <a href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" style="font-size: 12.5px;">李斯特</a> <a href="../../../../tags/%E6%9D%A8%E6%A0%BC/" style="font-size: 10px;">杨格</a> <a href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" style="font-size: 10px;">核心期刊</a> <a href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">法国调节学派</a> <a href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" style="font-size: 10px;">现代货币理论</a> <a href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" style="font-size: 10px;">社会干预</a> <a href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" style="font-size: 12.5px;">线性规划</a> <a href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">美国社会积累结构学派</a> <a href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" style="font-size: 10px;">自由贸易</a> <a href="../../../../tags/%E8%A5%BF%E9%A9%AC/" style="font-size: 10px;">西马</a> <a href="../../../../tags/%E8%AE%A1%E9%87%8F/" style="font-size: 10px;">计量</a> <a href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" style="font-size: 12.5px;">调节理论</a> <a href="../../../../tags/%E8%B0%A2%E5%85%8B/" style="font-size: 10px;">谢克</a> <a href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" style="font-size: 10px;">财政管制</a> <a href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" style="font-size: 17.5px;">资本循环</a> <a href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" style="font-size: 10px;">远景目标</a> <a href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" style="font-size: 10px;">金融化</a> <a href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" style="font-size: 10px;">雇佣劳动</a> <a href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" style="font-size: 20px;">马克思</a> <a href="../../../../tags/%E9%AB%98%E5%B3%B0/" style="font-size: 10px;">高峰</a>
     </div>
   </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/">2021年06月</a><span class="archive-list-count">59</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/">2020年12月</a><span class="archive-list-count">65</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/2035/" rel="tag">2035</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/DSGE/" rel="tag">DSGE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/SSA/" rel="tag">SSA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/VAR/" rel="tag">VAR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/stata/" rel="tag">stata</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" rel="tag">不变价格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" rel="tag">不稳定就业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" rel="tag">克鲁格曼</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" rel="tag">公共卫生</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" rel="tag">共产党宣言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" rel="tag">凸函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E9%9B%86/" rel="tag">凸集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" rel="tag">动态随机一般均衡模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" rel="tag">劳动价值论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" rel="tag">劳动过程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" rel="tag">包络定理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%BB%E7%96%97/" rel="tag">医疗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" rel="tag">十四五</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" rel="tag">南北贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%B1%E6%9C%BA/" rel="tag">危机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" rel="tag">发刊技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8/" rel="tag">古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">古典经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" rel="tag">名词解释</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8E%E5%87%AF/" rel="tag">后凯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" rel="tag">向量自回归</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" rel="tag">国内大循环</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" rel="tag">国民经济核算</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" rel="tag">国际贸易</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" rel="tag">基础范畴</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A2%9E%E9%95%BF/" rel="tag">增长</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" rel="tag">外生冲击</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" rel="tag">局部投入产出闭模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" rel="tag">库恩-塔克条件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" rel="tag">建筑业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" rel="tag">开集闭集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" rel="tag">恩格斯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" rel="tag">投入产出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" rel="tag">拉格朗日乘子法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" rel="tag">数学规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%AF%E5%AF%86/" rel="tag">斯密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" rel="tag">新古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" rel="tag">李斯特</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%A8%E6%A0%BC/" rel="tag">杨格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" rel="tag">核心期刊</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" rel="tag">法国调节学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" rel="tag">现代货币理论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" rel="tag">社会干预</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" rel="tag">线性规划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" rel="tag">美国社会积累结构学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" rel="tag">自由贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%A5%BF%E9%A9%AC/" rel="tag">西马</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%A1%E9%87%8F/" rel="tag">计量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" rel="tag">调节理论</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%A2%E5%85%8B/" rel="tag">谢克</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" rel="tag">财政管制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" rel="tag">资本循环</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" rel="tag">远景目标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" rel="tag">金融化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" rel="tag">雇佣劳动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" rel="tag">马克思</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%AB%98%E5%B3%B0/" rel="tag">高峰</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-link"></i> 友情链接</h3>
-    <div class="widget">
-      <ul>
-      
-        <li>
-          <a href="../../../../http:/www.example1.com/">site-name1</a>
-        </li>
-      
-        <li>
-          <a href="../../../../http:/www.example2.com/">site-name2</a>
-        </li>
-      
-        <li>
-          <a href="../../../../http:/www.example3.com/">site-name3</a>
-        </li>
-      
-      </ul>
-    </div>
-  </div>
-
 
   
 </aside>
@@ -708,20 +556,5 @@ Y_{j}=H_{j}^{\alpha_{H}}\left(R Y_{j}\right)^{\alpha_{K}}\left(S Y_{j}\right)^{\
 
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

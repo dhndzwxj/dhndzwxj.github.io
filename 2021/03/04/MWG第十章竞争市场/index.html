@@ -142,7 +142,8 @@
 
 
     </div>
-    <!-- <div class="e-content article-entry" itemprop="articleBody">
+
+    <div class="e-content article-entry" itemprop="articleBody">
       
         <h3 id="10-A-引言"><a href="#10-A-引言" class="headerlink" title="10.A 引言"></a>10.A 引言</h3><p>马歇尔（1920）将市场简化为仅有一种商品(或一组相关商品)，每个消费者对该种商品的花费仅占其总预算的一小部分。这样，<span style='font-family:fangsong'>这种商品市场的变化几乎不会影响所有其他商品的价格</span>。</p>
 <p>消费者效用函数设为拟线性形式：</p>
@@ -465,320 +466,12 @@ c_s(q)=K+\varphi(q),q\ge0</script>
           </blockquote>
         
       
-    </div> -->
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-          
-      
-      
-          <h3 id="10-A-引言"><a href="#10-A-引言" class="headerlink" title="10.A 引言"></a>10.A 引言</h3><p>马歇尔（1920）将市场简化为仅有一种商品(或一组相关商品)，每个消费者对该种商品的花费仅占其总预算的一小部分。这样，<span style='font-family:fangsong'>这种商品市场的变化几乎不会影响所有其他商品的价格</span>。</p>
-<p>消费者效用函数设为拟线性形式：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &&u(x,m)=m+\phi(x)    \notag\\
-    \Rightarrow&&v(p_x,p_m,w)=w+\phi(p_x,p_m)    \notag\\
-    &&\text{为什么支出函数是这个形式呢？后面有证明！}    \notag
-\end{eqnarray}</script><p>这里研究的是由两种商品组成的模型，我们重点关注其中一种商品$x$，而将此商品之外的所有其他商品支出视为另外一种商品，后者被称为<strong>计价物</strong>($m$)。举一个简单的例子：</p>
-<blockquote>
-<p>效用函数为：$u(x_1,x_2)=\ln x_1+x_2$，套用上面的定义，商品2为计价物。于是最优化问题可以写成：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max_{x_1,x_2} &&\ln x_1+x_2    \notag\\
-    \text{s.t.}&& p_1x_1+p_2x_2=w    \notag 
-\end{eqnarray}</script><p>一阶条件：</p>
-<script type="math/tex; mode=display">
-\frac{1}{x_1}=\lambda p_1;\quad 1=\lambda p_2\Rightarrow
-\left\{\begin{aligned}
-    x_1^\star &= \frac{p_2}{p_1}\\
-    x_2^\star &= \frac{w-p_2}{p_2}
-\end{aligned}\right.</script><p>由于商品2是计价物，令其价格为1，得到$x_1^\star=\frac1{p_1},x_2^\star=w-1$，这样得到间接效用函数为：</p>
-<script type="math/tex; mode=display">
-v(p_1,w)=w+\phi(p_1)</script><hr>
-<p>位似偏好：$\succsim$是位似偏好当$x\sim y\Rightarrow \alpha x\sim\alpha y,\forall\alpha&gt;0$。</p>
-<p>单个需求可以直接加总为总需求，总需求可以保持单个需求的性质（于是存在“代表性消费者”）</p>
-<p>位似偏好性质：无差异曲线沿着本位商品平移</p>
-</blockquote>
-<h3 id="10-B-帕累托最优和竞争均衡"><a href="#10-B-帕累托最优和竞争均衡" class="headerlink" title="10.B 帕累托最优和竞争均衡"></a>10.B 帕累托最优和竞争均衡</h3><p>如下假定：</p>
-<ol>
-<li>一般均衡的背景下。</li>
-<li>$I$个消费者，消费偏好是外生给定的，可用函数$u(\cdot)$来表示，不会随着产品价格的变化而改变。消费集设为$X_i$。</li>
-<li>$J$个厂商，对厂商而言，技术是外生给定的，初始禀赋也是外生给定的。<span style='color:blue'>每个企业的</span>生产可能集用生产集$Y_j\subset\mathbb{R}^L$来表示，其元素为生产向量$\textbf{y}_j=(y_{1j},\cdots,y_{Lj})’\in\mathbb{R}^L$。</li>
-<li>$L$种商品。每种商品的初始总量(称为商品$l$的<strong>总禀赋</strong>)可用$w_l\ge0$来表示，</li>
-<li>如果$(\textbf{y}_1,\cdots,\textbf{y}_J)\in\mathbb{R}^{L\times J}$是$J$个企业的生产向量，那么经济中商品$l$的（净）数量为$w_l+\sum_j \textbf{y}_{lj}$。</li>
-</ol>
-<p><span style='font-family:hei;font-size:20px'>定义10.B.1</span>：$(\textbf{x}_1,\cdots,\textbf{x}_I,\textbf{y}_1,\cdots,\textbf{y}_J)$被称为一种<span style='color:red'>经济配置</span>。前一半是$I$个消费者各自的消费向量，后一半是$J$个厂商各自的生产向量。一种经济配置被称为<span style='color:red'>可行的</span>，当</p>
-<script type="math/tex; mode=display">
-\sum_{i=1}^I x_{li}\le w_l+\sum_{j=1}^J y_{lj},l=1,2,\cdots,L</script><p>即对每种商品的消费量，不能超过这种商品的禀赋和当期生产量（生产消耗量）之和（差）。</p>
-<p><span style='font-family:hei;font-size:20px'>定义10.B.2</span><span style='color:red'>帕累托最优</span>。对于可行配置$(\textbf{x}_1,\cdots,\textbf{x}_I,\textbf{y}_1,\cdots,\textbf{y}_J)$来说，如果不存在其他的可行配置$(\textbf{x}_1’,\cdots,\textbf{x}_I’,\textbf{y}_1’,\cdots,\textbf{y}_J’)$使得：对所有的$i=1,2,\cdots,I$都有$u_i(\textbf{x}_i’)\ge u_i(\textbf{x}_i)$且存在某个$i_0$有$u_{i_0}(\textbf{x}_{i_0}’)&gt; u_{i_0}(\textbf{x}_{i_0})$。那么该配置被称为<strong>帕累托最优的</strong>或者<strong>帕累托有效率的</strong>。</p>
-<p><span style='font-family:hei;font-size:20px'>效用可能集</span></p>
-<p>在两消费者组成的经济中，效用可能集被定义为：</p>
-<script type="math/tex; mode=display">
-U=\{ (u_1,u_2) \lvert \text{存在可行配置}(\textbf{x}_1,\textbf{x}_2,\textbf{y}_1,\cdots,\textbf{y}_J)\text{使得}u_i\le u(\textbf{x}_i)\}</script><p><span style='font-family:hei;font-size:20px'>效用可能边界</span></p>
-<p>如果将商品$l$的消费和产出水平固定为：$(\bar{\textbf{x}}_1,\cdots,\bar{\textbf{x}}_I,\bar{\textbf{y}}_1,\cdots,\bar{\textbf{y}}_J)$。效用可能边界可以表达为如下的集合：</p>
-<script type="math/tex; mode=display">
-\left\{ (u_1,\cdots,u_l) \left\lvert \sum_i u_i\le \sum_i\phi_i(\bar{\textbf{x}}_i)+w_m-\sum_j c_j(\bar{\textbf{q}}_j)\right. \right\}</script><p><span style='font-family:hei;font-size:24px'>竞争均衡</span></p>
-<p>本章分析的是完全竞争市场经济，社会的<span style='font-family:fangsong'>初始禀赋和技术可能性都由消费者所有</span>。设消费者$i$的初始禀赋向量为：$\textbf{w}_i=(w_{1i},\cdots,w_{Li})$。因此商品$l$的初始禀赋应为：$\sum_{i=1}^I w_{li}=w_l$。我们还假设消费者$i$在企业$j$中所占的股份为$\theta_{ij},\sum_{i=1}^n\theta_{ij}=1$。因此该消费者有权向企业$j$索要的利润份额为$\theta_{ij}$。</p>
-<p>消费者和厂商在完全竞争市场上都是价格接受者，商品向量的市场价格向量记为$\textbf{p}=(p_1,\cdots,p_L)’$。于是<span style='color:red'>竞争均衡（瓦尔拉斯均衡）</span>的概念为：</p>
-<p><span style='font-family:hei;font-size:20px'>定义10.B.3</span>配置和价格向量构成了一个竞争均衡（瓦尔拉斯均衡），如果它能满足以下条件：</p>
-<ol>
-<li><p>利润最大化。$\textbf{y}_j^\star=\arg\min_{\textbf{y}_j\in Y_j} \textbf{p}^\star\cdot\textbf{y}_j$</p>
-</li>
-<li><p>效用最大化。</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max_{\textbf{x}_i\in X} &&u_i(\textbf{x}_i)    \notag\\
-\text{s.t.} && \textbf{p}^\star\cdot \textbf{x}_i\le\textbf{p}^\star\cdot \textbf{w}_i+\sum_{j=1}^n \theta_{ij}\times(\textbf{p}^\star\cdot\textbf{y}_j^\star)    \notag
-\end{eqnarray}</script><p>约束条件的含义是，消费者$i$的消费总额，不能超过他自身初始禀赋和得到的利润之和。</p>
-</li>
-<li><p>市场出清。$\sum_{i=1}^I \textbf{x}_{li}^\star=w_l+\sum_{j=1}^J \textbf{y}_{lj}^\star$</p>
-</li>
-</ol>
-<h3 id="10-C-局部均衡竞争分析"><a href="#10-C-局部均衡竞争分析" class="headerlink" title="10.C 局部均衡竞争分析"></a>10.C 局部均衡竞争分析</h3><p>局部均衡分析就是将市场看成是一种商品的市场，这种商品仅占整体经济的极小部分。（<span style='font-family:kai'>因此，任何额外一单位的财富中，只有很小一部分用于这种商品的购买，因而它的财富效应很小</span>）预期该商品的财富效应非常小，该市场的变化几乎不会影响其他商品的价格。（<span style='font-family:kai'>这种商品的市场规模很小，该商品市场发生变化的替代效应也很小，因而不会影响其他商品的价格。</span>）</p>
-<p><span style='color:red'>由于其他商品价格固定不变，我们自然可以将消费者对所有其他商品的支出视为一种<strong>复合商品</strong>，我们称这种复合商品为<strong>计价物</strong>。</span>于是下面研究一个简单的<strong>两商品拟线性模型</strong>。经济中有商品$l$和计价物，其消费量分别记为$x_i$和$m_i$。每个消费者的效用函数都是拟线性的：</p>
-<script type="math/tex; mode=display">
-u_i(m_i,x_i)=m_i+\phi_i(x_i)</script><p>令每名消费者的消费集为$\mathbb{R}\times\mathbb{R}_+$，这里为方便起见，我们假定计价物$m$的消费量可能是负数。函数$\phi{(\cdot)}$满足以下性质：</p>
-<ul>
-<li>有上界的</li>
-<li>二次可微的</li>
-<li>$\phi’(x_i)&gt;0,\phi’’(x_i)&lt;0,\forall x_i$</li>
-<li>$\phi_i(0)=0$</li>
-</ul>
-<p>我们关注的是商品$l$的市场，所有其他商品商品形成的复合商品视为等价物（$m$代表花费在所有其他商品上的总钱数）。我们已经知道，<span style='color:red'>在拟线性效用函数中，非计价物的财富效用为0。</span></p>
-<blockquote>
-<p>习题3.D.4</p>
-<p><span style='font-family:fangsong'>令$(-\infty,+\infty)\times\mathbb{R}_+^{L-1}$表示消费集，假设偏好是严格凸且为拟线性的。标准化$p_1=1$。(商品1是计价物)</span></p>
-<p><span style='font-family:fangsong'>(a)证明商品$2,\cdots,L$的瓦尔拉斯需求函数与财富无关。对于商品1需求的财富效应，这意味着什么？</span></p>
-<p><span style='font-family:fangsong'>(b)证明间接效用函数可以写为下列形式：$v(\textbf{p},w)=w+\phi(\textbf{p})$对于某个函数$\phi(\cdot)$。</span></p>
-<p><span style='font-family:fangsong'>(c)为简单起见，假设$L=2$并将消费者的效用函数写为$u(x_1,x_2)=x_1+\eta(x_2)$。然而，现在令消费集为$\mathbb{R}_+^2$，从而对计价物$x_1$的消费存在着非负约束。固定价格$p$，考察当财富$w$变化时，消费者的瓦尔拉斯需求如何变化。对计价物消费的非负约束何时是无关紧要的？</span></p>
-<p><strong>解答：</strong></p>
-<p>(a)</p>
-<p>令$\textbf{e}_1=(1,0,\cdots,0)\in\mathbb{R}^L$。我们将证明对每个$\textbf{p}\in\mathbb{R}_{++}^L,w\in\mathbb{R},\alpha\in\mathbb{R}$$\textbf{x}\in(-\infty,+\infty)\times\mathbb{R}_+^{L-1}$，如果$\textbf{x}=\textbf{x}(\textbf{p},w)$，那么$\textbf{x}+\alpha \textbf{e}_1=\textbf{x}(\textbf{p},w+\alpha)$。</p>
-<p>首先注意到，由于$p_1=1,\textbf{p}\cdot(\textbf{x}+\alpha\textbf{e}_1)\le w+\alpha$，也就是说，$\textbf{x}+\alpha\textbf{e}_1$在价格和财富为$(\textbf{p},w+\alpha)$时是能买得起的。任取$\textbf{y}\in\mathbb{R}_+^L$和$\textbf{p}\cdot\textbf{y}\le w+\alpha$，于是$\textbf{p}\cdot(\textbf{y}-\alpha\textbf{e}_1)\le w$。由于$\textbf{x}=\textbf{x}(\textbf{p},w)$是条件$(\textbf{p},w)$下的最优解，因此</p>
-<script type="math/tex; mode=display">
-\color{red}{\textbf{x}\succsim\textbf{y}-\alpha\textbf{e}_1\xrightarrow{根据偏好是拟线性的}\textbf{x}+\alpha\textbf{e}_1\succsim\textbf{y},\textbf{x}+\alpha\textbf{e}=\textbf{x}(\textbf{p},w+\alpha)}</script><p>上面的结果说明，随着财富增加，只会消费更多的商品1。因此，对于每个$l\in\{2,\cdots,L\}$，$w\in\mathbb{R},w’\in\mathbb{R}$，$x_l(\textbf{p},w)=x_l(\textbf{p},w’)$。也就是说，商品$2,\cdots,L$的需求和财富无关。</p>
-<p>对于商品1，有$\frac{\partial x_1(\textbf{x},w)}{\partial w}=1$，即任何多余的钱都被用于购买商品1。</p>
-<p>(b)</p>
-<p>由于$\textbf{x}(\textbf{p},w)=\textbf{x}(\textbf{p},0)+w\textbf{e}_1$(前面文章已经说过，这是拟线性函数专有的性质)。偏好关系可采取拟线性形式的效用函数：$u(\textbf{x})=x_1+\tilde u(x_2,\cdots,x_L)$。于是有：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    v(\textbf{p},w)&=&u(\textbf{x}(\textbf{p},w))=u(\textbf{x}(\textbf{p},0)+w\textbf{e}_1)    \notag\\
-    &=&    u(\textbf{x}(\textbf{p},0))+w    \text{(拟线性函数的独特性质)}\notag\\
-    &=&    w+\phi(p)    \notag
-\end{eqnarray}</script><hr>
-<p>(c)问答案暂时没有看懂。。。</p>
-<p>(c)非负约束以等号形式成立，当且仅当$p_2x_2(\textbf{p},0)&gt;w$。注意到，$x_2(\textbf{p},0)=(\eta’)^{-1}p_2$</p>
-</blockquote>
-<p>在下面的讨论中，我们将计价物的价格标准化为1，令$p$表示商品$l$的价格。假定：</p>
-<ul>
-<li><p>所有企业用计价物$m$，生产商品$l$。</p>
-</li>
-<li><p>企业$j$生产$q_j$单位商品l所需要的$m$的数量，可以用成本函数$c_j(q_j)$给出。</p>
-</li>
-<li><p>用$z_j$表示企业$j$使用计价物$m$作为投入的数量，构造企业$j$的生产集：</p>
-<ul>
-<li><script type="math/tex; mode=display">
-Y_j=\{ (-z_j,q_j)\lvert q_j\ge 0,z_j\ge c_j(q_j) \}</script></li>
-</ul>
-</li>
-<li><p>假设是二次可微的，并且对所有$q_j\ge 0$，都有$c_j’(q_j)&gt;0$以及$c_j’’(q_j)\ge 0$。</p>
-</li>
-</ul>
-<p><span style='font-family:hei;font-size:20px'>利润最大化</span></p>
-<p>给定商品$l$的价格为$p^\star$。</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &&\max_{q_j\ge 0} p^\star q_j-c_j(q_j)    \notag\\
-    \text{FOC: } &&p^\star\le c_j'(q_j^\star)    (\text{等式成立条件为}q_j^\star>0)    \notag
-\end{eqnarray}</script><p><span style='font-family:hei;font-size:20px'>消费者效用最大化</span></p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &&\max_{m_i\in\mathbb{R},x_i\in\mathbb{R}_+} m_i+\phi_i(x_i)    \notag\\
-    \text{s.t. } && m_i+p^\star x_i\le w_{mi}
-    +\sum_{j=1}^n\theta_{ij}\left[p^\star q_j^\star-c_j(q_j^\star)\right]    \notag
-\end{eqnarray}</script><p>在这个问题的任何解中，预算约束都以等号成立。从预算约束中解出$m_i$，然后代入目标函数。这样，$x_i^\star$必定是下列问题的解。</p>
-<script type="math/tex; mode=display">
-\max_{x_i\ge 0} \phi_i(x_i)-p^\star x_i+w_{mi}
-    +\sum_{j=1}^n\theta_{ij}\left[p^\star q_j^\star-c_j(q_j^\star)\right]</script><p>一阶条件为：</p>
-<script type="math/tex; mode=display">
-\phi'(x_i)\le p^\star(\text{等式成立当且仅当}x_i^\star>0)</script><p><span style='font-family:hei;font-size:20px'>竞争均衡</span></p>
-<p>配置和价格$(x_1^\star,\cdots,x_I^\star,q^\star_1,\cdots,q^\star_J)$构成一个竞争均衡，当且仅当</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &&p^\star\le c_j'(q_j^\star)    (\text{等式成立条件为}q_j^\star>0)    \tag{10.C.1}\\
-    &&\phi'(x_i)\le p^\star(\text{等式成立当且仅当}x_i^\star>0)    \tag{10.C.2}\\
-    &&\sum_{i=1}^I x_i^\star = \sum_{j=1}^J q_j^\star    \tag{10.C.3}
-\end{eqnarray}</script><p>10.C.1是说，企业额外多卖出一单位商品带来的边际收入，恰好等于生产这种单位产品的边际成本。10.C.2是说，消费者额外多消费一单位商品带来的边际效用，恰好等于他购买这单位产品所花费的边际成本。10.C.3是市场出清式。</p>
-<p>商品$l$的总需求函数为：$x(p)=\sum_ix_i(p)$，是个人需求函数在水平方向上的加总。总供给函数为$q(p)=\sum_j q_j(p)$，是所有单个企业的供给函数沿着水平方向加总。均衡价格：</p>
-<script type="math/tex; mode=display">
-x(p^\star)=q(p^\star)</script><p><span style='font-family:hei;font-size:20px'>比较静态</span></p>
-<p>我们通常想知道潜在市场条件发生变化时，竞争市场的结果将会发生什么样的变化。有时我们也想知道市场条件变化如何改变某个特定市场的结果。这类问题的分析被称为比较静态分析。 </p>
-<p>假设消费者的<strong>偏好</strong>受外生参数$\alpha\in\mathbb{R}^M$的影响，效用函数$\phi(\cdot)$可以写成$\phi_i(x_i,\alpha)$。厂商的<strong>技术</strong>受外生参数$\beta\in\mathbb{R}^S$的影响，成本函数$c(\cdot)$可以写成$c_j(q_j,\beta)$。当消费者和厂商面临税收或津贴时，实际销售或购买商品的价格<strong>可能</strong>不同于市场价格$p$。</p>
-<p>令$\hat p_i(\textbf{p},\textbf{t})$和$\hat p_j(\textbf{p},\textbf{t})$分别表示在税收或者补贴参数为$t\in\mathbb{R}^K$时，消费者$i$实际支付的价格和企业$j$实际得到的价格。例如，消费者每购买一单位商品必须缴纳税收$t_i$（从量税），那么$\hat p_i(\textbf{p},\textbf{t})=p+t_i$；如果消费者缴纳的税收是售价的$t_i$个百分点（从价税），那么$\hat p_i(\textbf{p},\textbf{t})=p(1+t_i)$。</p>
-<p>对于给定的参数$(\alpha,\beta,\textbf{t})$,$I+J$个均衡量$(x_1^\star,\cdots,x_I^\star,q_1^\star,\cdots,q_J^\star)$和均衡价格$p^\star$是下列$I+J+1$个方程的解。</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &&\phi_i'(x_i^\star,\alpha)=\hat p_i(p^\star,t),\quad i=1,\cdots,I    \tag{10.C.4} \\
-    &&c_j'(q_j^\star,\beta)=\hat p_j(p^\star,t),\quad j=1,\cdots,J    \tag{10.C.5}\\
-    &&\sum_{i=1}^I x_i^\star = \sum_{j=1}^J q_j^\star \tag{10.C.6}
-\end{eqnarray}</script><p>如果这些函数都是可微的，可以用隐函数定理来求这些参数值的微小变化带来的均衡配置和价格的边际变化。</p>
-<p><span style='font-family:hei;font-size:20px'>例10.C.1 销售税的比较静态分析</span></p>
-<p>有一种新的销售税，消费者每消费一单位商品就必须付$t&gt;0$的税（从量税）。分析税收对市场价格的影响，分别用$x(p)$和$q(p)$表示税收前商品的总需求和总供给函数。</p>
-<p>设消费者效用函数为$\phi_i(\cdot)$，厂商成本函数为$c_j(\cdot)$。消费者实际支付的价格为$\hat p_i(\textbf{p},t)=p+t$，厂商得到的价格为$\hat p_j(\textbf{p},t)=p$。此时的总需求恰好为$x(\textbf{p}+\textbf{t})$，因此当税收为$t$时的均衡市场价格$(p^\star(t))$必定满足</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    x(p^\star(t)+t)=q(p^\star(t))    \tag{10.C.7}
-\end{eqnarray}</script><p>假设总需求函数和总供给函数在均衡点附近是可微的，那么对（10.C.7）微分可以得到：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &&p^{\star'}(t)=-\frac{x'(p^\star(t)+t)}{x'(p^\star(t)+t)-q'(p^\star(t))}    = -\frac{-x'(p^\star(t)+t)}{-x'(p^\star(t)+t)+q'(p^\star(t))}\tag{10.C.8}\\
-    &&(p^{\star}(t)+t)' = \frac{q'(p^\star(t))}{-x'(p^\star(t)+t)+q'(p^\star(t))}    \notag
-\end{eqnarray}</script><p>结合关于$x’(\cdot)&lt;0$和$q’(\cdot)\ge 0$得假设可知，对任何$t$都有$-1\le p^{\star’}(t)&lt;0$。因此随着税收上升，企业得到的价格$p^\star(t)$下降，消费者支付的价格$p^\star(t)+t$弱增(rise weakly)。总产量和总消费量下降。</p>
-<p>注意到，$q’(p^\star)$当很大时，有$p^{\star’}\approx 0$，即厂商的售价几乎不受影响，所有的税收负担均由消费者承担。相反当$q’(p^\star)=0$，有$p^{\star’}=-1$，厂商承担全部税收。</p>
-<h3 id="10-D-局部均衡框架下的基本福利定理"><a href="#10-D-局部均衡框架下的基本福利定理" class="headerlink" title="10.D 局部均衡框架下的基本福利定理"></a>10.D 局部均衡框架下的基本福利定理</h3><p>在拟线性的情况下，帕累托最优配置的识别问题变得非常简单。具体地说，<strong>若消费者的偏好是拟线性的， 则整体经济的效用可能集</strong>（这个集合的定义可参考 10.B 节）<strong>的边界是线性的， 而且这个边界上的所有点与下面这样的消费配置联系在一起， 这些消费配置的区别仅在于计价物数量上的区别。</strong></p>
-<p>假设我们将商品$l$的消费水平和产量水平固定在$(\bar x_1,\cdots,\bar x_l,\bar q_1,\cdots,\bar q_J)$。于是能用于在消费之间分配的计价物的总量为$w_m-\sum_{j=1}^Jc_j(\bar q_j)$（初始禀赋减去$J$家企业生产商品$l$消耗的计价物）。<span style='color:blue'>在消费者的效用函数为拟线性的情形下</span>，通过消费者之间的计价物的转移即可实现消费者之间效用的转移，更为重要的是这种转移是“一对一的”，也就是说从消费者甲身上转移一单位计价物给消费者乙，则前者的效用减少一单位后者的效用增加一单位。因此，通过合理分配计价物，$I$个消费者可达到的效用集为:(<span style='color:red'>效用可能边界</span>)</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \left\{    (u_1,\cdots,u_I)\left\lvert  \sum_{i=1}^I u_i\le\sum_{i=1}^I\phi_i(\bar x_i)+w_m-\sum_{j=1}^J c_j(\bar q_j)  \right.    \right\}    \tag{10.D.1}
-\end{eqnarray}</script><p>根据效用可能边界，商品$l$的最优消费和产出水平可以通过下列问题而得到：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max_{\textbf{x}\geqq\textbf{0},\textbf{q}\geqq\textbf{0}}
-    &&{\color{red}{\sum_{i=1}^I\phi_i(x_i)-\sum_{j=1}^Jc_j(q_j)}}+w_m    \notag\\
-    \text{s.t. }&& \sum_{i=1}^I x_i-\sum_{j=1}^J q_j=0    \notag
-\end{eqnarray}\tag{10.D.2}</script><p>(10.D.2)中红色部分的值被称为<span style='color:red'>马歇尔总剩余</span>。或简称为<span style='color:red'>总剩余</span>。可以用KT条件求解该问题的一阶条件，设$\mu$为约束条件的乘子，那么$I+J$个最优值$(x_1^\star,\cdots,x_I^\star,q_1^\star,\cdots,q_J^\star)$和乘子$\mu$满足下列$I+J+1$个方程：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &&\mu\le c_j'(q^\star_j) (\text{等式成立当且仅当}q_j^\star>0)    \tag{10.D.3}\\
-    &&\phi'_i(x_i^\star)\le\mu (\text{等式成立当且仅当}x_j^\star>0)    \tag{10.D.4}\\
-    && \sum_{i=1}^I x_i^\star =\sum_{j=1}^J q_j^\star    \tag{10.D.5}
-\end{eqnarray}</script><p>我们由此立即可知，这个模型的任何竞争均衡是帕累托最优的，因为如果我们令$\mu=p^\star$，那么在任何竞争均衡配置中，商品$l$的消费和产量水平$(x_1^\star,\cdots,x_I^\star,q_1^\star,\cdots,q_J^\star)$满足（10.D.3）到（10.D.5）。由此我们建立了<span style='color:red'>两商品拟线性经济</span>的<strong>福利经济学第一基本定理</strong>。</p>
-<p><span style='font-family:hei;font-size:20px'>命题10.D.1</span>（福利经济学第一基本定理）如果价格$p^\star$和配置$(x_1^\star,\cdots,x_I^\star,q_1^\star,\cdots,q_J^\star)$构成了一个<span style='color:blue'>竞争均衡</span>，那么这个配置$(x_1^\star,\cdots,x_I^\star,q_1^\star,\cdots,q_J^\star)$是<strong>帕累托最优</strong>的。</p>
-<p>我们已经知道商品$l$的均衡价格$p^\star$、商品$l$的均衡消费水平和产量水平$(x_1^\star,\cdots,x_I^\star,q_1^\star,\cdots,q_J^\star)$和企业的利润都不受消费者的财富水平$w_m$变动的影响。<span style='font-family:fangsong'>因此，若从一个消费者身上转移一单位计价物给另外一个消费者，则将会使前者的计价物均衡消费量减少一单位，后者的增加一单位。除此之外，这种转移不会造成任何其它变化。</span>因此，如果适当地在消费者之间转移计价物商品，由此导致的竞争均衡配置就可以产生效用可能集的边界上的任何效用向量。</p>
-<p><span style='font-family:hei;font-size:20px'>命题10.D.2</span>（福利经济学第二基本定理）对于任何帕累托最优效用水平$(u_1^\star,\cdots,u_I^\star)$，存在计价物商品在消费者之间的转移$T_1,\cdots,T_I$。(其中$\sum_iT_i=0$)使得禀赋$(w_{m1}+T_1,\cdots,w_{mI}+T_I)$实现的竞争均衡，恰好能产生效用$(u_1^\star,\cdots,u_I^\star)$。</p>
-<blockquote>
-<p>这个第二定理要是成立，收入分配调整就没有任何意义了。</p>
-</blockquote>
-<h3 id="10-E-局部均衡模型中的福利分析"><a href="#10-E-局部均衡模型中的福利分析" class="headerlink" title="10.E 局部均衡模型中的福利分析"></a>10.E 局部均衡模型中的福利分析</h3><p>我们经常想衡量市场条件变化带来的社会福利水平的变化，这样的市场条件变化有技术进步、政府实施新的税法、或市场某个缺陷的消除等。</p>
-<p>在下面的讨论中，我们假设社会对福利的评价蕴涵在社会福利函数$W(u_1,\cdots,u_I)$中，这个函数对每个效用向量制定了一个社会福利值。而且我们假设某个中央集权者想通过转移计价物商品的方法来实现社会福利的最大化。<span style='color:red'>在<strong>个人效用函数为拟线性的情形下</strong>，福利分析被大大简化了，在这种情形下，如果某个中央集权者在消费者之间进行财富再分配，那么社会福利的变动可用马歇尔总剩余（$S=\sum_i\phi_i(x_i)-\sum_jc_j(q_j)$）的变动进行衡量，<strong>无论社会有什么样的福利函数</strong>。</span></p>
-<p><span style='font-family:hei;font-size:20px'>假设：</span></p>
-<ul>
-<li>对于任何总消费水平$x$，商品$l$的个人消费都已达到最优。也就是说，对于每个消费者$i$都有$\phi_i’(x_i)=P(x)(x=\sum_i x_i)$。例如，如果消费者都是价格接受者，而且所有消费者面对相同的价格，那么这个假设条件就能得到满足。</li>
-<li>对于任何总产量水平$q$ ，每个企业的生产行为都是最优的。也就是说，对于每个企业$j$都有$c_j’(q_j)=C’(q)(q=\sum_j q_j)$。例如，如果企业都是价格接受者，而且所有企业面对着相同的价格，那么这个假设条件就能得到满足。</li>
-<li>需要强调，我们没有要求消费者面对的价格和企业面对的价格是相同的。</li>
-</ul>
-<p>现在考虑商品$l$的消费和产量水平的微分变化$(\text{d}x_1,\cdots,\text{d}x_I,\text{d}q_1,\cdots,\text{d}q_J)$。这个变化满足$\sum_i\text{d}x_i=\sum_j\text{d}q_j$。记$\text{d}x=\sum_i\text{d}x_i$。于是，马歇尔总剩余的变化为：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \text{d}S=\sum_{i=1}^I\phi_i'(x_i)\text{d}x_i-\sum_{j=1}^J c_j'(q_j)\text{d}q_j    \tag{10.E.2}
-\end{eqnarray}</script><p>根据上面的两条假设，可得</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \text{d}S = P(x)\sum_{i=1}^I \text{d}x_i-C'(q)\sum_{j=1}^J \text{d}q_j    \tag{10.E.3}
-\end{eqnarray}</script><p>最后根据市场可行性推知$x=q$。以及$\sum_i\text{d}x_i=\sum_j\text{d}q_j=\text{d}x$，上式可以写成：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \text{d}S=[P(x)-C'(x)]\text{d}x    \tag{10.E.4}
-\end{eqnarray}</script><div align='center'>
-  <img src='/../../images/MWG%E7%AC%AC%E5%8D%81%E7%AB%A0%E7%AB%9E%E4%BA%89%E5%B8%82%E5%9C%BA/image-20210306165139790.png' width=400px>
-  <center style='font-family:kai'>图10.E.2(a)</center>
-</div>
-
-
-
-<p><span style='font-family:hei;font-size:20px'>例10.E.1扭曲税的福利效应</span></p>
-<p>分析例10.C.1中的商品税问题。假设有一个保持平衡预算的从事福利事业的权威机构，将所得的税收收益以一次性总付的形式返还给消费者。这一税收和转移计划对福利的影响是什么？</p>
-<p>当税率为$t$时，我们令$(x_1^\star(t),\cdots,x_I^\star(t),q_1^\star(t),\cdots,q_J^\star(t))$表示商品$l$的均衡消费和产量水平，令$p^\star(t)$表示商品$l$的均衡价格。注意到，对于所有消费者，都有$\phi_i’(x_i^\star(t))=p^\star(t)+t$，对于所有厂商都有$c_j’(q_j^\star(t))=p^\star(t)$。于是马歇尔总剩余的变动可以表示为：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    S^\star(t)-S^\star(0)=\int_{x^\star(0)}^{x^\star(t)}[P(s)-C'(s)]\text{d}s    \tag{10.E.6}
-\end{eqnarray}</script><p>上面结果是负的，这是因为$x^\star(t)<x^\star(0)$，以及对于所有$x= x^\star(0)$，有$P(x)> C’(x)$，$x&lt;x^\star(0)$时，有$P(x)=C’(x)$。因此社会福利在$t=0$时达到最大。社会福利因$t&gt;0$导致的损失被称为<span style='color:red'>扭曲税的净损失</span>，下面图片中的阴影部分面积被称为<span style='color:red'>净损失三角形</span>。</p>
-<div align='center'>
-  <img src='/../../images/MWG%E7%AC%AC%E5%8D%81%E7%AB%A0%E7%AB%9E%E4%BA%89%E5%B8%82%E5%9C%BA/image-20210306175708593.png' width=400px>
-  <center style='font-family:kai'>图10.E.3 扭曲税造成的净福利损失</center>
-</div>
-
-<p>当消费者实际支付的价格为$\hat p$从而总消费为$x(\hat p)$时，此时的<strong>总消费者剩余</strong>是指消费者因消费商品$l$而得到的总消费者收益减去他们在商品$l$上的总支出。</p>
-<script type="math/tex; mode=display">
-CS(\hat p)=\sum_{i=1}^I \phi_i(x_i(\hat p))-\hat px(\hat p)</script><p>注意到消费是最优分配的事实，我们有</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    CS(\hat p)=\int_0^{x(\hat p)} P(s)\text{d}s-\hat px(\hat p) 
-=\int_0^{x(\hat p)} [P(s)-p]\text{d}s    \tag{10.E.7}
-\end{eqnarray}</script><p>注意到：(这里实际上是更换了积分的坐标轴)</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    CS(\hat p)=\int_{\hat p}^{+\infty} x(s)\text{d}s    \tag{10.E.8}
-\end{eqnarray}</script><p>因此由征税引起的<span style='color:red'>消费者剩余的变动</span>为：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    CS(p^\star(t)+t)-CS(p^\star(0))=-\int_{p^\star(0)}^{p^\star(t)+t} x(s)\text{d}s    \tag{10.E.9}
-\end{eqnarray}</script><p>这一结果对应于图10.E.3中的dbcf的面积。</p>
-<p>当厂商面对的实际价格为$\hat p$时，总利润或<strong>总生产者剩余</strong>为：</p>
-<script type="math/tex; mode=display">
-\Pi(\hat p)=\hat pq(\hat p)-\sum_{j=1}^J c_j(q_j(\hat p))</script><p>注意到产量时最优分配的事实，我们有</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \Pi(\hat p) &=& \Pi_0+\int_0^{q(\hat p)} [\hat p-C'(s)]\text{d}s    \tag{10.E.10}\\
-    &=& \Pi_0+\int_0^{\hat p}q(s)\text{d}s    \tag{10.E.11}
-\end{eqnarray}</script><p>由于在本例子中，生产者不交税，因此当税率为$t$时它面对的价格为$p^\star(t)$。因此生产者剩余的变动为：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \Pi(\hat p(t))-\Pi(\hat p(0))=-\int_{\hat p(t)}^{\hat p(0)} q(s)\text{d}s    \tag{10.E.12}
-\end{eqnarray}</script><p>最后，税收收入为$tx^\star(t)$。于是扭曲税的净损失就可以很容易计算出来了。</p>
-<h3 id="10-F-自由进入与长期竞争均衡"><a href="#10-F-自由进入与长期竞争均衡" class="headerlink" title="10.F 自由进入与长期竞争均衡"></a>10.F 自由进入与长期竞争均衡</h3><p><span style='font-family:hei;font-size:20px'>假设</span></p>
-<ul>
-<li>市场有无数潜在的厂商，每一个厂商都有可能获得最有效的生产技术。厂商可根据利润机会自由进出市场。</li>
-<li>假设有$J$家厂商，每一厂商生产商品$l$的成本函数为$c(q)$，总需求函数为$x(\cdot)$，其反函数为$P(\cdot)$。</li>
-</ul>
-<p><span style='font-family:hei;font-size:20px'>定义10.F.1</span> 对每一个有$c(0)=0$的潜在的从事生产的厂商，在给定总需求函数$x(p)$和成本函数$c(q)$时，一个三维变量$(p^\star,q^\star,J^\star)$构成长期竞争均衡，当</p>
-<ul>
-<li>$q^\star=\arg\min_{q\ge0}p^\star q-c(q)$（利润最大化）。</li>
-<li>$x(p^\star)=J^\star q^\star$(需求=供给)。</li>
-<li>$p^\star q^\star-c(q^\star)=0$（自由进入条件）。</li>
-</ul>
-<p>长期供给对应：</p>
-<script type="math/tex; mode=display">
-Q(p)=\left\{
-\begin{aligned}
-    &+\infty, \text{if } \pi(p)>0\\
-    &\{ Q\ge0\lvert Q=Jq \},\text{if }\pi(p)=0
-\end{aligned}
-\right.</script><p>如果成本函数$c(q)$规模报酬不变，即$c(q)=cq$</p>
-<script type="math/tex; mode=display">
-Q(p)=\left\{
-\begin{aligned}
-    &+\infty, \text{if } p>c\\
-    &[0,+\infty),\text{if }p=c\\
-    &0,\text{if }p<c
-\end{aligned}
-\right.</script><p>如果成本函数递增和严格凸，规模报酬递减。那么不存在长期竞争均衡。</p>
-<p>要使一定数目的厂商的均衡存在，长期成本函数必须具有一个严格为正的效率规模。成本函数唯一的效率规模：$\bar c=\frac{c(\bar q)}{\bar q}$。</p>
-<script type="math/tex; mode=display">
-Q(p)=\left\{
-\begin{aligned}
-    &+\infty, \text{if } p>\bar c\\
-    &\{Q\ge0\lvert Q=J\bar q\},\text{if }p=\bar c\\
-    &0,\text{if }p<\bar c
-\end{aligned}
-\right.</script><p>长期均衡，$J=\frac{x(\bar c)}{\bar q}$。</p>
-<p><span style='font-family:hei;font-size:20px'>短期和长期的比较静态分析</span></p>
-<p>市场冲击时，要区分长期效应和短期效应。在长期均衡中有$J^\star$个厂商，每个厂商有$q^\star$产出。假设存在某种需求冲击。长期成本函数写为：</p>
-<script type="math/tex; mode=display">
-c(q)=\left\{
-\begin{aligned}
-    &K+\varphi(q),\text{if }q>0\\
-    &0,\text{if }q=0
-\end{aligned}
-\right.</script><p>短期中，厂商数目仍为$J^\star$，短期成本函数为：</p>
-<script type="math/tex; mode=display">
-c_s(q)=K+\varphi(q),q\ge0</script>
-          </div>
-      
+    </div>
+    
     <footer class="article-footer">
       
         <div class="article-tag-wrap">
-          <!-- 
+          
     <div class="article-reward">
         <a id="reward-btn" href="javascript:;">打赏</a>
         <div id="reward-content">
@@ -797,15 +490,15 @@ c_s(q)=K+\varphi(q),q\ge0</script>
         </div>
     </div>
 
- -->
+
           
-          <!-- 
+          
     <div class="social-share">
       <span>分享到:</span>
     </div>
 
 
- -->
+
         </div>
       
       
@@ -844,8 +537,7 @@ c_s(q)=K+\varphi(q),q\ge0</script>
       
     </footer>
   </div>
-</article>
-</section>
+</article></section>
         
           <aside id="sidebar">
   
@@ -910,50 +602,6 @@ c_s(q)=K+\varphi(q),q\ge0</script>
       <a href="../../../../tags/2035/" style="font-size: 10px;">2035</a> <a href="../../../../tags/DSGE/" style="font-size: 10px;">DSGE</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/SSA/" style="font-size: 10px;">SSA</a> <a href="../../../../tags/VAR/" style="font-size: 10px;">VAR</a> <a href="../../../../tags/stata/" style="font-size: 10px;">stata</a> <a href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" style="font-size: 10px;">不变价格</a> <a href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" style="font-size: 10px;">不稳定就业</a> <a href="../../../../tags/%E5%81%A5%E5%BA%B7/" style="font-size: 10px;">健康</a> <a href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" style="font-size: 10px;">克鲁格曼</a> <a href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" style="font-size: 10px;">公共卫生</a> <a href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" style="font-size: 10px;">共产党宣言</a> <a href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" style="font-size: 10px;">凸函数</a> <a href="../../../../tags/%E5%87%B8%E9%9B%86/" style="font-size: 10px;">凸集</a> <a href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">动态随机一般均衡模型</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" style="font-size: 10px;">劳动价值论</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" style="font-size: 10px;">劳动过程</a> <a href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" style="font-size: 10px;">包络定理</a> <a href="../../../../tags/%E5%8C%BB%E7%96%97/" style="font-size: 10px;">医疗</a> <a href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" style="font-size: 10px;">十四五</a> <a href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" style="font-size: 10px;">南北贸易</a> <a href="../../../../tags/%E5%8D%B1%E6%9C%BA/" style="font-size: 10px;">危机</a> <a href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">发刊技巧</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">古典</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 10px;">古典经济学</a> <a href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" style="font-size: 15px;">名词解释</a> <a href="../../../../tags/%E5%90%8E%E5%87%AF/" style="font-size: 17.5px;">后凯</a> <a href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" style="font-size: 10px;">向量自回归</a> <a href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">国内大循环</a> <a href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" style="font-size: 10px;">国民经济核算</a> <a href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 12.5px;">国际贸易</a> <a href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" style="font-size: 10px;">基础范畴</a> <a href="../../../../tags/%E5%A2%9E%E9%95%BF/" style="font-size: 10px;">增长</a> <a href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" style="font-size: 10px;">外生冲击</a> <a href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">局部投入产出闭模型</a> <a href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">库恩-塔克条件</a> <a href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" style="font-size: 10px;">建筑业</a> <a href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" style="font-size: 10px;">开集闭集</a> <a href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" style="font-size: 17.5px;">恩格斯</a> <a href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" style="font-size: 10px;">投入产出</a> <a href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" style="font-size: 10px;">拉格朗日乘子法</a> <a href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" style="font-size: 10px;">数学规划</a> <a href="../../../../tags/%E6%96%AF%E5%AF%86/" style="font-size: 10px;">斯密</a> <a href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">新古典</a> <a href="../../../../tags/%E6%9D%82%E8%AE%B0/" style="font-size: 12.5px;">杂记</a> <a href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" style="font-size: 12.5px;">李斯特</a> <a href="../../../../tags/%E6%9D%A8%E6%A0%BC/" style="font-size: 10px;">杨格</a> <a href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" style="font-size: 10px;">核心期刊</a> <a href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">法国调节学派</a> <a href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" style="font-size: 10px;">现代货币理论</a> <a href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" style="font-size: 10px;">社会干预</a> <a href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" style="font-size: 12.5px;">线性规划</a> <a href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">美国社会积累结构学派</a> <a href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" style="font-size: 10px;">自由贸易</a> <a href="../../../../tags/%E8%A5%BF%E9%A9%AC/" style="font-size: 10px;">西马</a> <a href="../../../../tags/%E8%AE%A1%E9%87%8F/" style="font-size: 10px;">计量</a> <a href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" style="font-size: 12.5px;">调节理论</a> <a href="../../../../tags/%E8%B0%A2%E5%85%8B/" style="font-size: 10px;">谢克</a> <a href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" style="font-size: 10px;">财政管制</a> <a href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" style="font-size: 17.5px;">资本循环</a> <a href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" style="font-size: 10px;">远景目标</a> <a href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" style="font-size: 10px;">金融化</a> <a href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" style="font-size: 10px;">雇佣劳动</a> <a href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" style="font-size: 20px;">马克思</a> <a href="../../../../tags/%E9%AB%98%E5%B3%B0/" style="font-size: 10px;">高峰</a>
     </div>
   </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/">2021年06月</a><span class="archive-list-count">59</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/">2020年12月</a><span class="archive-list-count">65</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/2035/" rel="tag">2035</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/DSGE/" rel="tag">DSGE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/SSA/" rel="tag">SSA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/VAR/" rel="tag">VAR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/stata/" rel="tag">stata</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" rel="tag">不变价格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" rel="tag">不稳定就业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" rel="tag">克鲁格曼</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" rel="tag">公共卫生</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" rel="tag">共产党宣言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" rel="tag">凸函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E9%9B%86/" rel="tag">凸集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" rel="tag">动态随机一般均衡模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" rel="tag">劳动价值论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" rel="tag">劳动过程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" rel="tag">包络定理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%BB%E7%96%97/" rel="tag">医疗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" rel="tag">十四五</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" rel="tag">南北贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%B1%E6%9C%BA/" rel="tag">危机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" rel="tag">发刊技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8/" rel="tag">古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">古典经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" rel="tag">名词解释</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8E%E5%87%AF/" rel="tag">后凯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" rel="tag">向量自回归</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" rel="tag">国内大循环</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" rel="tag">国民经济核算</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" rel="tag">国际贸易</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" rel="tag">基础范畴</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A2%9E%E9%95%BF/" rel="tag">增长</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" rel="tag">外生冲击</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" rel="tag">局部投入产出闭模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" rel="tag">库恩-塔克条件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" rel="tag">建筑业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" rel="tag">开集闭集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" rel="tag">恩格斯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" rel="tag">投入产出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" rel="tag">拉格朗日乘子法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" rel="tag">数学规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%AF%E5%AF%86/" rel="tag">斯密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" rel="tag">新古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" rel="tag">李斯特</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%A8%E6%A0%BC/" rel="tag">杨格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" rel="tag">核心期刊</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" rel="tag">法国调节学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" rel="tag">现代货币理论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" rel="tag">社会干预</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" rel="tag">线性规划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" rel="tag">美国社会积累结构学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" rel="tag">自由贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%A5%BF%E9%A9%AC/" rel="tag">西马</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%A1%E9%87%8F/" rel="tag">计量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" rel="tag">调节理论</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%A2%E5%85%8B/" rel="tag">谢克</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" rel="tag">财政管制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" rel="tag">资本循环</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" rel="tag">远景目标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" rel="tag">金融化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" rel="tag">雇佣劳动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" rel="tag">马克思</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%AB%98%E5%B3%B0/" rel="tag">高峰</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-link"></i> 友情链接</h3>
-    <div class="widget">
-      <ul>
-      
-        <li>
-          <a href="../../../../http:/www.example1.com/">site-name1</a>
-        </li>
-      
-        <li>
-          <a href="../../../../http:/www.example2.com/">site-name2</a>
-        </li>
-      
-        <li>
-          <a href="../../../../http:/www.example3.com/">site-name3</a>
-        </li>
-      
-      </ul>
-    </div>
-  </div>
-
 
   
 </aside>
@@ -1106,20 +754,5 @@ c_s(q)=K+\varphi(q),q\ge0</script>
 
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

@@ -142,7 +142,8 @@
 
 
     </div>
-    <!-- <div class="e-content article-entry" itemprop="articleBody">
+
+    <div class="e-content article-entry" itemprop="articleBody">
       
         <blockquote>
 <p>温馨提示，本文章中能对做题有直接帮助的，有7.2，7.2a，8.2，7.4，8.1。</p>
@@ -611,466 +612,12 @@ H_c = He^{rt} = U(c) + \mu[f(k)-c-(n+\delta)k],\quad \mu=\lambda e^{rt}    \tag{
           </blockquote>
         
       
-    </div> -->
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-          
-      
-      
-          <blockquote>
-<p>温馨提示，本文章中能对做题有直接帮助的，有7.2，7.2a，8.2，7.4，8.1。</p>
-</blockquote>
-<p>变分法要使用最优化问题中的函数可微性，这种方法只能处理内部解。而<strong>最优控制理论</strong>能够处理诸如边角解（corner solutions）这样的非古典情形。</p>
-<p>在变分法中，我们的目标是找到<strong>状态变量</strong>$y$的最优时间路径。而最优控制理论的核心目标是确定<strong>控制变量</strong>$u$的最优时间路径。当然，一旦找到了最优控制路径$u^\star(t)$，也能找到对应的最优状态路径$y^\star(t)$。</p>
-<p>那么，一个变量如何成为控制变量？控制变量一般有两个性质：</p>
-<ul>
-<li>它受我们的相机选择所支配；（状态变量往往是不受我们控制的）</li>
-<li>我们对这个变量的选择能影响状态变量。</li>
-</ul>
-<h3 id="7-1-最简单的最优控制问题"><a href="#7-1-最简单的最优控制问题" class="headerlink" title="7.1 最简单的最优控制问题"></a>7.1 最简单的最优控制问题</h3><h4 id="7-1-1-最优控制问题的特殊性质"><a href="#7-1-1-最优控制问题的特殊性质" class="headerlink" title="7.1.1 最优控制问题的特殊性质"></a>7.1.1 最优控制问题的特殊性质</h4><p>（1）这里并不要求控制路径$u(t)$是连续的，仅要求<strong>分段连续性</strong>，即允许跳跃型不连续（如图7-1(a)）。而状态路径$y(t)$必须是始终连续的，它允许有限个尖点。状态路径仅需要<strong>分段可微</strong>即可。</p>
-<div align='center'>
-  <img src='/../../images/%E7%AC%AC7%E7%AB%A0%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86/%E6%89%AB%E6%8F%8F%E5%85%A8%E8%83%BD%E7%8E%8B%202021-02-04%2014.04_2.jpg' width=450px>
-  <center style='font-family:kai'>图7-1</center>
-</div>
-
-<p>（2）最优控制理论另一个重要性质是，它能直接处理控制变量$u$上的约束。比如限制条件$u(t)\in \mathscr{U}$对于所有$t\in[0,T]$，其中$\mathscr{U}$表示某个有界控制集。而$\mathscr{U}$有可能是一个闭集，这意味着边角解可被允许。</p>
-<p>（3）与变分法不同，最优控制理论的最简单问题有自由终止状态（垂直终止线），而不是固定的终止点。</p>
-<h4 id="7-1-2-最简单的问题"><a href="#7-1-2-最简单的问题" class="headerlink" title="7.1.2 最简单的问题"></a>7.1.2 最简单的问题</h4><p>最优化问题表示为：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max                                 V         &=& \int_0^TF(t,y,u)\text{d}t \notag\\
-    \text{s.t.}\quad \dot{y}     &=& f(t,y,u)    \notag\\
-                                        y(0)         &=& A, y(T)\text{自由（A，T给定）}\notag\\
-                                        u(t)        &\in&\mathscr{U}\text{对于所有}t\in[0,T]\notag
-\end{eqnarray}\tag{7.1}</script><p>在后面的讨论中只处理最大化问题。控制变量$u$对状态变量$y$的作用通过方程$\dot{y}=f(t,y,u)$来表示，这个方程通常被称为<strong>运动方程</strong>，或者<strong>状态方程</strong>。</p>
-<h3 id="7-2-最大值原理"><a href="#7-2-最大值原理" class="headerlink" title="7.2 最大值原理"></a>7.2 最大值原理</h3><p>最大值原理涉及<strong>汉密尔顿函数</strong>和<strong>共态变量</strong>两个概念。汉密尔顿函数的设定：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    H(t,y,u,\lambda) \equiv F(t,y,u) + \lambda(t)f(t,y,u)    \tag{7.3}
-\end{eqnarray}</script><p>其中的$\lambda(t)$就是共态变量。共态变量类似拉格朗日乘子，因此它在本质上是一个价值变量——衡量<strong>相应状态变量的影子价格</strong>。</p>
-<p>最大值原理涉及两个一阶微分方程，一个关于状态变量$y$，另一个关于共态变量$\lambda$。<span style='color:red'>最大值原理还有一个要求，在每个时间点上，汉密尔顿函数关于控制变量$u$必须最大化</span>。此处先不证明，直接给出最大值原理的条件：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max_u                &\quad& H(t,y,u,\lambda)\quad\text{对于所有}t\in[0,T]    \notag\\
-    \dot{y}             &=& \frac{\partial H}{\partial\lambda}(y\text{的运动方程})    \notag\\
-    \dot{\lambda} &=& -\frac{\partial H}{\partial y}(\lambda\text{的运动方程})    \notag\\
-    \lambda(T)         &=& 0(\text{横截条件})    \notag
-\end{eqnarray}\tag{7.5}</script><p>如果不求甚解，这一部分的结果死记硬背就可以了。对于这些条件的所有解释都在7.3小节中。</p>
-<h3 id="7-2a-自控问题"><a href="#7-2a-自控问题" class="headerlink" title="7.2a 自控问题"></a>7.2a 自控问题</h3><p>所谓“自控问题”，指的是被积函数$F$和运动方程中的$f$都不显含自变量$t$。结果是最优汉密尔顿函数有不随时间变化的常数值。对于汉密尔顿函数：</p>
-<script type="math/tex; mode=display">
-H(t,y,u,\lambda)\equiv F(t,y,u)+\lambda(t)f(t,y,u)</script><p>它的时间导数为</p>
-<script type="math/tex; mode=display">
-\frac{\text{d}H}{\text{d}t} = \frac{\partial H}{\partial t}+\frac{\partial H}{\partial y}\dot{y}+\frac{\partial H}{\partial u}\dot{u}+\frac{\partial H}{\partial\lambda}\dot{\lambda}</script><p>当$H$实现最大化时，我们有$\frac{\partial H}{\partial u}=0$（内部解）或者$\dot{u}=0$（边界解，我的理解是，如果只能在边界值取到最优，那么每个时刻的选择与时间自然就没关系了呀～）。于是上式第三项肯定为零。</p>
-<p>根据最大值原理，$\dot{y}=\frac{\partial H}{\partial \lambda},\dot{\lambda}=-\frac{\partial H}{\partial y}$，上式第二项和第四项抵消了。于是有</p>
-<script type="math/tex; mode=display">
-\frac{\text{d}H^\star}{\text{d}t} = \frac{\partial H^\star}{\partial t}    \tag{7.53}</script><p>这是一个<span style='color:red'>一般的结果。对于自控问题和非自控问题都成立</span>。</p>
-<p>在自控问题下，被积函数$F$和运动方程中的$f$都不显含自变量$t$，因此汉密尔顿函数$H$中肯定也不显含自变量$t$。于是上式等于零，也就是说自控问题下</p>
-<script type="math/tex; mode=display">
-H=\text{常数}</script><p>此时问题可以写成(<span style='font-family:fangsong'>参考蒋中一教材《数理经济学的基本方法》（第4版）</span>)</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max V                                         &=&\int_0^T F(y,u)\text{d}t    \notag\\
-    \text{s.t.}\quad\dot{y}     &=&f(y,u)    \notag\\
-                                                    & &\text{边界条件}\notag
-\end{eqnarray}</script><p>此时的哈密尔顿函数为</p>
-<script type="math/tex; mode=display">
-H=F(y,u)+\lambda f(y,u)</script><h3 id="8-2-当前值哈密尔顿函数"><a href="#8-2-当前值哈密尔顿函数" class="headerlink" title="8.2 当前值哈密尔顿函数"></a>8.2 当前值哈密尔顿函数</h3><p>另一类自控问题中，时间$t$作为贴现因子$e^{-rt}$的一部分进入问题中，但是在其他地方不出现，因此目标函数取如下形式：</p>
-<script type="math/tex; mode=display">
-\int_0^T F(t,y,u)\text{d}t = \int_0^T G(y,u)e^{-rt}\text{d}t</script><p>严格来讲这并非自治问题，但通过<span style='color:red'>当前值汉密尔顿函数</span>很容易将其转化为自治问题。当前值哈密尔顿函数作如下定义：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    H_c \equiv He^{rt} = G(y,u)+\mu f(y,u)    \tag{20.17}
-\end{eqnarray}</script><p>注意到$H_c$中不含自变量$t$，因此它沿着所有变量的最优路径的值不随时间变化而变化，是个常数。其中</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \mu\equiv \lambda e^{rt}    \tag{20.18}
-\end{eqnarray}</script><p>被称为当前值哈密尔顿乘子。这里将最大值原理修改成如下形式：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &(1)& H_c(y,u^\star,\mu)\ge H_c(y,u,\mu),\text{对所有}t\in[0,T]    \notag\\
-    &(2)& \dot{y} = \color{red}{\frac{\partial H}{\partial\lambda}=f(y,u)=}\frac{\partial H_c}{\partial\mu}    \notag\\
-    &(3)& \dot{\mu} = -\frac{\partial H_c}{\partial y} + r\mu    \notag\\
-  &(4)& \mu(T)=0\quad\text{对于垂直终止线}    \notag\\
-  &  & [H_c]_{t=T}=0\quad\text{对于水平终止线}    \notag
-\end{eqnarray}\tag{20.19}</script><blockquote>
-<p>对于（3）作如下演算可以得到：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \dot{\lambda}&=&-\frac{\partial H}{\partial y} 
-    = -\frac{\partial [H_c e^{-rt}]}{\partial y} 
-    = - e^{-rt}\frac{\partial [H_c]}{\partial y}    \notag\\
-    \dot{\mu} &=& \frac{\text{d}}{\text{d}t}(\lambda e^{rt}) 
-    = e^{rt}\dot{\lambda}+\lambda re^{rt}
-    = - \frac{\partial H_c}{\partial y} +r\mu    \notag
-\end{eqnarray}</script><p>对于（4），由于垂直终止线的横截条件为$\lambda(T)=0$，而</p>
-<script type="math/tex; mode=display">
-\mu(T) = \lambda(T)e^{rT} = 0</script><p>水平终止线的横截条件为$[H]_{t=T}=0$，而</p>
-<script type="math/tex; mode=display">
-[H_c]_{t=T} = [He^{rt}]_{t=T} = [H]_{t=T}e^{rT}= 0</script></blockquote>
-<h3 id="7-3-最大值原理的机理-定理证明"><a href="#7-3-最大值原理的机理-定理证明" class="headerlink" title="7.3 最大值原理的机理(定理证明)"></a>7.3 最大值原理的机理(定理证明)</h3><p>为简单起见，假设控制变量$u$不受约束，因此$u^\star$是一个内部解。我们假设汉密尔顿函数关于$u$可微。另外，假设可以用条件$\frac{\partial H}{\partial u}=0$替换条件$\max_u H$。假定初始点固定，但终止点可变。问题为</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max V                                         &=&\int_0^T F(t,y,u)\text{d}t    \notag\\
-    \text{s.t.}\quad\dot{y}     &=&f(t,y,u)    \notag\\
-                                    y(0)            &=&y_0(\text{给定})\notag
-\end{eqnarray}\tag{7.20}</script><p><span style='font-family:hei;color:red'>第1步</span>将运动方程纳入目标泛函。如果变量$y$总是服从运动方程，那么对于区间$[0,T]$中的所有$t$，$[f(t,y,u)-\dot{y}]$必定都取零值。因此使用拉格朗日乘子符号，对于每个$t$值我们都能构造表达式$\lambda(t)[f(t,y,u)-\dot{y}]$。尽管区间$[0,T]$含有无穷多个$t$值，但$\lambda(t)[f(t,y,u)-\dot{y}]$在区间$[0,T]$上关于$t$的加和仍等于零。</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \int_0^T \lambda(t)[f(t,y,u)-\dot{y}]\text{d}t=0    \tag{7.21}
-\end{eqnarray}</script><p>正因为这个原因，我们可以在原来的泛函中加上式子（7.21）而不至于影响最优解。于是我们可以构造新的泛函：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \mathscr{V}&\equiv& V+\int_0^T \lambda(t)[f(t,y,u)-\dot{y}]\text{d}t    \notag\\
-                            &=& \int_0^T F(t,y,u)\text{d}t + \int_0^T \lambda(t)[f(t,y,u)-\dot{y}]\text{d}t    \notag\\
-                            &=& \int_0^T\{ F(t,y,u) + \lambda(t)[f(t,y,u)-\dot{y}] \}    \text{d}t    \notag\\
-                            &=& \int_0^T\{ F(t,y,u) + \lambda(t)f(t,y,u)-\lambda(t)\dot{y} \}    \text{d}t    \notag
-\end{eqnarray}\tag{7.22}</script><p>​    前面定义的哈密尔顿函数为</p>
-<script type="math/tex; mode=display">
-H(t,u,y,\lambda)\equiv F(t,y,u)+\lambda(t)f(t,y,u)</script><p>将其代入(7.22)</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \mathscr{V} &=& \int_0^T [H(t,y,u,\lambda)-\lambda(t)\dot{y}]\text{d}t    \notag\\
-                            &=& \int_0^T H(t,y,u,\lambda)\text{d}t-\int_0^T\lambda(t)\dot{y}\text{d}t    \notag
-\end{eqnarray}\tag{7.22'}</script><p>(7.22’)第二项积分作进一步计算：</p>
-<script type="math/tex; mode=display">
-\int_0^T\lambda(t)\dot{y}\text{d}t 
-= \int_0^T\lambda(t)\text{d}y
-= \left.[\lambda(t)y]\right\lvert_0^T-\int_0^Ty\dot{\lambda}\text{d}t
-=\lambda(T)y_T-\lambda(0)y_0-\int_0^Ty\dot{\lambda}\text{d}t</script><p>代入(7.22’)</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \mathscr{V} &=& \int_0^T H(t,y,u,\lambda)\text{d}t
--\lambda(T)y_T+\lambda(0)y_0+\int_0^Ty\dot{\lambda}\text{d}t    \notag\\
-    &=&\int_0^T[H(t,y,u,\lambda)+y\dot{\lambda}]\text{d}t-\lambda(T)y_T+\lambda(0)y_0    \notag
-\end{eqnarray}\tag{7.22''}</script><p><span style='font-family:hei;color:red'>第2步</span> 变量$\lambda$作为一个拉格朗日乘子，显著不同于$u$和$y$。因为只要我们严格遵守运动方程$\dot{y}=f(t,y,u)$，$\lambda(t)$的路径的选择对$\mathscr{V}$的值就没有影响，也就是：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \dot{y}=\frac{\partial H}{\partial\lambda}(\text{对于所有}t\in[0,T])    \tag{7.23}
-\end{eqnarray}</script><p>因此我们可以把（7.23）作为$\mathscr{V}$最大化的一个<span style='color:red'>必要条件</span>。</p>
-<p><span style='font-family:hei;color:red'>第3步</span> 现在考虑$u(t)$的路径，以及它对$y(t)$路径的影响。同于在变分法中的处理：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    u(t) = u^\star(t) + \varepsilon p(t)    \tag{7.24}
-\end{eqnarray}</script><p>根据运动方程$\dot{y}=f(t,y,u)$，对于每一个$\varepsilon$，$y^\star(t)$路径都有相对应的扰动。于是$y$路径可以写成：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    y(t) = y^\star(t)+\varepsilon q(t)    \tag{7.25}
-\end{eqnarray}</script><p>关于终止条件还有：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    T=T^\star+\varepsilon\Delta T,&\quad& y_T=y_T^\star+\varepsilon\Delta y_T    \notag\\
-    \frac{\text{d}T}{\text{d}\varepsilon}=\Delta T,&\quad& \frac{\text{d}y_T}{\text{d}\varepsilon}=\Delta y_T    \notag
-\end{eqnarray}\tag{7.26}</script><p>于是(7.22’’)可以改写为</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \mathscr{V}&=&\int_0^{T(\varepsilon)}\left\{H[t,y^\star+\varepsilon q(t),u^\star+\varepsilon p(t),\lambda]+\dot{\lambda}[y^\star+\varepsilon q(t)]\right\}\text{d}t-\lambda(T)y_T+\lambda(0)y_0    \notag\\
-    &=&\Omega_1+\Omega_2+\Omega_3    \notag
-\end{eqnarray}\tag{7.27}</script><p><span style='font-family:hei;color:red'>第4步</span> 下面使用条件$\frac{\text{d}\mathscr{V}}{\text{d}\varepsilon}$。（7.27）第一项关于$\varepsilon$求导数：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \frac{\text{d}\Omega_1}{\text{d}\varepsilon} &=& \int_0^{T(\varepsilon)} \left\{\left[\frac{\partial H}{\partial y}\cdot\frac{\text{d}y}{\text{d}\varepsilon}+\frac{\partial H}{\partial u}\cdot\frac{\text{d}u}{\text{d}\varepsilon}\right] +\dot{\lambda}\frac{\text{d}y}{\text{d}\varepsilon} \right\}\text{d}t
-+[H+\dot{\lambda}y]_{t=T}\frac{\text{d}T}{\text{d}\varepsilon}    \notag\\
-    &=& \int_0^{T(\varepsilon)} \left\{\left[\frac{\partial H}{\partial y}q(t)+\frac{\partial H}{\partial u}p(t)\right] +\dot{\lambda}q(t) \right\}\text{d}t
-+[H+\dot{\lambda}y]_{t=T}\Delta T    \notag
-\end{eqnarray}\tag{7.28}</script><p>（7.27）第二项关于$\varepsilon$求导数：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \frac{\text{d}\Omega_2}{\text{d}\varepsilon} 
-&=& -\left(\lambda(T)\frac{\text{d}y_T}{\text{d}\varepsilon}+y_T\frac{\text{d}\lambda(T)}{\text{d}\varepsilon}\right) \notag\\
-&=& -\left(\lambda(T)\Delta y_T+y_T\frac{\text{d}\lambda(T)}{\text{d}T}\frac{\text{d}T}{\text{d}\varepsilon}\right)    \notag\\
-&=& -\lambda(T)\Delta y_T-y_T\dot{\lambda}(T)\Delta T    \notag
-\end{eqnarray}\tag{7.29}</script><p>关于第三项，不难发现</p>
-<script type="math/tex; mode=display">
-\frac{\text{d}\Omega_3}{\text{d}\varepsilon} =0</script><p>因此</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \frac{\text{d}\mathscr{V}}{\text{d}\varepsilon} 
-    &=& \int_0^{T} \left\{\left[\frac{\partial H}{\partial y}q(t)+\frac{\partial H}{\partial u}p(t)\right] +\dot{\lambda}q(t) \right\}\text{d}t
-+[H+\dot{\lambda}y]_{t=T}\Delta T-\lambda(T)\Delta y_T-y_T\dot{\lambda}(T)\Delta T \notag\\
-    &=& \int_0^{T} \left[\left(\frac{\partial H}{\partial y}+\dot{\lambda}\right)q(t)+\frac{\partial H}{\partial u}p(t) \right]\text{d}t + [H]_{t=T}\Delta T-\lambda(T)\Delta y_T    \notag
-\end{eqnarray}\tag{7.30}</script><p>(7.30)包括三部分。第一部分得到两个条件</p>
-<script type="math/tex; mode=display">
-\dot{\lambda}=-\frac{\partial H}{\partial y},\quad \frac{\partial H}{\partial u}=0</script><p>得到的第一个方程是<strong>共态方程</strong>。第二个方程是一阶条件。</p>
-<p>对于<span style='color:red'>最简单的问题</span>(这里的条件对应于一种特殊情形了)有固定不变的$T$和自由的$y_T$，因此（7.30）中$\Delta T=0$，但$\Delta y_T$是自由的，因此一定要加限制条件</p>
-<script type="math/tex; mode=display">
-\lambda(T)=0</script><p>这就是（7.5）的横截条件的由来。</p>
-<h3 id="7-4-其他终止条件"><a href="#7-4-其他终止条件" class="headerlink" title="7.4 其他终止条件"></a>7.4 其他终止条件</h3><h4 id="7-4-1-固定终止点"><a href="#7-4-1-固定终止点" class="headerlink" title="7.4.1 固定终止点"></a>7.4.1 固定终止点</h4><p>最优控制理论中不包括固定终止点问题（甚至连简单问题都算不上）。如果给定固定终止点，横截条件被下列条件替代即可：</p>
-<script type="math/tex; mode=display">
-y(T)=y_T(T,y_T\text{给定})</script><h4 id="7-4-2-水平终止线（固定端点问题）"><a href="#7-4-2-水平终止线（固定端点问题）" class="headerlink" title="7.4.2 水平终止线（固定端点问题）"></a>7.4.2 水平终止线（固定端点问题）</h4><p>此时$\Delta y_T=0,\Delta T$是任意的。</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    [H]_{t=T} = 0    \tag{7.31}
-\end{eqnarray}</script><h4 id="7-4-3-终止曲线"><a href="#7-4-3-终止曲线" class="headerlink" title="7.4.3 终止曲线"></a>7.4.3 终止曲线</h4><p>如果终止曲线为$y_T=\phi(T)$，$\Delta T$和$\Delta t_T$都是任意的，二者之间存在关系$\Delta y_T=\phi’\Delta T$。合并（7.30）最后两项，</p>
-<script type="math/tex; mode=display">
-[H]_{t=T}\Delta T-\lambda(T)\Delta y_T 
-= [H]_{t=T}\Delta T-\lambda(T)\phi'\Delta T
-= [H-\lambda\phi']_{t=T}\Delta T</script><p>横截条件应该为</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    [H-\lambda\phi']_{t=T} = 0    \tag{7.32}
-\end{eqnarray}</script><h4 id="7-4-4-截断垂直终止线"><a href="#7-4-4-截断垂直终止线" class="headerlink" title="7.4.4 截断垂直终止线"></a>7.4.4 截断垂直终止线</h4><div align='center'>
-  <img src='/../../images/%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/image-20210204142543835.png' width=300px>
-  <center style='font-family:kai'>图20.3(b)</center>
-  <p align='left'  style='font-family:kai'>
-    图片来自蒋中一《数理经济学的基本方法》（第4版）
-  </p>
-</div>
-
-<p>这种情况下终止时间固定，终止状态自由可变，且受制于约束条件$y_T\ge y_\min$。</p>
-<p>最优解有两种可能情况。</p>
-<ul>
-<li><p>$y_T^{\star}&gt;y_{\text{min}}$，那么上述（非截断的）限制条件自动得以满足，它不是紧的约束。因为此时$\Delta y_T\equiv y_T-y_T^\star$的符号可正可负，它是可以任意取定的。这将适用于常规垂直终止线问题的横截条件。</p>
-</li>
-<li><script type="math/tex; mode=display">
-\begin{eqnarray}
-    \lambda(T)=0,y_T^\star>y_\min\tag{7.33}
-\end{eqnarray}</script></li>
-<li><p>$y_T^{\star}=y_{\text{min}}$，此时它必须满足条件$\Delta y_T\equiv y_T-y_T^\star\ge 0$。这里的$\Delta y_T$不再是任意取定的，因为它只能取使$\Delta y_T\ge0$的值。此时设$y_T=y_\min+\varepsilon q(T)$，其中$q(t)&gt;0$。此时还要要求$\varepsilon\ge 0$。此处应用库恩-塔克条件，$\varepsilon\ge 0$使得一阶条件需要满足$\frac{\text{d}\mathscr{V}}{\text{d}\varepsilon}\le0$，于是（7.30）的横截条件改为：$-\lambda(T)\Delta y_T\le0$。又由于$\Delta y_T\ge0$，因此有</p>
-</li>
-<li><script type="math/tex; mode=display">
-\begin{eqnarray}
-    \lambda(T)\ge0,y^\star=y_\min    \tag{7.34}
-\end{eqnarray}</script></li>
-<li><p>第二种情况综合的横截条件为：</p>
-</li>
-<li><script type="math/tex; mode=display">
-\lambda(T)\ge0,y_T\ge y_\min,(y_T-y_\min)\lambda(T)=0</script></li>
-</ul>
-<h4 id="7-4-5-截断水平终止线"><a href="#7-4-5-截断水平终止线" class="headerlink" title="7.4.5 截断水平终止线"></a>7.4.5 截断水平终止线</h4><div align='center'>
-  <img src='/../../images/%E7%AC%AC2%E7%AB%A0%E5%8F%98%E5%88%86%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/image-20210204142739687.png' width=300px>
-  <center style='font-family:kai'>图20.3(c)</center>
-  <p align='left'  style='font-family:kai'>
-    图片来自蒋中一《数理经济学的基本方法》（第4版）
-  </p>
-</div>
-
-<p>这种情况下终止状态固定，但终止时间自由可变，只不过终止时间要满足$T^\star\le T_\max$。于是在最优解，要么$T^\star&lt;T_\max$，要么$T^\star=T_\max$。</p>
-<ul>
-<li><p>$T^\star&lt;T_\max$，约束是松的，常规水平终止线的横截条件仍然成立</p>
-</li>
-<li><script type="math/tex; mode=display">
-\begin{eqnarray}
-    [H]_{t=T}=0,T^\star<T_\max    \tag{7.36}
-\end{eqnarray}</script></li>
-<li><p>$T^\star=T_\max$，此时的横截条件为</p>
-</li>
-<li><script type="math/tex; mode=display">
-\begin{eqnarray}
-    [H]_{t=T}\ge 0,T^\star=T_\max
-\end{eqnarray}</script></li>
-<li><script type="math/tex; mode=display">
-\begin{eqnarray}
-    [H]_{t=T}\ge0,T\le T_\max,(T-T_\max)[H]_{t=T}=0    \tag{7.38}
-\end{eqnarray}</script></li>
-</ul>
-<h4 id="7-4-6-例题"><a href="#7-4-6-例题" class="headerlink" title="7.4.6 例题"></a>7.4.6 例题</h4><p><span style='font-family:hei;color:red'>例题1</span> </p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max_{u(t)} &\quad& \int_0^1 (-u^2) \text{d}t    \notag\\
-    \text{s.t.} \quad \dot{y} &=& y+u    \notag\\
-    y(0) &=& 1    \notag\\
-    y(1) &=& 0    \notag
-\end{eqnarray}</script><blockquote>
-<p>哈密尔顿函数为</p>
-<script type="math/tex; mode=display">
-H = -u^2+\lambda(y+u)</script><p>最大值条件为：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &(1)& \frac{\partial H}{\partial u} = -2u+\lambda = 0    \notag\\
-    &(2)& \dot{y} = \frac{\partial H}{\partial \lambda} = y+u    \notag\\
-    &(3)& \dot{\lambda} = -\frac{\partial H}{\partial y} = -\lambda    \notag
-\end{eqnarray}</script><p>根据（3）可以解出：</p>
-<script type="math/tex; mode=display">
-\lambda(t) = C_1 e^{-t}</script><p>将其代入（1）中：</p>
-<script type="math/tex; mode=display">
-u = \frac12\lambda = \frac12C_1 e^{-t}</script><p>代入（2）</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \dot{y} = y + \frac{C_1}2 e^{-t}    \tag{*}
-\end{eqnarray}</script><p>这个常微分方程的解法：因为一阶齐次微分方程$\dot{y}=y$的通解为$y=C_2e^t,C_2\in\mathbb{R}$。对于一阶非齐次线性微分方程，<span style='color:red'>设$y(t)=C_2(t)e^t$</span>，于是</p>
-<script type="math/tex; mode=display">
-\dot{y} = e^t[C_2(t)+C_2'(t)]</script><p>将其代入（*）式子，得到</p>
-<script type="math/tex; mode=display">
-e^t[C_2(t)+C_2'(t)] = C_2(t)e^t + \frac{C_1}2e^{-t}</script><p>化简得到：</p>
-<script type="math/tex; mode=display">
-C_2'(t) = \frac{C_1}2e^{-2t}\Rightarrow C_2(t) = -\frac{C_1}4e^{-2t}+C_3(C_1,C_3\in\mathbb{R})</script><p>于是我们得到一阶非齐次线性微分方程的通解为</p>
-<script type="math/tex; mode=display">
-y(t) = \left( -\frac{C_1}4e^{-2t}+C_3 \right)e^t\quad (C_1,C_3\in\mathbb{R})</script><p>将初值条件$y(0)=1,y(1)=0$代入，即可解出$C_1,C_3$，从而得到$y(t),u(t),\lambda(t)$。</p>
-</blockquote>
-<p><span style='font-family:hei;color:red'>例题2（截断垂直终止线问题）</span> </p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max_{u(t)} &\quad& \int_0^1 (-u^2) \text{d}t    \notag\\
-    \text{s.t.} \quad \dot{y} &=& y+u    \notag\\
-    y(0) &=& 1    \notag\\
-    T &=& 1    \notag\\
-    y(1) &\ge& 3    \notag
-\end{eqnarray}</script><blockquote>
-<p>哈密尔顿函数为</p>
-<script type="math/tex; mode=display">
-H = -u^2+\lambda(y+u)</script><p>最大值条件为：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &(1)& \frac{\partial H}{\partial u} = -2u+\lambda = 0    \notag\\
-    &(2)& \dot{y} = \frac{\partial H}{\partial \lambda} = y+u    \notag\\
-    &(3)& \dot{\lambda} = -\frac{\partial H}{\partial y} = -\lambda    \notag
-\end{eqnarray}</script><p>根据(1)（3）可以解出：</p>
-<script type="math/tex; mode=display">
-u(t)=\frac12\lambda(t),\quad \lambda(t)=C_1e^{-t}</script><p>用于本题为垂直终止问题，$\lambda(T)=0$，只能有$C_1=0$。从而解得</p>
-<script type="math/tex; mode=display">
-\lambda^\star(t)=0</script><p>于是有</p>
-<script type="math/tex; mode=display">
-u^\star(t)=0</script><p>根据（2），结合$u^\star(t)=0$</p>
-<script type="math/tex; mode=display">
-y(t) = C_2 e^{t}</script><p>代入初值条件$y(0)=1$，因此最优状态路径为$y^\star(t)=e^t$。</p>
-<p>但遗憾的是，这个结果违背了终止时的限制$y(1)\ge3$。因此为了满足横截条件：</p>
-<script type="math/tex; mode=display">
-\lambda(T)\ge0,\quad y_T\ge y_\min,\quad(y_T-y_\min)\lambda(T)=0</script><p>即</p>
-<script type="math/tex; mode=display">
-\lambda(1)=0\ge0,\quad y(1)=C_2e\ge3,\quad (C_2e-3)\cdot0=0</script><p>必须令$y(1)=3$。</p>
-</blockquote>
-<p><span style='font-family:hei;color:red'>例题3</span> </p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max_{u(t)} &\quad& \int_0^1 (-1) \text{d}t    \notag\\
-    \text{s.t.} \quad \dot{y} &=& y+u    \notag\\
-    y(0) &=& 5    \notag\\
-    y(T) &=& 11,(T\text{自由})    \notag\\
-    u(t) &\in& [-1,1]    \notag
-\end{eqnarray}</script><blockquote>
-<p>汉密尔顿函数：</p>
-<script type="math/tex; mode=display">
-H = -1+\lambda(y+u)</script><p>因为$H$是$u$的线性函数，因此条件$\frac{\partial H}{\partial u}=0$的条件不可用。又由于控制变量的取值范围是一个闭集，因此最优点$u^\star$只能是边界值，即取$1$或者$-1$。具体而言，如果$\lambda&gt;0$，那么$u^\star=1$；如果$\lambda&lt;0$，那么$u^\star=-1$。而如果$\lambda=0$，此时汉密尔顿函数对$u$画出来的图形就是一条水平线$H=-1$。此时</p>
-<script type="math/tex; mode=display">
-u^\star = \text{sgn}\lambda</script><p>最大值条件对应为：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &(1)& \dot{\lambda} = -\frac{\partial H}{\partial y} = -\lambda    \notag\\
-    &(2)& \dot{y} = \frac{\partial H}{\partial \lambda} = y+u    \notag
-\end{eqnarray}</script><p>根据（1），$\lambda(t)=C_1e^{-t}$。注意到，$\lambda(t)$的正负完全取决于$C_1$的正负，因此$u^\star$的符号是确定的。(即$C_1&gt;0,u^\star=1;C_1&lt;0,u^\star=-1$)本问题是水平终止问题，因此$C_1$的符号隐藏在横截条件$[H]_{t=T}=0$中：</p>
-<script type="math/tex; mode=display">
-[H]_{t=T} = -1+\lambda(T)[y(T)+u(T)]=-1+C_1e^{-T}(11+u^\star) = 0</script><p>注意到$u$的取值范围，一定有$11+u^\star&gt;0$，因此要保持上述方程成立，一定有$C_1&gt;0$，于是$\lambda(t)&gt;0\Rightarrow u^\star=1$。</p>
-<p>于是根据（2）可以解出来$y$的轨迹方程：</p>
-<script type="math/tex; mode=display">
-y(t)=-1+C_2 e^t\quad (C_2\in\mathbb{R})</script><p>代入初值条件$y(0)=5$，解得$y^\star(t)=6e^t-1$。</p>
-<p>根据横截条件，我们可以解出$C_1=\frac16$，于是$\lambda^\star(t)=\frac16e^{-t}$。还可以解出$T^\star=\ln2$。</p>
-</blockquote>
-<h3 id="8-1-最大值原理的一种经济学解释"><a href="#8-1-最大值原理的一种经济学解释" class="headerlink" title="8.1 最大值原理的一种经济学解释"></a>8.1 最大值原理的一种经济学解释</h3><p>假设企业希望它在时间区间$[0,T]$上的利润最大，状态变量只有资本存量$K$。控制变量$u$表示企业在每个时点作出的某种经济决策（例如广告预算或者存货政策，积累模型中还可表示消费）。</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max_u &\quad& \Pi=\int_0^T\pi(t,K,u)\text{d}t    \notag\\
-    \text{s.t.}&\quad& \dot{K}=f(t,K,u)    \notag\\
-    && K(0)=K_0,K(T)\text{自由}(K_0,T\text{给定})    \notag
-\end{eqnarray}</script><p>汉密尔顿函数为</p>
-<script type="math/tex; mode=display">
-H = \pi(t,K,u) + \lambda(t)f(t,K,u)</script><p>协变量$\lambda(t)$为状态变量的影子价格。汉密尔顿函数可以看作总利润函数，其中$\pi(t,K,u)$可以当作当前利润，$\lambda(t)f(t,K,u)$可以看作未来利润（资本存量变化）。</p>
-<h4 id="9-3-新古典最优增长理论（拉姆齐模型）"><a href="#9-3-新古典最优增长理论（拉姆齐模型）" class="headerlink" title="9.3 新古典最优增长理论（拉姆齐模型）"></a>9.3 新古典最优增长理论（拉姆齐模型）</h4><h4 id="9-3-1-函数分析"><a href="#9-3-1-函数分析" class="headerlink" title="9.3.1 函数分析"></a>9.3.1 函数分析</h4><p>最优增长问题可以写成：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \max_c &\quad& \int_0^\infty U(c)e^{-rt} \text{d}t     \notag \\
-    \text{s.t.} &\quad& \dot{k} = f(k)-c-(n+\delta)k    \notag\\
-    && k(0) = k_0    \notag\\
-    && 0\le c(t)\le f[k(t)]    \notag
-\end{eqnarray}\tag{9.27}</script><ol>
-<li>其中$U(c)$是社会效用指数函数，$c$为人均消费，并假定Inada（稻田）条件：</li>
-</ol>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    U'(c)>0,U''(c)<0;\lim_{c\rightarrow0}U'(c)=\infty,\lim_{c\rightarrow\infty}U'(c)=0    \tag{9.25}
-\end{eqnarray}</script><ol>
-<li>$e^{-rt}$为贴现因子。在最优化问题中，函数$U(c)$在时间上加总（关于$t$积分），然而由于人口以速率$n$在不断增长，盖斯（Cass）认为应该用人口进行加权，即（此时的贴现率暂时记成$\rho$）</li>
-</ol>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \int_0^\infty U(c)L(t)e^{-\rho t}\text{d}t 
-    = \int_0^\infty U(c)L(0)e^{nt}e^{-\rho t}\text{d}t
-    = L(0)\int_0^\infty U(c)e^{-(\rho-n) t}\text{d}t
-    \tag{9.26}
-\end{eqnarray}</script><ol>
-<li><p>为了保证积分收敛，盖斯规定$\rho-n&gt;0$(即贴现率高于人口增速)。而此时这一项相当于一个正的的贴现率$r\equiv \rho-n$，并将期初的人口数标准化为1，即$L(0)=1$。于是得到了（9.27）中的积分。</p>
-</li>
-<li><p>人均产出函数$y=f(k)$也满足Inada（稻田）条件。</p>
-</li>
-</ol>
-<p>本问题的汉密尔顿函数为</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    H = U(c)e^{-rt}+\lambda[f(k)-c-(n+\delta)k]    \tag{9.28}
-\end{eqnarray}</script><p><span style='color:red'>$H$是关于$c$的凹函数(函数形状是上凸的)</span>，因此考虑是否可以使用一阶条件$\frac{\partial H}{\partial c}=0$。这里认为$c^\star$的取值一定处于$0$和使得$\dot{k}=0$的$c_1$之间（图9-2），而$c_1 = f(k)-(n+\delta)k&lt;f(k)$，因此最优值$c^\star$一定满足题目中的限制条件$0\le c(t)\le f[k(t)]$。</p>
-<div align='center'>
-  <img src='/../../images/%E7%AC%AC7%E7%AB%A0%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86/image-20210205233927618.png' width=350px>
-  <center style='font-family:kai'>图9-2</center>
-</div>
-
-<p>于是最大值条件为：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &(1)& \frac{\partial H}{\partial c} = U'(c)e^{-rt} - \lambda = 0    \notag\\
-    &(2)& \dot{k} = \frac{\partial H}{\partial \lambda} = f(k)-c-(n+\delta)k    \notag\\
-    &(3)& \dot{\lambda} = -\frac{\partial H}{\partial k} = -\lambda [f'(k)-(n+\delta)]    \notag
-\end{eqnarray}</script><p>这里同样可以使用当前值哈密尔顿函数：</p>
-<script type="math/tex; mode=display">
-H_c = He^{rt} = U(c) + \mu[f(k)-c-(n+\delta)k],\quad \mu=\lambda e^{rt}    \tag{9.32}</script><p>最大值条件为：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    &(1)& \frac{\partial H_c}{\partial c} = U'(c) - \mu = 0    \notag\\
-    &(2)& \dot{k} = \frac{\partial H_c}{\partial \mu} = f(k)-c-(n+\delta)k    \notag\\
-    &(3)& \dot{\mu} = -\frac{\partial H_c}{\partial k} +r\mu = -\mu [f'(k)-(n+\delta+r)]    \notag
-\end{eqnarray}</script><h4 id="9-3-2-相图分析"><a href="#9-3-2-相图分析" class="headerlink" title="9.3.2 相图分析"></a>9.3.2 相图分析</h4><p>稳态$(k^\star,c^\star)$，此时有$\dot{k}=\dot{c}=0$。</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \dot{k} &=& f(k) - c -(n+\delta)k =0    \notag\\
-    \dot{c} &=& ?
-\end{eqnarray}</script><p>$\dot{c}$的求解要用到最大值条件。根据（1），$\mu=U’(c)$。两边关于$t$求导数：</p>
-<script type="math/tex; mode=display">
-\dot{\mu} = U''(c)\dot{c}
-\Rightarrow \dot{c}=\frac{\dot{\mu}}{U''(c)} 
-= -\frac{1}{U''(c)}\mu [f'(k)-(n+\delta+r)]
-= -\frac{U'(c)}{U''(c)}[f'(k)-(n+\delta+r)]</script><p>由此可见，$\dot{c}=0$只与$k$有关，因此在$k-c$图中垂直于$k$轴的直线。而根据Inada条件，</p>
-<script type="math/tex; mode=display">
-\frac{\partial\dot{k}}{\partial k} = f'(k)-(n+\delta)>0,\frac{\partial^2\dot{k}}{\partial k^2} = f''(k)<0</script><p>因此$\dot{k}$关于$k$是凹函数，于是得到图9-4的相图。</p>
-<div align='center'>
-  <img src='/../../images/%E7%AC%AC7%E7%AB%A0%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%80%BC%E5%8E%9F%E7%90%86/image-20210206000403195.png' width=400px>
-  <center style='font-family:kai'>图9-4</center>
-</div>
-
-<p>下面讨论这些流线的一般方向，</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \frac{\partial \dot{k}}{\partial c} &=& -1<0    \notag\\
-    \frac{\partial \dot{c}}{\partial k} &=&  -\frac{U'(c)}{U''(c)}f''(k)<0
-\end{eqnarray}</script><p>因此当$c$增加时，$\dot{k}$应该遵循$(+,0,-)$这个符号顺序。当$k$增加时，$\dot{c}$应该遵循$(+,0,-)$这个符号顺序。</p>
-<p>下面利用线性化方法判别鞍点。</p>
-<script type="math/tex; mode=display">
-\frac{\text{d}}{\text{d}t}
-\left(\begin{matrix}
-    c-c^\star \\ k-k^\star
-\end{matrix}\right)
-=
-\left(\begin{matrix}
-    0 & -\frac{U'(c)}{U''(c)}f''(k^\star)\\
-    -1 & f'(k^\star)-(n+\delta) 
-\end{matrix}\right)
-\left(\begin{matrix}
-    c-c^\star \\ k-k^\star
-\end{matrix}\right)
-=\textbf{A}
-\left(\begin{matrix}
-    c-c^\star \\ k-k^\star
-\end{matrix}\right)</script><p>系数矩阵的特征根$\lambda_1,\lambda_2$满足：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \lambda_1+\lambda_2 &=& \text{diag }\textbf{A} = f'(k^\star)-(n+\delta)>0    \notag\\
-    \lambda_1\lambda_2 &=& \text{det }\textbf{A} = -\frac{U'(c)}{U''(c)}f''(k^\star)<0
-\end{eqnarray}</script><p>因此特征根一正一负，为鞍点稳定路径。</p>
-
-          </div>
-      
+    </div>
+    
     <footer class="article-footer">
       
         <div class="article-tag-wrap">
-          <!-- 
+          
     <div class="article-reward">
         <a id="reward-btn" href="javascript:;">打赏</a>
         <div id="reward-content">
@@ -1089,15 +636,15 @@ H_c = He^{rt} = U(c) + \mu[f(k)-c-(n+\delta)k],\quad \mu=\lambda e^{rt}    \tag{
         </div>
     </div>
 
- -->
+
           
-          <!-- 
+          
     <div class="social-share">
       <span>分享到:</span>
     </div>
 
 
- -->
+
         </div>
       
       
@@ -1136,8 +683,7 @@ H_c = He^{rt} = U(c) + \mu[f(k)-c-(n+\delta)k],\quad \mu=\lambda e^{rt}    \tag{
       
     </footer>
   </div>
-</article>
-</section>
+</article></section>
         
           <aside id="sidebar">
   
@@ -1202,50 +748,6 @@ H_c = He^{rt} = U(c) + \mu[f(k)-c-(n+\delta)k],\quad \mu=\lambda e^{rt}    \tag{
       <a href="../../../../tags/2035/" style="font-size: 10px;">2035</a> <a href="../../../../tags/DSGE/" style="font-size: 10px;">DSGE</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/SSA/" style="font-size: 10px;">SSA</a> <a href="../../../../tags/VAR/" style="font-size: 10px;">VAR</a> <a href="../../../../tags/stata/" style="font-size: 10px;">stata</a> <a href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" style="font-size: 10px;">不变价格</a> <a href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" style="font-size: 10px;">不稳定就业</a> <a href="../../../../tags/%E5%81%A5%E5%BA%B7/" style="font-size: 10px;">健康</a> <a href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" style="font-size: 10px;">克鲁格曼</a> <a href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" style="font-size: 10px;">公共卫生</a> <a href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" style="font-size: 10px;">共产党宣言</a> <a href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" style="font-size: 10px;">凸函数</a> <a href="../../../../tags/%E5%87%B8%E9%9B%86/" style="font-size: 10px;">凸集</a> <a href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">动态随机一般均衡模型</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" style="font-size: 10px;">劳动价值论</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" style="font-size: 10px;">劳动过程</a> <a href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" style="font-size: 10px;">包络定理</a> <a href="../../../../tags/%E5%8C%BB%E7%96%97/" style="font-size: 10px;">医疗</a> <a href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" style="font-size: 10px;">十四五</a> <a href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" style="font-size: 10px;">南北贸易</a> <a href="../../../../tags/%E5%8D%B1%E6%9C%BA/" style="font-size: 10px;">危机</a> <a href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">发刊技巧</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">古典</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 10px;">古典经济学</a> <a href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" style="font-size: 15px;">名词解释</a> <a href="../../../../tags/%E5%90%8E%E5%87%AF/" style="font-size: 17.5px;">后凯</a> <a href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" style="font-size: 10px;">向量自回归</a> <a href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">国内大循环</a> <a href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" style="font-size: 10px;">国民经济核算</a> <a href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 12.5px;">国际贸易</a> <a href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" style="font-size: 10px;">基础范畴</a> <a href="../../../../tags/%E5%A2%9E%E9%95%BF/" style="font-size: 10px;">增长</a> <a href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" style="font-size: 10px;">外生冲击</a> <a href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">局部投入产出闭模型</a> <a href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">库恩-塔克条件</a> <a href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" style="font-size: 10px;">建筑业</a> <a href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" style="font-size: 10px;">开集闭集</a> <a href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" style="font-size: 17.5px;">恩格斯</a> <a href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" style="font-size: 10px;">投入产出</a> <a href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" style="font-size: 10px;">拉格朗日乘子法</a> <a href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" style="font-size: 10px;">数学规划</a> <a href="../../../../tags/%E6%96%AF%E5%AF%86/" style="font-size: 10px;">斯密</a> <a href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">新古典</a> <a href="../../../../tags/%E6%9D%82%E8%AE%B0/" style="font-size: 12.5px;">杂记</a> <a href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" style="font-size: 12.5px;">李斯特</a> <a href="../../../../tags/%E6%9D%A8%E6%A0%BC/" style="font-size: 10px;">杨格</a> <a href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" style="font-size: 10px;">核心期刊</a> <a href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">法国调节学派</a> <a href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" style="font-size: 10px;">现代货币理论</a> <a href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" style="font-size: 10px;">社会干预</a> <a href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" style="font-size: 12.5px;">线性规划</a> <a href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">美国社会积累结构学派</a> <a href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" style="font-size: 10px;">自由贸易</a> <a href="../../../../tags/%E8%A5%BF%E9%A9%AC/" style="font-size: 10px;">西马</a> <a href="../../../../tags/%E8%AE%A1%E9%87%8F/" style="font-size: 10px;">计量</a> <a href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" style="font-size: 12.5px;">调节理论</a> <a href="../../../../tags/%E8%B0%A2%E5%85%8B/" style="font-size: 10px;">谢克</a> <a href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" style="font-size: 10px;">财政管制</a> <a href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" style="font-size: 17.5px;">资本循环</a> <a href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" style="font-size: 10px;">远景目标</a> <a href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" style="font-size: 10px;">金融化</a> <a href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" style="font-size: 10px;">雇佣劳动</a> <a href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" style="font-size: 20px;">马克思</a> <a href="../../../../tags/%E9%AB%98%E5%B3%B0/" style="font-size: 10px;">高峰</a>
     </div>
   </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/">2021年06月</a><span class="archive-list-count">59</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/">2020年12月</a><span class="archive-list-count">65</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/2035/" rel="tag">2035</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/DSGE/" rel="tag">DSGE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/SSA/" rel="tag">SSA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/VAR/" rel="tag">VAR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/stata/" rel="tag">stata</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" rel="tag">不变价格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" rel="tag">不稳定就业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" rel="tag">克鲁格曼</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" rel="tag">公共卫生</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" rel="tag">共产党宣言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" rel="tag">凸函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E9%9B%86/" rel="tag">凸集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" rel="tag">动态随机一般均衡模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" rel="tag">劳动价值论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" rel="tag">劳动过程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" rel="tag">包络定理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%BB%E7%96%97/" rel="tag">医疗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" rel="tag">十四五</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" rel="tag">南北贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%B1%E6%9C%BA/" rel="tag">危机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" rel="tag">发刊技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8/" rel="tag">古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">古典经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" rel="tag">名词解释</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8E%E5%87%AF/" rel="tag">后凯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" rel="tag">向量自回归</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" rel="tag">国内大循环</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" rel="tag">国民经济核算</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" rel="tag">国际贸易</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" rel="tag">基础范畴</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A2%9E%E9%95%BF/" rel="tag">增长</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" rel="tag">外生冲击</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" rel="tag">局部投入产出闭模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" rel="tag">库恩-塔克条件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" rel="tag">建筑业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" rel="tag">开集闭集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" rel="tag">恩格斯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" rel="tag">投入产出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" rel="tag">拉格朗日乘子法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" rel="tag">数学规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%AF%E5%AF%86/" rel="tag">斯密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" rel="tag">新古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" rel="tag">李斯特</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%A8%E6%A0%BC/" rel="tag">杨格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" rel="tag">核心期刊</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" rel="tag">法国调节学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" rel="tag">现代货币理论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" rel="tag">社会干预</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" rel="tag">线性规划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" rel="tag">美国社会积累结构学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" rel="tag">自由贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%A5%BF%E9%A9%AC/" rel="tag">西马</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%A1%E9%87%8F/" rel="tag">计量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" rel="tag">调节理论</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%A2%E5%85%8B/" rel="tag">谢克</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" rel="tag">财政管制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" rel="tag">资本循环</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" rel="tag">远景目标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" rel="tag">金融化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" rel="tag">雇佣劳动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" rel="tag">马克思</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%AB%98%E5%B3%B0/" rel="tag">高峰</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-link"></i> 友情链接</h3>
-    <div class="widget">
-      <ul>
-      
-        <li>
-          <a href="../../../../http:/www.example1.com/">site-name1</a>
-        </li>
-      
-        <li>
-          <a href="../../../../http:/www.example2.com/">site-name2</a>
-        </li>
-      
-        <li>
-          <a href="../../../../http:/www.example3.com/">site-name3</a>
-        </li>
-      
-      </ul>
-    </div>
-  </div>
-
 
   
 </aside>
@@ -1398,20 +900,5 @@ H_c = He^{rt} = U(c) + \mu[f(k)-c-(n+\delta)k],\quad \mu=\lambda e^{rt}    \tag{
 
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

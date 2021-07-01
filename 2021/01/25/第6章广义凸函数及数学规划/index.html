@@ -142,7 +142,8 @@
 
 
     </div>
-    <!-- <div class="e-content article-entry" itemprop="articleBody">
+
+    <div class="e-content article-entry" itemprop="articleBody">
       
         <p><span style='font-family:hei;font-size:18px'>定义6.7</span> 若对任意$\textbf{x}$和$\textbf{y}$，以及任意$\lambda\in(0,1)$都有</p>
 <script type="math/tex; mode=display">
@@ -298,153 +299,12 @@ y = x_1^r\phi\left(\frac{x_2}{x_1},\frac{x_3}{x_1},\cdots,\frac{x_n}{x_1}\right)
           </blockquote>
         
       
-    </div> -->
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-          
-      
-      
-          <p><span style='font-family:hei;font-size:18px'>定义6.7</span> 若对任意$\textbf{x}$和$\textbf{y}$，以及任意$\lambda\in(0,1)$都有</p>
-<script type="math/tex; mode=display">
-f(\lambda\textbf{x}+(1-\lambda)\textbf{y})\leqq\max\{ f(\textbf{x}),f(\textbf{y}) \}</script><p>称$f(\textbf{x})$为<strong>拟凸函数</strong>。</p>
-<p><span style='font-family:hei;font-size:18px'>定义6.7a</span> 若对任意$\textbf{x}$和$\textbf{y}$，以及任意$\lambda\in(0,1)$都有</p>
-<script type="math/tex; mode=display">
-f(\lambda\textbf{x}+(1-\lambda)\textbf{y})\geqq\min\{ f(\textbf{x}),f(\textbf{y}) \}</script><p>称$f(\textbf{x})$为<strong>拟凹函数</strong>。</p>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定义6.8</span> 若对任意实数$\alpha\in E^1$，集合</p>
-<script type="math/tex; mode=display">
-L_\alpha = \{\textbf{x}\lvert f(\textbf{x})\leqq \alpha\}</script><p>为凸集，称$f(\textbf{x})$为<strong>拟凸函数</strong>。</p>
-<p><span style='font-family:hei;font-size:18px'>定义6.8a</span> 若对任意实数$\alpha\in E^1$，集合</p>
-<script type="math/tex; mode=display">
-L_\alpha = \{\textbf{x}\lvert f(\textbf{x})\geqq \alpha\}</script><p>为凸集，称$f(\textbf{x})$为<strong>拟凹函数</strong>。</p>
-<hr>
-<p>在蒋中一的教材中，对于拟凸函数和拟凹函数的概念如下：</p>
-<p><span style='font-family:hei;font-size:18px'>定义12.20</span> 当且仅当对于函数$f$定义域（凸集）中的两个不同的点$u$和$v$，以及$0&lt;\theta&lt;1$，</p>
-<script type="math/tex; mode=display">
-f(v)\ge f(u)    \Rightarrow f[\theta u+(1-\theta)v]
-\left\{
-\begin{aligned}
-    &\ge f(u)    \Rightarrow f\text{拟凹（大于较小的值便拟凹）}    \\
-    &\le f(v)    \Rightarrow f\text{拟凸（小于较大的值便拟凸）}    
-\end{aligned}
-\right.</script><p>相对于凹函数和凸函数的定义，拟凹函数和拟凸函数的定义很宽松。有时按如下另一种定义，也许可以更容易检验函数的拟凹性和拟凸性：</p>
-<p><span style='font-family:hei;font-size:18px'>定义12.21</span> 对于任意常数$k$，当且仅当</p>
-<script type="math/tex; mode=display">
-\left\{
-\begin{aligned}
-    S^{\ge} &\equiv    \{ x\lvert f(x)\ge k \}    \text{是凸集}\Rightarrow f(x)\text{是拟凹函数。}\\
-    S^{\le} &\equiv \{ x\lvert f(x)\le k \}    \text{是凸集}\Rightarrow f(x)\text{是拟凸函数。}\\
-\end{aligned}
-\right.</script><p><span style='font-family:hei;font-size:18px'>定义12.22</span> 对于可微函数$f$。对于函数$f$定义域（凸集）中的两个不同的点$u$和$v$，当且仅当</p>
-<script type="math/tex; mode=display">
-f(v)\ge f(u)    \Rightarrow 
-\left\{
-\begin{aligned}
-    & f'(u)(v-u)\ge0    \Rightarrow f\text{拟凹（大于较小的值便拟凹）}    \\
-    & f'(v)(v-u)\ge0    \Rightarrow f\text{拟凸（小于较大的值便拟凸）}    
-\end{aligned}
-\right.</script><p><span style='font-family:hei;font-size:18px'>定义12.25</span> 对于函数$z=f(x_1,x_2,\cdots,x_n)$，它的海赛矩阵设为$B$，函数拟凹的必要条件为其主子式满足：</p>
-<script type="math/tex; mode=display">
-｜B_1｜\le0,|B_2|\ge0,|B_3|\le0,\cdots,|B_n|
-\left\{
-\begin{aligned}
-    & \le0, n\text{为奇数。}    \\
-    & \ge0, n\text{为偶数。}
-\end{aligned}
-\right.</script><p>函数严格拟凹的充分条件为：</p>
-<script type="math/tex; mode=display">
-｜B_1｜<0,|B_2|>0,|B_3|<0,\cdots,|B_n|
-\left\{
-\begin{aligned}
-    & <0, n\text{为奇数。}    \\
-    & >0, n\text{为偶数。}
-\end{aligned}
-\right.</script><blockquote>
-<p><span style='font-family:fangsong;color:red'>由于我们做题的时候接触的函数多为可微函数，因此最后这一种用主子式来判断的方法，实际是最为好用的。</span></p>
-</blockquote>
-<hr>
-<p><span style='font-family:hei;font-size:18px'>定理5.13</span> <span style='font-family:kai'>（最优解的充分必d要条件）</span>考虑凸规划$(P)$，设$f(\textbf{x})$具有一阶连续偏导数，则$\bar{\textbf{x}}\in R^\star$的充分必要条件是：对任意$\textbf{x}\in R$，有</p>
-<script type="math/tex; mode=display">
-\nabla f(\bar{\textbf{x}})(\textbf{x}-\bar{\textbf{x}})\geqq0</script><blockquote>
-<p>证明：</p>
-<p>必要性：用反证法</p>
-<p>若存在$\bar{\textbf{y}}\in R$，有</p>
-<script type="math/tex; mode=display">
-\nabla f(\bar{\textbf{x}})(\bar{\textbf{y}}-\bar{\textbf{x}})<0</script><p>令$\lambda\in(0,1)$，则</p>
-<script type="math/tex; mode=display">
-\bar{\textbf{x}}+\lambda(\bar{\textbf{y}}-\bar{\textbf{x}})
-=\lambda\bar{\textbf{y}} + (1-\lambda)\bar{\textbf{x}}  \in R</script><p>再由</p>
-<script type="math/tex; mode=display">
-\left.\frac{\text{d}f(\bar{\textbf{x}}+\lambda(\bar{\textbf{y}}-\bar{\textbf{x}}))}{\text{d}\lambda}\right\lvert_{\lambda=0} 
-=\nabla f(\bar{\textbf{x}}) (\bar{\textbf{y}}-\bar{\textbf{x}}) 
-<0</script><p>因此$h(\lambda)=f(\bar{\textbf{x}}+\lambda(\bar{\textbf{y}}-\bar{\textbf{x}}))$在$\lambda=0$时为严格单调递减的。故存在$\bar{\lambda},0&lt;\bar{\lambda}&lt;1$，有</p>
-<script type="math/tex; mode=display">
-f(\bar{\textbf{x}}+\bar{\lambda}(\bar{\textbf{y}}-\bar{\textbf{x}}))
-< f(\bar{\textbf{x}})</script><p>由于$\bar{\textbf{x}}+\bar{\lambda}(\bar{\textbf{y}}-\bar{\textbf{x}})\in R$，有$\bar{\textbf{x}}\notin R^\star$，矛盾。必要性得证</p>
-<p>充分性：</p>
-<p>因为$f(\textbf{x})$是凸函数，因此对任意$\textbf{x}\in E^n$，有</p>
-<script type="math/tex; mode=display">
-f(\textbf{x})\geqq f(\bar{\textbf{x}}) + \nabla f(\bar{\textbf{x}}) (\textbf{x}-\bar{\textbf{x}})</script><p>当然在$\textbf{x}\in R$时，上式依然成立。</p>
-<p>由已知条件，对任意$\textbf{x}\in R$，有$\nabla f(\bar{\textbf{x}})(\textbf{x}-\bar{\textbf{x}})\geqq0$，因此</p>
-<script type="math/tex; mode=display">
-f(\textbf{x})\geqq f(\bar{\textbf{x}}) + \nabla f(\bar{\textbf{x}}) (\textbf{x}-\bar{\textbf{x}})\geqq f(\bar{\textbf{x}})</script><p>因此$\bar{\textbf{x}}\in R^\star$，充分性得证。</p>
-</blockquote>
-<h3 id="蒋中一教材12-6-齐次函数"><a href="#蒋中一教材12-6-齐次函数" class="headerlink" title="蒋中一教材12.6 齐次函数"></a>蒋中一教材12.6 齐次函数</h3><p>$r$次齐次函数：</p>
-<script type="math/tex; mode=display">
-f(jx_1,\cdots,jx_n) = j^r f(x_1,\cdots,x_n)</script><p>最常用的是一次齐次函数，通常被称为线性齐次函数。因为线性齐次函数应用的主要领域为生产理论，所以我们采用如下形式的生产函数作为讨论的框架：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    Q = f(K,L)    \tag{12.45}
-\end{eqnarray}</script><p><span style='font-family:hei;font-size:18px'>性质1</span> 给定线性齐次生产函数$Q=f(K,L)$，劳动的平均物质产品（$APP_L$）和资本的平均物质产品($APP_K$)可以表示成资本劳动比率$k\equiv \frac K L$的函数。</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \frac1Lf(K,L) = f\left( \frac KL,\frac LL \right) = f(k,1) = \phi(k)    \notag
-\end{eqnarray}</script><p>从而：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    APP_L &\equiv& \frac QL = \phi(k)    \tag{12.46} \\
-    APP_K &\equiv& \frac QK = \frac QL \cdot \frac LK = \frac{\phi(k)}{k}    \tag{12.47}
-\end{eqnarray}</script><p><span style='font-family:hei;font-size:18px'>性质2</span> 给定线性齐次生产函数$Q=f(K,L)$，边际物质产品$MPP_L,MPP_K$可以表示成资本劳动比率$k\equiv \frac K L$的函数。</p>
-<p>总产量可以写成：$Q=L\phi(k)$。还有两个初步结果：</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    \frac{\partial k}{\partial K} &=& \frac{\partial }{\partial K}\left( \frac KL    \right) = \frac1L    \notag\\
-    \frac{\partial k}{\partial L} &=& \frac{\partial }{\partial L}\left( \frac KL    \right) = -\frac{1}{L^2}K    \notag
-\end{eqnarray}\tag{12.48}</script><p>于是</p>
-<script type="math/tex; mode=display">
-\begin{eqnarray}
-    MPP_K &\equiv& \frac{\partial Q}{\partial K} = \frac{\partial }{\partial K}[L\phi(k)] = L\frac{\partial\phi(k)}{\partial K} = L\frac{\partial\phi(k)}{\partial k}\cdot\frac{\partial k}{\partial K} \notag\\
-    &=& L\phi'(k)\frac1L=\phi'(k)    \notag\\
-  MPP_L &\equiv&\frac{\partial Q}{\partial L} = \frac{\partial }{\partial L}[L\phi(k)] = \phi(k)+L\frac{\partial\phi(k)}{\partial L} 
-  = \phi(k)+L\frac{\partial\phi(k)}{\partial k}\cdot\frac{\partial k}{\partial L} \notag\\
-  &=& \phi(k)+L\phi'(k)\left(-\frac{K}{L^2}\right) 
-  =\phi(k)-k\phi'(k)    \notag
-\end{eqnarray}\tag{12.50}</script><p>像平均产量一样，只要资本劳动比率不变，边际产量亦保持不变，它们是变量$K$和$L$的零次齐次函数。</p>
-<p><span style='font-family:hei;font-size:18px'>性质3(欧拉定理)</span> 给定线性齐次生产函数$Q=f(K,L)$，则</p>
-<script type="math/tex; mode=display">
-K\frac{\partial Q}{\partial K}+L\frac{\partial Q}{\partial L} \equiv Q</script><blockquote>
-<p>证明：</p>
-<script type="math/tex; mode=display">
-K\frac{\partial Q}{\partial K}+L\frac{\partial Q}{\partial L} 
-= K\cdot\phi'(k)+L\cdot[\phi(k)-k\phi'(k)] 
-=L\phi(k)=Q</script></blockquote>
-<h4 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h4><p>多元线性齐次函数：</p>
-<script type="math/tex; mode=display">
-y=f(x_1,x_2,\cdots,x_n) = x_1\phi\left(\frac{x_2}{x_1},\frac{x_3}{x_1},\cdots,\frac{x_n}{x_1}\right)
-(\text{一次齐次})</script><p>欧拉定理也可以很容易推广到如下形式：</p>
-<script type="math/tex; mode=display">
-\sum_{i=1}^n x_if_i\equiv y(\text{欧拉定理})</script><p>也可以推广至$r$次齐次情形。</p>
-<script type="math/tex; mode=display">
-y = x_1^r\phi\left(\frac{x_2}{x_1},\frac{x_3}{x_1},\cdots,\frac{x_n}{x_1}\right)</script><p>修正的欧拉定理以下述形式出现</p>
-<script type="math/tex; mode=display">
-\sum_{i=1}^n x_if_i\equiv ry(\text{欧拉定理})</script>
-          </div>
-      
+    </div>
+    
     <footer class="article-footer">
       
         <div class="article-tag-wrap">
-          <!-- 
+          
     <div class="article-reward">
         <a id="reward-btn" href="javascript:;">打赏</a>
         <div id="reward-content">
@@ -463,17 +323,17 @@ y = x_1^r\phi\left(\frac{x_2}{x_1},\frac{x_3}{x_1},\cdots,\frac{x_n}{x_1}\right)
         </div>
     </div>
 
- -->
+
           
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" rel="tag">凸函数</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" rel="tag">数学规划</a></li></ul>
 
-          <!-- 
+          
     <div class="social-share">
       <span>分享到:</span>
     </div>
 
 
- -->
+
         </div>
       
       
@@ -512,8 +372,7 @@ y = x_1^r\phi\left(\frac{x_2}{x_1},\frac{x_3}{x_1},\cdots,\frac{x_n}{x_1}\right)
       
     </footer>
   </div>
-</article>
-</section>
+</article></section>
         
           <aside id="sidebar">
   
@@ -578,50 +437,6 @@ y = x_1^r\phi\left(\frac{x_2}{x_1},\frac{x_3}{x_1},\cdots,\frac{x_n}{x_1}\right)
       <a href="../../../../tags/2035/" style="font-size: 10px;">2035</a> <a href="../../../../tags/DSGE/" style="font-size: 10px;">DSGE</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/SSA/" style="font-size: 10px;">SSA</a> <a href="../../../../tags/VAR/" style="font-size: 10px;">VAR</a> <a href="../../../../tags/stata/" style="font-size: 10px;">stata</a> <a href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" style="font-size: 10px;">不变价格</a> <a href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" style="font-size: 10px;">不稳定就业</a> <a href="../../../../tags/%E5%81%A5%E5%BA%B7/" style="font-size: 10px;">健康</a> <a href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" style="font-size: 10px;">克鲁格曼</a> <a href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" style="font-size: 10px;">公共卫生</a> <a href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" style="font-size: 10px;">共产党宣言</a> <a href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" style="font-size: 10px;">凸函数</a> <a href="../../../../tags/%E5%87%B8%E9%9B%86/" style="font-size: 10px;">凸集</a> <a href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">动态随机一般均衡模型</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" style="font-size: 10px;">劳动价值论</a> <a href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" style="font-size: 10px;">劳动过程</a> <a href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" style="font-size: 10px;">包络定理</a> <a href="../../../../tags/%E5%8C%BB%E7%96%97/" style="font-size: 10px;">医疗</a> <a href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" style="font-size: 10px;">十四五</a> <a href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" style="font-size: 10px;">南北贸易</a> <a href="../../../../tags/%E5%8D%B1%E6%9C%BA/" style="font-size: 10px;">危机</a> <a href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">发刊技巧</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">古典</a> <a href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 10px;">古典经济学</a> <a href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" style="font-size: 15px;">名词解释</a> <a href="../../../../tags/%E5%90%8E%E5%87%AF/" style="font-size: 17.5px;">后凯</a> <a href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" style="font-size: 10px;">向量自回归</a> <a href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">国内大循环</a> <a href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" style="font-size: 10px;">国民经济核算</a> <a href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" style="font-size: 12.5px;">国际贸易</a> <a href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" style="font-size: 10px;">基础范畴</a> <a href="../../../../tags/%E5%A2%9E%E9%95%BF/" style="font-size: 10px;">增长</a> <a href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" style="font-size: 10px;">外生冲击</a> <a href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">局部投入产出闭模型</a> <a href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">库恩-塔克条件</a> <a href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" style="font-size: 10px;">建筑业</a> <a href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" style="font-size: 10px;">开集闭集</a> <a href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" style="font-size: 17.5px;">恩格斯</a> <a href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" style="font-size: 10px;">投入产出</a> <a href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" style="font-size: 10px;">拉格朗日乘子法</a> <a href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" style="font-size: 10px;">数学规划</a> <a href="../../../../tags/%E6%96%AF%E5%AF%86/" style="font-size: 10px;">斯密</a> <a href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" style="font-size: 10px;">新古典</a> <a href="../../../../tags/%E6%9D%82%E8%AE%B0/" style="font-size: 12.5px;">杂记</a> <a href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" style="font-size: 12.5px;">李斯特</a> <a href="../../../../tags/%E6%9D%A8%E6%A0%BC/" style="font-size: 10px;">杨格</a> <a href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" style="font-size: 10px;">核心期刊</a> <a href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">法国调节学派</a> <a href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" style="font-size: 10px;">现代货币理论</a> <a href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" style="font-size: 10px;">社会干预</a> <a href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" style="font-size: 12.5px;">线性规划</a> <a href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" style="font-size: 10px;">美国社会积累结构学派</a> <a href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" style="font-size: 10px;">自由贸易</a> <a href="../../../../tags/%E8%A5%BF%E9%A9%AC/" style="font-size: 10px;">西马</a> <a href="../../../../tags/%E8%AE%A1%E9%87%8F/" style="font-size: 10px;">计量</a> <a href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" style="font-size: 12.5px;">调节理论</a> <a href="../../../../tags/%E8%B0%A2%E5%85%8B/" style="font-size: 10px;">谢克</a> <a href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" style="font-size: 10px;">财政管制</a> <a href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" style="font-size: 17.5px;">资本循环</a> <a href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" style="font-size: 10px;">远景目标</a> <a href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" style="font-size: 10px;">金融化</a> <a href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" style="font-size: 10px;">雇佣劳动</a> <a href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" style="font-size: 20px;">马克思</a> <a href="../../../../tags/%E9%AB%98%E5%B3%B0/" style="font-size: 10px;">高峰</a>
     </div>
   </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/">2021年06月</a><span class="archive-list-count">59</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/">2020年12月</a><span class="archive-list-count">65</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/2035/" rel="tag">2035</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/DSGE/" rel="tag">DSGE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/SSA/" rel="tag">SSA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/VAR/" rel="tag">VAR</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/stata/" rel="tag">stata</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E5%8F%98%E4%BB%B7%E6%A0%BC/" rel="tag">不变价格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E7%A8%B3%E5%AE%9A%E5%B0%B1%E4%B8%9A/" rel="tag">不稳定就业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%81%A5%E5%BA%B7/" rel="tag">健康</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%8B%E9%B2%81%E6%A0%BC%E6%9B%BC/" rel="tag">克鲁格曼</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F/" rel="tag">公共卫生</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80/" rel="tag">共产党宣言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E5%87%BD%E6%95%B0/" rel="tag">凸函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%87%B8%E9%9B%86/" rel="tag">凸集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%A8%E6%80%81%E9%9A%8F%E6%9C%BA%E4%B8%80%E8%88%AC%E5%9D%87%E8%A1%A1%E6%A8%A1%E5%9E%8B/" rel="tag">动态随机一般均衡模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E4%BB%B7%E5%80%BC%E8%AE%BA/" rel="tag">劳动价值论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8A%B3%E5%8A%A8%E8%BF%87%E7%A8%8B/" rel="tag">劳动过程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%85%E7%BB%9C%E5%AE%9A%E7%90%86/" rel="tag">包络定理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8C%BB%E7%96%97/" rel="tag">医疗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%81%E5%9B%9B%E4%BA%94/" rel="tag">十四五</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%97%E5%8C%97%E8%B4%B8%E6%98%93/" rel="tag">南北贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8D%B1%E6%9C%BA/" rel="tag">危机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%91%E5%88%8A%E6%8A%80%E5%B7%A7/" rel="tag">发刊技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8/" rel="tag">古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%8F%A4%E5%85%B8%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">古典经济学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/" rel="tag">名词解释</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%8E%E5%87%AF/" rel="tag">后凯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%90%91%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92/" rel="tag">向量自回归</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E5%86%85%E5%A4%A7%E5%BE%AA%E7%8E%AF/" rel="tag">国内大循环</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E6%B0%91%E7%BB%8F%E6%B5%8E%E6%A0%B8%E7%AE%97/" rel="tag">国民经济核算</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93/" rel="tag">国际贸易</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9F%BA%E7%A1%80%E8%8C%83%E7%95%B4/" rel="tag">基础范畴</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A2%9E%E9%95%BF/" rel="tag">增长</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A4%96%E7%94%9F%E5%86%B2%E5%87%BB/" rel="tag">外生冲击</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B1%80%E9%83%A8%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA%E9%97%AD%E6%A8%A1%E5%9E%8B/" rel="tag">局部投入产出闭模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BA%93%E6%81%A9-%E5%A1%94%E5%85%8B%E6%9D%A1%E4%BB%B6/" rel="tag">库恩-塔克条件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BB%BA%E7%AD%91%E4%B8%9A/" rel="tag">建筑业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BC%80%E9%9B%86%E9%97%AD%E9%9B%86/" rel="tag">开集闭集</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%81%A9%E6%A0%BC%E6%96%AF/" rel="tag">恩格斯</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8A%95%E5%85%A5%E4%BA%A7%E5%87%BA/" rel="tag">投入产出</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95/" rel="tag">拉格朗日乘子法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" rel="tag">数学规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%AF%E5%AF%86/" rel="tag">斯密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%B0%E5%8F%A4%E5%85%B8/" rel="tag">新古典</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%8E%E6%96%AF%E7%89%B9/" rel="tag">李斯特</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%A8%E6%A0%BC/" rel="tag">杨格</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%A0%B8%E5%BF%83%E6%9C%9F%E5%88%8A/" rel="tag">核心期刊</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B3%95%E5%9B%BD%E8%B0%83%E8%8A%82%E5%AD%A6%E6%B4%BE/" rel="tag">法国调节学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%8E%B0%E4%BB%A3%E8%B4%A7%E5%B8%81%E7%90%86%E8%AE%BA/" rel="tag">现代货币理论</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%A4%BE%E4%BC%9A%E5%B9%B2%E9%A2%84/" rel="tag">社会干预</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" rel="tag">线性规划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BE%8E%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%AF%E7%B4%AF%E7%BB%93%E6%9E%84%E5%AD%A6%E6%B4%BE/" rel="tag">美国社会积累结构学派</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%87%AA%E7%94%B1%E8%B4%B8%E6%98%93/" rel="tag">自由贸易</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%A5%BF%E9%A9%AC/" rel="tag">西马</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%A1%E9%87%8F/" rel="tag">计量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%83%E8%8A%82%E7%90%86%E8%AE%BA/" rel="tag">调节理论</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B0%A2%E5%85%8B/" rel="tag">谢克</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B4%A2%E6%94%BF%E7%AE%A1%E5%88%B6/" rel="tag">财政管制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B5%84%E6%9C%AC%E5%BE%AA%E7%8E%AF/" rel="tag">资本循环</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%BF%9C%E6%99%AF%E7%9B%AE%E6%A0%87/" rel="tag">远景目标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%87%91%E8%9E%8D%E5%8C%96/" rel="tag">金融化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%9B%87%E4%BD%A3%E5%8A%B3%E5%8A%A8/" rel="tag">雇佣劳动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%A9%AC%E5%85%8B%E6%80%9D/" rel="tag">马克思</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%AB%98%E5%B3%B0/" rel="tag">高峰</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title"><i class="fa fa-link"></i> 友情链接</h3>
-    <div class="widget">
-      <ul>
-      
-        <li>
-          <a href="../../../../http:/www.example1.com/">site-name1</a>
-        </li>
-      
-        <li>
-          <a href="../../../../http:/www.example2.com/">site-name2</a>
-        </li>
-      
-        <li>
-          <a href="../../../../http:/www.example3.com/">site-name3</a>
-        </li>
-      
-      </ul>
-    </div>
-  </div>
-
 
   
 </aside>
@@ -774,20 +589,5 @@ y = x_1^r\phi\left(\frac{x_2}{x_1},\frac{x_3}{x_1},\cdots,\frac{x_n}{x_1}\right)
 
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
