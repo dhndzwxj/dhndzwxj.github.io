@@ -1,0 +1,1708 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
+<link rel="stylesheet" href="css/bilicard.css">
+<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>微观计量经济学 | 小荷才露尖尖角</title><meta name="author" content="揭晓"><meta name="copyright" content="揭晓"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="安徽大学许文立：应用计量经济学讲稿 配套dofile  2021版课件 lecture1导论 lecture2 潜在结果分析框架 lecture3 截面数据的参数和非参数估计方法 lecture4 线性回归更多专题 lecture5 面板数据的参数和非参数方法 2020版期末试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微观计量经济学">
+<meta property="og:url" content="https://dhndzwxj.github.io/767402338.html">
+<meta property="og:site_name" content="小荷才露尖尖角">
+<meta property="og:description" content="安徽大学许文立：应用计量经济学讲稿 配套dofile  2021版课件 lecture1导论 lecture2 潜在结果分析框架 lecture3 截面数据的参数和非参数估计方法 lecture4 线性回归更多专题 lecture5 面板数据的参数和非参数方法 2020版期末试题">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dhndzwxj.github.io/private_img/banner2.gif">
+<meta property="article:published_time" content="2021-10-25T05:18:31.000Z">
+<meta property="article:modified_time" content="2021-10-29T15:30:44.835Z">
+<meta property="article:author" content="揭晓">
+<meta property="article:tag" content="stata">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dhndzwxj.github.io/private_img/banner2.gif"><link rel="shortcut icon" href="/private_img/favicon.png"><link rel="canonical" href="https://dhndzwxj.github.io/767402338"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"本文上次更新距离今天已经过去","messageNext":"天, 文中内容可能已经过时，望周知。"},
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '微观计量经济学',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-10-29 23:30:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet"><link href="https://fonts.loli.net/css2?family=Ma+Shan+Zheng:wght@400;500;700&display=swap" rel="stylesheet"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="atom.xml" title="小荷才露尖尖角" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/private_img/yuyingnan.jpg" onerror="onerror=null;src='/private_img/404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="archives/"><div class="headline">文章</div><div class="length-num">270</div></a><a href="tags/"><div class="headline">标签</div><div class="length-num">72</div></a><a href="categories/"><div class="headline">分类</div><div class="length-num">72</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/private_img/banner2.gif')"><nav id="nav"><span id="blog_name"><a id="site-name" href="index.html">小荷才露尖尖角</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">微观计量经济学</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-10-25T05:18:31.000Z" title="发表于 2021-10-25 13:18:31">2021-10-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-10-29T15:30:44.835Z" title="更新于 2021-10-29 23:30:44">2021-10-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/">计量与模型</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/%E8%AE%A1%E9%87%8F/">计量</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/%E8%AE%A1%E9%87%8F/%E7%90%86%E8%AE%BA/">理论</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">9.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>51分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="微观计量经济学"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><a href='/local_file/AppliedEconometrics.pdf' target='_blank'>安徽大学许文立：应用计量经济学讲稿</a></p>
+<p><a href='/local_file/《应用计量经济学讲稿》配套dofile.do' style='font-family:kaiti' target='_blank'>配套dofile</a></p>
+<h2 id="2021版课件"><a class="markdownIt-Anchor" href="#2021版课件"></a> 2021版课件</h2>
+<p><a href='/local_file/江艇-微观计量经济学/lec1 导论.pdf' target='_blank'>lecture1导论</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/lec2 潜在结果分析框架.pdf' target='_blank'>lecture2 潜在结果分析框架</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/lec3 截面数据的参数和非参数方法.pdf' target='_blank'>lecture3 截面数据的参数和非参数估计方法</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/lec4 线性回归更多专题.pdf' target='_blank'>lecture4 线性回归更多专题</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/lec5 面板数据参数和非参数方法.pdf' target='_blank'>lecture5 面板数据的参数和非参数方法</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/final2020.pdf' target='_blank'>2020版期末试题</a></p>
+<h2 id="2020版课件"><a class="markdownIt-Anchor" href="#2020版课件"></a> 2020版课件</h2>
+<p><a href='/local_file/江艇-微观计量经济学/lecture1导论.pdf' target='_blank'>lecture1导论</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/lecture2 线性回归理论回顾（上）.pdf' target='_blank'>lecture2 线性回归理论回顾（上）</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/lecture3潜在结果分析框架.pdf' target='_blank'>lecture3潜在结果分析框架（此节建议参考2019版笔记）</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/lecture4 截面数据的参数和非参数估计方法.pdf' target='_blank'>lecture4 截面数据的参数和非参数估计方法</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/lecture5 线性回归理论回顾（下）.pdf' target='_blank'>lecture5 线性回归理论回顾（下）</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/lecture6 面板数据的参数和非参数方法.pdf' target='_blank'>lecture6 面板数据的参数和非参数方法</a></p>
+<h2 id="2019版课件"><a class="markdownIt-Anchor" href="#2019版课件"></a> 2019版课件</h2>
+<p><a href='/local_file/江艇-微观计量经济学/Lecture1 开幕.pdf' target='_blank'>Lecture1 开幕</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/Lecture2 OLS回顾（很全）.pdf' target='_blank'>Lecture2 OLS回顾（很全）</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/Lecture3 潜在结果分析框架.pdf' target='_blank'>Lecture3 潜在结果分析框架（有笔记）</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/Lecture4 匹配.pdf' target='_blank'>Lecture4 匹配</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/Lecture5 双重差分DID.pdf' target='_blank'>Lecture5 双重差分DID</a></p>
+<p><a href='/local_file/江艇-微观计量经济学/Lecture6 工具变量.pdf' target='_blank'>Lecture6 工具变量</a></p>
+<h2 id="部分代码展示"><a class="markdownIt-Anchor" href="#部分代码展示"></a> 部分代码展示</h2>
+<h3 id="1-数值模拟"><a class="markdownIt-Anchor" href="#1-数值模拟"></a> 1、数值模拟</h3>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">&#x2F;&#x2F; demo_ctrl.do
+cap set more off
+clear all
+
+program define ols_ctrl, rclass
+	tempvar y x1 x1tmp x2
+	set obs 100
+	gen &#96;x2&#39;&#x3D;(rnormal()&gt;0)
+	gen &#96;x1tmp&#39;&#x3D;0.8*&#96;x2&#39;+0.2*(1-&#96;x2&#39;)+rnormal()
+	gen &#96;x1&#39;&#x3D;(&#96;x1tmp&#39;&gt;0)
+	gen &#96;y&#39;&#x3D;&#96;x1&#39;+&#96;x2&#39;+rnormal()
+	reg &#96;y&#39; &#96;x1&#39;
+	return scalar b1&#x3D;_b[&#96;x1&#39;]
+	reg &#96;y&#39; &#96;x1&#39; &#96;x2&#39;
+	return scalar b1n&#x3D;_b[&#96;x1&#39;]
+	return scalar b2n&#x3D;_b[&#96;x2&#39;]
+end
+
+set seed 20190311
+simulate b1&#x3D;r(b1) b1n&#x3D;r(b1n) b2n&#x3D;r(b2n), reps(1000): ols_ctrl
+
+*------------------------------------------------------------
+
+cap set more off
+clear all
+
+program define ols_ctrl, rclass
+	tempvar y x1 x1tmp x2 x2tmp e
+	set obs 100
+	gen &#96;e&#39;&#x3D;rnormal()
+	gen &#96;x2tmp&#39;&#x3D;&#96;e&#39;+rnormal()
+	gen &#96;x2&#39;&#x3D;(&#96;x2tmp&#39;&gt;0)
+	gen &#96;x1tmp&#39;&#x3D;0.8*&#96;x2&#39;+0.2*(1-&#96;x2&#39;)+rnormal()
+	gen &#96;x1&#39;&#x3D;(&#96;x1tmp&#39;&gt;0)
+	gen &#96;y&#39;&#x3D;&#96;x1&#39;+&#96;x2&#39;+&#96;e&#39;+rnormal()
+	reg &#96;y&#39; &#96;x1&#39;
+	return scalar b1&#x3D;_b[&#96;x1&#39;]
+	reg &#96;y&#39; &#96;x1&#39; &#96;x2&#39;
+	return scalar b1n&#x3D;_b[&#96;x1&#39;]
+	return scalar b2n&#x3D;_b[&#96;x2&#39;]
+end
+
+set seed 20190311
+simulate b1&#x3D;r(b1) b1n&#x3D;r(b1n) b2n&#x3D;r(b2n), reps(1000): ols_ctrl<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-穷举法示例"><a class="markdownIt-Anchor" href="#2-穷举法示例"></a> 2、穷举法示例</h3>
+<p>数据文件：<a href='/local_file/江艇-微观计量经济学/new_obsout.dta' target='_blank'>new_obsout.dta</a></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">*关于穷举处理状态的所有分配方式的方法汇总*
+
+* 查看各种方法的运行时间
+set rmsg on
+
+
+*------------------------------------------------------------------------------*
+
+
+*方法一（041袁国奇）：使用for循环进行穷举，每生成一次匹配计算一次组间均值差异，并与样本的组间均值差异比较、计数。*
+clear all
+use obsout.dta
+reg outcome treat 
+scalar savg &#x3D; _b[treat]   &#x2F;&#x2F;观测的组间均值差异
+gen bool &#x3D; 0     &#x2F;&#x2F;判断准确分布的组间均值差异是否大于观测的组间均值差异
+gen count &#x3D; 0    &#x2F;&#x2F;记录准确分布组间均值差异大于观测组间均值差异的个数
+gen total &#x3D; 0    &#x2F;&#x2F;记录循环次数即穷举的总数
+
+replace treat &#x3D; 0    &#x2F;&#x2F;从12个0当中选取6个改为1，并列举所有情况
+forvalues i &#x3D; 1&#x2F;7 &#123;
+    forvalues j &#x3D; 2&#x2F;8 &#123;
+        forvalues k &#x3D; 3&#x2F;9 &#123;
+            forvalues v &#x3D; 4&#x2F;10 &#123;
+                forvalues w &#x3D; 5&#x2F;11 &#123;
+                    forvalues x &#x3D; 6&#x2F;12 &#123;
+					    if &#96;x&#39;&gt;&#96;w&#39; &amp; &#96;w&#39;&gt;&#96;v&#39; &amp; &#96;v&#39;&gt;&#96;k&#39; &amp; &#96;k&#39;&gt;&#96;j&#39; &amp; &#96;j&#39;&gt;&#96;i&#39; &#123;
+					        replace treat &#x3D; 1 in &#96;i&#39;
+                            replace treat &#x3D; 1 in &#96;j&#39;
+                            replace treat &#x3D; 1 in &#96;k&#39;
+                            replace treat &#x3D; 1 in &#96;v&#39;
+                            replace treat &#x3D; 1 in &#96;w&#39;
+                            replace treat &#x3D; 1 in &#96;x&#39;
+                            reg outcome treat
+                            scalar Savg &#x3D; _b[treat]   &#x2F;&#x2F;准确分布的组间均值差异
+						    replace bool &#x3D; 1 if abs(Savg) &gt; abs(savg)
+						    replace count &#x3D; count + bool
+							replace total &#x3D; total + 1
+						    replace treat &#x3D; 0   &#x2F;&#x2F;回到初始状态，重新列举
+						    replace bool &#x3D; 0    &#x2F;&#x2F;以便下次循环做判断
+					    &#125;   
+					&#125;				
+                &#125;
+            &#125;
+        &#125;
+    &#125;		        
+&#125;
+
+scalar pvalue &#x3D; count&#x2F;total
+dis pvalue
+
+
+*------------------------------------------------------------------------------*
+
+
+*方法二（046何薇）：构造穷举抽样的程序，利用ritest命令*
+*说明：在完成作业的过程中，有和周澜、石玥同学一起交流讨论
+&#x2F;&#x2F;定义穷举的程序
+&#x2F;&#x2F;参考https:&#x2F;&#x2F;blog.csdn.net&#x2F;zhangniuagezhang&#x2F;article&#x2F;details&#x2F;81540743
+
+clear all
+use obsout.dta
+
+program permu1
+    scalar i &#x3D; 12
+	while i &gt;&#x3D;2 &#123;
+	    scalar sum1&#x3D;0
+		if treat[i] &#x3D;&#x3D; 1 &amp; treat[i-1] &#x3D;&#x3D; 0 &#123;
+		    replace treat &#x3D; 1 if _n &#x3D;&#x3D; i-1
+			replace treat &#x3D; 0 if _n &#x3D;&#x3D; i
+			scalar j &#x3D; 12
+			while j &gt;&#x3D; i &#123;
+			    if treat[j] &#x3D;&#x3D; 1 &#123;
+				    scalar sum1 &#x3D; sum1 + 1
+					replace treat &#x3D; 0 if _n &#x3D;&#x3D; j
+				&#125;
+				scalar j &#x3D; j - 1
+			&#125;
+			scalar k &#x3D; 12
+			while k &gt;&#x3D; 13 - sum1 &#123;
+			    replace treat &#x3D; 1 if _n &#x3D;&#x3D; k
+				scalar k &#x3D; k - 1
+			&#125;
+			continue, break
+		&#125;
+		scalar i &#x3D; i - 1
+	&#125;
+end
+
+ritest treat _b[treat], samplingprogram(permu1) reps(924) nodots: reg outcome treat
+
+
+*------------------------------------------------------------------------------*
+
+
+*方法三（001陈慧瑕）：利用mata（矩阵编程语言），写出所有分配方式，再进一步处理*
+use obsout.dta, clear
+	mata
+	i&#x3D;0
+	st_view(X &#x3D; ., ., &quot;treat&quot;)
+	info &#x3D; cvpermutesetup(X)					&#x2F;*cvpermutesetup()函数获得treat的组合信息*&#x2F;
+	while ((v&#x3D;cvpermute(info)) !&#x3D; J(0,1,.)) &#123;	&#x2F;*cvpermute()函数获取info中关于treat的组合信息，此处通过构建循环生成所有的组合变量*&#x2F;
+					i++
+					treat&#x3D;&quot;v&quot;+strofreal(i)
+					st_addvar(&quot;float&quot;,treat)
+					st_store(.,treat,v)
+	&#125;
+	end									
+	drop treat
+
+	reshape long v, i(outcome) j(id)			&#x2F;*将数据由宽型数据转为长型数据*&#x2F;
+	sort id
+	replace v&#x3D;-1 if v&#x3D;&#x3D;0
+	gen multi&#x3D;v*outcome
+	bys id: egen subsum&#x3D;sum(multi)
+	gen abs_sub_sum&#x3D;abs(subsum)					&#x2F;*对生成的subsum取绝对值，由于在计算p值的时候关注的是顺序，所以我并没有求出均值差异，&#x2F;&#x2F;&#x2F;
+												而是以每种组合情况的观测间的总差异作为标准，所以计算出的结果相对于均值都是大6倍，但对p值计算无影响*&#x2F;
+	gen T&#x3D;12.11  								&#x2F;*查找实验组真实得到的均值差异的绝对值（可自己计算，&#x2F;&#x2F;&#x2F;
+												也可在已求得的abs_sub_sum中查找id为1的数值） 12.11&#x2F;6&#x3D;2.01833*&#x2F;
+	count if abs_sub_sum &gt;T		
+	gen P&#x3D;r(N)&#x2F;_N								&#x2F;*通过绝对值大于实际实验结果的个数与总个数的比值得到真实的p值*&#x2F;
+	sum P										&#x2F;*通过查看数据或者看sum中的均值可知，精确p&#x3D;0.2683983*&#x2F;
+	duplicates drop id ,force					&#x2F;*强制删除数据中id重复的情况*&#x2F;
+	twoway(kdensity subsum) 
+	
+	
+*------------------------------------------------------------------------------*
+
+
+*方法四（064张子尧）：使用percom包中的combin命令*
+clear all
+set more off
+set seed 20200512
+
+&#x2F;* ----------------------
+| STEP 0. 生成分配方案  |
+-----------------------*&#x2F;
+
+* 使用第三方程序包percom中的combin命令生成分配方案。
+* 由于combin命令最多只支持从n个样本中抽取5个，使用循环手动修改，穷举12抽6个的所有组合。
+
+cap cap findfile combin.ado &#x2F;&#x2F; 检查是否安装了percom程序包中的combin命令
+if _rc &gt; 0 &#123;
+ssc install percom &#x2F;&#x2F; 安装percom程序包，使用combin命令穷举所有分配方案
+&#125;
+
+forvalue i &#x3D; 1&#x2F;7 &#123;
+
+	clear all
+	quietly: set obs 12
+	gene id &#x3D; _n
+	quietly: drop if id &lt;&#x3D; &#96;i&#39;
+	quietly: combin id, k(5)
+	gene id_0 &#x3D; &#96;i&#39;
+	order id_0 id_1-id_5
+
+	if &#96;i&#39; &#x3D;&#x3D; 1&#123;
+		quietly: save resample.dta, replace
+	&#125;
+	else&#123;
+		append using resample.dta
+		quietly: save resample.dta, replace
+	&#125;
+&#125;
+
+xpose, clear &#x2F;&#x2F; 转置分配矩阵，用于后面的循环
+save resample.dta, replace
+
+&#x2F;* resample数据集为如下形式，共924种分配方案。
+每一列为一种分配方案，id在分配方案中的为处理组（treat&#x3D;1），不在分配方案中的为控制组treat&#x3D;0） 。
+---------------------------------------------------------
+v1	v2	v3	v4	v5	……	v921	v922	v923	v924
+1	1	1	1	1	……	6		6		6		7
+2	2	2	2	2	……	7		7		8		8
+3	3	3	3	3	……	8		9		9		9
+4	4	4	4	4	……	10		10		10		10
+5	5	5	5	5	……	11		11		11		11
+6	7	8	9	10	……	12		12		12		12
+---------------------------------------------------------*&#x2F;
+
+&#x2F;* ------------------------------------------------------------
+| STEP 1. 使用STATA进行随机推断	(第一题)					  |
+| 1. 当检验统计量为组间均值差异时，计算双侧检验的准确 p 值。  |
+-------------------------------------------------------------*&#x2F;
+
+* 1.1 计算组间均值差异，生成组间均值差异的总体分布
+clear all 
+forvalue i &#x3D; 1&#x2F;924&#123;
+	use resample, clear
+	keep v&#96;i&#39;					
+	rename v&#96;i&#39; id 			&#x2F;&#x2F; 选取第i种分配方案，即id包含在V&#96;i&#39;中的个体为处理组
+	gene D_resample &#x3D; 1		&#x2F;&#x2F; 重新分配的处理组
+	quietly: save resample_temp.dta, replace
+
+	use obsout, clear
+	gene id &#x3D; _n
+	merge 1:1 id using resample_temp.dta, nogen noreport
+	quietly: replace D_resample &#x3D; 0 if D_resample &gt; 1    &#x2F;&#x2F; 若D_resample为缺失值，则说明个体在控制组
+	&#x2F;* 	以d1为分配方案再分配后的数据如下
+	outcome	treat	id	D_resample
+	8.62	0		1		1
+	1.48	0		2		1
+	8.93	0		3		1
+	9.57	0		4		1
+	2.65	0		5		1
+	7.3		0		6		1
+	.06		1		7		0
+	1.72	1		8		0
+	2.19	1		9		0
+	7.32	1		10		0
+	7.53	1		11		0
+	7.62	1		12		0		*&#x2F;
+	
+	* 第一题：计算组间均值差异
+	quietly: regress outcome D_resample
+	gene diff_mean &#x3D; _b[D_resample] 			&#x2F;&#x2F; D为0-1变量时，D的OLS估计系数代表组间均值差异
+	quietly: keep diff_mean
+	quietly: drop if _n &gt; 1
+	if &#96;i&#39;&#x3D;&#x3D;1&#123;
+		quietly: save diff_mean_total, replace  &#x2F;&#x2F; 第一次循环储存结果
+	&#125;
+	else &#123;
+		quietly: append using diff_mean_total  	&#x2F;&#x2F; 第二次及以后的循环append在第一次的数据上
+		quietly: save diff_mean_total, replace
+	&#125;
+
+	if mod(&#96;i&#39;,100)&#x3D;&#x3D;0 &#123;
+		display &quot;Iteration &quot; &#96;i&#39; &quot; is done.&quot;
+	&#125;
+
+&#125;
+
+* 1.2 真实样本组间均值差异为-2.0183333，根据总体分布计算双边检验的精确p-value
+use diff_mean_total, clear
+gene abs_diff_mean &#x3D; abs(diff_mean)
+gene p_indicator &#x3D; abs_diff_mean &gt; 2.0183333
+egen p_sum &#x3D; total(p_indicator)
+gene p_value &#x3D; p_sum&#x2F;924
+scalar pvalue &#x3D; round(p_value[1],.0000001)   &#x2F;&#x2F; p-value保留7位小数
+sum diff_mean
+display &quot;第一题：组间均值差异的双侧精确p-value为0&quot; pvalue
+
+
+*------------------------------------------------------------------------------*
+
+
+*方法五（056林若兮，方法一）：利用嵌套循环进行穷举，先写出从C12,0到C12,12的穷举，再剔除其他的*
+clear all
+use obsout.dta
+ 
+gen id &#x3D; _n
+forvalues i1 &#x3D; 0&#x2F;1&#123;
+  forvalues i2 &#x3D; 0&#x2F;1&#123;
+    forvalues i3 &#x3D; 0&#x2F;1&#123;
+      forvalues i4 &#x3D; 0&#x2F;1&#123;
+        forvalues i5 &#x3D; 0&#x2F;1&#123;		
+          forvalues i6 &#x3D; 0&#x2F;1&#123;			
+            forvalues i7 &#x3D; 0&#x2F;1&#123;	
+              forvalues i8 &#x3D; 0&#x2F;1&#123;	
+				forvalues i9 &#x3D; 0&#x2F;1&#123;	
+				  forvalues i10 &#x3D; 0&#x2F;1&#123;	
+					forvalues i11 &#x3D; 0&#x2F;1&#123;
+					  forvalues i12 &#x3D; 0&#x2F;1&#123;	
+		                gen d_&#96;i1&#39;&#96;i2&#39;&#96;i3&#39;&#96;i4&#39;&#96;i5&#39;&#96;i6&#39;&#96;i7&#39;&#96;i8&#39;&#96;i9&#39;&#96;i10&#39;&#96;i11&#39;&#96;i12&#39; &#x3D; 99 
+						forvalues x &#x3D; 1&#x2F;12&#123;
+		                  replace d_&#96;i1&#39;&#96;i2&#39;&#96;i3&#39;&#96;i4&#39;&#96;i5&#39;&#96;i6&#39;&#96;i7&#39;&#96;i8&#39;&#96;i9&#39;&#96;i10&#39;&#96;i11&#39;&#96;i12&#39; &#x3D; &#96;i&#96;x&#39;&#39; if id &#x3D;&#x3D; &#96;x&#39;
+                        &#125;
+                      &#125;
+                    &#125;
+                  &#125;
+                &#125;
+              &#125;
+            &#125;
+          &#125;
+        &#125;
+      &#125;
+    &#125;
+  &#125;
+&#125; &#x2F;&#x2F;利用嵌套循环进行C12,0到C12,12的穷举
+set more off
+xpose, clear v
+gen sumd &#x3D; 0
+forvalues y &#x3D; 1&#x2F;12&#123;
+  replace sumd &#x3D; sumd + v&#96;y&#39;
+&#125; &#x2F;&#x2F;计算所有分配方式C12,x中的x
+keep if _varname &#x3D;&#x3D; &quot;outcome&quot; | _varname &#x3D;&#x3D; &quot;treatment&quot; | sumd &#x3D;&#x3D; 6 &#x2F;&#x2F;保留初始变量，并剔除C12,6以外的分配方式
+gen treatment_id &#x3D; _n - 2
+replace _varname &#x3D; &quot;d&quot; + string(treatment_id) if treatment_id &gt; 0 &#x2F;&#x2F;更新变量名称为“d+数字”的格式
+drop treatment_id sumd
+xpose, clear
+&#x2F;&#x2F;计算组间均值差异，并计算准确p值
+forvalues i &#x3D; 1&#x2F;924&#123;
+  bys d&#96;i&#39;: egen m&#96;i&#39; &#x3D; mean(outcome)
+  gen m&#96;i&#39;_0mid &#x3D; m&#96;i&#39; if d&#96;i&#39; &#x3D;&#x3D; 0
+  egen m&#96;i&#39;_0 &#x3D; max(m&#96;i&#39;_0mid)
+  gen m&#96;i&#39;_1mid &#x3D; m&#96;i&#39; if d&#96;i&#39; &#x3D;&#x3D; 1
+  egen m&#96;i&#39;_1 &#x3D; max(m&#96;i&#39;_1mid)
+  gen diff_d&#96;i&#39; &#x3D; m&#96;i&#39;_1 - m&#96;i&#39;_0
+  drop m*
+&#125; &#x2F;&#x2F;计算每种分配方式下的组间均值差异
+xpose, clear v
+gen id &#x3D; _n - 2
+egen num &#x3D; count(v1) if abs(v1) &gt; abs(-2.018334) &amp; id &gt; 924
+gen exact_p &#x3D; num&#x2F;924
+sum exact_p &#x2F;&#x2F;等于0.2683983
+
+
+*------------------------------------------------------------------------------*
+
+
+*方法六（056林若兮，方法二）：随机10000次后剔除重复值*
+clear all
+use obsout.dta
+
+while _N &lt; 924&#123;
+  clear all
+  set maxvar 10001 &#x2F;&#x2F;不设定maxvar则默认最大循环次数为4999，通常需循环多次、速度更慢
+  set seed 2020
+  set obs 12
+  forvalues i &#x3D; 1&#x2F;10000&#123;
+    gen d&#96;i&#39; &#x3D; (_n &lt;&#x3D; 6)
+    gen odr &#x3D; rnormal()
+    sort odr
+    drop odr
+  &#125; &#x2F;&#x2F;随机10000次分配方式
+  xpose, clear v
+  drop _varname
+  duplicates drop &#x2F;&#x2F;剔除重复值
+&#125; &#x2F;&#x2F;剔除重复值后样本量为924即完成穷举，进入下一步，否则循环
+set more off
+xpose, clear
+gen id &#x3D; _n
+sort id
+save &quot;exh.dta&quot;, replace
+use &quot;obsout.dta&quot;, clear
+gen id &#x3D; _n
+sort id
+merge 1:1 id using &quot;exh.dta&quot; &#x2F;&#x2F;合并数据集
+drop id _merge
+xpose, clear v
+gen treatment_id &#x3D; _n - 2
+replace _varname &#x3D; &quot;d&quot; + string(treatment_id) if treatment_id &gt; 0 &#x2F;&#x2F;更新变量名称为“d+数字”的格式
+drop treatment_id
+xpose, clear
+&#x2F;&#x2F;计算组间均值差异，并计算准确p值
+forvalues i &#x3D; 1&#x2F;924&#123;
+  bys d&#96;i&#39;: egen m&#96;i&#39; &#x3D; mean(outcome)
+  gen m&#96;i&#39;_0mid &#x3D; m&#96;i&#39; if d&#96;i&#39; &#x3D;&#x3D; 0
+  egen m&#96;i&#39;_0 &#x3D; max(m&#96;i&#39;_0mid)
+  gen m&#96;i&#39;_1mid &#x3D; m&#96;i&#39; if d&#96;i&#39; &#x3D;&#x3D; 1
+  egen m&#96;i&#39;_1 &#x3D; max(m&#96;i&#39;_1mid)
+  gen diff_d&#96;i&#39; &#x3D; m&#96;i&#39;_1 - m&#96;i&#39;_0
+  drop m*
+&#125; &#x2F;&#x2F;计算每种分配方式下的组间均值差异
+xpose, clear v
+gen id &#x3D; _n - 2
+egen num &#x3D; count(v1) if abs(v1) &gt; abs(-2.018334) &amp; id &gt; 924
+gen exact_p &#x3D; num&#x2F;924
+sum exact_p &#x2F;&#x2F;等于0.2683983
+
+
+*------------------------------------------------------------------------------*
+
+
+&#x2F;*
+方法七（江艇）：用mata的cvpermute穷举所有分配方式，导出成新变量到数据，
+用forvalues循环计算所有的组间均值差异。
+*&#x2F;
+
+cap set more off
+clear all
+use obsout.dta
+
+mata
+	st_view(V&#x3D;.,.,&quot;treat&quot;)
+	PV&#x3D;J(rows(V),0,.)
+	info&#x3D;cvpermutesetup(V)
+	while ((PV0&#x3D;cvpermute(info)) !&#x3D; J(0,1,.)) &#123;
+		PV&#x3D;PV,PV0
+		&#125;
+	st_matrix(&quot;PV&quot;,PV)
+end
+
+svmat PV, names(permute)
+
+qui reg outcome treat
+scalar diff_obs&#x3D;_b[treat]
+scalar extreme&#x3D;0
+local all&#x3D;colsof(PV)
+forvalues i&#x3D;1&#x2F;&#96;all&#39; &#123;
+	qui sum outcome if permute&#96;i&#39;&#x3D;&#x3D;1
+	scalar mean1&#x3D;r(mean)
+	qui sum outcome if permute&#96;i&#39;&#x3D;&#x3D;0
+	scalar mean0&#x3D;r(mean)
+	if abs(mean1-mean0)&gt;&#x3D;abs(diff_obs) scalar extreme&#x3D;extreme+1
+	&#x2F;*
+	如果用下面2行替换上面5行，速度会慢很多。
+	
+	qui reg outcome permute&#96;i&#39;
+	if abs(_b[permute&#96;i&#39;])&gt;&#x3D;abs(diff_obs) scalar extreme&#x3D;extreme+1
+	
+	*&#x2F;	
+	&#125;
+di extreme&#x2F;&#96;all&#39;
+
+
+* 计算精确p值的过程可以在mata内直接完成。
+
+cap set more off
+clear all
+use obsout.dta
+
+mata
+	st_view(V&#x3D;.,.,.)
+	diff_obs&#x3D;mean(select(V[.,1],V[.,2]:&#x3D;&#x3D;1))-mean(select(V[.,1],V[.,2]:&#x3D;&#x3D;0))
+	info&#x3D;cvpermutesetup(V[.,2])
+	extreme&#x3D;all&#x3D;0
+	while ((PV&#x3D;cvpermute(info)) !&#x3D; J(0,1,.)) &#123;
+		V1&#x3D;V[.,1],PV
+		diff&#x3D;mean(select(V1[.,1],V1[.,2]:&#x3D;&#x3D;1))-mean(select(V1[.,1],V1[.,2]:&#x3D;&#x3D;0))
+		if (abs(diff)&gt;&#x3D;abs(diff_obs)) extreme++
+		all++
+	&#125;
+(extreme, all, extreme&#x2F;all)
+end
+
+
+*------------------------------------------------------------------------------*
+
+
+&#x2F;*
+方法八（江艇）：先穷举所有6位排列，然后扩展成12位排列。
+*&#x2F;
+
+cap set more off
+clear all
+
+set obs 200000
+gen x&#x3D;1000000+_n-1
+forvalues i&#x3D;1&#x2F;6&#123;
+	gen x&#96;i&#39;&#x3D;floor(x&#x2F;10^(6-&#96;i&#39;)-floor(x&#x2F;10^(6-&#96;i&#39;+1))*10)
+	drop if x&#96;i&#39;&gt;1
+	&#125;
+drop x
+save tmp.dta, replace
+
+forvalues i&#x3D;1&#x2F;6&#123;
+	local j&#x3D;&#96;i&#39;+6
+	rename x&#96;i&#39; x&#96;j&#39;
+&#125;
+
+cross using tmp.dta
+
+&#x2F;*
+
+上面用到了cross命令，也可以用下面的方法手动做。
+
+cap set more off
+clear all
+
+set obs 200000
+gen x&#x3D;1000000+_n-1
+forvalues i&#x3D;1&#x2F;6&#123;
+	gen x&#96;i&#39;&#x3D;floor(x&#x2F;10^(6-&#96;i&#39;)-floor(x&#x2F;10^(6-&#96;i&#39;+1))*10)
+	drop if x&#96;i&#39;&gt;1
+	&#125;
+drop x
+gen grp&#x3D;_n
+sort grp
+save tmp.dta, replace
+
+forvalues i&#x3D;1&#x2F;6&#123;
+local j&#x3D;&#96;i&#39;+6
+rename x&#96;i&#39; x&#96;j&#39;
+&#125;
+
+expand _N
+sort grp
+rename grp grp0
+by grp0: gen grp&#x3D;_n
+drop grp0
+sort grp
+
+merge m:1 grp using tmp.dta
+drop grp _merge
+
+*&#x2F;
+
+egen sumx&#x3D;rowtotal(x*)
+drop if sumx!&#x3D;6
+drop sumx
+save tmp.dta, replace
+
+use obsout.dta, clear
+mkmat outcome, matrix(outcome)
+
+use tmp.dta, clear
+count
+scalar case&#x3D;r(N)
+order x1-x6 x7-x12
+mkmat x*, matrix(assign)
+mat yt&#x3D;assign*outcome
+mat numt&#x3D;assign*J(12,1,1)
+mat yc&#x3D;(J(case,12,1)-assign)*outcome
+mat numc&#x3D;(J(case,12,1)-assign)*J(12,1,1)
+svmat yt
+svmat numt
+svmat yc
+svmat numc
+gen diff&#x3D;yt&#x2F;numt-yc&#x2F;numc
+
+gen diff0&#x3D;diff[1]
+
+gen extreme&#x3D;(abs(diff)&gt;&#x3D;abs(diff0))
+sum extreme
+
+rm tmp.dta
+
+
+*------------------------------------------------------------------------------*
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-匹配方法演示"><a class="markdownIt-Anchor" href="#3-匹配方法演示"></a> 3、匹配方法演示</h3>
+<p>数据文件：<a href='/local_file/江艇-微观计量经济学/matching_demo/lalonde_data_exp.dta' target='_blank'>lalonde_data_exp.dta</a>、<a href='/local_file/江艇-微观计量经济学/matching_demo/lalonde_data_psid.dta' target='_blank'>lalonde_data_psid.dta</a>。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">&#x2F;&#x2F; 本文档旨在介绍匹配方法，配合使用的数据是关于美国1970年代中期的某个职业培训项目。
+
+use lalonde_data_psid.dta, clear
+
+&#x2F;&#x2F; 实验组的干预前结果和调查数据控制组的干预前结果有很大差异。
+
+tabstat re75, by(treat) stats(n mean sd max min)
+histogram re75, percent by(treat)
+
+&#x2F;&#x2F; 估计倾向得分。基于逐步回归方法搜索函数设定(Imbens, 2015)。
+&#x2F;&#x2F; 一次项的临界值c_lin&#x3D;1; 二次项的临界值c_qua&#x3D;2.71
+
+&#x2F;&#x2F; 先确定哪些一次项应该加入。
+
+logit treat re74 re75 u74 u75
+estimates store a
+foreach var in black hispanic age married nodegree edu &#123;
+	di &quot;&quot;
+	di &quot;&#96;var&#39;&quot;
+	qui logit treat re74 re75 u74 u75 &#96;var&#39;
+	lrtest a
+&#125;
+
+logit treat re74 re75 u74 u75 married
+estimates store a
+foreach var in black hispanic age nodegree edu &#123;
+	di &quot;&quot;
+	di &quot;&#96;var&#39;&quot;
+	qui logit treat re74 re75 u74 u75 married &#96;var&#39;
+	lrtest a
+&#125;
+
+logit treat re74 re75 u74 u75 married black
+estimates store a
+foreach var in hispanic age nodegree edu &#123;
+	di &quot;&quot;
+	di &quot;&#96;var&#39;&quot;
+	qui logit treat re74 re75 u74 u75 married black &#96;var&#39;
+	lrtest a
+&#125;
+
+logit treat re74 re75 u74 u75 married black age
+estimates store a
+foreach var in hispanic nodegree edu &#123;
+	di &quot;&quot;
+	di &quot;&#96;var&#39;&quot;
+	qui logit treat re74 re75 u74 u75 married black age &#96;var&#39;
+	lrtest a
+&#125;
+
+logit treat re74 re75 u74 u75 married black age hispanic
+estimates store a
+foreach var in nodegree edu &#123;
+	di &quot;&quot;
+	di &quot;&#96;var&#39;&quot;
+	qui logit treat re74 re75 u74 u75 married black age hispanic &#96;var&#39;
+	lrtest a
+&#125;
+
+logit treat re74 re75 u74 u75 married black age hispanic nodegree
+estimates store a
+qui logit treat re74 re75 u74 u75 married black age hispanic nodegree edu
+lrtest a
+
+&#x2F;&#x2F; 构造所有的二次项，再确定那些应该加入。
+&#x2F;&#x2F; 注意，其中一些二次项是冗余的，
+&#x2F;&#x2F; 例如，r74*u74恒等于零，而虚拟变量的平方项与一次项恒等。
+
+gen r74s&#x3D;re74^2&#x2F;10e6
+gen r74r75&#x3D;re74*re75&#x2F;10e6
+&#x2F;&#x2F; gen r74u74&#x3D;re74*u74
+gen r74u75&#x3D;re74*u75
+gen r74n&#x3D;re74*nodegree
+gen r74h&#x3D;re74*hispanic
+gen r74e&#x3D;re74*edu
+gen r75s&#x3D;re75^2&#x2F;10e6
+gen r75u74&#x3D;re75*u74
+&#x2F;&#x2F; gen r75u75&#x3D;re75*u75
+gen r75n&#x3D;re75*nodegree
+gen r75h&#x3D;re75*hispanic
+gen r75e&#x3D;re75*edu
+&#x2F;&#x2F; gen u74s&#x3D;u74^2
+gen u74u75&#x3D;u74*u75
+gen u74n&#x3D;u74*nodegree
+gen u74h&#x3D;u74*hispanic
+gen u74e&#x3D;u74*edu
+&#x2F;&#x2F; gen u75s&#x3D;u75^2
+gen u75n&#x3D;u75*nodegree
+gen u75h&#x3D;u75*hispanic
+gen u75e&#x3D;u75*edu
+&#x2F;&#x2F; gen ns&#x3D;nodegree^2
+gen nh&#x3D;nodegree*hispanic
+gen ne&#x3D;nodegree*edu
+&#x2F;&#x2F; gen hs&#x3D;hispanic^2
+gen he&#x3D;hispanic*edu
+gen es&#x3D;edu^2
+
+logit treat re74 re75 u74 u75 married black age hispanic nodegree
+estimates store a
+foreach var of varlist r74s-es &#123;
+	di &quot;&quot;
+	di &quot;&#96;var&#39;&quot;
+	qui logit treat re74 re75 u74 u75 married black age hispanic nodegree &#96;var&#39;
+	lrtest a
+&#125;
+
+logit treat re74 re75 u74 u75 married black age hispanic nodegree u74u75
+estimates store a
+foreach var of varlist r74s-r75e u74n-es &#123;
+	di &quot;&quot;
+	di &quot;&#96;var&#39;&quot;
+	qui logit treat re74 re75 u74 u75 married black age hispanic nodegree u74u75 &#96;var&#39;
+	lrtest a
+&#125;
+
+&#x2F;&#x2F; 展示最终确定的函数形式及估计结果，读入内存，并手动计算倾向得分。
+
+estimates replay a
+estimates restore a
+predict ps0
+tabstat ps0, by(treat) stats(n mean sd min max)
+
+&#x2F;&#x2F; 删截样本：将倾向得分过高或过低的观测值删去
+&#x2F;&#x2F; （否则有可能匹配效果不理想，出现不合理的估计结果）。
+
+gen msample1&#x3D;(ps0&gt;&#x3D;.1 &amp; ps0&lt;&#x3D;.9)
+tab treat if msample1
+
+qui sum ps0 if treat&#x3D;&#x3D;0
+scalar psmax&#x3D;r(max)
+qui sum ps0 if treat&#x3D;&#x3D;1
+scalar psmin&#x3D;r(min)
+gen msample2&#x3D;(ps0&gt;&#x3D;psmin &amp; ps0&lt;&#x3D;psmax)
+tab treat if msample2
+
+&#x2F;&#x2F; 协变量匹配（有必要在删截后的样本中进行，对于倾向得分匹配也是如此）
+&#x2F;&#x2F; 估计ATT，以msample1为例
+&#x2F;&#x2F; 注意，不要把用于协变量匹配的协变量和用于倾向得分匹配的协变量混淆。
+&#x2F;&#x2F; 进行协变量匹配时，无须加入新生成的二次项。
+
+&#x2F;&#x2F; 官方命令teffects nnmatch和用户自编命令nnmatch的
+&#x2F;&#x2F; 平均处理效应估计完全一致，标准误有所差异。
+&#x2F;&#x2F; 两个命令的默认选项有所不同，以下两行表示协变量的距离指标为马氏距离
+&#x2F;&#x2F; （即用方差-协方差矩阵的逆加权的距离平方和）。
+
+teffects nnmatch (re78 age-re75 u74 u75) (treat) if msample1, atet
+nnmatch re78 treat age-re75 u74 u75 if msample1, metric(maha) robusth(2) tc(att)
+
+&#x2F;&#x2F; 以下两行表示用于偏误修正的协变量为干预前结果。
+
+teffects nnmatch (re78 age-re75 u74 u75) (treat) if msample1, atet biasadj(re74 re75 u74 u75)
+nnmatch re78 treat age-re75 u74 u75 if msample1, metric(maha) robusth(2) tc(att) biasadj(re74 re75 u74 u75)
+
+&#x2F;&#x2F; 以下两行表示用于偏误修正的协变量为所有用于匹配的协变量。
+
+teffects nnmatch (re78 age-re75 u74 u75) (treat) if msample1, atet biasadj(age-re75 u74 u75)
+nnmatch re78 treat age-re75 u74 u75 if msample1, metric(maha) robusth(2) tc(att) biasadj(bias)
+
+&#x2F;&#x2F; 以下两行表示1:2匹配。
+
+teffects nnmatch (re78 age-re75 u74 u75) (treat) if msample1, atet biasadj(age-re75 u74 u75) nn(2)
+nnmatch re78 treat age-re75 u74 u75 if msample1, metric(maha) robusth(2) tc(att) biasadj(bias) m(2)
+
+&#x2F;&#x2F; 以下两行表示先根据两个失业变量进行准确匹配。
+&#x2F;&#x2F; 运行下面这条命令会报错，因为稳健标准误估计要求每个个体必须存在两个以上匹配个体，只能把不符合这一条件的观测值删去。
+teffects nnmatch (re78 age-re75 u74 u75) (treat) if msample1, ematch(u74 u75) atet biasadj(age-re75 u74 u75)
+
+egen ematch&#x3D;concat(u74 u75)
+tab ematch treat
+
+teffects nnmatch (re78 age-re75 u74 u75) (treat) if msample1 &amp; ematch!&#x3D;&quot;01&quot;, ematch(u74 u75) atet biasadj(age-re75 u74 u75)
+nnmatch re78 treat age-re75 u74 u75 if msample1 &amp; ematch!&#x3D;&quot;01&quot;, exact(u74 u75) metric(maha) robusth(2) tc(att) biasadj(bias)
+
+
+&#x2F;&#x2F; 倾向得分匹配，估计ATT，以msample1为例
+&#x2F;&#x2F; 需重新搜索倾向得分估计式（过程从略）
+&#x2F;&#x2F; 官方命令teffects psmatch和用户自编命令psmatch2的平均处理效应估计完全一致，标准误有所差异。
+
+teffects psmatch (re78) (treat re74 re75 u74 u75 married black age hispanic nodegree r75h u74u75 ne r75e u74e) if msample1, atet
+psmatch2 treat re74 re75 u74 u75 married black age hispanic nodegree r75h u74u75 ne r75e u74e if msample1, outcome(re78) logit ties
+
+mata: compare&#x3D;(&quot;variable name&quot;,&quot;normalized diff before&quot;, &quot;normalized diff after&quot;)
+local xlist black hispanic age married nodegree edu re74 u74 re75 u75
+foreach xvar of varlist &#96;xlist&#39; &#123;
+qui ttest &#96;xvar&#39;, by(treat) unequal
+local nd0&#x3D;(r(mu_2)-r(mu_1))&#x2F;sqrt((r(sd_1)^2+r(sd_2)^2)&#x2F;2)
+local nd0&#x3D;round(&#96;nd0&#39;,0.001)
+ttest &#96;xvar&#39; if _weight!&#x3D;., by(treat) unequal
+local nd1&#x3D;(r(mu_2)-r(mu_1))&#x2F;sqrt((r(sd_1)^2+r(sd_2)^2)&#x2F;2)
+local nd1&#x3D;round(&#96;nd1&#39;,0.001)
+mata: compare&#x3D;(compare\&quot;&#96;xvar&#39;&quot;,&quot;&#96;nd0&#39;&quot;,&quot;&#96;nd1&#39;&quot;)
+&#125;
+mata: compare
+
+
+&#x2F;*
+执行psmatch2之后会生成很多临时变量，提供了详尽的匹配细节。
+
+	ties必须选上，否则若有多个ps完全相同的控制组个体（当协变量为离散变量时是有可能的），将会选择
+		匹配在数据中当前排序靠前的个体，因此数据的排序会大幅影响结果。
+
+	_id将样本按控制组在前处理组在后、ps由小到大顺序重新排列并标序。_n1给出了匹配个体的序号，
+		当完全匹配到多个时（即ties，即使k&#x3D;1），这个变量没有意义。
+	
+	_weight的取值，以ATT为例，每个处理组个体权重均为1；如果ps完全相同的多个(N)处理组个体匹配到
+		多个(M)控制组个体，则这些控制组个体的权重均为N&#x2F;M。由此我们可以手动计算ATT：
+
+		tab treat if _weight!&#x3D;.
+		gen tmp&#x3D;(2*treat-1)*_weight*re78
+		sum tmp
+		di r(sum)&#x2F;104
+
+	_weight未缺失的所有观测值即构成了匹配后的样本，在其基础上进行加权简单回归，也可以得到ATT：
+	
+		reg re78 treat [aw&#x3D;_weight]
+	
+	_re78给出了匹配到的控制组个体的（平均）结果。由此我们可以手动计算ATT：
+	
+		gen tmp2&#x3D;re78-_re78
+		sum tmp2
+	
+	_pdif给出了匹配到的处理组与控制组之间ps的距离。
+*&#x2F;
+
+
+&#x2F;&#x2F; 下面再以teffects nnmatch为例，介绍如何得到经过协变量匹配的匹配样本，并用加权简单回归实现匹配估计的结果。
+&#x2F;&#x2F; 因为此时标准误估计不重要，因此采用非稳健的vce(iid)形式避免删除观测值。
+&#x2F;&#x2F; 下面的gen(mcu)选项生成了一系列以mcu为前缀的变量，
+&#x2F;&#x2F; 显示每个处理组个体所匹配到的控制组个体在样本中的序号。
+
+teffects nnmatch (re78 age-re75 u74 u75) (treat), ematch(u74 u75) vce(iid) gen(mcu) atet
+
+&#x2F;&#x2F; 计算每个处理组个体匹配到的控制组个体的数目。
+
+egen nn&#x3D;rownonmiss(mcu*)
+
+&#x2F;&#x2F; 查看准确匹配变量取值不同状态下最终匹配到的控制组个体数目。
+
+tab nn ematch
+
+&#x2F;&#x2F; 计算权重
+
+gen wgt&#x3D;.
+forvalues i&#x3D;186&#x2F;2675 &#123;
+quiet egen match&#x3D;anymatch(mcu*), v(&#96;i&#39;)
+quiet gen wgt0&#x3D;match&#x2F;nn
+egen wgt1&#x3D;total(wgt0)
+quiet replace wgt&#x3D;wgt1 in &#96;i&#39;
+drop match wgt0 wgt1
+&#125;
+
+tab wgt
+
+replace wgt&#x3D;1 if wgt&#x3D;&#x3D;.
+
+&#x2F;&#x2F; 对匹配样本进行加权简单回归，将得到和teffects nnmatch完全相同的ATT估计值。
+reg re78 treat [aweight&#x3D;wgt]
+
+
+&#x2F;*
+
+董天一（会计）同学提供了一种更有效率的计算权重的方法，照录如下，供大家参考。
+
+teffects nnmatch (re78 age-re75 u74 u75) (treat), ematch(u74 u75) vce(iid) gen(mcu) atet
+
+gen id&#x3D;_n 									&#x2F;&#x2F; 生成样本序号
+
+preserve
+keep if treat&#x3D;&#x3D;1							&#x2F;&#x2F; 仅保留处理组样本
+reshape long mcu,i(id) j(order)				&#x2F;&#x2F; 转化数据结构
+drop if mcu&#x3D;&#x3D;.
+bysort id: gen w&#x3D;1&#x2F;_N						&#x2F;&#x2F; 计算控制组样本匹配单一处理组样本的权重
+bysort mcu: egen weight&#x3D;sum(w)				&#x2F;&#x2F; 计算控制组样本匹配全部处理组样本的权重
+duplicates drop mcu,force 					&#x2F;&#x2F; 删除冗余控制组样本
+keep mcu weight
+rename mcu id 								&#x2F;&#x2F; 重命名变量以方便后续数据合并
+save weight,replace							&#x2F;&#x2F; 保存为权重文件
+restore
+
+merge 1:1 id using weight,nogen keep(1 3)	&#x2F;&#x2F; 合并权重文件
+rm weight.dta
+replace weight&#x3D;1 if treat&#x3D;&#x3D;1				&#x2F;&#x2F; 处理组样本权重为 1
+replace weight&#x3D;0 if weight&#x3D;&#x3D;.				&#x2F;&#x2F; 未匹配上的控制组样本权重为 0
+
+reg re78 treat [aweight&#x3D;weight]
+
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4"><a class="markdownIt-Anchor" href="#4"></a> 4、</h3>
+<p>数据文件：<a href='/local_file/江艇-微观计量经济学/matching_demo/private_data.dta' target='_blank'>private_data.dta</a>。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">use private_data.dta, clear
+
+list
+
+tab group, gen(grp)
+
+reg wage private
+
+reg wage private if grp1+grp2&#x3D;&#x3D;1
+
+reg wage private grp*
+
+reg wage private grp* if grp1+grp2&#x3D;&#x3D;1
+
+
+forvalues i&#x3D;1&#x2F;4 &#123;
+	gen g&#96;i&#39;t&#x3D;grp&#96;i&#39;*private
+&#125;
+
+reg wage private grp1 grp2 grp3 g1t g2t g3t
+
+gen ite&#x3D;_b[private]+_b[g1t]*grp1
+sum ite if grp1+grp2&#x3D;&#x3D;1
+sum ite if grp1+grp2&#x3D;&#x3D;1 &amp; private&#x3D;&#x3D;1
+sum ite if grp1+grp2&#x3D;&#x3D;1 &amp; private&#x3D;&#x3D;0
+
+
+reg wage private [aweight&#x3D;watt]
+
+reg wage private [aweight&#x3D;watu]
+
+reg wage private [aweight&#x3D;wate]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>**5、**nunnq_2011</p>
+<p>数据文件：<a href='/local_file/江艇微观计量/nunnq_2011.dta' target='_blank'>nunnq_2011</a></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">use &quot;nunnq_2011.dta&quot;, clear
+
+foreach x in 1000 1100 1200 1300 1400 1500 1600 1700 1750 1800 1850 1900&#123;
+	gen ln_wpot_&#96;x&#39;&#x3D;ln_wpot*ydum&#96;x&#39;
+	gen ln_all_&#96;x&#39;&#x3D;ln_all*ydum&#96;x&#39;
+	gen ln_nworld_&#96;x&#39;&#x3D;ln_nworld*ydum&#96;x&#39;
+	gen ln_oworld_&#96;x&#39;&#x3D;ln_oworld*ydum&#96;x&#39;
+	gen ln_tropical_&#96;x&#39;&#x3D;ln_tropical*ydum&#96;x&#39;
+	gen ln_rugged_&#96;x&#39;&#x3D;ln_rugged*ydum&#96;x&#39;
+	gen ln_elevation_&#96;x&#39;&#x3D;ln_elevation*ydum&#96;x&#39;
+	gen ln_disteq_&#96;x&#39;&#x3D;ln_disteq*ydum&#96;x&#39;
+	gen ln_dist_coast_&#96;x&#39;&#x3D;ln_dist_coast*ydum&#96;x&#39;
+	gen ln_export_&#96;x&#39;&#x3D;ln_export*ydum&#96;x&#39;
+	gen malaria_&#96;x&#39;&#x3D;malaria*ydum&#96;x&#39;
+	gen ln_spot_&#96;x&#39;&#x3D;ln_spot*ydum&#96;x&#39;
+	gen ln_silagemaize_&#96;x&#39;&#x3D;ln_silagemaize*ydum&#96;x&#39;
+	gen ln_maize_&#96;x&#39;&#x3D;ln_maize*ydum&#96;x&#39;
+	gen ln_cassava_&#96;x&#39;&#x3D;ln_cassava*ydum&#96;x&#39;
+	&#125;
+
+&#x2F;* Macros for the control variables *&#x2F;
+global ln_potato_flexible &quot;ln_wpot_1100 ln_wpot_1200 ln_wpot_1300 ln_wpot_1400 ln_wpot_1500 ln_wpot_1600 ln_wpot_1700 ln_wpot_1750 ln_wpot_1800 ln_wpot_1850 ln_wpot_1900&quot;
+global ydum_flexible &quot;ydum1100 ydum1200 ydum1300 ydum1400 ydum1500 ydum1600 ydum1700 ydum1750 ydum1800 ydum1850 ydum1900&quot;
+global ln_all_flexible &quot;ln_all_1100 ln_all_1200 ln_all_1300 ln_all_1400 ln_all_1500 ln_all_1600 ln_all_1700 ln_all_1750 ln_all_1800 ln_all_1850 ln_all_1900&quot;
+global ln_nworld_flexible &quot;ln_nworld_1100 ln_nworld_1200 ln_nworld_1300 ln_nworld_1400 ln_nworld_1500 ln_nworld_1600 ln_nworld_1700 ln_nworld_1750 ln_nworld_1800 ln_nworld_1850 ln_nworld_1900&quot;
+global ln_oworld_flexible &quot;ln_oworld_1100 ln_oworld_1200 ln_oworld_1300 ln_oworld_1400 ln_oworld_1500 ln_oworld_1600 ln_oworld_1700 ln_oworld_1750 ln_oworld_1800 ln_oworld_1850 ln_oworld_1900&quot;
+global ln_tropical_flexible &quot;ln_tropical_1100 ln_tropical_1200 ln_tropical_1300 ln_tropical_1400 ln_tropical_1500 ln_tropical_1600 ln_tropical_1700 ln_tropical_1750 ln_tropical_1800 ln_tropical_1850 ln_tropical_1900&quot;
+global ln_rugged_flexible &quot;ln_rugged_1100 ln_rugged_1200 ln_rugged_1300 ln_rugged_1400 ln_rugged_1500 ln_rugged_1600 ln_rugged_1700 ln_rugged_1750 ln_rugged_1800 ln_rugged_1850 ln_rugged_1900&quot;
+global ln_elevation_flexible &quot;ln_elevation_1100 ln_elevation_1200 ln_elevation_1300 ln_elevation_1400 ln_elevation_1500 ln_elevation_1600 ln_elevation_1700 ln_elevation_1750 ln_elevation_1800 ln_elevation_1850 ln_elevation_1900&quot;
+global ln_disteq_flexible &quot;ln_disteq_1100 ln_disteq_1200 ln_disteq_1300 ln_disteq_1400 ln_disteq_1500 ln_disteq_1600 ln_disteq_1700 ln_disteq_1750 ln_disteq_1800 ln_disteq_1850 ln_disteq_1900&quot;
+global ln_dist_coast_flexible &quot;ln_dist_coast_1100 ln_dist_coast_1200 ln_dist_coast_1300 ln_dist_coast_1400 ln_dist_coast_1500 ln_dist_coast_1600 ln_dist_coast_1700 ln_dist_coast_1750 ln_dist_coast_1800 ln_dist_coast_1850 ln_dist_coast_1900&quot;
+global malaria_flexible &quot;malaria_1100 malaria_1200 malaria_1300 malaria_1400 malaria_1500 malaria_1600 malaria_1700 malaria_1750 malaria_1800 malaria_1850 malaria_1900&quot;
+global ln_export_flexible &quot;ln_export_1100 ln_export_1200 ln_export_1300 ln_export_1400 ln_export_1500 ln_export_1600 ln_export_1700 ln_export_1750 ln_export_1800 ln_export_1850 ln_export_1900&quot;
+global ln_spot_flexible &quot;ln_spot_1100 ln_spot_1200 ln_spot_1300 ln_spot_1400 ln_spot_1500 ln_spot_1600 ln_spot_1700 ln_spot_1750 ln_spot_1800 ln_spot_1850 ln_spot_1900&quot;
+global ln_silagemaize_flexible &quot;ln_silagemaize_1100 ln_silagemaize_1200 ln_silagemaize_1300 ln_silagemaize_1400 ln_silagemaize_1500 ln_silagemaize_1600 ln_silagemaize_1700 ln_silagemaize_1750 ln_silagemaize_1800 ln_silagemaize_1850 ln_silagemaize_1900&quot;
+global ln_maize_flexible &quot;ln_maize_1100 ln_maize_1200 ln_maize_1300 ln_maize_1400 ln_maize_1500 ln_maize_1600 ln_maize_1700 ln_maize_1750 ln_maize_1800 ln_maize_1850 ln_maize_1900&quot;
+global ln_cassava_flexible &quot;ln_cassava_1100 ln_cassava_1200 ln_cassava_1300 ln_cassava_1400 ln_cassava_1500 ln_cassava_1600 ln_cassava_1700 ln_cassava_1750 ln_cassava_1800 ln_cassava_1850 ln_cassava_1900&quot;
+
+*********************************************
+*** TABLE 2 - BASELINE FLEXIBLE ESTIMATES ***
+*********************************************
+
+*** Total Population ***
+* Col 1
+areg ln_population $ln_potato_flexible i.year, a(isocode) cluster(isocode)
+test (ln_wpot_1750&#x3D;0) (ln_wpot_1800&#x3D;0) (ln_wpot_1850&#x3D;0) (ln_wpot_1900&#x3D;0)
+
+* Col 2
+areg ln_population $ln_potato_flexible $ln_oworld_flexible i.year, a(isocode) cluster(isocode)
+test (ln_wpot_1750&#x3D;0) (ln_wpot_1800&#x3D;0) (ln_wpot_1850&#x3D;0) (ln_wpot_1900&#x3D;0)
+* Col 3
+areg ln_population $ln_potato_flexible $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+test (ln_wpot_1750&#x3D;0) (ln_wpot_1800&#x3D;0) (ln_wpot_1850&#x3D;0) (ln_wpot_1900&#x3D;0)
+
+&#x2F;*
+
+*** City Population Share ***
+* Col 4
+areg city_pop_share $ln_potato_flexible i.year, a(isocode) cluster(isocode)
+test (ln_wpot_1750&#x3D;0) (ln_wpot_1800&#x3D;0) (ln_wpot_1850&#x3D;0) (ln_wpot_1900&#x3D;0)
+* Col 5
+areg city_pop_share $ln_potato_flexible $ln_oworld_flexible i.year, a(isocode) cluster(isocode)
+test (ln_wpot_1750&#x3D;0) (ln_wpot_1800&#x3D;0) (ln_wpot_1850&#x3D;0) (ln_wpot_1900&#x3D;0)
+* Col 6
+areg city_pop_share $ln_potato_flexible $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+test (ln_wpot_1750&#x3D;0) (ln_wpot_1800&#x3D;0) (ln_wpot_1850&#x3D;0) (ln_wpot_1900&#x3D;0)
+
+*&#x2F;
+
+*** Draw Figure IV(a) ***
+areg ln_population $ln_potato_flexible $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+mat result&#x3D;r(table)
+mat list result
+mat coef&#x3D;result[1,1..11]&#39;
+mat ci&#x3D;result[5..6,1..11]&#39;
+svmat coef
+svmat ci
+gen yearplot&#x3D;year[_n+1] if _n&lt;&#x3D;11
+twoway (connected coef1 yearplot) (line ci1 yearplot, lpattern(dash)) (line ci2 yearplot, lpattern(dash)), xlabel(1100(100)1900)
+
+**************************************
+*** TABLE 3 - ALTERNATIVE CUT-OFFS ***
+**************************************
+
+&#x2F;* 1200--1500: Post &#x3D; 1400, 1500 (Cols 1 &amp; 2) *&#x2F;
+preserve
+drop ln_wpot_post post
+drop if year&lt;1200
+drop if year&gt;1500
+tab year
+gen post&#x3D;0
+replace post&#x3D;1 if year&#x3D;&#x3D;1400 | year&#x3D;&#x3D;1500
+gen ln_wpot_post&#x3D;ln_wpot*post
+* Total Population
+areg ln_population ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+* City Population Share
+areg city_pop_share ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+restore
+
+&#x2F;* 1300--1600: Post &#x3D; 1500, 1600 (Cols 3 &amp; 4) *&#x2F;
+preserve
+drop ln_wpot_post post
+drop if year&lt;1300
+drop if year&gt;1600
+tab year
+gen post&#x3D;0
+replace post&#x3D;1 if year&#x3D;&#x3D;1500 | year&#x3D;&#x3D;1600
+gen ln_wpot_post&#x3D;ln_wpot*post
+* Total Population
+areg ln_population ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+* City Population Share
+areg city_pop_share ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+restore
+
+&#x2F;* 1400--1700: Post &#x3D; 1600, 1700 (Cols 5 &amp; 6) *&#x2F;
+preserve
+drop ln_wpot_post post
+drop if year&lt;1400
+drop if year&gt;1700
+tab year
+gen post&#x3D;0
+replace post&#x3D;1 if year&#x3D;&#x3D;1600 | year&#x3D;&#x3D;1700
+gen ln_wpot_post&#x3D;ln_wpot*post
+* Total Population
+areg ln_population ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+* City Population Share
+areg city_pop_share ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+restore
+
+&#x2F;* 1500--1800: Post &#x3D; 1700, 1800 (Cols 7 &amp; 8) *&#x2F;
+preserve
+drop ln_wpot_post post
+drop if year&lt;1500
+drop if year&gt;1800
+tab year
+gen post&#x3D;0
+replace post&#x3D;1 if year&#x3D;&#x3D;1700 | year&#x3D;&#x3D;1750 | year&#x3D;&#x3D;1800
+gen ln_wpot_post&#x3D;ln_wpot*post
+* Total Population
+areg ln_population ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+* City Population Share
+areg city_pop_share ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+restore
+
+&#x2F;* 1600--1900: Post &#x3D; 1800, 1850, 1900 (Cols 9 &amp; 10) *&#x2F;
+preserve
+drop ln_wpot_post post
+drop if year&lt;1600
+drop if year&gt;1900
+tab year
+gen post&#x3D;0
+replace post&#x3D;1 if year&#x3D;&#x3D;1800 | year&#x3D;&#x3D;1850 | year&#x3D;&#x3D;1900
+gen ln_wpot_post&#x3D;ln_wpot*post
+* Total Population
+areg ln_population ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+* City Population Share
+areg city_pop_share ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+restore
+
+&#x2F;* 1600--1900: post &#x3D; 1750, 1850, 1900  (Cols 11 &amp; 12) *&#x2F;
+preserve
+drop ln_wpot_post post
+drop if year&lt;1600
+drop if year&gt;1900
+tab year
+gen post&#x3D;0
+replace post&#x3D;1 if year&#x3D;&#x3D;1750 | year&#x3D;&#x3D;1800 | year&#x3D;&#x3D;1850 | year&#x3D;&#x3D;1900
+gen ln_wpot_post&#x3D;ln_wpot*post
+* Total Population
+areg ln_population ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+* City Population Share
+areg city_pop_share ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+restore
+
+***************************************
+*** TABLE 4 - BASELINE DD ESTIMATES ***
+***************************************
+
+*** Total Population ***
+* Col 1
+areg ln_population ln_wpot_post i.year, a(isocode) cluster(isocode)
+* Col 2
+areg ln_population ln_wpot_post $ln_oworld_flexible i.year, a(isocode) cluster(isocode)
+* Col 3
+areg ln_population ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+
+egen numid&#x3D;group(isocode)
+xtset numid year
+
+xtreg ln_population ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, fe cluster(numid)
+
+reghdfe ln_population ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible, a(numid year) cluster(numid)
+
+reghdfe ln_population ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible, a(numid year numid#c.year) cluster(numid)
+
+* Col 4
+areg ln_population ln_wpot_post $ln_all_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+* Col 5
+areg ln_population ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible $ln_spot_flexible $ln_silagemaize_flexible $ln_maize_flexible $ln_cassava_flexible i.year, a(isocode) cluster(isocode)
+
+&#x2F;*
+
+*** City Population Share ***
+* Col 6
+areg city_pop_share ln_wpot_post i.year, a(isocode) cluster(isocode)
+* Col 7
+areg city_pop_share ln_wpot_post $ln_oworld_flexible i.year, a(isocode) cluster(isocode)
+* Col 8
+areg city_pop_share ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+* Col 9
+areg city_pop_share ln_wpot_post $ln_all_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+* Col 10
+areg city_pop_share ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible $ln_spot_flexible $ln_silagemaize_flexible $ln_maize_flexible $ln_cassava_flexible i.year, a(isocode) cluster(isocode)
+
+*&#x2F;
+
+*** Illustrate magnitude of estimate, Col 3 ***
+
+areg ln_population ln_wpot_post $ln_oworld_flexible $ln_elevation_flexible $ln_tropical_flexible $ln_rugged_flexible i.year, a(isocode) cluster(isocode)
+
+gen ln_population_19cf&#x3D;ln_population-_b[ln_wpot_post]*ln_wpot if year&#x3D;&#x3D;1900
+gen population_19cf&#x3D;exp(ln_population_19cf)
+sum population_19cf
+scalar lnpop19cf&#x3D;ln(r(sum))
+sum population if year&#x3D;&#x3D;1700
+scalar lnpop17&#x3D;ln(r(sum))
+sum population if year&#x3D;&#x3D;1900
+scalar lnpop19&#x3D;ln(r(sum))
+di 1-(lnpop19cf-lnpop17)&#x2F;(lnpop19-lnpop17)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>6、nunnw_2011</p>
+<p>数据文件：<a href='/local_file/江艇微观计量/nunnw_2011.dta' target='_blank'>nunnw_2011</a></p>
+<p>ado文件：<a href='/local_file/江艇微观计量/x_ols2.ado' target='_blank'>x_ols2.ado</a></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">use &quot;nunnw_2011.dta&quot;, clear
+
+egen num_iso&#x3D;group(isocode)
+egen num_ethn&#x3D;group(murdock_name)
+egen num_dis&#x3D;group(district)
+
+global base_nofe &quot;age age2 male urban_dum i.education i.occupation i.religion i.living_conditions district_ethnic_frac frac_ethnicity_in_district&quot;
+global baseline_controls &quot;age age2 male urban_dum i.education i.occupation i.religion i.living_conditions district_ethnic_frac frac_ethnicity_in_district i.isocode&quot;
+global colonial_controls &quot;malaria_ecology total_missions_area explorer_contact railway_contact cities_1400_dum i.v30 v33 ln_init_pop_density&quot;
+global manyfe &quot;i.isocode i.education i.occupation i.religion i.living_conditions&quot;
+
+
+********************************
+*** Table 1: Trust Neighbors ***
+********************************
+
+*** Slave exports only ***
+xi: reg trust_neighbors exports $baseline_controls, cluster(murdock_name)
+xi: ivreg2 trust_neighbors exports $baseline_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg trust_neighbors exports $baseline_controls, cluster(murdock_name district)
+*** Slave exports&#x2F;land area ***
+xi: reg trust_neighbors export_area $baseline_controls, cluster(murdock_name)
+xi: ivreg2 trust_neighbors export_area $baseline_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg trust_neighbors export_area $baseline_controls, cluster(murdock_name district)
+*** slave exports&#x2F;historic pop ***
+xi: reg trust_neighbors export_pop $baseline_controls, cluster(murdock_name)
+xi: ivreg2 trust_neighbors export_pop $baseline_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg trust_neighbors export_pop $baseline_controls, cluster(murdock_name district)
+*** ln slave exports ***
+xi: reg trust_neighbors ln_exports $baseline_controls, cluster(murdock_name)
+xi: ivreg2 trust_neighbors ln_exports $baseline_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg trust_neighbors ln_exports $baseline_controls, cluster(murdock_name district)
+*** ln slave exports&#x2F;land area ***
+xi: reg trust_neighbors ln_export_area $baseline_controls, cluster(murdock_name)
+xi: ivreg2 trust_neighbors ln_export_area $baseline_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg trust_neighbors ln_export_area $baseline_controls, cluster(murdock_name district)
+*** ln slave exports&#x2F;historic pop ***
+xi: reg trust_neighbors ln_export_pop $baseline_controls, cluster(murdock_name)
+xi: ivreg2 trust_neighbors ln_export_pop $baseline_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg trust_neighbors ln_export_pop $baseline_controls, cluster(murdock_name district)
+
+
+****************************************
+*** Table 1 - Conley Standard Errors ***
+****************************************
+
+* Replicate column 1 only.
+
+gen cutoff1&#x3D;5	&#x2F;* Closer than cutoff &#x3D; 1, further &#x3D; 0 *&#x2F;
+gen cutoff2&#x3D;5
+gen constant&#x3D;1
+
+drop if missing(centroid_lat)&#x3D;&#x3D;1
+drop if missing(centroid_long)&#x3D;&#x3D;1
+drop if missing(trust_neighbors)&#x3D;&#x3D;1
+for @ in any age male urban_dum education occupation religion living_conditions district_ethnic_frac frac_ethnicity_in_district isocode: drop if missing(@)&#x3D;&#x3D;1
+
+preserve
+drop if missing(exports)&#x3D;&#x3D;1
+xi: reg exports $baseline_controls
+predict exports_resid if e(sample), resid
+xi: reg trust_neighbors $baseline_controls
+predict trust_neighbors_resid if e(sample), resid
+x_ols2 centroid_lat centroid_long cutoff1 cutoff2 trust_neighbors_resid constant exports_resid, coord(2) xreg(2)
+restore
+
+
+***********************************
+*** Table 2: All Trust Measures ***
+***********************************
+
+*** Relatives Trust ***
+xi: ivreg2 trust_relatives ln_export_area $baseline_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg trust_relatives ln_export_area $baseline_controls, cluster(murdock_name district)
+*** Neighbors Trust ***
+xi: ivreg2 trust_neighbors ln_export_area $baseline_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg trust_neighbors ln_export_area $baseline_controls, cluster(murdock_name district)
+*** Trust Local Council ***
+xi: ivreg2 trust_local_council ln_export_area $baseline_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg trust_local_council ln_export_area $baseline_controls, cluster(murdock_name district)
+*** Intra Group Trust ***
+xi: ivreg2 intra_group_trust ln_export_area $baseline_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg intra_group_trust ln_export_area $baseline_controls, cluster(murdock_name district)
+*** Inter Group Trust ***
+xi: ivreg2 inter_group_trust ln_export_area $baseline_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg inter_group_trust ln_export_area $baseline_controls, cluster(murdock_name district)
+
+
+**************************************************
+*** Try controlling for district fixed effects ***
+**************************************************
+
+reghdfe trust_relatives ln_export_area $base_nofe, a(num_iso) cluster(num_ethn num_dis)
+
+reghdfe trust_relatives ln_export_area $base_nofe, a(num_dis) cluster(num_ethn num_dis)
+
+preserve
+bysort district murdock_name: keep if _n&#x3D;&#x3D;1
+bysort district: gen no_ethn&#x3D;_N
+bysort district: keep if _n&#x3D;&#x3D;1
+tab no_ethn
+restore
+
+
+********************************************************
+*** Table 3: All Trust Measures, Additional Controls ***
+********************************************************
+
+*** Relatives Trust ***
+xi: ivreg2 trust_relatives ln_export_area $baseline_controls $colonial_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg trust_relatives ln_export_area $baseline_controls $colonial_controls, cluster(murdock_name district)
+*** Neighbors Trust ***
+xi: ivreg2 trust_neighbors ln_export_area $baseline_controls $colonial_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg trust_neighbors ln_export_area $baseline_controls $colonial_controls, cluster(murdock_name district)
+*** Trust Local Council ***
+xi: ivreg2 trust_local_council ln_export_area $baseline_controls $colonial_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg trust_local_council ln_export_area $baseline_controls $colonial_controls, cluster(murdock_name district)
+*** Intra Group Trust ***
+xi: ivreg2 intra_group_trust ln_export_area $baseline_controls $colonial_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg intra_group_trust ln_export_area $baseline_controls $colonial_controls, cluster(murdock_name district)
+*** Inter Group Trust ***
+xi: ivreg2 inter_group_trust ln_export_area $baseline_controls $colonial_controls, cluster(murdock_name district) small partial($manyfe)
+xi: vcemway reg inter_group_trust ln_export_area $baseline_controls $colonial_controls, cluster(murdock_name district)
+
+
+********************************
+*** Table 4 - Altonji Ratios ***
+********************************
+
+*** Demo: Row 2, Col 1
+
+* Full
+reghdfe trust_relatives ln_export_area $base_nofe $colonial_controls, a(num_iso)
+predict hat if e(sample), xb
+scalar beta_f&#x3D;_b[ln_export_area]
+* Restricted
+reghdfe trust_relatives ln_export_area if missing(hat)!&#x3D;1, a(num_iso)
+scalar beta_r&#x3D;_b[ln_export_area]
+di &quot;selection_ratio&#x3D;&quot; beta_f&#x2F;(beta_r-beta_f)
+drop hat
+
+*** Full table
+
+foreach x in trust_relatives trust_neighbors trust_local_council intra_group_trust inter_group_trust&#123;
+
+********************
+*** Rows #1 &amp; #3 ***
+********************
+*******
+sum &#96;x&#39;
+*******
+* Full #1
+xi: qui reg &#96;x&#39; ln_export_area $baseline_controls
+predict hat if e(sample), xb
+gen beta3&#x3D;_b[ln_export_area]
+* Restricted #1
+xi: qui reg &#96;x&#39; ln_export_area i.isocode if missing(hat)!&#x3D;1
+gen beta1&#x3D;_b[ln_export_area] if missing(hat)!&#x3D;1
+* Restricted #2
+xi: qui reg &#96;x&#39; ln_export_area i.isocode age age2 male if missing(hat)!&#x3D;1
+gen beta2&#x3D;_b[ln_export_area] if missing(hat)!&#x3D;1
+* Row 1
+gen diff1_3&#x3D;beta3&#x2F;(beta1-beta3)
+* Row 3
+gen diff2_3&#x3D;beta3&#x2F;(beta2-beta3)
+drop beta*
+sum diff*
+drop hat
+drop diff*
+
+********************
+*** Rows #2 &amp; #4 ***
+********************
+* Full #2
+xi: qui reg &#96;x&#39; ln_export_area $baseline_controls $colonial_controls
+predict hat if e(sample), xb
+gen beta5&#x3D;_b[ln_export_area]
+* Restricted #1
+xi: qui reg &#96;x&#39; ln_export_area i.isocode if missing(hat)!&#x3D;1
+gen beta1&#x3D;_b[ln_export_area] if missing(hat)!&#x3D;1
+* Restricted #2
+xi: qui reg &#96;x&#39; ln_export_area i.isocode age age2 male if missing(hat)!&#x3D;1
+gen beta2&#x3D;_b[ln_export_area] if missing(hat)!&#x3D;1
+* Row 2
+gen diff1_5&#x3D;beta5&#x2F;(beta1-beta5)
+* Row 4
+gen diff2_5&#x3D;beta5&#x2F;(beta2-beta5)
+drop beta*
+sum diff*
+drop hat
+drop diff*
+&#125;
+
+
+***************
+*** Table 9 ***
+***************
+
+*************************************************
+*** Test #1: Local Council Trust (Cols 1 &amp; 2) ***
+*************************************************
+
+&#x2F;* Controlling for Performance &amp; Corruption (FEs) *&#x2F;
+xi: ivreg2 trust_local_council ln_export_area i.local_council_performance i.corrupt_local_council i.council_listen $baseline_controls $colonial_controls, cluster(murdock_name district)
+predict hat if e(sample), xb
+** Point estimate without additional control(s) **
+xi: ivreg2 trust_local_council ln_export_area $baseline_controls $colonial_controls if missing(hat)!&#x3D;1, cluster(murdock_name district)
+drop hat
+
+&#x2F;* Controlling for All - Add public goods *&#x2F;
+xi: ivreg2 trust_local_council ln_export_area school_present electricity_present piped_water_present sewage_present health_clinic_present i.local_council_performance i.corrupt_local_council i.council_listen $baseline_controls $colonial_controls, cluster(murdock_name district)
+predict hat if e(sample), xb
+** Point estimate without additional control(s) **
+xi: ivreg2 trust_local_council ln_export_area $baseline_controls $colonial_controls if missing(hat)!&#x3D;1, cluster(murdock_name district)
+drop hat
+
+*********************************************
+*** Test #2: Inter-Group Trust (Cols 3-5) ***
+*********************************************
+
+&#x2F;*** Controlling for slave export exposure of those in the town ***&#x2F;
+xi: ivreg2 inter_group_trust ln_export_area townvill_nonethnic_mean_exports $baseline_controls $colonial_controls, cluster(murdock_name district)
+predict hat if e(sample), xb
+** Point estimate without additional control(s) **
+xi: ivreg2 inter_group_trust ln_export_area $baseline_controls $colonial_controls if missing(hat)!&#x3D;1, cluster(murdock_name district)
+drop hat
+
+&#x2F;*** Controlling for slave export exposure of those in the district ***&#x2F;
+xi: ivreg2 inter_group_trust ln_export_area district_nonethnic_mean_exports $baseline_controls $colonial_controls, cluster(murdock_name district)
+predict hat if e(sample), xb
+** Point estimate without additional control(s) **
+xi: ivreg2 inter_group_trust ln_export_area $baseline_controls $colonial_controls if missing(hat)!&#x3D;1, cluster(murdock_name district)
+drop hat
+
+&#x2F;*** Controlling for slave export exposure of those in the region ***&#x2F;
+xi: ivreg2 inter_group_trust ln_export_area region_nonethnic_mean_exports $baseline_controls $colonial_controls, cluster(murdock_name district)
+predict hat if e(sample), xb
+** Point estimate without additional control(s) **
+xi: ivreg2 inter_group_trust ln_export_area $baseline_controls $colonial_controls if missing(hat)!&#x3D;1, cluster(murdock_name district)
+drop hat
+
+********************************************************
+*** Table 10: Test #3: Internal vs. External Factors ***
+********************************************************
+
+*** Relatives Trust ***
+xi: ivreg2 trust_relatives ln_export_area loc_ln_export_area $baseline_controls $colonial_controls, cluster(loc_murdock_name murdock_name)
+predict hat if e(sample), xb
+** Point estimate without additional control(s) **
+xi: ivreg2 trust_relatives ln_export_area $baseline_controls $colonial_controls if missing(hat)!&#x3D;1, cluster(loc_murdock_name murdock_name)
+drop hat
+
+*** Neighbors Trust ***
+xi: ivreg2 trust_neighbors ln_export_area loc_ln_export_area $baseline_controls $colonial_controls, cluster(loc_murdock_name murdock_name)
+predict hat if e(sample), xb
+** Point estimate without additional control(s) **
+xi: ivreg2 trust_neighbors ln_export_area $baseline_controls $colonial_controls if missing(hat)!&#x3D;1, cluster(loc_murdock_name murdock_name)
+drop hat
+
+*** Trust Local Council ***
+xi: ivreg2 trust_local_council ln_export_area loc_ln_export_area $baseline_controls $colonial_controls, cluster(loc_murdock_name murdock_name)
+predict hat if e(sample), xb
+** Point estimate without additional control(s) **
+xi: ivreg2 trust_local_council ln_export_area $baseline_controls $colonial_controls if missing(hat)!&#x3D;1, cluster(loc_murdock_name murdock_name)
+drop hat
+
+*** Intra Group Trust ***
+xi: ivreg2 intra_group_trust ln_export_area loc_ln_export_area $baseline_controls $colonial_controls, cluster(loc_murdock_name murdock_name)
+predict hat if e(sample), xb
+** Point estimate without additional control(s) **
+xi: ivreg2 intra_group_trust ln_export_area $baseline_controls $colonial_controls if missing(hat)!&#x3D;1, cluster(loc_murdock_name murdock_name)
+drop hat
+
+*** Inter Group Trust ***
+xi: ivreg2 inter_group_trust ln_export_area loc_ln_export_area $baseline_controls $colonial_controls, cluster(loc_murdock_name murdock_name)
+predict hat if e(sample), xb
+** Point estimate without additional control(s) **
+xi: ivreg2 inter_group_trust ln_export_area $baseline_controls $colonial_controls if missing(hat)!&#x3D;1, cluster(loc_murdock_name murdock_name)
+drop hat
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="tags/stata/">stata</a></div><div class="post_share"><div class="social-share" data-image="/private_img/banner2.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/private_img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/private_img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/private_img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/private_img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="4201975099.html"><img class="prev-cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/private_img/banner.gif'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">马克思主义视角下的金融化</div></div></a></div><div class="next-post pull-right"><a href="954336338.html"><img class="next-cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/private_img/banner.gif'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">国外马克思主义</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/private_img/yuyingnan.jpg" onerror="this.onerror=null;this.src='/private_img/404.gif'" alt="avatar"/></div><div class="author-info__name">揭晓</div><div class="author-info__description">随手写一写，揭晓这世界</div></div><a id="card-info-btn" href="/"><i></i><span>回到首页</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2021%E7%89%88%E8%AF%BE%E4%BB%B6"><span class="toc-text"> 2021版课件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2020%E7%89%88%E8%AF%BE%E4%BB%B6"><span class="toc-text"> 2020版课件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019%E7%89%88%E8%AF%BE%E4%BB%B6"><span class="toc-text"> 2019版课件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81%E5%B1%95%E7%A4%BA"><span class="toc-text"> 部分代码展示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E5%80%BC%E6%A8%A1%E6%8B%9F"><span class="toc-text"> 1、数值模拟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%A9%B7%E4%B8%BE%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-text"> 2、穷举法示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8C%B9%E9%85%8D%E6%96%B9%E6%B3%95%E6%BC%94%E7%A4%BA"><span class="toc-text"> 3、匹配方法演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4"><span class="toc-text"> 4、</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="3094303777.html" title="区域政治经济学0导论">区域政治经济学0导论</a><time datetime="2022-11-22T09:11:05.311Z" title="更新于 2022-11-22 17:11:05">2022-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="2511924152.html" title="博士论文提纲">博士论文提纲</a><time datetime="2022-11-22T09:08:20.128Z" title="更新于 2022-11-22 17:08:20">2022-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="832098100.html" title="不平衡发展：自然、资本与空间的生产">不平衡发展：自然、资本与空间的生产</a><time datetime="2022-11-22T02:53:17.961Z" title="更新于 2022-11-22 10:53:17">2022-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="3276806131.html" title="博客搭建日志">博客搭建日志</a><time datetime="2022-11-22T02:11:08.575Z" title="更新于 2022-11-22 10:11:08">2022-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="922242571.html" title="多琳马西-区域主义当前的几个问题">多琳马西-区域主义当前的几个问题</a><time datetime="2022-11-21T14:10:13.794Z" title="更新于 2022-11-21 22:10:13">2022-11-21</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/private_img/banner2.gif')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 揭晓</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎参观我的<a href='https://github.com/dhndzwxj' target='_blank'>github</a>个人主页！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="js/utils.js"></script><script src="js/main.js"></script><script src="js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://dhndzwxj.github.io/767402338.html'
+    this.page.identifier = ''
+    this.page.title = '微观计量经济学'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-www-dhndzwxj-top.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script type='text/javascript' src='https://ajax.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script id="dsq-count-scr" src="//https-www-dhndzwxj-top.disqus.com/count.js" async></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = '/posts/,/about/'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>

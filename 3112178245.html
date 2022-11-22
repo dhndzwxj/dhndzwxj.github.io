@@ -1,0 +1,1018 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
+<link rel="stylesheet" href="css/bilicard.css">
+<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>python一些基础性操作 | 小荷才露尖尖角</title><meta name="author" content="揭晓"><meta name="copyright" content="揭晓"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Python中单引号，双引号，3个单引号及3个双引号的区别  单引号和双引号 在Python中我们都知道单引号和双引号都可以用来表示一个字符串，比如 str1 &#x3D; &#39;python&#39; str2 &#x3D; &quot;python&quot; str1和str2是没有任何区别的。 我们知道Python以其易用性而著名，所以刚开始看教程学习看到单引号和双引号都可以使用会以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python一些基础性操作">
+<meta property="og:url" content="https://dhndzwxj.github.io/3112178245.html">
+<meta property="og:site_name" content="小荷才露尖尖角">
+<meta property="og:description" content="Python中单引号，双引号，3个单引号及3个双引号的区别  单引号和双引号 在Python中我们都知道单引号和双引号都可以用来表示一个字符串，比如 str1 &#x3D; &#39;python&#39; str2 &#x3D; &quot;python&quot; str1和str2是没有任何区别的。 我们知道Python以其易用性而著名，所以刚开始看教程学习看到单引号和双引号都可以使用会以">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dhndzwxj.github.io/private_img/banner2.gif">
+<meta property="article:published_time" content="2020-11-15T05:00:38.000Z">
+<meta property="article:modified_time" content="2021-11-15T07:51:10.764Z">
+<meta property="article:author" content="揭晓">
+<meta property="article:tag" content="马克思主义政治经济学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dhndzwxj.github.io/private_img/banner2.gif"><link rel="shortcut icon" href="/private_img/favicon.png"><link rel="canonical" href="https://dhndzwxj.github.io/3112178245"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"本文上次更新距离今天已经过去","messageNext":"天, 文中内容可能已经过时，望周知。"},
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'python一些基础性操作',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-11-15 15:51:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet"><link href="https://fonts.loli.net/css2?family=Ma+Shan+Zheng:wght@400;500;700&display=swap" rel="stylesheet"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="atom.xml" title="小荷才露尖尖角" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/private_img/yuyingnan.jpg" onerror="onerror=null;src='/private_img/404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="archives/"><div class="headline">文章</div><div class="length-num">270</div></a><a href="tags/"><div class="headline">标签</div><div class="length-num">72</div></a><a href="categories/"><div class="headline">分类</div><div class="length-num">72</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/private_img/banner2.gif')"><nav id="nav"><span id="blog_name"><a id="site-name" href="index.html">小荷才露尖尖角</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="index.html"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">python一些基础性操作</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-15T05:00:38.000Z" title="发表于 2020-11-15 13:00:38">2020-11-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-15T07:51:10.764Z" title="更新于 2021-11-15 15:51:10">2021-11-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E6%9D%82%E6%8A%80/">杂技</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E6%9D%82%E6%8A%80/python/">python</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">13k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>47分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="python一些基础性操作"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="python中单引号双引号3个单引号及3个双引号的区别"><a class="markdownIt-Anchor" href="#python中单引号双引号3个单引号及3个双引号的区别"></a> Python中单引号，双引号，3个单引号及3个双引号的区别</h2>
+<h3 id="单引号和双引号"><a class="markdownIt-Anchor" href="#单引号和双引号"></a> 单引号和双引号</h3>
+<p>在Python中我们都知道单引号和双引号都可以用来表示一个字符串，比如</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">str1 &#x3D; &#39;python&#39;
+str2 &#x3D; &quot;python&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>str1和str2是没有任何区别的。</p>
+<p>我们知道Python以其易用性而著名，所以刚开始看教程学习看到单引号和双引号都可以使用会以为这是Python为了方便程序员，随便用哪个就好，不用担心用错。其实，背后的原因不只是这么简单。举个例子，想想<code>I'm a big fans of Python.</code>这个字符串应该怎么定义。</p>
+<p>单引号版本：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">str3 &#x3D; &#39;I\&#39;m a big fan of Python.&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>可以注意到，原来的字符串中有一个’，而Python又允许使用单引号’ ‘来表示字符串，所以字符串中间的’必须用转移字符\才可以。字符串中间只有一个’，这样写看起来还好，但是如果是<code>We all know that 'A' and 'B' are two capital letters.</code>这个字符串呢？</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">str4 &#x3D; &#39;We all know that \&#39;A\&#39; and \&#39;B\&#39; are two capital letters.&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>怎么样，是不是看起来就很不好看，而且很容易出错了？这个时候就是双引号也可以表示字符串该体现作用的时候了。下面是str4的双引号版本：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">str4_ &#x3D; &quot;We all know that &#39;A&#39; and &#39;B&#39; are two capital letters.&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这样是不是看起来就人性化多了？没错，这就是Python支持双引号和单引号都能用来定义字符串的原因。</p>
+<p>反之，如果字符串中有双引号，为了避免使用转义符，你可以使用单引号来定义这个字符串。比如：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">str5 &#x3D; &#39;The teacher said: &quot;Practice makes perfect&quot; is a very famous proverb.&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这就是Python易用性和人性化的一个极致体现，当你用单引号’ '定义字符串的时候，它就会认为你字符串里面的双引号&quot; &quot;是普通字符，从而不需要转义。反之当你用双引号定义字符串的时候，就会认为你字符串里面的单引号是普通字符无需转义。</p>
+<h3 id="3个单引号及3个双引号"><a class="markdownIt-Anchor" href="#3个单引号及3个双引号"></a> 3个单引号及3个双引号</h3>
+<p>实际上3个单引号和3个双引号不经常用，但是在某些特殊格式的字符串下却有大用处。通常情况下我们用单引号或者双引号定义一个字符串的时候只能把字符串连在一起写成一行，如果非要写成多行，就得在每一行后面加一个\表示连字符，比如：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">str1 &#x3D; &quot;List of name:\Hua Li\Chao Deng&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>而且即使你这样写也不能得到期望的输出：</p>
+<pre class="line-numbers language-none"><code class="language-none">List of name:Hua LiChao Deng<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>实际上输出是下面这样的：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; str1 &#x3D; &quot;List of name:\... Hua Li\... Chao Deng&quot;&gt;&gt;&gt; print(str1)List of name: Hua Li Chao Deng<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>那么该如何得到我们期望的一行一个名字的输出格式呢？这就是3个引号的作用了：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; str1 &#x3D; &quot;&quot;&quot;List of name:... Hua Li... Chao Deng... &quot;&quot;&quot;&gt;&gt;&gt; print(str1)List of name:Hua LiChao Deng<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>虽然我们也可以通过给字符串加上\n实现：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; str1 &#x3D; &quot;List of name:\nHua Li\nChao Deng&quot;&gt;&gt;&gt; print(str1)List of name:Hua LiChao Deng<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>但是这样在输入的时候看起来就乱了很多不是么？所以这种情况下尽量使用3个引号，至于3个单引号还是双引号都是一样的，只需要注意如果字符串中包含有单引号就要使用双引号来定义就好了。</p>
+<p>而且使用3个引号还有一个特别棒的作用就是：加注释！</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; str1 &#x3D; &quot;&quot;&quot;... List of name:... Hua Li # LiHua... Chao Deng # DengChao... &quot;&quot;&quot;&gt;&gt;&gt; print(str1)List of name:Hua Li # LiHuaChao Deng # DengChao<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="python返回多个参数"><a class="markdownIt-Anchor" href="#python返回多个参数"></a> python返回多个参数</h2>
+<p>函数可以返回多个值吗？答案是肯定的。</p>
+<p>比如在游戏中经常需要从一个点移动到另一个点，给出坐标、位移和角度，就可以计算出新的新的坐标：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import mathdef move(x, y, step, angle&#x3D;0): nx &#x3D; x + step * math.cos(angle) ny &#x3D; y - step * math.sin(angle) return nx, ny<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>import math</code>语句表示导入<code>math</code>包，并允许后续代码引用<code>math</code>包里的<code>sin</code>、<code>cos</code>等函数。</p>
+<p>然后，我们就可以同时获得返回值：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; x, y &#x3D; move(100, 100, 60, math.pi &#x2F; 6)
+&gt;&gt;&gt; print(x, y)151.96152422706632 70.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>但其实这只是一种假象，Python函数返回的仍然是单一值：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; r &#x3D; move(100, 100, 60, math.pi &#x2F; 6)
+&gt;&gt;&gt; print(r)(151.96152422706632, 70.0)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>原来返回值是一个tuple！但是，在语法上，返回一个tuple可以省略括号，而多个变量可以同时接收一个tuple，按位置赋给对应的值，所以，Python的函数返回多值其实就是返回一个tuple，但写起来更方便。</p>
+<p>再python的迭代语法中也可以看到这种返回tuple的语法</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; d &#x3D; &#123;&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3&#125;
+&gt;&gt;&gt; for key in d:... print(key)...acb<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>因为dict的存储不是按照list的方式顺序排列，所以，迭代出的结果顺序很可能不一样。</p>
+<p>默认情况下，dict迭代的是key。如果要迭代value，可以用<code>for value in d.values()</code>，如果要同时迭代key和value，可以用<code>for k, v in d.items()</code>。</p>
+<h2 id="一篇搞定python正则表达式"><a class="markdownIt-Anchor" href="#一篇搞定python正则表达式"></a> 一篇搞定Python正则表达式</h2>
+<h3 id="1-正则表达式语法"><a class="markdownIt-Anchor" href="#1-正则表达式语法"></a> 1. 正则表达式语法</h3>
+<h4 id="11-字符与字符类"><a class="markdownIt-Anchor" href="#11-字符与字符类"></a> 1.1 字符与字符类</h4>
+<p>特殊字符：<code>\.^$?+*&#123;&#125;[]()|</code></p>
+<p>以上特殊字符要想使用字面值，必须使用\进行转义</p>
+<h4 id="2-字符类"><a class="markdownIt-Anchor" href="#2-字符类"></a> 2 字符类</h4>
+<p>包含在<code>[]</code>中的一个或者多个字符被称为字符类，字符类在匹配时如果没有指定量词则只会匹配其中的一个。<br />
+字符类内可以指定范围，比如<code>[a-zA-Z0-9]</code>表示a到z，A到Z，0到9之间的任何一个字符</p>
+<p>左方括号后跟随一个<code>^</code>，表示否定一个字符类，比如<code>[^0-9]</code>表示可以匹配一个任意非数字的字符。</p>
+<p>字符类内部，除了<code>\</code>之外，其他特殊字符不再具备特殊意义，都表示字面值。<code>^</code>放在第一个位置表示否定，放在其他位置表示<code>^</code>本身，<code>-</code>放在中间表示范围，放在字符类中的第一个字符，则表示-本身。</p>
+<p>字符类内部可以使用速记法，比如<code>\d \s \w</code></p>
+<p>速记法</p>
+<table>
+<thead>
+<tr>
+<th>.</th>
+<th>可以匹配除换行符之外的任何字符，如果有re.DOTALL标志，则匹配任意字符包括换行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\d</td>
+<td>匹配一个Unicode数字，如果带re.ASCII，则匹配0-9</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配Unicode非数字</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配Unicode空白，如果带有re.ASCII，则匹配\t\n\r\f\v中的一个</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配Unicode非空白</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配Unicode单词字符，如果带有re.ascii,则匹配[a-zA-Z0-9_]中的一个</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配Unicode非单子字符</td>
+</tr>
+</tbody>
+</table>
+<h4 id="12-量词"><a class="markdownIt-Anchor" href="#12-量词"></a> 1.2 量词</h4>
+<p>? 匹配前面的字符0次或1次</p>
+<p>匹配前面的字符0次或多次</p>
+<p>匹配前面的字符1次或者多次</p>
+<p>{m} 匹配前面表达式m次</p>
+<p>{m,} 匹配前面表达式至少m次</p>
+<p>{,n} 匹配前面的正则表达式最多n次</p>
+<p>{m,n} 匹配前面的正则表达式至少m次，最多n次</p>
+<p>注意点：以上量词都是贪婪模式，会尽可能多的匹配，如果要改为非贪婪模式，通过在量词后面跟随一个?来实现</p>
+<h4 id="13-组与捕获"><a class="markdownIt-Anchor" href="#13-组与捕获"></a> 1.3 组与捕获</h4>
+<p>1 ()的作用：</p>
+<p>捕获()中正则表达式的内容以备进一步利用处理，可以通过在左括号后面跟随?:来关闭这个括号的捕获功能<br />
+将正则表达式的一部分内容进行组合，以便使用量词或者|<br />
+反响引用前面()内捕获的内容：</p>
+<p>通过组号反向引用<br />
+个没有使用?:的小括号都会分配一个组好，从1开始，从左到右递增，可以通过\i引用前面()内表达式捕获的内容</p>
+<p>通过组名反向引用前面小括号内捕获的内容。通过在左括号后面跟随<code>?P&lt;name&gt;</code>,尖括号中放入组名来为一个组起一个别名，后面通过(?P=name)来引用 前面捕获的内容。如<code>(? P&lt;word&gt;\w+)\s+(?P=word)</code>来匹配重复的单词。</p>
+<p>注意点：反向引用不能放在字符类[]中使用。</p>
+<h4 id="14-断言与标记"><a class="markdownIt-Anchor" href="#14-断言与标记"></a> 1.4 断言与标记</h4>
+<p>断言不会匹配任何文本，只是对断言所在的文本施加某些约束</p>
+<p>1 常用断言：</p>
+<p>\b 匹配单词的边界，放在字符类[]中则表示backspace<br />
+\B 匹配非单词边界，受ASCII标记影响</p>
+<p>\A 在起始处匹配<br />
+^ 在起始处匹配，如果有MULTILINE标志，则在每个换行符后匹配</p>
+<p>\Z 在结尾处匹配<br />
+$ 在结尾处匹配，如果有MULTILINE标志，则在每个换行符前匹配</p>
+<p>(?=e) 正前瞻<br />
+(?!e) 负前瞻</p>
+<p>(?&lt;=e) 正回顾<br />
+(?&lt;!e) 负回顾</p>
+<p>前瞻回顾的解释</p>
+<p>前瞻： <code>exp1(?=exp2) exp1</code>后面的内容要匹配exp2</p>
+<p>负前瞻: <code>exp1(?!exp2) exp1</code>后面的内容不能匹配exp2</p>
+<p>后顾:<code>(?&lt;=exp2)exp1 exp1</code>前面的内容要匹配exp2</p>
+<p>负后顾: <code>(?&lt;!exp2)exp1 exp1</code>前面的内容不能匹配exp2</p>
+<p>例如：我们要查找hello，但是hello后面必须是world，正则表达式可以这样写：<code>&quot;(hello)\s+(?=world)&quot;</code>,用来匹配&quot;hello wangxing&quot;和&quot;hello world&quot;只能匹配到后者的hello</p>
+<h4 id="15-条件匹配"><a class="markdownIt-Anchor" href="#15-条件匹配"></a> 1.5 条件匹配</h4>
+<p><code>(?(id)yes_exp|no_exp)</code>:对应id的子表达式如果匹配到内容，则这里匹配yes_exp，否则匹配no_exp</p>
+<h4 id="16-正则表达式的标志"><a class="markdownIt-Anchor" href="#16-正则表达式的标志"></a> 1.6 正则表达式的标志</h4>
+<p>正则表达式的标志有两种使用方法</p>
+<p>通过给compile方法传入标志参数，多个标志使用|分割的方法,如<code>re.compile(r&quot;#[\da-f]&#123;6&#125;\b&quot;, re.IGNORECASE|re.MULTILINE)</code></p>
+<p>通过在正则表达式前面添加(?标志)的方法给正则表达式添加标志，如(?ms)#[\da-z]{6}\b</p>
+<p>常用的标志</p>
+<ul>
+<li>re.A或者re.ASCII， 使\b \B \s \S \w \W \d \D都假定字符串为假定字符串为ASCII</li>
+<li>re.I或者re.IGNORECASE 使正则表达式忽略大小写</li>
+<li>re.M或者re.MULTILINE 多行匹配，使每个^在每个回车后，每个$在每个回车前匹配</li>
+<li>re.S或者re.DOTALL 使.能匹配任意字符，包括回车</li>
+<li>re.X或者re.VERBOSE 这样可以在正则表达式跨越多行，也可以添加注释，但是空白需要使用\s或者[ ]来表示，因为默认的空白不再解释。如：</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">re.compile(r&quot;&quot;&quot;
+&lt;img\s +) #标签的开始
+[^&gt;]*? #不是src的属性
+src&#x3D; #src属性的开始
+(?:(?P&lt;quote&gt;[&quot;&#39;]) #左引号
+(?P&lt;image_name&gt;[^\1&gt;]+?) #图片名字
+(?P&#x3D;quote) #右括号
+&quot;&quot;&quot;,re.VERBOSE|re.IGNORECASE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-python正则表达式模块"><a class="markdownIt-Anchor" href="#2-python正则表达式模块"></a> 2. Python正则表达式模块</h3>
+<h4 id="21-正则表达式处理字符串主要有四大功能"><a class="markdownIt-Anchor" href="#21-正则表达式处理字符串主要有四大功能"></a> 2.1 正则表达式处理字符串主要有四大功能</h4>
+<p>匹配 查看一个字符串是否符合正则表达式的语法，一般返回true或者false</p>
+<p>获取 正则表达式来提取字符串中符合要求的文本</p>
+<p>替换 查找字符串中符合正则表达式的文本，并用相应的字符串替换</p>
+<p>分割 使用正则表达式对字符串进行分割。</p>
+<h4 id="22-python中re模块使用正则表达式的两种方法"><a class="markdownIt-Anchor" href="#22-python中re模块使用正则表达式的两种方法"></a> 2.2 Python中re模块使用正则表达式的两种方法</h4>
+<p>使用<code>re.compile(r, f)</code>方法生成正则表达式对象，然后调用正则表达式对象的相应方法。这种做法的好处是生成正则对象之后可以多次使用。</p>
+<p>则表达式对象的每个对象方法都有一个对应的模块方法，唯一不同的是传入的第一个参数是正则表达式字符串。此种方法适合于只使用一次的正则表达式。</p>
+<h4 id="23-正则表达式对象的常用方法"><a class="markdownIt-Anchor" href="#23-正则表达式对象的常用方法"></a> 2.3 正则表达式对象的常用方法</h4>
+<p><code>rx.findall(s,start, end)</code>:有分组，则列表中包含的是所有匹配的内容，如果正则表达式中有分组，则列表中的每个元素是一个元组，元组中包含子分组中匹配到的内容，但是没有返回整个正则表达式匹配的内容</p>
+<p><code>rx.finditer(s, start, end)</code>:对可迭代对象进行迭代，每一次返回一个匹配对象，可以调用匹配对象的group()方法查看指定组匹配到的内容，0表示整个正则表达式匹配到的内容</p>
+<p><code>rx.search(s, start, end)</code>:search方法只匹配一次就停止，不会继续往后匹配</p>
+<p><code>rx.match(s, start, end)</code>:ne</p>
+<p><code>rx.sub(x, s, m)</code>:最多替换m次。对于x可以使用/i或者/g<id>id可以是组名或者编号来引用捕获到的内容。模块方法re.sub(r, x, s, m)中的x可以使用一个函数。此时我们就可以对捕获到的内容推过这个函数进行处理后再替换匹配到的文本。</p>
+<p><code>rx.subn(x, s, m)</code>:</p>
+<p><code>rx.split(s, m)</code>:分割字符串用正则表达式匹配到的内容对字符串进行分割。</p>
+<p>如果正则表达式中存在分组，则把分组匹配到的内容放在列表中每两个分割的中间作为列表的一部分，如：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">rx &#x3D; re.compile(r&quot;(\d)[a-z]+(\d)&quot;)
+s &#x3D; &quot;ab12dk3klj8jk9jks5&quot;
+result &#x3D; rx.split(s)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>返回<code>['ab1', '2', '3', 'klj', '8', '9', 'jks5']</code></p>
+<p><code>rx.flags()</code>:正则表达式编译时设置的标志</p>
+<h4 id="24-匹配对象的属性与方法"><a class="markdownIt-Anchor" href="#24-匹配对象的属性与方法"></a> 2.4 匹配对象的属性与方法</h4>
+<p><code>m.group(g, ...)</code> :返回编号或者组名匹配到的内容，默认或者0表示整个表达式匹配到的内容，如果指定多个，就返回一个元组</p>
+<p><code>m.groupdict(default) </code>：返回一个字典。字典的键是所有命名的组的组名，值为命名组捕获到的内容；如果有default参数，则将其作为那些没有参与匹配的组的默认值。</p>
+<p><code>m.groups(default)</code>：返回一个元组。包含所有捕获到内容的子分组，从1开始，如果指定了default值，则这个值作为那些没有捕获到内容的组的值</p>
+<p><code>m.lastgroup()</code>:匹配到内容的编号最高的捕获组的名称，如果没有或者没有使用名称则返回None(不常用)</p>
+<p><code>m.lastindex()</code>:匹配到内容的编号最高的捕获组的编号，如果没有就返回None。</p>
+<p><code>m.start(g)</code>:当前匹配对象的子分组是从字符串的那个位置开始匹配的,如果当前组没有参与匹配就返回-1</p>
+<p><code>m.end(g)</code>:当前匹配对象的子分组是从字符串的那个位置匹配结束的，如果当前组没有参与匹配就返回-1</p>
+<p><code>m.span()</code>:返回一个二元组，内容分别是m.start(g)和m.end(g)的返回值</p>
+<p><code>m.re()</code>:产生这一匹配对象的正则表达式</p>
+<p><code>m.string()</code>:传递给match或者search用于匹配的字符串</p>
+<p><code>m.pos() </code>:搜索的起始位置。即字符串的开头，或者start指定的位置(不常用)</p>
+<p><code>m.endpos() </code>:搜索的结束位置。即字符串的末尾位置，或者end指定的位置(不常用)</p>
+<h3 id="25-总结"><a class="markdownIt-Anchor" href="#25-总结"></a> 2.5 总结</h3>
+<p>对于正则表达式的匹配功能，Python没有返回true和false的方法，但可以通过对match或者search方法的返回值是否是None来判断</p>
+<p>nditer方法返回的可迭代对象来迭代访问</p>
+<p>对于正则表达式的替换功能，可以使用正则表达式对象的sub或者subn方法来实现，也可以通过re模块方法sub或者subn来实现，区别在于模块的sub方法的替换文本可以使用一个函数来生成<br />
+的列表中</p>
+<h2 id="pythonos模块"><a class="markdownIt-Anchor" href="#pythonos模块"></a> python——os模块</h2>
+<h3 id="一-os模块概述"><a class="markdownIt-Anchor" href="#一-os模块概述"></a> 一、os模块概述</h3>
+<p>Python os模块包含普遍的操作系统功能。如果你希望你的程序能够与平台无关的话，这个模块是尤为重要的。(一语中的)</p>
+<h3 id="二-常用方法"><a class="markdownIt-Anchor" href="#二-常用方法"></a> 二、常用方法</h3>
+<p>1、<a target="_blank" rel="noopener" href="http://os.name">os.name</a></p>
+<p>输出字符串指示正在使用的平台。如果是window 则用’nt’表示，对于Linux/Unix用户，它是’posix’。</p>
+<p>2、os.getcwd()</p>
+<p>函数得到当前工作目录，即当前Python脚本工作的目录路径。</p>
+<p>3、os.listdir()</p>
+<p>返回指定目录下的所有文件和目录名。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; os.listdir(os.getcwd())[&#39;Django&#39;, &#39;DLLs&#39;, &#39;Doc&#39;, &#39;include&#39;, &#39;Lib&#39;, &#39;libs&#39;, &#39;LICENSE.txt&#39;, &#39;MySQL-python-wininst.log&#39;, &#39;NEWS.txt&#39;, &#39;PIL-wininst.log&#39;, &#39;python.exe&#39;, &#39;pythonw.exe&#39;, &#39;README.txt&#39;, &#39;RemoveMySQL-python.exe&#39;, &#39;RemovePIL.exe&#39;, &#39;Removesetuptools.exe&#39;, &#39;Scripts&#39;, &#39;setuptools-wininst.log&#39;, &#39;tcl&#39;, &#39;Tools&#39;, &#39;w9xpopen.exe&#39;]
+&gt;&gt;&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>4、os.remove()</p>
+<p>删除一个文件。</p>
+<p>5、os.system()</p>
+<p>运行shell命令。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; os.system(&#39;dir&#39;)
+0
+&gt;&gt;&gt; os.system(&#39;cmd&#39;) #启动dos<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>6、os.sep 可以取代操作系统特定的路径分割符。</p>
+<p>7、os.linesep字符串给出当前平台使用的行终止符</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; os.linesep&#39;\r\n&#39; #Windows使用&#39;\r\n&#39;，Linux使用&#39;\n&#39;而Mac使用&#39;\r&#39;。
+&gt;&gt;&gt; os.sep&#39;\\&#39; #Windows&gt;&gt;&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>8、os.path.split()</p>
+<p>函数返回一个路径的目录名和文件名</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; os.path.split(&#39;C:\\Python25\\abc.txt&#39;)(&#39;C:\\Python25&#39;, &#39;abc.txt&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>9、os.path.isfile()和os.path.isdir()函数分别检验给出的路径是一个文件还是目录。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; os.path.isdir(os.getcwd())
+True
+&gt;&gt;&gt; os.path.isfile(&#39;a.txt&#39;)
+False<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>10、os.path`.exists```()函数用来检验给出的路径是否真地存在</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; os.path.exists(&#39;C:\\Python25\\abc.txt&#39;)False&gt;&gt;&gt; os.path.exists(&#39;C:\\Python25&#39;)True&gt;&gt;&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>11、os.path.abspath(name):获得绝对路径</p>
+<p>12、os.path.normpath(path):规范path字符串形式</p>
+<p>13、os.path.getsize(name):获得文件大小，如果name是目录返回0L</p>
+<p>14、os.path.splitext():分离文件名与扩展名</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; os.path.splitext(&#39;a.txt&#39;)(&#39;a&#39;, &#39;.txt&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>15、os.path.join(path,name):连接目录与文件名或目录</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; os.path.join(&#39;c:\\Python&#39;,&#39;a.txt&#39;)&#39;c:\\Python\\a.txt&#39;
+&gt;&gt;&gt; os.path.join(&#39;c:\\Python&#39;,&#39;f1&#39;)&#39;c:\\Python\\f1&#39;
+&gt;&gt;&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>16、os.path.basename(path):返回文件名</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; os.path.basename(&#39;a.txt&#39;)&#39;a.txt&#39;
+&gt;&gt;&gt; os.path.basename(&#39;c:\\Python\\a.txt&#39;)&#39;a.txt&#39;
+&gt;&gt;&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>17、os.path.dirname(path):返回文件路径</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; os.path.dirname(&#39;c:\\Python\\a.txt&#39;)&#39;c:\\Python&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>os.error 内建OSError exception的别名。<br />
+<a target="_blank" rel="noopener" href="http://os.name">os.name</a> 导入依赖操作系统模块的名字。下面是目前被注册的名字：‘posix’, ‘nt’, ‘mac’, ‘os2’, ‘ce’, ‘java’, ‘riscos’.</p>
+<p>下面的function和data项是和当前的进程和用户有关</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; os.path.dirname(&#39;c:\\Python\\a.txt&#39;)&#39;c:\\Python&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>os.environ 一个mapping对象表示环境。例如，environ[‘HOME’] ，表示的你自己home文件夹的路径(某些平台支持，windows不支持) ，它与C中的getenv(“HOME”)一致。</p>
+<p>这个mapping对象在os模块第一次导入时被创建，一般在python启动时，作为site.py处理过程的一部分。在这一次之后改变environment不影响os.environ，除非直接修改os.environ.</p>
+<p>注：putenv()不会直接改变os.environ，所以最好是修改os.environ</p>
+<p>注：在一些平台上，包括FreeBSD和Mac OS X，修改environ会导致内存泄露。参考 putenv()的系统文档。</p>
+<p>如果没有提供putenv()，mapping的修改版本传递给合适的创建过程函数，将导致子过程使用一个修改的environment。</p>
+<p>如果这个平台支持unsetenv()函数，你可以删除mapping中的项目。当从os.environ使用pop()或clear()删除一个项目时，unsetenv()会自动被调用（版本2.6）。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">os.chdir(path) 
+os.fchdir(fd) 
+os.getcwd() <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>这些函数在 Files和 Directories中。</p>
+<p>os.ctermid() 返回进程控制终端的文件名。在unix中有效，请查看相关文档。</p>
+<p>os.getegid() 返回当前进程有效的group的id。对应于当前进程的可执行文件的&quot;set id &quot;的bit位。在unix中有效，请查看相关文档。</p>
+<p>os.geteuid() 返回当前进程有效的user的id。在unix中有效，请查看相关文档。</p>
+<p>os.getgid() 返回当前进程当前group的id。在unix中有效，请查看相关文档。</p>
+<p>os.getgroups() 返回当前进程支持的groups的id列表。在unix中有效，请查看相关文档。</p>
+<p>os.getlogin() 返回进程控制终端登陆用户的名字。在大多情况下它比使用environment变量LOGNAME来得到用户名，或使用pwd.getpwuid(os.getuid())[0] 得到当前有效用户id的登陆名更为有效。在unix中有效，请查看相关文档。</p>
+<p>os.getpgid(pid) 返回pid进程的group id.如果pid为0,返回当前进程的group id。在unix中有效，请查看相关文档。</p>
+<p>os.getpgrp() 返回当前进程组的id.在unix中有效，请查看相关文档。</p>
+<p>os.getpid() 返回当前进程的id.在unix，Windows中有效。</p>
+<p>os.getppid() 返回当前父进程的id.在unix中有效，请查看相关文档。</p>
+<p>os.getuid() 返回当前当前进程用户的id.在unix中有效，请查看相关文档。</p>
+<p>os.getenv(varname[, value]) 返回environment变量varname的值，如果value不存在，默认为None.在大多版本的unix，Windows中有效。</p>
+<p>os.putenv(varname, value) 设置varname环境变量为value值。此改变影响以os.system(), popen() 或 fork()和execv()启动的子进程。在大多版本的unix，Windows中有效。 当支持putenv()时，在os.environ分配项目时，自动调用合适的putenv()。然而，调用putenv() 不会更新os.environ，所以直接设置os.environ的项。</p>
+<p>os.setegid(egid) 设置当前进程有效组的id.在unix中有效，请查看相关文档。</p>
+<p>os.seteuid(euid) 设置当前进程有效用户的id.在unix中有效，请查看相关文档。</p>
+<p>os.setgid(gid) 设置当前进程组的id.在unix中有效，请查看相关文档。</p>
+<p>os.setgroups(groups) 设置当前进程支持的groups id列表。groups必须是个列表，每个元素必须是个整数，这个操作只对超级用户有效，在unix中有效，请查看相关文档。</p>
+<p>os.setpgrp() 调用system的setpgrp()或setpgrp(0, 0)() ，依赖于使用的是哪个版本的system. 请查看 Unix手册. 在unix中有效，请查看相关文档。</p>
+<p>os.setpgid(pid, pgrp) 调用system的setpgid()设置pid进程group的id为pgrp.请查看 Unix手册. 在unix中有效，请查看相关文档。</p>
+<p>os.setreuid(ruid, euid) 设置当前process当前 和有效的用户id. 在unix中有效，请查看相关文档。</p>
+<p>os.setregid(rgid, egid) 设置当前process当前 和有效的组id. 在unix中有效，请查看相关文档。</p>
+<p>os.getsid(pid) 调用system的getsid(). 请查看 Unix手册. 在unix中有效，请查看相关文档。</p>
+<p>os.setsid() 调用system的setsid().请查看 Unix手册. 在unix中有效，请查看相关文档。</p>
+<p>os.setuid(uid) 设置当前user id. 在unix中有效，请查看相关文档。</p>
+<p>os.strerror(code) 返回程序中错误code的错误信息。在某些平台上，当给一个未知的code,strerror()返回NULL,将抛出ValueError。在unix，Windows中有效。</p>
+<p>os.umask(mask) 设置当前权限掩码，同时返回先前的权限掩码。在unix，Windows中有效。</p>
+<p>os.fdopen(fd[, mode[, bufsize]]) 返回一个文件描述符号为fd的打开的文件对象。mode和bufsize参数，和内建的open()函数是同一个意思。在unix，Windows中有效。 mode必须以’r’, ‘w’,或者’a’开头, 否则抛出ValueError. 以’a’开头的mode, 文件描述符中O_APPEND位已设置.</p>
+<p>os.popen(command[, mode[, bufsize]]) 给或从一个command打开一个管理。返回一个打开的连接到管道文件对象，文件对象可以读或写，在于模式是’r’(默认) 或’w’，bufsize参数，和内建的open()函数是同一个意思。 command返回的状态 (在wait()函数中编码) 和调用文件对象的close()返回值一样, 除非返回值是0(无错误终止), 返回None . 在unix，Windows中有效。</p>
+<p>在 2.6版本中已抛弃. 使用subprocess模块.</p>
+<p>os.tmpfile() 返回一个打开的模式为(w+b)的文件对象 .这文件对象没有文件夹入口，没有文件描述符，将会自动删除. 在unix，Windows中有效。</p>
+<p>从 version 2.6起: 所有的popen*()函数已抛弃. 使用subprocess模块.</p>
+<p>os.popen2(cmd[, mode[, bufsize]])</p>
+<p>os.popen3(cmd[, mode[, bufsize]])</p>
+<p>os.popen4(cmd[, mode[, bufsize]])</p>
+<p>16.1.3. 文件描述符操作<br />
+这些函数操作使用文件描述符引用的I/O stream。<br />
+文件描述符是与当前进程打开的文件相对应的一些小整数. 例如标准输入的通常文件描述符中 0, 标准输出是1,标准错误是 2. 进程打开的更多文件将被分配为3, 4, 5,等. 这“文件描述符”有一点迷惑性;在Unix平台上, socket和pipe 通常也使用文件描述符引用。</p>
+<p>os.close(fd)  关闭文件描述符fd. 在unix，Windows中有效。</p>
+<p>这函数是为低层的I/O服务的，应用在os.open()或 pipe()返回的文件描述符上。关闭一个由内建函数open()或 popen()或fdopen()打开的文件对象，使用close()方法。</p>
+<p>os.closerange(fd_low, fd_high) 关闭从fd_low（包含）到fd_high（不包含）所有的文件描述符，忽略错误。在unix，Windows中有效。</p>
+<p>等同于：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">for fd in xrange(fd_low, fd_high): 
+  try: 
+    os.close(fd) 
+  except OSError: 
+    pass 
+os.dup(fd) <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>返回文件描述符fd的cope. 在unix，Windows中有效。</p>
+<p>os.dup2(fd, fd2) 复制文件描述符fd到fd2, 如果有需要首先关闭fd2. 在unix，Windows中有效。</p>
+<p>os.fchmod(fd, mode) 改变文件描述符为fd的文件’mode‘为mode. 查看chmod()文档 中mode的值. 在unix中有效，请查看相关文档。</p>
+<p>version 2.6中新增.</p>
+<p>os.fchown(fd, uid, gid) 改变文件描述符为fd的文件的所有者和group的id为uid和gid. 如果不想它们中的一个, 就设置为-1. 在unix中有效，请查看相关文档。</p>
+<p>version 2.6中新增.</p>
+<p>os.fdatasync(fd) 强制将文件描述符为fd的文件写入硬盘. 不强制更新metadata. 在unix中有效，请查看相关文档。</p>
+<p>注：在MacOS中无效.</p>
+<p>os.fpathconf(fd, name) 返回一个打开的文件的系统配置信息。name为检索的系统配置的值，它也许是一个定义系统值的字符串，这些名字在很多标准中指定（POSIX.1, Unix 95, Unix 98, 和其它）。一些平台也定义了一些额外的名字。这些名字在主操作系统上pathconf_names的字典中。对于不在pathconf_names中的配置变量，传递一个数字作为名字，也是可以接受的。 在unix中有效，请查看相关文档。</p>
+<p>如果name是一个字符串或者未知的，将抛出ValueError。如果name是一个特别的值，在系统上不支持，即使它包含在pathconf_names中，将会抛出错误数字为errno.EINVAL的OSError。</p>
+<p>os.fstat(fd) 返回文件描述符fd的状态，像stat()。在unix，Windows中有效。</p>
+<p>os.fstatvfs(fd) 返回包含文件描述符fd的文件的文件系统的信息，像 statvfs(). 在unix中有效，请查看相关文档。</p>
+<p>os.fsync(fd) 强制将文件描述符为fd的文件写入硬盘.在Unix, 将调用fsync()函数;在Windows, 调用 _commit()函数.</p>
+<p>如果你准备操作一个Python文件对象f, 首先f.flush(),然后os.fsync(f.fileno()), 确保与f相关的所有内存都写入了硬盘.在unix，Windows中有效。</p>
+<p>os.ftruncate(fd, length) 裁剪文件描述符fd对应的文件, 所以它最大不能超过文件大小. 在unix中有效，请查看相关文档。</p>
+<p>os.isatty(fd) 如果文件描述符fd是打开的，同时与tty(-like)设备相连，则返回true, 否则False. 在unix中有效，请查看相关文档。</p>
+<p>os.lseek(fd, pos, how) 设置文件描述符 fd当前位置为pos, how方式修改: SEEK_SET 或者 0 设置从文件开始的计算的pos; SEEK_CUR或者 1 则从当前位置计算; os.SEEK_END或者2则从文件尾部开始. 在unix，Windows中有效。</p>
+<p>os.open(file, flags[, mode]) 打开file同时根据flags设置变量flags ，如果有mode，则设置它的mode. 默认的mode是 0777 (八进制), 当前掩码值是first masked out. 返回刚打开的文件描述符. 在unix，Windows中有效。 flag和mode值, 请查看C运行时文档; flag常数(像O_RDONLY and O_WRONLY)在这个模块中也定义了（在下面）.</p>
+<p>注:这函数是打算为低层 I/O服务的.正常的使用，使用内建函数open(),返回read()和 write() 等方法创建的文件对象.包装文件描述符为“文件对象”, 使用fdopen().</p>
+<p>os.openpty() 在一些Unix平台上有效，请查看相关文档.</p>
+<p>os.pipe() 创建一个管道. 返回一对文件描述符(r, w) 分别为读和写. 在unix，Windows中有效。</p>
+<p>os.read(fd, n) 从文件描述符 fd中读取最多n个字节. 返回包含读取字节的string. 文件描述符 fd对应文件已达到结尾, 返回一个空string. 在unix，Windows中有效。</p>
+<p>注:这函数是打算为低层 I/O服务的 ，同时必须应用在os.open()或者pipe()函数返回的文件描述符. 读取内建函数open()或者by popen()或者fdopen(),或者sys.stdin返回的一个“文件对象” , 使用它的read()或者readline()方法.</p>
+<p>os.tcgetpgrp(fd) 在unix中有效，请查看相关文档。</p>
+<p>os.tcsetpgrp(fd, pg) 在unix中有效，请查看相关文档。</p>
+<p>os.ttyname(fd) 在unix中有效，请查看相关文档。</p>
+<p>os.write(fd, str) 写入字符串到文件描述符 fd中. 返回实际写入的字符串长度. 在unix，Windows中有效。</p>
+<p>注:这函数是打算为低层 I/O服务的 ，同时必须应用在os.open()或者pipe()函数返回的文件描述符. 读取内建函数open()或者by popen()或者fdopen(),或者sys.stdin返回的一个“文件对象” , 使用它的read()或者readline()方法.</p>
+<p>下面的常数是open()函数的 flags参数选项. 它们可以使用 bitwise合并或者operator |. 它们中的一些常数并不是在所有平台都有效. 它们更多使用请查看相关资料，在unix上参考open(2)手册页面，windows上<a target="_blank" rel="noopener" href="http://msdn.microsoft.com/en-us/library/z0kc8e3z.aspx.%A0">http://msdn.microsoft.com/en-us/library/z0kc8e3z.aspx. </a>;</p>
+<p>os.O_RDONLY<br />
+os.O_WRONLY<br />
+os.O_RDWR<br />
+os.O_APPEND<br />
+os.O_CREAT<br />
+os.O_EXCL<br />
+os.O_TRUNC<br />
+这些常数在Unix and Windows上有效.<br />
+os.O_DSYNC<br />
+os.O_RSYNC<br />
+os.O_SYNC<br />
+os.O_NDELAY<br />
+os.O_NONBLOCK<br />
+os.O_NOCTTY<br />
+os.O_SHLOCK<br />
+os.O_EXLOCK<br />
+这些常数仅在Unix上有效.<br />
+os.O_BINARY<br />
+os.O_NOINHERIT<br />
+os.O_SHORT_LIVED<br />
+os.O_TEMPORARY<br />
+os.O_RANDOM<br />
+os.O_SEQUENTIAL<br />
+os.O_TEXT<br />
+这些常数仅在 Windows上有效.<br />
+os.O_ASYNC<br />
+os.O_DIRECT<br />
+os.O_DIRECTORY<br />
+os.O_NOFOLLOW<br />
+os.O_NOATIME<br />
+这些常数是 GNU扩展，如果没有在C库声明刚没有.<br />
+os.SEEK_SET<br />
+os.SEEK_CUR<br />
+os.SEEK_END<br />
+lseek()函数的参数. 它们的值分别是 0, 1,和 2. 在Unix and Windows上有效.</p>
+<p>版本2.5新增.</p>
+<p>16.1.4. 文件和文件夹<br />
+os.access(path, mode)<br />
+使用现在的uid/gid尝试访问path. 注大部分操作使用有效的uid/gid, 因此运行环境可以在 suid/sgid环境尝试，如果用户有权访问path. mode为F_OK，测试存在的path,或者它可以是包含R_OK, W_OK和X_OK或者R_OK, W_OK和X_OK其中之一或者更多.如果允许访问返回 True , 否则返回False. 查看Unix手册access(2) 获取更多信息. 在unix，Windows中有效。</p>
+<p>注:使用access()去测试用户是否授权. 在实际使用open()打开一个文件前测试会创建一个安全漏洞前 , 因为用户会利用这短暂时间在检测和打开这个文件去修改它.</p>
+<p>注:即使access()表明它将succeed，但I/O 操作也可能会失败, 如网络文件系统.</p>
+<p>os.F_OK<br />
+作为access()的mode参数，测试path是否存在.<br />
+os.R_OK<br />
+包含在access()的mode参数中 ， 测试path是否可读.<br />
+os.W_OK<br />
+包含在access()的mode参数中 ，测试path是否可写.<br />
+os.X_OK<br />
+包含在access()的mode参数中 ，测试path是否可执行…<br />
+os.chdir(path)<br />
+改变当前工作目录. 在unix，Windows中有效。</p>
+<p>os.fchdir(fd)<br />
+在unix中有效，请查看相关文档。<br />
+os.getcwd()<br />
+返回当前工作目录的字符串， 在unix，Windows中有效。<br />
+os.getcwdu()<br />
+返回一个当前工作目录的Unicode对象. 在unix，Windows中有效。<br />
+os.chflags(path, flags)<br />
+在unix中有效，请查看相关文档。</p>
+<p>os.chroot(path)<br />
+在unix中有效，请查看相关文档。</p>
+<p>os.chmod(path, mode)<br />
+改变path的mode到数字mode. mode为下面中的一个 (在stat模块中定义)或者bitwise或者它们的组合:</p>
+<p>?stat.S_ISUID<br />
+?stat.S_ISGID<br />
+?stat.S_ENFMT<br />
+?stat.S_ISVTX<br />
+?stat.S_IREAD<br />
+?stat.S_IWRITE<br />
+?stat.S_IEXEC<br />
+?stat.S_IRWXU<br />
+?stat.S_IRUSR<br />
+?stat.S_IWUSR<br />
+?stat.S_IXUSR<br />
+?stat.S_IRWXG<br />
+?stat.S_IRGRP<br />
+?stat.S_IWGRP<br />
+?stat.S_IXGRP<br />
+?stat.S_IRWXO<br />
+?stat.S_IROTH<br />
+?stat.S_IWOTH<br />
+?stat.S_IXOTH<br />
+在unix，Windows中有效。</p>
+<p>注:尽管Windows支持chmod(), 你只可以使用它设置只读 flag (通过stat.S_IWRITE和stat.S_IREAD 常数或者一个相对应的整数)。所有其它的 bits都忽略了.</p>
+<p>os.chown(path, uid, gid)<br />
+在unix中有效，请查看相关文档。<br />
+os.lchflags(path, flags)<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.6.</p>
+<p>os.lchmod(path, mode)<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.6.</p>
+<p>os.lchown(path, uid, gid)<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.link(source, link_name)<br />
+在unix中有效，请查看相关文档。<br />
+os.listdir(path)<br />
+返回path指定的文件夹包含的文件或文件夹的名字的列表. 这个列表以字母顺序. 它不包括 ‘.’ 和’…’ 即使它在文件夹中. 在unix，Windows中有效。</p>
+<p>Changed in version 2.3:在Windows NT/2k/XP 和Unix, 如果文件夹是一个Unicode object, 结果将是 Unicode objects列表. 不能解码的文件名将仍然作为string objects返回.</p>
+<p>os.lstat(path)<br />
+像stat(),但是没有符号链接. 这是stat()的别名 在某些平台上,例如Windows.<br />
+os.mkfifo(path[, mode])<br />
+在unix中有效，请查看相关文档。</p>
+<p>os.mknod(filename[, mode=0600, device])<br />
+创建一个名为filename文件系统节点（文件，设备特别文件或者命名pipe）。 mode指定创建或使用节点的权限, 组合 (或者bitwise) stat.S_IFREG, stat.S_IFCHR, stat.S_IFBLK, 和stat.S_IFIFO (这些常数在stat模块). 对于 stat.S_IFCHR和stat.S_IFBLK, 设备定义了 最新创建的设备特殊文件 (可能使用 os.makedev()),其它都将忽略.</p>
+<p>新增version 2.3.</p>
+<p>os.major(device)<br />
+从原始的设备号中提取设备major号码 (使用stat中的st_dev或者st_rdev field).</p>
+<p>新增version 2.3.</p>
+<p>os.minor(device)<br />
+从原始的设备号中提取设备minor号码 (使用stat中的st_dev或者st_rdev field ).</p>
+<p>新增version 2.3.</p>
+<p>os.makedev(major, minor)<br />
+以major和minor设备号组成一个原始设备号.</p>
+<p>新增version 2.3.</p>
+<p>os.mkdir(path[, mode])<br />
+以数字mode的mode创建一个名为path的文件夹.默认的 mode 是 0777 (八进制). 在有些平台上, mode是忽略的. 当使用时。这当前的掩码值是first masked out. 在unix，Windows中有效。</p>
+<p>也可以创建临时文件夹; 查看tempfile模块tempfile.mkdtemp()函数.</p>
+<p>os.makedirs(path[, mode])<br />
+递归文件夹创建函数。像mkdir(), 但创建的所有intermediate-level文件夹需要包含子文件夹. 抛出一个error exception如果子文件夹已经存在或者不能创建. 默认的 mode 是 0777 (八进制). 在有些平台上, mode是忽略的.当使用时。这当前的掩码值是first masked out。</p>
+<p>注:<br />
+makedirs()变得迷惑 如果路径元素包含os.pardir.<br />
+现在可以正确处理 UNC路径.</p>
+<p>os.pathconf(path, name)<br />
+在unix中有效，请查看相关文档。</p>
+<p>os.pathconf_names<br />
+在unix中有效，请查看相关文档。<br />
+os.readlink(path)<br />
+在unix中有效，请查看相关文档。</p>
+<p>os.remove(path)<br />
+删除路径为path的文件.如果path 是一个文件夹，将抛出OSError; 查看下面的rmdir()删除一个 directory. 这和下面的unlink()函数文档是一样的.在Windows,尝试删除一个正在使用的文件将抛出一个exception;在Unix,directory入口会被删除，但分配给文件的存储是无效的，直到原来的文件不再使用. 在unix，Windows中有效。<br />
+os.removedirs(path)<br />
+递归删除directorie. 像rmdir(), 如果子文件夹成功删除, removedirs()才尝试它们的父文件夹,直到抛出一个error(它基本上被忽略,因为它一般意味着你文件夹不为空).例如, os.removedirs(‘foo/bar/baz’) 将首先删除 ‘foo/bar/baz’, 然后删除 ‘foo/bar’ 和 ‘foo’ 如果它们是空的. 如果子文件夹不能被成功删除，将抛出OSError .</p>
+<p>新增version 1.5.2.</p>
+<p>os.rename(src, dst)<br />
+重命名file或者directory src 到dst.如果dst是一个存在的directory, 将抛出OSError. 在Unix, 如果dst在存且是一个file,如果用户有权限的话，它将被安静的替换. 操作将会失败在某些Unix 中如果src和dst在不同的文件系统中. 如果成功, 这命名操作将会是一个原子操作 (这是POSIX 需要). 在 Windows上, 如果dst已经存在, 将抛出OSError，即使它是一个文件. 在unix，Windows中有效。<br />
+os.renames(old, new)<br />
+递归重命名文件夹或者文件。像rename()</p>
+<p>新增version 1.5.2.</p>
+<p>os.rmdir(path)<br />
+删除path文件夹. 仅当这文件夹是空的才可以, 否则, 抛出OSError. 要删除整个文件夹树, 可以使用shutil.rmtree(). 在unix，Windows中有效。<br />
+os.stat(path)<br />
+执行一个stat()系统调用在给定的path上. 返回值是一个对象，属性与stat结构成员有关: st_mode (保护位), st_ino (inode number), st_dev (device), st_nlink (number of hard links), st_uid (所有用户的id), st_gid (所有者group id), st_size (文件大小, 以位为单位), st_atime (最近访问的时间), st_mtime (最近修改的时间), st_ctime (依赖于平台;在Unix上是metadata最近改变的时间,或者在 Windows上是创建时间):</p>
+<p>&gt;&gt;&gt; import os<br />
+&gt;&gt;&gt; statinfo = os.stat(‘somefile.txt’)<br />
+&gt;&gt;&gt; statinfo<br />
+(33188, 422511L, 769L, 1, 1032, 100, 926L, 1105022698,1105022732, 1105022732)<br />
+&gt;&gt;&gt; statinfo.st_size<br />
+926L<br />
+&gt;&gt;&gt;<br />
+如果stat_float_times()返回True,time值是floats,以second进行计算. 一秒的小数部分也会显示出来， 如果系统支持. 在Mac OS, 时间常常是 floats.查看 stat_float_times() 获取更多信息.</p>
+<p>在一些Unix系统上(例如 Linux), 下面的属性也许是有效的: st_blocks (为文件分配了多少块), st_blksize (文件系统blocksize), st_rdev (设备型号如果是一个inode设备). st_flags (用户为文件定义的flags).</p>
+<p>在unix，Windows中有效。</p>
+<p>os.stat_float_times([newvalue])<br />
+决定stat_result是否以float对象显示时间戳.</p>
+<p>os.statvfs(path)<br />
+在unix中有效，请查看相关文档。</p>
+<p>os.symlink(source, link_name)<br />
+在unix中有效，请查看相关文档。<br />
+os.tempnam([dir[, prefix]])<br />
+为创建一个临时文件返回一个唯一的path。在Windows使用TMP . 依赖于使用的C库;<br />
+警告:<br />
+使用tempnam() 对于symlink攻击是一个漏洞; 考虑使用tmpfile()代替.</p>
+<p>在unix，Windows中有效。</p>
+<p>os.tmpnam()<br />
+为创建一个临时文件返回一个唯一的path.<br />
+Warning:<br />
+使用tempnam() 对于symlink攻击是一个漏洞; 考虑使用tmpfile()代替.</p>
+<p>在unix，Windows中有效。</p>
+<p>os.TMP_MAX<br />
+tmpnam() 将产生唯一名字的最大数值.<br />
+os.unlink(path)<br />
+删除 file路径. 与remove()相同; 在unix，Windows中有效。<br />
+os.utime(path, times)<br />
+返回指定的path文件的访问和修改的时间。如果时间是 None, 则文件的访问和修改设为当前时间 。 否则, 时间是一个 2-tuple数字, (atime, mtime) 用来分别作为访问和修改的时间.<br />
+在unix，Windows中有效。</p>
+<p>os.walk(top[, topdown=True[, onerror=None[, followlinks=False]]])</p>
+<p>输出在文件夹中的文件名通过在树中游走，向上或者向下.在根目录下的每一个文件夹(包含它自己), 产生3-tuple (dirpath, dirnames, filenames)</p>
+<p>【文件夹路径, 文件夹名字, <em>该路径下的所有</em>文件名】</p>
+<p>dirpath是一个字符串, directory的路径. dirnames在dirpath中子文件夹的列表 (不包括 ‘.’ ‘…’). filenames 文件是在dirpath不包含子文件夹的文件名的列表. 注： 列表中的names不包含path.为获得dirpath中的一个文件或者文件夹的完整路径 (以顶目录开始)或者, 操作 os.path.join(dirpath, name).</p>
+<p>如果optional参数topdown为True或者not指定, 一个directory的3-tuple将比它的任何子文件夹的3-tuple先产生 (directories 自上而下).如果topdown为 False, 一个directory的3-tuple将比它的任何子文件夹的3-tuple后产生 (directories 自下而上)。</p>
+<p>当topdown为True,调用者可以修改列表中列出的文件夹名字(也可以使用del或者slice), walk() 仅仅递归每一个包含在dirnames中的子文件夹; 可以减少查询, 利用访问的特殊顺序,或者甚至 告诉 walk() 关于文件夹的创建者或者重命名在它重新walk()之前.修改文件名当topdown 为False时是无效的, 因为在bottom-up模式中在dirnames中的directories比dirpath 它自己先产生 .</p>
+<p>默认listdir()的errors将被忽略. 如果optional参数onerror被指定,它应该是一个函数; 它调用时有一个参数, 一个OSError实例. 报告这错误后，继续walk,或者抛出exception终止walk.注意filename是可用的的 ，exception对象的filename属性.</p>
+<p>默认, walk() 不会进入符号链接 .</p>
+<p>新增version 2.6:</p>
+<p>注:如果你传入一个相对的pathname, 不要在walk()执行过程中改变当前文件夹. walk()不会改变改前文件夹, 同时确保它的调用者也不会改变.</p>
+<p>import os<br />
+from os.path import join, getsize<br />
+for root, dirs, files in os.walk(‘python/Lib/email’):<br />
+print root, “consumes”,<br />
+print sum(getsize(join(root, name)) for name in files),<br />
+print “bytes in”, len(files), “non-directory files”<br />
+if ‘CVS’ in dirs:<br />
+dirs.remove(‘CVS’) # don’t visit CVS directories</p>
+<p># Delete everything reachable from the directory named in “top”,<br />
+# assuming there are no symbolic links.<br />
+# CAUTION: This is dangerous! For example, if top == ‘/’, it<br />
+# could delete all your disk files.<br />
+import os<br />
+for root, dirs, files in os.walk(top, topdown=False):<br />
+for name in files:<br />
+os.remove(os.path.join(root, name))<br />
+for name in dirs:<br />
+os.rmdir(os.path.join(root, name))<br />
+新增version 2.3.</p>
+<p>使用函数来创建和管理进程。<br />
+使用 exec*() 函数使用arguments列表来载入新程序. 在每个例子, 一个用户敲入一个命令行中的第一个参数传递给程序作为它自己的名字而不是作为参数. 对于C 程序员来说, 它是传递给main()的argv[0]. 例如, os.execv(‘/bin/echo’, [‘foo’, ‘bar’]) 将仅仅在标准输出上打印bar; foo 将被忽略.</p>
+<p>os.abort()<br />
+产生一个SIGABRT标识到当前的进程.在Unix,这默认的行为是产生一个主要的dump;在Windows,这进程立即返回退出以一个状态码为3. 程序使用signal.signal()来注册一个SIGABRT 将导致不同的行为. 在unix，Windows中有效。<br />
+os.execl(path, arg0, arg1, …)<br />
+os.execle(path, arg0, arg1, …, env)<br />
+os.execlp(file, arg0, arg1, …)<br />
+os.execlpe(file, arg0, arg1, …, env)<br />
+os.execv(path, args)<br />
+os.execve(path, args, env)<br />
+os.execvp(file, args)<br />
+os.execvpe(file, args, env)<br />
+这些函数将执行一个新程序, 替换当前进程; 他们没有返回.在Unix,新的执行体载入到当前的进程, 同时将和当前的调用者有相同的id. 将报告Errors 当抛出 OSError时.</p>
+<p>当前的进程立即被替代. 打开文件对象和描述符不会被刷新, 如果在这些打开的文件中有数据缓冲区， 应该在调用exec*() 函数之前，使用sys.stdout.flush()或者os.fsync()flush它们 .</p>
+<p>在unix，Windows中有效。</p>
+<p>os._exit(n)<br />
+使用状态n退出系统,没有调用清理函数，刷新缓冲区。 在unix，Windows中有效。</p>
+<p>注:标准退出的方法是sys.exit(n). _exit()一般使用于fork()产生的子进程中.</p>
+<p>os.EX_OK<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_USAGE<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_DATAERR<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_NOINPUT<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_NOUSER<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_NOHOST<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_UNAVAILABLE<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_SOFTWARE<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_OSERR<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_OSFILE<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_CANTCREAT<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_IOERR<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_TEMPFAIL<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_PROTOCOL<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_NOPERM<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_CONFIG<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.EX_NOTFOUND<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.fork()<br />
+在unix中有效，请查看相关文档。</p>
+<p>os.forkpty()<br />
+在一些unix中有效，请查看相关文档<br />
+os.kill(pid, sig)<br />
+在unix中有效，请查看相关文档。</p>
+<p>os.killpg(pgid, sig)<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.nice(increment)<br />
+在unix中有效，请查看相关文档。<br />
+os.plock(op)<br />
+在unix中有效，请查看相关文档。<br />
+os.popen(…)<br />
+os.popen2(…)<br />
+os.popen3(…)<br />
+os.popen4(…)<br />
+运行子进程, 返回交流的打开的管道.这些函数在前面创建文件对象时介绍过.<br />
+os.spawnl(mode, path, …)<br />
+os.spawnle(mode, path, …, env)<br />
+os.spawnlp(mode, file, …)<br />
+os.spawnlpe(mode, file, …, env)<br />
+os.spawnv(mode, path, args)<br />
+os.spawnve(mode, path, args, env)<br />
+os.spawnvp(mode, file, args)<br />
+os.spawnvpe(mode, file, args, env)<br />
+在新进程中执行程序path<br />
+(请使用subprocess模块)</p>
+<p>如果模式是 P_NOWAIT, 返回新进程的id;如果模式是P_WAIT,返回进程退出时的状态码。 如果正常退出,或者-signal, 当 signal 是killed.在 Windows, 进程id实际上是process的handle,所它可以使用于waitpid()函数.</p>
+<p>import os<br />
+os.spawnlp(os.P_WAIT, ‘cp’, ‘cp’, ‘index.html’, ‘/dev/null’)</p>
+<p>L = [‘cp’, ‘index.html’, ‘/dev/null’]<br />
+os.spawnvpe(os.P_WAIT, ‘cp’, L, os.environ)<br />
+在unix，Windows中有效。</p>
+<p>新增version 1.6.</p>
+<p>os.P_NOWAIT<br />
+os.P_NOWAITO<br />
+spawn*()族函数参数mode的可选值. 如果给出其中任一个值, 新进程一创建完成，spawn*()函数将立即返回 ,返回进程id的值. 在unix，Windows中有效。</p>
+<p>新增version 1.6.</p>
+<p>os.P_WAIT<br />
+spawn*()族函数参数mode的可能值. 如果将它赋值给mode, spawn*() 函数不返回，直接运行结束 以及如果运行成功 ，将返回进程的退出码，或者如果 signal杀掉了这个进程，将返回-signal. 在unix，Windows中有效。</p>
+<p>新增version 1.6.</p>
+<p>os.P_DETACH<br />
+os.P_OVERLAY<br />
+spawn*()族函数参数mode的可选值。P_DETACH和P_NOWAIT很相似，但是新进程依附在调用进程的console上。如果使用了P_OVERLAY，当前进程将被替换，spawn*()函数将无返回 。在Windows上有效。<br />
+新增version 1.6.</p>
+<p>os.startfile(path[, operation])<br />
+以相关的程序打开文件.</p>
+<p>当operation没有指定或者’open’, 这操作就像在Windows Explorer双击文件,或者将这个文件作为交互命令行中start命令的参数:与文件扩展相关的程序打开文件。</p>
+<p>当指定另外操作时, 它必须是“command verb” 它指定应该对文件做什么.像Microsoft的’print’ ‘edit’ (作用在文件上) ‘explore’ and ‘find’ (作用在文件夹上).</p>
+<p>startfile()只要相关的应该程序一启动就返回。 没有选项等待应用程序关闭, 没有方法接收应用程序退出的状态. path参数与当前directory相关. 如果你想使用一个绝对路径,确保第一个字符不是 (‘/’)。 使用os.path.normpath() 函数确保路径对于win32来说是正确的. 在Windows上有效.</p>
+<p>新增version 2.0.</p>
+<p>新增version 2.5: The operation parameter.</p>
+<p>os.system(command)<br />
+在shell中执行string命令. 这是使用标准C函数system(), 有同样的限制. 例如改变 sys.stdin, 不影响命令执行环境.</p>
+<p>在Unix, 请查看相当文档.</p>
+<p>在Windows, 返回值是在 shell运行命令的返回值。</p>
+<p>在unix，Windows中有效。</p>
+<p>subprocess模块提供了一个更强大的功能产生新进程和接收它们的结果;</p>
+<p>os.times()<br />
+返回一个5-tuple的浮点数字， 表示(处理器或者其它)累积时间, 以秒为单位. items为:用户时间, 系统time, 子用户time, 子系统time, 和从过去一个固定的点真实流逝的时间. 在unix，Windows中有效。在Windows, 仅仅填充开始两项, 其它都为0.<br />
+os.wait()<br />
+在unix中有效，请查看相关文档。<br />
+os.waitpid(pid, options)<br />
+Unix:等待一个指定的pid的子进程完成, 返回一个tuple返回它的进程id和退出状态 . 一般情况下option设为0.</p>
+<p>更强细请查看相关文档</p>
+<p>在Windows: 等待一个指定的pid的进程完成, 返回一个tuple返回它的进程id和退出状态向左移动了8位 。 如果pid小于或等于0没有特别的意思,将抛出exception. integer options 没有任何影响. pid 可以指向任何进程的id,不一定是子进程的id.</p>
+<p>os.wait3([options])<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.5.</p>
+<p>os.wait4(pid, options)<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.5.</p>
+<p>os.WNOHANG<br />
+在unix中有效，请查看相关文档。<br />
+os.WCONTINUED<br />
+在某些unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.WUNTRACED<br />
+在unix中有效，请查看相关文档。</p>
+<p>os.WCOREDUMP(status)<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.WIFCONTINUED(status)<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.WIFSTOPPED(status)<br />
+在unix中有效，请查看相关文档。<br />
+os.WIFSIGNALED(status)<br />
+在unix中有效，请查看相关文档。<br />
+os.WIFEXITED(status)<br />
+在unix中有效，请查看相关文档。<br />
+os.WEXITSTATUS(status)<br />
+在unix中有效，请查看相关文档。<br />
+os.WSTOPSIG(status)<br />
+在unix中有效，请查看相关文档。<br />
+os.WTERMSIG(status)<br />
+在unix中有效，请查看相关文档。<br />
+16.1.6. Miscellaneous System Information<br />
+os.confstr(name)<br />
+在unix中有效，请查看相关文档。</p>
+<p>os.confstr_names<br />
+在unix中有效，请查看相关文档。<br />
+os.getloadavg()<br />
+在unix中有效，请查看相关文档。</p>
+<p>新增version 2.3.</p>
+<p>os.sysconf(name)<br />
+在unix中有效，请查看相关文档。</p>
+<p>os.curdir<br />
+操作系统用此常数字符串作为当前文件夹的引用。<br />
+os.pardir<br />
+操作系统用此常数字符串作为父文件夹的引用。<br />
+os.sep<br />
+系统使用此字符来分割路径。<br />
+os.altsep<br />
+系统使用另外一个字符来分割路径，如果只有一个分割字符存在，则是None.<br />
+os.extsep<br />
+分割基本文件名和扩展名的字符。</p>
+<p>新增version 2.2.</p>
+<p>os.pathsep<br />
+系统使用此字符来分割搜索路径（像PATH），例如POSIX上’:‘,Windows上的’;‘，也可以通过os.path<br />
+os.defpath<br />
+默认的搜索路径用作 exec<em>p</em>()和spawn<em>p</em>()如果环境没有 ‘PATH’. 也可以通过os.path.<br />
+os.linesep<br />
+当前平台上的换行符字符串. 在POSIX上是’\n’,或者 在Windows上是’\r\n’ . 不要使用 os.linesep作为换行符，当写入文本文件时 (默认); 使用’\n’代替, 在所有平台上.<br />
+os.devnull<br />
+空设备的文件路径.例如:POSIX上 ‘/dev/null’ . 也可以通过os.path.</p>
+<p>新增version 2.4.</p>
+<p>16.1.7. 其它 函数<br />
+os.urandom(n)<br />
+返回n个随机byte值的string，作为加密使用</p>
+<p>&gt;&gt;&gt; os.path.dirname(‘c:\Python\a.txt’)‘c:\Python’</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/private_img/banner2.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/private_img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/private_img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/private_img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/private_img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="3682906898.html"><img class="prev-cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/private_img/banner.gif'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">《政治经济学的国民体系》</div></div></a></div><div class="next-post pull-right"><a href="101587567.html"><img class="next-cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/private_img/banner.gif'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">python做计量</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/private_img/yuyingnan.jpg" onerror="this.onerror=null;this.src='/private_img/404.gif'" alt="avatar"/></div><div class="author-info__name">揭晓</div><div class="author-info__description">随手写一写，揭晓这世界</div></div><a id="card-info-btn" href="/"><i></i><span>回到首页</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#python%E4%B8%AD%E5%8D%95%E5%BC%95%E5%8F%B7%E5%8F%8C%E5%BC%95%E5%8F%B73%E4%B8%AA%E5%8D%95%E5%BC%95%E5%8F%B7%E5%8F%8A3%E4%B8%AA%E5%8F%8C%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text"> Python中单引号，双引号，3个单引号及3个双引号的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%BC%95%E5%8F%B7%E5%92%8C%E5%8F%8C%E5%BC%95%E5%8F%B7"><span class="toc-text"> 单引号和双引号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E4%B8%AA%E5%8D%95%E5%BC%95%E5%8F%B7%E5%8F%8A3%E4%B8%AA%E5%8F%8C%E5%BC%95%E5%8F%B7"><span class="toc-text"> 3个单引号及3个双引号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python%E8%BF%94%E5%9B%9E%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0"><span class="toc-text"> python返回多个参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E7%AF%87%E6%90%9E%E5%AE%9Apython%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text"> 一篇搞定Python正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="toc-text"> 1. 正则表达式语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#11-%E5%AD%97%E7%AC%A6%E4%B8%8E%E5%AD%97%E7%AC%A6%E7%B1%BB"><span class="toc-text"> 1.1 字符与字符类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AD%97%E7%AC%A6%E7%B1%BB"><span class="toc-text"> 2 字符类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-%E9%87%8F%E8%AF%8D"><span class="toc-text"> 1.2 量词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-%E7%BB%84%E4%B8%8E%E6%8D%95%E8%8E%B7"><span class="toc-text"> 1.3 组与捕获</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-%E6%96%AD%E8%A8%80%E4%B8%8E%E6%A0%87%E8%AE%B0"><span class="toc-text"> 1.4 断言与标记</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-%E6%9D%A1%E4%BB%B6%E5%8C%B9%E9%85%8D"><span class="toc-text"> 1.5 条件匹配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%A0%87%E5%BF%97"><span class="toc-text"> 1.6 正则表达式的标志</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A8%A1%E5%9D%97"><span class="toc-text"> 2. Python正则表达式模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%BB%E8%A6%81%E6%9C%89%E5%9B%9B%E5%A4%A7%E5%8A%9F%E8%83%BD"><span class="toc-text"> 2.1 正则表达式处理字符串主要有四大功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22-python%E4%B8%ADre%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-text"> 2.2 Python中re模块使用正则表达式的两种方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#23-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text"> 2.3 正则表达式对象的常用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#24-%E5%8C%B9%E9%85%8D%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E4%B8%8E%E6%96%B9%E6%B3%95"><span class="toc-text"> 2.4 匹配对象的属性与方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E6%80%BB%E7%BB%93"><span class="toc-text"> 2.5 总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pythonos%E6%A8%A1%E5%9D%97"><span class="toc-text"> python——os模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-os%E6%A8%A1%E5%9D%97%E6%A6%82%E8%BF%B0"><span class="toc-text"> 一、os模块概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text"> 二、常用方法</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="3094303777.html" title="区域政治经济学0导论">区域政治经济学0导论</a><time datetime="2022-11-22T09:11:05.311Z" title="更新于 2022-11-22 17:11:05">2022-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="2511924152.html" title="博士论文提纲">博士论文提纲</a><time datetime="2022-11-22T09:08:20.128Z" title="更新于 2022-11-22 17:08:20">2022-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="832098100.html" title="不平衡发展：自然、资本与空间的生产">不平衡发展：自然、资本与空间的生产</a><time datetime="2022-11-22T02:53:17.961Z" title="更新于 2022-11-22 10:53:17">2022-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="3276806131.html" title="博客搭建日志">博客搭建日志</a><time datetime="2022-11-22T02:11:08.575Z" title="更新于 2022-11-22 10:11:08">2022-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="922242571.html" title="多琳马西-区域主义当前的几个问题">多琳马西-区域主义当前的几个问题</a><time datetime="2022-11-21T14:10:13.794Z" title="更新于 2022-11-21 22:10:13">2022-11-21</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/private_img/banner2.gif')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 揭晓</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎参观我的<a href='https://github.com/dhndzwxj' target='_blank'>github</a>个人主页！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="js/utils.js"></script><script src="js/main.js"></script><script src="js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://dhndzwxj.github.io/3112178245.html'
+    this.page.identifier = ''
+    this.page.title = 'python一些基础性操作'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-www-dhndzwxj-top.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script type='text/javascript' src='https://ajax.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script id="dsq-count-scr" src="//https-www-dhndzwxj-top.disqus.com/count.js" async></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = '/posts/,/about/'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>
