@@ -264,25 +264,25 @@
 <p>代码如下：</p>
 <pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">clear
 syms ph pl sh sl a
-qh <span class="token operator">=</span> a<span class="token operator">-</span> <span class="token punctuation">(</span>ph<span class="token operator">-</span>pl<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>sh<span class="token operator">-</span>sl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-ql <span class="token operator">=</span> <span class="token punctuation">(</span>ph<span class="token operator">-</span>pl<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>sh<span class="token operator">-</span>sl<span class="token punctuation">)</span> <span class="token operator">-</span> pl<span class="token operator">/</span>sl<span class="token punctuation">;</span>
-pih <span class="token operator">=</span> ph<span class="token operator">*</span>qh <span class="token operator">-</span> <span class="token number">0.5</span><span class="token operator">*</span>sh<span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">%高质量企业利润</span>
-pil <span class="token operator">=</span> pl<span class="token operator">*</span>ql <span class="token operator">-</span> <span class="token number">0.5</span><span class="token operator">*</span>sl<span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">%低质量企业利润</span>
-<span class="token function">simplify</span><span class="token punctuation">(</span><span class="token function">diff</span><span class="token punctuation">(</span>pih<span class="token punctuation">,</span>ph<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">% 高质量产品关于价格求导</span>
-<span class="token function">simplify</span><span class="token punctuation">(</span><span class="token function">diff</span><span class="token punctuation">(</span>pil<span class="token punctuation">,</span>pl<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">% 低质量产品关于价格求导</span>
-<span class="token comment">%% 求出均衡价格后，重新计算产量和利润，并对利润关于质量求导</span>
+qh &#x3D; a- (ph-pl)&#x2F;(sh-sl);
+ql &#x3D; (ph-pl)&#x2F;(sh-sl) - pl&#x2F;sl;
+pih &#x3D; ph*qh - 0.5*sh^2; %高质量企业利润
+pil &#x3D; pl*ql - 0.5*sl^2; %低质量企业利润
+simplify(diff(pih,ph)) % 高质量产品关于价格求导
+simplify(diff(pil,pl)) % 低质量产品关于价格求导
+%% 求出均衡价格后，重新计算产量和利润，并对利润关于质量求导
 clear
 syms sh sl a
-ph <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>a<span class="token operator">*</span>sh<span class="token operator">*</span><span class="token punctuation">(</span>sh<span class="token operator">-</span>sl<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token operator">*</span>sh<span class="token operator">-</span>sl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-pl <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token operator">*</span>sl<span class="token operator">*</span><span class="token punctuation">(</span>sh<span class="token operator">-</span>sl<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token operator">*</span>sh<span class="token operator">-</span>sl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-qh <span class="token operator">=</span> a<span class="token operator">-</span> <span class="token punctuation">(</span>ph<span class="token operator">-</span>pl<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>sh<span class="token operator">-</span>sl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-ql <span class="token operator">=</span> <span class="token punctuation">(</span>ph<span class="token operator">-</span>pl<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>sh<span class="token operator">-</span>sl<span class="token punctuation">)</span> <span class="token operator">-</span> pl<span class="token operator">/</span>sl<span class="token punctuation">;</span>
-pih <span class="token operator">=</span> ph<span class="token operator">*</span>qh <span class="token operator">-</span> <span class="token number">0.5</span><span class="token operator">*</span>sh<span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">%高质量企业利润</span>
-pil <span class="token operator">=</span> pl<span class="token operator">*</span>ql <span class="token operator">-</span> <span class="token number">0.5</span><span class="token operator">*</span>sl<span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">%低质量企业利润</span>
-<span class="token function">simplify</span><span class="token punctuation">(</span><span class="token function">diff</span><span class="token punctuation">(</span>pih<span class="token punctuation">,</span>sh<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token function">simplify</span><span class="token punctuation">(</span><span class="token function">diff</span><span class="token punctuation">(</span>pil<span class="token punctuation">,</span>sl<span class="token punctuation">)</span><span class="token punctuation">)</span>
-p <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token function">roots</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token comment">%记为含k的方程</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ph &#x3D; (2*a*sh*(sh-sl))&#x2F;(4*sh-sl);
+pl &#x3D; (a*sl*(sh-sl))&#x2F;(4*sh-sl);
+qh &#x3D; a- (ph-pl)&#x2F;(sh-sl);
+ql &#x3D; (ph-pl)&#x2F;(sh-sl) - pl&#x2F;sl;
+pih &#x3D; ph*qh - 0.5*sh^2; %高质量企业利润
+pil &#x3D; pl*ql - 0.5*sl^2; %低质量企业利润
+simplify(diff(pih,sh))
+simplify(diff(pil,sl))
+p &#x3D; [4,-23,12,-8];
+roots(p) %记为含k的方程<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="战略外包和质量选择垂直整合模式是可持续的吗"><a class="markdownIt-Anchor" href="#战略外包和质量选择垂直整合模式是可持续的吗"></a> 战略外包和质量选择:垂直整合模式是可持续的吗？</h2>
 <blockquote>
 <p>Miyamoto, Y. (2021). Strategic outsourcing and quality choice: Is a vertical integration model sustainable? <i>Managerial and Decision Economics</i>.</p>
@@ -517,31 +517,31 @@ p <span class="token operator">=</span> <span class="token punctuation">[</span>
 <p>根据（8），求导得出 $ \beta = g(\mu) $ 在 $ (1.946960,2.080460) $ 上单调递减，在 $ [2.080460,+\infty) $ 上单调递增，因而可以求出 $ \beta $ 的最小值为0.411542。</p>
 <p>演算过程中使用的MATLAB代码：</p>
 <pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">clear
-<span class="token comment">% 代入mu数值，求得beta的值</span>
+% 代入mu数值，求得beta的值
 syms x a b c d beta
-a <span class="token operator">=</span> <span class="token number">4</span><span class="token operator">-</span><span class="token number">11</span><span class="token operator">*</span>x<span class="token operator">+</span><span class="token number">8</span><span class="token operator">*</span>x <span class="token operator">^</span> <span class="token number">2</span><span class="token punctuation">;</span>
-b <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">20</span><span class="token operator">+</span><span class="token number">81</span><span class="token operator">*</span>x<span class="token operator">-</span><span class="token number">84</span><span class="token operator">*</span>x <span class="token operator">^</span> <span class="token number">2</span><span class="token operator">+</span><span class="token number">32</span><span class="token operator">*</span>x <span class="token operator">^</span> <span class="token number">3</span><span class="token punctuation">;</span>
-c <span class="token operator">=</span> <span class="token number">2</span><span class="token operator">-</span><span class="token number">3</span><span class="token operator">*</span>x<span class="token operator">+</span><span class="token number">4</span><span class="token operator">*</span>x <span class="token operator">^</span> <span class="token number">2</span><span class="token punctuation">;</span>
-d <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">4</span><span class="token operator">+</span><span class="token number">23</span><span class="token operator">*</span>x<span class="token operator">-</span><span class="token number">46</span><span class="token operator">*</span>x <span class="token operator">^</span> <span class="token number">2</span><span class="token operator">+</span><span class="token number">24</span><span class="token operator">*</span>x <span class="token operator">^</span> <span class="token number">3</span><span class="token punctuation">;</span>
-fenzi <span class="token operator">=</span> x <span class="token operator">^</span> <span class="token number">3</span><span class="token operator">*</span>a<span class="token operator">*</span>b<span class="token punctuation">;</span>
-fenmu <span class="token operator">=</span> <span class="token number">4</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">+</span>x<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">+</span><span class="token number">4</span><span class="token operator">*</span>x<span class="token punctuation">)</span><span class="token operator">*</span>c<span class="token operator">*</span>d<span class="token punctuation">;</span>
-beta <span class="token operator">=</span> <span class="token punctuation">(</span>fenzi<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>fenmu<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">vpa</span><span class="token punctuation">(</span><span class="token function">subs</span><span class="token punctuation">(</span>beta<span class="token punctuation">,</span>x<span class="token punctuation">,</span><span class="token number">2.080460</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token function">vpa</span><span class="token punctuation">(</span><span class="token function">subs</span><span class="token punctuation">(</span>beta<span class="token punctuation">,</span>x<span class="token punctuation">,</span><span class="token number">3.287677</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment">%对piH2求导，求出利润的取最小值对应的mu值</span>
+a &#x3D; 4-11*x+8*x ^ 2;
+b &#x3D; -20+81*x-84*x ^ 2+32*x ^ 3;
+c &#x3D; 2-3*x+4*x ^ 2;
+d &#x3D; -4+23*x-46*x ^ 2+24*x ^ 3;
+fenzi &#x3D; x ^ 3*a*b;
+fenmu &#x3D; 4*(-1+x)*(-1+4*x)*c*d;
+beta &#x3D; (fenzi)&#x2F;(fenmu);
+vpa(subs(beta,x,2.080460))
+vpa(subs(beta,x,3.287677))
+%对piH2求导，求出利润的取最小值对应的mu值
 clear
 syms x k
-a <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span><span class="token number">4</span><span class="token operator">*</span>x<span class="token operator">+</span><span class="token number">2</span><span class="token operator">*</span>x <span class="token operator">^</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token number">2</span><span class="token punctuation">;</span>
-b <span class="token operator">=</span> <span class="token number">4</span><span class="token operator">-</span><span class="token number">11</span><span class="token operator">*</span>x<span class="token operator">+</span><span class="token number">8</span><span class="token operator">*</span>x <span class="token operator">^</span> <span class="token number">2</span><span class="token punctuation">;</span>
-c <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">20</span><span class="token operator">+</span><span class="token number">81</span><span class="token operator">*</span>x<span class="token operator">-</span><span class="token number">84</span><span class="token operator">*</span>x <span class="token operator">^</span> <span class="token number">2</span><span class="token operator">+</span><span class="token number">32</span><span class="token operator">*</span>x <span class="token operator">^</span> <span class="token number">3</span><span class="token punctuation">;</span>
-d <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">4</span><span class="token operator">+</span><span class="token number">23</span><span class="token operator">*</span>x<span class="token operator">-</span><span class="token number">46</span><span class="token operator">*</span>x <span class="token operator">^</span> <span class="token number">2</span><span class="token operator">+</span><span class="token number">24</span><span class="token operator">*</span>x <span class="token operator">^</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token number">4</span><span class="token punctuation">;</span>
-fenzi <span class="token operator">=</span> <span class="token number">16</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">+</span>x<span class="token punctuation">)</span><span class="token operator">*</span>a<span class="token operator">*</span>b<span class="token operator">*</span>c<span class="token punctuation">;</span>
-fenmu <span class="token operator">=</span> k<span class="token operator">*</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">+</span><span class="token number">4</span><span class="token operator">*</span>x<span class="token punctuation">)</span><span class="token operator">*</span>d<span class="token punctuation">;</span>
-piH2 <span class="token operator">=</span> <span class="token punctuation">(</span>fenzi<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>fenmu<span class="token punctuation">)</span><span class="token punctuation">;</span>
-d_piH2 <span class="token operator">=</span> <span class="token function">diff</span><span class="token punctuation">(</span>piH2<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% 求一阶导</span>
-<span class="token function">vpa</span><span class="token punctuation">(</span><span class="token function">solve</span><span class="token punctuation">(</span>d_piH2<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">% 求极值</span>
-dd_piH2 <span class="token operator">=</span> <span class="token function">diff</span><span class="token punctuation">(</span>d_piH2<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% 求二阶导</span>
-<span class="token function">vpa</span><span class="token punctuation">(</span><span class="token function">subs</span><span class="token punctuation">(</span>dd_piH2<span class="token punctuation">,</span>x<span class="token punctuation">,</span><span class="token number">1.707107</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">% 将极值点代入二阶导数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+a &#x3D; (1-4*x+2*x ^ 2) ^ 2;
+b &#x3D; 4-11*x+8*x ^ 2;
+c &#x3D; -20+81*x-84*x ^ 2+32*x ^ 3;
+d &#x3D; (-4+23*x-46*x ^ 2+24*x ^ 3) ^ 4;
+fenzi &#x3D; 16*(-1+x)*a*b*c;
+fenmu &#x3D; k*(-1+4*x)*d;
+piH2 &#x3D; (fenzi)&#x2F;(fenmu);
+d_piH2 &#x3D; diff(piH2,x); % 求一阶导
+vpa(solve(d_piH2,x)) % 求极值
+dd_piH2 &#x3D; diff(d_piH2,x); % 求二阶导
+vpa(subs(dd_piH2,x,1.707107)) % 将极值点代入二阶导数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
 <p>因此，我们建立以下关系(参见附录A中的命题1的证明)。</p>
 <p>【定理1】在价格竞争下，这个博弈有两个子博弈完美均衡。</p>
