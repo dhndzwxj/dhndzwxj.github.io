@@ -61,7 +61,7 @@ window.addEventListener('load', () => {
           title: item.querySelector('title').textContent,
           content: item.querySelector('content') && item.querySelector('content').textContent,
           url: item.querySelector('url').textContent
-          // author: item.querySelector('author').textContent
+          // tags: item.querySelector('author').textContent
         }
       })
     }
