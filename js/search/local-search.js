@@ -61,6 +61,7 @@ window.addEventListener('load', () => {
           title: item.querySelector('title').textContent,
           content: item.querySelector('content') && item.querySelector('content').textContent,
           url: item.querySelector('url').textContent
+          // author: item.querySelector('author').textContent
         }
       })
     }
@@ -93,9 +94,11 @@ window.addEventListener('load', () => {
       dataObj.then(data => {
         data.forEach(data => {
           let isMatch = true
-          let dataTitle = data.title ? data.title.trim().toLowerCase() : ''
-          const dataContent = data.content ? data.content.trim().replace(/<[^>]+>/g, '').toLowerCase() : ''
-          const dataUrl = data.url.startsWith('/') ? data.url : GLOBAL_CONFIG.root + data.url
+          let dataTitle = data.title ? data.title.trim().toLowerCase() : ''  //获取标题
+          const dataContent = data.content ? data.content.trim().replace(/<[^>]+>/g, '').toLowerCase() : '' //获取正文
+          const dataUrl = data.url.startsWith('/') ? data.url : GLOBAL_CONFIG.root + data.url //获取链接
+          // const dataAuthor = data.author ? data.author.trim().toLowerCase() : ''
+          // let dataTag = data.url //获取标签 //data定义的方法在哪里看？
           let indexTitle = -1
           let indexContent = -1
           let firstOccur = -1
@@ -147,6 +150,7 @@ window.addEventListener('load', () => {
               }
 
               let matchContent = dataContent.substring(start, end)
+              // let matchAuthor = dataAuthor
 
               // highlight all keywords
               keywords.forEach(keyword => {
