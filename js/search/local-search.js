@@ -60,7 +60,7 @@ window.addEventListener('load', () => {
         return {
           title: item.querySelector('title').textContent,
           content: item.querySelector('content') && item.querySelector('content').textContent,
-          url: item.querySelector('url').textContent,
+          url: item.querySelector('url').textContent
           // tags: item.querySelector('tags').textContent
         }
       })
