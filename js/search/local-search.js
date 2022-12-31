@@ -61,7 +61,7 @@ window.addEventListener('load', () => {
           title: item.querySelector('title').textContent,
           content: item.querySelector('content') && item.querySelector('content').textContent,
           url: item.querySelector('url').textContent,
-          tags: item.querySelector('tag') && item.querySelector('tag').textContent
+          tags: item.querySelector('tags') && item.querySelector('tags').textContent
         }
       })
     }
@@ -89,6 +89,7 @@ window.addEventListener('load', () => {
       $resultContent.innerHTML = ''
       let str = '<div class="search-result-list">'
       if (keywords.length <= 0) return
+      if (keywords[0] === '#') return
       let count = 0
       // perform local searching
       dataObj.then(data => {
@@ -148,7 +149,7 @@ window.addEventListener('load', () => {
                 post = '...'
               }
 
-              let matchContent = dataContent.substring(start, end) + dataTags
+              let matchContent = dataContent.substring(start, end)
 
               // highlight all keywords
               keywords.forEach(keyword => {
@@ -161,6 +162,7 @@ window.addEventListener('load', () => {
               count += 1
 
               if (dataContent !== '') {
+                post = dataTags!== '' ? post + '<br/><i class="fas fa-tag">' + dataTags + '</i>' : post
                 str += '<p class="search-result">' + pre + matchContent + post + '</p>'
               }
             }
