@@ -60,8 +60,8 @@ window.addEventListener('load', () => {
         return {
           title: item.querySelector('title').textContent,
           content: item.querySelector('content') && item.querySelector('content').textContent,
-          url: item.querySelector('url').textContent
-          // tags: item.querySelector('author').textContent
+          url: item.querySelector('url').textContent,
+          // tags: item.querySelector('tags').textContent
         }
       })
     }
@@ -97,8 +97,7 @@ window.addEventListener('load', () => {
           let dataTitle = data.title ? data.title.trim().toLowerCase() : ''  //获取标题
           const dataContent = data.content ? data.content.trim().replace(/<[^>]+>/g, '').toLowerCase() : '' //获取正文
           const dataUrl = data.url.startsWith('/') ? data.url : GLOBAL_CONFIG.root + data.url //获取链接
-          // const dataAuthor = data.author ? data.author.trim().toLowerCase() : ''
-          // let dataTag = data.url //获取标签 //data定义的方法在哪里看？
+          // let dataTags = data.tags //获取标签
           let indexTitle = -1
           let indexContent = -1
           let firstOccur = -1
@@ -150,7 +149,7 @@ window.addEventListener('load', () => {
               }
 
               let matchContent = dataContent.substring(start, end)
-              // let matchAuthor = dataAuthor
+              // let matchTags = dataTags
 
               // highlight all keywords
               keywords.forEach(keyword => {
