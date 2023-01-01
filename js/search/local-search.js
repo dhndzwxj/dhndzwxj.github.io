@@ -165,7 +165,7 @@ window.addEventListener('load', () => {
                 //- 自定义开始：生成的搜索结果框里，加入显示tags
                 var splitT = dataTags
                 var splitTags = '<br/><i class="fas fa-tag">'
-
+                //- 下面是去掉splitTags里非汉字和字母（数字）的部分，然后生成对应数量的tag
                 var space=0
                 for (let i=0;i<splitT.length;i++){
                   if (/^[\u4e00-\u9fa5]*$/.test(splitT[i]) || /^[a-zA-Z]*$/.test(splitT[i]) ){
@@ -179,7 +179,17 @@ window.addEventListener('load', () => {
                     } 
                   }          
                 }
-                splitTags = splitTags + '</i>'   
+                splitTags = splitTags + '</i>'  
+                // highlight all keywords
+                keywords.forEach(keyword => {
+                  const regS = new RegExp(keyword, 'gi')
+                  splitTags = splitTags.replace(regS, '<span class="search-keyword">' + keyword + '</span>')
+                }) 
+                keywords.forEach(keyword => {
+                  const regS = new RegExp(keyword, 'gi')
+                  splitTags = splitTags.replace(regS, '<span class="search-keyword">' + keyword + '</span>')
+                })
+                
                 post = dataTags!== '' ? post  + splitTags : post
                 //- 自定义结束
 
