@@ -162,7 +162,29 @@ window.addEventListener('load', () => {
               count += 1
 
               if (dataContent !== '') {
-                post = dataTags!== '' ? post + '<br/><i class="fas fa-tag">' + dataTags + '</i>' : post
+                //- 自定义开始：生成的搜索结果框里，加入显示tags
+                var splitT = dataTags.split(' ')
+                splitT = splitT.toString().replace(/,/g,'')
+                var splitT1 = splitT.split('')
+                var splitTags = '<br/><i class="fas fa-tag">'
+
+                var space=0
+                for (let i=0;i<splitT1.length;i++){
+                  if (/^[\u4e00-\u9fa5]*$/.test(splitT1[i]) || /^[a-zA-Z]*$/.test(splitT1[i]) ){
+                    space = 0
+                    splitTags = splitTags.concat(splitT1[i])
+                  }
+                  else{
+                    if(space===0){
+                      splitTags = splitTags + '</i> &nbsp <i class="fas fa-tag">' 
+                      space = 1
+                    }
+                  }          
+                }
+                splitTags = splitTags + '</i>'   
+                post = dataTags!== '' ? post  + splitTags : post
+                //- 自定义结束
+
                 str += '<p class="search-result">' + pre + matchContent + post + '</p>'
               }
             }
