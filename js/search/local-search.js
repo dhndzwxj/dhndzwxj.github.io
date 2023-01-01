@@ -89,7 +89,7 @@ window.addEventListener('load', () => {
       $resultContent.innerHTML = ''
       let str = '<div class="search-result-list">'
       if (keywords.length <= 0) return
-      if (keywords[0] === '#') return
+      // if (keywords[0] === '#') return
       let count = 0
       // perform local searching
       dataObj.then(data => {
@@ -98,7 +98,7 @@ window.addEventListener('load', () => {
           let dataTitle = data.title ? data.title.trim().toLowerCase() : ''  //获取标题
           const dataContent = data.content ? data.content.trim().replace(/<[^>]+>/g, '').toLowerCase() : '' //获取正文
           const dataUrl = data.url.startsWith('/') ? data.url : GLOBAL_CONFIG.root + data.url //获取链接
-          let dataTags = data.tags ? data.tags.trim().toLowerCase() : ''  //获取标签
+          const dataTags = data.tags ? data.tags.trim().toLowerCase() : ''  //获取标签
           let indexTitle = -1
           let indexContent = -1
           let firstOccur = -1
@@ -163,22 +163,20 @@ window.addEventListener('load', () => {
 
               if (dataContent !== '') {
                 //- 自定义开始：生成的搜索结果框里，加入显示tags
-                var splitT = dataTags.split(' ')
-                splitT = splitT.toString().replace(/,/g,'')
-                var splitT1 = splitT.split('')
+                var splitT = dataTags
                 var splitTags = '<br/><i class="fas fa-tag">'
 
                 var space=0
-                for (let i=0;i<splitT1.length;i++){
-                  if (/^[\u4e00-\u9fa5]*$/.test(splitT1[i]) || /^[a-zA-Z]*$/.test(splitT1[i]) ){
+                for (let i=0;i<splitT.length;i++){
+                  if (/^[\u4e00-\u9fa5]*$/.test(splitT[i]) || /^[a-zA-Z]*$/.test(splitT[i]) ){
                     space = 0
-                    splitTags = splitTags.concat(splitT1[i])
+                    splitTags = splitTags.concat(splitT[i])
                   }
                   else{
                     if(space===0){
                       splitTags = splitTags + '</i> &nbsp <i class="fas fa-tag">' 
                       space = 1
-                    }
+                    } 
                   }          
                 }
                 splitTags = splitTags + '</i>'   
