@@ -89,7 +89,7 @@ window.addEventListener('load', () => {
       $resultContent.innerHTML = ''
       let str = '<div class="search-result-list">'
       if (keywords.length <= 0) return
-      // if (keywords[0] === '#') return
+      // if (keywords.substr(0,1) === '#') return
       let count = 0
       // perform local searching
       dataObj.then(data => {
