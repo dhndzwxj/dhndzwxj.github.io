@@ -101,18 +101,23 @@ window.addEventListener('load', () => {
           const dataTags = data.tags ? data.tags.trim().toLowerCase() : ''  //获取标签
           let indexTitle = -1
           let indexContent = -1
+          let indexTag = -1	//-添加标签定位变量
           let firstOccur = -1
           // only match articles with not empty titles and contents
           if (dataTitle !== '' || dataContent !== '') {
             keywords.forEach((keyword, i) => {
               indexTitle = dataTitle.indexOf(keyword)
               indexContent = dataContent.indexOf(keyword)
-              if (indexTitle < 0 && indexContent < 0) {
+              indexTag = dataTags.indexOf(keyword)
+              if (indexTitle < 0 && indexContent < 0 && indexTag < 0) {
                 isMatch = false
               } else {
                 if (indexContent < 0) {
                   indexContent = 0
                 }
+              if (indexTag < 0) {
+                 indexTag = 0
+               }
                 if (i === 0) {
                   firstOccur = indexContent
                 }
@@ -185,19 +190,15 @@ window.addEventListener('load', () => {
                   const regS = new RegExp(keyword, 'gi')
                   splitTags = splitTags.replace(regS, '<span class="search-keyword">' + keyword + '</span>')
                 }) 
-                keywords.forEach(keyword => {
-                  const regS = new RegExp(keyword, 'gi')
-                  splitTags = splitTags.replace(regS, '<span class="search-keyword">' + keyword + '</span>')
-                })
                 
                 post = dataTags!== '' ? post  + splitTags : post
                 //- 自定义结束
 
                 str += '<p class="search-result">' + pre + matchContent + post + '</p>'
               }
-            }
+            } //if firstOccur
             str += '</div>'
-          }
+          } //
         })
         if (count === 0) {
           str += '<div id="local-search__hits-empty">' + GLOBAL_CONFIG.localSearch.languages.hits_empty.replace(/\$\{query}/, this.value.trim()) +
