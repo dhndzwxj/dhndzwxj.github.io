@@ -89,7 +89,6 @@ window.addEventListener('load', () => {
       $resultContent.innerHTML = ''
       let str = '<div class="search-result-list">'
       if (keywords.length <= 0) return
-      // if (keywords.substr(0,1) === '#') return
       let count = 0
       // perform local searching
       dataObj.then(data => {
@@ -101,31 +100,47 @@ window.addEventListener('load', () => {
           const dataTags = data.tags ? data.tags.trim().toLowerCase() : ''  //获取标签
           let indexTitle = -1
           let indexContent = -1
-          let indexTag = -1	//-添加标签定位变量
           let firstOccur = -1
-          // only match articles with not empty titles and contents
+          let indexTag = -1	//- +++添加标签定位变量
+          let l_keywords = keywords.toString().split('').length //- +++获取搜索关键词的长度
+          
           if (dataTitle !== '' || dataContent !== '') {
             keywords.forEach((keyword, i) => {
-              indexTitle = dataTitle.indexOf(keyword)
-              indexContent = dataContent.indexOf(keyword)
-              indexTag = dataTags.indexOf(keyword)
-              if (indexTitle < 0 && indexContent < 0 && indexTag < 0) {
-                isMatch = false
-              } else {
-                if (indexContent < 0) {
-                  indexContent = 0
+
+              // keywords是一个Object，keywords[0]包含了关键词的所有内容，因此要用keywords[0][0]
+              if (keywords[0][0] === '#' && l_keywords > 1){
+                //如果关键词第一个字符是#且长度大于1，那么进行tag搜索
+                keyword = keyword.substring(1) // 将关键词第一个#去掉后再匹配
+                indexTag = dataTags.indexOf(keyword)
+                // indexContent = dataContent.indexOf(keyword)
+                if ( indexTag < 0 ){
+                  isMatch = false
+                }else{
+                  firstOccur = 0
                 }
-              if (indexTag < 0) {
-                 indexTag = 0
-               }
-                if (i === 0) {
-                  firstOccur = indexContent
+              }else{
+                //如果第一个字母不是#,那么不匹配标签
+                indexTitle = dataTitle.indexOf(keyword)
+                indexContent = dataContent.indexOf(keyword)
+                if (indexTitle < 0 && indexContent < 0) {
+                  isMatch = false
+                } else {
+                  if (indexContent < 0) {
+                    indexContent = 0
+                  }
+                  if (i === 0) {
+                    firstOccur = indexContent
+                  }
                 }
               }
+
+
             })
           } else {
             isMatch = false
           }
+
+
 
           // show search results
           if (isMatch) {
@@ -168,8 +183,8 @@ window.addEventListener('load', () => {
 
               if (dataContent !== '') {
                 //- 自定义开始：生成的搜索结果框里，加入显示tags
-                var splitT = dataTags
-                var splitTags = '<br/><i class="fas fa-tag">'
+                let splitT = dataTags
+                let splitTags = '<br/><i class="fas fa-tag">'
                 //- 下面是去掉splitTags里非汉字和字母（数字）的部分，然后生成对应数量的tag
                 var space=0
                 for (let i=0;i<splitT.length;i++){
@@ -187,11 +202,14 @@ window.addEventListener('load', () => {
                 splitTags = splitTags + '</i>'  
                 // highlight all keywords
                 keywords.forEach(keyword => {
+                  if(keyword[0] === '#' & keyword.length>1){
+                    keyword = keyword.substring(1) // 如果第一个字符为#且长度大于1，将关键词第一个#去掉后再匹配
+                  }
                   const regS = new RegExp(keyword, 'gi')
                   splitTags = splitTags.replace(regS, '<span class="search-keyword">' + keyword + '</span>')
                 }) 
                 
-                post = dataTags!== '' ? post  + splitTags : post
+                post = dataTags!== '' ? post  + splitTags  : post
                 //- 自定义结束
 
                 str += '<p class="search-result">' + pre + matchContent + post + '</p>'

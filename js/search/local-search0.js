@@ -115,9 +115,9 @@ window.addEventListener('load', () => {
                 if (indexContent < 0) {
                   indexContent = 0
                 }
-              if (indexTag < 0) {
-                 indexTag = 0
-               }
+                if (indexTag < 0) {
+                  indexTag = 0
+                }
                 if (i === 0) {
                   firstOccur = indexContent
                 }
@@ -168,8 +168,8 @@ window.addEventListener('load', () => {
 
               if (dataContent !== '') {
                 //- 自定义开始：生成的搜索结果框里，加入显示tags
-                var splitT = dataTags
-                var splitTags = '<br/><i class="fas fa-tag">'
+                let splitT = dataTags
+                let splitTags = '<br/><i class="fas fa-tag">'
                 //- 下面是去掉splitTags里非汉字和字母（数字）的部分，然后生成对应数量的tag
                 var space=0
                 for (let i=0;i<splitT.length;i++){
