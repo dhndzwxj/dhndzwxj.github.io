@@ -133,8 +133,6 @@ window.addEventListener('load', () => {
                   }
                 }
               }
-
-
             })
           } else {
             isMatch = false
@@ -186,7 +184,7 @@ window.addEventListener('load', () => {
                 let splitT = dataTags
                 let splitTags = '<br/><i class="fas fa-tag">'
                 //- 下面是去掉splitTags里非汉字和字母（数字）的部分，然后生成对应数量的tag
-                var space=0
+                let space=0
                 for (let i=0;i<splitT.length;i++){
                   if (/^[\u4e00-\u9fa5]*$/.test(splitT[i]) || /^[a-zA-Z]*$/.test(splitT[i]) ){
                     space = 0
