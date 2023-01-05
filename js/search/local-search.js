@@ -106,7 +106,6 @@ window.addEventListener('load', () => {
           
           if (dataTitle !== '' || dataContent !== '') {
             keywords.forEach((keyword, i) => {
-
               // keywords是一个Object，keywords[0]包含了关键词的所有内容，因此要用keywords[0][0]
               if (keywords[0][0] === '#' && l_keywords > 1){
                 //如果关键词第一个字符是#且长度大于1，那么进行tag搜索
