@@ -56,7 +56,7 @@ window.addEventListener('load', () => {
       const res = await response.text()
       const t = await new window.DOMParser().parseFromString(res, 'text/xml')
       const a = await t
-      data = [...a.querySelectorAll('entry')].map(item =>{
+      data = [...a.querySelectorAll('entry')].map(item => {
         return {
           title: item.querySelector('title').textContent,
           content: item.querySelector('content') && item.querySelector('content').textContent,
@@ -85,8 +85,11 @@ window.addEventListener('load', () => {
     $input.addEventListener('input', function () {
       const keywords = this.value.trim().toLowerCase().split(/[\s]+/)
       if (keywords[0] !== '') $loadingStatus.innerHTML = '<i class="fas fa-spinner fa-pulse"></i>'
+      else {
+        $resultContent.innerHTML = ''
+        return
+      }
 
-      $resultContent.innerHTML = ''
       let str = '<div class="search-result-list">'
       if (keywords.length <= 0) return
       let count = 0
@@ -103,7 +106,7 @@ window.addEventListener('load', () => {
           let firstOccur = -1
           let indexTag = -1	//- +++添加标签定位变量
           let l_keywords = keywords.toString().split('').length //- +++获取搜索关键词的长度
-          
+          // only match articles with not empty titles and contents
           if (dataTitle !== '' || dataContent !== '') {
             keywords.forEach((keyword, i) => {
               // keywords是一个Object，keywords[0]包含了关键词的所有内容，因此要用keywords[0][0]
@@ -137,8 +140,6 @@ window.addEventListener('load', () => {
             isMatch = false
           }
 
-
-
           // show search results
           if (isMatch) {
             if (firstOccur >= 0) {
@@ -170,7 +171,12 @@ window.addEventListener('load', () => {
 
               // highlight all keywords
               keywords.forEach(keyword => {
-                const regS = new RegExp(keyword, 'gi')
+                let regexStr = keyword
+                const specialRegex = /[^\w\s]+/ // match special characters
+                if (keyword.length === 1 && specialRegex.test(keyword)) {
+                  regexStr = `\\${keyword}`
+                }
+                const regS = new RegExp(regexStr, 'gi')
                 matchContent = matchContent.replace(regS, '<span class="search-keyword">' + keyword + '</span>')
                 dataTitle = dataTitle.replace(regS, '<span class="search-keyword">' + keyword + '</span>')
               })
@@ -205,15 +211,15 @@ window.addEventListener('load', () => {
                   const regS = new RegExp(keyword, 'gi')
                   splitTags = splitTags.replace(regS, '<span class="search-keyword">' + keyword + '</span>')
                 }) 
-                
+
                 post = dataTags!== '' ? post  + splitTags  : post
                 //- 自定义结束
-
+                                
                 str += '<p class="search-result">' + pre + matchContent + post + '</p>'
               }
-            } //if firstOccur
+            }
             str += '</div>'
-          } //
+          }
         })
         if (count === 0) {
           str += '<div id="local-search__hits-empty">' + GLOBAL_CONFIG.localSearch.languages.hits_empty.replace(/\$\{query}/, this.value.trim()) +
