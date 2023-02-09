@@ -110,7 +110,7 @@ window.addEventListener('load', () => {
           if (dataTitle !== '' || dataContent !== '') {
             keywords.forEach((keyword, i) => {
               // keywords是一个Object，keywords[0]包含了关键词的所有内容，因此要用keywords[0][0]
-              if (keywords[0][0] === '#' && l_keywords > 1 && keywords[0][1] !== '#'){ //- 最后一个判断条件修复了正文中'##'无法搜索的问题
+              if (CONFIG.local_search.tags && keywords[0][0] === '#' && l_keywords > 1 && keywords[0][1] !== '#'){ //- 最后一个判断条件修复了正文中'##'无法搜索的问题
                 //如果关键词第一个字符是#且长度大于1，那么进行tag搜索
                 keyword = keyword.substring(1) // 将关键词第一个#去掉后再匹配
                 //- 定义dataTags0的意义：去掉tags里面的网页标签代码，否则会把网页标签里面的代码（非正文内容）也匹配
