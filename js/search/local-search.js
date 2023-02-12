@@ -121,19 +121,33 @@ window.addEventListener('load', () => {
                 }else{
                   firstOccur = 0
                 }
-              }else{
-                //如果第一个字母不是#,那么不匹配标签
-                indexTitle = dataTitle.indexOf(keyword)
-                indexContent = dataContent.indexOf(keyword)
-                if (indexTitle < 0 && indexContent < 0) {
-                  isMatch = false
-                } else {
-                  if (indexContent < 0) {
-                    indexContent = 0
+              }else {
+                if(keywords[0][0] === '$' && l_keywords > 1 && keywords[0][1] !== '$'){ //- 最后一个判断条件修复了正文中'$$'无法搜索的问题
+                  //如果关键词第一个字符是$且长度大于1，那么进行title搜索
+                  keyword = keyword.substring(1) // 将关键词第一个$去掉后再匹配
+                  //- 定义dataTitle0的意义：去掉title里面的网页标签代码，否则会把网页标签里面的代码（非正文内容）也匹配
+                  let dataTitle0 = dataTitle.replace(/<[^>]+>/g, '')
+                  indexTitle = dataTitle0.indexOf(keyword)
+                  if ( indexTitle < 0 ){
+                    isMatch = false
+                  }else{
+                    firstOccur = 0
                   }
-                  if (i === 0) {
-                    firstOccur = indexContent
+                }else{
+                  //如果第一个字母不是#,那么不匹配标签
+                  indexTitle = dataTitle.indexOf(keyword)
+                  indexContent = dataContent.indexOf(keyword)
+                  if (indexTitle < 0 && indexContent < 0) {
+                    isMatch = false
+                  } else {
+                    if (indexContent < 0) {
+                      indexContent = 0
+                    }
+                    if (i === 0) {
+                      firstOccur = indexContent
+                    }
                   }
+
                 }
               }
             })
@@ -172,6 +186,9 @@ window.addEventListener('load', () => {
 
               // highlight all keywords
               keywords.forEach(keyword => {
+                if(keyword[0]==='#' || keyword[0]==='$' && keyword.length>1){
+                  keyword = keyword.substring(1)
+                } 
                 let regexStr = keyword
                 const specialRegex = /[^\w\s]+/ // match special characters
                 if (keyword.length === 1 && specialRegex.test(keyword)) {
