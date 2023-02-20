@@ -97,10 +97,10 @@ window.addEventListener('load', () => {
       dataObj.then(data => {
         data.forEach(data => {
           let isMatch = true
-          let dataTitle = data.title ? data.title.trim().toLowerCase() : ''  //- 获取标题
-          const dataContent = data.content ? data.content.trim().replace(/<[^>]+>/g, '').toLowerCase() : '' //- 获取正文,其中【.replace(/<[^>]+>/g, '')】去掉了网页标签
-          const dataUrl = data.url.startsWith('/') ? data.url : GLOBAL_CONFIG.root + data.url //- 获取链接
-          const dataTags = data.tags ? data.tags : ''  //- 获取标签
+          let dataTitle = data.title ? data.title.trim().toLowerCase() : ''
+          const dataContent = data.content ? data.content.trim().replace(/<[^>]+>/g, '').toLowerCase() : ''
+          const dataUrl = data.url.startsWith('/') ? data.url : GLOBAL_CONFIG.root + data.url
+          const dataTags = data.tags ? data.tags : ''
           let indexTitle = -1
           let indexContent = -1
           let firstOccur = -1
@@ -198,13 +198,13 @@ window.addEventListener('load', () => {
                   regexStr = `\\${keyword}`
                 }
                 const regS = new RegExp(regexStr, 'gi')
-                matchContent = matchContent.replace(regS, '<span class="search-keyword">' + keyword + '</span>')
-                dataTitle = dataTitle.replace(regS, '<span class="search-keyword">' + keyword + '</span>')
+                matchContent = matchContent.replaceAll(keyword, '<span class="search-keyword">' + keyword + '</span>')
+                dataTitle = dataTitle.replaceAll(keyword, '<span class="search-keyword">' + keyword + '</span>')
               })
 
               str += '<div class="local-search__hit-item"><a href="' + dataUrl + '" class="search-result-title" target="_blank">' + dataTitle + '</a>'
               count += 1
-              
+
               if (dataContent !== '') {
                 //- 自定义开始：生成的搜索结果框里，加入显示tags
                 let splitT = '' 
@@ -235,8 +235,7 @@ window.addEventListener('load', () => {
                   if(keyword[0] === '#' & keyword.length>1){
                     keyword = keyword.substring(1) // 如果第一个字符为#且长度大于1，将关键词第一个#去掉后再匹配
                   }
-                  const regS = new RegExp(keyword, 'gi')
-                  splitT = splitT.replace(regS, '<span class="search-keyword">' + keyword + '</span>')
+                  splitT = splitT.replaceAll(keyword, '<span class="search-keyword">' + keyword + '</span>')
                 }) 
 
                 //- 第三步：由于第一步生产的为纯文本且包括双分号，此步骤去掉分号且加上fas fa-tag、控制字体（保存在splitTags里）
@@ -261,7 +260,7 @@ window.addEventListener('load', () => {
                 str += '<p class="search-result">' + pre + matchContent + post + '</p>'
               }
             }
-            str += '</div>'
+            str += '</a></div>'
           }
         })
         if (count === 0) {
