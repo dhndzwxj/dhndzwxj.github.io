@@ -1,0 +1,565 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
+<link rel="stylesheet" href="css/bilicard.css">
+<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>python做计量 | 小荷才露尖尖角</title><meta name="author" content="揭晓"><meta name="copyright" content="揭晓"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="python中做线性回归的方法 有详细的关于回归的方法的讲述。 例子： import numpy as np import pandas as pd import statsmodels.api as sm fullpath &#x3D; &#39;%localdir%&#x2F;20050069_1522063137857_1.dta&#39;   df &#x3D; pd.read_stata(fullpath)       				#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python做计量">
+<meta property="og:url" content="https://dhndzwxj.github.io/101587567.html">
+<meta property="og:site_name" content="小荷才露尖尖角">
+<meta property="og:description" content="python中做线性回归的方法 有详细的关于回归的方法的讲述。 例子： import numpy as np import pandas as pd import statsmodels.api as sm fullpath &#x3D; &#39;%localdir%&#x2F;20050069_1522063137857_1.dta&#39;   df &#x3D; pd.read_stata(fullpath)       				#">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dhndzwxj.github.io/private_img/banner2.gif">
+<meta property="article:published_time" content="2020-11-15T04:22:07.000Z">
+<meta property="article:modified_time" content="2023-01-05T15:30:18.529Z">
+<meta property="article:author" content="揭晓">
+<meta property="article:tag" content="计量">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dhndzwxj.github.io/private_img/banner2.gif"><link rel="shortcut icon" href="/private_img/favicon.png"><link rel="canonical" href="https://dhndzwxj.github.io/101587567.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":50,"position":"top","messagePrev":"本文上次更新距离今天已经过去","messageNext":"天, 文中内容可能已经过时，望周知。"},
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'python做计量',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-05 23:30:18'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet"><link href="https://fonts.loli.net/css2?family=Ma+Shan+Zheng:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/wave.css?v1"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="atom.xml" title="小荷才露尖尖角" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="../private_img/yuyingnan.jpg" onerror="onerror=null;src='/private_img/404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="../archives/"><div class="headline">文章</div><div class="length-num">267</div></a><a href="/"><div class="headline">标签</div><div class="length-num">642</div></a><a href="../categories/"><div class="headline">分类</div><div class="length-num">73</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="../air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/private_img/banner2.gif')"><nav id="nav"><span id="blog-info"><a href="../index.html" title="小荷才露尖尖角"><span class="site-name">小荷才露尖尖角</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="../air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">python做计量</h1><div id="post-meta"><div class="meta-firstline"><i class="fa-solid fa-user"></i><span class="post-meta-author">揭晓</span><span class="post-meta-date"><span class="post-meta-separator">|</span><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-15T04:22:07.000Z" title="发表于 2020-11-15 12:22:07">2020-11-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-05T15:30:18.529Z" title="更新于 2023-01-05 23:30:18">2023-01-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/">计量与模型</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/%E8%AE%A1%E9%87%8F/">计量</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/%E8%AE%A1%E9%87%8F/python/">python</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="python做计量"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="python中做线性回归的方法"><a class="markdownIt-Anchor" href="#python中做线性回归的方法"></a> python中做线性回归的方法</h2>
+<p>有详细的关于<a href='https://blog.csdn.net/xuxiatian/article/details/55002412 ' target='_blank'>回归的方法的讲述</a>。</p>
+<p>例子：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> statsmodels<span class="token punctuation">.</span>api <span class="token keyword">as</span> sm
+fullpath <span class="token operator">=</span> <span class="token string">'%localdir%/20050069_1522063137857_1.dta'</span>  
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_stata<span class="token punctuation">(</span>fullpath<span class="token punctuation">)</span>       				<span class="token comment">#导入stata数据</span>
+<span class="token comment">#print df.head()                         	#看数据的头五行数据</span>
+y<span class="token operator">=</span>df<span class="token punctuation">.</span>lwage                                <span class="token comment">#结果变量</span>
+X<span class="token operator">=</span>df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'hours'</span><span class="token punctuation">,</span><span class="token string">'iq'</span><span class="token punctuation">,</span><span class="token string">'kww'</span><span class="token punctuation">,</span><span class="token string">'educ'</span><span class="token punctuation">,</span><span class="token string">'exper'</span><span class="token punctuation">,</span><span class="token string">'tenure'</span><span class="token punctuation">,</span><span class="token string">'age'</span><span class="token punctuation">,</span><span class="token string">'married'</span><span class="token punctuation">,</span><span class="token string">'black'</span><span class="token punctuation">,</span><span class="token string">'south'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>  <span class="token comment">#预测变量</span>
+X<span class="token operator">=</span>sm<span class="token punctuation">.</span>add_constant<span class="token punctuation">(</span>X<span class="token punctuation">)</span>            					<span class="token comment">#为模型增加常数项</span>
+est<span class="token operator">=</span>sm<span class="token punctuation">.</span>OLS<span class="token punctuation">(</span>y<span class="token punctuation">,</span>X<span class="token punctuation">)</span>                     			<span class="token comment">#执行最小二乘回归，y可以是一维数组</span>
+est<span class="token operator">=</span>est<span class="token punctuation">.</span>fit<span class="token punctuation">(</span><span class="token punctuation">)</span>                            	<span class="token comment">#使用OLS对象的fit()方法来进行模型拟合</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>est<span class="token punctuation">.</span>summary<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>                 			<span class="token comment">#查看模型拟合的结果</span>
+<span class="token comment">#print est.params                    			#查看最终模型的参数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>有非常详细的关于<a href='https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html' target='_blank'>把各种类型数据导入到python的方法</a>。</p>
+<table>
+<thead>
+<tr>
+<th>Format Type</th>
+<th>Data Description</th>
+<th>Reader</th>
+<th>Writer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table">read_csv</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-store-in-csv">to_csv</a></td>
+</tr>
+<tr>
+<td>text</td>
+<td>Fixed-Width Text File</td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-fwf-reader">read_fwf</a></td>
+<td></td>
+</tr>
+<tr>
+<td>text</td>
+<td><a target="_blank" rel="noopener" href="https://www.json.org/">JSON</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-json-reader">read_json</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-json-writer">to_json</a></td>
+</tr>
+<tr>
+<td>text</td>
+<td><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/HTML">HTML</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-html">read_html</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-html">to_html</a></td>
+</tr>
+<tr>
+<td>text</td>
+<td><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/LaTeX">LaTeX</a></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-latex">Styler.to_latex</a></td>
+</tr>
+<tr>
+<td>text</td>
+<td><a target="_blank" rel="noopener" href="https://www.w3.org/standards/xml/core">XML</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-xml">read_xml</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-xml">to_xml</a></td>
+</tr>
+<tr>
+<td>text</td>
+<td>Local clipboard</td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-clipboard">read_clipboard</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-clipboard">to_clipboard</a></td>
+</tr>
+<tr>
+<td>binary</td>
+<td><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Microsoft_Excel">MS Excel</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-excel-reader">read_excel</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-excel-writer">to_excel</a></td>
+</tr>
+<tr>
+<td>binary</td>
+<td><a target="_blank" rel="noopener" href="http://www.opendocumentformat.org/">OpenDocument</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-ods">read_excel</a></td>
+<td></td>
+</tr>
+<tr>
+<td>binary</td>
+<td><a target="_blank" rel="noopener" href="https://support.hdfgroup.org/HDF5/whatishdf5.html">HDF5 Format</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-hdf5">read_hdf</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-hdf5">to_hdf</a></td>
+</tr>
+<tr>
+<td>binary</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/wesm/feather">Feather Format</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-feather">read_feather</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-feather">to_feather</a></td>
+</tr>
+<tr>
+<td>binary</td>
+<td><a target="_blank" rel="noopener" href="https://parquet.apache.org/">Parquet Format</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-parquet">read_parquet</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-parquet">to_parquet</a></td>
+</tr>
+<tr>
+<td>binary</td>
+<td><a target="_blank" rel="noopener" href="https://orc.apache.org/">ORC Format</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-orc">read_orc</a></td>
+<td></td>
+</tr>
+<tr>
+<td>binary</td>
+<td><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Stata">Stata</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-stata-reader">read_stata</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-stata-writer">to_stata</a></td>
+</tr>
+<tr>
+<td>binary</td>
+<td><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/SAS_(software)">SAS</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-sas-reader">read_sas</a></td>
+<td></td>
+</tr>
+<tr>
+<td>binary</td>
+<td><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/SPSS">SPSS</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-spss-reader">read_spss</a></td>
+<td></td>
+</tr>
+<tr>
+<td>binary</td>
+<td><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pickle.html">Python Pickle Format</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-pickle">read_pickle</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-pickle">to_pickle</a></td>
+</tr>
+<tr>
+<td>SQL</td>
+<td><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/SQL">SQL</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-sql">read_sql</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-sql">to_sql</a></td>
+</tr>
+<tr>
+<td>SQL</td>
+<td><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/BigQuery">Google BigQuery</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-bigquery">read_gbq</a></td>
+<td><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-bigquery">to_gbq</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="pandas库pdread_excel操作读取excel文件参数整理与实例"><a class="markdownIt-Anchor" href="#pandas库pdread_excel操作读取excel文件参数整理与实例"></a> pandas库pd.read_excel操作读取excel文件参数整理与实例</h2>
+<p>除了使用xlrd库或者xlwt库进行对excel表格的操作读与写，而且pandas库同样支持excel的操作；且pandas操作更加简介方便。</p>
+<p>首先是pd.read_excel的参数：函数为：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pd<span class="token punctuation">.</span>read_excel<span class="token punctuation">(</span>io<span class="token punctuation">,</span> sheetname<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>header<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>skiprows<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>index_col<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>names<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>
+                arse_cols<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>date_parser<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>na_values<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>thousands<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> 
+                convert_float<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>has_index_names<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>converters<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>dtype<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>
+                true_values<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>false_values<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>engine<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>squeeze<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>kwds<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="numpy中matrix-和-array的区别"><a class="markdownIt-Anchor" href="#numpy中matrix-和-array的区别"></a> numpy中matrix 和 array的区别</h2>
+<p>numpy中matrix 和 array的区别</p>
+<p>Numpy matrices必须是2维的,但是 numpy arrays (ndarrays) 可以是多维的（1D，2D，3D····ND）. Matrix是Array的一个小的分支，包含于Array。所以matrix 拥有array的所有特性。</p>
+<p>在numpy中matrix的主要优势是：</p>
+<p>（1）相对简单的乘法运算符号。</p>
+<p>例如，a和b是两个matrices，那么a*b，就是矩阵积。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+a<span class="token operator">=</span>np<span class="token punctuation">.</span>mat<span class="token punctuation">(</span><span class="token string">'4 3; 2 1'</span><span class="token punctuation">)</span>
+b<span class="token operator">=</span>np<span class="token punctuation">.</span>mat<span class="token punctuation">(</span><span class="token string">'1 2; 3 4'</span><span class="token punctuation">)</span>
+a
+b
+a<span class="token operator">*</span>b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>（2）matrix 和 array 都可以通过objects后面加.T.T 得到其转置。但是 matrix objects 还可以在后面加 .H.H得到共轭矩阵, 加 .I.I 得到逆矩阵。相反的是在numpy里面arrays遵从逐个元素的运算，所以array：c 和d的c∗dc∗d运算相当于对应的元素相乘</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">c<span class="token operator">=</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+d<span class="token operator">=</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+c<span class="token operator">*</span>d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>（3）运算符的作用也不一样 ：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a2
+c2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>因为a是个matrix，所以<code>a∗∗2a∗∗2</code>返回的是<code>a∗aa∗a</code>，相当于矩阵相乘。而c是array，<code>c∗∗2c∗∗2</code>相当于，c中的元素逐个求平方。</p>
+<p>（3）numpy中矩阵间的除法运算</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token operator">/</span><span class="token number">2</span>
+a<span class="token operator">/</span>b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>取得是整数</p>
+<p>基本运算</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>mat<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>mat<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a:\n'</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'b:\n'</span><span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n a transpose:\n'</span><span class="token punctuation">,</span>a<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token comment">#转置</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n a inv:\n'</span><span class="token punctuation">,</span>np<span class="token punctuation">.</span>linalg<span class="token punctuation">.</span>inv<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 求逆</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n a-b: \n"</span><span class="token punctuation">,</span>a<span class="token operator">-</span>b<span class="token punctuation">)</span> <span class="token comment"># a - b，矩阵相减</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n a dot b: \n"</span><span class="token punctuation">,</span>a<span class="token operator">*</span>b<span class="token punctuation">)</span> <span class="token comment">#2x2矩阵，矩阵相乘</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n a/b \n:"</span><span class="token punctuation">,</span>b<span class="token operator">/</span>a<span class="token punctuation">)</span> <span class="token comment"># numpy中的除是对矩阵元素展开计算</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n a trace：\n"</span><span class="token punctuation">,</span>np<span class="token punctuation">.</span>trace<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#求迹</span>
+eigval<span class="token punctuation">,</span>eigvec <span class="token operator">=</span> np<span class="token punctuation">.</span>linalg<span class="token punctuation">.</span>eig<span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">#特征，特征向量</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n a eig value:\n"</span><span class="token punctuation">,</span>eigval<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n a eig vector:\n'</span><span class="token punctuation">,</span>eigvec<span class="token punctuation">)</span>
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n all zero \n'</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span>
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n all one \n'</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span>
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>eye<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n 4x7 diagonal \n'</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span>
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>diag<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n 5x5 diagonal \n'</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span>
+a <span class="token operator">=</span> np<span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n empty \n'</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="python中的统计作图"><a class="markdownIt-Anchor" href="#python中的统计作图"></a> Python中的统计作图</h2>
+<p>Python主要作图库是Matplotlib,Pandas基于Matplotlib并对某一些命令进行了简化，因此在作图上，通常是这两者相互结合着使用.</p>
+<h3 id="1正弦曲线"><a class="markdownIt-Anchor" href="#1正弦曲线"></a> 1.正弦曲线</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">"""
+Created on Thu Apr 12 10:32:05 2018
+@author: Administrator
+"""</span>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'font.sans-serif'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'SimHei'</span><span class="token punctuation">]</span>
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'axes.unicode_minus'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token boolean">False</span>
+x<span class="token operator">=</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">*</span>np<span class="token punctuation">.</span>pi<span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
+y<span class="token operator">=</span>np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span><span class="token string">'bp--'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2绘制饼型图"><a class="markdownIt-Anchor" href="#2绘制饼型图"></a> 2.绘制饼型图</h3>
+<p>在Python中，绘制饼型图的函数是pie(),</p>
+<p>具体调用时plt.pie(size),其中size是一个参数列表，记录在饼型图的各个扇形比例.</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pylab <span class="token keyword">as</span> plt
+<span class="token comment">#定义饼状图的标签</span>
+label<span class="token operator">=</span><span class="token string">'Frogs'</span><span class="token punctuation">,</span><span class="token string">'Hogs'</span><span class="token punctuation">,</span><span class="token string">'Dogs'</span><span class="token punctuation">,</span><span class="token string">'Logs'</span>
+<span class="token comment">#记录每一个饼状图的比例</span>
+size<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">]</span>
+<span class="token comment">#定义每一块的颜色</span>
+colors<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'yellowgreen'</span><span class="token punctuation">,</span><span class="token string">'gold'</span><span class="token punctuation">,</span><span class="token string">'lightskyblue'</span><span class="token punctuation">,</span><span class="token string">'lightcoral'</span><span class="token punctuation">]</span>
+plt<span class="token punctuation">.</span>pie<span class="token punctuation">(</span>size<span class="token punctuation">,</span>labels<span class="token operator">=</span>label<span class="token punctuation">,</span>colors<span class="token operator">=</span>colors<span class="token punctuation">,</span>autopct<span class="token operator">=</span><span class="token string">'%1.1f%%'</span><span class="token punctuation">,</span>shadow<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>startangle<span class="token operator">=</span><span class="token number">90</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>axis<span class="token punctuation">(</span><span class="token string">'equal'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3绘制二维条形直方图"><a class="markdownIt-Anchor" href="#3绘制二维条形直方图"></a> 3.绘制二维条形直方图</h3>
+<p>绘制二维条形图使用的是hist()函数进行实现，具体的使用格式为：<code>plt.hist(x,y)</code></p>
+<p>这里参数的含义是：x代表待绘制直方图的一维数组，y可以是整数，表示均匀的分成n组也可以是列表，列表的各个数字为分组的边界点。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pylab <span class="token keyword">as</span> plt
+x<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-绘制样本数据的箱型图"><a class="markdownIt-Anchor" href="#4-绘制样本数据的箱型图"></a> 4. 绘制样本数据的箱型图</h3>
+<p>调用的格式为D.boxplot(),其中D的结构为DataFrame结构的,</p>
+<p>另外一种是D.plot(kind=‘box’)</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pylab <span class="token keyword">as</span> plt
+x<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+D<span class="token operator">=</span>pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span>x<span class="token punctuation">,</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>T
+D<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>kind<span class="token operator">=</span><span class="token string">'box'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5绘制误差条形图"><a class="markdownIt-Anchor" href="#5绘制误差条形图"></a> 5.绘制误差条形图</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">plot<span class="token punctuation">(</span>yerr<span class="token operator">=</span>error<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>D为Pandas的DataFrame或者Series,代表着均值数据列，而error是误差列，yerr表示在y轴方向画出误差棒图，xerr=error表示在x轴方向画出误差棒图.</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pylab <span class="token keyword">as</span> plt
+error<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+y<span class="token operator">=</span>pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+y<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>yerr<span class="token operator">=</span>error<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="tags/%E8%AE%A1%E9%87%8F/">计量</a><a class="post-meta__tags" href="tags/python/">python</a></div><div class="post_share"><div class="social-share" data-image="/private_img/banner2.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/private_img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/private_img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/private_img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/private_img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="3682906898.html" title="《政治经济学的国民体系》"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/private_img/banner.gif'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">《政治经济学的国民体系》</div></div></a></div><div class="next-post pull-right"><a href="2928949794.html" title="python2 与 python3的区别"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/private_img/banner.gif'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">python2 与 python3的区别</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="3845945498.html" title="高级计量经济学课件"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-24</div><div class="title">高级计量经济学课件</div></div></a></div><div><a href="2489825849.html" title="应对审稿人提出内生性问题的六种方法及示例"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-22</div><div class="title">应对审稿人提出内生性问题的六种方法及示例</div></div></a></div><div><a href="175522932.html" title="马骏时文东时间序列"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-03</div><div class="title">马骏时文东时间序列</div></div></a></div><div><a href="4237846169.html" title="高级计量进阶——残差相关的各种情形"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-20</div><div class="title">高级计量进阶——残差相关的各种情形</div></div></a></div><div><a href="4065962852.html" title="龙治铭量化分析课件"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-23</div><div class="title">龙治铭量化分析课件</div></div></a></div><div><a href="5504202.html" title="python数据处理手册"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-23</div><div class="title">python数据处理手册</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="../private_img/yuyingnan.jpg" onerror="this.onerror=null;this.src='../private_img/404.gif'" alt="avatar"/></div><div class="author-info__name">揭晓</div><div class="author-info__description">随手写一写，揭晓这世界</div></div><a id="card-info-btn" href="/"><i class="fas fa-home"></i><span>回到首页</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#python%E4%B8%AD%E5%81%9A%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text"> python中做线性回归的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pandas%E5%BA%93pdread_excel%E6%93%8D%E4%BD%9C%E8%AF%BB%E5%8F%96excel%E6%96%87%E4%BB%B6%E5%8F%82%E6%95%B0%E6%95%B4%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B"><span class="toc-text"> pandas库pd.read_excel操作读取excel文件参数整理与实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#numpy%E4%B8%ADmatrix-%E5%92%8C-array%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text"> numpy中matrix 和 array的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python%E4%B8%AD%E7%9A%84%E7%BB%9F%E8%AE%A1%E4%BD%9C%E5%9B%BE"><span class="toc-text"> Python中的统计作图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E6%AD%A3%E5%BC%A6%E6%9B%B2%E7%BA%BF"><span class="toc-text"> 1.正弦曲线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E7%BB%98%E5%88%B6%E9%A5%BC%E5%9E%8B%E5%9B%BE"><span class="toc-text"> 2.绘制饼型图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E7%BB%98%E5%88%B6%E4%BA%8C%E7%BB%B4%E6%9D%A1%E5%BD%A2%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="toc-text"> 3.绘制二维条形直方图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%BB%98%E5%88%B6%E6%A0%B7%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%9A%84%E7%AE%B1%E5%9E%8B%E5%9B%BE"><span class="toc-text"> 4. 绘制样本数据的箱型图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E7%BB%98%E5%88%B6%E8%AF%AF%E5%B7%AE%E6%9D%A1%E5%BD%A2%E5%9B%BE"><span class="toc-text"> 5.绘制误差条形图</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../998865776.html" title="Zotero文献管理">Zotero文献管理</a><time datetime="2023-02-21T13:38:52.170Z" title="更新于 2023-02-21 21:38:52">2023-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3276806131.html" title="博客搭建日志">博客搭建日志</a><time datetime="2023-02-21T09:54:36.689Z" title="更新于 2023-02-21 17:54:36">2023-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../2511924152.html" title="博士论文手稿">博士论文手稿</a><time datetime="2023-02-21T07:11:01.944Z" title="更新于 2023-02-21 15:11:01">2023-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3550224356.html" title="比较政治经济学">比较政治经济学</a><time datetime="2023-02-18T09:20:11.226Z" title="更新于 2023-02-18 17:20:11">2023-02-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../1120410056.html" title="中国的“南南贸易”：不平等交换和不平衡与综合发展">中国的“南南贸易”：不平等交换和不平衡与综合发展</a><time datetime="2023-02-17T15:10:37.594Z" title="更新于 2023-02-17 23:10:37">2023-02-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3667980037.html" title="第四章第五章材料摘抄">第四章第五章材料摘抄</a><time datetime="2023-02-16T08:15:56.433Z" title="更新于 2023-02-16 16:15:56">2023-02-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../123068617.html" title="现代社会中的科层制与水平组织">现代社会中的科层制与水平组织</a><time datetime="2023-02-12T06:04:24.815Z" title="更新于 2023-02-12 14:04:24">2023-02-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../1073151541.html" title="德斯米特空间发展">德斯米特空间发展</a><time datetime="2023-02-08T04:44:27.864Z" title="更新于 2023-02-08 12:44:27">2023-02-08</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/private_img/banner2.gif')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 揭晓</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="js/utils.js"></script><script src="js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://dhndzwxj.github.io/101587567.html'
+    this.page.identifier = ''
+    this.page.title = 'python做计量'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-www-dhndzwxj-top.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script type='text/javascript' src='https://ajax.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script id="dsq-count-scr" src="//https-www-dhndzwxj-top.disqus.com/count.js" async></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="../js/search/local-search.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'b16a1fa0e63c46a4b8f28abfb06ae3fe';
+  var gaud_map_key = 'e2b04289e870b005374ee030148d64fd&s=rsv3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>

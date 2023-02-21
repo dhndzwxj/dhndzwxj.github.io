@@ -1,0 +1,557 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
+<link rel="stylesheet" href="css/bilicard.css">
+<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>金融依赖性和增长的关系 | 小荷才露尖尖角</title><meta name="author" content="揭晓"><meta name="copyright" content="揭晓"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、引言  1. 背景 金融发展和经济增长间存在相关关系（eg.Robert G. King and Ross Levine(1993a)）、存在因果关系（eg.Robert G. King and Ross Levine(1993a)、不存在因果关系（eg. 可能由遗漏变量同时驱动，比如家庭的储蓄倾向；金融发展可能只是一个领先指标，而非因果因素）。  1:Robert G. King, Ros">
+<meta property="og:type" content="article">
+<meta property="og:title" content="金融依赖性和增长的关系">
+<meta property="og:url" content="https://dhndzwxj.github.io/4165288499.html">
+<meta property="og:site_name" content="小荷才露尖尖角">
+<meta property="og:description" content="一、引言  1. 背景 金融发展和经济增长间存在相关关系（eg.Robert G. King and Ross Levine(1993a)）、存在因果关系（eg.Robert G. King and Ross Levine(1993a)、不存在因果关系（eg. 可能由遗漏变量同时驱动，比如家庭的储蓄倾向；金融发展可能只是一个领先指标，而非因果因素）。  1:Robert G. King, Ros">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dhndzwxj.github.io/private_img/banner2.gif">
+<meta property="article:published_time" content="2020-12-28T08:40:51.000Z">
+<meta property="article:modified_time" content="2023-01-06T09:48:59.392Z">
+<meta property="article:author" content="揭晓">
+<meta property="article:tag" content="stata">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dhndzwxj.github.io/private_img/banner2.gif"><link rel="shortcut icon" href="/private_img/favicon.png"><link rel="canonical" href="https://dhndzwxj.github.io/4165288499.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":50,"position":"top","messagePrev":"本文上次更新距离今天已经过去","messageNext":"天, 文中内容可能已经过时，望周知。"},
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '金融依赖性和增长的关系',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-06 17:48:59'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet"><link href="https://fonts.loli.net/css2?family=Ma+Shan+Zheng:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/wave.css?v1"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="atom.xml" title="小荷才露尖尖角" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="../private_img/yuyingnan.jpg" onerror="onerror=null;src='/private_img/404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="../archives/"><div class="headline">文章</div><div class="length-num">267</div></a><a href="/"><div class="headline">标签</div><div class="length-num">642</div></a><a href="../categories/"><div class="headline">分类</div><div class="length-num">73</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="../air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/private_img/banner2.gif')"><nav id="nav"><span id="blog-info"><a href="../index.html" title="小荷才露尖尖角"><span class="site-name">小荷才露尖尖角</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="../air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">金融依赖性和增长的关系</h1><div id="post-meta"><div class="meta-firstline"><i class="fa-solid fa-user"></i><span class="post-meta-author">揭晓</span><span class="post-meta-date"><span class="post-meta-separator">|</span><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-28T08:40:51.000Z" title="发表于 2020-12-28 16:40:51">2020-12-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-06T09:48:59.392Z" title="更新于 2023-01-06 17:48:59">2023-01-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/">计量与模型</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/%E8%AE%A1%E9%87%8F/">计量</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>16分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="金融依赖性和增长的关系"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="一-引言"><a class="markdownIt-Anchor" href="#一-引言"></a> 一、引言</h2>
+<h3 id="1-背景"><a class="markdownIt-Anchor" href="#1-背景"></a> 1. 背景</h3>
+<p>金融发展和经济增长间存在相关关系（eg.<a href='https://academic.oup.com/qje/article-abstract/108/3/717/1881857' target='_blank'>Robert G. King and Ross Levine(1993a)</a>）、存在因果关系（eg.<a href='https://academic.oup.com/qje/article-abstract/108/3/717/1881857' target='_blank'>Robert G. King and Ross Levine(1993a)</a>、不存在因果关系（eg. 可能由遗漏变量同时驱动，比如家庭的储蓄倾向；金融发展可能只是一个领先指标，而非因果因素）。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://dhndzwxj-3ghxc51j1010c2ed-1302940033.tcloudbaseapp.com/4165288499/#fn_1">1</a>:Robert G. King, Ross Levine, <a href=' https://doi.org/10.2307/2118406' target='_blank'>Finance and Growth: Schumpeter Might Be Right</a>, <em>The Quarterly Journal of Economics</em>, Volume 108, Issue 3, August 1993, Pages 717–737,</p>
+</blockquote>
+<h3 id="2-本文识别其因果关系思路和检验方法"><a class="markdownIt-Anchor" href="#2-本文识别其因果关系思路和检验方法"></a> 2. 本文识别其因果关系思路和检验方法</h3>
+<ul>
+<li>思路：关注金融发展影响经济增长的理论机制的细节。金融机构和市场可以帮助企业克服道德风险和逆向选择的问题，因此减少了企业的外部融资成本。</li>
+<li>优点：
+<ul>
+<li>第一，寻找了一个金融影响增长的更为准确的机制，从而提供了更有力的因果检验；</li>
+<li>第二，可以修正固定国家（和产业）效应。这种方法对宏观增长模型的依赖性更小。</li>
+</ul>
+</li>
+<li>检验方法：
+<ul>
+<li>利用美国公司的数据，确定一个行业对外部融资的需求（投资额和运营产生的现金之间的差异）。在假设美国的资本市场（特别是本文分析的大型上市公司）相对没有摩擦的情况下，这种方法允许我们识别一个行业对外部融资的技术需求。进一步假设这种技术需求会转移到其他国家，我们研究更依赖外部融资的行业是否会在金融更发达的国家增长得更快。</li>
+<li>增长可以被分解为企业数量的增加和现存企业规模的扩大，前者更依赖外部融资，故应受金融发展的影响更大。结果表明，金融发展对企业数量增长的影响几乎是平均规模增长的两倍，也表明金融市场的发展有助于依赖外部融资的部门的增长。</li>
+</ul>
+</li>
+</ul>
+<h2 id="二-理论基础与基准回归"><a class="markdownIt-Anchor" href="#二-理论基础与基准回归"></a> 二、理论基础与基准回归</h2>
+<h3 id="1-理论基础"><a class="markdownIt-Anchor" href="#1-理论基础"></a> 1. 理论基础</h3>
+<ul>
+<li>本文调整<a href='https://www.journals.uchicago.edu/doi/abs/10.1086/261720' target='_blank'>Jeremy Greenwood 和Boyan Jovanovic（1990）</a>模型：金融发展降低了公司从外部筹集资金的成本，而非从内部产生的现金流中筹集资金的成本。通常认为外部筹资成本更高，因为外部人对借款人的行为控制力较低。金融发展（以更好的会计和披露准则以及更好地通过制度改善公司治理为形式）将减少内部和外部融资成本之间的差距，并促进增长，特别是促进最依赖外部融资的公司的增长。</li>
+<li>本文关注的是，既定的金融发展水平是否会影响经济增长。</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mi>r</mi><mi>o</mi><mi>w</mi><mi>t</mi><msub><mi>h</mi><mrow><mi>j</mi><mo separator="true">,</mo><mi>k</mi></mrow></msub><mo>=</mo><mi>C</mi><mi>o</mi><mi>n</mi><mi>s</mi><mi>t</mi><mi>a</mi><mi>n</mi><mi>t</mi><mo>+</mo><msub><mi>β</mi><mrow><mn>1</mn><mo separator="true">,</mo><mo>⋯</mo><mi>m</mi></mrow></msub><mo>⋅</mo><mi>C</mi><mi>o</mi><mi>u</mi><mi>n</mi><mi>t</mi><mi>r</mi><mi>y</mi><mi>I</mi><mi>n</mi><mi>d</mi><mi>i</mi><mi>c</mi><mi>a</mi><mi>t</mi><mi>o</mi><mi>r</mi><mi>s</mi><mo>+</mo><msub><mi>β</mi><mrow><mi>m</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><mi>n</mi></mrow></msub><mo>⋅</mo><mtext> Industry Indicators</mtext><mo>+</mo><msub><mi>β</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>⋅</mo><mo stretchy="false">(</mo><mtext>Industry </mtext><msup><mi>j</mi><mo mathvariant="normal">′</mo></msup><mi>s</mi><mtext> share of manufacturing in country </mtext><mi>k</mi><mtext> in 1980</mtext><mo stretchy="false">)</mo><mo>+</mo><msub><mi>β</mi><mi>n</mi></msub><mo>+</mo><mn>2</mn><mo>⋅</mo><mo stretchy="false">(</mo><mtext>External Dependence of industry </mtext><mi>j</mi><mo>⋅</mo><mtext>External Development of country </mtext><mi>k</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi>ε</mi><mrow><mi>j</mi><mo separator="true">,</mo><mi>k</mi></mrow></msub></mrow><annotation encoding="application/x-tex">growth_{j,k}=Constant+\beta_{1,⋯m}⋅Country Indicators+\beta_{m+1,\cdots,n}\cdot\text{ Industry Indicators}+\beta_{n+1}⋅(\text{Industry }j&#x27;s\text{ share of manufacturing in country }k\text{ in 1980})+\beta_n+2\cdot(\text{External Dependence of industry }j\cdot \text{External Development of country }k)+\varepsilon_{j,k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">t</span><span class="mord"><span class="mord mathdefault">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="minner mtight">⋯</span><span class="mord mathdefault mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span><span class="mord mathdefault">i</span><span class="mord mathdefault">c</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mbin mtight">+</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="minner mtight">⋯</span><span class="mspace mtight" style="margin-right:0.19516666666666668em;"></span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord text"><span class="mord"> Industry Indicators</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.902771em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord text"><span class="mord">Industry </span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mathdefault">s</span><span class="mord text"><span class="mord"> share of manufacturing in country </span></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord text"><span class="mord"> in 1980</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord text"><span class="mord">External Dependence of industry </span></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">External Development of country </span></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">ε</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>​​​​​​​​​​​​​​</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://dhndzwxj-3ghxc51j1010c2ed-1302940033.tcloudbaseapp.com/4165288499/#fn_2">2</a>:Greenwood, J. , &amp; Jovanovic, B. . (1990). Financial development, growth, and the distribution of income. <em>Journal of Political Economy,</em> <em>98</em>(5, Part 1), 1076-1107.</p>
+</blockquote>
+<h3 id="2-依赖度的代理指标及计算"><a class="markdownIt-Anchor" href="#2-依赖度的代理指标及计算"></a> 2. 依赖度的代理指标及计算</h3>
+<p>本文认为存在技术上的原因，使得有些行业比其他行业更依赖外部融资。同时假设这些技术差异在不同国家之间持续存在，因此可以利用一个行业在美国的外部融资依赖度来代理该行业在其他国家的融资依赖度。如果药品行业在美国相比于纺织业需要更大的初始规模，并且在获得现金流之前有更长的酝酿期（gestation period），那么在韩国它同样需要更大的初始规模、有更长的酝酿期。</p>
+\begin{eqnarray}
+	\text{外部融资依赖} &=&	\frac{\sum_{1980}^{1989}\text{资本支出}-\text{经营活动产生的现金流}}{\sum_{1980}^{1989}\text{资本支出}}\notag\\
+	\text{外部股权依赖} &=& \frac{\sum_{1980}^{1989}(\text{股票净发行量}-\text{经营活动产生的现金流})}{\sum_{1980}^{1989}\text{资本支出}}	\notag\\
+	\text{投资强度} &=& \frac{\sum_{1980}^{1989}\text{资本支出}}{\sum_{1980}^{1989}\text{厂房和设备净值}} \notag
+\end{eqnarray}
+
+<h3 id="3-不同行业的外部融资依赖度"><a class="markdownIt-Anchor" href="#3-不同行业的外部融资依赖度"></a> 3. 不同行业的外部融资依赖度</h3>
+<h3 id="4-为何用美国样本计算外部融资依存度"><a class="markdownIt-Anchor" href="#4-为何用美国样本计算外部融资依存度"></a> 4. 为何用美国样本计算外部融资依存度？</h3>
+<ul>
+<li>在技术成熟时，企业将不需要太多外部资金。因此，对外部资金的需求很大程度上可能是由技术冲击引起的，这种冲击一定程度上是全球性的，所以美国公司的外部融资需求是个很好的代理。</li>
+<li>即使冲击所产生的新的投资机会在各国不同，但在某些行业现有公司所产生的现金流量很可能在各国之间是相似的。因此，本文使用加拿大作为稳健性检验，该国拥有发达的资本市场，但银行体系和行业集中度与美国大不相同。原则上，本文的代理方法可以在资本市场运作良好的任何国家使用。</li>
+<li>美国公司所处的产业生命周期阶段可能与外国不同，70 年代的美国工业或许更能代表发展中国家在产业生命周期中的阶段。为了排除产业生命周期的影响，本文还使用美国公司70 年代的外部融资依赖作为稳健性检验。此外，还区分了年轻公司（上市后不到10 年）和老公司（上市后10 年以上）。</li>
+</ul>
+<h3 id="5-数据"><a class="markdownIt-Anchor" href="#5-数据"></a> 5. 数据</h3>
+<h4 id="1产业数据"><a class="markdownIt-Anchor" href="#1产业数据"></a> （1）产业数据</h4>
+<p>各国各行业的增加值和固定资本形成总额数据来自联合国统计局（1993年）汇总的工业统计年鉴数据库。在数据可得及获得尽可能多的数据基础上，本文最终采用了41 个国家和地区。</p>
+<h4 id="2国家数据"><a class="markdownIt-Anchor" href="#2国家数据"></a> （2）国家数据</h4>
+<p>国内生产总值、生产者价格指数、汇率和工业生产指数均来自国际货币基金组织公布的国际金融统计（IFS）数据。当某个数据系列不可用时，我们使用相近的替代指标。例如，如果生产者价格指数不可用，则使用批发价格指数。</p>
+<h4 id="3金融发展的衡量"><a class="markdownIt-Anchor" href="#3金融发展的衡量"></a> （3）金融发展的衡量</h4>
+<ul>
+<li>第一个指标—国内信贷与股票市值之和除以GDP，称之为资本化率。但由于不确定资本化是否是金融发展的一个合理的代理，因此本文将资本化率重新定义为国内信贷部门与私营部门GDP 之比，来检验估计结果是否稳健。</li>
+<li>第二个指标—一国的会计准则。一个国家的财务披露标准越高，企业就越容易从更广泛的投资者中筹集资金。本文使用的是1990 版的会计准则。本文还利用1983 版的会计准则作为稳健性检验。</li>
+</ul>
+<h3 id="6-相关性分析"><a class="markdownIt-Anchor" href="#6-相关性分析"></a> 6. 相关性分析</h3>
+<p>相关系数分析结果表明:</p>
+<ul>
+<li>首先，富裕国家的金融业更发达，1980 年人均收入与会计准则和总资本化的相关系数分别为0.56 和0.26；</li>
+<li>其次，会计准则与资本化构成各要素之间的相关性不同，会计准则与股票市值密切相关（0.45，1% 显著）但与国内信贷无关（0.25，不显著）。低相关性的一个可能解释是，存款机构依赖自己的私人调查，来自它们的信贷很少受到会计准则的影响。另一种可能的解释是，当会计准则水平较低时，只有存款机构提供信贷。本文无法区分是哪种解释，但本文的重点是随着金融发展，资金的总体可得性（无论其来源如何）都将增加。</li>
+</ul>
+<h3 id="7-基准回归结果"><a class="markdownIt-Anchor" href="#7-基准回归结果"></a> 7. 基准回归结果</h3>
+<ul>
+<li>行业× 国家交互项模型：只剩下同时与国家和行业相关的效应
+<ul>
+<li>初始的行业份额的系数frat</li>
+<li>外部融资依赖度× 各种金融发展度量的系数</li>
+</ul>
+</li>
+<li>基准回归结果
+<ul>
+<li>金融发展的不同度量</li>
+<li>外部融资依赖度的不同度量</li>
+</ul>
+</li>
+</ul>
+<p>以下为笔者小组（非上文作者的小组）复制这篇论文编写的stata（16.1）代码，供读者批评指正！</p>
+<pre class="line-numbers language-none"><code class="language-none">use *localpath*\rajan1998_data.dta,clear
+drop if cno&#x3D;&#x3D;47 &#x2F;&#x2F;47为美国的编码
+
+&#x2F;&#x2F; table4-conlumn1
+gen ed_tc &#x3D; exf_a80 * extfin
+reg gth_isic frat ed_tc i.cno i.isic
+est sto re1
+&#x2F;&#x2F; table4-conlumn2
+gen ed_pc &#x3D; exf_a80 * pcrdcr80 * dmcrgp80
+reg gth_isic frat ed_pc i.cno i.isic
+est sto re2
+&#x2F;&#x2F; table4-conlumn3
+gen accstan_100 &#x3D; accstan&#x2F;100
+gen ed_ac &#x3D; exf_a80 * accstan_100
+reg gth_isic frat ed_ac i.cno i.isic
+est sto re3
+&#x2F;&#x2F; table4-conlumn4
+gen accsti83_100 &#x3D; accsti83&#x2F;100
+gen ed_ac83 &#x3D; exf_a80 * accsti83_100
+reg gth_isic frat ed_ac83 i.cno i.isic
+est sto re4
+&#x2F;&#x2F; table4-conlumn5
+reg gth_isic frat ed_tc ed_ac i.cno i.isic
+est sto re5
+&#x2F;&#x2F; table4-conlumn6
+tab origin,gen(ori)  &#x2F;&#x2F;每一个origin对应的值均生成一个虚拟变量
+ivregress 2sls gth_isic frat (ed_ac&#x3D;c.ori*#c.exf_a80 c.rulelaw#c.exf_a80) i.cno i.isic
+est sto re6
+esttab re1 re2 re3 re4 re5 re6,se mtitles order(frat ed_tc ed_pc ed_ac ed_ac83) star(* 0.1 ** 0.05 *** 0.01) b(%4.3f) se(%4.3f) r2(%4.3f) drop(*.cno *.isic)
+&#x2F;&#x2F;esttab re1 re2 re3 re4 re5 re6 using F:\table4.rtf,se mtitles order(frat ed_tc ed_pc ed_ac ed_ac83) star(* 0.1 ** 0.05 *** 0.01) b(%4.3f) se(%4.3f) r2(%4.3f) drop(*.cno *.isic)
+
+
+&#x2F;&#x2F;table5
+tab accstan &#x2F;&#x2F;中位数是62
+reg gth_isic i.cno i.isic if  accstan&lt;62
+predict e1,r 
+sum e1 if isic&#x3D;&#x3D;314 &#x2F;&#x2F;tobacco
+predict e2,r 
+sum e2 if isic&#x3D;&#x3D;361 &#x2F;&#x2F;pottery
+predict e3,r 
+sum e3 if isic&#x3D;&#x3D;323 &#x2F;&#x2F;leather
+predict e4,r 
+sum e4 if isic&#x3D;&#x3D;3522 &#x2F;&#x2F;drug
+predict e5,r 
+sum e5 if isic&#x3D;&#x3D;356 &#x2F;&#x2F;platsics
+predict e6,r 
+sum e6 if isic&#x3D;&#x3D;3825 &#x2F;&#x2F;computers
+
+reg gth_isic i.cno i.isic if  accstan&gt;62
+predict e7,r 
+sum e7 if isic&#x3D;&#x3D;314 &#x2F;&#x2F;tobacco
+predict e8,r 
+sum e8 if isic&#x3D;&#x3D;361 &#x2F;&#x2F;pottery
+predict e9,r 
+sum e9 if isic&#x3D;&#x3D;323 &#x2F;&#x2F;leather
+predict e10,r 
+sum e10 if isic&#x3D;&#x3D;3522 &#x2F;&#x2F;drug
+predict e11,r 
+sum e11 if isic&#x3D;&#x3D;356 &#x2F;&#x2F;platsics
+predict e12,r 
+sum e12 if isic&#x3D;&#x3D;3825 &#x2F;&#x2F;computers
+
+
+&#x2F;&#x2F;table6
+&#x2F;&#x2F; table6-conlumn1
+gen edy_tc &#x3D; exf_y80 * extfin
+reg gth_isic frat edy_tc i.cno i.isic
+est sto re1
+&#x2F;&#x2F; table6-conlumn2
+gen edy_pc &#x3D; exf_y80 * pcrdcr80 * dmcrgp80
+reg gth_isic frat edy_pc i.cno i.isic
+est sto re2
+&#x2F;&#x2F; table6-conlumn3
+&#x2F;&#x2F;gen accstan_100 &#x3D; accstan&#x2F;100
+gen ed_yc &#x3D; exf_y80 * accstan_100
+reg gth_isic frat ed_yc i.cno i.isic
+est sto re3
+&#x2F;&#x2F; table6-conlumn4
+&#x2F;&#x2F;gen accsti83_100 &#x3D; accsti83&#x2F;100
+gen ed_yc83 &#x3D; exf_y80 * accsti83_100
+reg gth_isic frat ed_yc83 i.cno i.isic
+est sto re4
+&#x2F;&#x2F; table6-conlumn5
+reg gth_isic frat edy_tc ed_yc i.cno i.isic
+est sto re5
+&#x2F;&#x2F; table6-conlumn6
+ivregress 2sls gth_isic frat (ed_yc&#x3D;c.ori*#c.exf_y80 c.rulelaw#c.exf_y80) i.cno i.isic
+est sto re6
+esttab re1 re2 re3 re4 re5 re6,se mtitles order(frat edy_tc edy_pc ed_yc ed_yc83) star(* 0.1 ** 0.05 *** 0.01) b(%4.3f) se(%4.3f) r2(%4.3f) drop(*.cno *.isic)
+&#x2F;&#x2F;esttab re1 re2 re3 re4 re5 re6 using F:\table6.rtf,se mtitles order(frat edy_tc edy_pc ed_yc ed_yc83) star(* 0.1 ** 0.05 *** 0.01) b(%4.3f) se(%4.3f) r2(%4.3f) drop(*.cno *.isic)
+
+
+&#x2F;&#x2F;table7——some problems
+&#x2F;&#x2F; table7-conlumn1
+gen edo_tc &#x3D; accstan#c.exf_o80
+ivregress 2sls gth_isic frat i.cno i.isic (edo_tc &#x3D; c.ori*#c.exf_o80 c.rulelaw#c.exf_o80)
+est sto re1
+&#x2F;&#x2F; table7-conlumn2
+gen eda70_tc &#x3D; accstan#c.exf_a70
+ivregress 2sls gth_isic frat i.cno i.isic (eda70_tc &#x3D; c.ori*#c.exf_a70 c.rulelaw#c.exf_a70)
+est sto re2
+&#x2F;&#x2F; table7-conlumn3
+gen ed_cex &#x3D; accstan#c.cextf1
+ivregress 2sls gth_isic frat i.cno i.isic (ed_cex &#x3D; c.ori*#c.cextf1 c.rulelaw#c.cextf1)
+est sto re3
+esttab re1 re2 re3 , se mtitles order(frat edo_tc eda70_tc ed_cex) star(* 0.1 ** 0.05 *** 0.01) b(%4.3f) se(%4.3f) r2(%4.3f) drop(*.cno *.isic)
+&#x2F;&#x2F;esttab re1 re2 re3 using F:\table7.rtf,se mtitles order(frat edo_tc eda70_tc ed_cex) star(* 0.1 ** 0.05 *** 0.01) b(%4.3f) se(%4.3f) r2(%4.3f) drop(*.cno *.isic)
+
+
+&#x2F;&#x2F; table8
+&#x2F;&#x2F; table8-conlumn1
+gen acc_ea80 &#x3D; accstan#c.exf_a80
+ivregress 2sls gth_avsz frat (acc_ea80 &#x3D; c.ori*#c.exf_a80 c.rulelaw#c.exf_a80) i.cno i.isic
+est sto re1
+&#x2F;&#x2F; table8-conlumn2
+ivregress 2sls gth_no frat (acc_ea80 &#x3D; c.ori*#c.exf_a80 c.rulelaw#c.exf_a80) i.cno i.isic
+est sto re2
+&#x2F;&#x2F; table8-conlumn3
+gen acc_ey80 &#x3D; accstan#c.exf_y80
+ivregress 2sls gth_avsz frat (acc_ey80 &#x3D; c.ori*#c.exf_y80 c.rulelaw#c.exf_y80) i.cno i.isic
+est sto re3
+&#x2F;&#x2F; table8-conlumn4
+ivregress 2sls gth_no frat (acc_ey80 &#x3D; c.ori*#c.exf_y80 c.rulelaw#c.exf_y80) i.cno i.isic
+est sto re4
+&#x2F;&#x2F; table8-conlumn5
+gen acc_eo80 &#x3D; accstan#c.exf_o80
+ivregress 2sls gth_avsz frat (acc_eo80 &#x3D; c.ori*#c.exf_o80 c.rulelaw#c.exf_o80) i.cno i.isic
+est sto re5
+&#x2F;&#x2F; table8-conlumn6
+ivregress 2sls gth_no frat (acc_eo80 &#x3D; c.ori*#c.exf_o80 c.rulelaw#c.exf_o80) i.cno i.isic
+est sto re6
+esttab re1 re2 re3 re4 re5 re6 ,se mtitles order(frat acc_ea80 acc_ey80 acc_eo80) star(* 0.1 ** 0.05 *** 0.01) b(%4.3f) se(%4.3f) r2(%4.3f) drop(*.cno *.isic)
+&#x2F;&#x2F;esttab re1 re2 re3 re4 re5 re6 using F:\table8.rtf,se mtitles order(frat ed_tc ed_pc ed_ac ed_ac83) star(* 0.1 ** 0.05 *** 0.01) b(%4.3f) se(%4.3f) r2(%4.3f) drop(*.cno *.isic)
+
+
+&#x2F;&#x2F; table9
+&#x2F;&#x2F; table9-conlumn1
+ivregress 2sls gth_isic frat c.exf_a80#c.human80 i.cno i.isic (acc_ea80&#x3D;c.ori*#c.exf_a80 c.rulelaw#c.exf_a80)
+est sto re1
+&#x2F;&#x2F; table9-conlumn2
+ivregress 2sls gth_isic frat c.exf_a80#c.lpcap80 i.cno i.isic (acc_ea80&#x3D;c.ori*#c.exf_a80 c.rulelaw#c.exf_a80)
+est sto re2
+&#x2F;&#x2F; table9-conlumn3
+ivregress 2sls gth_isic frat i.cno i.isic (acc_ea80&#x3D;c.ori*#c.exf_a80 c.rulelaw#c.exf_a80) if frat&gt;med_frat
+est sto re3
+&#x2F;&#x2F; table9-conlumn4
+ivregress 2sls gth_isic frat i.cno i.isic (acc_ea80&#x3D;c.ori*#c.exf_a80 c.rulelaw#c.exf_a80) if frat&lt;med_frat
+est sto re4
+esttab re1 re2 re3 re4,se mtitles order(frat acc_ea80) star(* 0.1 ** 0.05 *** 0.01) b(%4.3f) se(%4.3f) r2(%4.3f) drop(*.cno *.isic)
+&#x2F;&#x2F;esttab re1 re2 re3 re4 using F:\table9.rtf,se mtitles order(frat ed_tc ed_pc ed_ac ed_ac83) star(* 0.1 ** 0.05 *** 0.01) b(%4.3f) se(%4.3f) r2(%4.3f) drop(*.cno *.isic)
+
+
+&#x2F;&#x2F; table10
+&#x2F;&#x2F; table10-conlumn1
+gen internal &#x3D; inv_a80*(1-exf_a80) &#x2F;&#x2F;内部融资现金流
+gen acc_inter &#x3D; accstan*internal
+ivregress 2sls gth_isic frat i.cno i.isic (acc_inter &#x3D; c.ori*#c.internal c.rulelaw#c.internal)
+est sto re1
+&#x2F;&#x2F; table10-conlumn2
+gen accinv80 &#x3D; accstan*inv_a80
+ivregress 2sls gth_isic frat i.cno i.isic (accinv80 &#x3D; c.ori*#c.inv_a80 c.rulelaw#c.inv_a80)
+est sto re2
+&#x2F;&#x2F; table10-conlumn3
+ivregress 2sls gth_isic frat i.cno i.isic (acc_inter accinv80 &#x3D; c.ori*#c.internal c.rulelaw#c.internal c.ori*#c.inv_a80 c.rulelaw#c.inv_a80)
+est sto re3
+&#x2F;&#x2F; table10-conlumn4
+gen internal2 &#x3D; inv_80*(1-exf_80) &#x2F;&#x2F;80年内部融资现金流
+ivregress 2sls gth_isic frat i.cno i.isic (acc_inter accinv80 &#x3D; c.ori*#c.internal2 c.rulelaw#c.internal2 c.ori*#c.inv_80 c.rulelaw#c.inv_80)
+est sto re4
+esttab re1 re2 re3 re4,se mtitles order(frat acc_inter accinv80) star(* 0.1 ** 0.05 *** 0.01) b(%4.3f) se(%4.3f) r2(%4.3f) drop(*.cno *.isic)
+&#x2F;&#x2F;esttab re1 re2 re3 re4 using F:\table10.rtf,se mtitles order(frat ed_tc ed_pc ed_ac ed_ac83) star(* 0.1 ** 0.05 *** 0.01) b(%4.3f) se(%4.3f) r2(%4.3f) drop(*.cno *.isic)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="tags/stata/">stata</a></div><div class="post_share"><div class="social-share" data-image="/private_img/banner2.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/private_img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/private_img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/private_img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/private_img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="3826076907.html" title="夹缝中的全球化"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/private_img/banner.gif'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">夹缝中的全球化</div></div></a></div><div class="next-post pull-right"><a href="2840705512.html" title="建筑业投入产出闭模型"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/private_img/banner.gif'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">建筑业投入产出闭模型</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="1837523341.html" title="stata笔记"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-15</div><div class="title">stata笔记</div></div></a></div><div><a href="2914285830.html" title="商品价格和银行危机"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-03</div><div class="title">商品价格和银行危机</div></div></a></div><div><a href="767402338.html" title="微观计量经济学"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-25</div><div class="title">微观计量经济学</div></div></a></div><div><a href="1302782253.html" title="空间计量经济学与stata实操"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-10</div><div class="title">空间计量经济学与stata实操</div></div></a></div><div><a href="4065962852.html" title="龙治铭量化分析课件"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-23</div><div class="title">龙治铭量化分析课件</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="../private_img/yuyingnan.jpg" onerror="this.onerror=null;this.src='../private_img/404.gif'" alt="avatar"/></div><div class="author-info__name">揭晓</div><div class="author-info__description">随手写一写，揭晓这世界</div></div><a id="card-info-btn" href="/"><i class="fas fa-home"></i><span>回到首页</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E5%BC%95%E8%A8%80"><span class="toc-text"> 一、引言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%83%8C%E6%99%AF"><span class="toc-text"> 1. 背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9C%AC%E6%96%87%E8%AF%86%E5%88%AB%E5%85%B6%E5%9B%A0%E6%9E%9C%E5%85%B3%E7%B3%BB%E6%80%9D%E8%B7%AF%E5%92%8C%E6%A3%80%E9%AA%8C%E6%96%B9%E6%B3%95"><span class="toc-text"> 2. 本文识别其因果关系思路和检验方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%9F%BA%E5%87%86%E5%9B%9E%E5%BD%92"><span class="toc-text"> 二、理论基础与基准回归</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="toc-text"> 1. 理论基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BE%9D%E8%B5%96%E5%BA%A6%E7%9A%84%E4%BB%A3%E7%90%86%E6%8C%87%E6%A0%87%E5%8F%8A%E8%AE%A1%E7%AE%97"><span class="toc-text"> 2. 依赖度的代理指标及计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%B8%8D%E5%90%8C%E8%A1%8C%E4%B8%9A%E7%9A%84%E5%A4%96%E9%83%A8%E8%9E%8D%E8%B5%84%E4%BE%9D%E8%B5%96%E5%BA%A6"><span class="toc-text"> 3. 不同行业的外部融资依赖度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%B8%BA%E4%BD%95%E7%94%A8%E7%BE%8E%E5%9B%BD%E6%A0%B7%E6%9C%AC%E8%AE%A1%E7%AE%97%E5%A4%96%E9%83%A8%E8%9E%8D%E8%B5%84%E4%BE%9D%E5%AD%98%E5%BA%A6"><span class="toc-text"> 4. 为何用美国样本计算外部融资依存度？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%95%B0%E6%8D%AE"><span class="toc-text"> 5. 数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E4%BA%A7%E4%B8%9A%E6%95%B0%E6%8D%AE"><span class="toc-text"> （1）产业数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E5%9B%BD%E5%AE%B6%E6%95%B0%E6%8D%AE"><span class="toc-text"> （2）国家数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E9%87%91%E8%9E%8D%E5%8F%91%E5%B1%95%E7%9A%84%E8%A1%A1%E9%87%8F"><span class="toc-text"> （3）金融发展的衡量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E7%9B%B8%E5%85%B3%E6%80%A7%E5%88%86%E6%9E%90"><span class="toc-text"> 6. 相关性分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%9F%BA%E5%87%86%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C"><span class="toc-text"> 7. 基准回归结果</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../998865776.html" title="Zotero文献管理">Zotero文献管理</a><time datetime="2023-02-21T13:38:52.170Z" title="更新于 2023-02-21 21:38:52">2023-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3276806131.html" title="博客搭建日志">博客搭建日志</a><time datetime="2023-02-21T09:54:36.689Z" title="更新于 2023-02-21 17:54:36">2023-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../2511924152.html" title="博士论文手稿">博士论文手稿</a><time datetime="2023-02-21T07:11:01.944Z" title="更新于 2023-02-21 15:11:01">2023-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3550224356.html" title="比较政治经济学">比较政治经济学</a><time datetime="2023-02-18T09:20:11.226Z" title="更新于 2023-02-18 17:20:11">2023-02-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../1120410056.html" title="中国的“南南贸易”：不平等交换和不平衡与综合发展">中国的“南南贸易”：不平等交换和不平衡与综合发展</a><time datetime="2023-02-17T15:10:37.594Z" title="更新于 2023-02-17 23:10:37">2023-02-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3667980037.html" title="第四章第五章材料摘抄">第四章第五章材料摘抄</a><time datetime="2023-02-16T08:15:56.433Z" title="更新于 2023-02-16 16:15:56">2023-02-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../123068617.html" title="现代社会中的科层制与水平组织">现代社会中的科层制与水平组织</a><time datetime="2023-02-12T06:04:24.815Z" title="更新于 2023-02-12 14:04:24">2023-02-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../1073151541.html" title="德斯米特空间发展">德斯米特空间发展</a><time datetime="2023-02-08T04:44:27.864Z" title="更新于 2023-02-08 12:44:27">2023-02-08</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/private_img/banner2.gif')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 揭晓</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="js/utils.js"></script><script src="js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://dhndzwxj.github.io/4165288499.html'
+    this.page.identifier = ''
+    this.page.title = '金融依赖性和增长的关系'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-www-dhndzwxj-top.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script type='text/javascript' src='https://ajax.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script id="dsq-count-scr" src="//https-www-dhndzwxj-top.disqus.com/count.js" async></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="../js/search/local-search.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'b16a1fa0e63c46a4b8f28abfb06ae3fe';
+  var gaud_map_key = 'e2b04289e870b005374ee030148d64fd&s=rsv3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>

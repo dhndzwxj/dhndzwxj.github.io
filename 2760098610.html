@@ -1,0 +1,608 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
+<link rel="stylesheet" href="css/bilicard.css">
+<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>ArcGIS基础内容 | 小荷才露尖尖角</title><meta name="author" content="揭晓"><meta name="copyright" content="揭晓"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="精简大纲  三种数据  栅格 矢量 互转数据：MapInfo的MIF格式与ArcGIS的Shapefile格式之间转换；ArcGIS的Coverage与Shapefile格式之间的转换。   三个界面  内容列表 工具栏 出图页面   三个工具  空间分析工具（Spatial Analyst）：地图代数（栅格计算器）、提取分析（按掩膜提取） 数据管理工具 转换工具   ArcGIS常用数据格式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArcGIS基础内容">
+<meta property="og:url" content="https://dhndzwxj.github.io/2760098610.html">
+<meta property="og:site_name" content="小荷才露尖尖角">
+<meta property="og:description" content="精简大纲  三种数据  栅格 矢量 互转数据：MapInfo的MIF格式与ArcGIS的Shapefile格式之间转换；ArcGIS的Coverage与Shapefile格式之间的转换。   三个界面  内容列表 工具栏 出图页面   三个工具  空间分析工具（Spatial Analyst）：地图代数（栅格计算器）、提取分析（按掩膜提取） 数据管理工具 转换工具   ArcGIS常用数据格式">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dhndzwxj.github.io/private_img/banner2.gif">
+<meta property="article:published_time" content="2022-03-03T10:42:32.000Z">
+<meta property="article:modified_time" content="2023-01-06T10:20:24.462Z">
+<meta property="article:author" content="揭晓">
+<meta property="article:tag" content="经济地理">
+<meta property="article:tag" content="ArcGIS">
+<meta property="article:tag" content="绘图">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dhndzwxj.github.io/private_img/banner2.gif"><link rel="shortcut icon" href="/private_img/favicon.png"><link rel="canonical" href="https://dhndzwxj.github.io/2760098610.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":50,"position":"top","messagePrev":"本文上次更新距离今天已经过去","messageNext":"天, 文中内容可能已经过时，望周知。"},
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ArcGIS基础内容',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-06 18:20:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet"><link href="https://fonts.loli.net/css2?family=Ma+Shan+Zheng:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/wave.css?v1"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="atom.xml" title="小荷才露尖尖角" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="../private_img/yuyingnan.jpg" onerror="onerror=null;src='/private_img/404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="../archives/"><div class="headline">文章</div><div class="length-num">267</div></a><a href="/"><div class="headline">标签</div><div class="length-num">642</div></a><a href="../categories/"><div class="headline">分类</div><div class="length-num">73</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="../air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/private_img/banner2.gif')"><nav id="nav"><span id="blog-info"><a href="../index.html" title="小荷才露尖尖角"><span class="site-name">小荷才露尖尖角</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="../air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ArcGIS基础内容</h1><div id="post-meta"><div class="meta-firstline"><i class="fa-solid fa-user"></i><span class="post-meta-author">揭晓</span><span class="post-meta-date"><span class="post-meta-separator">|</span><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-03T10:42:32.000Z" title="发表于 2022-03-03 18:42:32">2022-03-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-06T10:20:24.462Z" title="更新于 2023-01-06 18:20:24">2023-01-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E6%9D%82%E6%8A%80/">杂技</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E6%9D%82%E6%8A%80/ArcGIS/">ArcGIS</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="ArcGIS基础内容"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="精简大纲"><a class="markdownIt-Anchor" href="#精简大纲"></a> 精简大纲</h2>
+<h3 id="三种数据"><a class="markdownIt-Anchor" href="#三种数据"></a> 三种数据</h3>
+<ul>
+<li>栅格</li>
+<li>矢量</li>
+<li>互转数据：MapInfo的MIF格式与ArcGIS的Shapefile格式之间转换；ArcGIS的Coverage与Shapefile格式之间的转换。</li>
+</ul>
+<h3 id="三个界面"><a class="markdownIt-Anchor" href="#三个界面"></a> 三个界面</h3>
+<ul>
+<li>内容列表</li>
+<li>工具栏</li>
+<li>出图页面</li>
+</ul>
+<h3 id="三个工具"><a class="markdownIt-Anchor" href="#三个工具"></a> 三个工具</h3>
+<ul>
+<li>空间分析工具（Spatial Analyst）：地图代数（栅格计算器）、提取分析（按掩膜提取）</li>
+<li>数据管理工具</li>
+<li>转换工具</li>
+</ul>
+<h2 id="arcgis常用数据格式"><a class="markdownIt-Anchor" href="#arcgis常用数据格式"></a> ArcGIS常用数据格式</h2>
+<h3 id="1-shapefile格式"><a class="markdownIt-Anchor" href="#1-shapefile格式"></a> 1. Shapefile格式</h3>
+<p>存储地理要素的<b>几何位置和属性信息</b>的非拓扑的矢量数据格式。该数据格式由存储在同一项目工作空间中，且使用特定文件扩展名的三个或更多文件来定义地理要素的几何和属性等。这些文件主要包括：</p>
+<ul>
+<li>
+<p><code>shp</code>:存储要素几何（点坐标）的主文件，<span style='color:red'>必需</span></p>
+</li>
+<li>
+<p><code>shx</code>:存储几何索引的索引文件，<span style='color:red'>必需</span></p>
+</li>
+<li>
+<p><code>dbf</code>:存储要素属性信息的dBASE表（数据库），<span style='color:red'>必需</span></p>
+</li>
+<li>
+<p><code>prj</code>:存储坐标系统信息的文件</p>
+</li>
+<li>
+<p><code>xml</code>:ArcGIS的<b>元数据文件</b>，存储Shapefile数据的相关描述信息</p>
+</li>
+</ul>
+<p>几何与属性是一一对应关系，这种关系基于记录编号。dBASE文件中的属性记录必须与主文件中的记录采用相同顺序。</p>
+<blockquote>
+<p>拓扑是研究几何图形或空间<span style='font-family:kaiti'>在连续改变形状后还能保持不变的一些性质的一个学科。它只考虑物体间的位置关系而不考虑它们的形状和大小。</span>拓扑英文名是Topology，直译是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%9C%B0%E5%BF%97%E5%AD%A6/3731477">地志学</a>，最早指研究地形、地貌相类似的有关学科。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%87%A0%E4%BD%95%E6%8B%93%E6%89%91%E5%AD%A6/9101453">几何拓扑学</a>是十九世纪形成的一门数学分支，它属于几何学的范畴。</p>
+<p><strong>dBase</strong>是第一个在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91/3688503">个人电脑</a>上被广泛使用的单机版<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>系统</p>
+</blockquote>
+<h3 id="2-geodatabase数据格式"><a class="markdownIt-Anchor" href="#2-geodatabase数据格式"></a> 2. Geodatabase数据格式</h3>
+<p>一个全新的空间数据模型，建立在DBMS（Database Management System，数据库管理系统）之上的统一的、智能化的空间数据集。这种数据模型使现实世界的空间数据对象与其逻辑数据模型更为接近，目前共分为三类结构：</p>
+<ul>
+<li>Personal Geodata base：地图数据实际存储在微软的Access数据库的<code>.mdb</code>文件中，这种方法收到存储空间（最多2G）和操作系统的限制（仅限于Windows）。</li>
+<li>File Geodata base：将不同类型的GIS数据集放在一个文件夹下，数据的存储空间依赖于电脑磁盘的大小，<b>是ArcGIS推荐的数据格式</b>。</li>
+<li>基于SDE（Software Develop Engineer，）的Enterprise Geodatabase:通过其可以将空间数据存储到AQL Server或Oracle等商用数据库中，起中介作用。</li>
+</ul>
+<h2 id="mxd地图文件"><a class="markdownIt-Anchor" href="#mxd地图文件"></a> mxd地图文件</h2>
+<p>该格式的文件为地图文件（地图文档），一个地图文件中包含一到多个<b>图层</b>，里面保存每个图层的名称、符号、颜色、字体、标注、注记、数据显示范围、数据源信息等。地图状态的配置文件。</p>
+<h3 id="1-新建文件"><a class="markdownIt-Anchor" href="#1-新建文件"></a> 1. 新建文件</h3>
+<p>【文件】-【新建】，在跳出来的窗口选【新建地图】-【我的模板】，然后在我的模板中选择【空白地图】，默认的地理数据库为<code>../AecGIS/Default.gdb</code>，单击【确认】课生成一个新的地图文件。</p>
+<h3 id="2-打开文件"><a class="markdownIt-Anchor" href="#2-打开文件"></a> 2. 打开文件</h3>
+<p>【文件】-【打开】，单击选择 需要加载的<code>XX.mxd</code>，然后单击打开即可。</p>
+<h3 id="3-另存为"><a class="markdownIt-Anchor" href="#3-另存为"></a> 3. 另存为</h3>
+<h3 id="4-存储数据源的相对路径名"><a class="markdownIt-Anchor" href="#4-存储数据源的相对路径名"></a> 4. 存储数据源的相对路径名</h3>
+<p>【文件】-【地图文档属性】，弹出窗口，选择【存储数据源的相对路径名】</p>
+<h2 id="基本操作"><a class="markdownIt-Anchor" href="#基本操作"></a> 基本操作</h2>
+<h3 id="arcgis菜单栏介绍"><a class="markdownIt-Anchor" href="#arcgis菜单栏介绍"></a> ArcGIS菜单栏介绍</h3>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220304-1.jpg' width=400px>
+  <p align='center' style='font-family:kaiti'>图1 【文件】下拉菜单</p>
+  <p align='left' style='font-family:kaiti'>图片来源：曾冰《区域经济分析与ArcGIS软件应用》第51页。</p>
+</div>
+<p>【编辑】-【缩放至所选元素】：所选择元素居中，且以其地理范围显示。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220304-2.png' width=400px>
+  <p align='center' style='font-family:kaiti'>图2 【插入】下拉菜单</p>
+  <p align='left' style='font-family:kaiti'>图片来源：曾冰《区域经济分析与ArcGIS软件应用》第53页。</p>
+</div>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220304-3.png' width=400px>
+  <p align='center' style='font-family:kaiti'>图3 【选择】下拉菜单</p>
+  <p align='left' style='font-family:kaiti'>图片来源：曾冰《区域经济分析与ArcGIS软件应用》第54页。</p>
+</div>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220304-4.png' width=400px>
+  <p align='center' style='font-family:kaiti'>图4 【窗口】下拉菜单</p>
+  <p align='left' style='font-family:kaiti'>图片来源：曾冰《区域经济分析与ArcGIS软件应用》第55页。</p>
+</div>
+<p>右击数据框，在弹出菜单中单击【属性】，打开【数据框属性】对话框。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220305-5.png' width=400px>
+  <p align='center' style='font-family:kaiti'>图5 数据框属性</p>
+  <p align='left' style='font-family:kaiti'>图片来源：曾冰《区域经济分析与ArcGIS软件应用》第59页。</p>
+</div>
+<p>其中，经常需要用到的常规、数据框、坐标系、框架等选项卡，常规选项卡用来数据框名称、单位、参考比例等设置；数据框用来范围、全图命令使用范围以及裁剪选项的设置；坐标系用来显示与变换数据框坐标系；框架选项卡用来设置边框、背景、阴影等。</p>
+<h3 id="图层管理"><a class="markdownIt-Anchor" href="#图层管理"></a> 图层管理</h3>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220305-6.png' height=400px>
+  <p align='center' style='font-family:kaiti'>图6 图层弹出菜单</p>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220305-7.png' width=400px>
+  <p align='center' style='font-family:kaiti'>图7 图层属性</p>
+  <p align='left' style='font-family:kaiti'>图片来源：曾冰《区域经济分析与ArcGIS软件应用》第60-61页。</p>
+</div>
+<h4 id="图层管理-2"><a class="markdownIt-Anchor" href="#图层管理-2"></a> 图层管理</h4>
+<p>打开ArcCatalog（Arc的文件管理系统），在需要新建图层的文件夹处右击。</p>
+<p>也可在ArcMap中打开ArcCatalog，出现【目录】窗口，右键单击【文件夹连接】-【连接到文件夹】，选择要存放新图层的文件夹。在弹出的菜单中，单击【新建】-【Shapefile】弹出【创建新Shapefile】，选择要新建的要素类型，点【确定】即可。</p>
+<h4 id="删除图层"><a class="markdownIt-Anchor" href="#删除图层"></a> 删除图层</h4>
+<p>在【内容列表】中右击图层，【移除】即可。</p>
+<h3 id="图层合并未解决"><a class="markdownIt-Anchor" href="#图层合并未解决"></a> 图层合并（未解决）</h3>
+<p>点击ArcMap工具栏的“ArcTools工具箱”按钮，打开ArcGIS工具箱，找到并点击【数据管理工具】—【常规】—【合并】，打开图层合并工具。</p>
+<p>紧接着界面上就会弹出一个合并窗口，我们点击“输入数据集”选项下方的下拉按钮，在下拉框中选择需要合并的图层。</p>
+<h3 id="数据视图操作"><a class="markdownIt-Anchor" href="#数据视图操作"></a> 数据视图操作</h3>
+<p>数据视图下，当数据处于非编辑状态时，在地图显示窗口中单击右键，弹出数据视图操作快捷菜单。数据视图操作弹出菜单用于对数据视图中当前显示的图层进行操作。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220305-8.jpg' height=400px>
+  <p align='center' style='font-family:kaiti'>图8 数据视图操作弹出菜单</p>
+  <p align='left' style='font-family:kaiti'>图片来源：曾冰《区域经济分析与ArcGIS软件应用》第62页。</p>
+</div>
+<h4 id="地图浏览"><a class="markdownIt-Anchor" href="#地图浏览"></a> 地图浏览</h4>
+<p>放大、缩小、平移、全图显示、前一视图、后一视图、鹰眼、书签等工具</p>
+<ul>
+<li>鹰眼：【窗口】-【总览】</li>
+<li>书签：用于记录工作中的地图区域或感兴趣的地图区域（可以理解为特写）</li>
+</ul>
+<h4 id="地图颜色层次的设置"><a class="markdownIt-Anchor" href="#地图颜色层次的设置"></a> 地图颜色层次的设置</h4>
+<p>除了直接点击色条以外，还可以右击图层，在【属性】-【符号系统】-【已分类】中进行设置。</p>
+<h3 id="地图投影的设置"><a class="markdownIt-Anchor" href="#地图投影的设置"></a> 地图投影的设置</h3>
+<p>AecToolbox里面：【数据管理工具】-【投影和变换】。如果要修改，在其中选择【定义投影】，将图层拖进去，具体可百度</p>
+<h3 id="设置地图可见的比例尺范围"><a class="markdownIt-Anchor" href="#设置地图可见的比例尺范围"></a> 设置地图可见的比例尺范围</h3>
+<p>右击图层，单击【属性】，在弹出的对话框中，在【常规】选项卡面板的【比例范围】一栏中进行比例范围的设置。</p>
+<h3 id="修复数据来源"><a class="markdownIt-Anchor" href="#修复数据来源"></a> 修复数据来源</h3>
+<p>有时候地图数据绝对或相对路径发生变化就会出现图层丢失的现象。右击出现错误的图层，【数据】-【修复数据源】，在弹出的对话框中选择待修复的原图层，单击【添加】按钮完成修复</p>
+<h3 id="数据导出"><a class="markdownIt-Anchor" href="#数据导出"></a> 数据导出</h3>
+<p>将某一图层，或者整个图层所有数据，以Shapefile或地理数据库要素类的形式进行保存。</p>
+<p>在【内容列表】中右击要导出数据的图层，【数据】-【导出数据】。</p>
+<h3 id="导出地图"><a class="markdownIt-Anchor" href="#导出地图"></a> 导出地图</h3>
+<p>可以将地图导出为jpg，bmp，png，eps，或pdf等格式的文件。</p>
+<p>【文件】-【导出地图】</p>
+<h2 id="arcmap基本操作"><a class="markdownIt-Anchor" href="#arcmap基本操作"></a> ArcMap基本操作</h2>
+<h3 id="1-加载数据"><a class="markdownIt-Anchor" href="#1-加载数据"></a> 1. 加载数据</h3>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220305-9.png' width=400px>
+  <p align='center' style='font-family:kaiti'>图9 通过【文件】加载数据</p>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220305-10.png' width=400px>
+  <p align='center' style='font-family:kaiti'>图10 通过【内容列表】加载数据</p>
+  <p align='left' style='font-family:kaiti'>图片来源：曾冰《区域经济分析与ArcGIS软件应用》第64页。</p>
+</div>
+<ul>
+<li>工具栏的【添加数据】按钮「一个菱形上有一个加号的标志」（按住Ctrl可以添加多个文件）</li>
+<li>【文件】-【添加数据】-【添加数据】（图标和第一种方法一样）（按住Ctrl可以添加多个文件）</li>
+<li>直接将Shapefile拖动到ArcMap的内容列表</li>
+<li>在【目录】窗口中，同上拖动</li>
+</ul>
+<h3 id="2-表操作"><a class="markdownIt-Anchor" href="#2-表操作"></a> 2. 表操作</h3>
+<p>在ArcMap中查看属性：【内容列表】中右键单击一个图层，单击【打开属性列表】。</p>
+<p>在进行区域经济分析很大程度上要用到经济属性信息。表格储存了经济属性信息，可用于显示、查询和分析数据。在ArcGIS中，行和列分别称为记录[代表一个空间要素（所谓要素，可能是河流、城市、森林）]和字段[可能是河流速度、城市人口、森林面积等]。每个字段可存储一个特定的数据类型。表格的<b>数据源</b>可以是地理数据库（文件、个人或SDE）中的独立表、要素图层属性表、dBASE表、INFO表、MicrosoftExcel表、MicrosoftAccess数据库和通过OLEDB访问的其他数据。【表】窗口是用于显示ArcMap中所打开的所有属性表的容器。打开的所有属性表在【表】窗口中均以选项卡形式显示，工具条位于【表】窗口的顶部。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220305-11.png' height=400px>
+  <p align='center' style='font-family:kaiti'>图11 表操作</p>
+  <p align='left' style='font-family:kaiti'>图片来源：曾冰《区域经济分析与ArcGIS软件应用》第67页。</p>
+</div>
+<p>当把鼠标点击并选中表中某一<b>字段</b>，再右击该字段名称，就会出现字段操作菜单。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220305-12.png' width=300px>
+  <p align='center' style='font-family:kaiti'>图12 字段操作</p>
+  <p align='left' style='font-family:kaiti'>图片来源：曾冰《区域经济分析与ArcGIS软件应用》第68页。</p>
+</div>
+<h3 id="3-arctoolbox启动"><a class="markdownIt-Anchor" href="#3-arctoolbox启动"></a> 3. ArcToolbox启动</h3>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220305-13.png' height=300px>
+  <p align='center' style='font-family:kaiti'>图13 勾选标准工具</p>
+  <p align='left' style='font-family:kaiti'>图片来源：曾冰《区域经济分析与ArcGIS软件应用》第69页。</p>
+</div>
+<p>其中常用的工具包括：3D分析工具（转换、表面分析、栅格修补、栅格计算、栅格重分类）、Spetial Analyst工具（条件、密度、距离、提取）、分析工具（提取、叠加分析、邻域分析、统计表）、数据管理工具、空间统计工具（分析模塑、绘制群体、测量地图分布、实用工具）、地统计分析工具、转换工具（不同数据格式之间互相转换的工具）。</p>
+<h2 id="橡树叶课堂实操作图"><a class="markdownIt-Anchor" href="#橡树叶课堂实操作图"></a> 橡树叶课堂实操——作图</h2>
+<p>关注公众号“橡树叶GIS”，里面也有很多数据可供下载，相关的引用规范也有涉及。</p>
+<p>导入数据后的第一步，一般为查看地图的坐标系，方法是右击图层，【属性】–【坐标系】。</p>
+<p>地图中的符号可以更换（如代表城市的点），方法是左击该符号。</p>
+<p><span style='color:red'>【自定义】–【样式管理器】，自定义的内容都保存在这里。</span></p>
+<blockquote>
+<p>DEM：digital elevation model，数字高程模型，通过有限的地形高程数据实现对地面地形的数字化模拟（即地形表面形态的数字化表达），它是用一组有序数值阵列形式表示地面高程的一种实体地面模型</p>
+</blockquote>
+<h3 id="色带自行设置"><a class="markdownIt-Anchor" href="#色带自行设置"></a> 色带自行设置</h3>
+<p>双击DEM图层，在【DEM系统】标签栏可以更改色带。右击【色带】，把“图形视图”前面的对勾去掉，这样就有文字版的色带了。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220308-14.jpg' width=400px>
+  <p align='center' style='font-family:kaiti'>图14 色带关闭图形视图</p>
+</div>
+<p>不过默认的色带可能打不到个人的要求，可在相同的对话框中点击“标注”，可以发现色带是由若干色块进行拉伸形成的。个性化设置就是要自行调整这些色块（双击色块即可自行选择颜色，也可以该后面的“值”）。</p>
+<p>完整步骤：右键图层点击【属性】-【符号系统】标签-【数量】（看变量是分类型还是数值型）-【分级色彩】，从【值】里面选择要展示的变量，在【类】里面选择要展示的层级数量，从色带选择适合的渐变颜色，双击颜色块还可以自定义颜色等等。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220311-15.png' width=500px>
+  <p align='center' style='font-family:kaiti'>图15a 色带</p>
+</div>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220308-16.png' width=400px>
+  <p align='center' style='font-family:kaiti'>图15 标注</p>
+</div>
+<p>当然，也可以导入别人做现成的色带。第一步是把别人的图层导入进来，然后打开自己图层的属性，点击上图中那个“打开的文件夹”按钮。然后导入符号系统，可以把另一个图层的色带导入到当前工作图层。最后把别人的图层删掉就可以了</p>
+<blockquote>
+<p>如果新添加一个图层，图层旁边出现了感叹号，可能是新图层没有数据源造成的。解决方法是帮助新图层选择数据源：右击-【属性】-【源】-【设置数据源】-【XX.gdb】–[相应数据源]。</p>
+</blockquote>
+<h3 id="视图"><a class="markdownIt-Anchor" href="#视图"></a> 视图</h3>
+<p>左下角有两个视图：</p>
+<ul>
+<li>数据视图</li>
+<li>布局视图</li>
+</ul>
+<p>对于布局视图，形成两个黑框。最外面的框代表打印纸的边界，里面的框代表工作区。对于内框而言，一个图中可以放多个“数据框”。</p>
+<blockquote>
+<p>“选择元素”和“选择要素”是不一样的。后者用于对数据进行选择和编辑使用的工具，前者是对地图中的元素进行操作的工具。</p>
+<p>布局视图下的工具栏和整个软件工具栏上有若干对“一模一样”的工具，例如“放大缩小”、“全图”等。<b>不过布局视图下的工具对整张图奏效，整个软件的工具对图中的元素生效。</b></p>
+</blockquote>
+<p>调整纸张的横竖向：右键后选择【页面和打印设置】-【方向】-【横向】。此外此处还可以设置出图的大小、清晰度等。</p>
+<p>调整内框地图的大小：右键-【分布】-【调整到页边距大小】</p>
+<h3 id="地图标注"><a class="markdownIt-Anchor" href="#地图标注"></a> 地图标注</h3>
+<p>标注的方法是右键图层-【标注要素】，在这里还可以修改字体、字号等个性化元素。（第二张图红框圈住的对勾一定要勾选）</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220308-17.jpg' width=500px>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220308-18.jpg' width=500px>
+  <p align='center' style='font-family:kaiti'>图16 地图标注</p>
+</div>
+<p>当然，当属性表中有多个字段（数据类型）的时候，标记的字段是可以自己选择的。还是在图层属性-标注标签页内操作：</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220308-19.jpg' width=500px>
+  <p align='center' style='font-family:kaiti'>图17 标记字段的选择</p>
+</div>
+<p>如果不存在字段，还可以自己手动添加文本。【插入】-【文本】。更改这种方式的文字格式，在属性对话框里选择【更改符号】。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220308-19a.jpg' width=500px>
+  <p align='center' style='font-family:kaiti'>图18 添加文本的格式设置</p>
+</div>
+<h3 id="坐标格网"><a class="markdownIt-Anchor" href="#坐标格网"></a> 坐标格网</h3>
+<p>在布局视图右键，【属性】-【格网】-【新建格网】-【经纬网】，之后都选默认选项，先生成经纬网，之后再做微调。</p>
+<p>在数据框属性的【格网】一栏中，可以对前面已经生成的经纬网进行设置，其中“样式”选项可以直接使用别人已经做好的经纬网模板，“属性”一栏是我们进行个性化设定。我们只讲“属性”栏。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220308-20.jpg' width=500px>
+  <p align='center' style='font-family:kaiti'>图19 格网属性</p>
+</div>
+<p>打开这个“属性”后，还有更加庞杂的“参考系属性”。“轴”标签更改边框，“标注”标签更改标注文本的标准方向、字体字号、显示的标注轴等。“线”可以设置线型。“间隔”可以设置经纬网的密度，并且可以设置经纬线的原点、显示的“度分秒”或者“十进制度”等等。标注符号都可以自行修改。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220308-21.jpg' width=500px>
+  <p align='center' style='font-family:kaiti'>图20 参考系属性</p>
+</div>
+<h2 id="arcmap数据操作"><a class="markdownIt-Anchor" href="#arcmap数据操作"></a> ArcMap数据操作</h2>
+<h3 id="1-启用编辑器"><a class="markdownIt-Anchor" href="#1-启用编辑器"></a> 1. 启用编辑器</h3>
+<p>单击【自定义】-【工具条】-选中【编辑器】</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220311-22.jpg' width=500px>
+  <p align='center' style='font-family:kaiti'>图21 开启编辑器</p>
+</div>
+<h3 id="2-添加字段及问题的解决"><a class="markdownIt-Anchor" href="#2-添加字段及问题的解决"></a> 2. 添加字段及问题的解决</h3>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220311-23.png' width=500px>
+  <p align='center' style='font-family:kaiti'>图22 通过属性表添加字段</p>
+</div>
+<p>但要注意的是，ArcGIS属性表添加字段，<b>首先要关闭编辑状态</b>。方法是在“编辑器”中点击【停止编辑】即可。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220311-24.png' width=500px>
+  <p align='center' style='font-family:kaiti'>图23 开始编辑与停止编辑</p>
+</div>
+<p>此外还可以通过工具箱来添加字段，【数据管理工具】→字段】→（添加字段】，如图24所示：</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220311-25.jpg' width=500px>
+  <p align='center' style='font-family:kaiti'>图24 通过工具箱添加字段</p>
+</div>
+<p>字段添加成功后，需要考虑添加属性数据，同样也有两种方法。一种是直接打开编辑器下的开始编辑，然后点击相应字段，在空白处即可添加属性值了。另外一种是利用计算器批量赋值，该操作无需在编辑状态下即可进行，左键单击属性表对应字段名称，单击字段计算器，输入相应算法。</p>
+<p>【删除字段】，右击字段，然后【删除字段】</p>
+<p>【关闭字段】，右击字段，然后【关闭字段】；也可在图层属性里面操作，【字段】标签下勾选或取消勾选对应字段。</p>
+<h3 id="3-计算面积"><a class="markdownIt-Anchor" href="#3-计算面积"></a> 3. 计算面积</h3>
+<p>【属性表计算】有汇总、统计、字段计算器、计算几何四类操作。</p>
+<p>这里以面要素的面积计算来进行演示。在ArcMap图层列表中，右键点击江西省地级市图层，然后选择【打开属性表】，在表对话框中，【表选项】→【添加字段】，在添加字段对话框中，输入字段名称：Area,类型：浮点或者精度，在表对话框中，在&quot;Area”字段名称处右键单击，选【计算几何】，在弹出的对话框选择【是】。在计算几何对话框中，我们<b>发现属性一栏显示面积已禁用</b>，从中可以看出由于该图层使用的是GCS:WGS1984地坐标系，导致难以计算面积，这里需要我们将地理坐标系变换为投影坐标系（Asia Lambert Conformal Conic）投影。</p>
+<p>进行投影变换后，重新点击AREA进行计算几何，此时属性一栏中面积不再禁用，同时坐标系也已显示发生变化，单位一栏设置为平方千米。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220311-26.jpg' height=500px>
+  <p align='center' style='font-family:kaiti'>图25 面积计算</p>
+</div>
+<h3 id="4-数据导出与外部数据的导入"><a class="markdownIt-Anchor" href="#4-数据导出与外部数据的导入"></a> 4. 数据导出与外部数据的导入</h3>
+<p>借助工具箱导出，【转换工具】-【excel】-【表转excel】（同样还有excel转表的工具）,弹出对话框，在输入表找转换的图层，在输出excel文件一栏设置好相应路径。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220311-27.png' width=500px>
+  <p align='center' style='font-family:kaiti'>图26 表转excel</p>
+</div>
+<h3 id="5-excel数据的导入-连接"><a class="markdownIt-Anchor" href="#5-excel数据的导入-连接"></a> 5. Excel数据的导入、连接</h3>
+<p>在进行区域经济分析时，经常会碰到经济类属性数据大多会被储存在EXCEL表中，当我们有一些空数据和一些经济属性数据（表），希望把经济属性数据和空间数据连接起来时，可以通过ArcMap的接能行，<b>该功能是基于属性的一个公共字段</b>，将两个数据进行合并，可以是要素类与要素类的合并，也可以是表和要素类的合并。<u>通过属性连接将另外一个要素类或者表的信息与目标要素类进行合并，看起来就像是一张表一样。</u>然后利用新增的属性信息进行数据的查询、显示、分析等操作。以下就如何将GDP属性数据导入江西省地市级图层进行操作说明：</p>
+<p>(1)数据准备：一是西省地市图层，二带有各地级市GDP的excel表，这里需要注意的是，图层与excel表中一定要有对应的字段，通会地级市名称，并保持高度一致。</p>
+<p>(2)打开江西省地级市图层，并在图层上右键，选择【打开属性表】，再另外打开excel,<b>可以看到属性表中name字段值与excel中地区字段值是一致的。</u></p>
+<p>(3)右键点击江西省地级市图层，选择【连接和关联】→连接】，打开【连接数据】窗口，按照下图圆圈内提示进行设置，如下：</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220311-28.png' width=500px>
+  <p align='center' style='font-family:kaiti'>图27 数据连接</p>
+</div>
+<p>(4)考虑到属性表字段值格式会与excel表一导致连接后出现空值，可考虑点击“验证连接”査看连接汇总情况。依次点击【关闭】和【确定】，关掉连接窗口。</p>
+<p>(5)此时再打开江西省地级市图层的属性表，可以査到GDP属性信息已经连接到图层中：</p>
+<h3 id="6-多个属性表并列"><a class="markdownIt-Anchor" href="#6-多个属性表并列"></a> 6. 多个属性表并列</h3>
+<p>如果操作的时候需要同时打开多个图层的属性表，而且往往要将属性表之间进行对比，这时候需要的操作是，点击属性表窗口左上角的按钮，【排列表】-【新建水平选项卡组】/【新建垂直选项卡组】。</p>
+<div align='center'>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220315-29.jpg' width=500px>
+  <img src='/../../images/ArcGIS%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/image-20220315-30.png' width=500px>
+  <p align='center' style='font-family:kaiti'>图28 属性表并列</p>
+</div>
+<h3 id="7-恢复默认弹出提示窗口未解决"><a class="markdownIt-Anchor" href="#7-恢复默认弹出提示窗口未解决"></a> 7. 恢复默认弹出提示窗口（未解决）</h3>
+<p>一不小心点击了“此后不再提示”，从此可能出现问题的提醒窗口都被关闭了，怎么办？</p>
+<p>打开ArcMap-----&gt;自定义------&gt;ArcMap选项-----&gt;栅格----&gt;随意设置就可以神奇的复原默认弹出框。</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="tags/%E7%BB%8F%E6%B5%8E%E5%9C%B0%E7%90%86/">经济地理</a><a class="post-meta__tags" href="tags/ArcGIS/">ArcGIS</a><a class="post-meta__tags" href="tags/%E7%BB%98%E5%9B%BE/">绘图</a></div><div class="post_share"><div class="social-share" data-image="/private_img/banner2.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/private_img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/private_img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/private_img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/private_img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="760399875.html" title="演化经济学简单介绍"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/private_img/banner.gif'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">演化经济学简单介绍</div></div></a></div><div class="next-post pull-right"><a href="1043096744.html" title="什么是休克疗法"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/private_img/banner.gif'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">什么是休克疗法</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="832098100.html" title="不平衡发展：自然、资本与空间的生产"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-08</div><div class="title">不平衡发展：自然、资本与空间的生产</div></div></a></div><div><a href="3977465696.html" title="克鲁格曼报酬递增与经济地理"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-07</div><div class="title">克鲁格曼报酬递增与经济地理</div></div></a></div><div><a href="821534326.html" title="新经济地理学"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-26</div><div class="title">新经济地理学</div></div></a></div><div><a href="1538174417.html" title="新城市前沿：士绅化与恢复失地运动者之城"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-13</div><div class="title">新城市前沿：士绅化与恢复失地运动者之城</div></div></a></div><div><a href="3173749358.html" title="第3章从资本主义多样性到不平衡与综合发展：一个新视角"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-06</div><div class="title">第3章从资本主义多样性到不平衡与综合发展：一个新视角</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="../private_img/yuyingnan.jpg" onerror="this.onerror=null;this.src='../private_img/404.gif'" alt="avatar"/></div><div class="author-info__name">揭晓</div><div class="author-info__description">随手写一写，揭晓这世界</div></div><a id="card-info-btn" href="/"><i class="fas fa-home"></i><span>回到首页</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%BE%E7%AE%80%E5%A4%A7%E7%BA%B2"><span class="toc-text"> 精简大纲</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E6%95%B0%E6%8D%AE"><span class="toc-text"> 三种数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E4%B8%AA%E7%95%8C%E9%9D%A2"><span class="toc-text"> 三个界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E4%B8%AA%E5%B7%A5%E5%85%B7"><span class="toc-text"> 三个工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arcgis%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F"><span class="toc-text"> ArcGIS常用数据格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-shapefile%E6%A0%BC%E5%BC%8F"><span class="toc-text"> 1. Shapefile格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-geodatabase%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F"><span class="toc-text"> 2. Geodatabase数据格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mxd%E5%9C%B0%E5%9B%BE%E6%96%87%E4%BB%B6"><span class="toc-text"> mxd地图文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-text"> 1. 新建文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6"><span class="toc-text"> 2. 打开文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8F%A6%E5%AD%98%E4%B8%BA"><span class="toc-text"> 3. 另存为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE%E6%BA%90%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%90%8D"><span class="toc-text"> 4. 存储数据源的相对路径名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text"> 基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#arcgis%E8%8F%9C%E5%8D%95%E6%A0%8F%E4%BB%8B%E7%BB%8D"><span class="toc-text"> ArcGIS菜单栏介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%B1%82%E7%AE%A1%E7%90%86"><span class="toc-text"> 图层管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E5%B1%82%E7%AE%A1%E7%90%86-2"><span class="toc-text"> 图层管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%9B%BE%E5%B1%82"><span class="toc-text"> 删除图层</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%B1%82%E5%90%88%E5%B9%B6%E6%9C%AA%E8%A7%A3%E5%86%B3"><span class="toc-text"> 图层合并（未解决）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A7%86%E5%9B%BE%E6%93%8D%E4%BD%9C"><span class="toc-text"> 数据视图操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E6%B5%8F%E8%A7%88"><span class="toc-text"> 地图浏览</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E9%A2%9C%E8%89%B2%E5%B1%82%E6%AC%A1%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-text"> 地图颜色层次的设置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-text"> 地图投影的设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%9C%B0%E5%9B%BE%E5%8F%AF%E8%A7%81%E7%9A%84%E6%AF%94%E4%BE%8B%E5%B0%BA%E8%8C%83%E5%9B%B4"><span class="toc-text"> 设置地图可见的比例尺范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E6%95%B0%E6%8D%AE%E6%9D%A5%E6%BA%90"><span class="toc-text"> 修复数据来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA"><span class="toc-text"> 数据导出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA%E5%9C%B0%E5%9B%BE"><span class="toc-text"> 导出地图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arcmap%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text"> ArcMap基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE"><span class="toc-text"> 1. 加载数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%A1%A8%E6%93%8D%E4%BD%9C"><span class="toc-text"> 2. 表操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-arctoolbox%E5%90%AF%E5%8A%A8"><span class="toc-text"> 3. ArcToolbox启动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A9%A1%E6%A0%91%E5%8F%B6%E8%AF%BE%E5%A0%82%E5%AE%9E%E6%93%8D%E4%BD%9C%E5%9B%BE"><span class="toc-text"> 橡树叶课堂实操——作图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%B2%E5%B8%A6%E8%87%AA%E8%A1%8C%E8%AE%BE%E7%BD%AE"><span class="toc-text"> 色带自行设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE"><span class="toc-text"> 视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E6%A0%87%E6%B3%A8"><span class="toc-text"> 地图标注</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%90%E6%A0%87%E6%A0%BC%E7%BD%91"><span class="toc-text"> 坐标格网</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arcmap%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><span class="toc-text"> ArcMap数据操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%90%AF%E7%94%A8%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text"> 1. 启用编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%AE%B5%E5%8F%8A%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3"><span class="toc-text"> 2. 添加字段及问题的解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%AE%A1%E7%AE%97%E9%9D%A2%E7%A7%AF"><span class="toc-text"> 3. 计算面积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E4%B8%8E%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5"><span class="toc-text"> 4. 数据导出与外部数据的导入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-excel%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5-%E8%BF%9E%E6%8E%A5"><span class="toc-text"> 5. Excel数据的导入、连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%A4%9A%E4%B8%AA%E5%B1%9E%E6%80%A7%E8%A1%A8%E5%B9%B6%E5%88%97"><span class="toc-text"> 6. 多个属性表并列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%81%A2%E5%A4%8D%E9%BB%98%E8%AE%A4%E5%BC%B9%E5%87%BA%E6%8F%90%E7%A4%BA%E7%AA%97%E5%8F%A3%E6%9C%AA%E8%A7%A3%E5%86%B3"><span class="toc-text"> 7. 恢复默认弹出提示窗口（未解决）</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../998865776.html" title="Zotero文献管理">Zotero文献管理</a><time datetime="2023-02-21T13:38:52.170Z" title="更新于 2023-02-21 21:38:52">2023-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3276806131.html" title="博客搭建日志">博客搭建日志</a><time datetime="2023-02-21T09:54:36.689Z" title="更新于 2023-02-21 17:54:36">2023-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../2511924152.html" title="博士论文手稿">博士论文手稿</a><time datetime="2023-02-21T07:11:01.944Z" title="更新于 2023-02-21 15:11:01">2023-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3550224356.html" title="比较政治经济学">比较政治经济学</a><time datetime="2023-02-18T09:20:11.226Z" title="更新于 2023-02-18 17:20:11">2023-02-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../1120410056.html" title="中国的“南南贸易”：不平等交换和不平衡与综合发展">中国的“南南贸易”：不平等交换和不平衡与综合发展</a><time datetime="2023-02-17T15:10:37.594Z" title="更新于 2023-02-17 23:10:37">2023-02-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3667980037.html" title="第四章第五章材料摘抄">第四章第五章材料摘抄</a><time datetime="2023-02-16T08:15:56.433Z" title="更新于 2023-02-16 16:15:56">2023-02-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../123068617.html" title="现代社会中的科层制与水平组织">现代社会中的科层制与水平组织</a><time datetime="2023-02-12T06:04:24.815Z" title="更新于 2023-02-12 14:04:24">2023-02-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../1073151541.html" title="德斯米特空间发展">德斯米特空间发展</a><time datetime="2023-02-08T04:44:27.864Z" title="更新于 2023-02-08 12:44:27">2023-02-08</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/private_img/banner2.gif')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 揭晓</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="js/utils.js"></script><script src="js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://dhndzwxj.github.io/2760098610.html'
+    this.page.identifier = ''
+    this.page.title = 'ArcGIS基础内容'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-www-dhndzwxj-top.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script type='text/javascript' src='https://ajax.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script id="dsq-count-scr" src="//https-www-dhndzwxj-top.disqus.com/count.js" async></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="../js/search/local-search.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'b16a1fa0e63c46a4b8f28abfb06ae3fe';
+  var gaud_map_key = 'e2b04289e870b005374ee030148d64fd&s=rsv3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
+<link rel="stylesheet" href="css/bilicard.css">
+<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>VAR模型的前世今生 | 小荷才露尖尖角</title><meta name="author" content="揭晓"><meta name="copyright" content="揭晓"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="沈悦,李善燊,马续涛.VAR宏观计量经济模型的演变与最新发展——基于2011年诺贝尔经济学奖得主Smis研究成果的拓展脉络[J].数量经济技术经济研究,2012,29(10):150-160.   内容提要 本文对VAR宏观计量经济模型的拓展和应用进行综述和总结。VAR模型在批判中逐步向结构式、非线性、空间计量以及利用贝叶斯统计推断技术的方向演变。进入21世纪之后，基于动态随机一般均衡的DSGE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VAR模型的前世今生">
+<meta property="og:url" content="https://dhndzwxj.github.io/2929925109.html">
+<meta property="og:site_name" content="小荷才露尖尖角">
+<meta property="og:description" content="沈悦,李善燊,马续涛.VAR宏观计量经济模型的演变与最新发展——基于2011年诺贝尔经济学奖得主Smis研究成果的拓展脉络[J].数量经济技术经济研究,2012,29(10):150-160.   内容提要 本文对VAR宏观计量经济模型的拓展和应用进行综述和总结。VAR模型在批判中逐步向结构式、非线性、空间计量以及利用贝叶斯统计推断技术的方向演变。进入21世纪之后，基于动态随机一般均衡的DSGE">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dhndzwxj.github.io/private_img/banner2.gif">
+<meta property="article:published_time" content="2021-01-08T07:31:44.000Z">
+<meta property="article:modified_time" content="2023-01-06T09:51:42.504Z">
+<meta property="article:author" content="揭晓">
+<meta property="article:tag" content="VAR">
+<meta property="article:tag" content="宏观模型">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dhndzwxj.github.io/private_img/banner2.gif"><link rel="shortcut icon" href="/private_img/favicon.png"><link rel="canonical" href="https://dhndzwxj.github.io/2929925109.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":50,"position":"top","messagePrev":"本文上次更新距离今天已经过去","messageNext":"天, 文中内容可能已经过时，望周知。"},
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'VAR模型的前世今生',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-06 17:51:42'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet"><link href="https://fonts.loli.net/css2?family=Ma+Shan+Zheng:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/wave.css?v1"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="atom.xml" title="小荷才露尖尖角" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="../private_img/yuyingnan.jpg" onerror="onerror=null;src='/private_img/404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="../archives/"><div class="headline">文章</div><div class="length-num">267</div></a><a href="/"><div class="headline">标签</div><div class="length-num">642</div></a><a href="../categories/"><div class="headline">分类</div><div class="length-num">73</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="../air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/private_img/banner2.gif')"><nav id="nav"><span id="blog-info"><a href="../index.html" title="小荷才露尖尖角"><span class="site-name">小荷才露尖尖角</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="../air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">VAR模型的前世今生</h1><div id="post-meta"><div class="meta-firstline"><i class="fa-solid fa-user"></i><span class="post-meta-author">揭晓</span><span class="post-meta-date"><span class="post-meta-separator">|</span><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-08T07:31:44.000Z" title="发表于 2021-01-08 15:31:44">2021-01-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-06T09:51:42.504Z" title="更新于 2023-01-06 17:51:42">2023-01-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/">计量与模型</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/%E8%AE%A1%E9%87%8F/">计量</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/%E8%AE%A1%E9%87%8F/VAR/">VAR</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>23分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="VAR模型的前世今生"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>沈悦,李善燊,马续涛.<a href='https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFD2012&filename=SLJY201210012&v=3okYWMSAUuHAiz5R54sVGWnZvZ1vSw90yn8ygpxRG6kl9hK3uadwvdP5KNNTuFQ6' target='_blank'>VAR宏观计量经济模型的演变与最新发展——基于2011年诺贝尔经济学奖得主Smis研究成果的拓展脉络</a>[J].数量经济技术经济研究,2012,29(10):150-160.</p>
+</blockquote>
+<h3 id="内容提要"><a class="markdownIt-Anchor" href="#内容提要"></a> 内容提要</h3>
+<p>本文对VAR宏观计量经济模型的拓展和应用进行综述和总结。VAR模型在批判中逐步向结构式、非线性、空间计量以及利用贝叶斯统计推断技术的方向演变。进入21世纪之后，基于动态随机一般均衡的DSGE-VAR模型、时变参数的TVP-VAR模型以及处理大规模变量的FAVAR模型等成为宏观计量经济分析的前沿。本文最后指出该类模型在运用中应注意的问题。</p>
+<h2 id="引言"><a class="markdownIt-Anchor" href="#引言"></a> 引言</h2>
+<p>计量经济模型既为经济理论与思想提供了科学的验证方法，同时也自成体系，发挥着“让数据本身说话”的功效。传统的经济计量方法（如多元线性回归模型、联立方程模型等结构性方法）是以简单的经济理论为基础来描述变量间的关系，人为地决定某些变量的内生或外生性，这使得模型的估计和推断变得不可靠。为了克服这些不足，Sims（1980）<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>提出非限制性向量自回归模型（Unrestricted Vector Auto-regression）或称之为简约式VAR模型，该模型及以后的拓展形式在整个计量经济学体系中占据着重要地位，至今在宏观经济计量方面有着广泛的应用。作为2011年诺贝尔经济学奖获得者之一，Sims的获奖理由就是开创性地利用VAR模型对宏观经济中的因果关系进行了实证研究，并对实证宏观计量经济的发展作出了重要贡献。本文的任务就是基于Sims研究成果的拓展脉络，对VAR宏观经济计量模型的演进与发展做以梳理和综述，比较各类VAR模型扩展形式的特点，对该模型在2000年后的最新发展和应用情况做介绍，并指出该类模型在运用中应注意的问题。</p>
+<blockquote></blockquote>
+<h2 id="一-var宏观计量模型的基本结构与运用"><a class="markdownIt-Anchor" href="#一-var宏观计量模型的基本结构与运用"></a> 一、VAR宏观计量模型的基本结构与运用</h2>
+<p>VAR模型以多方程联立的形式出现，系统内每个方程右边的变量是相同的，包括所有<span style='color:red'>内生变量</span>的滞后值，然后通过模型中所有内生当期变量对它们的若干滞后值进行回归，进而估计出全部内生变量的动态关系。</p>
+<p>与早期的结构性模型比较，VAR模型的优点在于：</p>
+<ul>
+<li>第一，不以严格的经济理论为依据，而是让数据关系说明一切；</li>
+<li>第二，解释变量中不包括任何当期变量，只要样本足够大，就不存在因参数过多产生模型不可识别的问题；</li>
+<li>第三，无需事先区分变量的外生性和内生性。</li>
+</ul>
+<p>VAR模型主要用来处理<span style='color:red'>平稳性数据</span>，传统的理论要求对于非平稳的时间序列经过差分再建立VAR模型，这样通常会损失掉许多信息，同时也会使得分析结果难以得到解释，但只要各变量之间存在<span style='color:red'>协整关系</span>也可以直接建立VAR模型。Engle和Granger（1987）<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>将协整与误差修正模型结合起来，建立了向量误差修正模型（VEC），可以较好地克服VAR模型的不足。在这里确定VAR模型滞后期十分关键。目前的Eviews6.0软件有5种方法可以<span style='color:red'>确定模型的滞后期，分别是LR、FPE、AIC、SC、HQ，如果出现检验结果不一致时，一般选取次数最多的最优滞后阶数。</span></p>
+<blockquote>
+<p><a href='https://zhuanlan.zhihu.com/p/64874795' target='_blank'>恩格尔（Engle）与格兰杰（Granger）——2003诺贝尔经济学奖</a></p>
+</blockquote>
+<p>VAR模型还可以用来检验变量之间是否存在因果关系，Granger因果检验正是基于VAR模型来定义的。传统的Granger因果关系检验分为基于水平VAR模型的因果关系检验和基于差分VAR模型的因果关系检验。基于水平VAR模型进行多变量系统的因果关系检验因未考虑变量的非稳定性和变量系统的协整性而存在一定的问题；基于差分VAR模型来进行因果关系检验容易使信息丧失且首先要求检验变量的平稳性和协整关系，使其在实证检验中的应用受到限制。当研究者并不关注变量的协整性而只关注其因果关系，或者协整性不存在但需要研究其因果关系时，就需要一种新的检验方法。Toda和Yamamoto（1995）<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>提出的“基于扩展VAR模型（Lag-Augmented VAR，LA-VAR）的因果关系检验”可以不考虑单位根的个数和变量的协整性，这在后来的因果关系检验中得到应用。</p>
+<blockquote></blockquote>
+<p>对VAR模型单个参数估计值的经济解释是很困难的，因此，要想对一个VAR模型做出分析，通常是观察系统的脉冲响应函数和方差分解。脉冲响应函数描述的是VAR模型中的一个内生变量的冲击给其他内生变量所带来的影响。为了区分新息冲击对具体变量的影响大小，通常采用乔利斯基分解方法，但此法对进入模型的变量的次序很敏感，一旦改变变量的次序，得到的脉冲响应函数也不同。Pesaran和Shin（1998）<a target="_blank" rel="noopener" href="https://dhndzwxj-3ghxc51j1010c2ed-1302940033.tcloudbaseapp.com/2929925109/#fn_4">4</a>所提出的广义脉冲响应函数解决了这个问题，可以不考虑变量排序问题而得出唯一的脉冲响应函数曲线。方差分解是通过分析每一个结构冲击对内生变量变化的贡献度，来评价不同结构冲击的重要性，从而反映其他变量对某一变量变动的贡献度。</p>
+<blockquote></blockquote>
+<h2 id="二-var宏观计量模型的演变"><a class="markdownIt-Anchor" href="#二-var宏观计量模型的演变"></a> 二、VAR宏观计量模型的演变</h2>
+<p>VAR模型具有良好的计量特性使得该模型一经提出就得到广泛运用，然而该模型也存在不足，主要表现为：第一，如果滞后期越长，变量越多，那么需要估计的参数就越多，对数据样本长度的要求就越大；第二，模型并不严格遵循经济理论，对变量未施加结构性约束，也不考虑变量之间的同期相关性，这会影响模型估计效果；第三，模型难以刻画理性预期因素，无法避免“卢卡斯批判”；第四，该模型是常参数模型，但很多证据表明，在经济系统发生大的结构性变化时，VAR参数并不稳定；第五，VAR模型所处理的经济变量个数有限；难以全面反映经济体的真实情况。此后VAR模型的演变与发展基本上都是围绕以上不足进行的。</p>
+<h3 id="1svar从简约式步入到结构式"><a class="markdownIt-Anchor" href="#1svar从简约式步入到结构式"></a> 1.SVAR：从简约式步入到结构式</h3>
+<p>由于简约式的VAR模型事前不考虑结构性的经济冲击，难以与实际经济情况相吻合，使得人们不断对这种方法提出质疑。为了解决这一问题，计量经济学家提出了很多方法。Blanchard和Quah（1990）<a target="_blank" rel="noopener" href="https://dhndzwxj-3ghxc51j1010c2ed-1302940033.tcloudbaseapp.com/2929925109/#fn_5">5</a>对VAR模型进行修正，提出结构向量自回归模型（Structural VAR，SVAR）。SVAR模型尝试加入若干结构性约束得到唯一的结构关系，解决模型对信息的识别问题，从而使脉冲响应具有一定的经济意义。SVAR模型由此在经济研究中得到了广泛的应用，并逐渐取代传统VAR模型，成为主要的分析方法，Smith（1993）<a target="_blank" rel="noopener" href="https://dhndzwxj-3ghxc51j1010c2ed-1302940033.tcloudbaseapp.com/2929925109/#fn_6">6</a>等学者运用该方法取得良好的研究效果。McCarthy等（1993）<a target="_blank" rel="noopener" href="https://dhndzwxj-3ghxc51j1010c2ed-1302940033.tcloudbaseapp.com/2929925109/#fn_7">7</a>则提出另一种结构式VAR模型，即递归型VAR（Recursive Vector Autoregressive，RVAR），在RVAR模型中引入同期变量作为解释变量，这种改进对变量的顺序安排有严格要求，排序在前的变量同期影响排序在后的变量但是排序在后的变量同期不影响排序在前的变量。虽然SVAR比VAR有很大的进步，但是从目前的运用来看，不足之处在于识别结构性冲击时施加的外生约束过于随意，难以规范。</p>
+<blockquote></blockquote>
+<h3 id="2bvarvar模型统计推断方法上的革命"><a class="markdownIt-Anchor" href="#2bvarvar模型统计推断方法上的革命"></a> 2.BVAR：VAR模型统计推断方法上的革命</h3>
+<p>贝叶斯方法是基于贝叶斯定理而发展起来用于系统地阐述和解决统计问题的方法。早在1764年，英国新教牧师兼数学家托马斯·贝叶斯就以贝叶斯定理解答了逆概率问题，同时期法国著名学者拉普拉斯也独立地发现了贝叶斯定理，并将其应用到更广泛的领域。随后在受到正统数理流派的批判与冲击中，贝叶斯统计推断方法几度消沉，然而却在20世纪50年代奇迹复活并迅速成长为现今的贝叶斯学派。贝叶斯统计推断方法为解决VAR模型参数过多时的估计问题提供一种新的分析框架。遵循贝叶斯定律，贝叶斯估计假设VAR待估系数服从一定的先验分布，这种先验分布与似然函数结合，得到参数的后验分布，从而增加预测的准确性。先验分布的引入缩小了系数的取值范围，有助于避免无约束VAR的自由度损失问题。贝叶斯先验分布可以采取很多种不同的形式，最著名的是Litterman等（1986）<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>使用的Minnesota共轭先验分布①。</p>
+<p>20世纪80年代以来，BVAR模型已经成为西方国家政策领域常用的预测工具。Dua和Ray（1995）<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>利用BVAR模型对美国康涅狄格州就业率等经济变量进行预测，发现预测精度要高于VAR和ARIMA两类模型的预测结果。Kenny等（1998）<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>利用BVAR研究了爱尔兰通货膨胀问题，与爱尔兰中央银行基于非贝叶斯方法的预测结果相比较，发现前者的预测效果更好。Dejonga等（2000）<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>利用BVAR模型研究经济周期问题，发现具有良好的预测效果。Edge等（2006）综合比较了美联储研究人员的主观判断预测、随机游走预测、DSGE模型预测和BVAR预测，结果发现BVAR预测结果最具有稳健型。</p>
+<blockquote></blockquote>
+<h3 id="3pvar向空间计量的拓展"><a class="markdownIt-Anchor" href="#3pvar向空间计量的拓展"></a> 3.PVAR：向空间计量的拓展</h3>
+<p>为了克服VAR模型对数据量的限制和空间个体的异质性影响，计量经济学家们对VAR模型进行了改进，提出了基于面板数据的向量自回归（Panel Data VectorAutoregression，PVAR）模型。PVAR不仅继承了传统VAR的优良特性，更重要的是由于面板分析的引进使得PVAR具有两方面的优点：</p>
+<ul>
+<li>一是对数据的长度要求降低，只要<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">T\ge 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>​（T为时间序列的长度，m为滞后项的阶数）便可以对方程的参数进行估计，当 $ T\ge 2m+2 $ ​时，即可在稳态下估计滞后项的参数；</li>
+<li>二是该模型能够控制由于空间变动造成的不可观测的个体异质性，个体效应允许不可观察的个体差异，时间效应则可以捕捉到个体在横截面上可能受到的共同冲击。这使得VAR模型摆脱了对单纯个体时间序列数据的依赖并向空间计量进一步拓展，为宏观经济研究提供了一个相当灵活的分析框架。</li>
+</ul>
+<p>早期的面板数据向量自回归模型是Chamberlain（1983）<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>基于简单混合数据的研究，之后Holtz-Eakin等（1988）<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>利用两阶段最小二乘法研究了一类时变系数的PVAR模型。而对PVAR模型的深入拓展则是从Pesaran和Smith（1995）<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup>的开创性研究开始，他们的研究表明，可以通过对PVAR模型中每个变量的个体平均时间序列数据建立时间序列向量自回归模型的方法估计模型参数，并且证实这种估计是一致的。在进行模型估计时，Arellano和Bover（1995）<sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup>提出采用“组内均值差分法”去除时间效应，采用“前向均值差分法”去除个体效应。后来Mccuskey和Kao（1998）<sup class="footnote-ref"><a href="#fn12" id="fnref12">[12]</a></sup>、Westerlund（2005）<a target="_blank" rel="noopener" href="https://dhndzwxj-3ghxc51j1010c2ed-1302940033.tcloudbaseapp.com/2929925109/#fn_17">17</a>等学者对该模型不断拓展，使PVAR逐渐成为一个兼具时序分析与面板数据分析优势的成熟模型。</p>
+<blockquote>
+<p>第十四篇文献很重要！</p>
+</blockquote>
+<h3 id="4非线性动态var线性分析范式的变革"><a class="markdownIt-Anchor" href="#4非线性动态var线性分析范式的变革"></a> 4.非线性动态VAR：线性分析范式的变革</h3>
+<p>传统的线性VAR模型基于一个理想的假设，那就是现实的经济结构不会改变，因此模型的参数在整个时期内是一致的，不会因外部环境的变化而改变。20世纪70年代以来，随着非线性科学理论的迅速发展和经济发展的波动性，人们逐渐意识到线性分析范式存在严重问题，这种范式可能正是导致现代经济分析和预测在经济波动情况下普遍失效的根本原因。非线性方法作为能够描述宏观经济时间序列中非线性和结构性变化特征的一种有效工具，随后被频繁应用于政策效应和经济波动的测度当中。非线性动态模型常见于三种类型：马尔可夫机制转换向量自回归模型（Markov Switching Vector Auto Regression，MSVAR）、门限向量自回归模型（Threshold Vector Auto Regression Model，TVAR）和平滑转换向量自回归模型（Smooth Transition Vector Auto Regressionmodel，STVAR）。</p>
+<p>MSVAR由Hamilton（1990）较早提出，Krolzig（1997）已经开发了基于Ox软件的MSVAR极大似然估计技术。该模型假定转换是由外生的不可观测的马尔可夫链决定，但是不能给出机制转换的非线性表达形式，一般只能推断不同机制转换的概率，由于其转换机制是离散的，因而限制了它的应用；TVAR是将Tong等（1978）提出的非线性时间序列门限模型（Threshold Model）与VAR模型相结合而形成，用于刻画不同区制或状态下变量之间的作用机制和区制间非线性的动态特征。该模型允许机制变化是内生的，但是引起机制转化的门限却是不可直接观测的，转换机制同样是离散的；STVAR是Weise（1993）在研究转换机制时为获得转换函数而提出的模型，该模型可以通过恰当的方式获得转换变量和转换函数，从而使机制的转换平滑化或渐进化，方便了人们对转换过程的认识。根据转换函数的特征，可设置两种平滑转换自回归模型：逻辑斯特STVAR（LSTVAR）模型和指数STVAR（ESTVAR）模型。</p>
+<h2 id="三-var宏观计量模型的最新拓展"><a class="markdownIt-Anchor" href="#三-var宏观计量模型的最新拓展"></a> 三、VAR宏观计量模型的最新拓展</h2>
+<p>任何学科都不是孤立地发展演进的，进入21世纪，在研究范式的转变、方法创新以及计算科学技术不断发展的基础上，VAR模型的使用领域和拓展形式有了新的突破，主要表现为以下三个方面。</p>
+<h3 id="1利用贝叶斯估计法与具有微观经济理论基础的研究方式相融合以dsge-var模型为代表"><a class="markdownIt-Anchor" href="#1利用贝叶斯估计法与具有微观经济理论基础的研究方式相融合以dsge-var模型为代表"></a> 1.利用贝叶斯估计法，与具有微观经济理论基础的研究方式相融合—以DSGE-VAR模型为代表</h3>
+<p>作为一种纯粹的计量经济模型，VAR建模由于缺少经济理论的支持一直饱受诟议，理性预期因素在该模型中的缺失也无法完全克服“卢卡斯批判”的质疑。20世纪80年代初，一种基于宏观经济理论的真实商业周期模型（Real BusinessCycle,RBC）在与VAR竞争中逐渐发展起来。关于DSGE模型的构建最早可以追溯到Kydland和Prescott（1982）里程碑式的研究，二位学者提出的RBC模型是DSGE模型的最早雏形。该模型的特点是秉承瓦尔拉斯一阿罗—德布鲁—般均衡理论范式和新古典宏观经济学理念，在市场连续出清、价格完全弹性以及信息完全的假设下，利用最优化方法，得到不确定环境下经济主体最优行为方程。但是随后的研究发现，标准RBC模型由于缺乏内部动态调整过程而不能维持数据的一致性。鉴于此，新凯恩斯主义者把RBC模型拓展到动态随机一般均衡（Dynamic Stochastic General Equilibrium, DSGE）模型。在一个通用的DSGE模型中包含的代表性行为人包含居民、厂商、金融机构、政府及对外部门等，各项政策冲击，包括政府支出的需求冲击和货币供给冲击等都能在该模型的框架中得到清晰的刻画。Christiano、Eichenbaum和Evans（2005，简称CEE模型）对该模型的应用做了深入的研究，通过考察产出、消费、通胀、投资、利润等变量对于货币政策脉冲的响应，发现与基于VAR的估计结果十分一致。目前，具有坚实经济理论基础的DSGE模型近乎发展为西方宏观经济研究的标准范式。</p>
+<p>DSGE模型的设置在具体形式上不拘一格，但在整体框架上却要保持高度的一致性。为便于下文分析，下面给出一个DSGE模型简单数学表述，该表述具有一定的代表性。</p>
+<ul>
+<li>家庭部门。其中，参数σ表示家庭风险规避系数，参数v表示货币持有与利率之间替代弹性的倒数，参数η表示劳动供给与实际工资之间替代弹性的倒数，参数ε代表不同商品之间的替代弹性。</li>
+<li>企业部门。假设存在一个连续的企业集合f∈(0,1)，每个企业利用相同的生产技术生产不同的产品。</li>
+<li>政府宏观调控模型，以货币调控为例，一般采用泰勒规则或拓展的泰勒规则。</li>
+</ul>
+<p>DSGE模型的结构化设计看似完美，然而在实际操作中难以直接使用，未经参数化的DSGE模型要达到预测效果需要通过复杂的参数校准和估计过程。通常的方法是对反映模型稳态特征的有关参数进行校准，对反映模型动态特征的有关参数进行估计，常用的估计方法有GMM（广义矩估计）、SMM（模拟矩估计）、ML（极大似然估计）和Bayes估计法等。现在，大多数的校准和估计比较了模拟数据的性质和真实数据的典型事实，把VAR（或者SVAR、BVAR等）作为基准评价DSGE模型分析的效果。例如CEE模型通过调整DSGE模型参数设定，在货币政策的冲击下发现能够很好地拟合BVAR的冲击响应。但是这种方法近年来受到Negro等（2007）的严厉批判，他们认为同样是信息有限的两类模型难以达到完全匹配对照的效果。另外一种是Smets和Wouters（2003）的建模思想，他们通过将DSGE模型的先验信息应用到VAR模型的估计中，得到BVAR的估计结果，然后比较DSGE和BVAR两个模型的边缘概率分布来评估模型。Ireland（2004）把这样的模型称为混合的DSGE-VAR模型，Negro等（2007）将该方法进行了概括和完善。未来如果能够提供一整套DS-GE-VAR模型标准化的分析工具，将有着非常广阔的应用前景。</p>
+<h3 id="2向非线性-时变参数的趋势发展以tvp-var模型为代表"><a class="markdownIt-Anchor" href="#2向非线性-时变参数的趋势发展以tvp-var模型为代表"></a> 2.向非线性、时变参数的趋势发展—以TVP-VAR模型为代表</h3>
+<p>传统的VAR模型假定VAR系数以及扰动项的方差都是不变的，这种假定显然难以吻合现实的情况。实际上随着时间的推移，经济体制、经济结构、政策偏好和技术等方面的因素不断发生变化，模型参数也会随之改变，传统的VAR模型显然不能刻画这种动态特征。以往能够描述非线性特征的状态空间模型由于是单向方程，无法展现多变量之间的相互作用，因而在使用上受到限制。早期的非线性动态VAR（MSVAR、TVAR、STVAR）也主要把研究重点放在非线性的过渡——转换机制上，缺少对全局的把握。对此，向非线性、变参数趋势发展的VAR模型应运而生，其代表性模型是时变参数的向量自回归模型（TimeVaryingParameter Vector Autoregression,TVP-VAR）。</p>
+<p>在Cogley和Sargent（2005）的TVP-VAR模型中，为了估计方便他们的模型对新息冲击的方差设置为恒定的，Boivin和Giannoni（2006）研究时也采用了类似设置。Primiceri（2005）则同时考虑了VAR系数和误差项方差的时变性，将模型扩展为带有随机波动的时变参数形式（TVP-SV-BVAR模型），该方法用于分析美国的货币政策传导机制的动态变动，取得了十分满意的结果。但是一些学者在利用该模型时发现，建模时做出的许多设定很容易导致过度参数化，为了克服这一问题，Koop等（2007）在Gerlach等（2000）以及Giordani和Kohn（2006）的研究基础上提出了混合创新的方法（MI-TVP-SV-VAR模型），该模型允许VAR系数与误差方差相关的参数以及误差协方差矩阵参数按照不同的方式演进，这样更好地体现了“让数据本身说话”的思想。利用这种方法，Baumeister和Peersman（2008）研究了欧盟区的流动性对资产价格与通货膨胀的动态冲击效果，发现对现实的解释力极强。</p>
+<h3 id="3-向大规模-多变量的趋势发展以favar模型为代表"><a class="markdownIt-Anchor" href="#3-向大规模-多变量的趋势发展以favar模型为代表"></a> 3. 向大规模、多变量的趋势发展——以FAVAR模型为代表</h3>
+<p>VAR模型的创始人Sims（1992）很早就指出，VAR模型所处理的经济变量过少是该模型的主要缺陷之一。Bernanke等（2005）也认为，政策制定者需要考虑的经济因素数很多，目前运用的VAR模型最多可以处理12个变量，有限的经济变量不能反映政策对经济系统的真实作用效果。为了克服该模型存在的缺陷，Bernanke（2005）在前人研究的基础上，对VAR模型进行了改进，提出了因素扩展的向量自回归模型（Factor AugmentedVector Auto Regressive Model，FAVAR）。</p>
+<p>FAVAR模型特点在于运用多变量、大规模数据研究政策变量对系统的冲击问题，有效解决了现有模型（VAR、SVAR、VECM以及DSGE等）无法克服的变量过少、信息有限的问题，从而全面捕捉现实中的经济信息，更加真实地反映变量之间相互影响的动态关系。Shibamoto（2007）、Vargas-Silva（2008）、Kabundi和Gupta（2009）、Gupta等（2010）先后利用FAVAR模型对日本、美国及南非等国家货币政策对房地产价格变化的作用进行实证研究，发现FAVAR模型的实证分析效果优越于小规模的VAR、BVAR等模型。但FAVAR模型的不足之处是在处理非平稳数据时可能会因数据的差分平稳化而丢失一些信息，从而造成模型预测的不准确，为克服这一问题，Banbura等（2008）和Gupta等（2010）利用大规模的贝叶斯向量自回归（Large-scale BayesianVector Autoregression，LBVAR）模型，在FAVAR基础上结合了贝叶斯统计推断方法的优点和处理非平稳数据的特性，为VAR模型的发展进一步拓展了空间。另外，Pesaran等（2004）在全球链接模型基础上发展起来的全球向量自回归模型（Globle VAR，GVAR），通过对各国子系统和国家间连接矩阵的合理设置也使大规模变量得以简化，在全球经济系统研究方面取得成功运用。</p>
+<p>总的来看，未来VAR模型的发展，会向更具有严密经济理论基础、能够处理非线性、多变量以及空间计量的趋势演进，贝叶斯统计推断技术在进行模型参数估计时仍具有无可替代的优势。</p>
+<h2 id="四-var模型在使用过程中应注意的问题"><a class="markdownIt-Anchor" href="#四-var模型在使用过程中应注意的问题"></a> 四、VAR模型在使用过程中应注意的问题</h2>
+<p>近年来，以计量模型作为宏观经济分析方法的学术论文越来越多，特别是VAR系列的计量模型占据的比重较大。毫无疑问，以VAR为母体演变和拓展的模型将成为宏观计量经济分析的重要工具。</p>
+<p>然而，对研究方法不加思索地引进难免会出现“囫囵吞枣”的现象。李子奈等（2010）曾经对我国计量经济模型的滥用大声疾呼，并多次阐明与澄清计量经济模型的方法论基础。联系当前我国计量经济模型的使用现状，结合VAR模型自身的特点，我们认为VAR模型在实际运用中应注意如下问题：</p>
+<ul>
+<li>一是在总体回归模型的设定上要遵循经济主体间的动力学关系。计量经济学模型的设定，既要避免按部就班的理论导向，也要避免纯粹的数据关系导向（李子奈等，2010）。完全的理论导向，在过于苛刻的假设前提下有时会使研究结果偏离现实；纯粹的数据关系导向，有时又会导致毫无意义的伪回归。特别是VAR系列模型，由于强调了变量的内生性，因此更需要根据经济主体间的动力学关系确定总体回归模型，实现先验理论导向与数据关系导向的综合。</li>
+<li>二是既要注重总量分析，更要强调结构分析。总量与结构问题是模型分解性程度的问题，应该根据实际问题的需要而有所偏重。我国作为一个经济体制转轨中的大国，经济结构差异较大，存在普遍的地域差异、城乡差异、所有制差异以及分配制度差异等多重二元结构问题，时下盛行的VAR类模型多数进行的是总量分析，受我国非平衡的经济结构的影响，其有效性和实用性存在不足。从问题导向上来说，解决我国结构平衡问题至关重要，因此未来采用非线性、时变参数以及向空间计量方面拓展的VAR模型应该受到重视。</li>
+<li>三是注意模型使用过程中的规范性。从目前发表的采用VAR类计量模型的文章来看，这些问题主要表现为：不加区分地运用水平VAR或者差分VAR；结构性冲击矩阵设置的理论依据不严谨；样本数据容量不足，难以保证参数估计的稳定性等。</li>
+</ul>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Sims, C. A. (1980), <a href='https://www.jstor.org/stable/pdf/1912017.pdf' target='_blank'>Macroeconomics and Reality</a>, Econometrica 48, 1–48. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Engle, R.F. and Granger, C.W.J. (1987) Co-Integration and Error Correction: Representation, Estimation, and Testing. Econometrica: Journal of the Econometric Society, 55, 251-276. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Toda, H.Y. and Yamamoto, T. (1995) Statistical Inference in Vector Autoregressions with Possibly Integrated Processes. Journal of Econometrics, 66, 225-250. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Litterman, &amp; Robert, B. . (1986). Forecasting with bayesian vector autoregressions-five years of experience. <em>Journal of Business &amp; Economic Statistics</em> <em>4</em>(1), 25-38. <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Dua P , Ray S C . A BVAR model for the connecticut economy[J]. Journal of Forecasting, 2010, 14(3):167-180. <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Kenny G., Meyler A. and Quinn T., 1998, Bayesian VAR Models for Forecasting Irish Inflation[R], Central Bank and Financial Services Authority of Ireland Technical Working Paper. <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>[Dejong, D. N. , Ingram, B. F. , &amp; Whiteman, C. H. . (2000).](<a target="_blank" rel="noopener" href="http://directory.umm.ac.id/Data">http://directory.umm.ac.id/Data</a> Elmu/jurnal/J-a/Journal of Econometrics/Vol98.Issue2.Oct2000/2128.pdf) A bayesian approach to dynamic macroeconomics. <em>Journal of Econometrics,</em> <em>98</em>(2), 203-223. <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>Chamberlain G., 1983, A Characterization of the Distributions That Imply Mean—Variance Utility Functions[J], Journal of Economic Theory, 29(1), 185~201. <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p>Holtz-eakin D. Newey W. and Rosen H., 1988, Estimating Vector Autoregressions with Panel Data[J], Econometrica, 56(6), 1371~1395. <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn10" class="footnote-item"><p>Pesaran M. H. and Smith R., 1995, Estimating Long-run Relationships from Dynamic Heterogeneous Panels[J], Journal of Econometrics, 68(1), 79~113. <a href="#fnref10" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn11" class="footnote-item"><p>Arellano M. and Bover O., 1995, Another Look at the Instrumental Variable Estimation of Error-components Models[J], Journal of Econometrics, 68(1), 29~51. <a href="#fnref11" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn12" class="footnote-item"><p>Mccuskey S. and Kao C., 1998, A Residual-biased Test of the Null of Cointegration in Panel Data[J], Econometric Reviews, 17(1), 1~30. <a href="#fnref12" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="tags/VAR/">VAR</a><a class="post-meta__tags" href="tags/%E5%AE%8F%E8%A7%82%E6%A8%A1%E5%9E%8B/">宏观模型</a></div><div class="post_share"><div class="social-share" data-image="/private_img/banner2.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/private_img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/private_img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/private_img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/private_img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="290521835.html" title="曼德尔晚期资本主义"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/private_img/banner.gif'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">曼德尔晚期资本主义</div></div></a></div><div class="next-post pull-right"><a href="3826076907.html" title="夹缝中的全球化"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/private_img/banner.gif'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">夹缝中的全球化</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="4182416539.html" title="投资配置是否会影响中国的区域间产出差距？时间序列调查"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-05</div><div class="title">投资配置是否会影响中国的区域间产出差距？时间序列调查</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="../private_img/yuyingnan.jpg" onerror="this.onerror=null;this.src='../private_img/404.gif'" alt="avatar"/></div><div class="author-info__name">揭晓</div><div class="author-info__description">随手写一写，揭晓这世界</div></div><a id="card-info-btn" href="/"><i class="fas fa-home"></i><span>回到首页</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E6%8F%90%E8%A6%81"><span class="toc-text"> 内容提要</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text"> 引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-var%E5%AE%8F%E8%A7%82%E8%AE%A1%E9%87%8F%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E4%B8%8E%E8%BF%90%E7%94%A8"><span class="toc-text"> 一、VAR宏观计量模型的基本结构与运用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-var%E5%AE%8F%E8%A7%82%E8%AE%A1%E9%87%8F%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%BC%94%E5%8F%98"><span class="toc-text"> 二、VAR宏观计量模型的演变</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1svar%E4%BB%8E%E7%AE%80%E7%BA%A6%E5%BC%8F%E6%AD%A5%E5%85%A5%E5%88%B0%E7%BB%93%E6%9E%84%E5%BC%8F"><span class="toc-text"> 1.SVAR：从简约式步入到结构式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2bvarvar%E6%A8%A1%E5%9E%8B%E7%BB%9F%E8%AE%A1%E6%8E%A8%E6%96%AD%E6%96%B9%E6%B3%95%E4%B8%8A%E7%9A%84%E9%9D%A9%E5%91%BD"><span class="toc-text"> 2.BVAR：VAR模型统计推断方法上的革命</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3pvar%E5%90%91%E7%A9%BA%E9%97%B4%E8%AE%A1%E9%87%8F%E7%9A%84%E6%8B%93%E5%B1%95"><span class="toc-text"> 3.PVAR：向空间计量的拓展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%8A%A8%E6%80%81var%E7%BA%BF%E6%80%A7%E5%88%86%E6%9E%90%E8%8C%83%E5%BC%8F%E7%9A%84%E5%8F%98%E9%9D%A9"><span class="toc-text"> 4.非线性动态VAR：线性分析范式的变革</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-var%E5%AE%8F%E8%A7%82%E8%AE%A1%E9%87%8F%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%9C%80%E6%96%B0%E6%8B%93%E5%B1%95"><span class="toc-text"> 三、VAR宏观计量模型的最新拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E5%88%A9%E7%94%A8%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%B0%E8%AE%A1%E6%B3%95%E4%B8%8E%E5%85%B7%E6%9C%89%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%BC%8F%E7%9B%B8%E8%9E%8D%E5%90%88%E4%BB%A5dsge-var%E6%A8%A1%E5%9E%8B%E4%B8%BA%E4%BB%A3%E8%A1%A8"><span class="toc-text"> 1.利用贝叶斯估计法，与具有微观经济理论基础的研究方式相融合—以DSGE-VAR模型为代表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E5%90%91%E9%9D%9E%E7%BA%BF%E6%80%A7-%E6%97%B6%E5%8F%98%E5%8F%82%E6%95%B0%E7%9A%84%E8%B6%8B%E5%8A%BF%E5%8F%91%E5%B1%95%E4%BB%A5tvp-var%E6%A8%A1%E5%9E%8B%E4%B8%BA%E4%BB%A3%E8%A1%A8"><span class="toc-text"> 2.向非线性、时变参数的趋势发展—以TVP-VAR模型为代表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%91%E5%A4%A7%E8%A7%84%E6%A8%A1-%E5%A4%9A%E5%8F%98%E9%87%8F%E7%9A%84%E8%B6%8B%E5%8A%BF%E5%8F%91%E5%B1%95%E4%BB%A5favar%E6%A8%A1%E5%9E%8B%E4%B8%BA%E4%BB%A3%E8%A1%A8"><span class="toc-text"> 3. 向大规模、多变量的趋势发展——以FAVAR模型为代表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-var%E6%A8%A1%E5%9E%8B%E5%9C%A8%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%BA%94%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text"> 四、VAR模型在使用过程中应注意的问题</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../998865776.html" title="Zotero文献管理">Zotero文献管理</a><time datetime="2023-02-21T13:38:52.170Z" title="更新于 2023-02-21 21:38:52">2023-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3276806131.html" title="博客搭建日志">博客搭建日志</a><time datetime="2023-02-21T09:54:36.689Z" title="更新于 2023-02-21 17:54:36">2023-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../2511924152.html" title="博士论文手稿">博士论文手稿</a><time datetime="2023-02-21T07:11:01.944Z" title="更新于 2023-02-21 15:11:01">2023-02-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3550224356.html" title="比较政治经济学">比较政治经济学</a><time datetime="2023-02-18T09:20:11.226Z" title="更新于 2023-02-18 17:20:11">2023-02-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../1120410056.html" title="中国的“南南贸易”：不平等交换和不平衡与综合发展">中国的“南南贸易”：不平等交换和不平衡与综合发展</a><time datetime="2023-02-17T15:10:37.594Z" title="更新于 2023-02-17 23:10:37">2023-02-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3667980037.html" title="第四章第五章材料摘抄">第四章第五章材料摘抄</a><time datetime="2023-02-16T08:15:56.433Z" title="更新于 2023-02-16 16:15:56">2023-02-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../123068617.html" title="现代社会中的科层制与水平组织">现代社会中的科层制与水平组织</a><time datetime="2023-02-12T06:04:24.815Z" title="更新于 2023-02-12 14:04:24">2023-02-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../1073151541.html" title="德斯米特空间发展">德斯米特空间发展</a><time datetime="2023-02-08T04:44:27.864Z" title="更新于 2023-02-08 12:44:27">2023-02-08</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/private_img/banner2.gif')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 揭晓</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="js/utils.js"></script><script src="js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://dhndzwxj.github.io/2929925109.html'
+    this.page.identifier = ''
+    this.page.title = 'VAR模型的前世今生'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-www-dhndzwxj-top.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script type='text/javascript' src='https://ajax.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script id="dsq-count-scr" src="//https-www-dhndzwxj-top.disqus.com/count.js" async></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="../js/search/local-search.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'b16a1fa0e63c46a4b8f28abfb06ae3fe';
+  var gaud_map_key = 'e2b04289e870b005374ee030148d64fd&s=rsv3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>
