@@ -197,7 +197,6 @@ window.addEventListener('load', () => {
                 if (keyword.length === 1 && specialRegex.test(keyword)) {
                   regexStr = `\\${keyword}`
                 }
-                const regS = new RegExp(regexStr, 'gi')
                 matchContent = matchContent.replaceAll(keyword, '<span class="search-keyword">' + keyword + '</span>')
                 dataTitle = dataTitle.replaceAll(keyword, '<span class="search-keyword">' + keyword + '</span>')
               })
@@ -235,10 +234,10 @@ window.addEventListener('load', () => {
                   if(keyword[0] === '#' & keyword.length>1){
                     keyword = keyword.substring(1) // 如果第一个字符为#且长度大于1，将关键词第一个#去掉后再匹配
                   }
-                  splitT = splitT.replaceAll(keyword, '<span class="search-keyword">' + keyword + '</span>')
+                  splitT = splitT.replace(new RegExp(keyword,"gi"),'<span class="search-keyword">' + keyword + '</span>')
                 }) 
 
-                //- 第三步：由于第一步生产的为纯文本且包括双分号，此步骤去掉分号且加上fas fa-tag、控制字体（保存在splitTags里）
+                //- 第三步：由于第一步产生的为纯文本且包括双分号，此步骤去掉分号且加上fas fa-tag、控制字体（保存在splitTags里）
                 let splitTags = '<br/><i class="fas fa-tag"><span style="font-family:times">'
                 space = 1
                 for(let i=0;i<splitT.length;i++){
@@ -254,7 +253,7 @@ window.addEventListener('load', () => {
                 }
                 splitTags = splitTags + '</span></i>'
                 
-                post = dataTags === [] ?  post : post  + splitTags
+                post = /S/.test(splitT) ?  post + splitTags : post  
                 //- 自定义结束
               
                 str += '<p class="search-result">' + pre + matchContent + post + '</p>'
