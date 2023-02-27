@@ -125,7 +125,7 @@ window.addEventListener('load', () => {
                   firstOccur = 0
                 }
               }else {
-                if(keyword[0] === '@' && l_keywords > 1 && keyword[0] !== '@'){ //- 最后一个判断条件修复了正文中'@@'无法搜索的问题
+                if(keywords[0][0] === '@' && l_keywords > 1 && keywords[0][1] !== '@'){ //- 最后一个判断条件修复了正文中'@@'无法搜索的问题
                   //如果关键词第一个字符是@且长度大于1，那么进行title搜索
                   keyword = keyword.substring(1) // 将关键词第一个@去掉后再匹配
                   //- 定义dataTitle0的意义：去掉title里面的网页标签代码，否则会把网页标签里面的代码（非正文内容）也匹配
@@ -215,7 +215,8 @@ window.addEventListener('load', () => {
                       splitT = splitT + '；；' 
                       space = 1
                     } 
-                  }          
+                  }  
+                          
                 }
                 //去掉splitT末尾的双分号；；，将字母变为小写
                 for(let i=0;i<splitT.length;i++){
