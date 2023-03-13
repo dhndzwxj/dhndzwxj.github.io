@@ -6,7 +6,7 @@
   <link href="https://dhndzwxj.github.io/atom.xml" rel="self"/>
   
   <link href="https://dhndzwxj.github.io/"/>
-  <updated>2023-03-07T10:33:58.552Z</updated>
+  <updated>2023-03-13T16:45:20.949Z</updated>
   <id>https://dhndzwxj.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://dhndzwxj.github.io/2442454912.html"/>
     <id>https://dhndzwxj.github.io/2442454912.html</id>
     <published>2023-03-06T03:49:02.000Z</published>
-    <updated>2023-03-07T10:33:58.552Z</updated>
+    <updated>2023-03-13T16:45:20.949Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="添加右键菜单项"><a class="markdownIt-Anchor" href="#添加右键菜单项"></a> 添加右键菜单项</h2><ol><li>右键单击 <code>shell</code>，<code>新建（N）</code> -&gt; <code>项（K）</code> ，创建一个新项（名字最好是功能相关）；</li><li>单击新项，然后 <strong>双击</strong> 右侧 <code>（默认）</code> 值，写入 <code>数据</code> 内容（右键菜单项显示的文本）；</li><li>右键单击第一步创建的新项，创建一个子项，命名为 <code>command</code>；</li><li>单击 <code>command</code> ，双击右侧 <code>（默认）</code> 值，填写你要执行的命令；</li></ol><h2 id="各项菜单的注册表路径"><a class="markdownIt-Anchor" href="#各项菜单的注册表路径"></a> 各项菜单的注册表路径</h2><p>桌面空白处：<code>计算机\HKEY_CLASSES_ROOT\DesktopBackground\Shell</code></p><p>文件：<code>计算机\HKEY_CLASSES_ROOT\*\shell</code></p><p>文件夹：<code>计算机\HKEY_CLASSES_ROOT\Directory\shell</code></p><p>文件和文件夹：<code>计算机\HKEY_CLASSES_ROOT\AllFilesystemObjects\shell</code></p><p>文件夹空白处：<code>计算机\HKEY_CLASSES_ROOT\Directory\Background\shell</code></p><h2 id="应用在conemu中打开右键单击菜单窗口"><a class="markdownIt-Anchor" href="#应用在conemu中打开右键单击菜单窗口"></a> 应用：在ConEmu中打开右键单击菜单窗口</h2><p>设置功能集成(或旧版本中的设置→功能→集成)</p><p>设置ConEmu Here组(不要在内部滥用ConEmu )，然后按注册按钮。</p><div align='center'>    <img src='/../../images/windows%E6%B3%A8%E5%86%8C%E8%A1%A8/image-20230306115124244.png' width=650px></div>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="添加右键菜单项"><a class="markdownIt-Anchor" href="#添加右键菜单项"></a> 添加右键菜单项</h2><ol><li>右键单击 <code>shell</code>，<code>新建（N）</code> -&gt; <code>项（K）</code> ，创建一个新项（名字最好是功能相关）；</li><li>单击新项，然后 <strong>双击</strong> 右侧 <code>（默认）</code> 值，写入 <code>数据</code> 内容（右键菜单项显示的文本）；</li><li>右键单击第一步创建的新项，创建一个子项，命名为 <code>command</code>；</li><li>单击 <code>command</code> ，双击右侧 <code>（默认）</code> 值，填写你要执行的命令；</li></ol><h2 id="各项菜单的注册表路径"><a class="markdownIt-Anchor" href="#各项菜单的注册表路径"></a> 各项菜单的注册表路径</h2><p>桌面空白处：<code>计算机\HKEY_CLASSES_ROOT\DesktopBackground\Shell</code></p><p>文件：<code>计算机\HKEY_CLASSES_ROOT\*\shell</code></p><p>文件夹：<code>计算机\HKEY_CLASSES_ROOT\Directory\shell</code></p><p>文件和文件夹：<code>计算机\HKEY_CLASSES_ROOT\AllFilesystemObjects\shell</code></p><p>文件夹空白处：<code>计算机\HKEY_CLASSES_ROOT\Directory\Background\shell</code></p><h2 id="应用在conemu中打开右键单击菜单窗口"><a class="markdownIt-Anchor" href="#应用在conemu中打开右键单击菜单窗口"></a> 应用：在ConEmu中打开右键单击菜单窗口</h2><p>设置功能集成(或旧版本中的设置→功能→集成)</p><p>设置ConEmu Here组(不要在内部滥用ConEmu )，然后按注册按钮。</p><div align='center'>    <img src='/../../images/windows%E6%B3%A8%E5%86%8C%E8%A1%A8/image-20230306115124244.png' width=650px></div><h2 id="windows11恢复windows10右键菜单样式"><a class="markdownIt-Anchor" href="#windows11恢复windows10右键菜单样式"></a> Windows11恢复Windows10右键菜单样式</h2><p>切换到旧版右键菜单：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">taskkill /f /im explorer.exestart explorer.exe<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>报错的话按上面分两行执行。</p>]]></content>
     
     
     <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; class=&quot;aplayer-secondary-script-marker&quot;&gt;&lt;/script&gt;&lt;h2 id=&quot;添加右键菜单项&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#添加右键菜单项&quot;&gt;&lt;/a&gt; 添加右键菜单项&lt;/h2&gt;
