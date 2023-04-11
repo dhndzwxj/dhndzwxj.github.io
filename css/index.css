@@ -2124,7 +2124,7 @@ pre[class*='language-'] pre > code.highlight {
 }
 @media screen and (min-width: 2000px) {
   .layout {
-    max-width: 1500px;
+    max-width: 1700px;
   }
 }
 .layout > div:first-child:not(.recent-posts) {
@@ -2527,11 +2527,11 @@ h1.page-title + .tag-cloud-list {
   transition: all 0.3s;
 }
 #aside-content .card-info .card-info-social-icons i:hover {
-  -webkit-transform: rotate(540deg);
-  -moz-transform: rotate(540deg);
-  -o-transform: rotate(540deg);
-  -ms-transform: rotate(540deg);
-  transform: rotate(540deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 #aside-content .card-info #card-info-btn {
   display: block;
@@ -3848,6 +3848,17 @@ h1.page-title + .tag-cloud-list {
 #article-container > :last-child {
   margin-bottom: 0 !important;
 }
+#article-container hr {
+  margin: 20px 0;
+}
+#article-container hr {
+  margin: 20px 0;
+  border: 1px inset;
+  width: 100%;
+}
+#article-container hr:before {
+  content: none;
+}
 #post .tag_share:after {
   display: block;
   clear: both;
@@ -4339,6 +4350,27 @@ span.mathjax-overflow {
 }
 .snackbar-css {
   border-radius: 5px !important;
+}
+.abc-music-sheet {
+  margin: 0 0 20px;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.abc-music-sheet.abcjs-container {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+@media screen and (max-width: 768px) {
+  .fancybox__toolbar__column.is-middle {
+    display: none;
+  }
 }
 #article-container .btn-center {
   margin: 0 0 20px;
@@ -5656,6 +5688,7 @@ blockquote.pullquote.right {
   width: 600px;
   border-radius: 8px;
   background: var(--search-bg);
+  --search-height: 100vh;
 }
 @media screen and (max-width: 768px) {
   .search-dialog {
@@ -5719,15 +5752,15 @@ blockquote.pullquote.right {
 #local-search .search-dialog .search-wrap {
   display: none;
 }
-#local-search .search-dialog .local-search__hit-item {
+#local-search .search-dialog .local-search-hit-item {
   position: relative;
   padding-left: 24px;
   line-height: 1.7;
 }
-#local-search .search-dialog .local-search__hit-item:hover:before {
+#local-search .search-dialog .local-search-hit-item:hover:before {
   border-color: var(--pseudo-hover);
 }
-#local-search .search-dialog .local-search__hit-item:before {
+#local-search .search-dialog .local-search-hit-item:before {
   position: absolute;
   top: 0.45em;
   left: 0;
@@ -5744,33 +5777,36 @@ blockquote.pullquote.right {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-#local-search .search-dialog .local-search__hit-item a {
+#local-search .search-dialog .local-search-hit-item a {
   display: block;
   color: var(--search-a-color);
 }
-#local-search .search-dialog .local-search__hit-item a:hover {
+#local-search .search-dialog .local-search-hit-item a:hover {
   color: #e68258;
 }
-#local-search .search-dialog .local-search__hit-item .search-result-title {
+#local-search .search-dialog .local-search-hit-item .search-result-title {
   font-weight: 600;
 }
-#local-search .search-dialog .local-search__hit-item .search-result {
+#local-search .search-dialog .local-search-hit-item .search-result {
   margin: 0 0 8px;
   word-break: break-word;
-}
-#local-search .search-dialog .local-search__hit-item .search-keyword {
-  color: #f47466;
-  font-weight: bold;
 }
 #local-search .search-dialog .search-result-list {
   overflow-y: overlay;
   margin: 0 -20px;
   padding: 0 22px;
-  max-height: calc(80vh - 130px);
+  max-height: calc(80vh - 200px);
 }
 @media screen and (max-width: 768px) {
   #local-search .search-dialog .search-result-list {
-    padding-bottom: 40px;
-    max-height: 75vh !important;
+    max-height: calc(var(--search-height) - 220px) !important;
   }
+}
+#local-search .search-dialog .no-result + #local-search-stats-wrap {
+  display: none;
+}
+.search-keyword {
+  background: transparent;
+  color: #f47466;
+  font-weight: bold;
 }
