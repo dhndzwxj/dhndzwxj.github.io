@@ -6,7 +6,7 @@
   <link href="https://dhndzwxj.github.io/atom.xml" rel="self"/>
   
   <link href="https://dhndzwxj.github.io/"/>
-  <updated>2023-05-23T07:30:52.252Z</updated>
+  <updated>2023-05-23T07:31:06.086Z</updated>
   <id>https://dhndzwxj.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dhndzwxj.github.io/734184153.html"/>
     <id>https://dhndzwxj.github.io/734184153.html</id>
     <published>2023-05-23T06:52:01.000Z</published>
-    <updated>2023-05-23T07:30:52.252Z</updated>
+    <updated>2023-05-23T07:31:06.086Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>看电视直播，建议使用的软件是PotPlayer。下载地址为：<a href="https://potplayer.daum.net/">https://potplayer.daum.net/</a></p><p>如果是苹果系统，建议的软件是IINA。</p><p>下面以Potplayer为例。</p><p>第一步打开Potplayer，在播放列表中新建专辑</p><div align='center'>    <img src='/../../images/Potplayer看电视直播/image-20230523145530500.png' width=600px></div><p>在此处写明专辑名称，方便自己记忆。</p><div align='center'>    <img src='/../../images/Potplayer看电视直播/image-20230523145626177.png' width=600px></div><p>建好专辑后（也就是win系统下的“文件夹”），就可以在专辑中添加直播源了。</p><p>首先我们要有直播源的地址，你可以到网络上搜索各种直播源，目前可用的一个直播源地址为：<a href="http://foodieguide.com/iptvsearch/">http://foodieguide.com/iptvsearch/</a>。如下图，可以选择可用的链接进行复制</p><div align='center'>    <img src='/../../images/Potplayer看电视直播/image-20230523145933232.png' width=600px></div><p>复制好链接后，我们回到软件Potplayer，进入我们刚刚建立好的专辑，点击软件右下角的“添加”，在弹出的对话框中点击“添加链接”，然后在“打开链接”处把刚刚的链接复制进去，点击“确定”即可添加电视直播了。</p><div align='center'>    <img src='/../../images/Potplayer看电视直播/image-20230523150147746.png' width=600px>    <img src='/../../images/Potplayer看电视直播/image-20230523150203552.png' width=600px>    <img src='/../../images/Potplayer看电视直播/image-20230523150352547.png' width=600px></div><p>如果某些链接打不开，或者链接不是高清的，可以换个链接。</p><p>可以把多个常看的电视链接放在一个列表里，方便后续看。</p><p>右击该列表，点击“专辑——打开列表文件夹”，可以打开此专辑存放的文件夹。【一般为<code>Potplayer/Playlist/[专辑名].dpl</code>。】将此dpl复制到其他设备上即可直接把这个播放列表拷贝到其他设备上！</p>]]></content>
     
