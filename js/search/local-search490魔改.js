@@ -104,33 +104,15 @@ class LocalSearch {
   getResultItems (keywords) {
     const resultItems = []
     this.datas.forEach(({ title, content, tags, url }) => {
-
+ 
       // var keyword_tag = new Object()
       var keyword_tag = keywords
       let l_keywords = keywords[0].toString().split('').length //- 获取搜索关键词的长度
-      // if(l_keywords > 1){
-      //   keyword_tag[0] = keyword_tag[0].substr(1)
-      // }
-      
-      // let tagSearch = 0
-      // if(keywords[0][0] === '#' && l_keywords > 1 && keywords[0][1] !== '#'){
-      //   tagSearch = 1
-      //   keywords = keyword_tag
-      // }
-
-      // let l_keywords = keywords[0].toString().split('').length //- 获取搜索关键词的长度
-      // let hitCount = 0
-      // keywords.forEach((keyword,i) =>{
-      //   if(keywords[0][0] === '#' && l_keywords > 1 && keywords[0][1] !== '#'){
-      //     //如果关键词第一个字符是#且长度大于1，那么进行tag搜索
-      //     keyword = keyword.substring(1) // 将关键词第一个#去掉后再匹配
-      //     hitCount = indexOfTags0.length           
-      //   } else{
-      //     hitCount = indexOfTitle.length + indexOfContent.length + indexOfTags0.length
-      //   }
-      // })
-
-
+      let tagSearch = 0
+      if(keywords[0][0] === '#' && l_keywords > 1 && keywords[0][1] !== '#'){
+        tagSearch = 1
+        // keywords = keyword_tag
+      }
       // The number of different keywords included in the article.
       let [indexOfTitle, keysOfTitle] = this.getIndexByWord(keywords, title)
       let [indexOfContent, keysOfContent] = this.getIndexByWord(keywords, content)
@@ -152,36 +134,20 @@ class LocalSearch {
           }
         }
       }
-      // // 去掉标签后面的分号；；，再在每个标签前面加一个图标
-      // let splitTags = `<i class="fas fa-tag"><span style="font-family:times,kaiti">`
-      // space = 1
-      // for(let i=0;i<tags0.length;i++){
-      //   if(tags0[i] !== '；'){
-      //     space = 0
-      //     splitTags = splitTags.concat(tags0[i])
-      //   }else{
-      //     if(space === 0){
-      //       splitTags += '</span></i>&nbsp &nbsp<i class="fas fa-tag"><span style="font-family:times,kaiti">'
-      //       space = 1
-      //     }
-      //   }
-      // }
-      // splitTags += '</span></i>'
 
-      //给tags的关键字强调
       //增加Tags片断
       // let [indexOfTags, keysOfTags] = this.getIndexByWord(keywords,tags)
       let [indexOfTags0, keysOfTags0] = this.getIndexByWord(keywords,tags0)
 //--------------------------------------------------------------------------------------
 ////////////////////////////////////////////////////////////////////////////////////////
       // Show search results
-      // let hitCount = 0
-      // if(tagSearch){
-      //   hitCount =  indexOfTags0.length
-      // }else{
-      //   hitCount = indexOfTitle.length + indexOfContent.length + indexOfTags0.length
-      // }
-      const hitCount = indexOfTitle.length + indexOfContent.length + indexOfTags0.length
+      let hitCount = 0
+      if(tagSearch){
+        hitCount =  indexOfTags0.length
+      }else{
+        hitCount = indexOfTitle.length + indexOfContent.length + indexOfTags0.length
+      }
+      // const hitCount = indexOfTitle.length + indexOfContent.length + indexOfTags0.length
 
 
       if (hitCount === 0) return
@@ -256,10 +222,6 @@ class LocalSearch {
         resultItem += `${tags0}</p>`
       }
 
-      // slicesOfTags0.forEach(slice => {
-      //   resultItem += `${this.highlightKeyword(splitTags, slice)}</p>`
-      // })
-
       let index = resultItem.indexOf("...<br>")
       //以"...</br>"为界，把要展示的结果一分为二；
       let resultItem1 = resultItem.substring(0, index+7)
@@ -287,28 +249,7 @@ class LocalSearch {
         resultItem21 = resultItem2
       }
 
-
-      // let splitTags = `<i class="fas fa-tag"><span style="font-family:times,kaiti">`
-      // space = 1
-      // for(let i=0;i<tags0.length;i++){
-      //   if(tags0[i] !== '；'){
-      //     space = 0
-      //     splitTags = splitTags.concat(tags0[i])
-      //   }else{
-      //     if(space === 0){
-      //       splitTags += '</span></i>&nbsp &nbsp<i class="fas fa-tag"><span style="font-family:times,kaiti">'
-      //       space = 1
-      //     }
-      //   }
-      // }
-      // splitTags += '</span></i>'
-
       resultItem = resultItem1 + resultItem21 + `</div>`
-
-
-      // resultItem += keyword_tag[0] +`</div>`
-      // resultItem += resultItem2+ `</div>`      
-
 
       resultItems.push({
         item: resultItem,
