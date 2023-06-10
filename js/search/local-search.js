@@ -196,9 +196,9 @@ class LocalSearch {
 
       //----------------------给标题的关键字强调------------------------------
       if (slicesOfTitle.length !== 0) {
-        resultItem += `<div class="local-search-hit-item"><a href="${url.href}"><span class="search-result-title">${this.highlightKeyword(title, slicesOfTitle[0])}</span></a>`
+        resultItem += `<div class="local-search-hit-item"><a href="${url.href}" target="_blank"><span class="search-result-title">${this.highlightKeyword(title, slicesOfTitle[0])}</span></a>`
       } else {
-        resultItem += `<div class="local-search-hit-item"><a href="${url.href}"><span class="search-result-title">${title}</span></a>`
+        resultItem += `<div class="local-search-hit-item"><a href="${url.href}" target="_blank"><span class="search-result-title">${title}</span></a>`
       }
       // slicesOfContent.forEach(slice => {
       //   resultItem += `<p class="search-result">${this.highlightKeyword(content, slice)}...</p></a>`
