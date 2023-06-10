@@ -104,6 +104,19 @@ class LocalSearch {
   getResultItems (keywords) {
     const resultItems = []
     this.datas.forEach(({ title, content, tags, url }) => {
+ 
+      // var keyword_tag = new Object()
+      var keyword_tag = keywords
+      let l_keywords = keywords[0].toString().split('').length //- 获取搜索关键词的长度
+      // if(l_keywords > 1){
+      //   keyword_tag[0] = keyword_tag[0].substr(1)
+      // }
+      
+      // let tagSearch = 0
+      // if(keywords[0][0] === '#' && l_keywords > 1 && keywords[0][1] !== '#'){
+      //   tagSearch = 1
+      //   keywords = keyword_tag
+      // }
 
       // let l_keywords = keywords[0].toString().split('').length //- 获取搜索关键词的长度
       // let hitCount = 0
@@ -139,31 +152,38 @@ class LocalSearch {
           }
         }
       }
-      // 去掉标签后面的分号；；，再在每个标签前面加一个图标
-      let splitTags = `<i class="fas fa-tag"><span style="font-family:times,kaiti">`
-      space = 1
-      for(let i=0;i<tags0.length;i++){
-        if(tags0[i] !== '；'){
-          space = 0
-          splitTags = splitTags.concat(tags0[i])
-        }else{
-          if(space === 0){
-            splitTags += '</span></i>&nbsp &nbsp<i class="fas fa-tag"><span style="font-family:times,kaiti">'
-            space = 1
-          }
-        }
-      }
-      splitTags += '</span></i>'
+      // // 去掉标签后面的分号；；，再在每个标签前面加一个图标
+      // let splitTags = `<i class="fas fa-tag"><span style="font-family:times,kaiti">`
+      // space = 1
+      // for(let i=0;i<tags0.length;i++){
+      //   if(tags0[i] !== '；'){
+      //     space = 0
+      //     splitTags = splitTags.concat(tags0[i])
+      //   }else{
+      //     if(space === 0){
+      //       splitTags += '</span></i>&nbsp &nbsp<i class="fas fa-tag"><span style="font-family:times,kaiti">'
+      //       space = 1
+      //     }
+      //   }
+      // }
+      // splitTags += '</span></i>'
 
       //给tags的关键字强调
       //增加Tags片断
       // let [indexOfTags, keysOfTags] = this.getIndexByWord(keywords,tags)
-      let [indexOfTags0, keysOfTags0] = this.getIndexByWord(keywords,splitTags)
+      let [indexOfTags0, keysOfTags0] = this.getIndexByWord(keywords,tags0)
 //--------------------------------------------------------------------------------------
 ////////////////////////////////////////////////////////////////////////////////////////
-
       // Show search results
+      // let hitCount = 0
+      // if(tagSearch){
+      //   hitCount =  indexOfTags0.length
+      // }else{
+      //   hitCount = indexOfTitle.length + indexOfContent.length + indexOfTags0.length
+      // }
       const hitCount = indexOfTitle.length + indexOfContent.length + indexOfTags0.length
+
+
       if (hitCount === 0) return
 
       const slicesOfTitle = []
@@ -225,31 +245,69 @@ class LocalSearch {
       let slicesOfTags0 = []
       //将新生成的（带标签标志的）splitTags生成一个slice
       while(indexOfTags0.length !== 0){
-        slicesOfTags0.push(this.mergeIntoSlice(0,splitTags.length,indexOfTags0))
+        slicesOfTags0.push(this.mergeIntoSlice(0,tags0.length,indexOfTags0))
       }
       //将新的slice中的关键字强调
       if(slicesOfTags0.length !== 0){
         slicesOfTags0.forEach(slice => {
-          resultItem += `${this.highlightKeyword(splitTags, slice)}</p>`
+          resultItem += `${this.highlightKeyword(tags0, slice)}</p>`
         })
       } else{
-        resultItem += `${splitTags}</p>`
+        resultItem += `${tags0}</p>`
       }
 
       // slicesOfTags0.forEach(slice => {
       //   resultItem += `${this.highlightKeyword(splitTags, slice)}</p>`
       // })
 
-      // let index = resultItem.indexOf(".")
-      // //以"...</br>"为界，把要展示的结果一分为二；
-      // let resultItem1 = resultItem.substring(0, index+7)
-      // let resultItem2 = resultItem.substring(index+8,resultItem.length)
-      // //下面只改resultItem2，给tags前面加上标签符号
+      let index = resultItem.indexOf("...<br>")
+      //以"...</br>"为界，把要展示的结果一分为二；
+      let resultItem1 = resultItem.substring(0, index+7)
+      let resultItem2 = resultItem.substring(index+7,resultItem.length)
+      //下面只改resultItem2，给tags前面加上标签符号
 
-      // resultItem = resultItem1 + resultItem2 + typeof(resultItem2) + `</div>`
-      // resultItem += `</p>`
-      // resultItem += tags0[0]+`</div>`
-      resultItem += `</div>`      
+      // // 去掉标签后面的分号；；，再在每个标签前面加一个图标
+      let indexTermin = resultItem2.indexOf("</p>") //终止位置
+      let resultItem21 = ""
+      if(indexTermin){
+        space = 1
+        resultItem21 = resultItem21.concat(`<i class="fas fa-tag"><span style="font-family:times,kaiti">`)
+        for(let i=0;i<indexTermin;i++){
+          if(resultItem2[i] !== '；'){
+            space = 0
+            resultItem21 = resultItem21.concat(resultItem2[i])         
+          }else{
+            if(space === 0)
+            resultItem21 += '</span></i>&nbsp &nbsp<i class="fas fa-tag"><span style="font-family:times,kaiti">'
+            space = 1          
+          }
+        }
+        resultItem21 += '</span></i>'
+      }else{
+        resultItem21 = resultItem2
+      }
+
+
+      // let splitTags = `<i class="fas fa-tag"><span style="font-family:times,kaiti">`
+      // space = 1
+      // for(let i=0;i<tags0.length;i++){
+      //   if(tags0[i] !== '；'){
+      //     space = 0
+      //     splitTags = splitTags.concat(tags0[i])
+      //   }else{
+      //     if(space === 0){
+      //       splitTags += '</span></i>&nbsp &nbsp<i class="fas fa-tag"><span style="font-family:times,kaiti">'
+      //       space = 1
+      //     }
+      //   }
+      // }
+      // splitTags += '</span></i>'
+
+      resultItem = resultItem1 + resultItem21 + `</div>`
+
+
+      // resultItem += keyword_tag[0] +`</div>`
+      // resultItem += resultItem2+ `</div>`    
 
 
       resultItems.push({

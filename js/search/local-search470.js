@@ -236,7 +236,7 @@ window.addEventListener('load', () => {
                   }) 
   
                   //- 第三步：由于第一步产生的为纯文本且包括双分号，此步骤去掉分号且加上fas fa-tag、控制字体（保存在splitTags里）
-                  let splitTags = '<br/><i class="fas fa-tag"><span style="font-family:times">'
+                  let splitTags = '<br/><i class="fas fa-tag"><span style="font-family:times,kaiti">'
                   space = 1
                   for(let i=0;i<splitT.length;i++){
                     if(splitT[i] !== '；'){
@@ -244,7 +244,7 @@ window.addEventListener('load', () => {
                       splitTags = splitTags.concat(splitT[i])
                     }else{
                       if(space===0){
-                        splitTags = splitTags + '</span></i>&nbsp &nbsp<i class="fas fa-tag"><span style="font-family:times">'
+                        splitTags = splitTags + '</span></i>&nbsp &nbsp<i class="fas fa-tag"><span style="font-family:times,kaiti">'
                         space = 1
                       }
                     }         
