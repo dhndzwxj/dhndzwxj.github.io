@@ -236,14 +236,14 @@ class LocalSearch {
       let resultItem21 = ""
       if(indexTermin){
         space = 1
-        resultItem21 = resultItem21.concat(`<i class="fas fa-tag"><span style="font-family:times,kaiti">`)
+        resultItem21 = resultItem21.concat(`<i class="fas fa-tag"><span style="font-family:times,kaiti,STKaiti">`)
         for(let i=0;i<indexTermin;i++){
           if(resultItem2[i] !== '；'){
             space = 0
             resultItem21 = resultItem21.concat(resultItem2[i])         
           }else{
             if(space === 0)
-            resultItem21 += '</span></i>&nbsp &nbsp<i class="fas fa-tag"><span style="font-family:times,kaiti">'
+            resultItem21 += '</span></i>&nbsp &nbsp<i class="fas fa-tag"><span style="font-family:times,kaiti,STKaiti">'
             space = 1          
           }
         }
