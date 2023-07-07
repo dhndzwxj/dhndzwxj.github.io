@@ -6,7 +6,7 @@
   <link href="https://dhndzwxj.github.io/atom.xml" rel="self"/>
   
   <link href="https://dhndzwxj.github.io/"/>
-  <updated>2023-07-06T15:53:32.151Z</updated>
+  <updated>2023-07-07T01:56:23.395Z</updated>
   <id>https://dhndzwxj.github.io/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Windows11安卓子系统</title>
+    <link href="https://dhndzwxj.github.io/609420401.html"/>
+    <id>https://dhndzwxj.github.io/609420401.html</id>
+    <published>2023-07-07T01:00:31.000Z</published>
+    <updated>2023-07-07T01:56:23.395Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一-安装安卓子系统"><a class="markdownIt-Anchor" href="#一-安装安卓子系统"></a> 一、安装安卓子系统</h2><p>Windows电脑配置要求：8G以上的内存</p><p>首先打开电脑的“设置”，找到“时间和语言”，将里面的“区域”暂时改为美国。</p><div align='center'>    <img src='/../../images/Windows11安卓子系统/image-20230707090633171.png' width=700px></div><p>下一步打开Windows系统自带的应用商店，搜索“Amazon appstore”。（如果电脑配置达不到8G内存，或者区域不是美国，就搜不到这个软件）然后点击安装，接下来就会进入安卓子系统的官方安装界面。</p><p>出现了如下界面，如果未在主板BIOS打开虚拟化设置。不同品牌的主板设置方式不同，在此不便赘述。【<span style='font-family:kaiti'>对于我的MSI B450m主板，重启后按F12进入BIOS，按F7打开高级模式，依次进入OC——CPU高级设置——SVM Mode，选择“允许”。注意：SVM Mode是AMD的虚拟化技术。</span>】</p><div align='center'>    <img src='/../../images/Windows11安卓子系统/image-20230707090931199.png' width=700px></div><p>设置好虚拟化后，安装界面就会变成下面这样。点击“设置”，系统就会自动安装安卓子系统了。</p><div align='center'>    <img src='/../../images/Windows11安卓子系统/image-20230707091921218.png' width=700px></div><p>安装后，可能要重启一次电脑。重启开机后，看一下Win11菜单里是否出现“适用于Android的Windows子系统”的图标。点开后，里面便是安卓子系统的设置界面。到这里，安卓子系统安装成功</p><div align='center'>    <img src='/../../images/Windows11安卓子系统/image-20230707092335726.png' width=700px></div><p>最后，别忘了把区域改回中国！！</p><h2 id="二-使用亚马逊应用商店安装软件"><a class="markdownIt-Anchor" href="#二-使用亚马逊应用商店安装软件"></a> 二、使用“亚马逊应用商店”安装软件</h2><p>按照提示注册号账户。但我们发现依然是没办法直接使用应用商店的。</p><div align='center'>    <img src='/../../images/Windows11安卓子系统/image-20230707092844043.png' width=700px></div><p>这时候，我们先退出登陆，然后打开Windows“系统设置”——“时间和语言”，在“首选语言”处选择“添加语言”。在弹出的对话框中，搜索美国，选择English(United States)，然后点击“下一页”。等待系统安装好所有的功能。</p><div align='center'>    <img src='/../../images/Windows11安卓子系统/image-20230707093014958.png' width=700px></div><p>安装好之后，点击语言后面的三个点，选择“上移”，把英语放在最上面。</p><div align='center'>    <img src='/../../images/Windows11安卓子系统/image-20230707093354939.png' width=700px></div><p>这之后再打开亚马逊应用商店界面，会发现界面多出来两个选项。</p><div align='center'>    <img src='/../../images/Windows11安卓子系统/image-20230707093325880.png' width=700px></div><p>在第一个下拉菜单里选择“United States”（也就是美国），第二个选项维持默认， 点击“Continue”（继续），现在登陆你的账号，真正的亚马逊应用商店就可以使用了。</p><p>最后再回到Windows11设置里面的语言与时间，把刚刚下载的英语语言包删除，这样不会影响亚马逊商店的正常使用。</p><h2 id="三-安装apk格式的安卓程序"><a class="markdownIt-Anchor" href="#三-安装apk格式的安卓程序"></a> 三、安装APK格式的安卓程序</h2><p>先打开安卓子系统的设置界面，左侧点击“关于”。在右侧查看安卓子系统的版本，版本号大于&quot;2305.40000.6.0&quot;才能使用此功能，否则升级一下安卓子系统。</p><p>然后左侧点击“高级设置”，在右侧Experimental Features（实验性功能）中，打开第一个选项Share user folders（共享用户文件夹）</p><div align='center'>    <img src='/../../images/Windows11安卓子系统/image-20230707094301419.png' width=700px></div><p>然后在左侧点击“系统”，右侧点击Turn off Windows Subsystem for Android下的Turn Off按钮，强制关闭安卓子系统，再点击上面Files（文件）后面的箭头，重启子系统，并打开子系统自带的安卓文件管理器。</p><div align='center'>    <img src='/../../images/Windows11安卓子系统/image-20230707094541576.png' width=700px></div><p>这里选择Subsystem for Android，右面会看到一个“Windows”的文件夹，这便是安卓子系统连通Windows系统的通道。这样把apk文件放在Windows11的桌面上，就能通过这个文件夹访问了。</p><div align='center'>    <img src='/../../images/Windows11安卓子系统/image-20230707094750944.png' width=700px>    <img src='/../../images/Windows11安卓子系统/image-20230707094800931.png' width=700px></div><p>把apk安装包放在Windows11桌面上，通过安卓子系统的Files进行访问，双击这个安装包，打开方式选择Package installer（软件包安装程序），接下来会弹出来一个安全提示，点击CONTINUE（继续）——INSTALL（安装），就可以安装好安卓程序了!</p><div align='center'>    <img src='/../../images/Windows11安卓子系统/image-20230707095202281.png' width=700px></div>]]></content>
+    
+    
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; class=&quot;aplayer-secondary-script-marker&quot;&gt;&lt;/script&gt;&lt;h2 id=&quot;一-安装安卓子系统&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#一-安装安卓子系统&quot;&gt;&lt;/a&gt; 一、安装安卓子系统&lt;/h2&gt;
+&lt;p&gt;Windows电脑配置要求：8G以上的内存&lt;/p&gt;
+&lt;p&gt;首先打开电脑的“设置”，找到“时间和语言”，将里面的“区域”暂时改为美国。&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;
+    &lt;img src=&quot;/../../images/Windows11安卓子系统/image-20230707090633171.png&quot; width=&quot;700px&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;下一步打开Windows系统自带的应用商店，搜索“Amazon appstore”。（如果电脑配置达不到8G内存，或者区域不是美国，就搜不到这个软件）然后点击安装，接下来就会进入安卓子系统的官方安装界面。&lt;/p&gt;
+&lt;p&gt;出现了如下界面，如果未在主板BIOS打开虚拟化设置。不同品牌的主板设置方式不同，在此不便赘述。【&lt;span style=&quot;font-family:kaiti&quot;&gt;对于我的MSI B450m主板，重启后按F12进入BIOS，按F7打开高级模式，依次进入OC——CPU高级设置——SVM Mode，选择“允许”。注意：SVM Mode是AMD的虚拟化技术。&lt;/span&gt;】&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;
+    &lt;img src=&quot;/../../images/Windows11安卓子系统/image-20230707090931199.png&quot; width=&quot;700px&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;设置好虚拟化后，安装界面就会变成下面这样。点击“设置”，系统就会自动安装安卓子系统了。&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;
+    &lt;img src=&quot;/../../images/Windows11安卓子系统/image-20230707091921218.png&quot; width=&quot;700px&quot;&gt;
+&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="杂技" scheme="https://dhndzwxj.github.io/categories/%E6%9D%82%E6%8A%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>环保数据</title>
     <link href="https://dhndzwxj.github.io/178960963.html"/>
     <id>https://dhndzwxj.github.io/178960963.html</id>
     <published>2023-07-06T08:21:21.000Z</published>
-    <updated>2023-07-06T15:53:32.151Z</updated>
+    <updated>2023-07-06T15:53:44.838Z</updated>
     
     <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，这个密码看着不太对，请再试试。" data-whm="抱歉，这个文章不能被纠正，不过您还是能看看解密后的内容。">  <script id="hbeData" type="hbeData" data-hmacdigest="c9839d4c44c132543c6fad70c534678d042518f40b94f967f6cd7c59526828f3">ae2fe629905dedfdf32a1e7027a08db046f84b3dd472ac07af5cf6349bde1f2c065a81a8b2087310a446920f3e467e25298431e093ed02fd53b9e8ecb5fe87c9eef306b6ded2dfdb1295eb70ba6cffb9ff43ef17247ea66fa9b6255eb151deab199064466e1a34aa1a056211710389938242e33eb23d4f41c9a8402435c6f8af2b3e2ad92cef3c45eaa8998c11affb0c2c3eef00997975ffeec8ee36019374bbe4ddd646522d0c79b018e94e57872bce83af2e29544028414018fba919746e0a565f2fdaf4e80576707905a88f1c1d581c78bf7ed6ebb53627b2d560a3ad3fcb3a85b3097011d9638e0e870091a60f88c42e01d7fb687ebf38fda38a059d03163e1a6ba7242b351c7538491348173e532a9036b32d50b7ab8ede17fb314715c1ce8d9e8e5abaff549f538529ece26a7492286b628ed161f5c8b65338f0fcf6a7e53c27b942ea9aabe13a2337ffeb488193b2cdb000ae961b197b0116b7dff77c82de68653902c4d5b1cd1b693593a961d85162a95de5a9e049ed528f25589fc31b880b05405974b06a961f7acc220b17a764835ac4f62fc4371b8f89e6bd6311dae74b4e3225551260bec4bf4ea446820b7c6845c7c2859dfa261f5c982033ebbb1a707637f27c55bab9eafb303a69c69f135ae0be6d625bc0eecc76f423e5e2000caa7f9098e0aa814bf0ef12a656398367a14753f0b2ae5a9d5c8d3c56e72b72a4863367177544ff565471831a6d1fb6a94fc900898ca8bcf7db47386e56c63fff0b52cb5974b1a964b6fcb903c23af6f45831bc1a44eaeb588e0b65c92e118596d77e326f18efbf3e68b58d04d4c5b21c7fef193e2f15eb60b9c3a0f8ab01ca2d979dc71d9b026070ec5736abd1168b06470de699af9c869caafef8924fe0b507fc068cba727b5729e65dafa0806d9552603af1111b05b91e3c02fe6beee7de70e811769b442f79914162f681ed88c7dd3c153ac39574bf8f1828b0e9cce2bd9eb6f75d6862fe9d518476ae3ab585f07cffe89660b23e13945cd91f5785181eb6c880289b157bdfecf0f5fa3427c11ada4123c5e9724692713a5b1fb6f902e3f58747001dfd2e62f4e99c602d08fc904750a506306121d21dae732ea626c61616d7bddaec71fdddaaac57ca0c35a95da6e2e645c8bb474acf48fae53fa0679b365ba536a8d7a61e1cad1e66fcaa5b0ed4a3fa1404f790b33de96d23fb558a81bef9d626fc4720269dc3b2f82ffee13b81c26fd2c7c25899f00f04110bfb577eb04f2c4d64d7d2ae914fdff1f66697eaba26f01a31fa0cbddcd76ca47a7aceb0060ef7656a7b2a145ea30be731745719b8a36fccb67591554b684c37a4c505dae0ea3f4de2a04077d4c6fcbd509679c72864a62d045790b2e5f7415e36d7844530b761605bf7611e2a36a5a4e6785beb3ce4d902f96bb0cb54f495d3294eece1f32920804920012d3e36bcc791d5d4586a8e81f8487808d3a1dc7bb21fd4d433ec38683ef6761924d70cd76fb32b29809b1d978e99ef03c596fa4caf1ddbf4ed5ff62fd562cca5c6f78cadb2acfc549ba105f6541f21867b06cbed37a7643bb43d1f753e601680bcf8891015979b4ee164a5b5a00504db3f91a7c920b6e32234db132eef88539eb599d59bfd35d629296d63c4d9cdf69ddca860fad12976fff76a180e0332eaf3ea45f86dacf2c6c208fb8c32bdb53935c7ff4988f85867a730667f5ca67080482b86fa2ce3945417bb5de17105b6868daa0395dbefb5aba199ad99f0ad5838f5dec6c9fb634bd89596cf41aa21d8188b3ab82184c909f7da449149df462fa2dc5c7a2d7beff3733e1e10a57c172c8e46fd3ab1384aa63d85517c0a69dffe72a89d0d3d5f8cb45f17d27fe85fa397dd164bb0d66da1744de5b59b34181de975a09e68b1481a10c77cf541076ce562cf7446797d5da39a9bec0496f1f5e680eaea982e8017cc9c34256ff5e46b03de82eb1b1ec1767a517495dec7589c625b4e1c81da71e29ab4260c7f957260ef34fe5bb484c5f7e8c6ffaca10e2d70045ce769b29055fa5604779e44406f200cfb0bad607dd2d16b9eb4f6dc623103db99cd37fb04efa85f2dbc1a03c301464ed69d78afb0cc192ce3441c0b2525623d5dbe967920b6d7c9028ee826e8fa53612c3cce813da3b1d6068b478b9936e627486c448b23e7089e6e12aa1cf2a9886f4581b0d3de3499bb3f9795bbe1b4853516a6bfe915b337e678394308afb51f7a6cf6075b5b2aa532f885b89b3b0033c3bd14ac8698152f4a1703b5847fce3a88d598785783896e13475432e9a173d6912cdf7f05c44b3e033ade30f81e31169cb945f090207881f0b01ff250bdf5fd80fd828b54191c161ae7359cb4a845e5b8625d82acebfee28971947da4b9aef8ba6067796409cc184b87aa49e019de94c06ba334fdac3646deb40e921314ed7ee8cb31d09937a6172312624fb291369bbb2a7517b6706250d0906d2875568b85abe46b497635f5915ff8851d03e6fafc53adcdd9bbe5bfaf2143f6fa3ec9081ae5c5e4464db8613f92a8ca82a83ec343953f1dd24c67f735596d6e0d77fe2335f97475f5cbd6f7bbbf9546fb1eb27ab2f8a6ca9b246601a9d98b6be017190786dc51cd0ea9fab033e75f54b4906c8aad143090e415af60cd1069dfdcdd379a93858d4879826f95daa0cfbc6ca73ecff1b9db29d94cf695ceb38f25fc38debd9ca2662f4ea139f0ed155e6e865b389eddca7ac1911caff4b032f92fd0004e47d973141b51c2f521b57d93b1ab732dd7ed2f0d675d6e230e39a67323ac879a127bb16e42ede5ab06e0273e883e14bb2bbc09fceb93bb770896315884786b67ec492e0a5ee7a45d807281f230fb95b56ad96e6642e7ad533e6c7fd982206d584fa6a684de8bf1101ec3e5ba2298f36850c36d101e12e24938de6bff54e6</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好，这里需要密码。</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
     
@@ -633,33 +666,6 @@
     <category term="金融化" scheme="https://dhndzwxj.github.io/tags/%E9%87%91%E8%9E%8D%E5%8C%96/"/>
     
     <category term="货币等级" scheme="https://dhndzwxj.github.io/tags/%E8%B4%A7%E5%B8%81%E7%AD%89%E7%BA%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Macbook外置硬盘未装载</title>
-    <link href="https://dhndzwxj.github.io/4048060042.html"/>
-    <id>https://dhndzwxj.github.io/4048060042.html</id>
-    <published>2023-02-22T02:48:06.000Z</published>
-    <updated>2023-03-07T10:32:10.778Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在iterm中（或者其他终端，Terminal）运行</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">lsof</span> <span class="token operator">|</span> <span class="token function">grep</span> disk2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然后运行</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">pkill</span> <span class="token parameter variable">-f</span> fsck_hfs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-    
-    
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; class=&quot;aplayer-secondary-script-marker&quot;&gt;&lt;/script&gt;&lt;p&gt;在iterm中（或者其他终端，Terminal）运行&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;lsof&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; disk2&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后运行&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;pkill&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-f&lt;/span&gt; fsck_hfs&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-</summary>
-    
-    
-    
-    <category term="杂技" scheme="https://dhndzwxj.github.io/categories/%E6%9D%82%E6%8A%80/"/>
-    
-    
-    <category term="macOS" scheme="https://dhndzwxj.github.io/tags/macOS/"/>
-    
-    <category term="外置硬盘未装载" scheme="https://dhndzwxj.github.io/tags/%E5%A4%96%E7%BD%AE%E7%A1%AC%E7%9B%98%E6%9C%AA%E8%A3%85%E8%BD%BD/"/>
     
   </entry>
   
