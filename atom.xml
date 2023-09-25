@@ -6,7 +6,7 @@
   <link href="https://dhndzwxj.github.io/atom.xml" rel="self"/>
   
   <link href="https://dhndzwxj.github.io/"/>
-  <updated>2023-09-25T06:07:35.562Z</updated>
+  <updated>2023-09-25T06:07:51.305Z</updated>
   <id>https://dhndzwxj.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dhndzwxj.github.io/3254515816.html"/>
     <id>https://dhndzwxj.github.io/3254515816.html</id>
     <published>2023-09-25T05:36:21.000Z</published>
-    <updated>2023-09-25T06:07:35.562Z</updated>
+    <updated>2023-09-25T06:07:51.305Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>实现在局域网下共享一台Windows电脑上的文件，相当于把这台电脑当成一台服务器了。</p><h2 id="1-windows端设置共享文件夹"><a class="markdownIt-Anchor" href="#1-windows端设置共享文件夹"></a> 1. Windows端设置共享文件夹</h2><p>打开<code>控制面板——网络和Internet——网络和共享中心</code>，选择“更改高级共享设置”。在“所有网络”下，将“密码保护的共享”改为“无密码保护的共享”。</p><div align='center'>    <img src='/../../images/局域网下Windows共享文件夹/image-20230925134010006.png' width=700px>    <img src='/../../images/局域网下Windows共享文件夹/image-20230925134027325.png' width=700px></div><p>选择要共享的文件夹，先添加可以共享用户：右键—&gt;属性—&gt;安全，依次点击“编辑——添加——高级——立即查找”，找到Everyone这个用户，添加进去，这样就能把该文件夹分享给所有人了。</p><div align='center'>    <img src='/../../images/局域网下Windows共享文件夹/image-20230925134646406.png' width=800px></div><p>然后添加共享权限：右键—&gt;属性—&gt;共享—&gt;高级共享</p><div align='center'>    <img src='/../../images/局域网下Windows共享文件夹/image-20230925134225980.png' width=500px></div><p>然后勾选“共享此文件夹”，再设置权限，可以设为读取、更改、完全控制等等。</p><div align='center'>    <img src='/../../images/局域网下Windows共享文件夹/image-20230925134405502.png' width=500px></div><p>选择一个用户名去共享，然后就会有一个访问共享文件夹的路径</p><h2 id="2-mac访问"><a class="markdownIt-Anchor" href="#2-mac访问"></a> 2. Mac访问</h2><p>在Mac中，点击 Finder菜单的“前往” &gt; “前往服务器”【或者快捷键Command+K】。在弹出的连接服务器对话框中输入「<a href="https://link.zhihu.com/?target=smb%3A//Windows">smb://Windows</a>主机的IP地址」，点击“连接”。</p><div align='center'>    <img src='/../../images/局域网下Windows共享文件夹/image-20230925140334536.png' width=600px>    <img src='/../../images/局域网下Windows共享文件夹/image-20230925135820165.png' width=600px></div><p>一般需要输入Windows对应用户的名称和密码【如果以“客人”身份访问，似乎就不必要了】，然后弹出如下窗口，选择对应的文件夹，点击“好”即可进行远程访问。</p><h2 id="3-windows访问"><a class="markdownIt-Anchor" href="#3-windows访问"></a> 3. Windows访问</h2><p>似乎输入服务器的IP地址，即可访问。</p><h2 id="4ipad和iphone访问"><a class="markdownIt-Anchor" href="#4ipad和iphone访问"></a> 4.ipad和iphone访问</h2><p>打开设备上的“文件”APP。</p><p>点击左侧栏右上角的三个点，然后点“连接服务器”，然后以“客人”身份访问即可点击“下一步”。</p><div align='center'>    <img src='/../../images/局域网下Windows共享文件夹/image-20230925135356863.png' width=800px>    <img src='/../../images/局域网下Windows共享文件夹/image-20230925135627726.png' width=800px></div><h2 id="5安卓访问"><a class="markdownIt-Anchor" href="#5安卓访问"></a> 5.安卓访问</h2><p>不同品牌手机貌似不一样。</p><p>华为手机貌似可以：手机-文件管理-在“位置”下边有个网络邻居，点击添加设备，输入电脑的用户名密码即可看到共享</p><p>如果一些手机并没有自带访问共享文件夹的功能，那么可以：</p><ul><li>在 Android 手机上安装 ES 文件浏览器。</li><li>打开 ES 文件浏览器，点击左上角的菜单图标。</li><li>在菜单中选择「本地网络」。</li><li>在「本地网络」页面中，点击「添加本地网络」。</li><li>在「添加本地网络」页面中，输入 Windows 电脑的 IP 地址和共享文件夹的名称，然后点击「确定」。</li></ul>]]></content>
     
