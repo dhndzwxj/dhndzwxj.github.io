@@ -16,9 +16,9 @@
 <meta name="twitter:image" content="https://dhndzwxj.github.io/private_img/banner2.gif"><link rel="shortcut icon" href="/private_img/favicon.png"><link rel="canonical" href="https://dhndzwxj.github.io/1675342907.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
   translate: undefined,
-  noticeOutdate: {"limitDay":100,"position":"top","messagePrev":"本文上次更新距离今天已经过去","messageNext":"天, 文中内容可能已经过时，望周知。"},
+  noticeOutdate: {"limitDay":50,"position":"top","messagePrev":"本文上次更新距离今天已经过去","messageNext":"天, 文中内容可能已经过时，望周知。"},
   highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
   copy: {
     success: '复制成功',
@@ -40,15 +40,17 @@
   copyright: undefined,
   lightbox: 'fancybox',
   Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
   },
   isPhotoFigcaption: false,
   islazyload: false,
-  isAnchor: true,
+  isAnchor: false,
   percent: {
-    toc: true,
+    toc: false,
     rightside: true,
   },
   autoDarkmode: false
@@ -59,77 +61,84 @@
   isHighlightShrink: false,
   isToc: true,
   postUpdate: '2023-09-13 11:56:38'
-}</script><script>(win=>{
-      win.saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
-      
-        get: key => {
-          const itemStr = localStorage.getItem(key)
-      
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
-      
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
         }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
       }
-    
-      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
-
-        Object.keys(attr).forEach(key => {
-          script.setAttribute(key, attr[key])
-        })
-
-        document.head.appendChild(script)
-      })
-    
-      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onerror = reject
-        link.onload = link.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          link.onload = link.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(link)
-      })
-    
-      win.activateDarkMode = () => {
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
         document.documentElement.setAttribute('data-theme', 'dark')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
           document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
         }
       }
-      win.activateLightMode = () => {
+      win.activateLightMode = function () {
         document.documentElement.setAttribute('data-theme', 'light')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
           document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
@@ -137,9 +146,9 @@
       }
       const t = saveToLocal.get('theme')
     
-        if (t === 'dark') activateDarkMode()
-        else if (t === 'light') activateLightMode()
-      
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
       const asideStatus = saveToLocal.get('aside-status')
       if (asideStatus !== undefined) {
         if (asideStatus === 'hide') {
@@ -149,18 +158,18 @@
         }
       }
     
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
       }
-      detectApple()
+    }
+    detectApple()
     })(window)</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet"><link href="https://fonts.loli.net/css2?family=Ma+Shan+Zheng:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/wave.css?v1"><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="atom.xml" title="小荷才露尖尖角" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/private_img/yuyingnan.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="archives/"><div class="headline">文章</div><div class="length-num">312</div></a><a href="tags/"><div class="headline">标签</div><div class="length-num">669</div></a><a href="categories/"><div class="headline">分类</div><div class="length-num">78</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/private_img/banner2.gif')"><nav id="nav"><span id="blog-info"><a href="index.html" title="小荷才露尖尖角"><span class="site-name">小荷才露尖尖角</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">什么是辉格史观？</h1><div id="post-meta"><div class="meta-firstline"><i class="fa-solid fa-user"></i><span class="post-meta-author">揭晓</span><span class="post-meta-date"><span class="post-meta-separator">|</span><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-07-25T10:04:20.000Z" title="发表于 2021-07-25 18:04:20">2021-07-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-13T03:56:38.698Z" title="更新于 2023-09-13 11:56:38">2023-09-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/">名词解释</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="什么是辉格史观？"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>辉格史观一词来自历史学家Herbert Butterfield（赫伯特·巴特费尔德，1900-1979）于1931年的一个演讲。根据Butterfield的观点，辉格史观者相信在历史学中存在演变的逻辑，他们用现在的标准评判过去。<span style='color:red'>用通俗的话语来讲，即辉格史观描述的一切历史都是基于现在为出发点，传达的历史都是为现在做服务。</span></p>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="../private_img/yuyingnan.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="../archives/"><div class="headline">文章</div><div class="length-num">312</div></a><a href="../tags/"><div class="headline">标签</div><div class="length-num">669</div></a><a href="../categories/"><div class="headline">分类</div><div class="length-num">78</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="../air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/private_img/banner2.gif')"><nav id="nav"><span id="blog-info"><a href="../index.html" title="小荷才露尖尖角"><span class="site-name">小荷才露尖尖角</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="../air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">什么是辉格史观？</h1><div id="post-meta"><div class="meta-firstline"><i class="fa-solid fa-user"></i><span class="post-meta-author">揭晓</span><span class="post-meta-date"><span class="post-meta-separator">|</span><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-07-25T10:04:20.000Z" title="发表于 2021-07-25 18:04:20">2021-07-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-13T03:56:38.698Z" title="更新于 2023-09-13 11:56:38">2023-09-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/">名词解释</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="什么是辉格史观？"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>辉格史观一词来自历史学家Herbert Butterfield（赫伯特·巴特费尔德，1900-1979）于1931年的一个演讲。根据Butterfield的观点，辉格史观者相信在历史学中存在演变的逻辑，他们用现在的标准评判过去。<span style='color:red'>用通俗的话语来讲，即辉格史观描述的一切历史都是基于现在为出发点，传达的历史都是为现在做服务。</span></p>
 <p>虽然在政治和历史学领域辉格史观不被认可，它在科学史领域还是有存在价值的。科学领域的工作是具有累积性的。我们比前人们知道的东西要多，而且通过审视他们的错误我们学会了他们当时不能够理解的东西。</p>
 <p>所谓一般意义上的“历史的辉格解释”，就是从当前现状出发，将历史的发展理解为按照其内在逻辑向现在演变的过程；同时也是从当前出发，对历史发展变化进行道德的评价和判断。</p>
 <hr />
@@ -212,7 +221,7 @@ a["总结：呼吁经济学多样性"] --- 理论多元竞争 & 重视基础研�
 <h3 id="历史学家的技艺"><a class="markdownIt-Anchor" href="#历史学家的技艺"></a> 历史学家的技艺</h3>
 <p>历史学家决不仅仅是被动的旁观者。仅仅是为能够抓住大有讲究的细节，领悟事件之间的应和，并发现纠缠在一起的事实，他也需要做更多的事情。通过想象的应和，他让过去变得进人能够理解。<b>这里有一种觉悟，只能通过洞察、同情和想象力来获得。</b></p>
 <p>历史学家探索过去，探索的不仅仅是事实，还有意义。在这个过程中，我们必须带上我们的直觉，保持鲜活的同情心，并且唤醒我们全部的人性。我们必须从我们全部的天性资源中唤醒一切能够是的科学家的思考发生转向的东西，把它们结合起来去丰富诗人的思考。</p>
-</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="tags/%E6%80%9D%E6%83%B3%E5%8F%B2/">思想史</a></div><div class="post_share"><div class="social-share" data-image="/private_img/banner2.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/private_img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/private_img/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/private_img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/private_img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="3578613714.html" title="权力和利润：积累的社会结构和战后美国经济的利润率"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">权力和利润：积累的社会结构和战后美国经济的利润率</div></div></a></div><div class="next-post pull-right"><a href="2461741445.html" title="理解当前美国经济的扩张：长波方法和批评"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">理解当前美国经济的扩张：长波方法和批评</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E6%9D%90%E6%96%99%E7%BB%8F%E6%B5%8E%E6%80%9D%E6%83%B3%E5%8F%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E5%AF%B9%E8%90%A8%E7%BC%AA%E5%B0%94%E6%A3%AE%E7%9A%84%E8%BE%89%E6%A0%BC%E5%8F%B2%E8%A7%82%E6%96%B9%E6%B3%95%E7%9A%84%E6%89%B9%E5%88%A4"><span class="toc-text"> 【拓展材料】——经济思想史学家们对萨缪尔森的辉格史观方法的批判</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#herbert-butterfield%E8%B5%AB%E4%BC%AF%E7%89%B9%E5%B7%B4%E7%89%B9%E8%B4%B9%E5%B0%94%E5%BE%B71900-1979%E4%BB%8B%E7%BB%8D"><span class="toc-text"> Herbert Butterfield（赫伯特·巴特费尔德，1900-1979）介绍：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BE%89%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%86%E5%8F%B2%E8%A7%A3%E9%87%8A"><span class="toc-text"> 关于辉格式的历史解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E5%AD%A6%E5%AE%B6%E5%92%8C%E5%8E%86%E5%8F%B2%E5%AD%A6%E7%9A%84%E4%BB%BB%E5%8A%A1"><span class="toc-text"> 历史学家和历史学的任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E7%9A%84%E8%BF%9B%E7%A8%8B"><span class="toc-text"> 历史的进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E4%B8%8E%E4%BB%B7%E5%80%BC%E5%88%A4%E6%96%AD"><span class="toc-text"> 历史与价值判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E5%AD%A6%E4%B8%AD%E7%9A%84%E9%81%93%E5%BE%B7%E5%88%A4%E6%96%AD"><span class="toc-text"> 历史学中的道德判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%8A%80%E8%89%BA"><span class="toc-text"> 历史学家的技艺</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('/private_img/banner2.gif')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 揭晓</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="js/utils.js"></script><script src="js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="tags/%E6%80%9D%E6%83%B3%E5%8F%B2/">思想史</a></div><div class="post_share"><div class="social-share" data-image="/private_img/banner2.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/private_img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/private_img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/private_img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/private_img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="3578613714.html" title="权力和利润：积累的社会结构和战后美国经济的利润率"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">权力和利润：积累的社会结构和战后美国经济的利润率</div></div></a></div><div class="next-post pull-right"><a href="2461741445.html" title="理解当前美国经济的扩张：长波方法和批评"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">理解当前美国经济的扩张：长波方法和批评</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="../private_img/yuyingnan.jpg" onerror="this.onerror=null;this.src='../img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">揭晓</div><div class="author-info__description">随手写一写，揭晓这世界</div></div><a id="card-info-btn" href="/"><i class="fas fa-home"></i><span>回到首页</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E6%9D%90%E6%96%99%E7%BB%8F%E6%B5%8E%E6%80%9D%E6%83%B3%E5%8F%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E5%AF%B9%E8%90%A8%E7%BC%AA%E5%B0%94%E6%A3%AE%E7%9A%84%E8%BE%89%E6%A0%BC%E5%8F%B2%E8%A7%82%E6%96%B9%E6%B3%95%E7%9A%84%E6%89%B9%E5%88%A4"><span class="toc-text"> 【拓展材料】——经济思想史学家们对萨缪尔森的辉格史观方法的批判</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#herbert-butterfield%E8%B5%AB%E4%BC%AF%E7%89%B9%E5%B7%B4%E7%89%B9%E8%B4%B9%E5%B0%94%E5%BE%B71900-1979%E4%BB%8B%E7%BB%8D"><span class="toc-text"> Herbert Butterfield（赫伯特·巴特费尔德，1900-1979）介绍：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BE%89%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8E%86%E5%8F%B2%E8%A7%A3%E9%87%8A"><span class="toc-text"> 关于辉格式的历史解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E5%AD%A6%E5%AE%B6%E5%92%8C%E5%8E%86%E5%8F%B2%E5%AD%A6%E7%9A%84%E4%BB%BB%E5%8A%A1"><span class="toc-text"> 历史学家和历史学的任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E7%9A%84%E8%BF%9B%E7%A8%8B"><span class="toc-text"> 历史的进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E4%B8%8E%E4%BB%B7%E5%80%BC%E5%88%A4%E6%96%AD"><span class="toc-text"> 历史与价值判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E5%AD%A6%E4%B8%AD%E7%9A%84%E9%81%93%E5%BE%B7%E5%88%A4%E6%96%AD"><span class="toc-text"> 历史学中的道德判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%8A%80%E8%89%BA"><span class="toc-text"> 历史学家的技艺</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../2155346957.html" title="生产的政治1资本主义社会的劳动过程">生产的政治1资本主义社会的劳动过程</a><time datetime="2023-10-09T15:15:12.614Z" title="更新于 2023-10-09 23:15:12">2023-10-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3199949429.html" title="生产的政治2卡尔马克思与魔鬼工厂">生产的政治2卡尔马克思与魔鬼工厂</a><time datetime="2023-10-09T15:15:01.357Z" title="更新于 2023-10-09 23:15:01">2023-10-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../2480006749.html" title="生产的政治3发达资本主义工厂政体的变动面向">生产的政治3发达资本主义工厂政体的变动面向</a><time datetime="2023-10-09T15:14:54.238Z" title="更新于 2023-10-09 23:14:54">2023-10-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../998865776.html" title="Zotero文献管理">Zotero文献管理</a><time datetime="2023-10-09T14:57:14.579Z" title="更新于 2023-10-09 22:57:14">2023-10-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../703672776.html" title="大卫哈维新帝国主义">大卫哈维新帝国主义</a><time datetime="2023-10-09T13:59:08.950Z" title="更新于 2023-10-09 21:59:08">2023-10-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../3682906898.html" title="《政治经济学的国民体系》">《政治经济学的国民体系》</a><time datetime="2023-10-09T13:58:50.546Z" title="更新于 2023-10-09 21:58:50">2023-10-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../2084581857.html" title="全球化制造革命">全球化制造革命</a><time datetime="2023-10-09T13:35:27.829Z" title="更新于 2023-10-09 21:35:27">2023-10-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="../595896962.html" title="阿锐基漫长的20世纪">阿锐基漫长的20世纪</a><time datetime="2023-10-09T13:35:09.251Z" title="更新于 2023-10-09 21:35:09">2023-10-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/private_img/banner2.gif')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 揭晓</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="js/utils.js"></script><script src="js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -280,10 +289,10 @@ a["总结：呼吁经济学多样性"] --- 理论多元竞争 & 重视基础研�
     window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
   }
 
-  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+  btf.addModeChange('mermaid', runMermaid)
 
   window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
-})()</script><script>(() => {
+})()</script><script>function loadDisqus () {
   const disqus_config = function () {
     this.page.url = 'https://dhndzwxj.github.io/1675342907.html'
     this.page.identifier = ''
@@ -291,49 +300,31 @@ a["总结：呼吁经济学多样性"] --- 理论多元竞争 & 重视基础研�
   }
 
   const disqusReset = () => {
-    window.DISQUS && window.DISQUS.reset({
+    DISQUS.reset({
       reload: true,
       config: disqus_config
     })
   }
 
-  btf.addGlobalFn('themeChange', disqusReset, 'disqus')
+  btf.addModeChange('disqus', disqusReset)
 
-  const loadDisqus = () =>{
-    if (window.DISQUS) disqusReset()
-    else {
-      const script = document.createElement('script')
-      script.src = 'https://.disqus.com/embed.js'
-      script.setAttribute('data-timestamp', +new Date())
-      document.head.appendChild(script)
-    }
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
   }
+}
 
-  const getCount = async() => {
-    try {
-      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
-      if (!eleGroup) return
-      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
-
-      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=&api_key=https-www-dhndzwxj-top&thread:link=${cleanedLinks}`,{
-        method: 'GET'
-      })
-      const result = await res.json()
-
-      const count = result.response.length ? result.response[0].posts : 0
-      eleGroup.textContent = count
-    } catch (err) {
-      console.error(err)
-    }
+if ('Disqus' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
   }
-
-  if ('Disqus' === 'Disqus' || !true) {
-    if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
-    else {
-      loadDisqus()
-      GLOBAL_CONFIG_SITE.isPost && getCount()
-    }
-  } else {
-    window.loadOtherComment = loadDisqus
-  }
-})()</script></div><script type='text/javascript' src='https://ajax.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script id="dsq-count-scr" src="//https-www-dhndzwxj-top.disqus.com/count.js" async></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="js/search/local-search.js"></script></div></div></body></html>
+}
+</script></div><script type='text/javascript' src='https://ajax.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script id="dsq-count-scr" src="//https-www-dhndzwxj-top.disqus.com/count.js" async></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="../js/search/local-search.js"></script></div></div></body></html>
