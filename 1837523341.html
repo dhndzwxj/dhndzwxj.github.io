@@ -1,19 +1,19 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
 <link rel="stylesheet" href="css/bilicard.css">
-<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>stata笔记 | 小荷才露尖尖角</title><meta name="author" content="揭晓"><meta name="copyright" content="揭晓"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="MacBook技巧：如果需要复制路径，在finder里，对选中的文件，cmd+opt+c，就复制到剪贴板了。  0 简介 Stata 统计软件包是目前世界上最著名的统计软件之一，与SAS、SPSS 一起被并称为三大权威软件。它广泛的应用于经济、教育、人口、政治学、社会学、医学、药学、工矿、农林等学科领域，同时具有数据管理软件、统计分析软件、绘图软件、矩阵计算软件和程序语言的特点，几乎可以完成全部复">
+<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>stata笔记 | 小荷才露尖尖角</title><meta name="author" content="揭晓"><meta name="copyright" content="揭晓"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="MacBook技巧：如果需要复制路径，在finder里，对选中的文件，cmd+opt+c，就复制到剪贴板了。 参考书籍：陈传波-stata软件教程。    0 简介 Stata 统计软件包是目前世界上最著名的统计软件之一，与SAS、SPSS 一起被并称为三大权威软件。它广泛的应用于经济、教育、人口、政治学、社会学、医学、药学、工矿、农林等学科领域，同时具有数据管理软件、统计分析软件、绘图软件、矩阵">
 <meta property="og:type" content="article">
 <meta property="og:title" content="stata笔记">
 <meta property="og:url" content="https://dhndzwxj.github.io/1837523341.html">
 <meta property="og:site_name" content="小荷才露尖尖角">
-<meta property="og:description" content="MacBook技巧：如果需要复制路径，在finder里，对选中的文件，cmd+opt+c，就复制到剪贴板了。  0 简介 Stata 统计软件包是目前世界上最著名的统计软件之一，与SAS、SPSS 一起被并称为三大权威软件。它广泛的应用于经济、教育、人口、政治学、社会学、医学、药学、工矿、农林等学科领域，同时具有数据管理软件、统计分析软件、绘图软件、矩阵计算软件和程序语言的特点，几乎可以完成全部复">
+<meta property="og:description" content="MacBook技巧：如果需要复制路径，在finder里，对选中的文件，cmd+opt+c，就复制到剪贴板了。 参考书籍：陈传波-stata软件教程。    0 简介 Stata 统计软件包是目前世界上最著名的统计软件之一，与SAS、SPSS 一起被并称为三大权威软件。它广泛的应用于经济、教育、人口、政治学、社会学、医学、药学、工矿、农林等学科领域，同时具有数据管理软件、统计分析软件、绘图软件、矩阵">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://dhndzwxj.github.io/private_img/banner2.gif">
 <meta property="article:published_time" content="2020-11-15T03:28:32.000Z">
-<meta property="article:modified_time" content="2023-10-08T09:36:23.282Z">
+<meta property="article:modified_time" content="2023-10-09T11:46:18.956Z">
 <meta property="article:author" content="揭晓">
 <meta property="article:tag" content="python">
-<meta property="article:tag" content="数据处理">
 <meta property="article:tag" content="stata">
+<meta property="article:tag" content="数据处理">
 <meta property="article:tag" content="数据拆分">
 <meta property="article:tag" content="数据合并">
 <meta property="article:tag" content="Mata">
@@ -65,7 +65,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-10-08 17:36:23'
+  postUpdate: '2023-10-09 19:46:18'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -174,7 +174,9 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="atom.xml" title="小荷才露尖尖角" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/private_img/yuyingnan.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="archives/"><div class="headline">文章</div><div class="length-num">309</div></a><a href="tags/"><div class="headline">标签</div><div class="length-num">669</div></a><a href="categories/"><div class="headline">分类</div><div class="length-num">78</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/private_img/banner2.gif')"><nav id="nav"><span id="blog-info"><a href="index.html" title="小荷才露尖尖角"><span class="site-name">小荷才露尖尖角</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">stata笔记</h1><div id="post-meta"><div class="meta-firstline"><i class="fa-solid fa-user"></i><span class="post-meta-author">揭晓</span><span class="post-meta-date"><span class="post-meta-separator">|</span><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-15T03:28:32.000Z" title="发表于 2020-11-15 11:28:32">2020-11-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-08T09:36:23.282Z" title="更新于 2023-10-08 17:36:23">2023-10-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/">计量与模型</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/%E8%AE%A1%E9%87%8F/">计量</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/%E8%AE%A1%E9%87%8F/stata/">stata</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">11k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>41分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="stata笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>MacBook技巧：如果需要复制路径，在<code>finder</code>里，对选中的文件，<code>cmd+opt+c</code>，就复制到剪贴板了。</p>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/private_img/yuyingnan.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="archives/"><div class="headline">文章</div><div class="length-num">309</div></a><a href="tags/"><div class="headline">标签</div><div class="length-num">669</div></a><a href="categories/"><div class="headline">分类</div><div class="length-num">78</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/private_img/banner2.gif')"><nav id="nav"><span id="blog-info"><a href="index.html" title="小荷才露尖尖角"><span class="site-name">小荷才露尖尖角</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="../../"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-laptop-house"></i><span> 结构</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/air-conditioner/"><i class="fa-fw fas fa-wind"></i><span> 便携小空调</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">stata笔记</h1><div id="post-meta"><div class="meta-firstline"><i class="fa-solid fa-user"></i><span class="post-meta-author">揭晓</span><span class="post-meta-date"><span class="post-meta-separator">|</span><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-15T03:28:32.000Z" title="发表于 2020-11-15 11:28:32">2020-11-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-09T11:46:18.956Z" title="更新于 2023-10-09 19:46:18">2023-10-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/">计量与模型</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/%E8%AE%A1%E9%87%8F/">计量</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="categories/%E8%AE%A1%E9%87%8F%E4%B8%8E%E6%A8%A1%E5%9E%8B/%E8%AE%A1%E9%87%8F/stata/">stata</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">13.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>51分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="stata笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>MacBook技巧：如果需要复制路径，在<code>finder</code>里，对选中的文件，<code>cmd+opt+c</code>，就复制到剪贴板了。</p>
+<p>参考书籍：陈传波-stata软件教程。</p>
+<p><embed height=500px width=600px fullscreen='yes' src='/local_file/陈传波-stata软件教程.pdf'> </embed></p>
 <h2 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h2>
 <p>Stata 统计软件包是目前世界上最著名的统计软件之一，与SAS、SPSS 一起被并称为三大权威软件。它广泛的应用于经济、教育、人口、政治学、社会学、医学、药学、工矿、农林等学科领域，同时具有数据管理软件、统计分析软件、绘图软件、矩阵计算软件和程序语言的特点，几乎可以完成全部复杂的统计分析工作。其功能非常强大且操作简单、使用灵活、易学易用、运行速度极快，在许多方面别具一格。</p>
 <p>Stata 的另一个特点是他的许多高级统计模块均是编程人员用宏语言写成的程序文件（ADO 文件），这些文件可以自行修改、添加和下载。用户可随时到Stata 网站寻找并下载最新的升级文件。这一特点使得STATA 始终处于统计分析方法发展的最前沿，用户几乎总是能很快找到最新统计算法的Stata 程序版本，而这也使得Stata 自身成了几大统计软件中升级最多、最频繁的一个。</p>
@@ -219,6 +221,8 @@
 <span class="token command keyword">drop</span> <span class="token keyword">if</span> _merge<span class="token operator">==</span><span class="token number">2</span>
 <span class="token command keyword">drop</span> <span class="token keyword">if</span> _merge<span class="token operator">==</span><span class="token number">1</span>
 <span class="token command keyword">drop</span> _merge<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出为excel文件</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">export</span> excel using <span class="token string-literal"><span class="token string">"mywide.xls"</span></span><span class="token punctuation">,</span><span class="token function">firstrow</span><span class="token punctuation">(</span>variable<span class="token punctuation">)</span> replace<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>结果输出</p>
 <pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token comment">//安装 </span>
 <span class="token command keyword">ssc</span> install estout<span class="token punctuation">,</span> replace
@@ -437,7 +441,7 @@
 <span class="token command keyword">gsort</span> <span class="token operator">-</span>make
 <span class="token command keyword">list</span> <span class="token keyword">in</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="15-分类操作"><a class="markdownIt-Anchor" href="#15-分类操作"></a> 1.5 分类操作</h3>
-<p>例子：，有一个变量foreign，该变量表示某个车是进口车（1 Foreign）还是国产车（0 Domestic）。如果需要分别知道国产车和进口车的价格和重量，可以采用分类操作来求得，</p>
+<p>例子1：有一个变量foreign，该变量表示某个车是进口车（1 Foreign）还是国产车（0 Domestic）。如果需要分别知道国产车和进口车的价格和重量，可以采用分类操作来求得，</p>
 <pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">sysuse</span> auto<span class="token punctuation">,</span><span class="token keyword">clear</span>
 <span class="token keyword">by</span> foreign<span class="token punctuation">:</span> <span class="token command keyword">sum</span> price weight<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><span style='color:red'>可能犯的错</span>：</p>
@@ -448,6 +452,78 @@
 <span class="token keyword">by</span> foreign<span class="token punctuation">:</span> <span class="token command keyword">sum</span> price weight<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>或者简化代码：</p>
 <pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token keyword">by</span> foreign<span class="token punctuation">,</span> <span class="token keyword">sort</span><span class="token punctuation">:</span> <span class="token command keyword">sum</span> price weight<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>例子2：</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">clear</span>
+<span class="token command keyword">set</span> obs <span class="token number">5</span>
+<span class="token command keyword">input</span> x y
+<span class="token number">1</span> <span class="token number">1.1</span>
+<span class="token number">1</span> <span class="token number">1.2</span>
+<span class="token number">1</span> <span class="token number">1.3</span>
+<span class="token number">2</span> <span class="token number">2.1</span>
+<span class="token number">2</span> <span class="token number">2.2</span>
+<span class="token command keyword">end</span>
+<span class="token command keyword">gen</span> n <span class="token operator">=</span> _n
+<span class="token command keyword">gen</span> N <span class="token operator">=</span> _N
+<span class="token command keyword">gen</span> z <span class="token operator">=</span> y<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token command keyword">export</span> excel using <span class="token string-literal"><span class="token string">"mydata.xls"</span></span><span class="token punctuation">,</span><span class="token function">firstrow</span><span class="token punctuation">(</span>variable<span class="token punctuation">)</span> replace<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>生成的数据如下：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>x</th>
+<th>y</th>
+<th>n</th>
+<th>N</th>
+<th>z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>2</td>
+<td>5</td>
+<td>5</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token keyword">by</span> x<span class="token punctuation">,</span> <span class="token keyword">sort</span><span class="token punctuation">:</span> <span class="token command keyword">gen</span> n1 <span class="token operator">=</span> _n <span class="token comment">//先根据x分组，n1对应于每一组数据对应的位置</span>
+<span class="token keyword">by</span> x<span class="token punctuation">,</span> <span class="token keyword">sort</span><span class="token punctuation">:</span> <span class="token command keyword">gen</span> N1 <span class="token operator">=</span> _N <span class="token comment">//先根据x分组，N1是每一组数据的总数</span>
+<span class="token keyword">by</span> x<span class="token punctuation">,</span> <span class="token keyword">sort</span><span class="token punctuation">:</span> <span class="token command keyword">gen</span> z1 <span class="token operator">=</span> y<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment">//先根据x分组，z1是y每一组第一个值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="15a-生成虚拟变量的一个方法"><a class="markdownIt-Anchor" href="#15a-生成虚拟变量的一个方法"></a> 1.5a 生成虚拟变量的一个方法</h3>
 <p><code>cut()</code>将连续的数值，转换为区间的分类变量。先举个简单的例子：[3000, 7500)=便宜, [7500, 12000)=适中, [12000, 165000)=贵，共3个类别</p>
 <pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">sysuse</span> auto<span class="token punctuation">,</span><span class="token keyword">clear</span>
@@ -874,7 +950,7 @@
 <li>Shift + Alt + I：可以在选中多行的情况下在行尾插入光标，方便同时编辑多行。</li>
 <li>Ctrl + Shift + Alt + 方向键上/下：可以在选中多行的情况下复制并插入多个光标。</li>
 </ol>
-<h3 id="1n-1-四则运算"><a class="markdownIt-Anchor" href="#1n-1-四则运算"></a> 1.(n-1) 四则运算</h3>
+<h3 id="1n-1-四则运算-函数运算"><a class="markdownIt-Anchor" href="#1n-1-四则运算-函数运算"></a> 1.(n-1) 四则运算、函数运算</h3>
 <pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">display</span> <span class="token number">4</span><span class="token operator">+</span><span class="token number">8</span>
 <span class="token command keyword">di</span> <span class="token number">4</span><span class="token operator">+</span><span class="token number">8</span>
 <span class="token command keyword">di</span> <span class="token number">10</span><span class="token operator">/</span><span class="token number">2</span>
@@ -882,6 +958,158 @@
 <span class="token command keyword">di</span> <span class="token function">exp</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
 <span class="token command keyword">di</span> <span class="token function">ln</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">//stata中ln和log是一个函数！</span>
 <span class="token command keyword">di</span> <span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="常用函数"><a class="markdownIt-Anchor" href="#常用函数"></a> 常用函数</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>函数</th>
+<th>含义</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数值型函数</td>
+<td>abs(x)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>comb(n,k)</td>
+<td>从n中取k个组合</td>
+<td>comb(10,2)  =45</td>
+</tr>
+<tr>
+<td></td>
+<td>exp(x)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>fill()</td>
+<td>自动填充数据</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>int(x)</td>
+<td>取整</td>
+<td>int(5.6)=5,int(-5.2)=-5</td>
+</tr>
+<tr>
+<td></td>
+<td>ln(x)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>log10(x)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>mod(x,y)</td>
+<td>模运算</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>round(x)</td>
+<td>四舍五入</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>sqrt(x)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>sum(x)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>随机函数</td>
+<td>uniform()</td>
+<td>均匀分布随机数</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>invnormal(uniform())</td>
+<td>标准正态分布随机数</td>
+<td></td>
+</tr>
+<tr>
+<td>字符函数</td>
+<td>real(s)</td>
+<td>字符型转化为数值型</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>string(n)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>substr(s,n1,n2)</td>
+<td>从s的第n1个字符开始，截取n2个字符</td>
+<td>substr(“family”,3,2) = mi</td>
+</tr>
+<tr>
+<td>这个不行！</td>
+<td>word(s,n)</td>
+<td>返回s的第n个字符</td>
+<td>word(“family”,4)=i</td>
+</tr>
+<tr>
+<td>系统变量</td>
+<td>_n</td>
+<td>当前观察值的序号</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>_N</td>
+<td>共有多少观察值</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>_pi</td>
+<td>圆周率</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="分组函数"><a class="markdownIt-Anchor" href="#分组函数"></a> 分组函数</h4>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">clear</span>
+<span class="token command keyword">input</span> a b
+<span class="token number">1</span> <span class="token number">0</span>
+<span class="token number">0</span> <span class="token number">0</span>
+<span class="token number">1</span> <span class="token number">1</span>
+<span class="token number">0</span> <span class="token number">1</span>
+<span class="token number">0</span> <span class="token number">0</span>
+<span class="token number">1</span> .
+. <span class="token number">0</span>
+<span class="token command keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用分组函数：</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">egen</span> ab <span class="token operator">=</span> <span class="token function">group</span><span class="token punctuation">(</span>a b<span class="token punctuation">)</span> <span class="token comment">//按a 和b 来进行交叉分组，a=0,b=0 为第一组，…,a=1,b=1 为第四组，缺失值不参与分组</span>
+<span class="token command keyword">egen</span> ab2 <span class="token operator">=</span> <span class="token function">group</span><span class="token punctuation">(</span>a b<span class="token punctuation">)</span><span class="token punctuation">,</span>missing <span class="token comment">//将缺失的组当作另外的一组</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="生成范围变量"><a class="markdownIt-Anchor" href="#生成范围变量"></a> 生成范围变量</h4>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">clear</span>
+<span class="token command keyword">set</span> obs <span class="token number">100</span>
+<span class="token command keyword">gen</span> age <span class="token operator">=</span> _n  <span class="token comment">//生成一个假设的年龄变量age，依次取1，2，…，100</span>
+<span class="token command keyword">recode</span> age <span class="token punctuation">(</span>min<span class="token operator">/</span><span class="token number">30</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">30</span><span class="token operator">/</span><span class="token number">60</span><span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">60</span><span class="token operator">/</span>max<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">gen</span><span class="token punctuation">(</span>agegrp<span class="token punctuation">)</span> <span class="token comment">//生成新的分组变量agegrp,当年龄age 在30 及以下时取值为1，30 到60 为2，60 以上为3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="1n-几个环境设置"><a class="markdownIt-Anchor" href="#1n-几个环境设置"></a> 1.n 几个环境设置</h3>
 <h4 id="1n1-设置屏幕滚动"><a class="markdownIt-Anchor" href="#1n1-设置屏幕滚动"></a> 1.n.1 设置屏幕滚动</h4>
 <p>在列示1 到1000 之前，若先设置<code>set more off</code>，则屏幕不停止；反之<code>set more on</code>会使显示停止。</p>
@@ -904,7 +1132,62 @@
 <pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">variable</span> myvar not found
 <span class="token command keyword">r</span><span class="token punctuation">(</span><span class="token number">111</span><span class="token punctuation">)</span>;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>红色信息表明，没有找到一个叫<code>myvar</code>的变量，的确，我们的数据中并没有这个变量。<code>list</code> 巧妇难为无米之炊。红色信息下面还有一个天兰色的<code>r(111)</code>，用鼠标点击，即可弹进一个帮助信息框，给出错误的更详尽解释。</p>
-<h2 id="1a-小结"><a class="markdownIt-Anchor" href="#1a-小结"></a> 1a 小结</h2>
+<h2 id="1a-流程语句"><a class="markdownIt-Anchor" href="#1a-流程语句"></a> 1a 流程语句</h2>
+<h3 id="1a1-循环"><a class="markdownIt-Anchor" href="#1a1-循环"></a> 1a.1 循环</h3>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token keyword">capture</span> <span class="token command keyword">drop</span> count5
+<span class="token command keyword">program</span> count5
+<span class="token command keyword">local</span> i<span class="token operator">=</span><span class="token number">1</span>
+<span class="token command keyword">while</span> <span class="token variable">`i'</span><span class="token operator">&lt;=</span><span class="token number">5</span><span class="token punctuation">&#123;</span>
+    <span class="token command keyword">display</span> <span class="token variable">`i'</span>
+    <span class="token command keyword">local</span> i <span class="token operator">=</span> <span class="token variable">`i'</span><span class="token operator">+</span><span class="token number">1</span>
+<span class="token punctuation">&#125;</span>
+<span class="token command keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="forvalues"><a class="markdownIt-Anchor" href="#forvalues"></a> forvalues</h4>
+<p>更简洁的写法：</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">forvalues</span> i <span class="token operator">=</span><span class="token number">1</span><span class="token operator">/</span><span class="token number">5</span><span class="token punctuation">&#123;</span>
+    <span class="token command keyword">display</span> <span class="token variable">`i'</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>步长为负</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">forvalues</span> i<span class="token operator">=</span><span class="token number">4</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.2</span><span class="token punctuation">)</span> <span class="token number">0</span><span class="token punctuation">&#123;</span>
+    <span class="token command keyword">display</span> <span class="token variable">`i'</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>求和</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">scalar</span> s<span class="token operator">=</span><span class="token number">0</span>
+<span class="token command keyword">forvalue</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token operator">/</span><span class="token number">100</span><span class="token punctuation">&#123;</span>
+    <span class="token command keyword">scalar</span> s <span class="token operator">=</span> s<span class="token operator">+</span><span class="token variable">`i'</span>
+<span class="token punctuation">&#125;</span>
+<span class="token command keyword">scalar</span> list s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="foreach"><a class="markdownIt-Anchor" href="#foreach"></a> foreach</h4>
+<p>将student.dta, economy.dta, math.dta 纵向拼接起来</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">use</span> student<span class="token punctuation">,</span><span class="token keyword">clear</span>
+<span class="token command keyword">foreach</span> file <span class="token keyword">in</span> economy math<span class="token punctuation">&#123;</span>
+    <span class="token command keyword">append</span> using <span class="token string-literal"><span class="token string">"</span><span class="token interpolation"><span class="token expression"><span class="token variable">`file'</span></span></span><span class="token string">"</span></span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>或者</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">local</span> flist economy math <span class="token comment">//先将文件名赋于宏flist</span>
+<span class="token command keyword">foreach</span> file <span class="token keyword">in</span> <span class="token variable">`flist'</span><span class="token punctuation">&#123;</span>
+    <span class="token command keyword">append</span> using <span class="token string-literal"><span class="token string">"</span><span class="token interpolation"><span class="token expression"><span class="token variable">`file'</span></span></span><span class="token string">"</span></span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>(按项循环)：逐行显示粮食（rice wheat flax maize）和货币（Dollar Lira Pound RMB）</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">local</span> grains <span class="token string-literal"><span class="token string">"rice wheat flax maize"</span></span>
+<span class="token command keyword">foreach</span> x <span class="token keyword">of</span> local grains<span class="token punctuation">&#123;</span>
+    <span class="token command keyword">di</span> <span class="token string-literal"><span class="token string">"</span><span class="token interpolation"><span class="token expression"><span class="token variable">`x'</span></span></span><span class="token string">"</span></span>
+<span class="token punctuation">&#125;</span>
+<span class="token command keyword">global</span> money <span class="token string-literal"><span class="token string">"Dollar Lira Pound RMB"</span></span>
+<span class="token command keyword">foreach</span> y <span class="token keyword">of</span> global money<span class="token punctuation">&#123;</span>
+    <span class="token command keyword">di</span> <span class="token string-literal"><span class="token string">"</span><span class="token interpolation"><span class="token expression"><span class="token variable">`y'</span></span></span><span class="token string">"</span></span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>(生成新变量)：生成五个新变量b1,b2,b3,b4,b5，每个变量都是均匀分布随机数</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">clear</span> 
+<span class="token command keyword">set</span> obs <span class="token number">10</span>
+<span class="token command keyword">foreach</span> v <span class="token keyword">of</span> newlist b1<span class="token operator">-</span>b5<span class="token punctuation">&#123;</span>
+    <span class="token command keyword">gen</span> <span class="token variable">`v'</span> <span class="token operator">=</span> <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>(按数值循环)：逐行显示1 2 3 4 8 105</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">foreach</span> num <span class="token keyword">of</span> numlist <span class="token number">1</span><span class="token operator">/</span><span class="token number">4</span> <span class="token number">8</span> <span class="token number">105</span><span class="token punctuation">&#123;</span>
+    <span class="token command keyword">di</span> <span class="token variable">`num'</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="1b-命令小结"><a class="markdownIt-Anchor" href="#1b-命令小结"></a> 1b 命令小结</h2>
 <table>
 <thead>
 <tr>
@@ -1079,7 +1362,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="1b-标签数据label"><a class="markdownIt-Anchor" href="#1b-标签数据label"></a> 1b 标签数据：label</h2>
+<h2 id="1c-标签数据label"><a class="markdownIt-Anchor" href="#1c-标签数据label"></a> 1c 标签数据：label</h2>
 <table>
 <thead>
 <tr>
@@ -1631,9 +1914,352 @@
 <p>要合并的四个子文件必须在同一个文件夹中，默认情况下， <code>csvconvert</code>命令会合并文件夹中所有文件 ，可以用 <code>note</code> 命令核对所合并的文件情况 .用 <code>input_file</code>参数选择所有合并的文件名，在此，我们只选择2008年度和2009年度的数据</p>
 <pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">csvconvert</span> C<span class="token punctuation">:</span>\Users\Administrator\Desktop\stata学习文件\worldbank<span class="token punctuation">,</span> replace <span class="token function">input_file</span><span class="token punctuation">(</span>wb2008.csv wb2009.csv<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="25-数据重整"><a class="markdownIt-Anchor" href="#25-数据重整"></a> 2.5 数据重整</h3>
-<h2 id="3-pythonstata"><a class="markdownIt-Anchor" href="#3-pythonstata"></a> 3. Python+Stata</h2>
+<p>举个例子更好理解：数据集mywide.dta共有六个变量，其中后四个变量分别为2003年和2004年的数据成绩和经济学成绩，现要求将数据转化为mylong.dta的格式，将年份单独做成变量，数学和经济学成绩则成为两个单独变量。</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>math2003</th>
+<th>math2004</th>
+<th>economy2003</th>
+<th>economy2004</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>John</td>
+<td>40</td>
+<td>13</td>
+<td>68</td>
+<td>55</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Chris</td>
+<td>80</td>
+<td>64</td>
+<td>52</td>
+<td>87</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Jack</td>
+<td>90</td>
+<td>55</td>
+<td>76</td>
+<td>25</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Huang</td>
+<td>43</td>
+<td>60</td>
+<td>90</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Tom</td>
+<td>70</td>
+<td>68</td>
+<td>96</td>
+<td>42</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Han</td>
+<td>53</td>
+<td>10</td>
+<td>85</td>
+<td>89</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Phillip</td>
+<td>85</td>
+<td>61</td>
+<td>36</td>
+<td>52</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Jin</td>
+<td>95</td>
+<td>6</td>
+<td>65</td>
+<td>84</td>
+</tr>
+</tbody>
+</table>
+<p>想要转化为如下格式：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>year</th>
+<th>math</th>
+<th>economy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>John</td>
+<td>2003</td>
+<td>40</td>
+<td>68</td>
+</tr>
+<tr>
+<td>2</td>
+<td>John</td>
+<td>2004</td>
+<td>13</td>
+<td>55</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Chris</td>
+<td>2003</td>
+<td>80</td>
+<td>52</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Chris</td>
+<td>2004</td>
+<td>64</td>
+<td>87</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Jack</td>
+<td>2003</td>
+<td>90</td>
+<td>76</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Jack</td>
+<td>2004</td>
+<td>55</td>
+<td>25</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Huang</td>
+<td>2003</td>
+<td>43</td>
+<td>90</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Huang</td>
+<td>2004</td>
+<td>60</td>
+<td>4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Tom</td>
+<td>2003</td>
+<td>70</td>
+<td>96</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Tom</td>
+<td>2004</td>
+<td>68</td>
+<td>42</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Han</td>
+<td>2003</td>
+<td>53</td>
+<td>85</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Han</td>
+<td>2004</td>
+<td>10</td>
+<td>89</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Phillip</td>
+<td>2003</td>
+<td>85</td>
+<td>36</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Phillip</td>
+<td>2004</td>
+<td>61</td>
+<td>52</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Jin</td>
+<td>2003</td>
+<td>95</td>
+<td>65</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Jin</td>
+<td>2004</td>
+<td>6</td>
+<td>84</td>
+</tr>
+</tbody>
+</table>
+<p>先输入数据</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">clear</span>
+<span class="token command keyword">set</span> obs <span class="token number">8</span>
+<span class="token command keyword">gen</span> id <span class="token operator">=</span> _n
+<span class="token command keyword">input</span> str10 name int math2003 math2004 economy2003 economy2004
+<span class="token command keyword">John</span> <span class="token number">40</span> <span class="token number">13</span> <span class="token number">68</span> <span class="token number">55</span>
+<span class="token command keyword">Chris</span> <span class="token number">80</span> <span class="token number">64</span> <span class="token number">52</span> <span class="token number">87</span>
+<span class="token command keyword">Jack</span> <span class="token number">90</span> <span class="token number">55</span> <span class="token number">76</span> <span class="token number">25</span>
+<span class="token command keyword">Huang</span> <span class="token number">43</span> <span class="token number">60</span> <span class="token number">90</span> <span class="token number">4</span>
+<span class="token command keyword">Tom</span> <span class="token number">70</span> <span class="token number">68</span> <span class="token number">96</span> <span class="token number">42</span>
+<span class="token command keyword">Han</span> <span class="token number">53</span> <span class="token number">10</span> <span class="token number">85</span> <span class="token number">89</span>
+<span class="token command keyword">Phillip</span> <span class="token number">85</span> <span class="token number">61</span> <span class="token number">36</span> <span class="token number">52</span>
+<span class="token command keyword">Jin</span> <span class="token number">95</span> <span class="token number">6</span> <span class="token number">65</span> <span class="token number">84</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>实现代码为：</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">reshape</span> long math economy<span class="token punctuation">,</span> <span class="token function">i</span><span class="token punctuation">(</span>id name<span class="token punctuation">)</span> <span class="token function">j</span><span class="token punctuation">(</span>year<span class="token punctuation">)</span>
+<span class="token command keyword">save</span> mylong<span class="token punctuation">,</span> replace
+<span class="token command keyword">export</span> excel using <span class="token string-literal"><span class="token string">"mylong.xls"</span></span><span class="token punctuation">,</span><span class="token function">firstrow</span><span class="token punctuation">(</span>variable<span class="token punctuation">)</span> replace<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>窗口输出内容</p>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Wide</th>
+<th>-&gt;</th>
+<th>Long</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of Observations</td>
+<td>8</td>
+<td>-&gt;</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Number of variables</td>
+<td>6</td>
+<td>-&gt;</td>
+<td>5</td>
+</tr>
+<tr>
+<td>j variables(2 vlues)</td>
+<td></td>
+<td>-&gt;</td>
+<td>year</td>
+</tr>
+<tr>
+<td>xij variables:</td>
+<td></td>
+<td>-&gt;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>math2003 math2004</td>
+<td>-&gt;</td>
+<td>math</td>
+</tr>
+<tr>
+<td></td>
+<td>economy2003 economy2004</td>
+<td>-&gt;</td>
+<td>economy</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-绘图"><a class="markdownIt-Anchor" href="#3-绘图"></a> 3. 绘图</h2>
+<p>例子</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">sysuse</span> auto<span class="token punctuation">,</span><span class="token keyword">clear</span>
+<span class="token command keyword">twoway</span><span class="token punctuation">(</span>scatter mpg weight <span class="token keyword">if</span> foreign<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>	<span class="token comment">///</span>
+	<span class="token punctuation">(</span>scatter mpg weight <span class="token keyword">if</span> foreign<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token function">msymbol</span><span class="token punctuation">(</span>Sh<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">/*曲线选项，点的类型*/</span> <span class="token comment">///</span>
+	<span class="token punctuation">,</span> <span class="token comment">///</span>
+	<span class="token command keyword">title</span><span class="token punctuation">(</span>标题：行驶里程与车重关系<span class="token punctuation">)</span> <span class="token comment">///</span>
+	<span class="token command keyword">subtitle</span><span class="token punctuation">(</span>副标题：国产与进口<span class="token punctuation">)</span>	<span class="token comment">///</span>
+	<span class="token command keyword">ytitle</span><span class="token punctuation">(</span>纵坐标标题<span class="token punctuation">)</span> <span class="token comment">///</span>
+	<span class="token command keyword">xtitle</span><span class="token punctuation">(</span>横坐标标题<span class="token punctuation">)</span>	<span class="token comment">///</span>
+	<span class="token command keyword">note</span><span class="token punctuation">(</span>数据来源：美国汽车协会<span class="token punctuation">)</span>	<span class="token comment">///</span>
+	<span class="token command keyword">text</span><span class="token punctuation">(</span><span class="token number">35</span> <span class="token number">3400</span> <span class="token string-literal"><span class="token string">"曲线类型"</span></span><span class="token punctuation">)</span>	<span class="token comment">///</span>
+	<span class="token command keyword">legend</span><span class="token punctuation">(</span><span class="token function">title</span><span class="token punctuation">(</span>图例<span class="token punctuation">)</span> <span class="token function">label</span><span class="token punctuation">(</span><span class="token number">1</span> 国产车<span class="token punctuation">)</span> <span class="token function">label</span><span class="token punctuation">(</span><span class="token number">2</span> 进口车<span class="token punctuation">)</span><span class="token punctuation">)</span>	<span class="token comment">///</span>
+	<span class="token command keyword">scheme</span><span class="token punctuation">(</span>slrcolor<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>各类图</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">scatter</span> rainfall year <span class="token comment">//点</span>
+<span class="token command keyword">line</span> rainfall year <span class="token comment">//线</span>
+<span class="token command keyword">tw</span> area rainfall year <span class="token comment">//面</span>
+<span class="token comment">///////////////////////////</span>
+<span class="token command keyword">net</span> install vgsg2<span class="token punctuation">,</span>replace
+<span class="token command keyword">vguse</span> allstates<span class="token punctuation">,</span><span class="token keyword">clear</span>
+<span class="token command keyword">tw</span> histogram popk <span class="token comment">//直方图</span>
+<span class="token command keyword">tw</span> kdensity popk <span class="token comment">//核估计图</span>
+<span class="token command keyword">graph</span> bar popk<span class="token punctuation">,</span> <span class="token function">over</span><span class="token punctuation">(</span>division<span class="token punctuation">)</span> <span class="token comment">//条形图</span>
+<span class="token command keyword">graph</span> hbar popk<span class="token punctuation">,</span> <span class="token function">over</span><span class="token punctuation">(</span>division<span class="token punctuation">)</span>  <span class="token comment">//条形图</span>
+<span class="token command keyword">graph</span> hbox popk<span class="token punctuation">,</span> <span class="token function">over</span><span class="token punctuation">(</span>division<span class="token punctuation">)</span> <span class="token comment">//箱型图</span>
+<span class="token command keyword">graph</span> box popk<span class="token punctuation">,</span> <span class="token function">over</span><span class="token punctuation">(</span>division<span class="token punctuation">)</span> <span class="token comment">//箱型图</span>
+<span class="token command keyword">graph</span> pie popk<span class="token punctuation">,</span> <span class="token function">over</span><span class="token punctuation">(</span>region<span class="token punctuation">)</span> <span class="token comment">//饼图</span>
+<span class="token command keyword">graph</span> matrix propval100 rent700 popden <span class="token comment">//矩阵图</span>
+<span class="token command keyword">graph</span> dot popk<span class="token punctuation">,</span> <span class="token function">over</span><span class="token punctuation">(</span>division<span class="token punctuation">)</span> <span class="token comment">//点阵图</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>股价数据图</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">vguse</span> spjanfeb2001<span class="token punctuation">,</span> <span class="token keyword">clear</span>
+<span class="token command keyword">twoway</span> dropline close tradeday <span class="token comment">//</span>
+<span class="token command keyword">tw</span> spike close tradeday <span class="token comment">//针式图</span>
+<span class="token command keyword">tw</span> dot close tradeday <span class="token comment">//点线图</span>
+<span class="token command keyword">tw</span> connected close tradeday<span class="token punctuation">,</span> <span class="token keyword">sort</span> <span class="token comment">//点连线图</span>
+<span class="token command keyword">tw</span> area close tradeday<span class="token punctuation">,</span> <span class="token keyword">sort</span> <span class="token comment">//和线图类似，显示线以下的面积</span>
+<span class="token command keyword">tw</span> bar close tradeday<span class="token punctuation">,</span><span class="token keyword">sort</span> <span class="token comment">/*对每个X绘出相应Y的条图，而graph bar是针对
+分类变量X的*/</span>
+<span class="token command keyword">twoway</span> rarea high low tradeday<span class="token punctuation">,</span> <span class="token keyword">sort</span> <span class="token comment">//显示最高与最低价，并填充两者之间的面积</span>
+<span class="token command keyword">tw</span> rline high low tradeday<span class="token punctuation">,</span> <span class="token keyword">sort</span> <span class="token comment">//显示最高与最低价，但不填充其间</span>
+<span class="token command keyword">tw</span> rconnected high low tradeday<span class="token punctuation">,</span> <span class="token keyword">sort</span> <span class="token comment">//显示最低与最高为两点，并连接起来</span>
+<span class="token command keyword">tw</span> rscatter high low tradeday<span class="token punctuation">,</span> <span class="token keyword">sort</span> <span class="token comment">//显示最低与最高为两点，不连接</span>
+<span class="token command keyword">tw</span> rcap high low tradeday<span class="token punctuation">,</span> <span class="token keyword">sort</span> <span class="token comment">//两端用小横线标示</span>
+<span class="token command keyword">tw</span> rspike high low tradeday<span class="token punctuation">,</span> <span class="token keyword">sort</span> <span class="token comment">//两端用点标示</span>
+<span class="token command keyword">tw</span> rcapsym high low tradeday<span class="token punctuation">,</span> <span class="token keyword">sort</span>
+对时间序列数据，可以先设定时期，简化命令
+<span class="token command keyword">tsset</span> tradeday <span class="token comment">//X轴为时间，由tsset设定.</span>
+<span class="token command keyword">twoway</span> tsline close<span class="token punctuation">,</span> <span class="token keyword">sort</span> <span class="token comment">//tsline用于时间序列数据，收盘价</span>
+<span class="token command keyword">tw</span> tsrline high low<span class="token punctuation">,</span> <span class="token keyword">sort</span> <span class="token comment">//最高价与最低价</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3astata命令语句格式"><a class="markdownIt-Anchor" href="#3astata命令语句格式"></a> 3a.STATA命令语句格式</h2>
+<p>很高级，不会，收录只是为了方便查阅</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token keyword">capture</span> <span class="token command keyword">program</span> drop gini
+<span class="token command keyword">program</span> gini
+<span class="token command keyword">syntax</span> <span class="token keyword">varlist</span> <span class="token punctuation">[</span><span class="token keyword">if</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token keyword">in</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token function">title</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment">//设定我们自己的命令格式</span>
+<span class="token command keyword">tempvar</span> tinc tp m gini <span class="token comment">//设定tinc tp m gini 四个变量为临时变量</span>
+<span class="token command keyword">marksample</span> touse <span class="token comment">//生成一个0/1 暂元，暂元名为touse</span>
+<span class="token command keyword">preserve</span> <span class="token comment">//将当前内存中数据暂封存，直到restore 命令再复原</span>
+<span class="token command keyword">quietly</span> <span class="token punctuation">&#123;</span> <span class="token comment">//大括号内的命令将在后台执行，前台无显示</span>
+	<span class="token command keyword">keep</span> <span class="token keyword">if</span> <span class="token variable">`touse'</span> <span class="token comment">//根据if 后输入的条件得到一个子数据</span>
+	<span class="token command keyword">egen</span> <span class="token variable">`tinc'</span><span class="token operator">=</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token variable">`1'</span><span class="token punctuation">)</span> <span class="token comment">//生成总收入，将总收入数据暂存在临时变量’tinc’中</span>
+	<span class="token command keyword">if</span> <span class="token string-literal"><span class="token string">"</span><span class="token interpolation"><span class="token expression"><span class="token variable">`2'</span></span></span><span class="token string">"</span></span><span class="token operator">==</span><span class="token string-literal"><span class="token string">""</span></span> <span class="token punctuation">&#123;</span>
+		<span class="token command keyword">local</span> <span class="token number">2</span><span class="token operator">=</span><span class="token number">1</span>
+	<span class="token punctuation">&#125;</span> <span class="token comment">//如果没有人口变量，则默认为该变量为1</span>
+	<span class="token command keyword">egen</span> <span class="token variable">`tp'</span><span class="token operator">=</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token variable">`2'</span><span class="token punctuation">)</span>
+	<span class="token command keyword">gen</span> <span class="token variable">`m'</span><span class="token operator">=</span><span class="token variable">`1'</span><span class="token operator">/</span><span class="token variable">`2'</span>
+	<span class="token command keyword">sort</span> <span class="token variable">`m'</span>
+	<span class="token command keyword">gen</span> <span class="token variable">`gini'</span><span class="token operator">=</span><span class="token number">1</span><span class="token operator">-</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token variable">`2'</span><span class="token operator">/</span><span class="token variable">`tp'</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token variable">`1'</span><span class="token operator">/</span><span class="token variable">`tinc'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token variable">`1'</span><span class="token operator">/</span><span class="token variable">`tinc'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token command keyword">display</span> as result <span class="token string-literal"><span class="token string">"</span><span class="token interpolation"><span class="token expression"><span class="token variable">`title'</span></span></span><span class="token string">基尼系数为："</span></span> as error <span class="token variable">`gini'</span><span class="token punctuation">[</span>_N<span class="token punctuation">]</span> <span class="token comment">//显示基尼系数</span>
+<span class="token command keyword">restore</span>
+<span class="token command keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-pythonstata"><a class="markdownIt-Anchor" href="#4-pythonstata"></a> 4. Python+Stata</h2>
 <p>stata在数据处理与分析方面具有一定的优势，而且软件又小，在配置一般的PC机里运行也较为流畅。</p>
-<h3 id="31-另外保存do文件在python中运行外部do文件"><a class="markdownIt-Anchor" href="#31-另外保存do文件在python中运行外部do文件"></a> 3.1 另外保存do文件，在python中运行外部do文件</h3>
+<h3 id="41-另外保存do文件在python中运行外部do文件"><a class="markdownIt-Anchor" href="#41-另外保存do文件在python中运行外部do文件"></a> 4.1 另外保存do文件，在python中运行外部do文件</h3>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> subprocess
 <span class="token keyword">import</span> codecs
 <span class="token keyword">import</span> os
@@ -1644,7 +2270,7 @@ dofile_path<span class="token operator">=</span><span class="token string">"/Use
 <span class="token comment">#cmd中三个参数分别为：stata软件路径、命令、do文件路径</span>
 cmd <span class="token operator">=</span> <span class="token punctuation">[</span>stata_path<span class="token punctuation">,</span> <span class="token string">"doedit"</span><span class="token punctuation">,</span> dofile_path<span class="token punctuation">]</span>
 subprocess<span class="token punctuation">.</span>call<span class="token punctuation">(</span>cmd<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="32-有时会遇到改变do文档内容的情形因此需要在python中写一个do文档"><a class="markdownIt-Anchor" href="#32-有时会遇到改变do文档内容的情形因此需要在python中写一个do文档"></a> 3.2 有时会遇到改变do文档内容的情形，因此需要在python中写一个do文档</h3>
+<h3 id="42-有时会遇到改变do文档内容的情形因此需要在python中写一个do文档"><a class="markdownIt-Anchor" href="#42-有时会遇到改变do文档内容的情形因此需要在python中写一个do文档"></a> 4.2 有时会遇到改变do文档内容的情形，因此需要在python中写一个do文档</h3>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">varstr<span class="token operator">=</span><span class="token string">'price length weight'</span>
 code<span class="token operator">=</span><span class="token triple-quoted-string string">'''clear all
 sysuse auto
@@ -1658,7 +2284,7 @@ cmd <span class="token operator">=</span> <span class="token punctuation">[</spa
 subprocess<span class="token punctuation">.</span>call<span class="token punctuation">(</span>cmd<span class="token punctuation">)</span>
 <span class="token comment"># 关闭stata</span>
 os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">'TASKKILL /F /IM StataMP-64.exe'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="33-在python和stata中传递数据最容易想到的一个思路是将要传递的内容保存下来然后python或stata再读取数据"><a class="markdownIt-Anchor" href="#33-在python和stata中传递数据最容易想到的一个思路是将要传递的内容保存下来然后python或stata再读取数据"></a> 3.3 在python和stata中传递数据（最容易想到的一个思路是将要传递的内容保存下来，然后python或stata再读取数据）</h3>
+<h3 id="43-在python和stata中传递数据最容易想到的一个思路是将要传递的内容保存下来然后python或stata再读取数据"><a class="markdownIt-Anchor" href="#43-在python和stata中传递数据最容易想到的一个思路是将要传递的内容保存下来然后python或stata再读取数据"></a> 4.3 在python和stata中传递数据（最容易想到的一个思路是将要传递的内容保存下来，然后python或stata再读取数据）</h3>
 <pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token operator">#</span> 以stata向python传递数据为例
 <span class="token operator">#</span> 首先生成一个stata数据
 <span class="token command keyword">sysuse</span> auto<span class="token punctuation">,</span><span class="token keyword">clear</span>
@@ -1681,10 +2307,10 @@ data2<span class="token operator">=</span><span class="token builtin">list</span
 <span class="token keyword">print</span><span class="token punctuation">(</span>data2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>PS：</p>
 <p>github上有一个ipystata的包可以<a href='https://github.com/TiesdeKok/ipystata' target='_blank'>通过Jupyter在python中使用stata</a>，或者可以参考<a href='https://zhuanlan.zhihu.com/p/22645950' target='_blank'>这篇文章</a>。</p>
-<h2 id="4-stata中的mata"><a class="markdownIt-Anchor" href="#4-stata中的mata"></a> 4. Stata中的Mata</h2>
-<h3 id="41-mata-基础语法"><a class="markdownIt-Anchor" href="#41-mata-基础语法"></a> 4.1 Mata 基础语法</h3>
+<h2 id="5-stata中的mata"><a class="markdownIt-Anchor" href="#5-stata中的mata"></a> 5. Stata中的Mata</h2>
+<h3 id="51-mata-基础语法"><a class="markdownIt-Anchor" href="#51-mata-基础语法"></a> 5.1 Mata 基础语法</h3>
 <p>在正式介绍 Mata 程序编写之前，我们必须了解 Mata 的基础语法，如注释方式、基础运算符、循环、条件语句等。</p>
-<h4 id="411-注释方式-comments"><a class="markdownIt-Anchor" href="#411-注释方式-comments"></a> 4.1.1 注释方式 (Comments)</h4>
+<h4 id="511-注释方式-comments"><a class="markdownIt-Anchor" href="#511-注释方式-comments"></a> 5.1.1 注释方式 (Comments)</h4>
 <p>相较 Stata 的 <code>*</code>，Mata 中的注释方式发生了较大改变。如果不事先了解 Mata 的注释方式，那么在命令语句写作和运行中可能会多次报错。输入 <code>help mata comments</code>，可查看相关 help 文档。</p>
 <p>Mata 的语句注释分为以下两类：</p>
 <ol>
@@ -1695,9 +2321,9 @@ data2<span class="token operator">=</span><span class="token builtin">list</span
 <p>故在运行命令时有以下注意点：（1）在 Mata 状态下， 由双斜线引导的注释语句在命令窗口中必须连同双斜线一起删除才能 (在命令窗口) 执行 。但在 Do 文件编辑窗口中编写的语句不必删除注释语句，选中全部语句执行即可。（2）Mata 状态下，在 Do 文件编辑窗口中编写的语句不能单独执行。</p>
 <p>为更好掌握语法，建议读者在 Stata 命令窗口中输入 <code>mata</code> 进入 Mata 环境 (可通过 <code>end</code> 退出)，再将下文中的命令语句删去由 // 注释的文字后，逐行输入命令窗口以感受运算过程。（当然，也可以整体粘贴入 do-file 中运行。）</p>
 <p>另一方面，在结果显示中，Mata 的命令提示符是冒号 (😃，而在Stata中是句号 (.)。</p>
-<h4 id="412-运算符-operators"><a class="markdownIt-Anchor" href="#412-运算符-operators"></a> 4.1.2 运算符 (Operators)</h4>
+<h4 id="512-运算符-operators"><a class="markdownIt-Anchor" href="#512-运算符-operators"></a> 5.1.2 运算符 (Operators)</h4>
 <p>在本部分，主要介绍 Mata 的运算符中的基础运算 (含元素运算)、逻辑运算、下标运算三大内容。有兴趣的读者可以查看<code>3.2.4 运算符优先级总结</code>。Mata 的运算符充分体现了作为矩阵编程语言的特征。</p>
-<h5 id="4121-基础运算-部分"><a class="markdownIt-Anchor" href="#4121-基础运算-部分"></a> 4.1.2.1 基础运算 (部分)</h5>
+<h5 id="5121-基础运算-部分"><a class="markdownIt-Anchor" href="#5121-基础运算-部分"></a> 5.1.2.1 基础运算 (部分)</h5>
 <p>具体运算符和解释已写入以下代码块中，其中较有特色的是元素运算(element-by-element)。</p>
 <pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">mata</span> <span class="token comment">//进入 Mata</span>
 
@@ -1762,11 +2388,11 @@ data2<span class="token operator">=</span><span class="token builtin">list</span
 3 | .1428571429 .25 .3333333333 |
 +-------------------------------------------+
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="4122-逻辑运算符-logical-operators"><a class="markdownIt-Anchor" href="#4122-逻辑运算符-logical-operators"></a> 4.1.2.2 逻辑运算符 (Logical Operators)</h5>
+<h5 id="5122-逻辑运算符-logical-operators"><a class="markdownIt-Anchor" href="#5122-逻辑运算符-logical-operators"></a> 5.1.2.2 逻辑运算符 (Logical Operators)</h5>
 <p>和 Stata 相同，相等逻辑运算符为 <code>a == b</code> 和 <code>a != b</code> 。该逻辑运算不需要考虑 <code>a</code> 和 <code>b</code> 是否一致，或是否是相同类型。其返回值为 0 或 1。</p>
 <p>与相等比较不同，余下的逻辑比较运算符 <code>&gt;</code>，<code>&gt;=</code>，<code>&lt;</code>，<code>&lt;=</code> 只可以在两个对象是相同的类型 (数字或字符) 且维数 (conformable) 相同时才可以比较。</p>
 <p>而逻辑运算符 与 (<code>&amp;</code>) 或 (<code>|</code>) 只能够用于实数类型的标量 (real scalar)。</p>
-<h5 id="4123-下标运算-subscripts"><a class="markdownIt-Anchor" href="#4123-下标运算-subscripts"></a> 4.1.2.3 下标运算 (Subscripts)</h5>
+<h5 id="5123-下标运算-subscripts"><a class="markdownIt-Anchor" href="#5123-下标运算-subscripts"></a> 5.1.2.3 下标运算 (Subscripts)</h5>
 <p>Mata 运用中括号 (<code>[]</code>) 进行下标运算，其可以出现在代数表达式的左端或右端。共有两类：① 列表下表 (list subscripts) 和范围下标 (range subscripts)。</p>
 <p>利用下标运算，可用于引用、修改、提取数组中元素。</p>
 <ul>
@@ -1781,7 +2407,7 @@ data2<span class="token operator">=</span><span class="token builtin">list</span
 <blockquote>
 <p>Tip：当可以同时使用范围下标运算 <code>[| |]</code> 和列表下标运算 <code>[i,j]</code> 时，使用范围下标运算效率更高 ( 无论是矩阵提取还是用时方面 )。</p>
 </blockquote>
-<h5 id="4124-运算符优先级总结"><a class="markdownIt-Anchor" href="#4124-运算符优先级总结"></a> 4.1.2.4 运算符优先级总结</h5>
+<h5 id="5124-运算符优先级总结"><a class="markdownIt-Anchor" href="#5124-运算符优先级总结"></a> 5.1.2.4 运算符优先级总结</h5>
 <p>参考 Gould(2018, p.86)，下标总结了 Mata 中的运算符及其优先级。利用优先级可以简化代码，例如，<code>a&gt;2+3</code> 与 <code>a&gt;(2+3)</code>的实现效果相同 (算术运算优先于逻辑运算)。</p>
 <table>
 <thead>
@@ -1846,13 +2472,13 @@ data2<span class="token operator">=</span><span class="token builtin">list</span
 </tbody>
 </table>
 <p>注：由冒号 <code>:</code> 代表的元素运算优先级仅低于相应的非冒号运算，如 <code>:==</code> 在逻辑运算 <code>==</code> 之后，<code>:*</code> 在代数运算 <code>*</code> 之后。</p>
-<h4 id="413-循环语句-loop"><a class="markdownIt-Anchor" href="#413-循环语句-loop"></a> 4.1.3 循环语句 (Loop)</h4>
+<h4 id="513-循环语句-loop"><a class="markdownIt-Anchor" href="#513-循环语句-loop"></a> 5.1.3 循环语句 (Loop)</h4>
 <p>Stata 中的循环有：<code>foreach</code>、<code>forvalues</code> 和 <code>while</code>，Mata 中的循环也有三类：<code>for</code>、<code>while</code> 和 <code>do...while</code>，但是语法多有不同。</p>
 <p><code>for</code> 和 <code>while</code> 在循环开始时检查循环的运行条件，这意味着循环可能根本不会执行，可以用于优雅地处理极端情况。而 <code>do...while</code> 在循环结束时检查运行条件，用于需要至少循环一次的情况。</p>
 <blockquote>
 <p>Tip：Mata 作为矩阵语言，在可以使用矩阵运算的时候就应当避免使用明确的循环语句。</p>
 </blockquote>
-<h5 id="4131-for"><a class="markdownIt-Anchor" href="#4131-for"></a> 4.1.3.1 for</h5>
+<h5 id="5131-for"><a class="markdownIt-Anchor" href="#5131-for"></a> 5.1.3.1 for</h5>
 <p>Mata 中的 <code>for</code> 与 C 语言中的循环语句语法类似。</p>
 <ul>
 <li>语法</li>
@@ -1887,7 +2513,7 @@ data2<span class="token operator">=</span><span class="token builtin">list</span
 1 | 5050 338350 |
 +-------------------+
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="4132-while"><a class="markdownIt-Anchor" href="#4132-while"></a> 4.1.3.2 while</h5>
+<h5 id="5132-while"><a class="markdownIt-Anchor" href="#5132-while"></a> 5.1.3.2 while</h5>
 <ul>
 <li>语法</li>
 </ul>
@@ -1914,7 +2540,7 @@ data2<span class="token operator">=</span><span class="token builtin">list</span
 : x
 2.645751311
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="4133-dowhile"><a class="markdownIt-Anchor" href="#4133-dowhile"></a> 4.1.3.3 do…while</h5>
+<h5 id="5133-dowhile"><a class="markdownIt-Anchor" href="#5133-dowhile"></a> 5.1.3.3 do…while</h5>
 <p><code>do...while</code> 的语法如下：</p>
 <pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token comment">//单行命令</span>
 <span class="token command keyword">do</span> stmt <span class="token function">while</span><span class="token punctuation">(</span>exp<span class="token punctuation">)</span>
@@ -1923,9 +2549,9 @@ data2<span class="token operator">=</span><span class="token builtin">list</span
 <span class="token command keyword">stmts</span>
 <span class="token punctuation">&#125;</span> <span class="token function">while</span><span class="token punctuation">(</span>exp<span class="token punctuation">)</span>
 <span class="token comment">//注意exp必须是与实数标量相比较</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="414-条件语句-conditional"><a class="markdownIt-Anchor" href="#414-条件语句-conditional"></a> 4.1.4 条件语句 (Conditional)</h4>
+<h4 id="514-条件语句-conditional"><a class="markdownIt-Anchor" href="#514-条件语句-conditional"></a> 5.1.4 条件语句 (Conditional)</h4>
 <p>与 Stata 类似，在 Mata 中可以使用 <code>if...else</code> 来进行条件判断；不同的是，Mata 中有特殊的三元条件运算符 <code>a ? b : c</code></p>
-<h4 id="415-ifelse"><a class="markdownIt-Anchor" href="#415-ifelse"></a> 4.1.5 if…else</h4>
+<h4 id="515-ifelse"><a class="markdownIt-Anchor" href="#515-ifelse"></a> 5.1.5 if…else</h4>
 <p><code>if...else</code> 语法结构如下：</p>
 <pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">if</span> <span class="token punctuation">(</span>exp<span class="token punctuation">)</span> statement
 <span class="token comment">//或者</span>
@@ -1949,7 +2575,7 @@ data2<span class="token operator">=</span><span class="token builtin">list</span
 <span class="token command keyword">statements3</span>
 <span class="token punctuation">&#125;</span>
 <span class="token comment">//注意：exp, exp1, exp2...必须是与实数标量相比较</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="416-a-b-c-条件运算符"><a class="markdownIt-Anchor" href="#416-a-b-c-条件运算符"></a> 4.1.6 a ? b : c 条件运算符</h4>
+<h4 id="516-a-b-c-条件运算符"><a class="markdownIt-Anchor" href="#516-a-b-c-条件运算符"></a> 5.1.6 a ? b : c 条件运算符</h4>
 <ul>
 <li>语法</li>
 </ul>
@@ -1972,20 +2598,20 @@ data2<span class="token operator">=</span><span class="token builtin">list</span
 : dof
 8
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="42-使用单行命令调用-mata"><a class="markdownIt-Anchor" href="#42-使用单行命令调用-mata"></a> 4.2 使用单行命令调用 Mata</h3>
-<h4 id="421-实现逻辑及方法"><a class="markdownIt-Anchor" href="#421-实现逻辑及方法"></a> 4.2.1 实现逻辑及方法</h4>
+<h3 id="52-使用单行命令调用-mata"><a class="markdownIt-Anchor" href="#52-使用单行命令调用-mata"></a> 5.2 使用单行命令调用 Mata</h3>
+<h4 id="521-实现逻辑及方法"><a class="markdownIt-Anchor" href="#521-实现逻辑及方法"></a> 5.2.1 实现逻辑及方法</h4>
 <p>Stata 命令窗口、do-file 或 ado-file 中输入单行命令 <code>mata:一个或多个 Mata 命令，使用分号分割</code>，即可实现 Mata 环境的调用。且我们在 Mata 环境中生成的变量会一直保留，直至输入<code>mata: mata clear</code>。</p>
 <p>在上文中，我们提到 Mata 的一大优势是灵活的交互以实现 Stata 与 Mata 的互补， <code>mata:语句</code> 的方式就是极佳的实现方式。</p>
 <p>但是该交互的前提是两者工作空间内的变量与结果的相互调用或修改，因此，我们不可避免需要用到 <code>st_interface</code> 这类函数。</p>
 <p>基于 <code>st_interface</code> 类型的函数，Mata 可以获取 Stata 中的所有对象 (数据、宏、标量和矩阵)，并实现 Stata 和 Mata 计算结果的无缝交互。</p>
-<h4 id="422-例子利用-mata-提取回归后的-t-值"><a class="markdownIt-Anchor" href="#422-例子利用-mata-提取回归后的-t-值"></a> 4.2.2 例子：利用 Mata 提取回归后的 t 值</h4>
+<h4 id="522-例子利用-mata-提取回归后的-t-值"><a class="markdownIt-Anchor" href="#522-例子利用-mata-提取回归后的-t-值"></a> 5.2.2 例子：利用 Mata 提取回归后的 t 值</h4>
 <blockquote>
 <p>注：以下例子来源于 Baum(2016) Chapter 13.4</p>
 </blockquote>
-<h5 id="4221-问题阐述及分析"><a class="markdownIt-Anchor" href="#4221-问题阐述及分析"></a> 4.2.2.1 问题阐述及分析</h5>
+<h5 id="5221-问题阐述及分析"><a class="markdownIt-Anchor" href="#5221-问题阐述及分析"></a> 5.2.2.1 问题阐述及分析</h5>
 <p>在使用 <code>reg</code> 命令后，回归结果的会自动保存在 <code>e()</code> 矩阵中，但 统计量未被保存，那么如何才能计算出 统计量呢？</p>
 <p>所幸，<code>e()</code> 中保留了估计系数- <code>e(b)</code> 和估计量的方差-协方差矩阵 <code>e(V)</code> ，从而可以通过 来实现 统计量的计算。</p>
-<h5 id="4222-mata-实现"><a class="markdownIt-Anchor" href="#4222-mata-实现"></a> 4.2.2.2 Mata 实现</h5>
+<h5 id="5222-mata-实现"><a class="markdownIt-Anchor" href="#5222-mata-实现"></a> 5.2.2.2 Mata 实现</h5>
 <ul>
 <li>思路如下</li>
 </ul>
@@ -2024,7 +2650,7 @@ displacement weight foreign _cons
 tstat 1.671 3.275 5.745 -2.826
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>由上述例子可知，通过在 Mata 环境中调用 Stata 中元素，借助 Mata 矩阵运算的优势，轻松实现 统计量的实现，从而实现双方的互补。</p>
-<h4 id="423-stata-实现"><a class="markdownIt-Anchor" href="#423-stata-实现"></a> 4.2.3 Stata 实现</h4>
+<h4 id="523-stata-实现"><a class="markdownIt-Anchor" href="#523-stata-实现"></a> 5.2.3 Stata 实现</h4>
 <p>虽然 Mata 可以一键输出，Stata 中处理就一定复杂吗？参考 st: Re: p&gt;t value extraction 给出的答案，代码如下：</p>
 <pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">sysuse</span> auto<span class="token punctuation">,</span> <span class="token keyword">clear</span> <span class="token comment">//调用auto.dta数据集</span>
 <span class="token command keyword">reg</span> price displacement weight foreign
@@ -2063,16 +2689,72 @@ _cons -4048.3431 2052742.2
 <pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">matrix</span> a<span class="token operator">=</span><span class="token function">r</span><span class="token punctuation">(</span>table<span class="token punctuation">)</span>
 <span class="token command keyword">matrix</span> b<span class="token operator">=</span>a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span>.<span class="token number">.4</span><span class="token punctuation">]</span>
 <span class="token command keyword">mat</span> list b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="5-微观计量经济学实操"><a class="markdownIt-Anchor" href="#5-微观计量经济学实操"></a> 5. 微观计量经济学实操</h2>
+<h2 id="6-随机模拟"><a class="markdownIt-Anchor" href="#6-随机模拟"></a> 6. 随机模拟</h2>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token command keyword">clear</span>
+<span class="token command keyword">set</span> obs <span class="token number">10</span>
+<span class="token command keyword">gen</span> x1 <span class="token operator">=</span> <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token command keyword">gen</span> x2 <span class="token operator">=</span> <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token command keyword">set</span> seed <span class="token number">1234</span>
+<span class="token command keyword">gen</span> y1 <span class="token operator">=</span> <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token command keyword">set</span> seed <span class="token number">1234</span>
+<span class="token command keyword">gen</span> y2 <span class="token operator">=</span> <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token command keyword">gen</span> y3 <span class="token operator">=</span> <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token command keyword">set</span> seed <span class="token number">5634</span>
+<span class="token command keyword">gen</span> z1 <span class="token operator">=</span> <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token command keyword">set</span> seed <span class="token number">1234</span>
+<span class="token command keyword">gen</span> z2 <span class="token operator">=</span> <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token command keyword">list</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="61-简单重复实验"><a class="markdownIt-Anchor" href="#61-简单重复实验"></a> 6.1 简单重复实验</h3>
+<p>大部分的人认为连续正面或反面不太容易发生。但模拟结果【连续三次正面】足以修正我们直觉错误。</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token keyword">capture</span> <span class="token command keyword">program</span> drop seq3
+<span class="token command keyword">prog</span> seq3<span class="token punctuation">,</span>rclass <span class="token comment">//rclass 选项表示计算结果将由return 返回到r()</span>
+	<span class="token command keyword">version</span> <span class="token number">17</span>
+	<span class="token command keyword">drop</span> _all <span class="token comment">//清空所有数据，不能用clear</span>
+	<span class="token command keyword">set</span> obs <span class="token number">10</span> <span class="token comment">//将生成10 个观察值</span>
+	<span class="token command keyword">tempvar</span> x y z <span class="token comment">//设定x,y,z 为临时变量</span>
+	<span class="token command keyword">gen</span> <span class="token variable">`x'</span><span class="token operator">=</span><span class="token function">int</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">*</span><span class="token function">uniform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//产生10 个随机变量，可能为0，1，…，9</span>
+	<span class="token command keyword">gen</span> <span class="token variable">`y'</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token function">mod</span><span class="token punctuation">(</span><span class="token variable">`x'</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">//如果生成的随机变量为奇数，则y=0;为偶数，y=1</span>
+	<span class="token command keyword">gen</span> <span class="token variable">`z'</span><span class="token operator">=</span><span class="token number">0</span> <span class="token comment">//生成Z=0</span>
+	<span class="token command keyword">forvalues</span> i<span class="token operator">=</span><span class="token number">3</span><span class="token operator">/</span><span class="token number">10</span> <span class="token punctuation">&#123;</span>
+		<span class="token command keyword">replace</span> <span class="token variable">`z'</span><span class="token operator">=</span><span class="token number">1</span> <span class="token keyword">if</span> <span class="token variable">`y'</span><span class="token operator">==</span><span class="token variable">`y'</span><span class="token punctuation">[</span>_n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&amp;</span> <span class="token variable">`y'</span><span class="token operator">==</span><span class="token variable">`y'</span><span class="token punctuation">[</span>_n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token keyword">in</span> <span class="token variable">`i'</span> <span class="token comment">//连续三个变量相等时z=1</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token command keyword">sum</span> <span class="token variable">`z'</span>
+	<span class="token command keyword">return</span> scalar max<span class="token operator">=</span><span class="token function">r</span><span class="token punctuation">(</span>max<span class="token punctuation">)</span> <span class="token comment">//z 取1 表示高兴的事发生（三连续），否则失败</span>
+<span class="token command keyword">end</span>
+<span class="token keyword">simulate</span> max<span class="token operator">=</span><span class="token function">r</span><span class="token punctuation">(</span>max<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">reps</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span> nodots<span class="token punctuation">:</span><span class="token command keyword">seq3</span> <span class="token comment">//重复1 万次，取平均结果</span>
+<span class="token command keyword">sum</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="62-复杂模拟"><a class="markdownIt-Anchor" href="#62-复杂模拟"></a> 6.2 复杂模拟</h3>
+<p>任务：一对夫妇计划生孩子生到有女儿才停，或者生了三个就停，他们拥有女儿的概率<br />
+是多大？</p>
+<p>第一步：概率模型<br />
+每一个孩子是女孩的概率是0.49，且各个孩子的性别是互相独立的。<br />
+第二步：分配数字<br />
+00，01，02，。。。，49=女孩<br />
+49，50，51，。。。，99=男孩<br />
+第三步：模拟<br />
+从随机数表中生成一对一对的数字，直到有了女儿，或已有3个孩子。<br />
+重复100次。</p>
+<pre class="line-numbers language-stata" data-language="stata"><code class="language-stata"><span class="token keyword">capture</span> <span class="token command keyword">program</span> drop girl
+<span class="token command keyword">program</span> girl<span class="token punctuation">,</span> rclass
+	<span class="token command keyword">drop</span> _all
+	<span class="token command keyword">set</span> obs <span class="token number">3</span>
+	<span class="token command keyword">gen</span> x <span class="token operator">=</span> <span class="token function">int</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token operator">*</span><span class="token function">uniform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token command keyword">gen</span> y<span class="token operator">=</span><span class="token punctuation">(</span>x<span class="token operator">&lt;</span><span class="token number">49</span><span class="token punctuation">)</span> <span class="token comment">//生女孩y=1,生男孩，y=0</span>
+	<span class="token command keyword">sum</span> y
+	<span class="token command keyword">return</span> scalar max<span class="token operator">=</span><span class="token function">r</span><span class="token punctuation">(</span>max<span class="token punctuation">)</span> <span class="token comment">//若至少有一个女孩，则max 取1，若三个全为男孩，取0</span>
+<span class="token command keyword">end</span>
+<span class="token keyword">simulate</span> max<span class="token operator">=</span><span class="token function">r</span><span class="token punctuation">(</span>max<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">reps</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span> nodots<span class="token punctuation">:</span><span class="token command keyword">girl</span>
+<span class="token command keyword">sum</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="7-微观计量经济学实操"><a class="markdownIt-Anchor" href="#7-微观计量经济学实操"></a> 7. 微观计量经济学实操</h2>
 <p>参考这篇文章<a href='/767402338.html#micro-stata' target='_blank'>《微观计量经济学》</a>。</p>
-<h2 id="6-mac-stata同时打开两个dta文件"><a class="markdownIt-Anchor" href="#6-mac-stata同时打开两个dta文件"></a> 6. mac stata同时打开两个dta文件</h2>
+<h2 id="8-mac-stata同时打开两个dta文件"><a class="markdownIt-Anchor" href="#8-mac-stata同时打开两个dta文件"></a> 8. mac stata同时打开两个dta文件</h2>
 <p>打开【终端.app】：在聚焦搜索里直接搜“终端”或者“terminal”【也可以用iTerm这个软件】，就行</p>
 <p>在【终端.app】里输入下面代码：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">open</span> <span class="token parameter variable">-n</span> <span class="token punctuation">[</span>stata的安装路径<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>怎么确定stata的安装路径？</p>
 <p>打开 Finder ，应用程序，看自己的stata安装路径就行。</p>
 <p>不过值得注意的是，Mac不太支持路径中包括空格，如果有空格的话，代码会报错。</p>
-</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="tags/python/">python</a><a class="post-meta__tags" href="tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">数据处理</a><a class="post-meta__tags" href="tags/stata/">stata</a><a class="post-meta__tags" href="tags/%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86/">数据拆分</a><a class="post-meta__tags" href="tags/%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6/">数据合并</a><a class="post-meta__tags" href="tags/Mata/">Mata</a></div><div class="post_share"><div class="social-share" data-image="/private_img/banner2.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/private_img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/private_img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/private_img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/private_img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="2928949794.html" title="python2 与 python3的区别"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">python2 与 python3的区别</div></div></a></div><div class="next-post pull-right"><a href="4253525416.html" title="资本循环笔记20201114"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">资本循环笔记20201114</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="5504202.html" title="python数据处理手册"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-23</div><div class="title">python数据处理手册</div></div></a></div><div><a href="2928949794.html" title="python2 与 python3的区别"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-15</div><div class="title">python2 与 python3的区别</div></div></a></div><div><a href="101587567.html" title="python做计量"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-15</div><div class="title">python做计量</div></div></a></div><div><a href="3805420524.html" title="助教：一键登记提交和成绩"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-16</div><div class="title">助教：一键登记提交和成绩</div></div></a></div><div><a href="3845945498.html" title="高级计量经济学课件"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-24</div><div class="title">高级计量经济学课件</div></div></a></div><div><a href="2840705512.html" title="建筑业投入产出闭模型"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-28</div><div class="title">建筑业投入产出闭模型</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/private_img/yuyingnan.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">揭晓</div><div class="author-info__description">随手写一写，揭晓这世界</div></div><a id="card-info-btn" href="/"><i class="fas fa-home"></i><span>回到首页</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E7%AE%80%E4%BB%8B"><span class="toc-text"> 0 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01-%E8%8E%B7%E5%BE%97%E5%B8%AE%E5%8A%A9"><span class="toc-text"> 0.1 获得帮助</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text"> 1. 基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA"><span class="toc-text"> 1.1 数据导入与输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11a-%E7%94%9F%E6%88%90%E6%96%B0%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text"> 1.1a 生成新数据的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11b-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E5%8C%96"><span class="toc-text"> 1.1b 数据类型转化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11c-gen%E5%92%8Cegen%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text"> 1.1c gen和egen的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1"><span class="toc-text"> 1.2 描述性统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12a-%E7%94%BB%E5%9B%BE"><span class="toc-text"> 1.2a 画图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E7%BB%9F%E8%AE%A1%E6%A3%80%E9%AA%8C"><span class="toc-text"> 1.3 统计检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E6%95%B0%E6%8D%AE%E6%8E%92%E5%BA%8F"><span class="toc-text"> 1.4 数据排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#141-sort"><span class="toc-text"> 1.4.1 sort</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#142-gsort"><span class="toc-text"> 1.4.2 gsort</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E5%88%86%E7%B1%BB%E6%93%8D%E4%BD%9C"><span class="toc-text"> 1.5 分类操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15a-%E7%94%9F%E6%88%90%E8%99%9A%E6%8B%9F%E5%8F%98%E9%87%8F%E7%9A%84%E4%B8%80%E4%B8%AA%E6%96%B9%E6%B3%95"><span class="toc-text"> 1.5a 生成虚拟变量的一个方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15b-%E5%B0%86%E5%88%86%E7%B1%BB%E7%BC%96%E7%A0%81%E8%BF%9B%E8%A1%8C%E6%95%B0%E5%AD%97%E7%BC%96%E7%A0%81%E6%9C%AA%E8%A7%A3%E5%86%B3"><span class="toc-text"> 1.5b 将分类编码进行数字编码（未解决）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15c-%E5%8F%96%E6%9F%90%E4%B8%AA%E5%85%B7%E4%BD%93%E7%9A%84%E5%80%BC%E4%BD%9C%E4%B8%BA%E5%88%97%E5%88%86%E7%BB%84%E7%9A%84%E5%80%BC"><span class="toc-text"> 1.5c 取某个具体的值作为列分组的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E8%8C%83%E5%9B%B4%E7%AD%9B%E9%80%89"><span class="toc-text"> 1.6 条件表达式与范围筛选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-%E5%8A%A0%E6%9D%83weight"><span class="toc-text"> 1.7 加权weight</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-%E5%85%B6%E4%BB%96%E5%8F%AF%E9%80%89%E9%A1%B9"><span class="toc-text"> 1.8 其他可选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1n-2-%E5%A4%9A%E8%A1%8C%E7%BC%96%E8%BE%91"><span class="toc-text"> 1.(n-2) 多行编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1n-1-%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97"><span class="toc-text"> 1.(n-1) 四则运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1n-%E5%87%A0%E4%B8%AA%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE"><span class="toc-text"> 1.n 几个环境设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1n1-%E8%AE%BE%E7%BD%AE%E5%B1%8F%E5%B9%95%E6%BB%9A%E5%8A%A8"><span class="toc-text"> 1.n.1 设置屏幕滚动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1n2-%E8%AE%BE%E7%BD%AE%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F"><span class="toc-text"> 1.n.2 设置内存大小</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1n3-%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6%E5%AD%98%E5%8F%96%E8%B7%AF%E5%BE%84"><span class="toc-text"> 1.n.3 设置文件存取路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1n4-%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA"><span class="toc-text"> 1.n.4 错误提示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1a-%E5%B0%8F%E7%BB%93"><span class="toc-text"> 1a 小结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1b-%E6%A0%87%E7%AD%BE%E6%95%B0%E6%8D%AElabel"><span class="toc-text"> 1b 标签数据：label</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86%E4%B8%8E%E5%90%88%E5%B9%B6"><span class="toc-text"> 2. 数据拆分与合并</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E9%95%BF%E5%AE%BD%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2-reshape%E5%91%BD%E4%BB%A4"><span class="toc-text"> 2.1 长宽数据转换—— reshape命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86"><span class="toc-text"> 2.2 数据拆分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#221-%E5%88%A0%E9%99%A4%E4%BF%9D%E7%95%99%E5%8F%98%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A8%AA%E5%90%91%E6%8B%86%E5%88%86"><span class="toc-text"> 2.2.1 删除\保留变量：数据的横向拆分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#222-%E5%88%A0%E9%99%A4%E4%BF%9D%E7%95%99%E8%A7%82%E5%AF%9F%E5%80%BC%E6%95%B0%E6%8D%AE%E7%9A%84%E7%BA%B5%E5%90%91%E6%8B%86%E5%88%86"><span class="toc-text"> 2.2.2 删除\保留观察值：数据的纵向拆分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#223-%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%AD%90%E9%9B%86-savesome-%E5%91%BD%E4%BB%A4"><span class="toc-text"> 2.2.3 一步到位保存数据子集： savesome 命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6"><span class="toc-text"> 2.4 数据合并</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#241-%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A8%AA%E5%90%91%E5%90%88%E5%B9%B6"><span class="toc-text"> 2.4.1 数据的横向合并</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#242-%E6%95%B0%E6%8D%AE%E7%9A%84%E7%BA%B5%E5%90%91%E5%90%88%E5%B9%B6"><span class="toc-text"> 2.4.2 数据的纵向合并</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#243-%E4%B8%80%E6%AC%A1%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAcsv%E6%96%87%E4%BB%B6-csvconvert"><span class="toc-text"> 2.4.3 一次合并多个csv文件—— csvconvert</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E6%95%B0%E6%8D%AE%E9%87%8D%E6%95%B4"><span class="toc-text"> 2.5 数据重整</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-pythonstata"><span class="toc-text"> 3. Python+Stata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31-%E5%8F%A6%E5%A4%96%E4%BF%9D%E5%AD%98do%E6%96%87%E4%BB%B6%E5%9C%A8python%E4%B8%AD%E8%BF%90%E8%A1%8C%E5%A4%96%E9%83%A8do%E6%96%87%E4%BB%B6"><span class="toc-text"> 3.1 另外保存do文件，在python中运行外部do文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32-%E6%9C%89%E6%97%B6%E4%BC%9A%E9%81%87%E5%88%B0%E6%94%B9%E5%8F%98do%E6%96%87%E6%A1%A3%E5%86%85%E5%AE%B9%E7%9A%84%E6%83%85%E5%BD%A2%E5%9B%A0%E6%AD%A4%E9%9C%80%E8%A6%81%E5%9C%A8python%E4%B8%AD%E5%86%99%E4%B8%80%E4%B8%AAdo%E6%96%87%E6%A1%A3"><span class="toc-text"> 3.2 有时会遇到改变do文档内容的情形，因此需要在python中写一个do文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#33-%E5%9C%A8python%E5%92%8Cstata%E4%B8%AD%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE%E6%9C%80%E5%AE%B9%E6%98%93%E6%83%B3%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E6%80%9D%E8%B7%AF%E6%98%AF%E5%B0%86%E8%A6%81%E4%BC%A0%E9%80%92%E7%9A%84%E5%86%85%E5%AE%B9%E4%BF%9D%E5%AD%98%E4%B8%8B%E6%9D%A5%E7%84%B6%E5%90%8Epython%E6%88%96stata%E5%86%8D%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text"> 3.3 在python和stata中传递数据（最容易想到的一个思路是将要传递的内容保存下来，然后python或stata再读取数据）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-stata%E4%B8%AD%E7%9A%84mata"><span class="toc-text"> 4. Stata中的Mata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41-mata-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-text"> 4.1 Mata 基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#411-%E6%B3%A8%E9%87%8A%E6%96%B9%E5%BC%8F-comments"><span class="toc-text"> 4.1.1 注释方式 (Comments)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#412-%E8%BF%90%E7%AE%97%E7%AC%A6-operators"><span class="toc-text"> 4.1.2 运算符 (Operators)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4121-%E5%9F%BA%E7%A1%80%E8%BF%90%E7%AE%97-%E9%83%A8%E5%88%86"><span class="toc-text"> 4.1.2.1 基础运算 (部分)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4122-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6-logical-operators"><span class="toc-text"> 4.1.2.2 逻辑运算符 (Logical Operators)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4123-%E4%B8%8B%E6%A0%87%E8%BF%90%E7%AE%97-subscripts"><span class="toc-text"> 4.1.2.3 下标运算 (Subscripts)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4124-%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7%E6%80%BB%E7%BB%93"><span class="toc-text"> 4.1.2.4 运算符优先级总结</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#413-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5-loop"><span class="toc-text"> 4.1.3 循环语句 (Loop)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4131-for"><span class="toc-text"> 4.1.3.1 for</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4132-while"><span class="toc-text"> 4.1.3.2 while</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4133-dowhile"><span class="toc-text"> 4.1.3.3 do…while</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#414-%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5-conditional"><span class="toc-text"> 4.1.4 条件语句 (Conditional)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#415-ifelse"><span class="toc-text"> 4.1.5 if…else</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#416-a-b-c-%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text"> 4.1.6 a ? b : c 条件运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-%E4%BD%BF%E7%94%A8%E5%8D%95%E8%A1%8C%E5%91%BD%E4%BB%A4%E8%B0%83%E7%94%A8-mata"><span class="toc-text"> 4.2 使用单行命令调用 Mata</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#421-%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91%E5%8F%8A%E6%96%B9%E6%B3%95"><span class="toc-text"> 4.2.1 实现逻辑及方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#422-%E4%BE%8B%E5%AD%90%E5%88%A9%E7%94%A8-mata-%E6%8F%90%E5%8F%96%E5%9B%9E%E5%BD%92%E5%90%8E%E7%9A%84-t-%E5%80%BC"><span class="toc-text"> 4.2.2 例子：利用 Mata 提取回归后的 t 值</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4221-%E9%97%AE%E9%A2%98%E9%98%90%E8%BF%B0%E5%8F%8A%E5%88%86%E6%9E%90"><span class="toc-text"> 4.2.2.1 问题阐述及分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4222-mata-%E5%AE%9E%E7%8E%B0"><span class="toc-text"> 4.2.2.2 Mata 实现</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#423-stata-%E5%AE%9E%E7%8E%B0"><span class="toc-text"> 4.2.3 Stata 实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%BE%AE%E8%A7%82%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%AE%9E%E6%93%8D"><span class="toc-text"> 5. 微观计量经济学实操</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-mac-stata%E5%90%8C%E6%97%B6%E6%89%93%E5%BC%80%E4%B8%A4%E4%B8%AAdta%E6%96%87%E4%BB%B6"><span class="toc-text"> 6. mac stata同时打开两个dta文件</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="1837523341.html" title="stata笔记">stata笔记</a><time datetime="2023-10-08T09:36:23.282Z" title="更新于 2023-10-08 17:36:23">2023-10-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="329702610.html" title="博士论文手稿v2">博士论文手稿v2</a><time datetime="2023-10-06T05:14:12.440Z" title="更新于 2023-10-06 13:14:12">2023-10-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="4132785879.html" title="word上的一些骚操作">word上的一些骚操作</a><time datetime="2023-10-05T09:35:28.728Z" title="更新于 2023-10-05 17:35:28">2023-10-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="3479505605.html" title="民营企业参与一带一路中非制造业合作专题研究">民营企业参与一带一路中非制造业合作专题研究</a><time datetime="2023-10-04T14:48:20.770Z" title="更新于 2023-10-04 22:48:20">2023-10-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="3276806131.html" title="博客搭建日志">博客搭建日志</a><time datetime="2023-10-04T14:48:20.769Z" title="更新于 2023-10-04 22:48:20">2023-10-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="584278389.html" title="Git教程">Git教程</a><time datetime="2023-10-01T11:27:56.009Z" title="更新于 2023-10-01 19:27:56">2023-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="2511924152.html" title="博士论文手稿">博士论文手稿</a><time datetime="2023-09-27T05:33:35.936Z" title="更新于 2023-09-27 13:33:35">2023-09-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="3667980037.html" title="第四章第五章材料摘抄">第四章第五章材料摘抄</a><time datetime="2023-09-26T02:37:14.881Z" title="更新于 2023-09-26 10:37:14">2023-09-26</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/private_img/banner2.gif')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 揭晓</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="js/utils.js"></script><script src="js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="tags/python/">python</a><a class="post-meta__tags" href="tags/stata/">stata</a><a class="post-meta__tags" href="tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">数据处理</a><a class="post-meta__tags" href="tags/%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86/">数据拆分</a><a class="post-meta__tags" href="tags/%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6/">数据合并</a><a class="post-meta__tags" href="tags/Mata/">Mata</a></div><div class="post_share"><div class="social-share" data-image="/private_img/banner2.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/private_img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/private_img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/private_img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/private_img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="2928949794.html" title="python2 与 python3的区别"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">python2 与 python3的区别</div></div></a></div><div class="next-post pull-right"><a href="4253525416.html" title="资本循环笔记20201114"><img class="cover" src="/private_img/banner2.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">资本循环笔记20201114</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="5504202.html" title="python数据处理手册"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-23</div><div class="title">python数据处理手册</div></div></a></div><div><a href="2928949794.html" title="python2 与 python3的区别"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-15</div><div class="title">python2 与 python3的区别</div></div></a></div><div><a href="101587567.html" title="python做计量"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-15</div><div class="title">python做计量</div></div></a></div><div><a href="3805420524.html" title="助教：一键登记提交和成绩"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-16</div><div class="title">助教：一键登记提交和成绩</div></div></a></div><div><a href="3845945498.html" title="高级计量经济学课件"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-24</div><div class="title">高级计量经济学课件</div></div></a></div><div><a href="2914285830.html" title="商品价格和银行危机"><img class="cover" src="/private_img/banner2.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-03</div><div class="title">商品价格和银行危机</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/private_img/yuyingnan.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">揭晓</div><div class="author-info__description">随手写一写，揭晓这世界</div></div><a id="card-info-btn" href="/"><i class="fas fa-home"></i><span>回到首页</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E7%AE%80%E4%BB%8B"><span class="toc-text"> 0 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01-%E8%8E%B7%E5%BE%97%E5%B8%AE%E5%8A%A9"><span class="toc-text"> 0.1 获得帮助</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text"> 1. 基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA"><span class="toc-text"> 1.1 数据导入与输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11a-%E7%94%9F%E6%88%90%E6%96%B0%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text"> 1.1a 生成新数据的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11b-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E5%8C%96"><span class="toc-text"> 1.1b 数据类型转化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11c-gen%E5%92%8Cegen%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text"> 1.1c gen和egen的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1"><span class="toc-text"> 1.2 描述性统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12a-%E7%94%BB%E5%9B%BE"><span class="toc-text"> 1.2a 画图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E7%BB%9F%E8%AE%A1%E6%A3%80%E9%AA%8C"><span class="toc-text"> 1.3 统计检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E6%95%B0%E6%8D%AE%E6%8E%92%E5%BA%8F"><span class="toc-text"> 1.4 数据排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#141-sort"><span class="toc-text"> 1.4.1 sort</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#142-gsort"><span class="toc-text"> 1.4.2 gsort</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E5%88%86%E7%B1%BB%E6%93%8D%E4%BD%9C"><span class="toc-text"> 1.5 分类操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15a-%E7%94%9F%E6%88%90%E8%99%9A%E6%8B%9F%E5%8F%98%E9%87%8F%E7%9A%84%E4%B8%80%E4%B8%AA%E6%96%B9%E6%B3%95"><span class="toc-text"> 1.5a 生成虚拟变量的一个方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15b-%E5%B0%86%E5%88%86%E7%B1%BB%E7%BC%96%E7%A0%81%E8%BF%9B%E8%A1%8C%E6%95%B0%E5%AD%97%E7%BC%96%E7%A0%81%E6%9C%AA%E8%A7%A3%E5%86%B3"><span class="toc-text"> 1.5b 将分类编码进行数字编码（未解决）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15c-%E5%8F%96%E6%9F%90%E4%B8%AA%E5%85%B7%E4%BD%93%E7%9A%84%E5%80%BC%E4%BD%9C%E4%B8%BA%E5%88%97%E5%88%86%E7%BB%84%E7%9A%84%E5%80%BC"><span class="toc-text"> 1.5c 取某个具体的值作为列分组的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E8%8C%83%E5%9B%B4%E7%AD%9B%E9%80%89"><span class="toc-text"> 1.6 条件表达式与范围筛选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-%E5%8A%A0%E6%9D%83weight"><span class="toc-text"> 1.7 加权weight</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-%E5%85%B6%E4%BB%96%E5%8F%AF%E9%80%89%E9%A1%B9"><span class="toc-text"> 1.8 其他可选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1n-2-%E5%A4%9A%E8%A1%8C%E7%BC%96%E8%BE%91"><span class="toc-text"> 1.(n-2) 多行编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1n-1-%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97-%E5%87%BD%E6%95%B0%E8%BF%90%E7%AE%97"><span class="toc-text"> 1.(n-1) 四则运算、函数运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text"> 常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E5%87%BD%E6%95%B0"><span class="toc-text"> 分组函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E8%8C%83%E5%9B%B4%E5%8F%98%E9%87%8F"><span class="toc-text"> 生成范围变量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1n-%E5%87%A0%E4%B8%AA%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE"><span class="toc-text"> 1.n 几个环境设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1n1-%E8%AE%BE%E7%BD%AE%E5%B1%8F%E5%B9%95%E6%BB%9A%E5%8A%A8"><span class="toc-text"> 1.n.1 设置屏幕滚动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1n2-%E8%AE%BE%E7%BD%AE%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F"><span class="toc-text"> 1.n.2 设置内存大小</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1n3-%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6%E5%AD%98%E5%8F%96%E8%B7%AF%E5%BE%84"><span class="toc-text"> 1.n.3 设置文件存取路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1n4-%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA"><span class="toc-text"> 1.n.4 错误提示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1a-%E6%B5%81%E7%A8%8B%E8%AF%AD%E5%8F%A5"><span class="toc-text"> 1a 流程语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1a1-%E5%BE%AA%E7%8E%AF"><span class="toc-text"> 1a.1 循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#forvalues"><span class="toc-text"> forvalues</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#foreach"><span class="toc-text"> foreach</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1b-%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93"><span class="toc-text"> 1b 命令小结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1c-%E6%A0%87%E7%AD%BE%E6%95%B0%E6%8D%AElabel"><span class="toc-text"> 1c 标签数据：label</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86%E4%B8%8E%E5%90%88%E5%B9%B6"><span class="toc-text"> 2. 数据拆分与合并</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21-%E9%95%BF%E5%AE%BD%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2-reshape%E5%91%BD%E4%BB%A4"><span class="toc-text"> 2.1 长宽数据转换—— reshape命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E6%95%B0%E6%8D%AE%E6%8B%86%E5%88%86"><span class="toc-text"> 2.2 数据拆分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#221-%E5%88%A0%E9%99%A4%E4%BF%9D%E7%95%99%E5%8F%98%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A8%AA%E5%90%91%E6%8B%86%E5%88%86"><span class="toc-text"> 2.2.1 删除\保留变量：数据的横向拆分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#222-%E5%88%A0%E9%99%A4%E4%BF%9D%E7%95%99%E8%A7%82%E5%AF%9F%E5%80%BC%E6%95%B0%E6%8D%AE%E7%9A%84%E7%BA%B5%E5%90%91%E6%8B%86%E5%88%86"><span class="toc-text"> 2.2.2 删除\保留观察值：数据的纵向拆分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#223-%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE%E5%AD%90%E9%9B%86-savesome-%E5%91%BD%E4%BB%A4"><span class="toc-text"> 2.2.3 一步到位保存数据子集： savesome 命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6"><span class="toc-text"> 2.4 数据合并</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#241-%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A8%AA%E5%90%91%E5%90%88%E5%B9%B6"><span class="toc-text"> 2.4.1 数据的横向合并</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#242-%E6%95%B0%E6%8D%AE%E7%9A%84%E7%BA%B5%E5%90%91%E5%90%88%E5%B9%B6"><span class="toc-text"> 2.4.2 数据的纵向合并</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#243-%E4%B8%80%E6%AC%A1%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAcsv%E6%96%87%E4%BB%B6-csvconvert"><span class="toc-text"> 2.4.3 一次合并多个csv文件—— csvconvert</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-%E6%95%B0%E6%8D%AE%E9%87%8D%E6%95%B4"><span class="toc-text"> 2.5 数据重整</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BB%98%E5%9B%BE"><span class="toc-text"> 3. 绘图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3astata%E5%91%BD%E4%BB%A4%E8%AF%AD%E5%8F%A5%E6%A0%BC%E5%BC%8F"><span class="toc-text"> 3a.STATA命令语句格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-pythonstata"><span class="toc-text"> 4. Python+Stata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41-%E5%8F%A6%E5%A4%96%E4%BF%9D%E5%AD%98do%E6%96%87%E4%BB%B6%E5%9C%A8python%E4%B8%AD%E8%BF%90%E8%A1%8C%E5%A4%96%E9%83%A8do%E6%96%87%E4%BB%B6"><span class="toc-text"> 4.1 另外保存do文件，在python中运行外部do文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-%E6%9C%89%E6%97%B6%E4%BC%9A%E9%81%87%E5%88%B0%E6%94%B9%E5%8F%98do%E6%96%87%E6%A1%A3%E5%86%85%E5%AE%B9%E7%9A%84%E6%83%85%E5%BD%A2%E5%9B%A0%E6%AD%A4%E9%9C%80%E8%A6%81%E5%9C%A8python%E4%B8%AD%E5%86%99%E4%B8%80%E4%B8%AAdo%E6%96%87%E6%A1%A3"><span class="toc-text"> 4.2 有时会遇到改变do文档内容的情形，因此需要在python中写一个do文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-%E5%9C%A8python%E5%92%8Cstata%E4%B8%AD%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE%E6%9C%80%E5%AE%B9%E6%98%93%E6%83%B3%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E6%80%9D%E8%B7%AF%E6%98%AF%E5%B0%86%E8%A6%81%E4%BC%A0%E9%80%92%E7%9A%84%E5%86%85%E5%AE%B9%E4%BF%9D%E5%AD%98%E4%B8%8B%E6%9D%A5%E7%84%B6%E5%90%8Epython%E6%88%96stata%E5%86%8D%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text"> 4.3 在python和stata中传递数据（最容易想到的一个思路是将要传递的内容保存下来，然后python或stata再读取数据）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-stata%E4%B8%AD%E7%9A%84mata"><span class="toc-text"> 5. Stata中的Mata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#51-mata-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-text"> 5.1 Mata 基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#511-%E6%B3%A8%E9%87%8A%E6%96%B9%E5%BC%8F-comments"><span class="toc-text"> 5.1.1 注释方式 (Comments)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#512-%E8%BF%90%E7%AE%97%E7%AC%A6-operators"><span class="toc-text"> 5.1.2 运算符 (Operators)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#5121-%E5%9F%BA%E7%A1%80%E8%BF%90%E7%AE%97-%E9%83%A8%E5%88%86"><span class="toc-text"> 5.1.2.1 基础运算 (部分)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5122-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6-logical-operators"><span class="toc-text"> 5.1.2.2 逻辑运算符 (Logical Operators)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5123-%E4%B8%8B%E6%A0%87%E8%BF%90%E7%AE%97-subscripts"><span class="toc-text"> 5.1.2.3 下标运算 (Subscripts)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5124-%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7%E6%80%BB%E7%BB%93"><span class="toc-text"> 5.1.2.4 运算符优先级总结</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#513-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5-loop"><span class="toc-text"> 5.1.3 循环语句 (Loop)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#5131-for"><span class="toc-text"> 5.1.3.1 for</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5132-while"><span class="toc-text"> 5.1.3.2 while</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5133-dowhile"><span class="toc-text"> 5.1.3.3 do…while</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#514-%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5-conditional"><span class="toc-text"> 5.1.4 条件语句 (Conditional)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#515-ifelse"><span class="toc-text"> 5.1.5 if…else</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#516-a-b-c-%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text"> 5.1.6 a ? b : c 条件运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#52-%E4%BD%BF%E7%94%A8%E5%8D%95%E8%A1%8C%E5%91%BD%E4%BB%A4%E8%B0%83%E7%94%A8-mata"><span class="toc-text"> 5.2 使用单行命令调用 Mata</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#521-%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91%E5%8F%8A%E6%96%B9%E6%B3%95"><span class="toc-text"> 5.2.1 实现逻辑及方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#522-%E4%BE%8B%E5%AD%90%E5%88%A9%E7%94%A8-mata-%E6%8F%90%E5%8F%96%E5%9B%9E%E5%BD%92%E5%90%8E%E7%9A%84-t-%E5%80%BC"><span class="toc-text"> 5.2.2 例子：利用 Mata 提取回归后的 t 值</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#5221-%E9%97%AE%E9%A2%98%E9%98%90%E8%BF%B0%E5%8F%8A%E5%88%86%E6%9E%90"><span class="toc-text"> 5.2.2.1 问题阐述及分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5222-mata-%E5%AE%9E%E7%8E%B0"><span class="toc-text"> 5.2.2.2 Mata 实现</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#523-stata-%E5%AE%9E%E7%8E%B0"><span class="toc-text"> 5.2.3 Stata 实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E9%9A%8F%E6%9C%BA%E6%A8%A1%E6%8B%9F"><span class="toc-text"> 6. 随机模拟</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#61-%E7%AE%80%E5%8D%95%E9%87%8D%E5%A4%8D%E5%AE%9E%E9%AA%8C"><span class="toc-text"> 6.1 简单重复实验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#62-%E5%A4%8D%E6%9D%82%E6%A8%A1%E6%8B%9F"><span class="toc-text"> 6.2 复杂模拟</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%BE%AE%E8%A7%82%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%AE%9E%E6%93%8D"><span class="toc-text"> 7. 微观计量经济学实操</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-mac-stata%E5%90%8C%E6%97%B6%E6%89%93%E5%BC%80%E4%B8%A4%E4%B8%AAdta%E6%96%87%E4%BB%B6"><span class="toc-text"> 8. mac stata同时打开两个dta文件</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="1837523341.html" title="stata笔记">stata笔记</a><time datetime="2023-10-09T11:46:18.956Z" title="更新于 2023-10-09 19:46:18">2023-10-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="329702610.html" title="博士论文手稿v2">博士论文手稿v2</a><time datetime="2023-10-06T05:14:12.440Z" title="更新于 2023-10-06 13:14:12">2023-10-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="4132785879.html" title="word上的一些骚操作">word上的一些骚操作</a><time datetime="2023-10-05T09:35:28.728Z" title="更新于 2023-10-05 17:35:28">2023-10-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="3479505605.html" title="民营企业参与一带一路中非制造业合作专题研究">民营企业参与一带一路中非制造业合作专题研究</a><time datetime="2023-10-04T14:48:20.770Z" title="更新于 2023-10-04 22:48:20">2023-10-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="3276806131.html" title="博客搭建日志">博客搭建日志</a><time datetime="2023-10-04T14:48:20.769Z" title="更新于 2023-10-04 22:48:20">2023-10-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="584278389.html" title="Git教程">Git教程</a><time datetime="2023-10-01T11:27:56.009Z" title="更新于 2023-10-01 19:27:56">2023-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="2511924152.html" title="博士论文手稿">博士论文手稿</a><time datetime="2023-09-27T05:33:35.936Z" title="更新于 2023-09-27 13:33:35">2023-09-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="3667980037.html" title="第四章第五章材料摘抄">第四章第五章材料摘抄</a><time datetime="2023-09-26T02:37:14.881Z" title="更新于 2023-09-26 10:37:14">2023-09-26</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/private_img/banner2.gif')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 揭晓</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="js/utils.js"></script><script src="js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
